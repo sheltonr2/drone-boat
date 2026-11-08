@@ -214,6 +214,7 @@ class OpenMeteoProvider:
         for name in FIELDS:
             out[name] = acc[name]/wsum[name] if wsum[name] > 0 else defaults[name]
         out["marine_ok"] = wsum["hs"] > 0
+        out["current_includes_stokes"] = True   # SMOC total current = Eulerian + waves (Stokes) + tides
         return out
 
 
@@ -276,6 +277,11 @@ class LandMask:
     """Point-in-polygon land test. Uses Natural Earth 50m land (downloaded once, cached) when
     available, otherwise a built-in coarse North Atlantic outline (~30-60 km accuracy)."""
     NE_URL = "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_land.geojson"
+    NE_COUNTRIES_URL = "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_admin_0_countries.geojson"
+    # Atlantic island groups that belong to European countries but sit far out in the ocean.
+    # Whether a landfall there counts as reaching Europe is a scenario choice (atlantic_islands_count).
+    ATLANTIC_ISLANDS = {"Azores": (36.5, 40.2, -31.6, -24.5), "Madeira": (32.3, 33.3, -17.6, -16.0),
+                        "Canary Islands": (27.4, 29.6, -18.4, -13.0)}
 
     def __init__(self, cache_dir="cache", allow_download=True, log=print):
         self.polys = []
@@ -303,10 +309,72 @@ class LandMask:
             for ring in COARSE:
                 self._add(np.array(ring, float))
             self.source = "built-in coarse outline"
+        # European countries (idea from jcolter11374/boat-sim #50): CONTINENT == "Europe" in Natural Earth,
+        # kept only for rings that lie in Europe itself (France's and the Netherlands' Caribbean and
+        # South American territories are part of those countries' shapes too).
+        self.europe = []
+        pc = os.path.join(cache_dir, "ne_50m_admin_0_countries.geojson")
+        if not os.path.exists(pc) and allow_download:
+            try:
+                log("Downloading Natural Earth country borders (one time, ~4 MB) ...")
+                urllib.request.urlretrieve(self.NE_COUNTRIES_URL, pc)
+            except Exception as ex:
+                log(f"Country download failed ({ex}); Europe is judged from a coarse outline.")
+        if os.path.exists(pc):
+            try:
+                gj = json.load(open(pc, encoding="utf-8"))
+                for f in gj["features"]:
+                    if (f.get("properties") or {}).get("CONTINENT") != "Europe": continue
+                    g = f["geometry"]
+                    rings = [g["coordinates"]] if g["type"] == "Polygon" else g["coordinates"]
+                    for poly in rings:
+                        r = np.array(poly[0], float)
+                        if len(r) < 3: continue
+                        if r[:, 1].mean() < 26 or r[:, 0].mean() < -35: continue   # overseas territories
+                        self.europe.append((r[:, 0].min(), r[:, 0].max(), r[:, 1].min(), r[:, 1].max(), r))
+            except Exception:
+                self.europe = []
+        self.europe_source = "Natural Earth countries" if self.europe else "coarse outline"
 
     def _add(self, ring):
         if len(ring) < 3: return
         self.polys.append((ring[:, 0].min(), ring[:, 0].max(), ring[:, 1].min(), ring[:, 1].max(), ring))
+
+    @staticmethod
+    def _inside(polys, lat, lon):
+        for x0, x1, y0, y1, r in polys:
+            if not (x0 <= lon <= x1 and y0 <= lat <= y1): continue
+            x, y = r[:, 0], r[:, 1]
+            xn, yn = np.roll(x, -1), np.roll(y, -1)
+            cond = ((y > lat) != (yn > lat))
+            if not cond.any(): continue
+            xi = x[cond] + (lat - y[cond])*(xn[cond] - x[cond])/(yn[cond] - y[cond])
+            if np.count_nonzero(xi > lon) % 2 == 1:
+                return True
+        return False
+
+    def atlantic_island(self, lat, lon):
+        for name, (a, b, c, d) in self.ATLANTIC_ISLANDS.items():
+            if a <= lat <= b and c <= lon <= d: return name
+        return None
+
+    def in_europe(self, lat, lon, islands=False):
+        """Is a landfall at (lat, lon) a landfall in Europe? Iceland, the Faroes, the British Isles and
+        mainland Europe count; North Africa and Greenland don't. The Azores, Madeira and the Canaries
+        count only when islands=True."""
+        if self.atlantic_island(lat, lon):
+            return bool(islands)
+        if self.europe:
+            if self._inside(self.europe, lat, lon): return True
+            for b in range(0, 360, 45):          # the boat stops at the coast; allow ~5 km of slack
+                la, lo = destination(lat, lon, b, 5000)
+                if self._inside(self.europe, la, lo): return True
+            return False
+        # coarse fallback: the European side of the North Atlantic, minus Greenland and North Africa
+        if lon < -32 or lon > 45 or lat < 34: return False
+        if lat > 67.5 and lon < -10: return False                 # north-east Greenland
+        if lat < 36.0 and lon < 11: return False                  # Morocco, Algeria
+        return True
 
     def is_land(self, lat, lon):
         for x0, x1, y0, y1, r in self.polys:

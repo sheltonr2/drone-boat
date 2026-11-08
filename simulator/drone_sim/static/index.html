@@ -86,14 +86,19 @@
       </div>
       <label>Preset <select id="preset">
         <option value="">-</option>
-        <option value="nf">Newfoundland to Ireland</option>
-        <option value="ns">Nova Scotia to Ireland</option>
+        <option value="ocmd">Ocean City, MD to SW Ireland (default)</option>
+        <option value="vab">Virginia Beach, VA to SW Ireland</option>
+        <option value="cm">Cape May, NJ to SW Ireland</option>
+        <option value="ocbr">Ocean City, MD to Brittany / Cornwall</option>
+        <option value="ocpt">Ocean City, MD to Portugal</option>
+        <option value="nf">Newfoundland to Ireland (old plan)</option>
         <option value="ca">Canaries to Barbados (trade winds)</option>
       </select></label>
       <h3>Time and data</h3>
       <div class="grid2">
         <label>Start (UTC) <input id="s-time" type="datetime-local"></label>
         <label>Max days <input id="s-days" type="number" min="1" max="400"></label>
+        <label class="check"><input type="checkbox" id="s-isles"> Count the Azores, Madeira and Canaries as Europe</label>
         <label>Weather source <select id="s-provider"><option value="openmeteo">Historic (Open-Meteo ERA5 + marine)</option><option value="synthetic">Synthetic (offline test)</option></select></label>
         <label>Data grid (deg) <select id="s-grid"><option>0.5</option><option selected>1</option><option>2</option></select></label>
         <label>Arrival radius (km) <input id="s-radius" type="number"></label>

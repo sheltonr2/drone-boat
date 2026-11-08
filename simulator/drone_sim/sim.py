@@ -9,14 +9,15 @@ from .failures import DEFAULT_RATES, p_event, breaking_knockdown_rate
 from . import geometry, vpp as vppmod
 
 DEFAULT_SCENARIO = {
-    "name": "Newfoundland to Ireland",
-    "start_time": "2024-06-10T12:00:00",
-    "start": {"lat": 47.3, "lon": -52.3},
-    "target": {"lat": 53.3, "lon": -10.2},
-    "waypoints": [],
+    "name": "Ocean City, MD to south-west Ireland",
+    "start_time": "2024-05-15T12:00:00",
+    "start": {"lat": 38.25, "lon": -74.65},      # ~25 km off Ocean City, Maryland
+    "target": {"lat": 51.35, "lon": -9.7},       # off Mizen Head; any landfall in Europe also counts
+    "waypoints": [[42.0, -48.0]],                # stay south of the Grand Banks (fishing fleets, fog, icebergs)
     "arrival_radius_km": 40.0,
     "europe_landfall_counts": True,
-    "max_days": 150,
+    "atlantic_islands_count": False,   # Azores, Madeira, Canaries: count a landfall there as reaching Europe?
+    "max_days": 240,
     "mode": "hybrid",              # hybrid | 6dof
     "dt_s": 300.0,                 # hybrid step
     "dt_6dof_s": 0.05,
@@ -31,11 +32,6 @@ DEFAULT_SCENARIO = {
     "initial_mode": "sail",
 }
 
-EUROPE = dict(lat_min=35.0, lat_max=72.0, lon_min=-16.0, lon_max=32.0)
-
-
-def in_europe(lat, lon):
-    return EUROPE["lat_min"] <= lat <= EUROPE["lat_max"] and EUROPE["lon_min"] <= lon <= EUROPE["lon_max"]
 
 
 # --------------------------------------------------------------------- design cache
@@ -163,7 +159,7 @@ class Voyage:
                 ve = res["u"]*fe + res["v"]*pe; vn = res["u"]*fn + res["v"]*pn
             if not res.get("ground_included"):
                 ve += e["cur_u"]; vn += e["cur_v"]
-                if e["hs"] > 0.05:
+                if e["hs"] > 0.05 and not e.get("current_includes_stokes"):   # Open-Meteo/SMOC currents already include it
                     w = 2*math.pi/max(e["tp"], 1.0)
                     us = 2*w**3*(e["hs"]/2)**2/(8*9.81)
                     wd = math.radians(e["wave_dir"] + 180)
@@ -178,12 +174,15 @@ class Voyage:
             st["distance_km"] += dist/1000
             # land / arrival
             if self.land.is_land(nlat, nlon):
-                if in_europe(nlat, nlon) and sc.get("europe_landfall_counts", True):
+                isle = self.land.atlantic_island(nlat, nlon)
+                if self.land.in_europe(nlat, nlon, sc.get("atlantic_islands_count", False)) and sc.get("europe_landfall_counts", True):
                     st["lat"], st["lon"] = nlat, nlon
                     outcome = "arrived_reporting" if not (st["comms_dead"] or st["hung"]) and st["alive"] else "arrived_silent"
                     self.event(t, "arrival", f"Landfall in Europe at {nlat:.2f}, {nlon:.2f}")
                 else:
-                    outcome = "aground"; self.event(t, "end", f"Ran aground at {nlat:.2f}, {nlon:.2f}")
+                    outcome = "aground"
+                    self.event(t, "end", f"Landed on the {isle} (not counted as Europe in this scenario)" if isle
+                               else f"Ran aground at {nlat:.2f}, {nlon:.2f}")
                     st["lat"], st["lon"] = nlat, nlon
                 break
             st["lat"], st["lon"] = nlat, nlon

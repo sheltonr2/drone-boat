@@ -4,10 +4,10 @@ Nov 8, 2026 · @Randolph
 
 ## Bottom line
 
-The plan is a 1.5 m, self-righting autonomous sailboat with a rigid wing sail. It reports by Iridium satellite and takes commands from shore, and it is meant to cross the North Atlantic from Nova Scotia or Newfoundland to Europe, then keep roaming.
+The plan is a 1.5 m, self-righting autonomous sailboat with a rigid wing sail. It reports by Iridium satellite and takes commands from shore, and it is meant to cross the North Atlantic from the Mid-Atlantic coast (Maryland, Virginia or New Jersey) to Europe, aiming for south-west Ireland, then keep roaming.
 
 - **Hardware cost:** about $2,290 sail-only, or about $2,000 after the trims in the budget section. The optional thruster adds $270. Satellite airtime adds $40–$60 a month.
-- **Build time:** 9–13 months through five test gates. The realistic first ocean launch is June–July 2028; 2027 is possible only if every gate passes first time.
+- **Build time:** 9–13 months through five test gates. The realistic first ocean launch is May 2028; 2027 is possible only if every gate passes first time.
 - **Odds:** about 10–20% that the first boat reaches Europe still sailing and reporting. Building a second boat and passing every gate raises that to about 30–40%. These are estimates, not calculations.
 - **Biggest risks:** water getting in, steering failure, and fouling by weed or fishing line. Navigation and weather matter less.
 
@@ -129,11 +129,11 @@ Itemised in full, the boat comes to about $2,290 sail-only, which is over the $2
 | [RockBLOCK line rental](https://groundcontrol.com/?p=1671) | $17/month |
 | Message credits, at 4-hourly reports | about $22/month |
 | Message credits, at hourly reports near coasts or in storms | about $86/month |
-| Typical crossing (3–4 months) | about $120–$240 in total |
+| Typical crossing (about 100–125 days) | about $130–$260 in total |
 
 ## Build and test timeline
 
-There are five phases, and each ends at a gate. Don't move on until the boat passes, and don't skip a gate to make a launch window, because a missed June window costs a year.
+There are five phases, and each ends at a gate. Don't move on until the boat passes, and don't skip a gate to make a launch window, because a missed May window costs a year.
 
 1. **Bench rig (1–2 months).** Get the RockBLOCK, ESP32 and shore dashboard working on the desk, and the ArduPilot sailboat simulator running.
    - *Gate:* 7-day desk soak test, every command round-trips, average draw under 1.5 W.
@@ -143,7 +143,7 @@ There are five phases, and each ends at a gate. Don't move on until the boat pas
    - *Gate:* self-rights from 180° every time, and stays dry inside after 24 h fully submerged.
 4. **Coastal trial (1–2 months).** Spend weeks offshore within recovery range, then recover and inspect it.
    - *Gate:* 3 weeks at sea unattended, with every fail-safe triggered and recovered.
-5. **Ocean launch (June–July).** Launch from Nova Scotia or Newfoundland on a settled forecast. After landfall it switches to roaming mode.
+5. **Ocean launch (May).** Drop it about 25 km off Ocean City, Maryland, from a charter boat on a settled forecast, clear of the shipping lanes into Delaware Bay and the Chesapeake. After landfall it switches to roaming mode.
 
 ## Things to watch out for
 
@@ -156,18 +156,18 @@ The top three entries in this table account for most lost ocean robots. That's w
 | **Fouling** by weed, fishing line or barnacles | Sweep back the keel and rudder leading edges, use antifouling paint, and don't fit an exposed propeller. |
 | **Humidity killing the electronics** | Use desiccant and a humidity sensor, conformal-coat the boards, and pot the connectors. |
 | **Running out of power** in long grey spells | Deep-sleep the electronics. Go to safe mode below 25% (heave-to, report every 12 h), and only run the thruster above 70%. |
-| **Cold** further north | LiFePO4 must not be charged below 0 °C. Have the ESP32 cut charging below 2 °C, and mount the battery low, against the hull below the waterline. |
+| **Hurricanes** and Gulf Stream storms | Hurricane season runs June to November and peaks mid-August to mid-October. Launch in May so the boat is well east before the peak, watch the National Hurricane Center outlook, and send a new route to steer it away from forecast tracks. Wind against the Gulf Stream builds steep, breaking seas: the simulator gives about 5 times as many knockdowns on this route as from Newfoundland. Keep the ESP32 cutting charging below 2 °C. |
 | **Ship strike, or capture by fishing boats** | Use hi-vis paint and a radar reflector, avoid shipping lanes with geofences, and fit an ID plate with your contact details. |
 | **Software hang** | Use a hardware watchdog and boot into safe mode. The autopilot should keep sailing even if the ESP32 dies. |
 | **Supplier parts not matching the drawings** | Measure servo tab spacing, the AS5600 board, the antenna footprint and the enclosure before printing the mounts. |
 | **Lead casting** | Cast outdoors with a face shield and gloves, and keep the mould bone-dry: steam in a damp mould can make molten lead explode. Never pour lead into a 3D print. |
-| **Legal liability** | An uncrewed roaming vessel is your responsibility. Check Transport Canada and Canadian Coast Guard rules for the launch and Irish/UK rules for the arrival, talk to a marine insurer, and publish the boat's live position. |
+| **Legal liability** | An uncrewed roaming vessel is your responsibility. Check US Coast Guard rules for the launch and the rules wherever it lands (Ireland, the UK or France), talk to a marine insurer, and publish the boat's live position. |
 
 **Design numbers not yet verified by testing:** self-righting from 180°, the waterline at 21 kg, the wing's balance on the spar, and real-world solar output on a 40 cm deck.
 
 ## Odds of success
 
-A first attempt has roughly a 10–20% chance of reaching Europe still sailing and reporting. These are judgment calls, anchored on the record of comparable boats.
+A first attempt has roughly a 10–20% chance of reaching Europe still sailing and reporting. These are judgment calls, anchored on the record of comparable boats. The longer route (about 5,400 km instead of 3,000) and hurricane season put it toward the lower end.
 
 | Scenario | Estimated odds |
 | --- | --- |
@@ -177,21 +177,22 @@ A first attempt has roughly a 10–20% chance of reaching Europe still sailing a
 
 **The reference point.** More than 30 teams tried the Microtransat crossing over 16 years ([Science Times](https://www.sciencetimes.com/articles/62633/20260922/robotic-sailboat-crosses-atlantic-after-traveling-5400-kilometers-without-human-intervention.htm)). Only two have finished. One sailed from Newfoundland to Ireland in 79 days in 2018 ([Slashdot / AP](https://hardware.slashdot.org/story/18/09/06/1719243/robot-boat-sails-into-history-by-finishing-atlantic-crossing)). The other was Oshen's 1.2 m C-Star, which crossed east to west in 127 days in 2026 ([Interesting Engineering](https://interestingengineering.com/transportation/tiny-autonomous-boat-crosses-atlantic-microtransat)). That's a base rate of about 5–7%.
 
-**Why this boat should beat the base rate:** westerlies and the Gulf Stream push east even when the boat is drifting; you can command it from shore, which Microtransat rules forbid; and keeping the satellite link alive means a crippled boat still gets tracked.
+**Why this boat should beat the base rate:** westerlies and the Gulf Stream push east even when the boat is drifting; you can command it from shore, which Microtransat rules forbid; and keeping the satellite link alive means a crippled boat still gets tracked. The simulator, on invented weather without hurricanes, gives 51% (95% range 41–61%) on the Mid-Atlantic route against 47.5% from Newfoundland. Crossings take about 102 days instead of 82, and about 6% of boats were disabled early and drifted ashore in Nova Scotia, New England or Newfoundland. Read those as a comparison between routes, not as real odds.
 
 **What raises the odds most**
 
 1. Pass every gate, especially the 3-week unattended coastal trial.
 2. Build two hulls: learn from the first loss, then launch the second.
 3. Make leaks impossible rather than unlikely.
-4. Launch in June so the crossing ends before the autumn gales.
+4. Launch in May, so most of the crossing is done before the peak of hurricane season and the autumn gales.
 
 ## Open decisions
 
 - [ ] Thruster in version 1, or sail-only? Sail-only saves $270 and removes a leak path.
 - [ ] Accept going over budget (about $2,290), or take the trims to get to about $2,000?
 - [ ] Lower the battery onto a hull-bonded cooling plate below the waterline? (Recommended.)
-- [ ] Launch from Nova Scotia or Newfoundland. Newfoundland is about 1,000 km closer to Ireland.
+- [ ] Launch site: Ocean City, Maryland (the default), Virginia Beach or Cape May. In the simulator they came out within about two weeks of each other, so choose on access, ship traffic and distance to the Gulf Stream.
+- [ ] Target: south-west Ireland (the default; any European landfall also counts). Brittany or Cornwall take about as long but sit beside the busiest shipping lanes in Europe. Galicia or Portugal take 3–6 weeks longer. Decide too whether a landfall in the Azores counts.
 - [ ] Who recovers the boat after the coastal trial, and how?
 
 ## Related documents and sources

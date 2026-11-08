@@ -17,9 +17,9 @@ The plan is a 1.5 m sealed, self-righting sailboat. It sails west to east across
 | Average power draw | Under 1.5 W while sailing |
 | Comms | Iridium SBD, two-way, a report every 1–6 h |
 | Endurance goal | 6+ months, no maintenance |
-| Route | Nova Scotia or Newfoundland to Ireland, June–August |
+| Route | Mid-Atlantic coast (Maryland, Virginia or New Jersey) to Europe, aiming for south-west Ireland; launch in May |
 
-The launch date is open, so the plan is built around testing gates, not deadlines. A realistic first ocean attempt is summer 2028, after a full year of lake and coastal trials. Summer 2027 is possible only if every trial passes on the first try.
+The launch date is open, so the plan is built around testing gates, not deadlines. A realistic first ocean attempt is May 2028, after a full year of lake and coastal trials. May 2027 is possible only if every trial passes on the first try.
 
 ## System architecture
 
@@ -156,6 +156,19 @@ Every part below runs on 12.8 V or 5 V and works with stock ArduPilot. The picks
 - **Effect in the simulator:** the boat stays at about 21 kg with a stronger righting curve (GM 0.20 m vs 0.11 m). Crossings run about 4 days faster in identical weather (about 80 vs 84 days).
 - **Parts:** spar clamp P08 gains a forward socket; new pod P18. Supplies add about 1 kg of lead shot and 246 mm more 12 mm carbon tube (about $10 extra).
 
+**Changed: launch from the Mid-Atlantic (Nov 8, 2026)**
+
+The boat now launches about 25 km off the Mid-Atlantic coast (Ocean City, Maryland by default) and aims for south-west Ireland; any landfall in Europe counts. The route rides the Gulf Stream and the North Atlantic Current and passes south of the Grand Banks at 42°N, 48°W. It is about 5,400 km instead of 3,000, and a May launch keeps most of it ahead of peak hurricane season.
+
+| From Ocean City, MD to | Crossing time, no failures (May and June starts) |
+| --- | --- |
+| South-west Ireland | 99–100 days |
+| Brittany or Cornwall | 98–99 days |
+| Galicia, Spain | 125–126 days |
+| Portugal | 139–144 days |
+
+These come from the simulator on invented weather, without hurricanes. Virginia Beach and Cape May took 113–119 days to Ireland, but that gap comes from where the invented weather puts the Gulf Stream, so don't choose a launch site on it. With failures switched on, 51% of 100 voyages (April–July starts) reached Europe still reporting, against 47.5% from Newfoundland.
+
 ## Budget
 
 The recommended parts total about $2,280 with the thruster and $2,010 without it. Both are over the $2,000 limit, so the boat needs to be sail-only plus one or two savings. Airtime is a separate running cost of $40–$60 a month.
@@ -178,7 +191,7 @@ The work runs in five phases, and you should take about 9–13 months of build t
 
 &#91;embedded content: build and test roadmap · 5 phases, 4 gates\]
 
-The lake prototype is cheap on purpose. Its job is to break first, so the ocean boat doesn't. Ocean launches only make sense in June or July, so a missed gate costs a year. Plan the build to finish a few months before summer.
+The lake prototype is cheap on purpose. Its job is to break first, so the ocean boat doesn't. Ocean launches only make sense in May, ahead of hurricane season, so a missed gate costs a year. Plan the build to finish by early spring.
 
 ## Risks, failure modes, legal and safety
 
@@ -190,6 +203,7 @@ The boat is most likely to be lost to water getting in, steering failure, or fou
 | Rudder or wing-tail actuator failure | High | Oversized bearings; worm-gear actuators that hold position with no power; wing designed to weathervane safely if the tail fails |
 | Fouling by weed, fishing line or barnacles | High | Swept-back leading edges; antifouling paint; no exposed propeller (use a rim drive or ducted thruster) |
 | Knockdown or rollover in a gale | Medium | Self-righting from 180°; rigid wing with no sheets; everything strapped down |
+| Hurricane, or a gale against the Gulf Stream | Medium | Launch in May; follow the National Hurricane Center outlook and send a new route away from forecast tracks; self-righting with no sheets |
 | Power starvation in a long overcast spell | Medium | Deep-sleep budget under 1.5 W; safe mode below 25%; thruster disabled below 70% |
 | Collision with a ship | Low–medium | Hi-vis paint and radar reflector; avoid shipping lanes with geofences; consider an AIS transponder later |
 | Software hang | Medium | Hardware watchdog; boots into safe mode; autopilot keeps sailing if the ESP32 dies |
@@ -198,6 +212,6 @@ The boat is most likely to be lost to water getting in, steering failure, or fou
 **Legal and responsibility**
 
 - A roaming uncrewed vessel is your responsibility, including any harm it causes. Talk to a marine insurer before launch.
-- Check the rules with the Canadian Coast Guard and Transport Canada for the launch, and with Irish authorities for the arrival. Rules for small autonomous surface vessels are still evolving.
+- Check the rules with the US Coast Guard for the launch, and with Irish, UK or French authorities for the arrival. Rules for small autonomous surface vessels are still evolving.
 - Iridium modems are type-approved, so you don't need a radio licence for the RockBLOCK.
 - Post the boat's live position publicly, as Microtransat teams do, so other mariners and authorities can see it.

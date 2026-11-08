@@ -101,7 +101,7 @@ function drawMap(tracks, markers) {
 function showVoyage(r, isDemo) {
   resetCharts();
   $("#note").style.display = isDemo ? "block" : "none";
-  $("#note").textContent = "Demo: one voyage of the Rev B design (wing counterweight on a forward arm) in the simulator's synthetic (invented) weather, with random failures switched off. Open your own results to see real historic-weather runs.";
+  $("#note").textContent = "Demo: one voyage of the Rev B design from off Ocean City, Maryland to south-west Ireland in the simulator's synthetic (invented) weather, with random failures switched off. Open your own results to see real historic-weather runs.";
   const good = r.outcome === "arrived_reporting";
   const lastFail = (r.failures || []).slice(-1)[0];
   $("#cards").innerHTML = [
@@ -138,7 +138,7 @@ function showVoyage(r, isDemo) {
 function showMC(r, isDemo) {
   resetCharts(); const s = r.summary;
   $("#note").style.display = isDemo ? "block" : "none";
-  $("#note").textContent = "Demo: 40 Monte Carlo runs of the Rev B design in synthetic (invented) weather with the default hazard rates and June starts. Open your own results for historic-weather odds.";
+  $("#note").textContent = "Demo: 100 Monte Carlo runs of the Rev B design, Ocean City, MD to south-west Ireland, April-July starts, in synthetic (invented) weather with the default hazard rates. No hurricanes are modelled. Open your own results for historic-weather odds.";
   $("#cards").innerHTML = [
     card("Reaches Europe, still reporting", fmt(s.success_percent, 0) + "%", `95% range ${s.success_ci95[0]}-${s.success_ci95[1]}% of ${s.runs} runs`, "good"),
     card("Reaches Europe at all", fmt(s.any_arrival_percent, 0) + "%", "including silent arrivals"),

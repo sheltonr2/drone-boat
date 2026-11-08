@@ -1,0 +1,386 @@
+[
+{
+"site": "Cape May NJ",
+"target": "SW Ireland",
+"date": "2024-05-01",
+"outcome": "arrived_reporting",
+"days": 114.26,
+"km": 5354.4,
+"gc_km": 5105,
+"end": [
+51.21,
+-10.23
+],
+"sog": 1.05,
+"airtime": 146.01,
+"minsoc": 0.903
+},
+{
+"site": "Cape May NJ",
+"target": "SW Ireland",
+"date": "2024-06-01",
+"outcome": "arrived_reporting",
+"days": 118.59,
+"km": 5365.7,
+"gc_km": 5105,
+"end": [
+51.19,
+-10.22
+],
+"sog": 1.02,
+"airtime": 151.55,
+"minsoc": 0.903
+},
+{
+"site": "Cape May NJ",
+"target": "Brittany / Cornwall",
+"date": "2024-05-01",
+"outcome": "arrived_reporting",
+"days": 112.52,
+"km": 5613.8,
+"gc_km": 5460,
+"end": [
+48.62,
+-6.14
+],
+"sog": 1.12,
+"airtime": 143.84,
+"minsoc": 0.903
+},
+{
+"site": "Cape May NJ",
+"target": "Brittany / Cornwall",
+"date": "2024-06-01",
+"outcome": "arrived_reporting",
+"days": 117.97,
+"km": 5632.2,
+"gc_km": 5460,
+"end": [
+48.71,
+-6.12
+],
+"sog": 1.07,
+"airtime": 150.72,
+"minsoc": 0.903
+},
+{
+"site": "Cape May NJ",
+"target": "Galicia, Spain",
+"date": "2024-05-01",
+"outcome": "arrived_reporting",
+"days": 139.66,
+"km": 5516.1,
+"gc_km": 5356,
+"end": [
+43.38,
+-9.71
+],
+"sog": 0.89,
+"airtime": 178.44,
+"minsoc": 0.903
+},
+{
+"site": "Cape May NJ",
+"target": "Galicia, Spain",
+"date": "2024-06-01",
+"outcome": "arrived_reporting",
+"days": 140.91,
+"km": 5551.6,
+"gc_km": 5356,
+"end": [
+43.4,
+-9.68
+],
+"sog": 0.89,
+"airtime": 180.1,
+"minsoc": 0.902
+},
+{
+"site": "Cape May NJ",
+"target": "Portugal",
+"date": "2024-05-01",
+"outcome": "arrived_reporting",
+"days": 151.23,
+"km": 5694.8,
+"gc_km": 5479,
+"end": [
+39.7,
+-9.86
+],
+"sog": 0.85,
+"airtime": 193.3,
+"minsoc": 0.903
+},
+{
+"site": "Cape May NJ",
+"target": "Portugal",
+"date": "2024-06-01",
+"outcome": "arrived_reporting",
+"days": 141.79,
+"km": 5679.7,
+"gc_km": 5479,
+"end": [
+39.69,
+-9.87
+],
+"sog": 0.9,
+"airtime": 181.19,
+"minsoc": 0.903
+},
+{
+"site": "Ocean City MD",
+"target": "SW Ireland",
+"date": "2024-05-01",
+"outcome": "arrived_reporting",
+"days": 98.85,
+"km": 5387.1,
+"gc_km": 5146,
+"end": [
+51.17,
+-10.19
+],
+"sog": 1.23,
+"airtime": 126.37,
+"minsoc": 0.903
+},
+{
+"site": "Ocean City MD",
+"target": "SW Ireland",
+"date": "2024-06-01",
+"outcome": "arrived_reporting",
+"days": 100.44,
+"km": 5370.5,
+"gc_km": 5146,
+"end": [
+51.21,
+-10.23
+],
+"sog": 1.2,
+"airtime": 128.33,
+"minsoc": 0.903
+},
+{
+"site": "Ocean City MD",
+"target": "Brittany / Cornwall",
+"date": "2024-05-01",
+"outcome": "arrived_reporting",
+"days": 98.76,
+"km": 5641.4,
+"gc_km": 5499,
+"end": [
+48.71,
+-6.12
+],
+"sog": 1.29,
+"airtime": 126.2,
+"minsoc": 0.903
+},
+{
+"site": "Ocean City MD",
+"target": "Brittany / Cornwall",
+"date": "2024-06-01",
+"outcome": "arrived_reporting",
+"days": 97.72,
+"km": 5634.9,
+"gc_km": 5499,
+"end": [
+48.64,
+-6.14
+],
+"sog": 1.3,
+"airtime": 124.89,
+"minsoc": 0.903
+},
+{
+"site": "Ocean City MD",
+"target": "Galicia, Spain",
+"date": "2024-05-01",
+"outcome": "arrived_reporting",
+"days": 125.27,
+"km": 5539.0,
+"gc_km": 5389,
+"end": [
+43.39,
+-9.69
+],
+"sog": 0.99,
+"airtime": 160.08,
+"minsoc": 0.903
+},
+{
+"site": "Ocean City MD",
+"target": "Galicia, Spain",
+"date": "2024-06-01",
+"outcome": "arrived_reporting",
+"days": 126.41,
+"km": 5554.1,
+"gc_km": 5389,
+"end": [
+43.42,
+-9.64
+],
+"sog": 0.99,
+"airtime": 161.55,
+"minsoc": 0.903
+},
+{
+"site": "Ocean City MD",
+"target": "Portugal",
+"date": "2024-05-01",
+"outcome": "arrived_reporting",
+"days": 139.43,
+"km": 5671.8,
+"gc_km": 5508,
+"end": [
+39.66,
+-9.92
+],
+"sog": 0.92,
+"airtime": 178.19,
+"minsoc": 0.903
+},
+{
+"site": "Ocean City MD",
+"target": "Portugal",
+"date": "2024-06-01",
+"outcome": "arrived_reporting",
+"days": 143.95,
+"km": 5697.5,
+"gc_km": 5508,
+"end": [
+39.69,
+-9.87
+],
+"sog": 0.89,
+"airtime": 183.95,
+"minsoc": 0.902
+},
+{
+"site": "Virginia Beach VA",
+"target": "SW Ireland",
+"date": "2024-05-01",
+"outcome": "arrived_reporting",
+"days": 113.34,
+"km": 5534.2,
+"gc_km": 5305,
+"end": [
+51.18,
+-10.2
+],
+"sog": 1.1,
+"airtime": 144.9,
+"minsoc": 0.904
+},
+{
+"site": "Virginia Beach VA",
+"target": "SW Ireland",
+"date": "2024-06-01",
+"outcome": "arrived_reporting",
+"days": 115.73,
+"km": 5530.8,
+"gc_km": 5305,
+"end": [
+51.18,
+-10.2
+],
+"sog": 1.08,
+"airtime": 147.91,
+"minsoc": 0.903
+},
+{
+"site": "Virginia Beach VA",
+"target": "Brittany / Cornwall",
+"date": "2024-05-01",
+"outcome": "arrived_reporting",
+"days": 112.18,
+"km": 5791.2,
+"gc_km": 5655,
+"end": [
+48.65,
+-6.14
+],
+"sog": 1.16,
+"airtime": 143.41,
+"minsoc": 0.904
+},
+{
+"site": "Virginia Beach VA",
+"target": "Brittany / Cornwall",
+"date": "2024-06-01",
+"outcome": "arrived_reporting",
+"days": 114.91,
+"km": 5792.7,
+"gc_km": 5655,
+"end": [
+48.63,
+-6.14
+],
+"sog": 1.13,
+"airtime": 146.85,
+"minsoc": 0.903
+},
+{
+"site": "Virginia Beach VA",
+"target": "Galicia, Spain",
+"date": "2024-05-01",
+"outcome": "arrived_reporting",
+"days": 141.16,
+"km": 5648.0,
+"gc_km": 5533,
+"end": [
+43.31,
+-9.8
+],
+"sog": 0.9,
+"airtime": 180.35,
+"minsoc": 0.904
+},
+{
+"site": "Virginia Beach VA",
+"target": "Galicia, Spain",
+"date": "2024-06-01",
+"outcome": "arrived_reporting",
+"days": 140.9,
+"km": 5680.7,
+"gc_km": 5533,
+"end": [
+43.39,
+-9.68
+],
+"sog": 0.91,
+"airtime": 179.85,
+"minsoc": 0.902
+},
+{
+"site": "Virginia Beach VA",
+"target": "Portugal",
+"date": "2024-05-01",
+"outcome": "arrived_reporting",
+"days": 154.11,
+"km": 5818.6,
+"gc_km": 5644,
+"end": [
+39.61,
+-9.98
+],
+"sog": 0.85,
+"airtime": 196.95,
+"minsoc": 0.904
+},
+{
+"site": "Virginia Beach VA",
+"target": "Portugal",
+"date": "2024-06-01",
+"outcome": "arrived_reporting",
+"days": 159.69,
+"km": 5798.2,
+"gc_km": 5644,
+"end": [
+39.63,
+-9.96
+],
+"sog": 0.82,
+"airtime": 204.15,
+"minsoc": 0.898
+}
+]

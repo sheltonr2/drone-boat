@@ -3,6 +3,7 @@
   python -m drone_sim.cli voyage  --scenario my_scenario.json [--design my_design.json] [--out result.json]
   python -m drone_sim.cli mc      --scenario my_scenario.json --runs 200 --from 2022-06-01 --to 2022-06-30 --years 2022,2023,2024
   python -m drone_sim.cli selftest            # checks Open-Meteo access and unit conversions
+  python -m drone_sim.cli gridcheck [--scenario s.json]   # same voyage on a 1.0 and a 0.25 degree weather grid
 """
 import argparse, json, os, sys, time
 from . import design as D
@@ -13,7 +14,7 @@ from .server import jsonable, CACHE
 
 def main():
     ap = argparse.ArgumentParser(prog="drone_sim")
-    ap.add_argument("cmd", choices=["voyage", "mc", "selftest"])
+    ap.add_argument("cmd", choices=["voyage", "mc", "selftest", "gridcheck"])
     ap.add_argument("--scenario"); ap.add_argument("--design"); ap.add_argument("--out")
     ap.add_argument("--runs", type=int, default=100); ap.add_argument("--from", dest="frm"); ap.add_argument("--to")
     ap.add_argument("--years", default=""); ap.add_argument("--processes", type=int)
@@ -40,6 +41,20 @@ def main():
             print("Open-Meteo OK" if ok else "Open-Meteo returned no marine data at this point")
         except Exception as e:
             print(f"    Open-Meteo not reachable ({e}). Check your internet connection; synthetic weather still works.")
+        return
+    if a.cmd == "gridcheck":
+        # Idea from jcolter11374/boat-sim #50: does a 1-degree grid blur the Gulf Stream core?
+        # The 0.25-degree run makes about 16x as many Open-Meteo calls the first time (then cached).
+        sc0 = dict(sc, failures_enabled=False)
+        out = {}
+        for res in (1.0, 0.25):
+            r = run_voyage(design, dict(sc0, grid_deg=res), cache_dir=CACHE)
+            out[res] = r
+            print(f"grid {res:>4} deg: {r['outcome']}, {r['days']} days, {r['distance_km']} km, "
+                  f"mean speed {r['stats']['mean_sog_kn']} kn")
+        dd = out[0.25]["days"] - out[1.0]["days"]
+        print(f"Difference: {dd:+.1f} days. Under about 3 days means the 1-degree grid is fine for Monte Carlo; "
+              f"more than that, run Monte Carlo with \"grid_deg\": 0.25 (or 0.5) in your scenario file.")
         return
     if a.cmd == "voyage":
         r = run_voyage(design, sc, cache_dir=CACHE)

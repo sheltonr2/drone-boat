@@ -173,11 +173,17 @@ function updateRoute() {
 $$(".mapmode").forEach(b => b.onclick = () => { $$(".mapmode").forEach(x => x.classList.toggle("active", x === b)); S.mapMode = b.dataset.mode; });
 $("#btn-clear-wp").onclick = () => { S.waypoints = []; updateRoute(); };
 ["#s-lat", "#s-lon", "#t-lat", "#t-lon"].forEach(id => $(id).onchange = updateRoute);
-const PRESETS = { nf: { s: [47.3, -52.3], t: [53.3, -10.2], time: "2024-06-10T12:00" }, ns: { s: [44.4, -63.3], t: [53.3, -10.2], time: "2024-06-05T12:00" },
+const MA_WP = [[42.0, -48.0]];   // south of the Grand Banks
+const PRESETS = { ocmd: { s: [38.25, -74.65], t: [51.35, -9.7], w: MA_WP, time: "2024-05-15T12:00" },
+                  vab: { s: [36.85, -75.55], t: [51.35, -9.7], w: MA_WP, time: "2024-05-15T12:00" },
+                  cm: { s: [38.75, -74.55], t: [51.35, -9.7], w: MA_WP, time: "2024-05-15T12:00" },
+                  ocbr: { s: [38.25, -74.65], t: [48.6, -5.6], w: MA_WP, time: "2024-05-15T12:00" },
+                  ocpt: { s: [38.25, -74.65], t: [39.4, -9.6], w: [[39.5, -45.0]], time: "2024-05-15T12:00" },
+                  nf: { s: [47.3, -52.3], t: [53.3, -10.2], time: "2024-06-10T12:00" },
                   ca: { s: [27.9, -15.3], t: [13.1, -59.4], time: "2024-05-07T12:00" } };
 $("#preset").onchange = (e) => { const p = PRESETS[e.target.value]; if (!p) return;
   $("#s-lat").value = p.s[0]; $("#s-lon").value = p.s[1]; $("#t-lat").value = p.t[0]; $("#t-lon").value = p.t[1]; $("#s-time").value = p.time;
-  S.waypoints = []; updateRoute(); S.maps.scn.fitBounds([p.s, p.t], { padding: [40, 40] }); };
+  S.waypoints = (p.w || []).map(w => w.slice()); updateRoute(); S.maps.scn.fitBounds([p.s, p.t], { padding: [40, 40] }); };
 $("#s-mode").onchange = () => {
   const six = $("#s-mode").value === "6dof";
   const days = +$("#s-days").value || 1, dt = +$("#s-dt6").value;
@@ -209,7 +215,7 @@ $("#btn-add-cmd").onclick = () => {
 };
 function scenario() {
   return { start: { lat: +$("#s-lat").value, lon: +$("#s-lon").value }, target: { lat: +$("#t-lat").value, lon: +$("#t-lon").value },
-    waypoints: S.waypoints, start_time: $("#s-time").value + ":00", max_days: +$("#s-days").value, provider: $("#s-provider").value,
+    waypoints: S.waypoints, atlantic_islands_count: $("#s-isles").checked, start_time: $("#s-time").value + ":00", max_days: +$("#s-days").value, provider: $("#s-provider").value,
     grid_deg: +$("#s-grid").value, arrival_radius_km: +$("#s-radius").value, seed: +$("#s-seed").value, mode: $("#s-mode").value,
     dt_s: +$("#s-dt").value, dt_6dof_s: +$("#s-dt6").value, log_interval_min: +$("#s-log").value,
     failures_enabled: $("#s-fail").checked, failures: S.failures, commands: S.commands };
@@ -219,6 +225,7 @@ function fillScenario(sc) {
   $("#s-time").value = sc.start_time.slice(0, 16); $("#s-days").value = sc.max_days; $("#s-provider").value = sc.provider;
   $("#s-radius").value = sc.arrival_radius_km; $("#s-seed").value = sc.seed; $("#s-mode").value = sc.mode; $("#s-dt").value = sc.dt_s;
   $("#s-log").value = sc.log_interval_min; $("#s-fail").checked = sc.failures_enabled;
+  S.waypoints = (sc.waypoints || []).map(w => w.slice()); $("#s-isles").checked = !!sc.atlantic_islands_count;
 }
 
 /* ---------------- run ---------------- */
