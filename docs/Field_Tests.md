@@ -1,0 +1,65 @@
+# Field tests: replacing the simulator's guesses with measurements
+
+The simulator's speed and stability rest on a few numbers nobody has measured yet: how hard the water drags on the hull, how stiff the boat is, and how much the solar panels really deliver. About half a day of tests on the finished boat replaces those guesses. Do them during build gate 3, before the coastal trial.
+
+This page is adapted from John's tow test for his kayak drone ([jcolter11374/boat-sim](https://github.com/jcolter11374/boat-sim), `docs/tow-test.md`).
+
+**People:** two. **Water:** at least 1.5 m deep (the keel reaches about 0.56 m down), flat and with little wind.
+
+## What you need
+
+- The boat **fully built at sailing weight** (about 20.8 kg), wing fitted and balanced.
+- A **digital hanging scale reading to 1 g** with at least a 1 kg range (a pocket "fishing" or jewellery hanging scale). The pulls are small: about 60 g at 1 knot and 750 g at 3 knots.
+- 15 m of **floating line**, a **phone GPS speed app**, and a phone **inclinometer** app.
+- A **1 kg weight** (a bag of lead shot or a water bottle) and a tape measure.
+- A **bathroom or luggage scale** to weigh the whole boat.
+- For test E, an inline **DC watt-hour meter** between the charge controller and the battery.
+
+## Test A: tow drag (2 hours)
+
+1. Tie the hanging scale between the tow line and the bow. Tow from the side of the towing boat, out of its wake.
+2. Centre the rudder and tape the wing's tail at 0°, so the wing points into the wind and makes no push.
+3. Tow at a steady **1.0 knot** by GPS for one minute and film the scale. Then turn and repeat the other way.
+4. Repeat at **1.5, 2.0, 2.5 and 3.0 knots**. Average each pair of runs, which cancels any current.
+
+What the model expects today:
+
+| Speed (knots) | 1.0 | 1.5 | 2.0 | 2.5 | 3.0 |
+| --- | --- | --- | --- | --- | --- |
+| Pull (kg) | 0.062 | 0.142 | 0.269 | 0.462 | 0.746 |
+
+Fit the hull's drag factor from your readings:
+
+```
+python -m drone_sim.calibrate tow 1,1.5,2,2.5,3 <your five pulls in kg, comma separated>
+```
+
+It prints the new `form_factor` and how well the fit matches. Put it in your design file under `"hydro"`.
+
+## Test B: inclining (30 minutes)
+
+This measures GM, the boat's stiffness against heeling. It is the number the self-righting and knockdown results depend on.
+
+1. Weigh the whole boat.
+2. Float it in still water, sheltered from wind, with the wing removed or tied fore and aft. Zero the inclinometer on the deck.
+3. Put the 1 kg weight on the centreline, then move it **30 cm to one side** and read the heel angle. Move it 30 cm to the other side and read again.
+
+The model expects about **4.1°** for 1 kg moved 30 cm. Work out the real GM:
+
+```
+python -m drone_sim.calibrate incline 1.0 0.30 <heel angles in degrees, comma separated> --mass <weighed kg>
+```
+
+If the measured GM is more than about 15% below the model's 0.20 m, find out why (a heavy deck fitting, or a light bulb) before going to sea.
+
+## Test C: self-righting (15 minutes)
+
+Roll the boat fully upside down by hand and let go. It must come back upright on its own every time, from both sides. Then try 90° with the wing flat on the water. This is build gate 3. Film it.
+
+## Test D: wing balance (at assembly)
+
+With the wing, tail, boom, arm and pod assembled on the spar, add lead shot to pod P18 until the rig sits level at any heading with the tail at 0°. Write down the lead you used. The model expects about **0.8 kg**. More than 1.0 kg means the tail end came out heavy, so update `"tail": {"kg": ...}` in the design file.
+
+## Test E: solar day (one sunny day, on the bench)
+
+Leave the finished boat in full sun from dawn to dusk with the electronics running, and read the watt-hours the meter logged going into the battery. Compare with the simulator's solar output for that date and place. If the measured value is lower, adjust `"soiling_salt"` under `"power"` until it matches.

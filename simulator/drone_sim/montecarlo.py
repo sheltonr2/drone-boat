@@ -109,9 +109,21 @@ def summarize(results):
         den = 1 + z*z/n; c = (ph + z*z/(2*n))/den; h = z*math.sqrt(ph*(1 - ph)/n + z*z/(4*n*n))/den
         return [round(100*max(c - h, 0), 1), round(100*min(c + h, 1), 1)]
     success = pct("arrived_reporting")
+    # Odds by launch month (idea from jcolter11374/boat-sim): which months to launch in.
+    by_month = {}
+    for r in ok:
+        mth = (r.get("start_time") or "")[:7][-2:]
+        if not mth.isdigit():
+            continue
+        b = by_month.setdefault(mth, dict(runs=0, arrived_reporting=0))
+        b["runs"] += 1; b["arrived_reporting"] += r["outcome"] == "arrived_reporting"
+    for b in by_month.values():
+        b["success_percent"] = round(100*b["arrived_reporting"]/b["runs"], 1)
+        b["success_ci95"] = ci(b["success_percent"], b["runs"])
+    by_month = dict(sorted(by_month.items()))
     return dict(runs=len(ok), errors=len(results) - len(ok), counts=counts,
                 percent={k: pct(k) for k in OUTCOMES},
-                success_percent=success, success_ci95=ci(success, n),
+                success_percent=success, success_ci95=ci(success, n), by_launch_month=by_month,
                 any_arrival_percent=round(pct("arrived_reporting") + pct("arrived_silent"), 1),
                 arrival_days=dict(median=float(np.median(arr)) if arr else None,
                                   p10=float(np.percentile(arr, 10)) if arr else None,

@@ -154,6 +154,12 @@ function showMC(r, isDemo) {
   const bins = {}; (s.arrival_days.all || []).forEach(d => { const b = Math.floor(d / 5) * 5; bins[b] = (bins[b] || 0) + 1; });
   const ks = Object.keys(bins).map(Number).sort((a, b) => a - b);
   addChart("Days to arrival", { type: "bar", data: { labels: ks.map(k => `${k}-${k + 5}`), datasets: [{ data: ks.map(k => bins[k]), backgroundColor: "#1f5fa8" }] }, options: { plugins: { legend: { display: false } } } });
+  const bm = s.by_launch_month || {}; const MN = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const mk = Object.keys(bm).sort();
+  if (mk.length) addChart("Odds by launch month (dot = reaches Europe reporting, bar = 95% range)", { type: "bar", data: { labels: mk.map(k => `${MN[+k - 1]} (${bm[k].runs} runs)`), datasets: [
+      { type: "bar", label: "95% range", data: mk.map(k => bm[k].success_ci95), backgroundColor: "rgba(31,95,168,.18)", barPercentage: 0.35 },
+      { type: "line", label: "reaches Europe reporting (%)", data: mk.map(k => bm[k].success_percent), showLine: false, pointRadius: 5, borderColor: "#1f5fa8", backgroundColor: "#1f5fa8" }] },
+    options: { scales: { y: { min: 0, max: 100 } }, plugins: { legend: { display: false } } } });
   addChart("What ended the failed runs", { type: "bar", data: { labels: Object.keys(s.failure_causes), datasets: [{ data: Object.values(s.failure_causes), backgroundColor: "#c0392b" }] }, options: { indexAxis: "y", plugins: { legend: { display: false } } } });
   $("#tbl-title").textContent = "Runs";
   $("#tbl").innerHTML = "<tr><th>#</th><th>Start</th><th>Outcome</th><th>Days</th><th>km</th><th>Airtime</th><th>What happened</th></tr>" +

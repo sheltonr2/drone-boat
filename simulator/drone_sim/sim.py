@@ -272,12 +272,20 @@ class Voyage:
                     ground_included=False)
 
     # -------------------------------------------------------------- power
+    def solar_derate(self, e):
+        """Panel-to-battery losses: salt and soiling, MPPT, wiring, and hot cells.
+        Cell temperature from the NOCT model, T_cell = T_air + (NOCT - 20) x G / 800."""
+        P = self.d["power"]
+        t_cell = e["air_t"] + (P.get("noct_c", 45.0) - 20.0)*max(e["sw_rad"], 0.0)/800.0
+        temp = max(0.0, 1.0 + P.get("temp_coeff_per_c", 0.0)*(t_cell - 25.0))
+        return P.get("soiling_salt", 0.9)*P.get("mppt_eff", 1.0)*P.get("wiring_eff", 1.0)*temp
+
     def power_step(self, st, e, dec, res, dt, t):
         P = self.d["power"]
         cap = P["battery_wh"]
         heel = math.radians(min(abs(res["heel"]), 90))
-        sun = 0.0 if (st["inverted"] or st["knocked"]) else e["sw_rad"]*P["panel_area_m2"]*P["panel_eff"]*math.cos(heel)*0.9
-        sun = min(sun, P["solar_peak_w"])
+        sun = 0.0 if (st["inverted"] or st["knocked"]) else e["sw_rad"]*P["panel_area_m2"]*P["panel_eff"]*math.cos(heel)
+        sun = min(sun, P["solar_peak_w"])*self.solar_derate(e)
         if e["sst"] + 1.0 < P["cold_charge_cutoff_c"]:
             sun = 0.0
         load = P["sleep_w"]

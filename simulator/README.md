@@ -112,3 +112,11 @@ python -m drone_sim.cli mc --scenario my_scenario.json --runs 200 --from 2022-06
 ## Results viewer
 
 `drone_sim/static/results_viewer.html` is a standalone page: open it in any browser (no server needed) and drop in a results `.json` exported from the Run or Monte Carlo tab (or written by the command line) to view and share the track, charts and odds.
+
+## Calibrating with field tests
+
+`python -m drone_sim.calibrate predict` prints what the model expects from the tow and inclining tests in
+[docs/Field_Tests.md](../docs/Field_Tests.md). Feed your measurements back with
+`python -m drone_sim.calibrate tow ...` (fits the hull drag factor) and `python -m drone_sim.calibrate incline ...`
+(measures GM). Solar losses (salt, charge controller, wiring, hot cells) are set under `"power"` in the design file
+and marked GUESS until the solar-day test is done. The Monte Carlo now reports the odds for each launch month.

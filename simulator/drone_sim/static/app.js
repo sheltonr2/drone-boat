@@ -343,6 +343,12 @@ function renderMC(r) {
     options: { plugins: { legend: { display: false } } } });
   chart("ch-causes", { type: "bar", data: { labels: Object.keys(s.failure_causes), datasets: [{ label: "runs", data: Object.values(s.failure_causes), backgroundColor: "#c0392b" }] },
     options: { indexAxis: "y", plugins: { legend: { display: false } } } });
+  const bm = s.by_launch_month || {}; const MN = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const mk = Object.keys(bm).sort();
+  chart("ch-months", { type: "bar", data: { labels: mk.map(k => `${MN[+k - 1]} (${bm[k].runs})`), datasets: [
+      { type: "bar", label: "95% range", data: mk.map(k => bm[k].success_ci95), backgroundColor: "rgba(31,95,168,.18)", barPercentage: 0.35 },
+      { type: "line", label: "reaches Europe reporting (%)", data: mk.map(k => bm[k].success_percent), showLine: false, pointRadius: 5, borderColor: "#1f5fa8", backgroundColor: "#1f5fa8" }] },
+    options: { scales: { y: { min: 0, max: 100, title: { display: true, text: "%" } } }, plugins: { legend: { display: false } } } });
   const m = S.maps.mc; if (S.layers.mc) m.removeLayer(S.layers.mc);
   const g = L.layerGroup().addTo(m); S.layers.mc = g; const pts = [];
   for (const run of r.runs) { if (!run.track) continue;

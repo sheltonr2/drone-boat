@@ -65,6 +65,12 @@ DEFAULT = {
         "servo_j_per_deg": 0.04, "modem_session_j": 6.0, "modem_failed_session_j": 10.0,
         "thruster_w": 35.0, "thruster_n": 6.0,
         "cold_charge_cutoff_c": 2.0,
+        # Solar losses (idea from jcolter11374/boat-sim vessel/power.py). GUESS = not yet measured.
+        "soiling_salt": 0.93,          # GUESS: salt film between rain showers
+        "mppt_eff": 0.95,              # GUESS: Genasun GV-5 at part load
+        "wiring_eff": 0.98,            # GUESS
+        "temp_coeff_per_c": -0.0037,   # GUESS: typical monocrystalline cell
+        "noct_c": 55.0,                # GUESS: semi-flexible panel bonded flat to the deck runs hot
     },
     "comms": {"report_interval_h": 4.0, "report_bytes": 45, "credit_usd": 0.12,
               "line_rental_usd_month": 17.0},
@@ -155,6 +161,8 @@ EDITABLE = [
     ("power.solar_peak_w", "Solar peak power", 5, 200, 1, "W"),
     ("power.panel_area_m2", "Solar panel area", 0.03, 1.2, 0.005, "m2"),
     ("power.battery_wh", "Battery capacity", 20, 1500, 5, "Wh"),
+    ("power.soiling_salt", "Solar: salt and soiling factor", 0.6, 1.0, 0.01, ""),
+    ("power.noct_c", "Solar: panel NOCT", 40, 70, 1, "C"),
     ("power.autopilot_w", "Autopilot power", 0.2, 5, 0.05, "W"),
     ("comms.report_interval_h", "Report interval", 0.5, 24, 0.5, "h"),
     ("autopilot.heel_limit_deg", "Heel limit", 10, 50, 1, "deg"),
