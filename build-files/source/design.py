@@ -63,6 +63,8 @@ MAST_TUBE = dict(od=60.3, id=52.5, top_z=250)          # 2 in. sch 40 PVC, bonde
 BEARING = dict(id=25, od=37, w=7, name="6805-2RS stainless")
 BOOM = dict(od=12.0, z=276, length=600)                # spar axis to tail pivot
 TAIL = dict(chord=120, span=200, pivot_from_le=24, bot_z=300, t=0.12, pivot_d=6)
+# Rev B: counterweight pod on a 12 mm carbon arm, pod axis 300 forward of the spar axis, at boom height
+CWARM = dict(reach=300, tube_len=246, od=12.0, z=276, pod_od=64, pod_h=74, pod_bot_z=264, lead_kg=0.8)
 
 # ---- deck & stern -------------------------------------------------------
 HATCH = dict(x0=330, x1=530, w=220, lid_margin=30)

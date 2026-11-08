@@ -223,20 +223,6 @@
   "res": 0.35,
   "sec": 66.2
  },
- "P08_spar_clamp_boom_socket": {
-  "pid": "P08",
-  "tris": 8840,
-  "watertight": true,
-  "bad_edges": 0,
-  "extent": [
-   98.0,
-   41.0,
-   40.0
-  ],
-  "volume_cm3": 61.4,
-  "res": 0.35,
-  "sec": 50.5
- },
  "P09_tail_servo_housing": {
   "pid": "P09",
   "tris": 7028,
@@ -278,5 +264,33 @@
   "volume_cm3": 113.8,
   "res": 0.35,
   "sec": 55.5
+ },
+ "P08_spar_clamp_two_sockets": {
+  "pid": "P08",
+  "tris": 11924,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   124.0,
+   56.5,
+   40.0
+  ],
+  "volume_cm3": 76.9,
+  "res": 0.35,
+  "sec": 52.6
+ },
+ "P18_counterweight_pod": {
+  "pid": "P18",
+  "tris": 8976,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   92.0,
+   64.0,
+   74.0
+  ],
+  "volume_cm3": 77.1,
+  "res": 0.35,
+  "sec": 63.6
  }
 }

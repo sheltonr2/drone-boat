@@ -138,22 +138,27 @@ def p07():
     solid = union(cyl(33, 0, 5), cyl(26.15, 5, 85))
     return diff(solid, cyl(14.5, -1, 86), cyl(18.525, -1, 7), cyl(18.525, 78, 86)), ((-33, 33), (-33, 33), (0, 85))
 
-@part("P08", "Spar clamp with tail-boom socket", 1, "ASA or PETG, 100% infill",
-      ["Clamps the 25 mm spar just below the wing root (2 x M5 bolts through the ears).",
-       "Boom: 12 mm carbon tube, 40 mm deep in the socket, pinned with an M4 bolt (D4.3 vertical hole).",
-       "Boom axis is 11 mm above the clamp's bottom face."],
-      {"Collar": "OD41, ID25.2 x 40", "Boom socket": "D12.2 x 40", "Ears": "20 x 24"})
+@part("P08", "Spar clamp with tail-boom and counterweight-arm sockets", 1, "ASA or PETG, 100% infill",
+      ["Rev B: clamps the 25 mm spar just below the wing root (2 x M5 bolts through the side ears).",
+       "Aft socket (+x): 12 mm carbon tail boom, 40 deep. Forward socket (-x): 12 mm carbon counterweight arm, 40 deep.",
+       "Pin each tube with an M4 bolt through the D4.3 vertical holes. Both tube axes are 11 mm above the bottom face.",
+       "Line the forward socket up with the wing chord: the arm must point straight at the wing's leading edge."],
+      {"Collar": "OD41, ID25.2 x 40", "Boom socket (aft)": "D12.2 x 40", "Arm socket (fwd)": "D12.2 x 40",
+       "Ears (side)": "24 x 22", "Overall": "124 x 57 x 40"})
 def p08():
     collar = cyl(20.5, 0, 40)
     boss = box(14, 62, -11, 11, 0, 22)
-    ears = box(-36, -14, -12, 12, 0, 40)
-    solid = union(collar, boss, ears)
+    fboss = box(-62, -14, -11, 11, 0, 22)
+    ears = box(-12, 12, 14, 36, 0, 40)
+    solid = union(collar, boss, fboss, ears)
     bore = cyl(12.6, -1, 41)
     boom = hole_x(6.1, 22, 63, 0, 11)
-    slit = box(-37, -10, -1, 1, -1, 41)
-    b1 = hole_y(2.75, -13, 13, -27, 10); b2 = hole_y(2.75, -13, 13, -27, 30)
+    arm = hole_x(6.1, -63, -22, 0, 11)
+    slit = box(-1, 1, 10, 37, -1, 41)
+    b1 = hole_x(2.75, -13, 13, 27, 10); b2 = hole_x(2.75, -13, 13, 27, 30)
     pin = cyl(2.15, -1, 23, c1=50, c2=0)
-    return diff(solid, bore, boom, slit, b1, b2, pin), ((-37, 63), (-21, 21), (0, 40))
+    fpin = cyl(2.15, -1, 23, c1=-50, c2=0)
+    return diff(solid, bore, boom, arm, slit, b1, b2, pin, fpin), ((-63, 63), (-21, 37), (0, 40))
 
 def servo_cradle(x0, base_z=0):
     """Pocket for a Savox SW-1210SG (40.6 x 20.7 x 42 body) standing output-up, with tab ledge
@@ -305,13 +310,29 @@ def p16():
 def p17():
     return diff(cyl(20, 0, 10), cyl(5.25, -1, 11)), ((-20, 20), (-20, 20), (0, 10))
 
+@part("P18", "Wing counterweight pod", 1, "PETG or ASA, 4 walls, 40% infill",
+      ["Rev B: balances the rotating wing, tail and boom on the spar axis.",
+       "Sits on the forward end of the 12 mm carbon arm; pod axis 300 mm forward of the spar axis. Pin with M4 (D4.3 hole).",
+       "Fill the open top with lead shot + epoxy (about 0.8 kg, roughly 115 cm3) a little at a time,",
+       "until the assembled rig balances level on the spar with the tail at 0 deg. Cap the top with epoxy.",
+       "Capacity about 175 cm3 (about 1.2 kg) leaves room if the tail parts come out heavier."],
+      {"Body": "OD64 x 74", "Cavity": "D56 x 71 open top", "Arm socket": "D12.2 x 28 blind", "Socket axis": "12 above base"})
+def p18():
+    body = cyl(32, 0, 74)
+    boss = box(26, 60, -11, 11, 0, 28)
+    solid = union(body, boss)
+    cav = cyl(28, 3, 75)
+    sock = hole_x(6.1, 32, 61, 0, 12)
+    pin = cyl(2.15, -1, 29, c1=46, c2=0)
+    return diff(solid, cav, sock, pin), ((-33, 61), (-33, 33), (0, 74))
+
 # build list: (file stem, part id, builder kwargs)
 BUILD = [("P01_vane_housing", "P01", {}), ("P02_vane_arm", "P02", {}), ("P03_sensor_cap", "P03", {}),
          ("P04_magnet_holder", "P04", {}), ("P05_antenna_platform", "P05", {}), ("P06_transom_bracket", "P06", {}),
-         ("P07_mast_bearing_housing", "P07", {}), ("P08_spar_clamp_boom_socket", "P08", {}),
+         ("P07_mast_bearing_housing", "P07", {}), ("P08_spar_clamp_two_sockets", "P08", {}),
          ("P09_tail_servo_housing", "P09", {}), ("P10a_tail_fin_lower", "P10", {"half": "lower"}),
          ("P10b_tail_fin_upper", "P10", {"half": "upper"}), ("P11_tiller_arm", "P11", {}),
          ("P12_rudder_servo_mount", "P12", {}), ("P13a_rudder_core_upper", "P13", {"half": "upper"}),
          ("P13b_rudder_core_lower", "P13", {"half": "lower"}), ("P14a_bulb_pattern_fwd", "P14", {"half": "fwd"}),
          ("P14b_bulb_pattern_aft", "P14", {"half": "aft"}), ("P15_electronics_tray", "P15", {}),
-         ("P16_battery_strap_anchor_x4", "P16", {}), ("P17_penetrator_pad_x4", "P17", {})]
+         ("P16_battery_strap_anchor_x4", "P16", {}), ("P17_penetrator_pad_x4", "P17", {}), ("P18_counterweight_pod", "P18", {})]

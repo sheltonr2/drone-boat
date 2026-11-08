@@ -6,7 +6,7 @@ Nov 8, 2026 · @Randolph
 
 The plan is a 1.5 m, self-righting autonomous sailboat with a rigid wing sail. It reports by Iridium satellite and takes commands from shore, and it is meant to cross the North Atlantic from Nova Scotia or Newfoundland to Europe, then keep roaming.
 
-- **Hardware cost:** about $2,280 sail-only, or about $1,990 after the trims in the budget section. The optional thruster adds $270. Satellite airtime adds $40–$60 a month.
+- **Hardware cost:** about $2,290 sail-only, or about $2,000 after the trims in the budget section. The optional thruster adds $270. Satellite airtime adds $40–$60 a month.
 - **Build time:** 9–13 months through five test gates. The realistic first ocean launch is June–July 2028; 2027 is possible only if every gate passes first time.
 - **Odds:** about 10–20% that the first boat reaches Europe still sailing and reporting. Building a second boat and passing every gate raises that to about 30–40%. These are estimates, not calculations.
 - **Biggest risks:** water getting in, steering failure, and fouling by weed or fishing line. Navigation and weather matter less.
@@ -23,7 +23,7 @@ The plan is a 1.5 m, self-righting autonomous sailboat with a rigid wing sail. I
 | Ballast | 8.2 kg lead bulb, 320 mm long × 68 mm diameter |
 | Keel fin | NACA 0012, 430 mm deep, 170 mm chord at the root and 150 mm at the tip |
 | Rudder | NACA 0012 spade, 120 mm chord × 230 mm span, 12 mm 316 stock |
-| Wing sail | NACA 0015, 1,000 × 300 mm (0.30 m²), free-rotating on a 25 mm carbon spar |
+| Wing sail | NACA 0015, 1,000 × 300 mm (0.30 m²), free-rotating on a 25 mm carbon spar, balanced by about 0.8 kg of lead in a pod 300 mm forward of the spar |
 | Tail flap | NACA 0012, 120 × 200 mm, on a 600 mm boom |
 | Solar | 2 panels of about 42 × 28 cm, about 40 W in total |
 | Battery | 12.8 V 15 Ah LiFePO4 (192 Wh) |
@@ -71,7 +71,7 @@ Everything below is needed for one boat. Prices are approximate US prices from N
 | G10 keel backing plate | 1 | 190 × 60 × 10 mm | 20 |
 | 2 in. sch 40 PVC pipe (mast tube) | 1 | 60.3 OD × \~250 mm | 8 |
 | Carbon tube: wing spar | 1 | 25 mm OD × 1,150 mm | 45 |
-| Carbon tube: tail boom | 1 | 12 mm OD × \~650 mm | 15 |
+| Carbon tube: tail boom and counterweight arm | 1 | 12 mm OD × 1 m (cut 600 + 246 mm) | 15 |
 | Carbon rods: tail pivot and alignment | 1 each | 6 mm and 3 mm | 10 |
 | Aluminium or carbon tube: stern post | 1 | 20 mm OD × 500 mm | 15 |
 | 316 fasteners (M3, M4, M5), 4 mm pins, set screws | kit | — | 30 |
@@ -88,14 +88,15 @@ Everything below is needed for one boat. Prices are approximate US prices from N
 | West System 105/205 epoxy + fillers (colloidal silica, microballoons) | \~1.5 kg kit | lamination, fillets, fairing | 130 |
 | XPS foam blocks | \~0.05 m³ | wing and fin cores (hot-wire cut) | 25 |
 | Lead (scrap or ingot) | \~8.5 kg | ballast bulb | 60 |
+| Lead shot | \~1 kg | wing counterweight pod (P18), set in epoxy | 10 |
 | Plaster of Paris or casting sand | \~10 kg | bulb mould | 15 |
 | MDF or ply sheet for frames + strongback | 1 sheet | 9 frames, stem, strongback | 40 |
 | Epoxy primer, barrier coat, hi-vis paint, antifouling | — | finishing | 60 |
-| 3D-printer filament: ASA (\~0.8 kg) + PETG (\~0.8 kg) | 2 spools | 17 printed parts | 50 |
+| 3D-printer filament: ASA (\~0.8 kg) + PETG (\~0.8 kg) | 2 spools | 18 printed parts | 50 |
 
 **Printed parts (files in the drawing set)**
 
-These are the wind-vane housing, arm, cap and magnet holder; the antenna platform and transom bracket; the mast bearing housing and spar clamp; the tail servo housing and tail fin; the tiller arm, rudder servo mount and rudder blade core; the bulb casting pattern; the electronics tray; 4 battery strap anchors; and 4 penetrator pads.
+These are the wind-vane housing, arm, cap and magnet holder; the antenna platform and transom bracket; the mast bearing housing and spar clamp; the tail servo housing and tail fin; the tiller arm, rudder servo mount and rudder blade core; the bulb casting pattern; the electronics tray; 4 battery strap anchors; 4 penetrator pads; and the wing counterweight pod.
 
 **Tools and consumables you'll need**
 
@@ -103,18 +104,18 @@ Hot-wire foam cutter, oscillating or jig saw, random-orbit sander, drill and bit
 
 ## Budget and running costs
 
-Itemised in full, the boat comes to about $2,280 sail-only, which is over the $2,000 target. Three trims, listed below the table, bring it to about $1,990. Tools you don't already own are extra.
+Itemised in full, the boat comes to about $2,290 sail-only, which is over the $2,000 target. Three trims, listed below the table, bring it to about $2,000. Tools you don't already own are extra.
 
 | Category | Approx. USD |
 | --- | --- |
 | Electronics and power (sail-only) | 1,172 |
 | Hardware and fittings | 440 |
-| Build materials | 570 |
+| Build materials | 580 |
 | Lake-test prototype (foam, scrap glass) | 100 |
-| **Total, sail-only** | **\~2,280** |
+| **Total, sail-only** | **\~2,290** |
 | Optional T200 thruster | +270 |
 
-**Getting under $2,000 (saves about $290)**
+**Getting to about $2,000 (saves about $290)**
 
 - Use a Pixhawk 6C clone: saves about $95.
 - Drop the backup D-cell for version 1: saves $35. It still gets tracked through the main battery.
@@ -188,7 +189,7 @@ A first attempt has roughly a 10–20% chance of reaching Europe still sailing a
 ## Open decisions
 
 - [ ] Thruster in version 1, or sail-only? Sail-only saves $270 and removes a leak path.
-- [ ] Accept going over budget (about $2,280), or take the trims to get to about $1,990?
+- [ ] Accept going over budget (about $2,290), or take the trims to get to about $2,000?
 - [ ] Lower the battery onto a hull-bonded cooling plate below the waterline? (Recommended.)
 - [ ] Launch from Nova Scotia or Newfoundland. Newfoundland is about 1,000 km closer to Ireland.
 - [ ] Who recovers the boat after the coastal trial, and how?
@@ -196,6 +197,6 @@ A first attempt has roughly a 10–20% chance of reaching Europe still sailing a
 ## Related documents and sources
 
 - [Solar-Sail Ocean Drone: Build Plan](https://claude.ai/artifact/WmBHp596XyjBUHexcbbfRM): full architecture, comms protocol, software plan and parts rationale.
-- Drawing set (Drawings.pdf), full-size templates and 3D-print files (Drone\_build\_files\_RevA.zip) were sent in the chat.
+- Drawing set (Drawings.pdf), full-size templates and 3D-print files (Rev B, with the wing counterweight pod) are in the private drone-boat repository on GitHub, in the build-files folder.
 - [RockBLOCK 9603, SparkFun](https://www.sparkfun.com/rockblock-9603n-iridium-satcomm-module.html) · [Ground Control SBD pricing](https://groundcontrol.com/?p=1671)
 - [Microtransat 2026 crossing, Science Times](https://www.sciencetimes.com/articles/62633/20260922/robotic-sailboat-crosses-atlantic-after-traveling-5400-kilometers-without-human-intervention.htm) · [Interesting Engineering](https://interestingengineering.com/transportation/tiny-autonomous-boat-crosses-atlantic-microtransat) · [2018 crossing, Slashdot / AP](https://hardware.slashdot.org/story/18/09/06/1719243/robot-boat-sails-into-history-by-finishing-atlantic-crossing)

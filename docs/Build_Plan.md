@@ -150,6 +150,12 @@ Every part below runs on 12.8 V or 5 V and works with stock ArduPilot. The picks
 - **Hull:** 400 mm beam, 230 mm deep, built from foam strips over 9 frames. The waterline sits at about 21 kg all-up.
 - **Stern stub:** the antenna, wind vane and radar reflector go on a 20 mm tube on the transom. That keeps them clear of the tail as it sweeps round.
 
+**Changed in Rev B (Nov 8, 2026)**
+
+- **Wing counterweight:** the lead now sits in a printed pod (P18) on a 12 mm carbon arm, 300 mm forward of the spar axis, instead of in the wing's nose pocket. It needs about 0.8 kg of lead shot; the nose pocket would have needed about 7.6 kg, taking the boat to 27.5 kg.
+- **Effect in the simulator:** the boat stays at about 21 kg with a stronger righting curve (GM 0.20 m vs 0.11 m). Crossings run about 4 days faster in identical weather (about 80 vs 84 days).
+- **Parts:** spar clamp P08 gains a forward socket; new pod P18. Supplies add about 1 kg of lead shot and 246 mm more 12 mm carbon tube (about $10 extra).
+
 ## Budget
 
 The recommended parts total about $2,280 with the thruster and $2,010 without it. Both are over the $2,000 limit, so the boat needs to be sail-only plus one or two savings. Airtime is a separate running cost of $40–$60 a month.

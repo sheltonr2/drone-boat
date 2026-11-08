@@ -67,7 +67,11 @@ def sheet_cover(pdf, index):
         "5. Full-size cutting templates (hull frames, foils, wing, hatch) are in Templates.pdf (tiled on Letter, 1:1)",
         "   and as DXF files. Check the 100 mm scale bar on every printed page before cutting.",
         "6. All fasteners and shafts 316 stainless. Bed every hull penetration in polyurethane sealant.",
-        "7. This is a hobby design, not a classed or certified vessel. Tank-test self-righting before going to sea."], fs=6.2, lh=3.8)
+        "7. This is a hobby design, not a classed or certified vessel. Tank-test self-righting before going to sea.",
+        "",
+        "Rev B (2026-11-08): wing counterweight moved from the wing's nose pocket to pod P18 on a 300 mm forward arm.",
+        "   P08 now has a forward socket for the arm. The nose pocket alone would need about 7.6 kg of lead; the arm needs about 0.8 kg.",
+        "   Sheets changed: D00, D01, D06, D12 (P08), D17 (P18). New part P18."], fs=6.2, lh=3.8)
     pdf.savefig(fig); plt.close(fig)
 
 # ------------------------------------------------------------------ D01 general arrangement
@@ -91,6 +95,9 @@ def sheet_ga(pdf):
     ax.plot([D.MAST_X, tp], [B['z']] * 2, color=INK, lw=MED)
     ax.add_patch(Rectangle((tp - T['pivot_from_le'], T['bot_z']), T['chord'], T['span'], fill=False, lw=MED))
     ax.add_patch(Rectangle((tp - 30, 252), 60, 48, fill=False, lw=THIN))
+    C = D.CWARM; px = D.MAST_X - C['reach']
+    ax.plot([px, D.MAST_X], [C['z']] * 2, color=INK, lw=MED)
+    ax.add_patch(Rectangle((px - C['pod_od']/2, C['pod_bot_z']), C['pod_od'], C['pod_h'], fc="#888", ec=INK, lw=THIN))
     S = D.STUB
     ax.plot([S['x']] * 2, [S['bot_z'], S['top_z']], color=INK, lw=1.4)
     ax.add_patch(Rectangle((D.L, 160), 30, 100, fill=False, lw=THIN))
@@ -114,6 +121,7 @@ def sheet_ga(pdf):
     leader(ax, (S['x'], 400), (1250, 600), "Radar reflector")
     leader(ax, (S['x'] + 160, D.VANE_Z + 40), (1300, 1100), "Wind vane P01-P04\nantenna platform P05\non 20 mm stub  (D07)")
     leader(ax, (D.MAST_X, 200), (250, 520), "2 in. PVC mast tube +\nbearing housing P07  (D07)")
+    leader(ax, (px, C['pod_bot_z'] + C['pod_h']), (120, 760), "Counterweight pod P18\non 300 mm arm  (D06)")
     ax.text(820, 150, "solar", fontsize=5, color=BLUE)
 
     ax2 = view(fig, 222, 200, (-30, 1620), (-235, 235), s, "PLAN (deck)")
@@ -122,7 +130,7 @@ def sheet_ga(pdf):
     H = D.HATCH
     ax2.add_patch(Rectangle((H['x0'], -H['w']/2), H['x1'] - H['x0'], H['w'], fill=False, lw=MED, ls="--"))
     ax2.add_patch(Rectangle((H['x0'] - 30, -H['w']/2 - 30), H['x1'] - H['x0'] + 60, H['w'] + 60, fill=False, lw=THIN))
-    ax2.text((H['x0'] + H['x1'])/2, 0, "bolted\nhatch", fontsize=5, ha="center", va="center")
+    ax2.text((H['x0'] + H['x1'])/2, -55, "bolted\nhatch", fontsize=5, ha="center", va="center")
     ax2.add_patch(Circle((D.MAST_X, 0), D.MAST_TUBE['od']/2, fill=False, lw=MED))
     for i, P in enumerate(D.SOLAR):
         ax2.add_patch(Rectangle((P['x0'], -P['w']/2), P['x1'] - P['x0'], P['w'], fc="#cfe0f3", ec=BLUE, lw=THIN))
@@ -130,6 +138,10 @@ def sheet_ga(pdf):
     ax2.add_patch(Circle((D.STUB['x'], 0), 10, fill=False, lw=MED))
     ax2.add_patch(Circle((D.MAST_X, 0), 700, fill=False, lw=0.3, ls=":", ec=GREY))
     ax2.text(D.MAST_X + 495, -215, "tail sweep R 700", fontsize=5, color=GREY, rotation=45)
+    ax2.add_patch(Circle((D.MAST_X, 0), D.CWARM['reach'] + D.CWARM['pod_od']/2, fill=False, lw=0.3, ls=":", ec=GREY))
+    ax2.add_patch(Circle((D.MAST_X - D.CWARM['reach'], 0), D.CWARM['pod_od']/2, fc="#bbb", ec=INK, lw=THIN))
+    ax2.plot([D.MAST_X - D.CWARM['reach'], D.MAST_X], [0, 0], color=INK, lw=MED)
+    ax2.text(150, -135, "pod sweep R 332\n(keep deck clear\nabove z 255)", fontsize=5, color=GREY, ha="center", va="top")
     dim(ax2, (1500, -200), (1500, 200), 0, "")
     ax2.text(1515, 0, "beam 400\n(max at x 825)", fontsize=5.5, va="center")
     dim(ax2, (0, 215), (D.MAST_X, 215), 0, "600")
@@ -137,7 +149,7 @@ def sheet_ga(pdf):
     notes(bg, 225, 180, "Key data", [
         "Length overall 1500   Beam 400   Hull depth 230",
         "Draft 558 (DWL to bulb bottom)   Air draft 1210",
-        "Displacement about 21 kg   Ballast 8.2 kg lead",
+        "Displacement about 21 kg   Ballast 8.2 kg lead + 0.8 kg rig counterweight",
         "Wing 1000 x 300 (0.30 m2), free-rotating on 25 mm spar",
         "Solar about 40 W on deck   Battery 192 Wh LiFePO4",
         "Self-righting: verify in a tank test (Gate 3)"], fs=6.3)
@@ -327,14 +339,17 @@ def sheet_wing(pdf):
     fig, bg = new_sheet("D06", "Wing sail and tail", "Elevation 1:6, plan 1:6, section 1:2")
     W = D.WING; T = D.TAIL; B = D.BOOM
     le, te, z0, z1 = wing_rect()
-    ax = view(fig, 15, 45, (450, 1350), (230, 1340), 6, "WING + TAIL ELEVATION")
+    ax = view(fig, 15, 45, (240, 1350), (230, 1340), 6, "WING, TAIL + COUNTERWEIGHT ELEVATION")
     ax.add_patch(Rectangle((le, z0), W['chord'], W['span'], fill=False, lw=MED))
     ax.plot([le, te], [z0 + 500] * 2, color=GREY, lw=0.4, ls="--"); ax.text(te + 5, z0 + 500, "core joint", fontsize=5, va="center")
     ax.plot([D.MAST_X] * 2, [240, z1 - 10], color=INK, lw=0.8, ls="-.")
-    ax.add_patch(Rectangle((le + 4, z0 + 60), 25, 120, fc="#888", ec=INK, lw=THIN))
+    C = D.CWARM; px = D.MAST_X - C['reach']
+    ax.plot([px, D.MAST_X], [C['z']] * 2, color=INK, lw=1.2)
+    ax.add_patch(Rectangle((px - C['pod_od']/2, C['pod_bot_z']), C['pod_od'], C['pod_h'], fc="#bbb", ec=INK, lw=THIN))
+    ax.add_patch(Rectangle((px - C['pod_od']/2 + 4, C['pod_bot_z'] + 3), C['pod_od'] - 8, 46, fc="#666", ec="none"))
     tp = D.MAST_X + B['length']
     ax.plot([D.MAST_X, tp], [B['z']] * 2, color=INK, lw=1.2)
-    ax.add_patch(Rectangle((D.MAST_X - 37, 256), 99, 40, fill=False, lw=THIN))
+    ax.add_patch(Rectangle((D.MAST_X - 63, 265), 126, 40, fill=False, lw=THIN))
     ax.add_patch(Rectangle((tp - 28, 252), 92, 48, fill=False, lw=THIN))
     ax.add_patch(Rectangle((tp - T['pivot_from_le'], T['bot_z']), T['chord'], T['span'], fill=False, lw=MED))
     ax.plot([tp, tp], [T['bot_z'], T['bot_z'] + T['span']], color=INK, lw=0.4, ls="-.")
@@ -342,28 +357,31 @@ def sheet_wing(pdf):
     dim(ax, (le, z1 + 45), (D.MAST_X, z1 + 45), 0, "66")
     dim(ax, (430 + 40, z0), (430 + 40, z1), 0, "1000")
     dim(ax, (D.MAST_X, 245), (tp, 245), 0, "boom 600 (spar to tail pivot)")
+    dim(ax, (px, 245), (D.MAST_X, 245), 0, "300 (spar to pod axis)")
     dim(ax, (tp + 110, T['bot_z']), (tp + 110, T['bot_z'] + T['span']), 0, "200")
-    leader(ax, (le + 16, z0 + 120), (700, 420), "Nose counterweight pocket\n(lead, balance on spar axis)")
+    leader(ax, (px, C['pod_bot_z'] + C['pod_h']), (330, 470), "Counterweight pod P18\nabout 0.8 kg lead shot + epoxy\non 12 mm carbon arm, 246 long")
     leader(ax, (D.MAST_X, 276), (700, 330), "Spar clamp P08")
     leader(ax, (tp + 10, 276), (1000, 380), "Tail servo housing P09")
     leader(ax, (tp + 40, 420), (1050, 600), "Tail fin P10a/b\nNACA 0012, 120 chord")
     ax2 = view(fig, 200, 160, (-10, 320), (-30, 30), 2, "WING SECTION  NACA 0015  (1:2)")
     poly(ax2, foil_xy(0.15, 300), lw=MED)
     ax2.add_patch(Circle((66, 0), 12.7, fill=False, lw=MED))
-    ax2.add_patch(Rectangle((4, -6), 25, 12, fc="#888", ec=INK, lw=THIN))
     dim(ax2, (0, 28), (66, 28), 0, "66", fs=5); dim(ax2, (66, 28), (300, 28), 0, "234", fs=5)
-    ax3 = view(fig, 200, 62, (-750, 150), (-60, 100), 6, "PLAN OF ROTATING RIG (1:6)")
+    ax3 = view(fig, 200, 62, (-750, 360), (-60, 100), 6, "PLAN OF ROTATING RIG (1:6)")
     poly(ax3, np.c_[-(foil_xy(0.15, 300)[:, 0] - 66), foil_xy(0.15, 300)[:, 1]], lw=MED)
     ax3.plot([0, -600], [0, 0], color=INK, lw=1)
     P = foil_xy(0.12, 120); poly(ax3, np.c_[-(P[:, 0] - 24) - 600, P[:, 1]], lw=MED)
     ax3.add_patch(Circle((0, 0), 12.5, fill=False, lw=MED))
+    ax3.plot([0, 300], [0, 0], color=INK, lw=1); ax3.add_patch(Circle((300, 0), 32, fc="#bbb", ec=INK, lw=THIN))
+    ax3.text(300, -50, "pod", fontsize=5.5, ha="center")
     ax3.annotate("", xy=(-120, 70), xytext=(130, 70), arrowprops=dict(arrowstyle="-|>", lw=0.6))
     ax3.text(5, 80, "apparent wind", fontsize=5.5, ha="center")
     ax3.text(-600, -40, "tail", fontsize=5.5, ha="center"); ax3.text(-80, -40, "wing", fontsize=5.5, ha="center")
     notes(bg, 200, 140, "Wing build", [
         "Core: two 500 mm XPS blocks hot-wire cut with template T15 (same root and tip), bored 25.4 mm for the spar.",
         "Skin: 2 x 6 oz glass, vacuum bagged if possible. Root and tip: 3 mm ply caps. Spar: 25 mm OD carbon tube, 1100 long.",
-        "Balance the wing+tail assembly so its centre of mass is on the spar axis (lead in the nose pocket).",
+        "Balance: assemble wing, tail, boom, arm and pod; add lead shot + epoxy to P18 until the rig sits level on the spar at any heading.",
+        "Expect about 0.8 kg. The pod sweeps a 332 mm radius at z 264-338, about 15 mm over the hatch bolts: keep anything on deck in that circle below z 255.",
         "Tail angle sets the wing's angle of attack: about +/-8 deg tail gives the working range; 0 deg = wing feathered."], fs=5.9, lh=3.5)
     pdf.savefig(fig); plt.close(fig)
 

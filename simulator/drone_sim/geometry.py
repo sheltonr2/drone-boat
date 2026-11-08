@@ -329,11 +329,18 @@ class Boat:
                ("wing spar", w["spar_kg"], np.array([0, 0, w["span"]/2 - 0.05])),
                ("tail + servo housing", t["kg"] + 0.12, np.array([t["boom_length"], 0, t["bot_z"] - w["root_z"] + 0.05])),
                ("tail boom", 0.11 * t["boom_length"], np.array([t["boom_length"]/2, 0, t["boom_z"] - w["root_z"]]))]
-        mx = sum(m * p[0] for _, m, p in rig)
         cw = 0.0
         if w["balanced"]:
-            cw = max(mx / max(w["counterweight_arm"], 1e-3), 0.0)
-            rig.append(("rig counterweight", cw, np.array([-w["counterweight_arm"], 0, 0.04])))
+            arm = max(w["counterweight_arm"], 1e-3)
+            zc = t["boom_z"] - w["root_z"] + 0.01          # pod hangs at boom height, under the wing root
+            if arm > 0.08:                                  # separate arm + pod (Rev B), not the nose pocket
+                rig += [("counterweight arm tube", w.get("arm_kg_per_m", 0.06) * arm, np.array([-arm / 2, 0, zc])),
+                        ("counterweight pod shell", w.get("pod_shell_kg", 0.11), np.array([-arm, 0, zc]))]
+            else:
+                zc = 0.04
+            mx = sum(m * p[0] for _, m, p in rig)
+            cw = max(mx / arm, 0.0)
+            rig.append(("rig counterweight (lead)", cw, np.array([-arm, 0, zc])))
         self.counterweight_kg = cw
         self.rig_items = rig
         self.rig_mass = sum(m for _, m, _ in rig)
