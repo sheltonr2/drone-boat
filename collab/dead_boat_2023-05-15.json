@@ -1,0 +1,13 @@
+{
+  "name": "Dead-boat drift, shared comparison with boat-sim (issue #50)",
+  "start_time": "2023-05-15T12:00:00",
+  "start": {"lat": 36.85, "lon": -75.70},
+  "target": {"lat": 51.35, "lon": -9.7},
+  "waypoints": [],
+  "max_days": 30,
+  "initial_mode": "drift",
+  "failures_enabled": false,
+  "provider": "openmeteo",
+  "grid_deg": 0.25,
+  "log_interval_min": 60
+}
