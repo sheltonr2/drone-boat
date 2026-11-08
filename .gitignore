@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+simulator/workspace/
+workspace/
+result_*.json
+.DS_Store

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Solar-Sail Drone Simulator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="/static/style.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<header>
+  <div class="brand">Solar-Sail Drone Simulator <span class="sub">historic weather, currents and tides</span></div>
+  <nav>
+    <button data-tab="design" class="active">1. Design</button>
+    <button data-tab="scenario">2. Voyage</button>
+    <button data-tab="run">3. Run</button>
+    <button data-tab="mc">4. Odds (Monte Carlo)</button>
+  </nav>
+</header>
+
+<main>
+<!-- ============================ DESIGN ============================ -->
+<section id="tab-design" class="tab active">
+  <div class="cols">
+    <aside class="panel controls">
+      <div class="row gap">
+        <button id="btn-analyze" class="primary">Analyse design</button>
+        <button id="btn-reset">Reset to Rev A</button>
+      </div>
+      <div class="row gap small">
+        <button id="btn-dl-design">Save design (.json)</button>
+        <label class="filebtn">Load design (.json)<input type="file" id="in-design" accept=".json"></label>
+      </div>
+      <details class="mesh">
+        <summary>Upload a 3D model (STL / OBJ)</summary>
+        <p class="hint">Axes: x from bow to stern (or the reverse), y to port, z up. "Hull" replaces the hull shape only;
+          "Whole boat" replaces hull, keel, bulb and rudder volumes (foil sizes below still drive the hydrodynamics).</p>
+        <div class="grid2">
+          <label>Role <select id="mesh-role"><option value="hull">Hull only</option><option value="full">Whole boat</option></select></label>
+          <label>Units <select id="mesh-units"><option>mm</option><option>cm</option><option>m</option><option>in</option></select></label>
+          <label>Axes <select id="mesh-axes"><option value="x_aft_z_up">x aft, z up</option><option value="x_fwd_z_up">x forward, z up</option>
+            <option value="x_aft_y_up">x aft, y up</option><option value="x_fwd_y_up">x forward, y up</option></select></label>
+          <label>Mass (kg, whole boat) <input id="mesh-mass" type="number" step="0.1" placeholder="optional"></label>
+        </div>
+        <label class="filebtn">Choose STL/OBJ<input type="file" id="in-mesh" accept=".stl,.obj"></label>
+        <div id="mesh-info" class="hint"></div>
+        <button id="btn-clear-mesh" class="small">Use parametric hull again</button>
+      </details>
+      <div id="sliders"></div>
+    </aside>
+    <div class="panel results">
+      <div id="design-busy" class="busy hidden">Analysing ...</div>
+      <div id="warnings"></div>
+      <div class="cards" id="design-cards"></div>
+      <div class="drawing-wrap"><svg id="profile-svg"></svg><svg id="plan-svg"></svg></div>
+      <div class="charts2">
+        <div class="chartbox"><h4>Righting arm (GZ) vs heel</h4><canvas id="ch-gz"></canvas></div>
+        <div class="chartbox"><h4>Speed polar (knots)</h4><canvas id="ch-polar"></canvas></div>
+      </div>
+      <div class="tables2">
+        <div><h4>Mass breakdown</h4><table id="tbl-mass"></table></div>
+        <div><h4>Cost estimate</h4><table id="tbl-cost"></table></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SCENARIO ============================ -->
+<section id="tab-scenario" class="tab">
+  <div class="cols">
+    <aside class="panel controls">
+      <h3>Route</h3>
+      <div class="row gap small">
+        <button class="mapmode active" data-mode="start">Set start</button>
+        <button class="mapmode" data-mode="target">Set target</button>
+        <button class="mapmode" data-mode="wp">Add waypoint</button>
+        <button id="btn-clear-wp">Clear waypoints</button>
+      </div>
+      <div class="grid2">
+        <label>Start lat <input id="s-lat" type="number" step="0.01"></label>
+        <label>Start lon <input id="s-lon" type="number" step="0.01"></label>
+        <label>Target lat <input id="t-lat" type="number" step="0.01"></label>
+        <label>Target lon <input id="t-lon" type="number" step="0.01"></label>
+      </div>
+      <label>Preset <select id="preset">
+        <option value="">-</option>
+        <option value="nf">Newfoundland to Ireland</option>
+        <option value="ns">Nova Scotia to Ireland</option>
+        <option value="ca">Canaries to Barbados (trade winds)</option>
+      </select></label>
+      <h3>Time and data</h3>
+      <div class="grid2">
+        <label>Start (UTC) <input id="s-time" type="datetime-local"></label>
+        <label>Max days <input id="s-days" type="number" min="1" max="400"></label>
+        <label>Weather source <select id="s-provider"><option value="openmeteo">Historic (Open-Meteo ERA5 + marine)</option><option value="synthetic">Synthetic (offline test)</option></select></label>
+        <label>Data grid (deg) <select id="s-grid"><option>0.5</option><option selected>1</option><option>2</option></select></label>
+        <label>Arrival radius (km) <input id="s-radius" type="number"></label>
+        <label>Random seed <input id="s-seed" type="number"></label>
+      </div>
+      <p class="hint">Historic currents and tides exist from January 2022 onward; wind and waves from 1940. Data is downloaded once and cached.</p>
+      <h3>Physics</h3>
+      <div class="grid2">
+        <label>Model <select id="s-mode"><option value="hybrid">Hybrid (fast, crossing scale)</option><option value="6dof">Full 6-DOF (slow, wave by wave)</option></select></label>
+        <label>Hybrid step (s) <input id="s-dt" type="number" min="60" max="1800" step="30"></label>
+        <label>6-DOF step (s) <select id="s-dt6"><option>0.02</option><option selected>0.05</option><option>0.1</option></select></label>
+        <label>Log every (min) <input id="s-log" type="number" min="1"></label>
+      </div>
+      <div id="sixdof-note" class="hint warn hidden"></div>
+      <h3>Failures</h3>
+      <label class="check"><input type="checkbox" id="s-fail" checked> Enable random failures</label>
+      <table id="tbl-fail" class="compact"></table>
+      <h3>Commands from shore</h3>
+      <p class="hint">Queued at the given time, delivered at the boat's next successful satellite session.</p>
+      <table id="tbl-cmd" class="compact"></table>
+      <div class="row gap small">
+        <select id="cmd-type">
+          <option>SET_REPORT</option><option>GOTO</option><option>SET_ROUTE</option><option>MODE</option>
+          <option>THRUSTER_POLICY</option><option>GEOFENCE</option><option>DIAG</option><option>REBOOT</option>
+        </select>
+        <input id="cmd-day" type="number" step="0.1" placeholder="day" style="width:70px">
+        <input id="cmd-args" placeholder='args, e.g. {"hours": 1}' style="flex:1">
+        <button id="btn-add-cmd">Add</button>
+      </div>
+    </aside>
+    <div class="panel"><div id="map-scn" class="map"></div></div>
+  </div>
+</section>
+
+<!-- ============================ RUN ============================ -->
+<section id="tab-run" class="tab">
+  <div class="row gap">
+    <button id="btn-run" class="primary">Run voyage</button>
+    <button id="btn-cancel">Cancel</button>
+    <button id="btn-export" disabled>Export results (.json)</button>
+    <label class="filebtn">Open results (.json)<input type="file" id="in-results" accept=".json"></label>
+    <div class="progress"><div id="prog-bar"></div></div><span id="prog-txt"></span>
+  </div>
+  <div class="cols">
+    <div class="panel">
+      <div id="run-summary" class="cards"></div>
+      <div id="map-run" class="map"></div>
+    </div>
+    <div class="panel">
+      <div class="chartbox"><h4>Speed and wind</h4><canvas id="ch-speed"></canvas></div>
+      <div class="chartbox"><h4>Waves and heel</h4><canvas id="ch-waves"></canvas></div>
+      <div class="chartbox"><h4>Battery and solar</h4><canvas id="ch-power"></canvas></div>
+      <div class="chartbox"><h4>Current and sea level (tide)</h4><canvas id="ch-cur"></canvas></div>
+    </div>
+  </div>
+  <div class="cols">
+    <div class="panel"><h4>Events</h4><div class="scroll"><table id="tbl-events" class="compact"></table></div></div>
+    <div class="panel"><h4>Log</h4><pre id="log"></pre></div>
+  </div>
+</section>
+
+<!-- ============================ MONTE CARLO ============================ -->
+<section id="tab-mc" class="tab">
+  <div class="row gap">
+    <label>Runs <input id="mc-n" type="number" value="100" min="2" max="2000" style="width:80px"></label>
+    <label>Start window from <input id="mc-from" type="date"></label>
+    <label>to <input id="mc-to" type="date"></label>
+    <label>Years (optional) <input id="mc-years" placeholder="2022,2023,2024,2025" style="width:170px"></label>
+    <label>Processes <input id="mc-proc" type="number" min="1" style="width:60px"></label>
+    <button id="btn-mc" class="primary">Run Monte Carlo</button>
+    <button id="btn-mc-cancel">Cancel</button>
+    <button id="btn-mc-export" disabled>Export (.json)</button>
+    <div class="progress"><div id="mc-bar"></div></div><span id="mc-txt"></span>
+  </div>
+  <p class="hint">Each run uses the Voyage settings (route, model, failures, commands) with a new random seed and, if a window is set, a random start date within it. Hybrid model recommended.</p>
+  <div class="cols">
+    <div class="panel">
+      <div id="mc-cards" class="cards"></div>
+      <div id="map-mc" class="map"></div>
+    </div>
+    <div class="panel">
+      <div class="chartbox"><h4>Outcomes</h4><canvas id="ch-outcomes"></canvas></div>
+      <div class="chartbox"><h4>Days to arrival</h4><canvas id="ch-days"></canvas></div>
+      <div class="chartbox"><h4>What ended the failed runs</h4><canvas id="ch-causes"></canvas></div>
+    </div>
+  </div>
+  <div class="panel"><h4>Runs</h4><div class="scroll"><table id="tbl-runs" class="compact"></table></div></div>
+</section>
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>

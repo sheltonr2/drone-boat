@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drone Simulator Results Viewer</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+:root { --ink:#1b1f24; --muted:#5f6b78; --line:#d9dee4; --bg:#f5f7f9; --accent:#1f5fa8; --good:#2e8b57; --bad:#c0392b; --warn:#b7791f; }
+* { box-sizing:border-box; }
+body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background:var(--bg); color:var(--ink); font-size:14px; }
+header { background:#0f2d4f; color:#fff; padding:12px 18px; display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between; }
+header h1 { font-size:17px; margin:0; font-weight:650; }
+header .sub { opacity:.75; font-size:12px; }
+.btn { background:#fff; color:var(--ink); border:1px solid var(--line); border-radius:6px; padding:6px 10px; font-size:13px; cursor:pointer; }
+.btn.on { background:#e07b39; color:#fff; border-color:#e07b39; }
+label.btn input { display:none; }
+main { padding:14px 18px; max-width:1500px; margin:0 auto; }
+.note { background:#fff7e6; border:1px solid #f1d39a; color:#7a4f00; padding:8px 10px; border-radius:6px; margin-bottom:10px; font-size:13px; }
+.cards { display:grid; grid-template-columns:repeat(auto-fill, minmax(170px, 1fr)); gap:8px; margin-bottom:12px; }
+.card { background:#fff; border:1px solid var(--line); border-radius:8px; padding:9px 11px; }
+.card .k { font-size:11px; color:var(--muted); } .card .v { font-size:20px; font-weight:650; } .card .s { font-size:11px; color:var(--muted); }
+.card.good .v { color:var(--good); } .card.bad .v { color:var(--bad); } .card.warn .v { color:var(--warn); }
+.grid { display:grid; grid-template-columns: 1.2fr 1fr; gap:12px; }
+.panel { background:#fff; border:1px solid var(--line); border-radius:10px; padding:12px; min-width:0; }
+h3 { margin:2px 0 8px; font-size:13px; color:var(--muted); font-weight:600; }
+svg#map { width:100%; height:520px; background:#eaf2fa; border-radius:8px; }
+.cbox { position:relative; height:200px; margin-bottom:12px; }
+table { border-collapse:collapse; width:100%; font-size:12px; }
+th, td { border-bottom:1px solid var(--line); padding:4px 6px; text-align:left; vertical-align:top; }
+th { color:var(--muted); background:#f7f9fb; position:sticky; top:0; }
+.scroll { max-height:320px; overflow:auto; }
+.legend { display:flex; gap:12px; flex-wrap:wrap; font-size:12px; color:var(--muted); margin-top:6px; }
+.legend i { display:inline-block; width:12px; height:3px; margin-right:4px; vertical-align:middle; }
+#drop { border:2px dashed var(--line); border-radius:10px; padding:10px; text-align:center; color:var(--muted); margin-bottom:10px; font-size:13px; }
+#drop.over { border-color:var(--accent); color:var(--accent); }
+@media (max-width: 1000px) { .grid { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <div><h1>Solar-Sail Drone: Results Viewer</h1><div class="sub">Open a results file exported from the simulator (Run or Monte Carlo tab, "Export")</div></div>
+  <div style="display:flex; gap:8px; flex-wrap:wrap">
+    <button class="btn on" id="demo-v">Demo voyage</button>
+    <button class="btn" id="demo-m">Demo Monte Carlo</button>
+    <label class="btn">Open results (.json)<input type="file" id="file" accept=".json"></label>
+  </div>
+</header>
+<main>
+  <div id="drop">Drop a results .json here</div>
+  <div id="note" class="note"></div>
+  <div id="cards" class="cards"></div>
+  <div class="grid">
+    <div class="panel"><h3 id="map-title">Track</h3><svg id="map"></svg><div class="legend" id="legend"></div></div>
+    <div class="panel" id="charts"></div>
+  </div>
+  <div class="panel" style="margin-top:12px"><h3 id="tbl-title">Events</h3><div class="scroll"><table id="tbl"></table></div></div>
+</main>
+<script>
+const DEMO = __DEMO__;
+const $ = s => document.querySelector(s);
+const fmt = (v, d = 1) => (v === null || v === undefined || Number.isNaN(+v)) ? "-" : (+v).toFixed(d);
+const OUT = { arrived_reporting: "Arrived, reporting", arrived_silent: "Arrived, silent", at_sea_timeout: "Still at sea", aground: "Aground", lost: "Lost" };
+const OC = { arrived_reporting: "#2e8b57", arrived_silent: "#8fbf6f", at_sea_timeout: "#b7791f", aground: "#8e44ad", lost: "#c0392b" };
+const card = (k, v, s = "", c = "") => `<div class="card ${c}"><div class="k">${k}</div><div class="v">${v}</div><div class="s">${s}</div></div>`;
+let charts = [];
+function resetCharts() { charts.forEach(c => c.destroy()); charts = []; $("#charts").innerHTML = ""; }
+function addChart(title, cfg) {
+  const box = document.createElement("div"); box.innerHTML = `<h3>${title}</h3><div class="cbox"><canvas></canvas></div>`;
+  $("#charts").appendChild(box);
+  cfg.options = Object.assign({ responsive: true, maintainAspectRatio: false, animation: false, plugins: { legend: { labels: { boxWidth: 10, font: { size: 11 } } } } }, cfg.options || {});
+  if (window.Chart) charts.push(new Chart(box.querySelector("canvas"), cfg));
+  else box.querySelector(".cbox").innerHTML = '<div style="color:#5f6b78;font-size:12px">Chart library unavailable.</div>';
+}
+
+/* ---- map: equirectangular SVG with the built-in coastline ---- */
+function drawMap(tracks, markers) {
+  const svg = $("#map"); const W = svg.clientWidth || 800, H = svg.clientHeight || 520;
+  let pts = tracks.flatMap(t => t.pts); if (!pts.length) pts = [[50, -30]];
+  let la0 = Math.min(...pts.map(p => p[0])), la1 = Math.max(...pts.map(p => p[0]));
+  let lo0 = Math.min(...pts.map(p => p[1])), lo1 = Math.max(...pts.map(p => p[1]));
+  const padLa = Math.max(2, (la1 - la0) * 0.12), padLo = Math.max(3, (lo1 - lo0) * 0.08);
+  la0 -= padLa; la1 += padLa; lo0 -= padLo; lo1 += padLo;
+  const k = Math.cos(((la0 + la1) / 2) * Math.PI / 180);
+  const sx = W / ((lo1 - lo0) * k), sy = H / (la1 - la0), s = Math.min(sx, sy);
+  const ox = (W - (lo1 - lo0) * k * s) / 2, oy = (H - (la1 - la0) * s) / 2;
+  const X = lo => ox + (lo - lo0) * k * s, Y = la => H - oy - (la - la0) * s;
+  let h = "";
+  for (let g = Math.ceil(lo0 / 10) * 10; g <= lo1; g += 10) h += `<line x1="${X(g)}" x2="${X(g)}" y1="0" y2="${H}" stroke="#d3e1ee"/><text x="${X(g) + 3}" y="${H - 4}" font-size="10" fill="#8aa0b5">${Math.abs(g)}${g < 0 ? "W" : "E"}</text>`;
+  for (let g = Math.ceil(la0 / 5) * 5; g <= la1; g += 5) h += `<line y1="${Y(g)}" y2="${Y(g)}" x1="0" x2="${W}" stroke="#d3e1ee"/><text x="3" y="${Y(g) - 3}" font-size="10" fill="#8aa0b5">${g}N</text>`;
+  for (const ring of DEMO.coast) h += `<polygon points="${ring.map(p => `${X(p[0])},${Y(p[1])}`).join(" ")}" fill="#e9e4d8" stroke="#b9b09a" stroke-width=".8"/>`;
+  for (const t of tracks) {
+    if (t.segments) { for (const sg of t.segments) h += `<line x1="${X(sg[0][1])}" y1="${Y(sg[0][0])}" x2="${X(sg[1][1])}" y2="${Y(sg[1][0])}" stroke="${sg[2]}" stroke-width="2.5" stroke-linecap="round"/>`; }
+    else h += `<polyline points="${t.pts.map(p => `${X(p[1])},${Y(p[0])}`).join(" ")}" fill="none" stroke="${t.color}" stroke-width="${t.w || 1.3}" stroke-opacity="${t.op || .6}"><title>${t.title || ""}</title></polyline>`;
+  }
+  for (const m of markers) h += `<circle cx="${X(m.lon)}" cy="${Y(m.lat)}" r="${m.r || 5}" fill="${m.color}" stroke="#fff" stroke-width="1"><title>${m.title}</title></circle>`;
+  svg.innerHTML = h;
+}
+
+/* ---- voyage ---- */
+function showVoyage(r, isDemo) {
+  resetCharts();
+  $("#note").style.display = isDemo ? "block" : "none";
+  $("#note").textContent = "Demo: one voyage of the Rev A design in the simulator's synthetic (invented) weather. Open your own results to see real historic-weather runs.";
+  const good = r.outcome === "arrived_reporting";
+  const lastFail = (r.failures || []).slice(-1)[0];
+  $("#cards").innerHTML = [
+    card("Outcome", OUT[r.outcome] || r.outcome, lastFail ? lastFail.msg : "", good ? "good" : (r.outcome.startsWith("arrived") ? "warn" : "bad")),
+    card("Duration", fmt(r.days, 1) + " days", fmt(r.distance_km, 0) + " km sailed"),
+    card("Average speed", fmt(r.stats.mean_sog_kn, 2) + " kn", `max wind ${fmt(r.stats.max_tws_ms, 0)} m/s, max Hs ${fmt(r.stats.max_hs_m, 1)} m`),
+    card("Satellite cost", "$" + fmt(r.airtime_usd, 0), `${r.sessions_ok} reports, ${r.sessions_failed} failed`),
+    card("Knockdowns", r.knockdowns, `capsizes ${r.capsizes}`),
+    card("Battery at end", fmt(100 * r.final_soc, 0) + "%", `lowest ${fmt(100 * r.stats.min_soc, 0)}%`),
+  ].join("");
+  const ser = r.series; const maxS = Math.max(...ser.map(s => s.sog), 0.5);
+  const segs = [];
+  for (let i = 1; i < ser.length; i++) { const t = Math.min(ser[i].sog / maxS, 1); segs.push([[ser[i - 1].lat, ser[i - 1].lon], [ser[i].lat, ser[i].lon], `hsl(${220 - 200 * t},70%,45%)`]); }
+  const marks = [{ lat: ser[0].lat, lon: ser[0].lon, color: "#2e8b57", r: 6, title: "Start" }, { lat: r.end.lat, lon: r.end.lon, color: good ? "#2e8b57" : "#c0392b", r: 6, title: OUT[r.outcome] }];
+  for (const ev of r.events) if (["failure", "knockdown", "alarm"].includes(ev.kind)) {
+    const s = ser.reduce((a, b) => Math.abs(b.t - ev.day * 24) < Math.abs(a.t - ev.day * 24) ? b : a, ser[0]);
+    marks.push({ lat: s.lat, lon: s.lon, color: ev.kind === "failure" ? "#c0392b" : "#e07b39", r: ev.kind === "knockdown" ? 3 : 5, title: `Day ${fmt(ev.day, 1)}: ${ev.msg}` });
+  }
+  $("#map-title").textContent = "Track (colour = speed over ground: blue slow, red fast)";
+  $("#legend").innerHTML = `<span><i style="background:#c0392b"></i>failure</span><span><i style="background:#e07b39"></i>knockdown / alarm</span>`;
+  drawMap([{ pts: ser.map(s => [s.lat, s.lon]), segments: segs }], marks);
+  const x = ser.map(s => s.t / 24);
+  const ds = (label, data, color, axis = "y") => ({ label, data: data.map((v, i) => ({ x: x[i], y: v })), borderColor: color, pointRadius: 0, borderWidth: 1.2, yAxisID: axis });
+  const sc = (extra = {}) => Object.assign({ x: { type: "linear", title: { display: true, text: "day" } }, y: {}, y2: { position: "right", grid: { display: false } } }, extra);
+  addChart("Speed and wind", { type: "line", data: { datasets: [ds("speed over ground (kn)", ser.map(s => s.sog * 1.944), "#1f5fa8"), ds("true wind (m/s)", ser.map(s => s.tws), "#e07b39", "y2")] }, options: { scales: sc() } });
+  addChart("Waves and heel", { type: "line", data: { datasets: [ds("Hs (m)", ser.map(s => s.hs), "#2e8b57"), ds("heel (deg)", ser.map(s => s.heel), "#c0392b", "y2")] }, options: { scales: sc() } });
+  addChart("Battery and solar", { type: "line", data: { datasets: [ds("battery (%)", ser.map(s => 100 * s.soc), "#1f5fa8"), ds("solar (W)", ser.map(s => s.solar_w), "#e07b39", "y2")] }, options: { scales: sc({ y: { min: 0, max: 100 } }) } });
+  addChart("Current and sea level", { type: "line", data: { datasets: [ds("current (kn)", ser.map(s => s.cur * 1.944), "#16a085"), ds("sea level incl. tide (m)", ser.map(s => s.sea_level), "#8e44ad", "y2")] }, options: { scales: sc() } });
+  $("#tbl-title").textContent = "Events";
+  $("#tbl").innerHTML = "<tr><th>Day</th><th>Type</th><th>Event</th></tr>" + r.events.map(e => `<tr><td>${fmt(e.day, 2)}</td><td>${e.kind}</td><td>${e.msg}</td></tr>`).join("");
+}
+
+/* ---- monte carlo ---- */
+function showMC(r, isDemo) {
+  resetCharts(); const s = r.summary;
+  $("#note").style.display = isDemo ? "block" : "none";
+  $("#note").textContent = "Demo: 40 Monte Carlo runs of the Rev A design in synthetic (invented) weather with the default hazard rates. Open your own results for historic-weather odds.";
+  $("#cards").innerHTML = [
+    card("Reaches Europe, still reporting", fmt(s.success_percent, 0) + "%", `95% range ${s.success_ci95[0]}-${s.success_ci95[1]}% of ${s.runs} runs`, "good"),
+    card("Reaches Europe at all", fmt(s.any_arrival_percent, 0) + "%", "including silent arrivals"),
+    card("Median crossing", s.arrival_days.median ? fmt(s.arrival_days.median, 0) + " days" : "-", s.arrival_days.p10 ? `10-90%: ${fmt(s.arrival_days.p10, 0)}-${fmt(s.arrival_days.p90, 0)} days` : ""),
+    card("Lost", fmt(s.percent.lost, 0) + "%", `aground ${fmt(s.percent.aground, 0)}%, still at sea ${fmt(s.percent.at_sea_timeout, 0)}%`, "bad"),
+    card("Satellite cost", "$" + fmt(s.mean_airtime_usd, 0), "mean per voyage"),
+    card("Knockdowns", fmt(s.mean_knockdowns, 1), "mean per voyage"),
+  ].join("");
+  $("#map-title").textContent = "All tracks, coloured by outcome";
+  $("#legend").innerHTML = Object.entries(OC).map(([k, c]) => `<span><i style="background:${c}"></i>${OUT[k]}</span>`).join("");
+  drawMap(r.runs.filter(x => x.track).map(x => ({ pts: x.track, color: OC[x.outcome] || "#888", title: `Run ${x.i}: ${OUT[x.outcome]}, ${fmt(x.days, 0)} days` })), []);
+  addChart("Outcomes", { type: "bar", data: { labels: Object.keys(s.counts).map(k => OUT[k]), datasets: [{ data: Object.values(s.counts), backgroundColor: Object.keys(s.counts).map(k => OC[k]) }] }, options: { plugins: { legend: { display: false } } } });
+  const bins = {}; (s.arrival_days.all || []).forEach(d => { const b = Math.floor(d / 5) * 5; bins[b] = (bins[b] || 0) + 1; });
+  const ks = Object.keys(bins).map(Number).sort((a, b) => a - b);
+  addChart("Days to arrival", { type: "bar", data: { labels: ks.map(k => `${k}-${k + 5}`), datasets: [{ data: ks.map(k => bins[k]), backgroundColor: "#1f5fa8" }] }, options: { plugins: { legend: { display: false } } } });
+  addChart("What ended the failed runs", { type: "bar", data: { labels: Object.keys(s.failure_causes), datasets: [{ data: Object.values(s.failure_causes), backgroundColor: "#c0392b" }] }, options: { indexAxis: "y", plugins: { legend: { display: false } } } });
+  $("#tbl-title").textContent = "Runs";
+  $("#tbl").innerHTML = "<tr><th>#</th><th>Start</th><th>Outcome</th><th>Days</th><th>km</th><th>Airtime</th><th>What happened</th></tr>" +
+    r.runs.map(x => `<tr><td>${x.i}</td><td>${(x.start_time || "").slice(0, 10)}</td><td style="color:${OC[x.outcome]}">${OUT[x.outcome] || x.error || ""}</td><td>${fmt(x.days, 1)}</td><td>${fmt(x.distance_km, 0)}</td><td>$${fmt(x.airtime_usd, 0)}</td><td>${(x.failures || []).join("; ")}</td></tr>`).join("");
+}
+
+function show(obj, isDemo) {
+  const r = obj.result || obj;
+  const kind = obj.kind || (r.summary ? "montecarlo" : "voyage");
+  $("#demo-v").classList.toggle("on", isDemo && kind === "voyage"); $("#demo-m").classList.toggle("on", isDemo && kind === "montecarlo");
+  try { kind === "montecarlo" ? showMC(r, isDemo) : showVoyage(r, isDemo); }
+  catch (e) { $("#note").style.display = "block"; $("#note").textContent = "This file doesn't look like simulator results: " + e.message; }
+}
+async function openFile(f) { try { show(JSON.parse(await f.text()), false); } catch (e) { $("#note").style.display = "block"; $("#note").textContent = "Could not read that file: " + e.message; } }
+$("#file").onchange = e => e.target.files[0] && openFile(e.target.files[0]);
+const drop = $("#drop");
+["dragenter", "dragover"].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add("over"); }));
+["dragleave", "drop"].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove("over"); }));
+drop.addEventListener("drop", e => e.dataTransfer.files[0] && openFile(e.dataTransfer.files[0]));
+$("#demo-v").onclick = () => show(DEMO.voyage, true);
+$("#demo-m").onclick = () => show(DEMO.montecarlo, true);
+window.addEventListener("resize", () => {});
+show(DEMO.voyage, true);
+</script>
+</body>
+</html>

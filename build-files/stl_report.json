@@ -1,0 +1,282 @@
+{
+ "P11_tiller_arm": {
+  "pid": "P11",
+  "tris": 6120,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   89.0,
+   26.0,
+   16.0
+  ],
+  "volume_cm3": 12.5,
+  "res": 0.35,
+  "sec": 16.4
+ },
+ "P12_rudder_servo_mount": {
+  "pid": "P12",
+  "tris": 9054,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   100.0,
+   54.0,
+   48.0
+  ],
+  "volume_cm3": 64.6,
+  "res": 0.35,
+  "sec": 56.6
+ },
+ "P13a_rudder_core_upper": {
+  "pid": "P13",
+  "tris": 8462,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   119.6,
+   14.4,
+   115.0
+  ],
+  "volume_cm3": 121.8,
+  "res": 0.35,
+  "sec": 72.6
+ },
+ "P13b_rudder_core_lower": {
+  "pid": "P13",
+  "tris": 8462,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   119.6,
+   14.4,
+   115.0
+  ],
+  "volume_cm3": 121.8,
+  "res": 0.35,
+  "sec": 73.6
+ },
+ "P14a_bulb_pattern_fwd": {
+  "pid": "P14",
+  "tris": 15800,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   66.8,
+   68.0,
+   160.0
+  ],
+  "volume_cm3": 408.1,
+  "res": 0.45,
+  "sec": 33.7
+ },
+ "P14b_bulb_pattern_aft": {
+  "pid": "P14",
+  "tris": 12432,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   65.4,
+   66.5,
+   160.0
+  ],
+  "volume_cm3": 284.3,
+  "res": 0.45,
+  "sec": 28.8
+ },
+ "P15_electronics_tray": {
+  "pid": "P15",
+  "tris": 19492,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   200.0,
+   130.0,
+   6.0
+  ],
+  "volume_cm3": 81.7,
+  "res": 0.45,
+  "sec": 95.7
+ },
+ "P16_battery_strap_anchor_x4": {
+  "pid": "P16",
+  "tris": 9174,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   60.0,
+   24.0,
+   11.0
+  ],
+  "volume_cm3": 8.5,
+  "res": 0.25,
+  "sec": 38.9
+ },
+ "P17_penetrator_pad_x4": {
+  "pid": "P17",
+  "tris": 10170,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   40.0,
+   40.0,
+   10.0
+  ],
+  "volume_cm3": 11.7,
+  "res": 0.25,
+  "sec": 39.7
+ },
+ "P01_vane_housing": {
+  "pid": "P01",
+  "tris": 29026,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   40.0,
+   40.0,
+   60.0
+  ],
+  "volume_cm3": 41.3,
+  "res": 0.25,
+  "sec": 116.0
+ },
+ "P02_vane_arm": {
+  "pid": "P02",
+  "tris": 10502,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   275.0,
+   46.0,
+   80.0
+  ],
+  "volume_cm3": 57.0,
+  "res": 0.45,
+  "sec": 46.6
+ },
+ "P03_sensor_cap": {
+  "pid": "P03",
+  "tris": 20200,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   40.0,
+   40.0,
+   56.0
+  ],
+  "volume_cm3": 29.0,
+  "res": 0.25,
+  "sec": 76.7
+ },
+ "P04_magnet_holder": {
+  "pid": "P04",
+  "tris": 4584,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   14.0,
+   14.0,
+   10.0
+  ],
+  "volume_cm3": 1.1,
+  "res": 0.25,
+  "sec": 9.4
+ },
+ "P05_antenna_platform": {
+  "pid": "P05",
+  "tris": 11132,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   120.0,
+   64.0,
+   25.0
+  ],
+  "volume_cm3": 43.0,
+  "res": 0.35,
+  "sec": 51.4
+ },
+ "P06_transom_bracket": {
+  "pid": "P06",
+  "tris": 8964,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   60.0,
+   100.0,
+   44.0
+  ],
+  "volume_cm3": 78.0,
+  "res": 0.35,
+  "sec": 58.7
+ },
+ "P07_mast_bearing_housing": {
+  "pid": "P07",
+  "tris": 12554,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   66.0,
+   66.0,
+   85.0
+  ],
+  "volume_cm3": 126.9,
+  "res": 0.35,
+  "sec": 66.2
+ },
+ "P08_spar_clamp_boom_socket": {
+  "pid": "P08",
+  "tris": 8840,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   98.0,
+   41.0,
+   40.0
+  ],
+  "volume_cm3": 61.4,
+  "res": 0.35,
+  "sec": 50.5
+ },
+ "P09_tail_servo_housing": {
+  "pid": "P09",
+  "tris": 7028,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   92.0,
+   30.0,
+   48.0
+  ],
+  "volume_cm3": 61.6,
+  "res": 0.35,
+  "sec": 47.0
+ },
+ "P10a_tail_fin_lower": {
+  "pid": "P10",
+  "tris": 6762,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   119.6,
+   14.4,
+   100.0
+  ],
+  "volume_cm3": 112.9,
+  "res": 0.35,
+  "sec": 60.3
+ },
+ "P10b_tail_fin_upper": {
+  "pid": "P10",
+  "tris": 5930,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   119.6,
+   14.4,
+   100.0
+  ],
+  "volume_cm3": 113.8,
+  "res": 0.35,
+  "sec": 55.5
+ }
+}
