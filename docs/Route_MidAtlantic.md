@@ -56,6 +56,8 @@ By launch month: April 41%, May 48%, June 52%, July 60%. With 22–30 runs a mon
 
 ## Drift tests: how far out to drop the boat (real weather, Nov 8, 2026)
 
+> **Correction, 9 Nov:** these tests used the simulator's old dead-boat model. That model held the boat on a heading about 110° off the wind, so a dead boat reached across the wind at 4–6% of wind speed. Real drifting objects go roughly downwind: a Sunfish with no sail drifts at about 2.1% of the wind, a 4.15 m skiff at about 4.0% (Breivik et al. 2010), and both stay within about 15° of downwind. The simulator now uses a leeway model: 3.3% of the wind, ±14°, from a windage balance for Rev B. The tests need re-running before the 100 km decision is final (`collab/drift_tests.py`, on real weather).
+
 This checks the worst case for the launch: a boat that is dead from the start, with no steering and the wing feathered, left to drift for 30 days. The tests used real Open-Meteo weather and currents from three drop points off Ocean City on 15 May of four years ([log](../collab/run_log_next_2026-11-08.txt), [table](../results/2026-11-08_drift_tests_ocean_city.txt)).
 
 | Drop point | 2022 | 2023 | 2024 | 2025 | Still at sea after 30 days |

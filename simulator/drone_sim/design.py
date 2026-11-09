@@ -74,6 +74,11 @@ DEFAULT = {
     },
     "comms": {"report_interval_h": 4.0, "report_bytes": 45, "credit_usd": 0.12,
               "line_rental_usd_month": 17.0},
+    "drift": {                          # a dead boat (no steering, wing feathered or lost, or upside down)
+        "leeway_downwind": 0.033,       # x U10. Windage balance: Cd*A air ~0.20 m2 vs water ~0.22 m2 -> 3.3%.
+                                        # Measured: Sunfish without sail 2.1%, 4.15 m skiff 4.0% (Breivik et al. 2010)
+        "leeway_crosswind": 0.008,      # x U10, side picked at random per voyage (~14 deg divergence)
+    },
     "autopilot": {
         "heel_limit_deg": 25.0, "storm_tws_ms": 20.0, "reef_tws_ms": 13.0,
         "tack_hysteresis_deg": 20.0, "decision_interval_min": 10.0,

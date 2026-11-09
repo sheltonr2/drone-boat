@@ -2,6 +2,13 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-09, 17:00
+
+- Posted our reply on #50 ([comment](https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6751168056)): wear-out k = 1 by default, SMOC/Stokes noted, wind ratios credited, hurricane frequency results, Rev B GZ curve for Theo.
+- Wear-out is now an off-by-default option in failures.py (`wear_out`, boat-sim #118 parameters).
+- **Dead-boat drift fixed.** The VPP's feathered state held the boat on its heading, so a dead boat reached across the wind at 4–6% of wind speed, 70° off downwind. The new leeway model drifts at 3.3% of U10, ±14° of downwind (windage balance; Sunfish 2.1% and skiff 4.0% in Breivik et al. 2010). Synthetic Monte Carlo odds barely change (40.5% vs 40.0%, 200 runs), but the drop-point drift tests need re-running: `run_next_checks.bat` (Open-Meteo) and the new `run_drift_bulk.bat` (2023 bulk data, a drop every 3 days at 25/50/100/150 km).
+- New docs: Launch_Plan.md (1–20 May window, charter, Coast Guard, fishery and Irish notices with drafts, labels, light), Backup_Tracker.md (YB3 recommended), Storm_Loads.md (the 25 mm spar is marginal in a knockdown and fails under an 8 m/s breaking crest; upgrade to 30–32 mm and add a proof test).
+
 ## 2026-11-09, 16:30
 
 - New on #50: boat-sim delivered #116 (SMOC vs GLORYS on real drifters: neither is measurably better in the eddy field; don't add Stokes drift on top of SMOC's total current), #117 (ERA5/best-track wind ratios: TS 0.70, C1 0.66, C2 0.59, C3 0.53, C4 0.42) and #118 (wear-out: the record can't tell it apart from a steady rate; Weibull k = 1.41, 95% 0.75–2.24, p = 0.25; use k = 1 by default). Theo asked for Rev B's GZ curve and roll inertia for their 3D view.

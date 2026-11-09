@@ -96,6 +96,7 @@ Breaking waves hit the boat as roll impulses, and the physics decides whether it
 - Autopilot: VMG-optimal tacking and gybing, land and geofence avoidance, storm, safe and drift modes.
 - Power: solar from measured irradiance, heel and capsize; loads; cold-charge cutoff.
 - Iridium: credits, failed sessions in heavy seas or when knocked down, commands delivered at the next good session.
+- Dead boat (no steering with the wing feathered or lost, or upside down): leeway drift at 3.3% of the 10 m wind, within ±14° of downwind (`design["drift"]`), from a windage balance and SAR leeway measurements on small sailboats and skiffs (Breivik et al. 2010).
 - Failures: leaks, servo jams, fouling, weed and fishing line, collisions, capture on the shelf (~150 km), electronics, comms that die while the boat sails on, software hangs, and extra early-life failures that a shakedown reduces. Three rate sets: `planning` (default), `historical` (fitted to the Microtransat record) and `original`. Choose one with `"failure_rate_set"` in the scenario or in the web UI. Sources: `docs/Failure_Rates.md`.
   Every hazard rate is editable on the Voyage tab.
 

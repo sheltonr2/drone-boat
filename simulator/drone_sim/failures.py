@@ -27,6 +27,10 @@ _ORIGINAL = {
     "knockdown_damage": {"enabled": True, "per_day": 0.002, "note": "probability per knockdown of rig damage"},
     "early_life":      {"enabled": False, "per_day": 0.0, "note": "extra multiplier k*exp(-(day+burn_in)/tau) on hardware hazards",
                         "tau_days": 7.0, "burn_in_days": 0.0},
+    "wear_out":        {"enabled": False, "per_day": 1.41, "t_ref_days": 34.9,
+                        "note": "sensitivity only: hardware hazards x (day/t_ref)^(k-1), k in per_day. Weibull fit to the "
+                                "Microtransat open-ocean record by boat-sim #118 (central k 1.41, t_ref 34.9 d; low 0.75/22.7; "
+                                "high 2.24/48.6). The record can't tell it from a steady rate (p = 0.25), so it is off by default."},
 }
 
 
@@ -64,6 +68,14 @@ def rates_for(scenario):
     for k, v in ((scenario or {}).get("failures") or {}).items():
         if k in fr: fr[k].update(v)
     return fr
+
+
+def wear_out_factor(fr, day):
+    """(day / t_ref)^(k - 1), boat-sim's wearout_multiplier (MIT, boat-sim #118). 1.0 when switched off."""
+    w = fr.get("wear_out") or {}
+    if not w.get("enabled"):
+        return 1.0
+    return (max(day, 0.5)/max(w.get("t_ref_days", 34.9), 0.1))**(w.get("per_day", 1.0) - 1.0)
 
 
 def early_life_factor(fr, day):

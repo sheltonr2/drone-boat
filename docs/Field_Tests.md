@@ -77,3 +77,9 @@ Put the finished boat, at sailing weight, on a swivel mooring or a short coastal
 - Servos and the wing still move freely afterwards, with no salt binding at the bearings or the tail pivot.
 
 Any failure resets the 14-day count after the fix. Record the start date and the results in `results/`, and set `"burn_in_days"` under `"early_life"` in your scenario to the days actually completed.
+
+## Additions (9 Nov 2026)
+
+- **Test C, spar proof load:** with the hull clamped, hang 32 kg from the wing spar 0.8 m above the lower bearing for one minute (≈250 N·m, the knockdown case in [Storm_Loads.md](Storm_Loads.md)). There must be no cracks or permanent set. With the recommended 30–32 mm spar, repeat at 38 kg.
+- **Test F, backup tracker:** during the coastal trial, switch the main system off for 48 hours and confirm that the backup tracker's reports keep arriving ([Backup_Tracker.md](Backup_Tracker.md)).
+

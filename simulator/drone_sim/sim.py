@@ -6,7 +6,7 @@ import numpy as np
 from .env import make_provider, LandMask, destination, haversine_km, bearing_deg, to_epoch, from_epoch
 from .autopilot import Autopilot, wrap180
 from .bulk import BulkDataMissing
-from .failures import DEFAULT_RATE_SET, rates_for, early_life_factor, p_event, breaking_knockdown_rate
+from .failures import DEFAULT_RATE_SET, rates_for, early_life_factor, wear_out_factor, p_event, breaking_knockdown_rate
 from . import geometry, vpp as vppmod
 
 DEFAULT_SCENARIO = {
@@ -244,10 +244,20 @@ class Voyage:
         feather = dec["alpha_mode"] == "feather" or not wing_ok or st["brownout"] or st["tail"] == "feathered"
         df = st["df"] + (3.0 if st["entangled"] else 0) + st["water_kg"]/max(self.boat.mass, 1)*2
         df = min(df, 4.0)
-        if st["inverted"]:
-            # upside down: drift with windage, ~3% of wind speed, no steering
-            u = 0.0; v = 0.03*envd["tws"]*side
-            return dict(u=u*0.0, v=v, heel=180.0, alpha=0.0, delta=0.0, ground_included=False)
+        steer_possible = dec["steering"] and not st["brownout"] and st["rudder"] == "ok"
+        if st["inverted"] or (feather and not steer_possible):
+            # Dead boat: leeway, i.e. drift through the water at a fixed share of the 10 m wind, close to downwind
+            # (USCG/SAR leeway model; coefficients in design["drift"]). The VPP's feathered state assumes the
+            # keel holds the boat on its heading, which made a dead boat reach across the wind at 4-6%.
+            Dd = self.d.get("drift", {})
+            if "cw_sign" not in st:
+                st["cw_sign"] = 1 if self.rng.random() < 0.5 else -1
+            dw = Dd.get("leeway_downwind", 0.033)*envd["tws"]
+            cw = Dd.get("leeway_crosswind", 0.008)*envd["tws"]*st["cw_sign"]
+            downwind = (envd["twd"] + 180) % 360
+            st["heading"] = (downwind + math.degrees(math.atan2(cw, max(dw, 1e-6)))) % 360
+            return dict(u=math.hypot(dw, cw), v=0.0, heel=180.0 if st["inverted"] else 0.0, alpha=0.0, delta=0.0,
+                        ground_included=False)
         keys = ("u_f", "v_f", "phi_f", "delta_f") if feather else ("u", "v", "phi", "delta", "alpha")
         r = P(envd["tws"], abs(twa_s), envd["hs"], df, keys)
         if feather:
@@ -357,7 +367,7 @@ class Voyage:
         # fouling (continuous)
         if self.rate("fouling_growth") > 0:
             st["df"] = min(st["df"] + self.rate("fouling_growth")*max(e["sst"], 0)/20*dt/86400, 3.0)
-        el = early_life_factor(self.fr, (t - self.t0)/86400) if self.fail_on else 1.0
+        el = (early_life_factor(self.fr, (t - self.t0)/86400)*wear_out_factor(self.fr, (t - self.t0)/86400)) if self.fail_on else 1.0
         # leak
         if st["leak_rate"] == 0 and rnd() < p_event(self.rate("leak")*el*(1 + (hs/3)**2), dt):
             sev = rnd(); st["leak_rate"] = 0.05 + 2.5*sev**2
