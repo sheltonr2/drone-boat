@@ -6,6 +6,7 @@ Newest first. Each check of boat-sim records what was new and what we did.
 
 - First bulk run ([log](run_log_bulk_2026-11-09.txt)): all 28 Copernicus Marine source-months downloaded and converted (SMOC ~2.2 GB and MFWAM ~0.95 GB a month, about 17 and 9 minutes each, 31 GB stored). Every ERA5 request got HTTP 400 from CDS, including plain GET calls the browser makes without trouble. The ERA5 licence shows "Accepted" on the dataset page.
 - The downloader had retried those 400s about 40 times. CDS's October notice warns that repeated invalid requests can get an account disabled, so it now stops at the first 4xx and prints the server's reason. The Monte Carlo now refuses to start when bulk months are missing; the first run logged 500 empty "errors".
+- cdscheck found the cause: the saved token was 1 character long. Windows' hidden-input prompt (getpass) doesn't take Ctrl+V; it stores a control character, which gave CDS a malformed header ("Invalid HTTP request received"). New `save_cds_token.bat` reads the token from the clipboard, checks its shape, saves it without showing it, then runs cdscheck.
 - New `cds_check.bat` / `cli cdscheck`: versions, .cdsapirc shape (never the token), two plain GETs with the token, and one tiny request, with server responses printed.
 
 ## 2026-11-08, 22:45

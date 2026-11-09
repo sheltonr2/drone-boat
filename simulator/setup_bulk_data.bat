@@ -28,9 +28,9 @@ echo Type the username and password of the Copernicus Marine account you just ma
 .venv-bulk\Scripts\copernicusmarine.exe login
 echo.
 echo === Step 2 of 2: Climate Data Store API token ===
-echo In your browser, sign in at https://cds.climate.copernicus.eu , click your name (top right),
-echo and copy the "API Token" from your profile page. Then paste it below and press Enter.
-.venv-bulk\Scripts\python.exe -c "import getpass,os; k=getpass.getpass('API token (hidden as you paste): ').strip(); p=os.path.join(os.path.expanduser('~'),'.cdsapirc'); open(p,'w').write('url: https://cds.climate.copernicus.eu/api\nkey: '+k+'\n'); print('Saved to',p) if k else print('Nothing pasted; run this file again.')"
+echo Copy the API token from https://cds.climate.copernicus.eu/profile, then press a key here.
+pause
+call save_cds_token.bat
 echo.
 echo Remember: the ERA5 licence must be accepted once on the dataset's Download page
 echo ("ERA5 hourly data on single levels from 1940 to present", Terms of use).
