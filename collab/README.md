@@ -8,10 +8,10 @@ We share work with John's team ([jcolter11374/boat-sim](https://github.com/jcolt
 | --- | --- | --- |
 | Shared failure-rate table with sources ([`docs/Failure_Rates.md`](../docs/Failure_Rates.md)) | us | done Nov 8 |
 | History of Microtransat-style crossings ([`docs/Crossing_History.md`](../docs/Crossing_History.md), data in [`docs/data/`](../docs/data/)) | us | done Nov 8 |
-| NOAA drifter check along the shared Gulf Stream stretch (36–42°N, 75–50°W) | boat-sim | asked |
-| GLORYS vs Open-Meteo/SMOC currents along that stretch | boat-sim | asked |
-| Dead-boat drift comparison (below) | both | our run done Nov 8 ([track](../results/2026-11-08_dead_boat_2023-05-15_track.txt)); waiting for boat-sim's |
-| Hurricane hazard from NOAA HURDAT2 | both | proposed |
+| NOAA drifter check along the shared Gulf Stream stretch (36–42°N, 75–50°W) | boat-sim | done Nov 8 (skill 0.23 in the eddy field; [boat-sim #85](https://github.com/jcolter11374/boat-sim/issues/85)) |
+| GLORYS vs Open-Meteo/SMOC currents along that stretch | boat-sim | done Nov 8 (means agree; eddies differ, RMS 0.43 m/s) |
+| Dead-boat drift comparison (below) | both | done Nov 8: both into the Chesapeake in about 9 days (ours York River 8.9 d, theirs Hampton Roads 9.6 d) |
+| Hurricane hazard | both | boat-sim: ERA5 wind correction (ERA5 gives ~0.5 of best-track wind in Cat 3–5). Us: storm-passage frequency by launch month from HURDAT2/IBTrACS (agreed Nov 8) |
 
 ## Dead-boat drift run (our side)
 
