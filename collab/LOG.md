@@ -2,6 +2,11 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-09, 07:20
+
+- New on #50 overnight: boat-sim is adopting our failure table (#89) and testing drop distance from their own launch point (#90). Their project owner confirmed extra people and free GitHub computing, nothing paid. They offered three jobs: SMOC scored on their 20 drifters, the hurricane wind-ratio CSV, and a wear-out term. They also pointed out ERA5 waves (swh, pp1d, mwd) for years before Nov 2022.
+- Posted ([comment](https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6739897871)): we accepted all three offers and kept storm frequency, the #89 review and the bulk Monte Carlo for ourselves, plus a status update on the bulk data.
+
 ## 2026-11-09, morning
 
 - First bulk run ([log](run_log_bulk_2026-11-09.txt)): all 28 Copernicus Marine source-months downloaded and converted (SMOC ~2.2 GB and MFWAM ~0.95 GB a month, about 17 and 9 minutes each, 31 GB stored). Every ERA5 request got HTTP 400 from CDS, including plain GET calls the browser makes without trouble. The ERA5 licence shows "Accepted" on the dataset page.

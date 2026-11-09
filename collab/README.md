@@ -11,7 +11,10 @@ We share work with John's team ([jcolter11374/boat-sim](https://github.com/jcolt
 | NOAA drifter check along the shared Gulf Stream stretch (36–42°N, 75–50°W) | boat-sim | done Nov 8 (skill 0.23 in the eddy field; [boat-sim #85](https://github.com/jcolter11374/boat-sim/issues/85)) |
 | GLORYS vs Open-Meteo/SMOC currents along that stretch | boat-sim | done Nov 8 (means agree; eddies differ, RMS 0.43 m/s) |
 | Dead-boat drift comparison (below) | both | done Nov 8: both into the Chesapeake in about 9 days (ours York River 8.9 d, theirs Hampton Roads 9.6 d) |
-| Hurricane hazard | both | boat-sim: ERA5 wind correction (ERA5 gives ~0.5 of best-track wind in Cat 3–5). Us: storm-passage frequency by launch month from HURDAT2/IBTrACS (agreed Nov 8) |
+| Hurricane hazard | both | boat-sim: ERA5/best-track wind ratio CSV by storm category and month. Us: storm-passage frequency by launch month from HURDAT2/IBTrACS (agreed Nov 8–9) |
+| SMOC scored on the 20 shared drifters (SHARED_CASES) | boat-sim | offered and accepted Nov 9 |
+| Wear-out (rising) hazard fitted to the crossing record | boat-sim | offered and accepted Nov 9; we review and wire it into failures.py |
+| Review boat-sim #89 (adopting our failure table) | us | when it's up |
 
 ## Dead-boat drift run (our side)
 
