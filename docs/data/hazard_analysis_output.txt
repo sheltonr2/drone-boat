@@ -1,0 +1,71 @@
+Microtransat attempts in file: 37; with usable exposure: 34
+Exposure: near land 214.8 boat-days, open ocean 622.3 boat-days, total 837.1
+
+NEAR LAND (<~150 km): 25 mission-ending events / 214.8 days = 0.1164 per day (95% CI 0.0753-0.1718)
+   silent_unknown          7  0.0326/day  (95% CI 0.0131-0.0672)
+   grounding_nav           7  0.0326/day  (95% CI 0.0131-0.0672)
+   capture                 4  0.0186/day  (95% CI 0.0051-0.0477)
+   rig_weather             2  0.0093/day  (95% CI 0.0011-0.0336)
+   electronics             1  0.0047/day  (95% CI 0.0001-0.0259)
+   entanglement            1  0.0047/day  (95% CI 0.0001-0.0259)
+   software                1  0.0047/day  (95% CI 0.0001-0.0259)
+   leak_structure          1  0.0047/day  (95% CI 0.0001-0.0259)
+   actuator                1  0.0047/day  (95% CI 0.0001-0.0259)
+
+OPEN OCEAN: 8 mission-ending events / 622.3 days = 0.0129 per day (95% CI 0.0055-0.0253)
+   rig_weather             3  0.0048/day  (95% CI 0.0010-0.0141)
+   erratic_then_silent     2  0.0032/day  (95% CI 0.0004-0.0116)
+   silent_unknown          2  0.0032/day  (95% CI 0.0004-0.0116)
+   comms_antenna           1  0.0016/day  (95% CI 0.0000-0.0090)
+
+Kaplan-Meier, Microtransat (all 35 attempts with a published duration):
+   S(1d)=0.89  S(3d)=0.80  S(7d)=0.54  S(14d)=0.37  S(30d)=0.29  S(60d)=0.14  S(90d)=0.04
+Kaplan-Meier, Microtransat west-to-east only (17 attempts, the direction we will sail):
+   S(1d)=1.00  S(3d)=0.88  S(7d)=0.76  S(14d)=0.59  S(30d)=0.47  S(60d)=0.29  S(90d)=0.09
+   95% intervals (west-to-east): S(7d) 0.49-0.90  S(14d) 0.33-0.78  S(30d) 0.23-0.68  S(60d) 0.11-0.51  S(90d) 0.01-0.30
+
+Simulator Monte Carlo (2026-11-08_midatlantic_montecarlo_rates-historical.json, 100 runs; loss or grounding = event, arrival = censored):
+   S(1d)=0.97  S(3d)=0.90  S(7d)=0.84  S(14d)=0.78  S(30d)=0.66  S(60d)=0.59  S(90d)=0.50
+   Mean hazard over the whole voyage: 65/7250 boat-days = 0.0090 per day
+   Plus 13 runs that arrived with comms already dead (silent failures not counted above)
+   Still reporting (Microtransat yardstick: last report; silent arrival = failure):
+   S(1d)=0.96  S(3d)=0.89  S(7d)=0.80  S(14d)=0.70  S(30d)=0.58  S(60d)=0.45  S(90d)=0.33
+   Success (arrived and reporting): 22.0% (95% CI 15.0-31.1)
+
+Simulator Monte Carlo (2026-11-08_midatlantic_montecarlo_rates-original.json, 100 runs; loss or grounding = event, arrival = censored):
+   S(1d)=1.00  S(3d)=1.00  S(7d)=0.98  S(14d)=0.97  S(30d)=0.90  S(60d)=0.78  S(90d)=0.65
+   Mean hazard over the whole voyage: 45/9093 boat-days = 0.0049 per day
+   Plus 6 runs that arrived with comms already dead (silent failures not counted above)
+   Still reporting (Microtransat yardstick: last report; silent arrival = failure):
+   S(1d)=1.00  S(3d)=1.00  S(7d)=0.98  S(14d)=0.96  S(30d)=0.89  S(60d)=0.74  S(90d)=0.57
+   Success (arrived and reporting): 48.0% (95% CI 38.5-57.7)
+
+Simulator Monte Carlo (2026-11-08_midatlantic_montecarlo_rates-planning-no-shakedown.json, 100 runs; loss or grounding = event, arrival = censored):
+   S(1d)=0.99  S(3d)=0.95  S(7d)=0.91  S(14d)=0.86  S(30d)=0.75  S(60d)=0.67  S(90d)=0.57
+   Mean hazard over the whole voyage: 55/7739 boat-days = 0.0071 per day
+   Plus 13 runs that arrived with comms already dead (silent failures not counted above)
+   Still reporting (Microtransat yardstick: last report; silent arrival = failure):
+   S(1d)=0.98  S(3d)=0.94  S(7d)=0.87  S(14d)=0.78  S(30d)=0.67  S(60d)=0.54  S(90d)=0.42
+   Success (arrived and reporting): 32.0% (95% CI 23.7-41.7)
+
+Simulator Monte Carlo (2026-11-08_midatlantic_montecarlo_rates-planning-second-tracker.json, 100 runs; loss or grounding = event, arrival = censored):
+   S(1d)=0.99  S(3d)=0.96  S(7d)=0.94  S(14d)=0.91  S(30d)=0.81  S(60d)=0.74  S(90d)=0.58
+   Mean hazard over the whole voyage: 53/8054 boat-days = 0.0066 per day
+   Plus 6 runs that arrived with comms already dead (silent failures not counted above)
+   Still reporting (Microtransat yardstick: last report; silent arrival = failure):
+   S(1d)=0.98  S(3d)=0.96  S(7d)=0.94  S(14d)=0.90  S(30d)=0.79  S(60d)=0.68  S(90d)=0.52
+   Success (arrived and reporting): 41.0% (95% CI 31.9-50.8)
+
+Simulator Monte Carlo (2026-11-08_midatlantic_montecarlo_rates-planning.json, 100 runs; loss or grounding = event, arrival = censored):
+   S(1d)=0.99  S(3d)=0.96  S(7d)=0.94  S(14d)=0.91  S(30d)=0.81  S(60d)=0.74  S(90d)=0.62
+   Mean hazard over the whole voyage: 51/8154 boat-days = 0.0063 per day
+   Plus 12 runs that arrived with comms already dead (silent failures not counted above)
+   Still reporting (Microtransat yardstick: last report; silent arrival = failure):
+   S(1d)=0.98  S(3d)=0.95  S(7d)=0.91  S(14d)=0.85  S(30d)=0.74  S(60d)=0.61  S(90d)=0.47
+   Success (arrived and reporting): 37.0% (95% CI 28.2-46.8)
+
+Simulator Monte Carlo (2026-11-08_midatlantic_ocmd_ireland_montecarlo.json, 100 runs; loss or grounding = event, arrival = censored):
+   S(1d)=1.00  S(3d)=1.00  S(7d)=1.00  S(14d)=0.97  S(30d)=0.91  S(60d)=0.77  S(90d)=0.69
+   Mean hazard over the whole voyage: 42/9320 boat-days = 0.0045 per day
+   Plus 6 runs that arrived with comms already dead (silent failures not counted above)
+   Success (arrived and reporting): 51.0% (95% CI 41.3-60.6)

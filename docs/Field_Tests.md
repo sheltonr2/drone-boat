@@ -63,3 +63,17 @@ With the wing, tail, boom, arm and pod assembled on the spar, add lead shot to p
 ## Test E: solar day (one sunny day, on the bench)
 
 Leave the finished boat in full sun from dawn to dusk with the electronics running, and read the watt-hours the meter logged going into the battery. Compare with the simulator's solar output for that date and place. If the measured value is lower, adjust `"soiling_salt"` under `"power"` until it matches.
+
+## Test F: shakedown at sea (14–30 days, before launch)
+
+This test sets the pass criteria for the 3-week unattended coastal trial, the build plan's last gate before an ocean launch. It is about reliability, not about measuring the hull. In the Microtransat record, half of all boats were lost within a week, mostly to faults that a few weeks on the water would have exposed. The simulator's default "planning" failure rates **assume this test has been passed**. Skip it, and the honest numbers are the "historical" ones (see [Failure_Rates.md](Failure_Rates.md)).
+
+Put the finished boat, at sailing weight, on a swivel mooring or a short coastal loop in protected water for at least 14 days, with the full electronics running and reporting through Iridium at the crossing interval. It passes when all of these hold for 14 days in a row:
+
+- No unexplained reboot or watchdog reset. Log the reason for every reset.
+- The leak sensors stay dry, and the internal humidity stays flat (no rising trend).
+- No reporting gap longer than two report intervals.
+- The battery state of charge at dawn does not fall from week to week.
+- Servos and the wing still move freely afterwards, with no salt binding at the bearings or the tail pivot.
+
+Any failure resets the 14-day count after the fix. Record the start date and the results in `results/`, and set `"burn_in_days"` under `"early_life"` in your scenario to the days actually completed.

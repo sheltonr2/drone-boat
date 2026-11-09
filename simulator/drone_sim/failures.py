@@ -1,21 +1,77 @@
-"""Stochastic failure (hazard) model. Rates are events per day; every one can be edited or
-switched off in the scenario. Defaults are engineering guesses informed by the history of
-small autonomous sailboats (leaks, steering, fouling and collisions end most attempts)."""
-import math
+"""Stochastic failure (hazard) model. Rates are events per day of open-ocean sailing; the code
+adds multipliers for sea state, nearness to land and early life. Every rate can be edited or
+switched off in the scenario.
 
-DEFAULT_RATES = {
+Three rate sets (scenario key "failure_rate_set"; individual "failures" entries still override):
+  planning   - default. Microtransat-class rates with credit taken only for mitigations that are
+               in the build plan (potted IP68 box, backup comms power, watchdog, buoyant wing,
+               antifouling), and a 14-day shakedown before launch.
+  historical - fitted to the Microtransat record 2010-2023 (amateur and student boats, no shakedown).
+               Use it as the pessimistic bracket.
+  original   - the guesses used before 2026-11-08, kept so older results can be reproduced.
+Sources, derivations and quality grades: docs/Failure_Rates.md and docs/data/hazard_analysis.py."""
+import copy, math
+
+_ORIGINAL = {
     "leak":            {"enabled": True, "per_day": 0.0025, "note": "x(1+(Hs/3)^2); severity random"},
     "rudder_servo":    {"enabled": True, "per_day": 0.0020, "note": "x(1+Hs/4); stuck or limp"},
     "tail_servo":      {"enabled": True, "per_day": 0.0020, "note": "x(1+Hs/4); stuck or feathered"},
     "fouling_growth":  {"enabled": True, "per_day": 0.004, "note": "drag factor added per day at 20 C SST"},
     "entanglement":    {"enabled": True, "per_day": 0.003, "note": "x3 within 100 km of land; x2 in the Sargasso"},
     "collision":       {"enabled": True, "per_day": 0.0004, "note": "x8 within 100 km of land; 60% fatal"},
-    "capture":         {"enabled": True, "per_day": 0.002, "note": "only within 50 km of land"},
+    "capture":         {"enabled": True, "per_day": 0.002, "note": "only within capture_km of land", "capture_km": 50},
     "electronics":     {"enabled": True, "per_day": 0.0012, "note": "x6 once water is inside"},
+    "comms_silent":    {"enabled": False, "per_day": 0.0, "note": "modem/antenna/power-path failure: boat sails on, silent"},
     "software_hang":   {"enabled": True, "per_day": 0.02, "note": "watchdog recovers 95%"},
     "wave_capsize":    {"enabled": True, "per_day": 1.0, "note": "multiplier on breaking-wave knockdown physics"},
     "knockdown_damage": {"enabled": True, "per_day": 0.002, "note": "probability per knockdown of rig damage"},
+    "early_life":      {"enabled": False, "per_day": 0.0, "note": "extra multiplier k*exp(-(day+burn_in)/tau) on hardware hazards",
+                        "tau_days": 7.0, "burn_in_days": 0.0},
 }
+
+
+def _derive(base, changes):
+    out = copy.deepcopy(base)
+    for k, v in changes.items():
+        out[k].update(v)
+    return out
+
+
+RATE_SETS = {
+    "original": _ORIGINAL,
+    "historical": _derive(_ORIGINAL, {
+        "electronics":  {"per_day": 0.0035, "note": "x6 once water is inside; Microtransat open-ocean silent/erratic losses"},
+        "comms_silent": {"enabled": True, "per_day": 0.0022},
+        "capture":      {"per_day": 0.02, "capture_km": 160, "note": "within ~150 km of land (rings at 100 and 150 km); Microtransat near-land rate 0.019/day"},
+        "knockdown_damage": {"per_day": 0.006, "note": "fitted to Microtransat open-ocean rig/weather losses 0.0048/day"},
+        "early_life":   {"enabled": True, "per_day": 3.0, "tau_days": 7.0, "burn_in_days": 0.0},
+    }),
+    "planning": _derive(_ORIGINAL, {
+        "electronics":  {"per_day": 0.0025, "note": "x6 once water is inside; historical 0.0035 x0.7 for the potted IP68 box + desiccant"},
+        "comms_silent": {"enabled": True, "per_day": 0.0011, "note": "historical 0.0022 x0.5 for the backup D-cell and watchdog"},
+        "capture":      {"per_day": 0.01, "capture_km": 160, "note": "within ~150 km of land; historical 0.02 x0.5: labels, notices to fishermen, offshore drop"},
+        "knockdown_damage": {"per_day": 0.003, "note": "historical 0.006 x0.5: buoyant, balanced wing on a self-righting hull"},
+        "early_life":   {"enabled": True, "per_day": 3.0, "tau_days": 7.0, "burn_in_days": 14.0},
+    }),
+}
+DEFAULT_RATE_SET = "planning"
+DEFAULT_RATES = RATE_SETS[DEFAULT_RATE_SET]
+
+
+def rates_for(scenario):
+    """Rate table for a scenario: the named set, then any per-entry overrides."""
+    fr = copy.deepcopy(RATE_SETS.get((scenario or {}).get("failure_rate_set") or DEFAULT_RATE_SET, DEFAULT_RATES))
+    for k, v in ((scenario or {}).get("failures") or {}).items():
+        if k in fr: fr[k].update(v)
+    return fr
+
+
+def early_life_factor(fr, day):
+    """1 + k*exp(-(day + burn_in)/tau): infant-mortality bump for hardware that has not been shaken down."""
+    e = fr.get("early_life") or {}
+    if not e.get("enabled") or e.get("per_day", 0) <= 0:
+        return 1.0
+    return 1.0 + e["per_day"]*math.exp(-(day + e.get("burn_in_days", 0.0))/max(e.get("tau_days", 7.0), 0.1))
 
 
 def p_event(rate_per_day, dt_s):

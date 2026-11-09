@@ -5,7 +5,7 @@ import numpy as np
 
 from .env import make_provider, LandMask, destination, haversine_km, bearing_deg, to_epoch, from_epoch
 from .autopilot import Autopilot, wrap180
-from .failures import DEFAULT_RATES, p_event, breaking_knockdown_rate
+from .failures import DEFAULT_RATE_SET, rates_for, early_life_factor, p_event, breaking_knockdown_rate
 from . import geometry, vpp as vppmod
 
 DEFAULT_SCENARIO = {
@@ -29,7 +29,8 @@ DEFAULT_SCENARIO = {
     "seed": 1,
     "commands": [],                # [{"t_hours": 240, "cmd": "SET_REPORT", "args": {"hours": 1}}]
     "operator": {"auto_reboot_after_silence_h": 24},
-    "failures": copy.deepcopy(DEFAULT_RATES),
+    "failure_rate_set": DEFAULT_RATE_SET,   # planning | historical | original (see failures.py)
+    "failures": {},                         # per-entry overrides of the rate set
     "failures_enabled": True,
     "initial_mode": "sail",
 }
@@ -75,10 +76,7 @@ class Voyage:
         self.rng = np.random.default_rng(sc["seed"])
         self.events = []
         self.ap = Autopilot(design, sc, self.polar, self.land, self.event)
-        fr = copy.deepcopy(DEFAULT_RATES)
-        for k, v in (sc.get("failures") or {}).items():
-            if k in fr: fr[k].update(v)
-        self.fr = fr
+        self.fr = rates_for(sc)
         self.fail_on = sc.get("failures_enabled", True)
         self.cmds = sorted(sc.get("commands", []), key=lambda c: c["t_hours"])
 
@@ -218,6 +216,7 @@ class Voyage:
             outcome=outcome, days=round(days, 2), end=dict(lat=st["lat"], lon=st["lon"]),
             distance_km=round(st["distance_km"], 1), credits=st["credits"], airtime_usd=round(cost, 2),
             sessions_ok=st["sessions_ok"], sessions_failed=st["sessions_fail"],
+            last_report_day=round((st["last_report_ok"] - self.t0)/86400, 2),
             knockdowns=st["knockdowns"], capsizes=st["capsizes"],
             energy_in_wh=round(st["energy_in_wh"], 1), energy_out_wh=round(st["energy_out_wh"], 1),
             final_soc=round(st["soc"], 3), final_drag_factor=round(st["df"], 2),
@@ -342,14 +341,15 @@ class Voyage:
         def near(km):
             nonlocal dland
             if dland is None:
-                dland = self.land.dist_to_land_km(st["lat"], st["lon"], max_km=150) if (self.rng.random() < 0.05 or not hasattr(self, "_dl")) else self._dl
+                dland = self.land.dist_to_land_km(st["lat"], st["lon"], max_km=220) if (self.rng.random() < 0.05 or not hasattr(self, "_dl")) else self._dl
                 self._dl = dland
             return dland < km
         # fouling (continuous)
         if self.rate("fouling_growth") > 0:
             st["df"] = min(st["df"] + self.rate("fouling_growth")*max(e["sst"], 0)/20*dt/86400, 3.0)
+        el = early_life_factor(self.fr, (t - self.t0)/86400) if self.fail_on else 1.0
         # leak
-        if st["leak_rate"] == 0 and rnd() < p_event(self.rate("leak")*(1 + (hs/3)**2), dt):
+        if st["leak_rate"] == 0 and rnd() < p_event(self.rate("leak")*el*(1 + (hs/3)**2), dt):
             sev = rnd(); st["leak_rate"] = 0.05 + 2.5*sev**2
             self.event(t, "failure", f"Leak started ({st['leak_rate']:.2f} kg/day of water)")
         if st["leak_rate"] > 0:
@@ -359,17 +359,20 @@ class Voyage:
             if st["water_kg"] > 0.35*self.boat.mass:
                 st["alive"] = False; self.event(t, "failure", "Swamped by leaking water: boat lost"); return
         # electronics
-        if rnd() < p_event(self.rate("electronics")*(1 + 5*(st["water_kg"] > 0.3)), dt):
+        if rnd() < p_event(self.rate("electronics")*el*(1 + 5*(st["water_kg"] > 0.3)), dt):
             st["alive"] = False; self.event(t, "failure", "Electronics failure (corrosion/humidity): boat silent and uncontrolled")
             return
+        # satellite modem, antenna or comms power path: the boat keeps sailing but goes quiet for good
+        if not st["comms_dead"] and rnd() < p_event(self.rate("comms_silent")*el*(1 + hs/4), dt):
+            st["comms_dead"] = True; self.event(t, "failure", "Satellite modem or antenna failed: boat sails on but is silent")
         # steering
-        if st["rudder"] == "ok" and rnd() < p_event(self.rate("rudder_servo")*(1 + hs/4), dt):
+        if st["rudder"] == "ok" and rnd() < p_event(self.rate("rudder_servo")*el*(1 + hs/4), dt):
             if rnd() < 0.6:
                 st["rudder"] = "stuck"; st["rudder_stuck"] = rnd()*2 - 1
                 self.event(t, "failure", f"Rudder servo jammed at {st['rudder_stuck']*self.d['rudder']['max_angle_deg']:.0f} deg")
             else:
                 st["rudder"] = "limp"; self.event(t, "failure", "Rudder servo failed limp: no steering")
-        if st["tail"] == "ok" and rnd() < p_event(self.rate("tail_servo")*(1 + hs/4), dt):
+        if st["tail"] == "ok" and rnd() < p_event(self.rate("tail_servo")*el*(1 + hs/4), dt):
             if rnd() < 0.5:
                 st["tail"] = "stuck"; st["tail_stuck_alpha"] = math.radians(rnd()*15)
                 self.event(t, "failure", "Tail servo jammed: wing stuck at a fixed angle of attack")
@@ -388,7 +391,7 @@ class Voyage:
             if rnd() < 0.6:
                 st["alive"] = False; self.event(t, "failure", "Struck by a vessel: boat lost"); return
             st["leak_rate"] = max(st["leak_rate"], 0.5); self.event(t, "failure", "Collision damage: hull leaking")
-        if near(50) and rnd() < p_event(self.rate("capture"), dt):
+        if near(self.fr["capture"].get("capture_km", 50)) and rnd() < p_event(self.rate("capture"), dt):
             st["alive"] = False; self.event(t, "failure", "Picked up by a fishing boat or passer-by"); return
         # software hang
         if not st["hung"] and rnd() < p_event(self.rate("software_hang"), dt):

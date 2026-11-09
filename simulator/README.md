@@ -79,7 +79,7 @@ Breaking waves hit the boat as roll impulses, and the physics decides whether it
 - Autopilot: VMG-optimal tacking and gybing, land and geofence avoidance, storm, safe and drift modes.
 - Power: solar from measured irradiance, heel and capsize; loads; cold-charge cutoff.
 - Iridium: credits, failed sessions in heavy seas or when knocked down, commands delivered at the next good session.
-- Failures: leaks, servo jams, fouling, weed and fishing line, collisions, capture near land, electronics, software hangs.
+- Failures: leaks, servo jams, fouling, weed and fishing line, collisions, capture on the shelf (~150 km), electronics, comms that die while the boat sails on, software hangs, and extra early-life failures that a shakedown reduces. Three rate sets: `planning` (default), `historical` (fitted to the Microtransat record) and `original`. Choose one with `"failure_rate_set"` in the scenario or in the web UI. Sources: `docs/Failure_Rates.md`.
   Every hazard rate is editable on the Voyage tab.
 
 ## Uploading new designs
@@ -106,7 +106,8 @@ python -m drone_sim.cli mc --scenario my_scenario.json --runs 200 --from 2022-06
   model green water on deck or slamming; breaking waves are modelled as impulses.
 - Open-Meteo marine data is about 8 km resolution and not meant for coastal navigation. Near harbours,
   tidal streams can be stronger than the model shows.
-- Failure odds depend almost entirely on the hazard rates you enter. Treat Monte Carlo results as
+- Failure odds depend almost entirely on the hazard rates. The `historical` set matches the Microtransat
+  survival curve up to day 60 but is too kind after that (no wear-out yet). Treat Monte Carlo results as
   "how sensitive is success to X", not as a forecast.
 
 ## Results viewer

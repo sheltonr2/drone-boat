@@ -192,6 +192,7 @@ $("#s-mode").onchange = () => {
     `(about ${fmt(days * 0.5 * 0.05 / dt, 0)} h for ${days} days). Use it for storms or a few days; use Hybrid for whole crossings and Monte Carlo.`;
 };
 $("#s-days").onchange = () => $("#s-mode").onchange(); $("#s-dt6").onchange = () => $("#s-mode").onchange();
+$("#s-rateset").onchange = () => { S.failures = structuredClone(S.defaults.rate_sets[$("#s-rateset").value]); buildFailures(); };
 function buildFailures() {
   $("#tbl-fail").innerHTML = "<tr><th>On</th><th>Hazard</th><th>Rate/day</th><th>Notes</th></tr>" +
     Object.entries(S.failures).map(([k, v]) => `<tr><td><input type="checkbox" data-f="${k}" ${v.enabled ? "checked" : ""}></td><td>${k.replace(/_/g, " ")}</td>
@@ -218,13 +219,14 @@ function scenario() {
     waypoints: S.waypoints, atlantic_islands_count: $("#s-isles").checked, start_time: $("#s-time").value + ":00", max_days: +$("#s-days").value, provider: $("#s-provider").value,
     grid_deg: +$("#s-grid").value, fine_grid: $("#s-fine").checked ? (S.defaults.scenario.fine_grid || { deg: 0.25, lat: [30, 50], lon: [-80, -38] }) : null, arrival_radius_km: +$("#s-radius").value, seed: +$("#s-seed").value, mode: $("#s-mode").value,
     dt_s: +$("#s-dt").value, dt_6dof_s: +$("#s-dt6").value, log_interval_min: +$("#s-log").value,
-    failures_enabled: $("#s-fail").checked, failures: S.failures, commands: S.commands };
+    failures_enabled: $("#s-fail").checked, failure_rate_set: $("#s-rateset").value, failures: S.failures, commands: S.commands };
 }
 function fillScenario(sc) {
   $("#s-lat").value = sc.start.lat; $("#s-lon").value = sc.start.lon; $("#t-lat").value = sc.target.lat; $("#t-lon").value = sc.target.lon;
   $("#s-time").value = sc.start_time.slice(0, 16); $("#s-days").value = sc.max_days; $("#s-provider").value = sc.provider;
   $("#s-radius").value = sc.arrival_radius_km; $("#s-seed").value = sc.seed; $("#s-mode").value = sc.mode; $("#s-dt").value = sc.dt_s;
   $("#s-log").value = sc.log_interval_min; $("#s-fail").checked = sc.failures_enabled;
+  $("#s-rateset").value = sc.failure_rate_set || "planning";
   S.waypoints = (sc.waypoints || []).map(w => w.slice()); $("#s-isles").checked = !!sc.atlantic_islands_count;
   $("#s-grid").value = String(sc.grid_deg); $("#s-fine").checked = !!sc.fine_grid;
 }

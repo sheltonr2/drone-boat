@@ -26,7 +26,9 @@ The northern targets win clearly. The differences between launch sites come from
 
 ## Monte Carlo, Ocean City to south-west Ireland, failures on
 
-100 voyages, launches April to July in 2022–2025, default failure rates.
+100 voyages, launches April to July in 2022–2025, with the failure rates in use before 8 Nov 2026 (now called `original`).
+
+> **Update, 8 Nov 2026:** the failure rates have been refitted to the Microtransat record ([Failure_Rates.md](Failure_Rates.md)). On the same route and launch window, the new default (`planning`) gives **37%** reaching Europe still reporting (95% range 28–47%), and the record's own rates (`historical`) give **22%** (15–31%). The two new main killers are electronics and comms failures (12% of boats now arrive silent) and fishermen on the shelf. The table below is kept for comparison between routes.
 
 | | Mid-Atlantic route | Newfoundland route (for comparison) |
 | --- | --- | --- |
@@ -44,7 +46,7 @@ By launch month: April 41%, May 48%, June 52%, July 60%. With 22–30 runs a mon
 
 - **More knockdowns.** The boat spends weeks in the storm track off the US coast, where lows form and run up the Gulf Stream. It self-rights every time in the simulator, but each knockdown risks damage.
 - **More groundings.** About 6% of boats were disabled early (usually a jammed rudder) and drifted north-east onto Nova Scotia, New England or Newfoundland.
-- **Same main killers.** Leaks (21 of 100) and electronics failures (12) still end most failed voyages. Sealing and electronics reliability remain the biggest levers on the odds.
+- **Same main killers.** Leaks (21 of 100) and electronics failures (12) still end most failed voyages. Sealing and electronics reliability remain the biggest levers on the odds. Under the refitted rates, being picked up on the shelf joins them (see [Failure_Rates.md](Failure_Rates.md)).
 
 ## First checks on real weather (run on Randolph's computer, Nov 8, 2026)
 

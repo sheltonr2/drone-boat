@@ -6,8 +6,8 @@ We share work with John's team ([jcolter11374/boat-sim](https://github.com/jcolt
 
 | Item | Who | Status |
 | --- | --- | --- |
-| Shared failure-rate table with sources (`docs/Failure_Rates.md`) | us | to do |
-| History of Microtransat-style crossings (`docs/Crossing_History.md`) | us | to do |
+| Shared failure-rate table with sources ([`docs/Failure_Rates.md`](../docs/Failure_Rates.md)) | us | done Nov 8 |
+| History of Microtransat-style crossings ([`docs/Crossing_History.md`](../docs/Crossing_History.md), data in [`docs/data/`](../docs/data/)) | us | done Nov 8 |
 | NOAA drifter check along the shared Gulf Stream stretch (36–42°N, 75–50°W) | boat-sim | asked |
 | GLORYS vs Open-Meteo/SMOC currents along that stretch | boat-sim | asked |
 | Dead-boat drift comparison (below) | both | our run done Nov 8 ([track](../results/2026-11-08_dead_boat_2023-05-15_track.txt)); waiting for boat-sim's |

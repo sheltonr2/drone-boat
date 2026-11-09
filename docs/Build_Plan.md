@@ -167,7 +167,7 @@ The boat now launches about 25 km off the Mid-Atlantic coast (Ocean City, Maryla
 | Galicia, Spain | 125–126 days |
 | Portugal | 139–144 days |
 
-These come from the simulator on invented weather, without hurricanes. Virginia Beach and Cape May took 113–119 days to Ireland, but that gap comes from where the invented weather puts the Gulf Stream, so don't choose a launch site on it. With failures switched on, 51% of 100 voyages (April–July starts) reached Europe still reporting, against 47.5% from Newfoundland.
+These come from the simulator on invented weather, without hurricanes. Virginia Beach and Cape May took 113–119 days to Ireland, but that gap comes from where the invented weather puts the Gulf Stream, so don't choose a launch site on it. With failures switched on, 51% of 100 voyages (April–July starts) first reached Europe still reporting, against 47.5% from Newfoundland. After the failure rates were refitted to the Microtransat record (Nov 8, 2026; see docs/Failure_Rates.md), the figure is 37% if the 3-week coastal trial is passed and the safeguards work, and 22% at the record's own rates.
 
 ## Budget
 

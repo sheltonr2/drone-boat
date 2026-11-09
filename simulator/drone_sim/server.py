@@ -8,7 +8,7 @@ import numpy as np
 from . import design as D
 from . import geometry, vpp as vppmod
 from .sim import Voyage, prepare_design, DEFAULT_SCENARIO
-from .failures import DEFAULT_RATES
+from .failures import DEFAULT_RATES, RATE_SETS, DEFAULT_RATE_SET
 from .montecarlo import run_montecarlo
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -107,7 +107,7 @@ class H(BaseHTTPRequestHandler):
             return self._send(200, open(f, "rb").read(), mimetypes.guess_type(f)[0] or "application/octet-stream")
         if p == "/api/defaults":
             return self._send(200, dict(design=D.default_design(), editable=D.EDITABLE, scenario=DEFAULT_SCENARIO,
-                                        failures=DEFAULT_RATES, cpu=os.cpu_count(), workspace=WORK))
+                                        failures=DEFAULT_RATES, rate_sets=RATE_SETS, rate_set=DEFAULT_RATE_SET, cpu=os.cpu_count(), workspace=WORK))
         m = re.match(r"^/api/job/([0-9a-f]+)$", p)
         if m:
             j = JOBS.get(m.group(1))

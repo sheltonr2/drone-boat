@@ -22,7 +22,8 @@ def _one(args):
     fatal = [e["msg"] for e in r["events"] if e["kind"] == "failure"]
     return dict(i=i, start_time=sc["start_time"], seed=sc["seed"], outcome=r["outcome"], days=r["days"],
                 distance_km=r["distance_km"], airtime_usd=r["airtime_usd"], knockdowns=r["knockdowns"],
-                capsizes=r["capsizes"], failures=fatal, end=r["end"], track=track, stats=r["stats"])
+                capsizes=r["capsizes"], failures=fatal, end=r["end"], track=track, stats=r["stats"],
+                last_report_day=r.get("last_report_day"))
 
 
 def start_times(window, n, rng):

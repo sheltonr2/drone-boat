@@ -116,6 +116,11 @@
       <div id="sixdof-note" class="hint warn hidden"></div>
       <h3>Failures</h3>
       <label class="check"><input type="checkbox" id="s-fail" checked> Enable random failures</label>
+      <label>Failure rates <select id="s-rateset">
+        <option value="planning">Planning (default: Microtransat rates, credit for our build)</option>
+        <option value="historical">Historical (Microtransat 2010-2023 record, pessimistic)</option>
+        <option value="original">Original guesses (before 8 Nov 2026)</option></select></label>
+      <p class="hint">Sources and derivations: docs/Failure_Rates.md. Editing a rate below overrides the selected set.</p>
       <table id="tbl-fail" class="compact"></table>
       <h3>Commands from shore</h3>
       <p class="hint">Queued at the given time, delivered at the boat's next successful satellite session.</p>
