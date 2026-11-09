@@ -20,7 +20,8 @@ def _one(args):
         return dict(i=i, error=str(e))
     ser = r["series"]
     step = max(1, len(ser)//150)
-    track = [[s["lat"], s["lon"]] for s in ser[::step]] + [[r["end"]["lat"], r["end"]["lon"]]]
+    track = [[s["lat"], s["lon"], round(s.get("t", 0)/24, 3)] for s in ser[::step]] + \
+            [[r["end"]["lat"], r["end"]["lon"], r["days"]]]          # lat, lon, days since launch
     fatal = [e["msg"] for e in r["events"] if e["kind"] == "failure"]
     return dict(i=i, start_time=sc["start_time"], seed=sc["seed"], outcome=r["outcome"], days=r["days"],
                 distance_km=r["distance_km"], airtime_usd=r["airtime_usd"], knockdowns=r["knockdowns"],

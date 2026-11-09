@@ -39,10 +39,11 @@ def main():
 
 def _main():
     ap = argparse.ArgumentParser(prog="drone_sim")
-    ap.add_argument("cmd", choices=["voyage", "mc", "selftest", "gridcheck", "download", "bulkcheck", "cdscheck"])
+    ap.add_argument("cmd", choices=["voyage", "mc", "selftest", "gridcheck", "download", "bulkcheck", "cdscheck", "stormcheck"])
     ap.add_argument("--months", default="", help="for download: e.g. 2023-05..2023-10,2024-05..2024-10")
     ap.add_argument("--stride", type=int, default=1, help="for download: keep every Nth ocean grid point (1 = full 1/12 deg)")
     ap.add_argument("--sources", default="era5,smoc,wav"); ap.add_argument("--keep-raw", action="store_true")
+    ap.add_argument("--mc", help="for stormcheck: a Monte Carlo result file"); ap.add_argument("--radius", type=float, default=200.0)
     ap.add_argument("--scenario"); ap.add_argument("--design"); ap.add_argument("--out")
     ap.add_argument("--runs", type=int, default=100); ap.add_argument("--from", dest="frm"); ap.add_argument("--to")
     ap.add_argument("--years", default=""); ap.add_argument("--processes", type=int)
@@ -58,6 +59,17 @@ def _main():
                         stride=a.stride, keep_raw=a.keep_raw, log=lambda m: print(m, flush=True))
         if errs:
             print("Some months failed:"); [print("  " + e[:300]) for e in errs]
+        return
+    if a.cmd == "stormcheck":
+        from .storms import StormClimatology, mc_storm_table
+        mc = json.load(open(a.mc))["result"]
+        tab = mc_storm_table(mc, StormClimatology(), radius_km=a.radius)
+        print(f"Tropical-cyclone encounters within {a.radius:.0f} km (HURDAT2 1991-2025 analog seasons), {a.mc}")
+        print(f"{'launch':7s} {'voyages':>7s} {'any TS+':>8s} {'95% CI':>13s} {'TS':>6s} {'Cat1-2':>7s} {'Cat3-5':>7s}")
+        for k, v in tab.items():
+            print(f"{k:7s} {v['voyages']:7d} {100*v['p_any']:7.1f}% {100*v['ci95_any'][0]:5.1f}-{100*v['ci95_any'][1]:4.1f}% "
+                  f"{100*v['p_TS']:5.1f}% {100*v['p_C1-2']:6.1f}% {100*v['p_C3-5']:6.1f}%")
+        if a.out: json.dump(dict(radius_km=a.radius, table=tab), open(a.out, "w"), indent=1)
         return
     if a.cmd == "cdscheck":
         from .bulk import cds_check

@@ -1,13 +1,13 @@
 """Boat design parameters (SI units: metres, kilograms, seconds, degrees where noted).
 
-A design is a nested dict that round-trips to JSON. `default_design()` returns the Rev A
+A design is a nested dict that round-trips to JSON. `default_design()` returns the Rev B
 1.5 m drone from the drawing set. Coordinates follow the drawings: x aft from the bow,
 y to port, z up from the hull bottom at midships.
 """
 import copy, json, hashlib
 
 DEFAULT = {
-    "name": "Rev A 1.5 m solar-sail drone",
+    "name": "Rev B 1.5 m solar-sail drone",
     "hull": {
         "length": 1.50, "beam": 0.40, "depth": 0.23,
         "max_beam_at": 0.55,            # fraction of length

@@ -2,6 +2,12 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-09, 16:30
+
+- New on #50: boat-sim delivered #116 (SMOC vs GLORYS on real drifters: neither is measurably better in the eddy field; don't add Stokes drift on top of SMOC's total current), #117 (ERA5/best-track wind ratios: TS 0.70, C1 0.66, C2 0.59, C3 0.53, C4 0.42) and #118 (wear-out: the record can't tell it apart from a steady rate; Weibull k = 1.41, 95% 0.75–2.24, p = 0.25; use k = 1 by default). Theo asked for Rev B's GZ curve and roll inertia for their 3D view.
+- Done: `docs/data/revB_gz_curve.csv` (5° steps, inertia in the header). Hurricane storm-frequency model `storms.py` + `stormcheck`, using HURDAT2 1991–2025 analog seasons with a season-bootstrap interval ([Hurricane_Risk.md](../docs/Hurricane_Risk.md)): TS-or-worse within 200 km is 0.1% for April, 5% May, 17% June, 20% July launches. Monte Carlo tracks now carry the time. The default design label now says Rev B (the geometry already was).
+- Synthetic Monte Carlo, 200 runs from the 100 km drop, planning rates: 40% (95% CI 33.5–46.9). The earlier 100-run 30% was noise.
+
 ## 2026-11-09, 15:30
 
 - The CDS token fix worked: ERA5 2023-05 and 2023-06 are stored. Each month takes about 3 hours, mostly CDS queue time, so the 12 remaining months take about 35 hours more (done around Wednesday morning). 2023 should be complete around 3–4 am Tuesday.
