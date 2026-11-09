@@ -39,7 +39,7 @@ def main():
 
 def _main():
     ap = argparse.ArgumentParser(prog="drone_sim")
-    ap.add_argument("cmd", choices=["voyage", "mc", "selftest", "gridcheck", "download", "bulkcheck"])
+    ap.add_argument("cmd", choices=["voyage", "mc", "selftest", "gridcheck", "download", "bulkcheck", "cdscheck"])
     ap.add_argument("--months", default="", help="for download: e.g. 2023-05..2023-10,2024-05..2024-10")
     ap.add_argument("--stride", type=int, default=1, help="for download: keep every Nth ocean grid point (1 = full 1/12 deg)")
     ap.add_argument("--sources", default="era5,smoc,wav"); ap.add_argument("--keep-raw", action="store_true")
@@ -59,6 +59,17 @@ def _main():
         if errs:
             print("Some months failed:"); [print("  " + e[:300]) for e in errs]
         return
+    if a.cmd == "cdscheck":
+        from .bulk import cds_check
+        cds_check(log=lambda m: print(m, flush=True)); return
+    if a.cmd == "mc" and sc.get("provider") == "bulk":
+        from .bulk import available_months
+        have = set(available_months(CACHE))
+        need = {int(f"{y}{m:02d}") for y in (a.years.split(",") if a.years else [a.frm[:4]]) for m in range(int(a.frm[5:7]), int(a.to[5:7]) + 1)}
+        if not need <= have:
+            print(f"STOPPED: bulk data is missing for launch months {sorted(need - have)} "
+                  f"(downloaded, all three sources: {sorted(have) or 'none'}). Finish the download first.")
+            sys.exit(4)
     if a.cmd == "bulkcheck":
         from .bulk import compare_with_openmeteo, available_months
         print("Downloaded months (all three sources):", available_months(CACHE), flush=True)

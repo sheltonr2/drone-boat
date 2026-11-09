@@ -2,6 +2,12 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-09, morning
+
+- First bulk run ([log](run_log_bulk_2026-11-09.txt)): all 28 Copernicus Marine source-months downloaded and converted (SMOC ~2.2 GB and MFWAM ~0.95 GB a month, about 17 and 9 minutes each, 31 GB stored). Every ERA5 request got HTTP 400 from CDS, including plain GET calls the browser makes without trouble. The ERA5 licence shows "Accepted" on the dataset page.
+- The downloader had retried those 400s about 40 times. CDS's October notice warns that repeated invalid requests can get an account disabled, so it now stops at the first 4xx and prints the server's reason. The Monte Carlo now refuses to start when bulk months are missing; the first run logged 500 empty "errors".
+- New `cds_check.bat` / `cli cdscheck`: versions, .cdsapirc shape (never the token), two plain GETs with the token, and one tiny request, with server responses printed.
+
 ## 2026-11-08, 22:45
 
 - Randolph has free accounts with ECMWF (CDS) and Copernicus Marine. New `bulk` data provider: whole months of ERA5 (0.25°, hourly), SMOC currents (1/12°, hourly) and MFWAM waves (1/12°, 3-hourly) for 26–60°N, 82°W–0°, stored as memory-mapped float16 arrays. It uses the same data Open-Meteo serves, but the currents come at full resolution, with no daily quota, and runs use all cores.

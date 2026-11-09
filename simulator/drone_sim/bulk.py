@@ -245,6 +245,64 @@ def _download_marine(name, ym, box, raw, log):
     return [os.path.join(raw, fn)]
 
 
+def _http_detail(e):
+    """(status code, server's explanation) from a requests-style HTTPError, else (None, '')."""
+    r = getattr(e, "response", None)
+    code = getattr(r, "status_code", None)
+    if r is None:
+        return None, ""
+    try:
+        j = r.json()
+        detail = " | ".join(str(j.get(k)) for k in ("title", "detail", "message", "traceback") if j.get(k))
+    except Exception:
+        detail = (getattr(r, "text", "") or "")[:500]
+    return code, detail[:800] or "(no explanation in the response)"
+
+
+def cds_check(log=print):
+    """Diagnose CDS access without ever printing the token: config, versions, auth, one tiny request."""
+    import re, sys, tempfile
+    log(f"Python {sys.version.split()[0]}")
+    for mod in ("cdsapi", "ecmwf.datastores", "requests"):
+        try:
+            m = __import__(mod, fromlist=["x"]); log(f"{mod} {getattr(m, '__version__', '?')}")
+        except Exception as e:
+            log(f"{mod}: not importable ({e})")
+    rc = os.path.join(os.path.expanduser("~"), ".cdsapirc")
+    url = key = None
+    if not os.path.exists(rc):
+        log(f"No {rc}. Run setup_bulk_data.bat again."); return
+    for line in open(rc, encoding="utf-8", errors="replace"):
+        k, _, v = line.partition(":")
+        if k.strip() == "url": url = v.strip()
+        if k.strip() == "key": key = v.strip()
+    log(f".cdsapirc url: {url!r}")
+    if not key:
+        log(".cdsapirc has no key line."); return
+    shape = "UUID (the current format)" if re.fullmatch(r"[0-9a-fA-F-]{36}", key) else (
+        "UID:KEY (the old, retired format)" if ":" in key else "unexpected format")
+    log(f".cdsapirc key: {len(key)} characters, {shape}" + ("; contains spaces or quotes" if re.search(r"[\s'\"]", key) else ""))
+    import requests
+    for path in ("/profiles/v1/account/verification/pat", "/retrieve/v1/processes/" + ERA5_DATASET):
+        try:
+            r = requests.get(url.rstrip("/") + path, headers={"PRIVATE-TOKEN": key}, timeout=60)
+            log(f"GET {path}: HTTP {r.status_code} {r.text[:300]!r}")
+        except Exception as e:
+            log(f"GET {path}: {e}")
+    log("Submitting one tiny request (2 m temperature, 1 hour, small box) ...")
+    try:
+        import cdsapi
+        tgt = os.path.join(tempfile.gettempdir(), "cds_check.nc")
+        cdsapi.Client(url=url, key=key, quiet=True, progress=False).retrieve(ERA5_DATASET, {
+            "product_type": ["reanalysis"], "variable": ["2m_temperature"], "year": ["2024"], "month": ["05"],
+            "day": ["15"], "time": ["12:00"], "data_format": "netcdf", "download_format": "unarchived",
+            "area": [40, -75, 38, -73]}, tgt)
+        log(f"Tiny request worked ({os.path.getsize(tgt)} bytes). CDS access is fine.")
+    except Exception as e:
+        code, detail = _http_detail(e)
+        log(f"Tiny request failed: HTTP {code}: {detail or e}")
+
+
 def download(months, cache_dir, box=None, sources=SOURCES, stride=1, keep_raw=False, log=print):
     """Fetch and convert every missing source-month. The two services run side by side; requests
     to each one are strictly one after another (CDS asks for that)."""
@@ -273,6 +331,14 @@ def download(months, cache_dir, box=None, sources=SOURCES, stride=1, keep_raw=Fa
                     log(f"[{label}] {s} {ym} done in {(time.time() - t)/60:.1f} min")
                     break
                 except Exception as e:  # noqa: BLE001 - report and retry, then move on
+                    code, detail = _http_detail(e)
+                    if code and 400 <= code < 500:
+                        # The service rejected the request itself. Retrying identical requests does not help,
+                        # and CDS may disable accounts that keep sending invalid ones, so stop this lane.
+                        log(f"[{label}] {s} {ym} was refused by the server (HTTP {code}). Server says: {detail}")
+                        log(f"[{label}] Stopping {label} downloads. Run: python -m drone_sim.cli cdscheck")
+                        errors.append(f"{s} {ym}: HTTP {code}: {detail}")
+                        return
                     log(f"[{label}] {s} {ym} failed ({type(e).__name__}: {str(e)[:300]})"
                         + ("; retrying in 2 min" if attempt < 2 else "; giving up on this month for now"))
                     if attempt < 2: time.sleep(120)
