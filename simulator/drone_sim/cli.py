@@ -65,9 +65,11 @@ def _main():
     if a.cmd == "mc" and sc.get("provider") == "bulk":
         from .bulk import available_months
         have = set(available_months(CACHE))
-        need = {int(f"{y}{m:02d}") for y in (a.years.split(",") if a.years else [a.frm[:4]]) for m in range(int(a.frm[5:7]), int(a.to[5:7]) + 1)}
+        # launch months plus five more, so voyages are not cut short by the end of the data
+        need = {int(f"{y}{m:02d}") for y in (a.years.split(",") if a.years else [a.frm[:4]])
+                for m in range(int(a.frm[5:7]), min(12, int(a.to[5:7]) + 5) + 1)}
         if not need <= have:
-            print(f"STOPPED: bulk data is missing for launch months {sorted(need - have)} "
+            print(f"STOPPED: bulk data is missing for months {sorted(need - have)} "
                   f"(downloaded, all three sources: {sorted(have) or 'none'}). Finish the download first.")
             sys.exit(4)
     if a.cmd == "bulkcheck":

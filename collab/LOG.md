@@ -2,6 +2,11 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-09, 15:30
+
+- The CDS token fix worked: ERA5 2023-05 and 2023-06 are stored. Each month takes about 3 hours, mostly CDS queue time, so the 12 remaining months take about 35 hours more (done around Wednesday morning). 2023 should be complete around 3–4 am Tuesday.
+- New `run_bulk_mc_2023.bat`: a 250-voyage Monte Carlo on 2023 alone, which can run while 2024 keeps downloading. A bulk Monte Carlo now refuses to start unless the launch months plus the next five are all on disk, so voyages aren't cut short by the end of the data.
+
 ## 2026-11-09, 07:20
 
 - New on #50 overnight: boat-sim is adopting our failure table (#89) and testing drop distance from their own launch point (#90). Their project owner confirmed extra people and free GitHub computing, nothing paid. They offered three jobs: SMOC scored on their 20 drifters, the hurricane wind-ratio CSV, and a wear-out term. They also pointed out ERA5 waves (swh, pp1d, mwd) for years before Nov 2022.
