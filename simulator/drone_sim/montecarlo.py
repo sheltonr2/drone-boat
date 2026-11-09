@@ -5,7 +5,7 @@ import numpy as np
 from concurrent.futures import ProcessPoolExecutor, as_completed
 
 from .sim import Voyage, prepare_design, DEFAULT_SCENARIO
-from .env import make_provider, LandMask, to_epoch, from_epoch, destination, bearing_deg, haversine_km
+from .env import OpenMeteoLimit, make_provider, LandMask, to_epoch, from_epoch, destination, bearing_deg, haversine_km
 
 OUTCOMES = ["arrived_reporting", "arrived_silent", "at_sea_timeout", "aground", "lost"]
 
@@ -14,6 +14,8 @@ def _one(args):
     design, sc, cache_dir, i = args
     try:
         r = Voyage(design, sc, cache_dir=cache_dir, log=lambda *a: None).run()
+    except OpenMeteoLimit:
+        raise                # stop the batch; the CLI can wait for the next day and resume from the cache
     except Exception as e:  # keep the batch alive
         return dict(i=i, error=str(e))
     ser = r["series"]
@@ -68,13 +70,19 @@ def run_montecarlo(design, scenario, n_runs=50, window=None, processes=None, cac
     if sc0["provider"] == "openmeteo":
         prov = make_provider("openmeteo", cache_dir, log, sc0["grid_deg"], fine_grid=sc0.get("fine_grid"))
         # Only the months each voyage can actually be at sea (not every month between the first and last start).
-        months, horizon = set(), min(sc0["max_days"], 150)
+        months, horizon = set(), min(sc0["max_days"], sc0.get("prefetch_days", 150))
         for s in scs:
             d0 = from_epoch(to_epoch(s["start_time"])).replace(day=1)
             d1 = from_epoch(min(to_epoch(s["start_time"]) + horizon*86400, time.time() - 3*86400))
             while d0 <= d1:
                 months.add(int(d0.strftime("%Y%m"))); d0 = (d0 + dt.timedelta(days=32)).replace(day=1)
-        log(f"Downloading historic data along the route corridor for {len(months)} months (cached for later runs) ...")
+        todo = prov.todo(corridor(sc0), months, 3.0)
+        calls = 9*2*len(todo)                    # ~9 locations per block, weather + marine
+        hour, day, _ = (prov.coarse if hasattr(prov, "coarse") else prov).ledger.used()
+        log(f"Downloading historic data along the route corridor for {len(months)} months (cached for later runs): "
+            f"{len(todo)} blocks still to fetch, about {calls:,} Open-Meteo calls. "
+            f"Free limit about 10,000 a day ({day:.0f} used today), so this needs about "
+            f"{max(1, math.ceil((calls + day)/9500))} day(s); if it stops, run it again after 7 pm Eastern.")
         prov.prefetch(corridor(sc0), 0, 0, log=log, months=months)
     processes = processes or max(1, (os.cpu_count() or 2) - 1)
     results = []

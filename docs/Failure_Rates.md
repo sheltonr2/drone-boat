@@ -118,6 +118,7 @@ Mid-Atlantic → SW Ireland, 100 runs per rate set, launches April–July 2022�
 - **Differences of about 5 points sit inside the noise of 100 runs** (each 95% CI spans ±9–10 points). The no-shakedown and second-tracker rows show the direction of each effect, but not its exact size. A 400-run batch per row would halve the noise. The real-weather batch in `run_next_checks.bat` will use the planning set.
 - **A second tracker is worth more than its row shows.** With one, the 12% of runs that arrive silent become arrivals we can find and recover. So "arrived, and we know where" goes from 37% to about 47–49%.
 - **Silent arrival is now a real outcome** (12–13% of runs). The old rate set seldom produced it (6%).
+- These runs launch 25 km off Ocean City. The default launch has since moved 100 km out, after the real-weather drift tests ([Route_MidAtlantic.md](Route_MidAtlantic.md)). Under the planning set, that drop gave 30% (95% CI 22–40%), with groundings down from 4 to 1 and captures from 4 to 1. The difference from 37% is noise: more leak and electronics losses happened to be drawn.
 - For reference, the 51% in earlier documents came from the original set before this change. The rerun gives 48%. The code now draws random numbers in a different order, so individual runs differ, but the result is statistically the same.
 
 ## 7. Notes for boat-sim

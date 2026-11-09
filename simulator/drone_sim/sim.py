@@ -11,7 +11,7 @@ from . import geometry, vpp as vppmod
 DEFAULT_SCENARIO = {
     "name": "Ocean City, MD to south-west Ireland",
     "start_time": "2024-05-15T12:00:00",
-    "start": {"lat": 38.25, "lon": -74.65},      # ~25 km off Ocean City, Maryland
+    "start": {"lat": 38.02, "lon": -74.01},      # ~100 km off Ocean City, MD (drift tests, Nov 2026: 25 km drops drifted ashore)
     "target": {"lat": 51.35, "lon": -9.7},       # off Mizen Head; any landfall in Europe also counts
     "waypoints": [[42.0, -48.0]],                # stay south of the Grand Banks (fishing fleets, fog, icebergs)
     "arrival_radius_km": 40.0,

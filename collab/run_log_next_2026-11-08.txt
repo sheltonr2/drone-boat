@@ -1,0 +1,531 @@
+Drone-boat next checks, started Sun 11/08/2026 20:46:31.92 
+
+=== DRIFT TESTS 
+25 km off (current plan)   2022-05-15  aground            5.1 days  end 39.09, -74.73
+25 km off (current plan)   2023-05-15  aground            3.9 days  end 38.45, -75.04
+25 km off (current plan)   2024-05-15  aground            2.2 days  end 37.73, -75.54
+25 km off (current plan)   2025-05-15  at_sea_timeout    30.0 days  end 38.5, -62.23
+100 km off                 2022-05-15  at_sea_timeout    30.0 days  end 38.6, -58.32
+100 km off                 2023-05-15  at_sea_timeout    30.0 days  end 36.28, -66.74
+100 km off                 2024-05-15  at_sea_timeout    30.0 days  end 35.05, -65.55
+100 km off                 2025-05-15  at_sea_timeout    30.0 days  end 38.31, -67.2
+150 km off (shelf edge)    2022-05-15  aground           13.5 days  end 38.94, -74.92
+150 km off (shelf edge)    2023-05-15  at_sea_timeout    30.0 days  end 40.26, -65.2
+150 km off (shelf edge)    2024-05-15  at_sea_timeout    30.0 days  end 39.38, -55.25
+150 km off (shelf edge)    2025-05-15  at_sea_timeout    30.0 days  end 34.2, -65.09
+Saved ..\results\drift_tests_ocean_city.json
+=== MONTE CARLO 
+Downloading historic data along the route corridor for 32 months (cached for later runs) ...
+Prefetch 1/1536
+Downloading 2022-04 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 2/1536
+Downloading 2022-05 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 3/1536
+Downloading 2022-06 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 4/1536
+Downloading 2022-07 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 5/1536
+Downloading 2022-08 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 6/1536
+Downloading 2022-09 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 7/1536
+Downloading 2022-10 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 8/1536
+Downloading 2022-11 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 9/1536
+Downloading 2023-04 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 10/1536
+Downloading 2023-05 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 11/1536
+Downloading 2023-06 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 12/1536
+Downloading 2023-07 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 13/1536
+Downloading 2023-08 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 14/1536
+Downloading 2023-09 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 15/1536
+Downloading 2023-10 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 16/1536
+Downloading 2023-11 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 17/1536
+Downloading 2024-04 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 18/1536
+Downloading 2024-05 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 19/1536
+Downloading 2024-06 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 20/1536
+Downloading 2024-07 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 21/1536
+Downloading 2024-08 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 22/1536
+Downloading 2024-09 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 23/1536
+Downloading 2024-10 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 24/1536
+Downloading 2024-11 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 25/1536
+Downloading 2025-04 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 26/1536
+Downloading 2025-05 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 27/1536
+Downloading 2025-06 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 28/1536
+Downloading 2025-07 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 29/1536
+Downloading 2025-08 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 30/1536
+Downloading 2025-09 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 31/1536
+Downloading 2025-10 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 32/1536
+Downloading 2025-11 weather + marine data for 9 grid points near 47.0, -44.0
+Prefetch 33/1536
+Downloading 2022-04 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 34/1536
+Downloading 2022-05 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 35/1536
+Downloading 2022-06 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 36/1536
+Downloading 2022-07 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 37/1536
+Downloading 2022-08 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 38/1536
+Downloading 2022-09 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 39/1536
+Downloading 2022-10 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 40/1536
+Downloading 2022-11 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 41/1536
+Downloading 2023-04 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 42/1536
+Downloading 2023-05 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 43/1536
+Downloading 2023-06 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 44/1536
+Downloading 2023-07 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 45/1536
+Downloading 2023-08 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 46/1536
+Downloading 2023-09 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 47/1536
+Downloading 2023-10 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 48/1536
+Downloading 2023-11 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 49/1536
+Downloading 2024-04 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 50/1536
+Downloading 2024-05 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 51/1536
+Downloading 2024-06 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 52/1536
+Downloading 2024-07 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 53/1536
+Downloading 2024-08 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 54/1536
+Downloading 2024-09 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 55/1536
+Downloading 2024-10 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 56/1536
+Downloading 2024-11 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 57/1536
+Downloading 2025-04 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 58/1536
+Downloading 2025-05 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 59/1536
+Downloading 2025-06 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 60/1536
+Downloading 2025-07 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 61/1536
+Downloading 2025-08 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 62/1536
+Downloading 2025-09 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 63/1536
+Downloading 2025-10 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 64/1536
+Downloading 2025-11 weather + marine data for 9 grid points near 47.0, -41.0
+Prefetch 65/1536
+Downloading 2022-04 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 66/1536
+Downloading 2022-05 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 67/1536
+Downloading 2022-06 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 68/1536
+Downloading 2022-07 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 69/1536
+Downloading 2022-08 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 70/1536
+Downloading 2022-09 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 71/1536
+Downloading 2022-10 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 72/1536
+Downloading 2022-11 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 73/1536
+Downloading 2023-04 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 74/1536
+Downloading 2023-05 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 75/1536
+Downloading 2023-06 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 76/1536
+Downloading 2023-07 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 77/1536
+Downloading 2023-08 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 78/1536
+Downloading 2023-09 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 79/1536
+Downloading 2023-10 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 80/1536
+Downloading 2023-11 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 81/1536
+Downloading 2024-04 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 82/1536
+Downloading 2024-05 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 83/1536
+Downloading 2024-06 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 84/1536
+Downloading 2024-07 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 85/1536
+Downloading 2024-08 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 86/1536
+Downloading 2024-09 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 87/1536
+Downloading 2024-10 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 88/1536
+Downloading 2024-11 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 89/1536
+Downloading 2025-04 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 90/1536
+Downloading 2025-05 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 91/1536
+Downloading 2025-06 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 92/1536
+Downloading 2025-07 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 93/1536
+Downloading 2025-08 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 94/1536
+Downloading 2025-09 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 95/1536
+Downloading 2025-10 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 96/1536
+Downloading 2025-11 weather + marine data for 9 grid points near 47.0, -38.0
+Prefetch 129/1536
+Downloading 2022-04 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 130/1536
+Downloading 2022-05 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 131/1536
+Downloading 2022-06 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 132/1536
+Downloading 2022-07 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 133/1536
+Downloading 2022-08 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 134/1536
+Downloading 2022-09 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 135/1536
+Downloading 2022-10 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 136/1536
+Downloading 2022-11 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 137/1536
+Downloading 2023-04 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 138/1536
+Downloading 2023-05 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 139/1536
+Downloading 2023-06 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 140/1536
+Downloading 2023-07 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 141/1536
+Downloading 2023-08 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 142/1536
+Downloading 2023-09 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 143/1536
+Downloading 2023-10 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 144/1536
+Downloading 2023-11 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 145/1536
+Downloading 2024-04 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 146/1536
+Downloading 2024-05 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 147/1536
+Downloading 2024-06 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 148/1536
+Downloading 2024-07 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 149/1536
+Downloading 2024-08 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 150/1536
+Downloading 2024-09 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 151/1536
+Downloading 2024-10 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 152/1536
+Downloading 2024-11 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 153/1536
+Downloading 2025-04 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 154/1536
+Downloading 2025-05 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 155/1536
+Downloading 2025-06 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 156/1536
+Downloading 2025-07 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 157/1536
+Downloading 2025-08 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 158/1536
+Downloading 2025-09 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 159/1536
+Downloading 2025-10 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 160/1536
+Downloading 2025-11 weather + marine data for 9 grid points near 48.0, -35.0
+Prefetch 161/1536
+Downloading 2022-04 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 162/1536
+Downloading 2022-05 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 163/1536
+Downloading 2022-06 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 164/1536
+Downloading 2022-07 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 165/1536
+Downloading 2022-08 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 166/1536
+Downloading 2022-09 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 167/1536
+Downloading 2022-10 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 168/1536
+Downloading 2022-11 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 169/1536
+Downloading 2023-04 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 170/1536
+Downloading 2023-05 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 171/1536
+Downloading 2023-06 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 172/1536
+Downloading 2023-07 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 173/1536
+Downloading 2023-08 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 174/1536
+Downloading 2023-09 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 175/1536
+Downloading 2023-10 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 176/1536
+Downloading 2023-11 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 177/1536
+Downloading 2024-04 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 178/1536
+Downloading 2024-05 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 179/1536
+Downloading 2024-06 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 180/1536
+Downloading 2024-07 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 181/1536
+Downloading 2024-08 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 182/1536
+Downloading 2024-09 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 183/1536
+Downloading 2024-10 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 184/1536
+Downloading 2024-11 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 185/1536
+Downloading 2025-04 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 186/1536
+Downloading 2025-05 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 187/1536
+Downloading 2025-06 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 188/1536
+Downloading 2025-07 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 189/1536
+Downloading 2025-08 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 190/1536
+Downloading 2025-09 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 191/1536
+Downloading 2025-10 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 192/1536
+Downloading 2025-11 weather + marine data for 9 grid points near 48.0, -32.0
+Prefetch 193/1536
+Downloading 2022-04 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 194/1536
+Downloading 2022-05 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 195/1536
+Downloading 2022-06 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 196/1536
+Downloading 2022-07 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 197/1536
+Downloading 2022-08 weather + marine data for 9 grid points near 48.0, -29.0
+Network error (<urlopen error [WinError 10054] An existing connection was forcibly closed by the remote host>); retrying
+Prefetch 198/1536
+Downloading 2022-09 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 199/1536
+Downloading 2022-10 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 200/1536
+Downloading 2022-11 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 201/1536
+Downloading 2023-04 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 202/1536
+Downloading 2023-05 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 203/1536
+Downloading 2023-06 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 204/1536
+Downloading 2023-07 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 205/1536
+Downloading 2023-08 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 206/1536
+Downloading 2023-09 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 207/1536
+Downloading 2023-10 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 208/1536
+Downloading 2023-11 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 209/1536
+Downloading 2024-04 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 210/1536
+Downloading 2024-05 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 211/1536
+Downloading 2024-06 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 212/1536
+Downloading 2024-07 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 213/1536
+Downloading 2024-08 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 214/1536
+Downloading 2024-09 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 215/1536
+Downloading 2024-10 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 216/1536
+Downloading 2024-11 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 217/1536
+Downloading 2025-04 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 218/1536
+Downloading 2025-05 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 219/1536
+Downloading 2025-06 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 220/1536
+Downloading 2025-07 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 221/1536
+Downloading 2025-08 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 222/1536
+Downloading 2025-09 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 223/1536
+Downloading 2025-10 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 224/1536
+Downloading 2025-11 weather + marine data for 9 grid points near 48.0, -29.0
+Prefetch 225/1536
+Downloading 2022-04 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 226/1536
+Downloading 2022-05 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 227/1536
+Downloading 2022-06 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 228/1536
+Downloading 2022-07 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 229/1536
+Downloading 2022-08 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 230/1536
+Downloading 2022-09 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 231/1536
+Downloading 2022-10 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 232/1536
+Downloading 2022-11 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 233/1536
+Downloading 2023-04 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 234/1536
+Downloading 2023-05 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 235/1536
+Downloading 2023-06 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 236/1536
+Downloading 2023-07 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 237/1536
+Downloading 2023-08 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 238/1536
+Downloading 2023-09 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 239/1536
+Downloading 2023-10 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 240/1536
+Downloading 2023-11 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 241/1536
+Downloading 2024-04 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 242/1536
+Downloading 2024-05 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 243/1536
+Downloading 2024-06 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 244/1536
+Downloading 2024-07 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 245/1536
+Downloading 2024-08 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 246/1536
+Downloading 2024-09 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 247/1536
+Downloading 2024-10 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 248/1536
+Downloading 2024-11 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 249/1536
+Downloading 2025-04 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 250/1536
+Downloading 2025-05 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 251/1536
+Downloading 2025-06 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 252/1536
+Downloading 2025-07 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 253/1536
+Downloading 2025-08 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 254/1536
+Downloading 2025-09 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 255/1536
+Downloading 2025-10 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 256/1536
+Downloading 2025-11 weather + marine data for 9 grid points near 48.0, -26.0
+Prefetch 257/1536
+Downloading 2022-04 weather + marine data for 9 grid points near 48.0, -19.0
+Prefetch 258/1536
+Downloading 2022-05 weather + marine data for 9 grid points near 48.0, -19.0
+Prefetch 259/1536
+Downloading 2022-06 weather + marine data for 9 grid points near 48.0, -19.0
+Prefetch 260/1536
+Downloading 2022-07 weather + marine data for 9 grid points near 48.0, -19.0
+Prefetch 261/1536
+Downloading 2022-08 weather + marine data for 9 grid points near 48.0, -19.0
+Prefetch 262/1536
+Downloading 2022-09 weather + marine data for 9 grid points near 48.0, -19.0
+Prefetch 263/1536
+Downloading 2022-10 weather + marine data for 9 grid points near 48.0, -19.0
+Prefetch 264/1536
+Downloading 2022-11 weather + marine data for 9 grid points near 48.0, -19.0
+Prefetch 265/1536
+Downloading 2023-04 weather + marine data for 9 grid points near 48.0, -19.0
+Prefetch 266/1536
+Downloading 2023-05 weather + marine data for 9 grid points near 48.0, -19.0
+Prefetch 267/1536
+Downloading 2023-06 weather + marine data for 9 grid points near 48.0, -19.0
+Prefetch 268/1536
+Downloading 2023-07 weather + marine data for 9 grid points near 48.0, -19.0
+Prefetch 269/1536
+Downloading 2023-08 weather + marine data for 9 grid points near 48.0, -19.0
+Prefetch 270/1536
+Downloading 2023-09 weather + marine data for 9 grid points near 48.0, -19.0
+Prefetch 271/1536
+Downloading 2023-10 weather + marine data for 9 grid points near 48.0, -19.0
+Open-Meteo rate limit reached; waiting 65 s ...
+Open-Meteo rate limit reached; waiting 130 s ...
+Open-Meteo rate limit reached; waiting 195 s ...
+Open-Meteo rate limit reached; waiting 260 s ...
+Open-Meteo rate limit reached; waiting 325 s ...
+Open-Meteo rate limit reached; waiting 390 s ...
+Traceback (most recent call last):
+  File "<frozen runpy>", line 201, in _run_module_as_main
+  File "<frozen runpy>", line 87, in _run_code
+  File "<repo>\simulator\drone_sim\cli.py", line 75, in <module>
+    main()
+    ~~~~^^
+  File "<repo>\simulator\drone_sim\cli.py", line 64, in main
+    r = run_montecarlo(design, sc, n_runs=a.runs, window=win, processes=a.processes, cache_dir=CACHE)
+  File "<repo>\simulator\drone_sim\montecarlo.py", line 77, in run_montecarlo
+    prov.prefetch(corridor(sc0), 0, 0, log=log, months=months)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>\simulator\drone_sim\env.py", line 455, in prefetch
+    if pts: n += p.prefetch(pts, t0, t1, margin_deg=m, log=log, months=months)
+                 ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>\simulator\drone_sim\env.py", line 187, in prefetch
+    self._fetch_block(i, j, ym)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "<repo>\simulator\drone_sim\env.py", line 123, in _fetch_block
+    mar = self._http(self.MAR_URL, dict(base, hourly=",".join(self.MAR_VARS), cell_selection="sea"))
+  File "<repo>\simulator\drone_sim\env.py", line 105, in _http
+    raise RuntimeError("Could not reach Open-Meteo after several attempts.")
+RuntimeError: Could not reach Open-Meteo after several attempts.
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import json; s=json.load(open('../results/real_mc_ocmd_ireland.json'))['result']['summary']; print(json.dumps({k: s[k] for k in ('runs','success_percent','success_ci95','any_arrival_percent','percent','arrival_days','failure_causes','by_launch_month','mean_airtime_usd','mean_knockdowns')}, indent=1, default=str))
+                             ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '../results/real_mc_ocmd_ireland.json'
+=== DONE Sun 11/08/2026 21:40:04.70 

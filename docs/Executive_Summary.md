@@ -191,7 +191,7 @@ A first attempt has roughly a 10–20% chance of reaching Europe still sailing a
 - [ ] Thruster in version 1, or sail-only? Sail-only saves $270 and removes a leak path.
 - [ ] Accept going over budget (about $2,290), or take the trims to get to about $2,000?
 - [ ] Lower the battery onto a hull-bonded cooling plate below the waterline? (Recommended.)
-- [ ] Launch site: Ocean City, Maryland (the default), Virginia Beach or Cape May. In the simulator they came out within about two weeks of each other, so choose on access, ship traffic and distance to the Gulf Stream.
+- [ ] Launch site: Ocean City, Maryland (the default), Virginia Beach or Cape May. In the simulator they came out within about two weeks of each other, so choose on access, ship traffic and distance to the Gulf Stream. Wherever it is, drop the boat about 100 km offshore: in real-weather drift tests (Nov 8, 2026), 3 of 4 dead boats dropped 25 km off Ocean City drifted ashore within 5 days, and all 4 dropped 100 km out were carried toward the Gulf Stream.
 - [ ] Target: south-west Ireland (the default; any European landfall also counts). Brittany or Cornwall take about as long but sit beside the busiest shipping lanes in Europe. Galicia or Portugal take 3–6 weeks longer. Decide too whether a landfall in the Azores counts.
 - [ ] Who recovers the boat after the coastal trial, and how?
 

@@ -10,8 +10,8 @@ from drone_sim import design as D
 from drone_sim.sim import run_voyage, DEFAULT_SCENARIO
 from drone_sim.server import CACHE, jsonable
 
-POINTS = {"25 km off (current plan)": (38.25, -74.65),
-          "100 km off": (38.02, -74.01),
+POINTS = {"25 km off (old plan)": (38.25, -74.65),
+          "100 km off (current plan)": (38.02, -74.01),
           "150 km off (shelf edge)": (37.86, -73.47)}
 DATES = ["2022-05-15T12:00:00", "2023-05-15T12:00:00", "2024-05-15T12:00:00", "2025-05-15T12:00:00"]
 

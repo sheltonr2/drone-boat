@@ -8,7 +8,7 @@ All numbers come from the simulator's **synthetic (invented) weather**, because 
 
 ## Route
 
-- **Launch:** about 25 km off Ocean City, Maryland (38.25°N, 74.65°W), dropped from a charter boat clear of the Delaware Bay and Chesapeake shipping lanes. Virginia Beach and Cape May are the alternatives.
+- **Launch:** about **100 km (54 nm) off Ocean City, Maryland (38.02°N, 74.01°W)**, dropped from a charter boat. This changed on 8 Nov 2026 after the drift tests below: 3 of 4 boats dropped 25 km out drifted ashore within 2–5 days. Ocean City's offshore canyon-fishing charters already run this far. Virginia Beach and Cape May are the alternatives.
 - **Waypoint:** 42°N, 48°W. This keeps the boat south of the Grand Banks and its fishing fleets, fog and spring icebergs.
 - **Target:** off Mizen Head, south-west Ireland (51.35°N, 9.7°W). Any landfall in Europe counts, judged against Natural Earth country borders. Iceland and the Faroes count. The Azores, Madeira and the Canaries count only if you switch that option on.
 - **Launch month:** May. That gets most of the crossing done before hurricane season peaks (mid-August to mid-October).
@@ -54,10 +54,25 @@ By launch month: April 41%, May 48%, June 52%, July 60%. With 22–30 runs a mon
 - **Real weather comes out close to the invented weather** for this one voyage: 102 days on real 2024 weather against about 100 on synthetic.
 - **A dead boat near the coast can drift back in.** With no steering, a boat dropped at John's point (36.85°N, 75.70°W) on 15 May 2023 was carried north and then into the Chesapeake Bay mouth. It went aground near the York River after 8.9 days, never reaching the Gulf Stream. Our own drop point, 25 km off Ocean City, is also on the shelf, so the same thing could happen to a boat that fails early. Worth testing a drop further offshore.
 
+## Drift tests: how far out to drop the boat (real weather, Nov 8, 2026)
+
+This checks the worst case for the launch: a boat that is dead from the start, with no steering and the wing feathered, left to drift for 30 days. The tests used real Open-Meteo weather and currents from three drop points off Ocean City on 15 May of four years ([log](../collab/run_log_next_2026-11-08.txt), [table](../results/2026-11-08_drift_tests_ocean_city.txt)).
+
+| Drop point | 2022 | 2023 | 2024 | 2025 | Still at sea after 30 days |
+|---|---|---|---|---|---|
+| 25 km off (old plan), 38.25°N 74.65°W | aground day 5.1 (NJ) | aground day 3.9 (Ocean City) | aground day 2.2 (VA Eastern Shore) | at sea, 62°W | **1 of 4** |
+| **100 km off, 38.02°N 74.01°W** | at sea, 58°W | at sea, 67°W | at sea, 66°W | at sea, 67°W | **4 of 4** |
+| 150 km off (shelf edge), 37.86°N 73.47°W | aground day 13.5 (Cape May) | at sea, 65°W | at sea, 55°W | at sea, 65°W | 3 of 4 |
+
+- **Drop at least 100 km out.** On the inner shelf, the winds and currents in May push a dead boat back onto the beach within days. From 100 km out, every dead boat was carried east toward the Gulf Stream, ending 7–16° of longitude further east after a month.
+- **Further out isn't automatically better.** In 2022, the boat dropped at the shelf edge was carried back west and went ashore near Cape May after 13.5 days. With four dates per point, the samples are small. The pattern (25 km bad, 100 km good) matches the physics, but the 100 vs 150 km difference could be chance.
+- **The 100 km point is fishing ground.** It sits just inshore of the canyons along the shelf edge (Baltimore Canyon is about 20 km to the north-east), which are popular with offshore anglers and longliners. Labels, a radar reflector and a notice to the fishery council matter here (see [Failure_Rates.md](Failure_Rates.md) §5).
+- **On invented weather the drop point makes little difference to the odds.** On synthetic weather with the planning failure rates, the 100 km drop cut groundings from 4 to 1 and captures from 4 to 1 per 100 runs. Overall it gave 30% (95% range 22–40%) against 37% (28–47%) from 25 km. That gap is within the noise of 100 runs, because more leak and electronics losses happened to be drawn. The real-weather Monte Carlo uses the 100 km drop.
+
 ## Before trusting these numbers
 
 1. Done: the grid check (above) showed the 1° grid flatters crossings by about 15 days, so the Gulf Stream region now uses 0.25°.
-2. Run the Monte Carlo on historic weather (2022 onward) for April–July launches.
+2. Run the Monte Carlo on historic weather. The first attempt (Nov 8) hit Open-Meteo's free rate limit about a fifth of the way through its download. That job needed about 64,000 calls, against a free limit of 10,000 a day; the earlier estimate counted requests, not locations. The downloader now paces itself and waits overnight when the daily limit is hit. `simulator/run_real_mc.bat` runs 60 voyages from the 100 km drop (1 May – 15 June launches, 2023–2024). That is about 23,000 calls, or 2–3 days unattended.
 3. Add hurricane tracks (NOAA's HURDAT2 best-track record) to the hazard model. That's the biggest gap for this route.
 
 ## Files

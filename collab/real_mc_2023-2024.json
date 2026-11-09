@@ -1,0 +1,7 @@
+{
+  "name": "Ocean City (100 km drop) to south-west Ireland, real weather",
+  "provider": "openmeteo",
+  "start": {"lat": 38.02, "lon": -74.01},
+  "failure_rate_set": "planning",
+  "prefetch_days": 130
+}

@@ -41,6 +41,54 @@ def _speed_to_ms(unit):
             "mp/h": 0.44704, "mph": 0.44704}.get(u, 1/3.6 if "km" in u else 1.0)
 
 
+class OpenMeteoLimit(RuntimeError):
+    """Open-Meteo's free daily limit is used up. Everything downloaded so far is cached."""
+
+
+class _UsageLedger:
+    """Rough count of Open-Meteo calls (one per location per request), kept in the cache folder so
+    separate runs on the same day share it. Free limits: 600/min, 5,000/hour, 10,000/day."""
+    HOUR_BUDGET, DAY_BUDGET = 4500, 9500
+
+    def __init__(self, folder):
+        self.path = os.path.join(folder, "usage.json")
+
+    def _load(self):
+        try:
+            return [tuple(x) for x in json.load(open(self.path)) if time.time() - x[0] < 90000]
+        except Exception:
+            return []
+
+    def used(self):
+        now = time.time(); rows = self._load()
+        day0 = dt.datetime.now(dt.timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0).timestamp()
+        return (sum(w for t, w in rows if now - t < 3600), sum(w for t, w in rows if t >= day0), rows)
+
+    def add(self, w):
+        rows = self._load(); rows.append((time.time(), w))
+        try:
+            tmp = self.path + f".{os.getpid()}.tmp"
+            json.dump(rows, open(tmp, "w")); os.replace(tmp, self.path)
+        except Exception:
+            pass
+
+    def wait_for(self, w, log):
+        """Sleep until w more calls fit in the hourly budget; raise OpenMeteoLimit if the day's budget is spent."""
+        while True:
+            hour, day, rows = self.used()
+            if day + w > self.DAY_BUDGET:
+                raise OpenMeteoLimit(
+                    f"Open-Meteo's free daily limit is nearly used up ({day:.0f} of about 10,000 calls today, UTC). "
+                    "Everything downloaded so far is cached. Run the same command again after 00:00 UTC "
+                    "(7 pm Eastern) and it carries on from where it stopped.")
+            if hour + w <= self.HOUR_BUDGET:
+                return
+            oldest = min(t for t, _ in rows if time.time() - t < 3600)
+            pause = max(60, int(oldest + 3600 - time.time()) + 5)
+            log(f"Pausing {pause//60} min to stay under Open-Meteo's hourly limit ({hour:.0f} calls in the last hour) ...")
+            time.sleep(pause)
+
+
 class OpenMeteoProvider:
     WX_URL = "https://archive-api.open-meteo.com/v1/archive"
     MAR_URL = "https://marine-api.open-meteo.com/v1/marine"
@@ -55,6 +103,7 @@ class OpenMeteoProvider:
         self.res = res_deg; self.log = log; self.block = block; self.pause = pause_s
         self.mem = {}           # (lat_i, lon_i, yyyymm) -> dict of arrays incl. 't'
         self.calls = 0
+        self.ledger = _UsageLedger(self.cache)
 
     # ---------- grid helpers
     def _node(self, i, j):
@@ -84,24 +133,40 @@ class OpenMeteoProvider:
     def _http(self, url, params):
         q = urllib.parse.urlencode(params, safe=",")
         full = f"{url}?{q}"
-        for attempt in range(6):
+        weight = max(1, str(params.get("latitude", "")).count(",") + 1)   # Open-Meteo counts each location
+        self.ledger.wait_for(weight, self.log)
+        hourly_waits = 0
+        attempt = 0
+        while attempt < 6:
             try:
                 req = urllib.request.Request(full, headers={"User-Agent": "drone-sim/1.0 (research)"})
                 with urllib.request.urlopen(req, timeout=120) as r:
                     self.calls += 1
+                    self.ledger.add(weight)
                     time.sleep(self.pause)
                     return json.loads(r.read().decode())
             except urllib.error.HTTPError as e:
                 body = e.read().decode(errors="ignore")[:300]
                 if e.code == 429:
+                    reason = body.lower()
+                    if "daily" in reason:
+                        raise OpenMeteoLimit(
+                            "Open-Meteo says the free daily limit is used up. Everything downloaded so far is "
+                            "cached. Run the same command again after 00:00 UTC (7 pm Eastern) and it carries on.")
+                    if "hourly" in reason and hourly_waits < 7:
+                        hourly_waits += 1
+                        self.log("Open-Meteo hourly limit reached; waiting 10 min (this can repeat for up to an hour) ...")
+                        time.sleep(600); continue
                     wait = 65*(attempt + 1)
-                    self.log(f"Open-Meteo rate limit reached; waiting {wait} s ...")
-                    time.sleep(wait); continue
+                    self.log(f"Open-Meteo rate limit reached ({body[:80] or 'no reason given'}); waiting {wait} s ...")
+                    time.sleep(wait); attempt += 1; continue
                 if e.code == 400:
                     raise RuntimeError(f"Open-Meteo rejected the request: {body}")
-                time.sleep(5*(attempt + 1))
+                time.sleep(5*(attempt + 1)); attempt += 1
+            except OpenMeteoLimit:
+                raise
             except Exception as e:  # network hiccup
-                self.log(f"Network error ({e}); retrying"); time.sleep(5*(attempt + 1))
+                self.log(f"Network error ({e}); retrying"); time.sleep(5*(attempt + 1)); attempt += 1
         raise RuntimeError("Could not reach Open-Meteo after several attempts.")
 
     def _fetch_block(self, i0, j0, ym):
@@ -163,6 +228,17 @@ class OpenMeteoProvider:
                  sst=onto("sea_surface_temperature"), sea_level=onto("sea_level_height_msl"))
         return d
 
+    def todo(self, points, months, margin_deg=3.0):
+        """Grid blocks along the points that are not cached yet, for a set of yyyymm months."""
+        need = set()
+        for lat, lon in points:
+            for dlat in np.arange(-margin_deg, margin_deg + 1e-9, self.res*self.block):
+                for dlon in np.arange(-margin_deg, margin_deg + 1e-9, self.res*self.block):
+                    i, j = int(math.floor((lat + dlat)/self.res)), int(math.floor((lon + dlon)/self.res))
+                    for ym in months:
+                        need.add((i, j, ym))
+        return [n for n in sorted(need) if not os.path.exists(self._path(*n)) and n not in self.mem]
+
     def prefetch(self, points, t0, t1, margin_deg=3.0, log=None, months=None):
         """Download every grid block along a list of (lat, lon) points for the months t0..t1
         (or for an explicit set of yyyymm months)."""
@@ -172,14 +248,7 @@ class OpenMeteoProvider:
             while d <= from_epoch(t1):
                 months.add(int(d.strftime("%Y%m")))
                 d = (d + dt.timedelta(days=32)).replace(day=1)
-        need = set()
-        for lat, lon in points:
-            for dlat in np.arange(-margin_deg, margin_deg + 1e-9, self.res*self.block):
-                for dlon in np.arange(-margin_deg, margin_deg + 1e-9, self.res*self.block):
-                    i, j = int(math.floor((lat + dlat)/self.res)), int(math.floor((lon + dlon)/self.res))
-                    for ym in months:
-                        need.add((i, j, ym))
-        todo = [n for n in sorted(need) if not os.path.exists(self._path(*n)) and n not in self.mem]
+        todo = self.todo(points, months, margin_deg)
         for k, (i, j, ym) in enumerate(todo):
             if os.path.exists(self._path(i, j, ym)) or (i, j, ym) in self.mem:
                 continue
@@ -447,6 +516,13 @@ class TwoGridProvider:
 
     def sample(self, lat, lon, t):
         return self._pick(lat, lon).sample(lat, lon, t)
+
+    def todo(self, points, months, margin_deg=3.0):
+        out = []
+        for p, m in ((self.coarse, margin_deg), (self.fine, 1.0)):
+            pts = [(la, lo) for la, lo in points if (self._pick(la, lo) is p)]
+            if pts: out += p.todo(pts, months, m)
+        return out
 
     def prefetch(self, points, t0, t1, margin_deg=3.0, log=None, months=None):
         n = 0

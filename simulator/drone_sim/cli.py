@@ -2,10 +2,11 @@
 
   python -m drone_sim.cli voyage  --scenario my_scenario.json [--design my_design.json] [--out result.json]
   python -m drone_sim.cli mc      --scenario my_scenario.json --runs 200 --from 2022-06-01 --to 2022-06-30 --years 2022,2023,2024
+  (add --wait-for-limits to sleep through Open-Meteo's daily limit and carry on the next day)
   python -m drone_sim.cli selftest            # checks Open-Meteo access and unit conversions
   python -m drone_sim.cli gridcheck [--scenario s.json]   # same voyage on a 1.0 and a 0.25 degree weather grid
 """
-import argparse, json, os, sys, time
+import argparse, json, os, sys, time, datetime as dt
 from . import design as D
 from .sim import run_voyage, DEFAULT_SCENARIO
 from .montecarlo import run_montecarlo
@@ -13,6 +14,30 @@ from .server import jsonable, CACHE
 
 
 def main():
+    from .env import OpenMeteoLimit
+    wait = "--wait-for-limits" in sys.argv
+    if wait:
+        sys.argv.remove("--wait-for-limits")
+        if os.name == "nt":      # ask Windows not to sleep while this runs (no admin rights needed)
+            try:
+                import ctypes
+                ctypes.windll.kernel32.SetThreadExecutionState(0x80000000 | 0x00000001)
+            except Exception:
+                pass
+    while True:
+        try:
+            _main(); return
+        except OpenMeteoLimit as e:
+            if not wait:
+                print(f"\nSTOPPED: {e}"); sys.exit(3)
+            now = dt.datetime.now(dt.timezone.utc)
+            nxt = (now + dt.timedelta(days=1)).replace(hour=0, minute=10, second=0, microsecond=0)
+            print(f"\nDaily Open-Meteo limit reached. Everything so far is cached. Sleeping until "
+                  f"{nxt.astimezone():%a %H:%M} local time, then carrying on. Leave the computer on and awake.", flush=True)
+            time.sleep(max(60, (nxt - now).total_seconds()))
+
+
+def _main():
     ap = argparse.ArgumentParser(prog="drone_sim")
     ap.add_argument("cmd", choices=["voyage", "mc", "selftest", "gridcheck"])
     ap.add_argument("--scenario"); ap.add_argument("--design"); ap.add_argument("--out")
