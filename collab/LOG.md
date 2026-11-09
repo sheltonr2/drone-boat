@@ -2,6 +2,13 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-08, 22:45
+
+- Randolph has free accounts with ECMWF (CDS) and Copernicus Marine. New `bulk` data provider: whole months of ERA5 (0.25°, hourly), SMOC currents (1/12°, hourly) and MFWAM waves (1/12°, 3-hourly) for 26–60°N, 82°W–0°, stored as memory-mapped float16 arrays. It uses the same data Open-Meteo serves, but the currents come at full resolution, with no daily quota, and runs use all cores.
+- `setup_bulk_data.bat` (installs the tools, Copernicus Marine login, CDS token) and `run_bulk.bat` (download May–Nov 2023/2024, compare with the Open-Meteo cache, 500-voyage Monte Carlo).
+- The CDS asks for sequential requests (Oct 2026 notice), so ERA5 months go one at a time. The MFWAM archive is rolling (now from Nov 2022), so earlier years need another wave source.
+- Tested offline on synthetic netCDF files: conversion, interpolation (land corners, wave direction across north, month boundaries) and a voyage plus Monte Carlo on memory-mapped data (~0.1 ms per weather sample). Not yet run against the real services, which can't be reached from here.
+
 ## 2026-11-08, 22:00
 
 - New on #50 since our last post: boat-sim finished all three of their items. Priya compared GLORYS with SMOC (the means agree, the eddies don't line up). Ravi ran the drifter check (skill 0.23 in the eddy field, 0.78–0.86 in the Hatteras jet) and the dead-boat run (Hampton Roads after 9.6 days, about 15 km from our grounding point on day 5). They also found ERA5 storm winds are about 0.5–0.7 of best track, and they fixed #69–#72.

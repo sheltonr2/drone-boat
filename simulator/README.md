@@ -40,6 +40,23 @@ and cached in `workspace/cache`, so repeat runs over the same dates are fast and
 | Natural Earth 1:50m land | coastline for landfall and avoiding land | downloaded once; a coarse built-in outline is the fallback |
 
 Start dates must be January 2022 or later for currents and tides. **Synthetic** weather is an offline test mode only.
+
+### Bulk data (fast real-weather Monte Carlo)
+
+Open-Meteo's free limit (about 10,000 location-calls a day) makes a real-weather Monte Carlo take days. The `bulk` provider instead downloads whole months for the North Atlantic box (26–60°N, 82°W–0°) once, straight from the producers, and then runs at full CPU speed on every core:
+
+| Source | Variables | Grid | From |
+|---|---|---|---|
+| ERA5 (Copernicus Climate Data Store, free account) | 10 m wind, gusts, solar radiation, cloud, air temperature, SST | 0.25°, hourly | 1940 |
+| Copernicus Marine SMOC (free account) | total surface current: Eulerian + tides + Stokes drift | 1/12° (~8 km), hourly | Nov 2020 |
+| Copernicus Marine MFWAM | wave height, mean and peak period, direction, primary swell | 1/12°, 3-hourly | Nov 2022 (rolling archive) |
+
+These are the same datasets Open-Meteo serves. The currents come at full 8 km resolution everywhere, instead of the 0.25°/1° grid we sampled from Open-Meteo. About 2.5 GB a month on disk, stored as float16 arrays that every worker process memory-maps.
+
+1. `setup_bulk_data.bat` (once): installs the download tools in `.venv-bulk`, signs you in to Copernicus Marine and saves your CDS API token. You type the credentials, and they stay on your PC. Also accept the ERA5 licence on the CDS dataset page.
+2. `run_bulk.bat`: downloads May–November 2023 and 2024 (it resumes if stopped). It then compares the bulk data with your Open-Meteo cache and runs a 500-voyage Monte Carlo on all cores.
+
+By hand: `python -m drone_sim.cli download --months 2025-05..2025-11`, then use `"provider": "bulk"` in a scenario. A voyage that sails past the last downloaded month ends as `at_sea_timeout` with a note in its events. CDS asks for one request at a time, so ERA5 months download one after another. The Copernicus Marine months download alongside them.
 It produces realistic-looking but invented North Atlantic weather.
 
 ## Physics

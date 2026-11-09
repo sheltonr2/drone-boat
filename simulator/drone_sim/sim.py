@@ -5,6 +5,7 @@ import numpy as np
 
 from .env import make_provider, LandMask, destination, haversine_km, bearing_deg, to_epoch, from_epoch
 from .autopilot import Autopilot, wrap180
+from .bulk import BulkDataMissing
 from .failures import DEFAULT_RATE_SET, rates_for, early_life_factor, p_event, breaking_knockdown_rate
 from . import geometry, vpp as vppmod
 
@@ -22,7 +23,7 @@ DEFAULT_SCENARIO = {
     "dt_s": 300.0,                 # hybrid step
     "dt_6dof_s": 0.05,
     "log_interval_min": 30.0,
-    "provider": "openmeteo",       # openmeteo | synthetic
+    "provider": "openmeteo",       # openmeteo | bulk (downloaded months, see bulk.py) | synthetic
     "grid_deg": 1.0,
     # 0.25-degree weather where the Gulf Stream and North Atlantic Current run (see TwoGridProvider)
     "fine_grid": {"deg": 0.25, "lat": [30.0, 50.0], "lon": [-80.0, -38.0]},
@@ -124,7 +125,12 @@ class Voyage:
         L = self.boat.hs.L; Bm = self.boat.hs.B
         while t < t_end:
             k += 1
-            e = self.env.sample(st["lat"], st["lon"], t)
+            try:
+                e = self.env.sample(st["lat"], st["lon"], t)
+            except BulkDataMissing as ex:
+                if k == 1: raise
+                outcome = "at_sea_timeout"; self.event(t, "end", f"Weather data ends here: {ex}")
+                break
             # water-relative wind
             wu, wv = e["wind_u"] - e["cur_u"], e["wind_v"] - e["cur_v"]
             tws = math.hypot(wu, wv); twd = (math.degrees(math.atan2(-wu, -wv))) % 360   # FROM direction
@@ -208,7 +214,11 @@ class Voyage:
                 self.progress(min((t - self.t0)/(t_end - self.t0), 1.0), st)
         if outcome is None:
             outcome = "at_sea_timeout"; self.event(t, "end", f"Still at sea after {sc['max_days']} days")
-        series.append(self.snapshot(t, st, self.env.sample(st["lat"], st["lon"], t), envd, decision, dict(u=st["stw"], v=0, heel=st["heel"], alpha=0, delta=0)))
+        try:
+            e_last = self.env.sample(st["lat"], st["lon"], t)
+        except BulkDataMissing:
+            e_last = e
+        series.append(self.snapshot(t, st, e_last, envd, decision, dict(u=st["stw"], v=0, heel=st["heel"], alpha=0, delta=0)))
         days = (t - self.t0)/86400
         months = max(days/30.44, 0.5)
         cost = st["credits"]*d["comms"]["credit_usd"] + months*d["comms"]["line_rental_usd_month"]

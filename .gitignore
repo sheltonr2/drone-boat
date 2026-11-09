@@ -5,3 +5,4 @@ simulator/workspace/
 workspace/
 result_*.json
 .DS_Store
+.venv-bulk/

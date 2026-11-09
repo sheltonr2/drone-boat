@@ -539,6 +539,9 @@ class TwoGridProvider:
 def make_provider(kind, cache_dir="cache", log=print, res_deg=1.0, seed=1, fine_grid=None):
     if kind == "synthetic":
         return SyntheticProvider(seed=seed)
+    if kind == "bulk":
+        from .bulk import BulkProvider
+        return BulkProvider(cache_dir=cache_dir, log=log)
     coarse = OpenMeteoProvider(cache_dir=cache_dir, res_deg=res_deg, log=log)
     if fine_grid and fine_grid.get("deg") and fine_grid["deg"] < res_deg:
         fine = OpenMeteoProvider(cache_dir=cache_dir, res_deg=fine_grid["deg"], log=log)

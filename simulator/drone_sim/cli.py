@@ -39,7 +39,10 @@ def main():
 
 def _main():
     ap = argparse.ArgumentParser(prog="drone_sim")
-    ap.add_argument("cmd", choices=["voyage", "mc", "selftest", "gridcheck"])
+    ap.add_argument("cmd", choices=["voyage", "mc", "selftest", "gridcheck", "download", "bulkcheck"])
+    ap.add_argument("--months", default="", help="for download: e.g. 2023-05..2023-10,2024-05..2024-10")
+    ap.add_argument("--stride", type=int, default=1, help="for download: keep every Nth ocean grid point (1 = full 1/12 deg)")
+    ap.add_argument("--sources", default="era5,smoc,wav"); ap.add_argument("--keep-raw", action="store_true")
     ap.add_argument("--scenario"); ap.add_argument("--design"); ap.add_argument("--out")
     ap.add_argument("--runs", type=int, default=100); ap.add_argument("--from", dest="frm"); ap.add_argument("--to")
     ap.add_argument("--years", default=""); ap.add_argument("--processes", type=int)
@@ -47,6 +50,32 @@ def _main():
     design = D.load(a.design) if a.design else D.default_design()
     sc = dict(DEFAULT_SCENARIO)
     if a.scenario: sc.update(json.load(open(a.scenario)))
+    if a.cmd == "download":
+        from .bulk import download, month_list
+        if not a.months:
+            print("Give the months, e.g. --months 2023-05..2023-10,2024-05..2024-10"); return
+        errs = download(month_list(a.months), CACHE, sources=tuple(x for x in a.sources.split(",") if x),
+                        stride=a.stride, keep_raw=a.keep_raw, log=lambda m: print(m, flush=True))
+        if errs:
+            print("Some months failed:"); [print("  " + e[:300]) for e in errs]
+        return
+    if a.cmd == "bulkcheck":
+        from .bulk import compare_with_openmeteo, available_months
+        print("Downloaded months (all three sources):", available_months(CACHE), flush=True)
+        compare_with_openmeteo(CACHE, log=lambda m: print(m, flush=True))
+        # same voyage on both data sources (Open-Meteo side comes from the cache of the Nov 8 grid check)
+        v = dict(sc, start={"lat": 38.25, "lon": -74.65}, start_time="2024-05-15T12:00:00", failures_enabled=False)
+        if 202405 in available_months(CACHE):
+            for prov in ("openmeteo", "bulk"):
+                t0 = time.time()
+                try:
+                    r = run_voyage(design, dict(v, provider=prov), cache_dir=CACHE, log=lambda *x: None)
+                except Exception as e:  # noqa: BLE001 - the check is informative only
+                    print(f"Same voyage on {prov}: could not run ({e})", flush=True); continue
+                print(f"Same voyage (Ocean City 25 km, 15 May 2024, no failures) on {prov:9s}: {r['outcome']}, "
+                      f"{r['days']} days, {r['distance_km']} km, mean {r['stats']['mean_sog_kn']} kn "
+                      f"[{time.time() - t0:.0f} s]", flush=True)
+        return
     if a.cmd == "selftest":
         from .env import OpenMeteoProvider, to_epoch
         from .geometry import Boat
@@ -86,7 +115,8 @@ def _main():
     else:
         win = dict(**({"from": a.frm + "T12:00:00", "to": (a.to or a.frm) + "T12:00:00"} if a.frm else {}),
                    years=[int(y) for y in a.years.split(",") if y.strip()]) if a.frm else None
-        r = run_montecarlo(design, sc, n_runs=a.runs, window=win, processes=a.processes, cache_dir=CACHE)
+        procs = a.processes or ((os.cpu_count() or 2) if sc.get("provider") == "bulk" else None)
+        r = run_montecarlo(design, sc, n_runs=a.runs, window=win, processes=procs, cache_dir=CACHE)
         print(json.dumps(jsonable(r["summary"]), indent=1))
     out = a.out or f"result_{a.cmd}_{int(time.time())}.json"
     json.dump(jsonable(dict(kind="voyage" if a.cmd == "voyage" else "montecarlo", design=design, result=r)), open(out, "w"))
