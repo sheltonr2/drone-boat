@@ -2,6 +2,12 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-09, 17:45 (scheduled check)
+
+- New on #50: Theo has put Rev B's GZ curve and inertia into boat-sim's 3D view (#136, credited). Rev B's calm-water roll period comes out at 1.66 s, and it rolls about 4° RMS (13° worst) in a beam gale; these are display-only figures. Live pages: jcolter11374.github.io/boat-sim. boat-sim also moved its default drop to 100 km out (#128).
+- #90: boat-sim checked its dead-boat drift against our 3.3%: theirs is 3.86% of U10, straight downwind (beam-on kayak with a dome). They suggest a 3%/5% windage sensitivity before choosing a drop. We adopted the same idea: drift_tests.py `--leeway 0.02,0.033,0.05`, and run_drift_bulk.bat now runs all three.
+- No questions for us; no reply needed until our drift re-run results are in.
+
 ## 2026-11-09, 17:00
 
 - Posted our reply on #50 ([comment](https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6751168056)): wear-out k = 1 by default, SMOC/Stokes noted, wind ratios credited, hurricane frequency results, Rev B GZ curve for Theo.

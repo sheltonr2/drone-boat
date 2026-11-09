@@ -23,6 +23,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--bulk", action="store_true", help="use downloaded bulk data instead of Open-Meteo")
 ap.add_argument("--years", default="2022,2023,2024,2025")
 ap.add_argument("--days", type=float, default=30)
+ap.add_argument("--leeway", default="0.033", help="comma list of downwind leeway factors, e.g. 0.02,0.033,0.05 (sensitivity)")
 a = ap.parse_args()
 years = [int(y) for y in a.years.split(",") if y]
 if a.bulk:
@@ -31,19 +32,24 @@ else:
     dates = [f"{y}-05-15T12:00:00" for y in years]
 
 rows = []
-for name, (lat, lon) in POINTS.items():
+for lw in [float(x) for x in a.leeway.split(",") if x]:
+  design = D.default_design()
+  design.setdefault("drift", {}).update(leeway_downwind=lw, leeway_crosswind=lw*0.008/0.033)
+  for name, (lat, lon) in POINTS.items():
     for date in dates:
         sc = {**DEFAULT_SCENARIO, "start": {"lat": lat, "lon": lon}, "start_time": date, "max_days": a.days,
               "initial_mode": "drift", "failures_enabled": False, "provider": "bulk" if a.bulk else "openmeteo",
               "waypoints": []}
-        r = run_voyage(D.default_design(), sc, cache_dir=CACHE, log=lambda *x: None)
-        row = dict(drop=name, start=date[:10], outcome=r["outcome"], days=r["days"], km=r["distance_km"],
+        r = run_voyage(design, sc, cache_dir=CACHE, log=lambda *x: None)
+        row = dict(leeway=lw, drop=name, start=date[:10], outcome=r["outcome"], days=r["days"], km=r["distance_km"],
                    end_lat=round(r["end"]["lat"], 2), end_lon=round(r["end"]["lon"], 2))
         rows.append(row)
-        print(f"{name:26s} {date[:10]}  {r['outcome']:16s} {r['days']:5.1f} days  end {row['end_lat']}, {row['end_lon']}", flush=True)
+        print(f"{lw:5.3f} {name:26s} {date[:10]}  {r['outcome']:16s} {r['days']:5.1f} days  end {row['end_lat']}, {row['end_lon']}", flush=True)
 print("\nSummary (aground within the period / runs, median eastward progress):")
-for name, (lat, lon) in POINTS.items():
-    rr = [r for r in rows if r["drop"] == name]
+for lw in sorted({r["leeway"] for r in rows}):
+  print(f" leeway {100*lw:.1f}% of wind")
+  for name, (lat, lon) in POINTS.items():
+    rr = [r for r in rows if r["drop"] == name and r["leeway"] == lw]
     ag = sum(r["outcome"] == "aground" for r in rr)
     east = sorted(r["end_lon"] - lon for r in rr if r["outcome"] != "aground")
     med = east[len(east)//2] if east else float("nan")
