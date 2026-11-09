@@ -1,5 +1,6 @@
 """Monte Carlo: many voyages with different failure draws and (optionally) start dates."""
-import copy, math, os, time, datetime as dt
+import copy
+import math, os, time, datetime as dt
 import numpy as np
 from concurrent.futures import ProcessPoolExecutor, as_completed
 
@@ -64,12 +65,16 @@ def run_montecarlo(design, scenario, n_runs=50, window=None, processes=None, cac
         if starts: sc["start_time"] = starts[i]
         scs.append(sc)
     if sc0["provider"] == "openmeteo":
-        prov = make_provider("openmeteo", cache_dir, log, sc0["grid_deg"])
-        times = sorted(set(s["start_time"] for s in scs))
-        t0 = min(to_epoch(t) for t in times); t1 = max(to_epoch(t) for t in times) + sc0["max_days"]*86400
-        t1 = min(t1, time.time() - 3*86400)
-        log("Downloading historic data along the route corridor (cached for later runs) ...")
-        prov.prefetch(corridor(sc0), t0, t1, log=log)
+        prov = make_provider("openmeteo", cache_dir, log, sc0["grid_deg"], fine_grid=sc0.get("fine_grid"))
+        # Only the months each voyage can actually be at sea (not every month between the first and last start).
+        months, horizon = set(), min(sc0["max_days"], 150)
+        for s in scs:
+            d0 = from_epoch(to_epoch(s["start_time"])).replace(day=1)
+            d1 = from_epoch(min(to_epoch(s["start_time"]) + horizon*86400, time.time() - 3*86400))
+            while d0 <= d1:
+                months.add(int(d0.strftime("%Y%m"))); d0 = (d0 + dt.timedelta(days=32)).replace(day=1)
+        log(f"Downloading historic data along the route corridor for {len(months)} months (cached for later runs) ...")
+        prov.prefetch(corridor(sc0), 0, 0, log=log, months=months)
     processes = processes or max(1, (os.cpu_count() or 2) - 1)
     results = []
     t_start = time.time()

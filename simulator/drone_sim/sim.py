@@ -24,6 +24,8 @@ DEFAULT_SCENARIO = {
     "log_interval_min": 30.0,
     "provider": "openmeteo",       # openmeteo | synthetic
     "grid_deg": 1.0,
+    # 0.25-degree weather where the Gulf Stream and North Atlantic Current run (see TwoGridProvider)
+    "fine_grid": {"deg": 0.25, "lat": [30.0, 50.0], "lon": [-80.0, -38.0]},
     "seed": 1,
     "commands": [],                # [{"t_hours": 240, "cmd": "SET_REPORT", "args": {"hours": 1}}]
     "operator": {"auto_reboot_after_silence_h": 24},
@@ -68,7 +70,7 @@ class Voyage:
         self.log = log; self.progress = progress; self.cache_dir = cache_dir; self.backend = None
         self.prep = prepared or prepare_design(design, cache_dir, log)
         self.boat = self.prep["boat"]; self.polar = self.prep["polar"]; self.stab = self.prep["stab"]
-        self.env = provider or make_provider(sc["provider"], cache_dir, log, sc["grid_deg"], sc["seed"])
+        self.env = provider or make_provider(sc["provider"], cache_dir, log, sc["grid_deg"], sc["seed"], sc.get("fine_grid"))
         self.land = land or LandMask(cache_dir, allow_download=(sc["provider"] != "synthetic"), log=log)
         self.rng = np.random.default_rng(sc["seed"])
         self.events = []

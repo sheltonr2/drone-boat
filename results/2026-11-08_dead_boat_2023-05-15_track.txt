@@ -1,0 +1,13 @@
+Dead-boat drift from 36.85N 75.70W, 2023-05-15 12:00 UTC, no steering, Open-Meteo (0.25 deg grid), drone-boat simulator Rev B.
+Daily positions at the start of each day (sog and current in knots, wind in m/s, hs = significant wave height).
+
+outcome aground days 8.85 distance_km 344.0 end 37.346 -76.404
+day  0  lat 36.850  lon -75.699  sog 0.46 kn  wind 1.1 m/s  hs 0.6 m  current 0.50 kn
+day  1  lat 36.856  lon -75.375  sog 1.51 kn  wind 7.3 m/s  hs 0.9 m  current 0.76 kn
+day  2  lat 36.866  lon -74.734  sog 0.49 kn  wind 5.6 m/s  hs 1.2 m  current 0.24 kn
+day  3  lat 36.995  lon -75.088  sog 1.05 kn  wind 8.6 m/s  hs 1.4 m  current 0.41 kn
+day  4  lat 37.222  lon -75.427  sog 1.14 kn  wind 9.9 m/s  hs 1.6 m  current 0.37 kn
+day  5  lat 37.403  lon -75.650  sog 0.28 kn  wind 1.4 m/s  hs 1.0 m  current 0.39 kn
+day  6  lat 37.300  lon -75.590  sog 1.16 kn  wind 5.3 m/s  hs 0.8 m  current 0.52 kn
+day  7  lat 37.111  lon -75.652  sog 0.71 kn  wind 2.9 m/s  hs 0.5 m  current 0.41 kn
+day  8  lat 37.208  lon -76.083  sog 0.98 kn  wind 6.6 m/s  hs 0.6 m  current 0.30 kn

@@ -28,7 +28,7 @@ This is a 1.5 m self-righting sailboat with a rigid wing sail, solar power and t
 
 - **Wing counterweight (fixed in Rev B):** the lead moved from the wing's nose pocket (which needed about 7.6 kg) to a printed pod on a 300 mm forward arm (about 0.8 kg). See [Simulation_RevB.md](docs/Simulation_RevB.md): the boat stays at 20.8 kg, GM goes from 0.11 to 0.20 m, and crossings run about 4 days faster.
 - **Simulated odds (Mid-Atlantic route):** 100 Monte Carlo runs on synthetic (invented) weather, April–July launches, gave 51% reaching Europe still reporting (95% range 41–61%), median crossing 102 days. Hurricanes are not modelled. See [Route_MidAtlantic.md](docs/Route_MidAtlantic.md). Historic-weather runs have not been done yet.
-- **Historic data download:** the Open-Meteo code was tested against mocked data only. Run the self-test to confirm live access.
+- **Historic data works.** The self-test downloaded real Open-Meteo data on Windows (Nov 8, 2026). A grid check showed the 1° weather grid makes crossings look about 15 days faster than a 0.25° grid, so the Gulf Stream region now uses 0.25° (see [Route_MidAtlantic.md](docs/Route_MidAtlantic.md)).
 
 ## Ideas borrowed from other projects
 

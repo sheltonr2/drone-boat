@@ -163,13 +163,15 @@ class OpenMeteoProvider:
                  sst=onto("sea_surface_temperature"), sea_level=onto("sea_level_height_msl"))
         return d
 
-    def prefetch(self, points, t0, t1, margin_deg=3.0, log=None):
-        """Download every grid block along a list of (lat, lon) points for the months t0..t1."""
-        months = set()
-        d = from_epoch(t0).replace(day=1)
-        while d <= from_epoch(t1):
-            months.add(int(d.strftime("%Y%m")))
-            d = (d + dt.timedelta(days=32)).replace(day=1)
+    def prefetch(self, points, t0, t1, margin_deg=3.0, log=None, months=None):
+        """Download every grid block along a list of (lat, lon) points for the months t0..t1
+        (or for an explicit set of yyyymm months)."""
+        if months is None:
+            months = set()
+            d = from_epoch(t0).replace(day=1)
+            while d <= from_epoch(t1):
+                months.add(int(d.strftime("%Y%m")))
+                d = (d + dt.timedelta(days=32)).replace(day=1)
         need = set()
         for lat, lon in points:
             for dlat in np.arange(-margin_deg, margin_deg + 1e-9, self.res*self.block):
@@ -428,7 +430,41 @@ def bearing_deg(lat1, lon1, lat2, lon2):
     return (math.degrees(math.atan2(x, y)) + 360) % 360
 
 
-def make_provider(kind, cache_dir="cache", log=print, res_deg=1.0, seed=1):
+class TwoGridProvider:
+    """A fine grid where the currents are narrow and fast, a coarse grid everywhere else.
+
+    The Gulf Stream and the North Atlantic Current are 50-100 km wide; a 1-degree grid smears them.
+    On Nov 8, 2026 the same Ocean City -> Ireland voyage (May 2024) took 86 days at 1 degree and
+    102 days at 0.25 degree, and the gap built up west of 40W. East of there both moved alike.
+    (Idea from jcolter11374/boat-sim #50.)"""
+
+    def __init__(self, coarse, fine, box):
+        self.coarse, self.fine = coarse, fine
+        self.lat0, self.lat1, self.lon0, self.lon1 = box
+
+    def _pick(self, lat, lon):
+        return self.fine if (self.lat0 <= lat <= self.lat1 and self.lon0 <= lon <= self.lon1) else self.coarse
+
+    def sample(self, lat, lon, t):
+        return self._pick(lat, lon).sample(lat, lon, t)
+
+    def prefetch(self, points, t0, t1, margin_deg=3.0, log=None, months=None):
+        n = 0
+        for p, m in ((self.coarse, margin_deg), (self.fine, 1.0)):
+            pts = [(la, lo) for la, lo in points if (self._pick(la, lo) is p)]
+            if pts: n += p.prefetch(pts, t0, t1, margin_deg=m, log=log, months=months)
+        return n
+
+    @property
+    def calls(self):
+        return self.coarse.calls + self.fine.calls
+
+
+def make_provider(kind, cache_dir="cache", log=print, res_deg=1.0, seed=1, fine_grid=None):
     if kind == "synthetic":
         return SyntheticProvider(seed=seed)
-    return OpenMeteoProvider(cache_dir=cache_dir, res_deg=res_deg, log=log)
+    coarse = OpenMeteoProvider(cache_dir=cache_dir, res_deg=res_deg, log=log)
+    if fine_grid and fine_grid.get("deg") and fine_grid["deg"] < res_deg:
+        fine = OpenMeteoProvider(cache_dir=cache_dir, res_deg=fine_grid["deg"], log=log)
+        return TwoGridProvider(coarse, fine, (fine_grid["lat"][0], fine_grid["lat"][1], fine_grid["lon"][0], fine_grid["lon"][1]))
+    return coarse

@@ -216,7 +216,7 @@ $("#btn-add-cmd").onclick = () => {
 function scenario() {
   return { start: { lat: +$("#s-lat").value, lon: +$("#s-lon").value }, target: { lat: +$("#t-lat").value, lon: +$("#t-lon").value },
     waypoints: S.waypoints, atlantic_islands_count: $("#s-isles").checked, start_time: $("#s-time").value + ":00", max_days: +$("#s-days").value, provider: $("#s-provider").value,
-    grid_deg: +$("#s-grid").value, arrival_radius_km: +$("#s-radius").value, seed: +$("#s-seed").value, mode: $("#s-mode").value,
+    grid_deg: +$("#s-grid").value, fine_grid: $("#s-fine").checked ? (S.defaults.scenario.fine_grid || { deg: 0.25, lat: [30, 50], lon: [-80, -38] }) : null, arrival_radius_km: +$("#s-radius").value, seed: +$("#s-seed").value, mode: $("#s-mode").value,
     dt_s: +$("#s-dt").value, dt_6dof_s: +$("#s-dt6").value, log_interval_min: +$("#s-log").value,
     failures_enabled: $("#s-fail").checked, failures: S.failures, commands: S.commands };
 }
@@ -226,6 +226,7 @@ function fillScenario(sc) {
   $("#s-radius").value = sc.arrival_radius_km; $("#s-seed").value = sc.seed; $("#s-mode").value = sc.mode; $("#s-dt").value = sc.dt_s;
   $("#s-log").value = sc.log_interval_min; $("#s-fail").checked = sc.failures_enabled;
   S.waypoints = (sc.waypoints || []).map(w => w.slice()); $("#s-isles").checked = !!sc.atlantic_islands_count;
+  $("#s-grid").value = String(sc.grid_deg); $("#s-fine").checked = !!sc.fine_grid;
 }
 
 /* ---------------- run ---------------- */

@@ -1,0 +1,308 @@
+Drone-boat collab checks, started Sun 11/08/2026 20:23:03.98 
+Python 3.15.2
+=== SELFTEST 
+1/3 Geometry and stability ...
+    mass 20.8 kg, GM 0.201 m, self-righting: True
+2/3 Short voyage on synthetic weather (builds the polar the first time, ~1-3 min) ...
+Building the speed polar for this design (about 10-30 s) ...
+    114.6 km in 3.0 days, outcome at_sea_timeout
+3/3 Open-Meteo historic data ...
+Downloading 2023-07 weather + marine data for 9 grid points near 47.0, -45.0
+{
+ "wind_u": 2.3842130672784956,
+ "wind_v": 2.223314653803745,
+ "gust": 6.2,
+ "sw_rad": 356.0,
+ "cloud": 100.0,
+ "air_t": 9.6,
+ "hs": 1.14,
+ "tp": 8.3,
+ "wave_dir": 151.0,
+ "swell_hs": 0.86,
+ "cur_u": 0.1980014498196373,
+ "cur_v": 0.1008867777198993,
+ "sst": 12.3,
+ "sea_level": -1.0,
+ "marine_ok": true,
+ "current_includes_stokes": true
+}
+Open-Meteo OK
+=== DEAD BOAT 
+Downloading Natural Earth coastline (one time, ~2 MB) ...
+Downloading Natural Earth country borders (one time, ~4 MB) ...
+Downloading 2023-05 weather + marine data for 9 grid points near 36.8, -75.8
+Downloading 2023-05 weather + marine data for 6 grid points near 36.8, -75.0
+Downloading 2023-05 weather + marine data for 6 grid points near 36.8, -74.5
+Downloading 2023-05 weather + marine data for 6 grid points near 37.5, -75.5
+Downloading 2023-05 weather + marine data for 4 grid points near 37.5, -76.0
+Downloading 2023-05 weather + marine data for 6 grid points near 37.0, -76.2
+Downloading 2023-05 weather + marine data for 5 grid points near 37.8, -76.5
+aground after 8.85 days, 344.0 km. Saved ..\results\dead_boat_2023-05-15.json
+outcome aground days 8.85 distance_km 344.0 end 37.346 -76.404
+day  0  lat 36.850  lon -75.699  sog 0.46 kn  wind 1.1 m/s  hs 0.6 m  current 0.50 kn
+day  1  lat 36.856  lon -75.375  sog 1.51 kn  wind 7.3 m/s  hs 0.9 m  current 0.76 kn
+day  2  lat 36.866  lon -74.734  sog 0.49 kn  wind 5.6 m/s  hs 1.2 m  current 0.24 kn
+day  3  lat 36.995  lon -75.088  sog 1.05 kn  wind 8.6 m/s  hs 1.4 m  current 0.41 kn
+day  4  lat 37.222  lon -75.427  sog 1.14 kn  wind 9.9 m/s  hs 1.6 m  current 0.37 kn
+day  5  lat 37.403  lon -75.650  sog 0.28 kn  wind 1.4 m/s  hs 1.0 m  current 0.39 kn
+day  6  lat 37.300  lon -75.590  sog 1.16 kn  wind 5.3 m/s  hs 0.8 m  current 0.52 kn
+day  7  lat 37.111  lon -75.652  sog 0.71 kn  wind 2.9 m/s  hs 0.5 m  current 0.41 kn
+day  8  lat 37.208  lon -76.083  sog 0.98 kn  wind 6.6 m/s  hs 0.6 m  current 0.30 kn
+=== GRIDCHECK 
+Downloading 2024-05 weather + marine data for 9 grid points near 38.0, -75.0
+Downloading 2024-05 weather + marine data for 6 grid points near 38.0, -72.0
+Downloading 2024-05 weather + marine data for 7 grid points near 37.0, -71.0
+Downloading 2024-05 weather + marine data for 6 grid points near 37.0, -68.0
+Downloading 2024-05 weather + marine data for 6 grid points near 37.0, -66.0
+Downloading 2024-05 weather + marine data for 6 grid points near 37.0, -64.0
+Downloading 2024-05 weather + marine data for 6 grid points near 40.0, -67.0
+Downloading 2024-05 weather + marine data for 5 grid points near 39.0, -63.0
+Downloading 2024-05 weather + marine data for 6 grid points near 39.0, -61.0
+Downloading 2024-05 weather + marine data for 6 grid points near 42.0, -64.0
+Downloading 2024-05 weather + marine data for 5 grid points near 41.0, -60.0
+Downloading 2024-05 weather + marine data for 7 grid points near 40.0, -59.0
+Downloading 2024-06 weather + marine data for 9 grid points near 40.0, -60.0
+Downloading 2024-06 weather + marine data for 6 grid points near 40.0, -57.0
+Downloading 2024-06 weather + marine data for 6 grid points near 40.0, -55.0
+Downloading 2024-06 weather + marine data for 6 grid points near 40.0, -53.0
+Downloading 2024-06 weather + marine data for 6 grid points near 43.0, -56.0
+Downloading 2024-06 weather + marine data for 5 grid points near 42.0, -52.0
+Downloading 2024-06 weather + marine data for 7 grid points near 41.0, -51.0
+Downloading 2024-06 weather + marine data for 5 grid points near 44.0, -52.0
+Downloading 2024-06 weather + marine data for 6 grid points near 42.0, -48.0
+Downloading 2024-06 weather + marine data for 6 grid points near 42.0, -46.0
+Downloading 2024-06 weather + marine data for 6 grid points near 45.0, -48.0
+Downloading 2024-06 weather + marine data for 6 grid points near 43.0, -44.0
+Downloading 2024-06 weather + marine data for 6 grid points near 43.0, -42.0
+Downloading 2024-06 weather + marine data for 6 grid points near 46.0, -45.0
+Downloading 2024-06 weather + marine data for 5 grid points near 45.0, -41.0
+Downloading 2024-06 weather + marine data for 7 grid points near 44.0, -40.0
+Downloading 2024-06 weather + marine data for 5 grid points near 47.0, -41.0
+Downloading 2024-06 weather + marine data for 6 grid points near 45.0, -37.0
+Downloading 2024-06 weather + marine data for 6 grid points near 45.0, -35.0
+Downloading 2024-07 weather + marine data for 9 grid points near 45.0, -37.0
+Downloading 2024-07 weather + marine data for 6 grid points near 45.0, -34.0
+Downloading 2024-07 weather + marine data for 6 grid points near 48.0, -36.0
+Downloading 2024-07 weather + marine data for 6 grid points near 46.0, -32.0
+Downloading 2024-07 weather + marine data for 6 grid points near 46.0, -30.0
+Downloading 2024-07 weather + marine data for 6 grid points near 49.0, -32.0
+Downloading 2024-07 weather + marine data for 6 grid points near 47.0, -28.0
+Downloading 2024-07 weather + marine data for 6 grid points near 47.0, -26.0
+Downloading 2024-07 weather + marine data for 6 grid points near 50.0, -28.0
+Downloading 2024-07 weather + marine data for 6 grid points near 48.0, -24.0
+Downloading 2024-07 weather + marine data for 6 grid points near 48.0, -22.0
+Downloading 2024-07 weather + marine data for 6 grid points near 51.0, -25.0
+Downloading 2024-07 weather + marine data for 5 grid points near 50.0, -21.0
+Downloading 2024-07 weather + marine data for 7 grid points near 49.0, -20.0
+Downloading 2024-07 weather + marine data for 6 grid points near 49.0, -17.0
+Downloading 2024-08 weather + marine data for 9 grid points near 49.0, -18.0
+Downloading 2024-08 weather + marine data for 6 grid points near 49.0, -15.0
+Downloading 2024-08 weather + marine data for 6 grid points near 52.0, -18.0
+Downloading 2024-08 weather + marine data for 5 grid points near 51.0, -14.0
+Downloading 2024-08 weather + marine data for 7 grid points near 50.0, -13.0
+Downloading 2024-08 weather + marine data for 5 grid points near 53.0, -14.0
+Downloading 2024-08 weather + marine data for 6 grid points near 51.0, -10.0
+grid  1.0 deg: arrived_reporting, 86.28 days, 5682.4 km, mean speed 1.48 kn
+Downloading 2024-05 weather + marine data for 9 grid points near 38.2, -74.8
+Downloading 2024-05 weather + marine data for 6 grid points near 38.2, -74.0
+Downloading 2024-05 weather + marine data for 7 grid points near 38.0, -73.8
+Downloading 2024-05 weather + marine data for 6 grid points near 38.0, -73.0
+Downloading 2024-05 weather + marine data for 6 grid points near 38.0, -72.5
+Downloading 2024-05 weather + marine data for 6 grid points near 38.0, -72.0
+Downloading 2024-05 weather + marine data for 6 grid points near 38.0, -71.5
+Downloading 2024-05 weather + marine data for 6 grid points near 38.0, -71.0
+Downloading 2024-05 weather + marine data for 7 grid points near 37.8, -70.8
+Downloading 2024-05 weather + marine data for 6 grid points near 37.8, -70.0
+Downloading 2024-05 weather + marine data for 6 grid points near 37.8, -69.5
+Downloading 2024-05 weather + marine data for 6 grid points near 37.8, -69.0
+Downloading 2024-05 weather + marine data for 6 grid points near 37.8, -68.5
+Downloading 2024-05 weather + marine data for 7 grid points near 37.5, -68.2
+Downloading 2024-05 weather + marine data for 6 grid points near 37.5, -67.5
+Downloading 2024-05 weather + marine data for 6 grid points near 37.5, -67.0
+Downloading 2024-05 weather + marine data for 6 grid points near 37.5, -66.5
+Downloading 2024-05 weather + marine data for 6 grid points near 38.2, -67.2
+Downloading 2024-05 weather + marine data for 5 grid points near 38.0, -66.2
+Downloading 2024-05 weather + marine data for 6 grid points near 38.0, -65.8
+Downloading 2024-05 weather + marine data for 6 grid points near 38.8, -66.2
+Downloading 2024-05 weather + marine data for 6 grid points near 38.2, -65.2
+Downloading 2024-05 weather + marine data for 6 grid points near 38.2, -64.8
+Downloading 2024-05 weather + marine data for 6 grid points near 39.0, -65.2
+Downloading 2024-05 weather + marine data for 6 grid points near 38.5, -64.2
+Downloading 2024-05 weather + marine data for 6 grid points near 38.5, -63.8
+Downloading 2024-05 weather + marine data for 6 grid points near 39.2, -64.5
+Downloading 2024-05 weather + marine data for 5 grid points near 39.0, -63.5
+Downloading 2024-05 weather + marine data for 6 grid points near 39.0, -63.0
+Downloading 2024-05 weather + marine data for 6 grid points near 39.0, -62.5
+Downloading 2024-05 weather + marine data for 6 grid points near 39.0, -62.0
+Downloading 2024-05 weather + marine data for 7 grid points near 38.8, -61.8
+Downloading 2024-05 weather + marine data for 6 grid points near 38.2, -62.0
+Downloading 2024-05 weather + marine data for 6 grid points near 38.2, -61.0
+Downloading 2024-05 weather + marine data for 4 grid points near 39.0, -61.2
+Downloading 2024-05 weather + marine data for 6 grid points near 38.5, -60.5
+Downloading 2024-05 weather + marine data for 5 grid points near 39.2, -61.0
+Downloading 2024-05 weather + marine data for 6 grid points near 39.8, -61.0
+Downloading 2024-05 weather + marine data for 6 grid points near 40.2, -61.0
+Downloading 2024-05 weather + marine data for 6 grid points near 39.8, -60.0
+Downloading 2024-06 weather + marine data for 9 grid points near 39.8, -60.2
+Downloading 2024-06 weather + marine data for 7 grid points near 39.5, -59.8
+Downloading 2024-06 weather + marine data for 7 grid points near 39.2, -59.2
+Downloading 2024-06 weather + marine data for 7 grid points near 39.0, -58.8
+Downloading 2024-06 weather + marine data for 7 grid points near 38.5, -59.2
+Downloading 2024-06 weather + marine data for 7 grid points near 38.8, -58.2
+Downloading 2024-06 weather + marine data for 5 grid points near 39.5, -58.5
+Downloading 2024-06 weather + marine data for 6 grid points near 39.0, -57.5
+Downloading 2024-06 weather + marine data for 5 grid points near 39.8, -58.0
+Downloading 2024-06 weather + marine data for 6 grid points near 39.2, -57.0
+Downloading 2024-06 weather + marine data for 6 grid points near 39.2, -56.5
+Downloading 2024-06 weather + marine data for 6 grid points near 40.0, -57.0
+Downloading 2024-06 weather + marine data for 6 grid points near 39.5, -56.0
+Downloading 2024-06 weather + marine data for 5 grid points near 40.2, -56.5
+Downloading 2024-06 weather + marine data for 6 grid points near 39.8, -55.5
+Downloading 2024-06 weather + marine data for 5 grid points near 40.5, -56.0
+Downloading 2024-06 weather + marine data for 6 grid points near 40.2, -55.0
+Downloading 2024-06 weather + marine data for 6 grid points near 41.0, -55.5
+Downloading 2024-06 weather + marine data for 6 grid points near 40.5, -54.5
+Downloading 2024-06 weather + marine data for 6 grid points near 40.5, -54.0
+Downloading 2024-06 weather + marine data for 6 grid points near 40.5, -53.5
+Downloading 2024-06 weather + marine data for 7 grid points near 40.2, -53.2
+Downloading 2024-06 weather + marine data for 6 grid points near 40.2, -52.5
+Downloading 2024-06 weather + marine data for 6 grid points near 41.0, -53.0
+Downloading 2024-06 weather + marine data for 6 grid points near 40.5, -52.0
+Downloading 2024-06 weather + marine data for 6 grid points near 40.5, -51.5
+Downloading 2024-06 weather + marine data for 6 grid points near 40.5, -51.0
+Downloading 2024-06 weather + marine data for 6 grid points near 41.2, -51.5
+Downloading 2024-06 weather + marine data for 6 grid points near 40.8, -50.5
+Downloading 2024-06 weather + marine data for 5 grid points near 41.5, -51.0
+Downloading 2024-06 weather + marine data for 6 grid points near 41.2, -50.0
+Downloading 2024-06 weather + marine data for 6 grid points near 42.0, -50.8
+Downloading 2024-06 weather + marine data for 5 grid points near 41.8, -49.8
+Downloading 2024-06 weather + marine data for 7 grid points near 41.5, -49.5
+Downloading 2024-06 weather + marine data for 6 grid points near 41.5, -48.8
+Downloading 2024-06 weather + marine data for 6 grid points near 41.5, -48.2
+Downloading 2024-06 weather + marine data for 7 grid points near 41.2, -48.0
+Downloading 2024-06 weather + marine data for 7 grid points near 40.8, -48.5
+Downloading 2024-06 weather + marine data for 5 grid points near 40.8, -47.8
+Downloading 2024-06 weather + marine data for 7 grid points near 40.5, -47.2
+Downloading 2024-06 weather + marine data for 5 grid points near 41.2, -47.5
+Downloading 2024-06 weather + marine data for 5 grid points near 41.8, -47.8
+Downloading 2024-06 weather + marine data for 6 grid points near 42.2, -47.8
+Downloading 2024-06 weather + marine data for 6 grid points near 42.8, -47.8
+Downloading 2024-06 weather + marine data for 6 grid points near 42.2, -46.8
+Downloading 2024-06 weather + marine data for 6 grid points near 42.2, -46.2
+Downloading 2024-06 weather + marine data for 6 grid points near 43.0, -47.0
+Downloading 2024-06 weather + marine data for 5 grid points near 42.8, -46.0
+Downloading 2024-06 weather + marine data for 6 grid points near 42.8, -45.5
+Downloading 2024-06 weather + marine data for 6 grid points near 43.5, -46.0
+Downloading 2024-06 weather + marine data for 6 grid points near 43.0, -45.0
+Downloading 2024-06 weather + marine data for 5 grid points near 43.8, -45.5
+Downloading 2024-06 weather + marine data for 6 grid points near 43.2, -44.5
+Downloading 2024-06 weather + marine data for 6 grid points near 43.2, -44.0
+Downloading 2024-06 weather + marine data for 6 grid points near 43.2, -43.5
+Downloading 2024-06 weather + marine data for 6 grid points near 43.2, -43.0
+Downloading 2024-06 weather + marine data for 6 grid points near 43.2, -42.5
+Downloading 2024-06 weather + marine data for 6 grid points near 44.0, -43.2
+Downloading 2024-06 weather + marine data for 5 grid points near 43.8, -42.2
+Downloading 2024-06 weather + marine data for 6 grid points near 44.5, -42.8
+Downloading 2024-06 weather + marine data for 6 grid points near 45.0, -42.8
+Downloading 2024-07 weather + marine data for 9 grid points near 44.5, -42.8
+Downloading 2024-07 weather + marine data for 6 grid points near 45.2, -43.0
+Downloading 2024-07 weather + marine data for 6 grid points near 44.8, -42.0
+Downloading 2024-07 weather + marine data for 6 grid points near 44.8, -41.5
+Downloading 2024-07 weather + marine data for 6 grid points near 45.5, -42.2
+Downloading 2024-07 weather + marine data for 5 grid points near 45.2, -41.2
+Downloading 2024-07 weather + marine data for 6 grid points near 45.2, -40.8
+Downloading 2024-07 weather + marine data for 6 grid points near 45.2, -40.2
+Downloading 2024-07 weather + marine data for 7 grid points near 45.0, -40.0
+Downloading 2024-07 weather + marine data for 6 grid points near 45.0, -39.2
+Downloading 2024-07 weather + marine data for 6 grid points near 45.0, -38.8
+Downloading 2024-07 weather + marine data for 6 grid points near 45.0, -38.2
+Downloading 2024-07 weather + marine data for 6 grid points near 45.8, -39.0
+Downloading 2024-07 weather + marine data for 5 grid points near 45.5, -38.0
+Downloading 2024-07 weather + marine data for 7 grid points near 45.2, -37.8
+Downloading 2024-07 weather + marine data for 6 grid points near 45.2, -37.0
+Downloading 2024-07 weather + marine data for 6 grid points near 45.2, -36.5
+Downloading 2024-07 weather + marine data for 6 grid points near 46.0, -37.0
+Downloading 2024-07 weather + marine data for 6 grid points near 45.5, -36.0
+Downloading 2024-07 weather + marine data for 6 grid points near 45.5, -35.5
+Downloading 2024-07 weather + marine data for 6 grid points near 46.2, -36.0
+Downloading 2024-07 weather + marine data for 6 grid points near 45.8, -35.0
+Downloading 2024-07 weather + marine data for 6 grid points near 45.8, -34.5
+Downloading 2024-07 weather + marine data for 6 grid points near 45.8, -34.0
+Downloading 2024-07 weather + marine data for 7 grid points near 45.5, -33.8
+Downloading 2024-07 weather + marine data for 5 grid points near 46.2, -34.0
+Downloading 2024-07 weather + marine data for 6 grid points near 45.8, -33.0
+Downloading 2024-07 weather + marine data for 6 grid points near 45.8, -32.5
+Downloading 2024-07 weather + marine data for 6 grid points near 46.5, -33.0
+Downloading 2024-07 weather + marine data for 6 grid points near 46.0, -32.0
+Downloading 2024-07 weather + marine data for 6 grid points near 46.0, -31.5
+Downloading 2024-07 weather + marine data for 6 grid points near 46.8, -32.2
+Downloading 2024-07 weather + marine data for 5 grid points near 46.5, -31.2
+Downloading 2024-07 weather + marine data for 6 grid points near 46.5, -30.8
+Downloading 2024-07 weather + marine data for 6 grid points near 46.5, -30.2
+Downloading 2024-07 weather + marine data for 6 grid points near 47.2, -30.8
+Downloading 2024-07 weather + marine data for 6 grid points near 46.8, -29.8
+Downloading 2024-07 weather + marine data for 6 grid points near 46.8, -29.2
+Downloading 2024-07 weather + marine data for 6 grid points near 46.2, -29.8
+Downloading 2024-07 weather + marine data for 6 grid points near 46.2, -28.8
+Downloading 2024-07 weather + marine data for 6 grid points near 46.2, -28.2
+Downloading 2024-07 weather + marine data for 6 grid points near 47.0, -28.8
+Downloading 2024-07 weather + marine data for 6 grid points near 46.5, -27.8
+Downloading 2024-07 weather + marine data for 6 grid points near 46.5, -27.2
+Downloading 2024-07 weather + marine data for 6 grid points near 47.2, -28.0
+Downloading 2024-07 weather + marine data for 5 grid points near 47.0, -27.0
+Downloading 2024-07 weather + marine data for 7 grid points near 46.8, -26.8
+Downloading 2024-07 weather + marine data for 6 grid points near 46.8, -26.0
+Downloading 2024-07 weather + marine data for 6 grid points near 47.5, -26.8
+Downloading 2024-07 weather + marine data for 5 grid points near 47.2, -25.8
+Downloading 2024-07 weather + marine data for 7 grid points near 47.0, -25.5
+Downloading 2024-08 weather + marine data for 9 grid points near 47.0, -25.8
+Downloading 2024-08 weather + marine data for 6 grid points near 47.8, -26.0
+Downloading 2024-08 weather + marine data for 6 grid points near 47.2, -25.0
+Downloading 2024-08 weather + marine data for 6 grid points near 47.2, -24.5
+Downloading 2024-08 weather + marine data for 6 grid points near 47.2, -24.0
+Downloading 2024-08 weather + marine data for 6 grid points near 47.2, -23.5
+Downloading 2024-08 weather + marine data for 6 grid points near 47.2, -23.0
+Downloading 2024-08 weather + marine data for 6 grid points near 48.0, -23.5
+Downloading 2024-08 weather + marine data for 6 grid points near 47.5, -22.5
+Downloading 2024-08 weather + marine data for 6 grid points near 47.5, -22.0
+Downloading 2024-08 weather + marine data for 6 grid points near 48.2, -22.8
+Downloading 2024-08 weather + marine data for 5 grid points near 48.0, -21.8
+Downloading 2024-08 weather + marine data for 6 grid points near 48.8, -22.2
+Downloading 2024-08 weather + marine data for 6 grid points near 48.2, -21.2
+Downloading 2024-08 weather + marine data for 6 grid points near 48.2, -20.8
+Downloading 2024-08 weather + marine data for 6 grid points near 49.0, -21.2
+Downloading 2024-08 weather + marine data for 6 grid points near 48.5, -20.2
+Downloading 2024-08 weather + marine data for 6 grid points near 48.5, -19.8
+Downloading 2024-08 weather + marine data for 6 grid points near 49.2, -20.2
+Downloading 2024-08 weather + marine data for 6 grid points near 48.8, -19.2
+Downloading 2024-08 weather + marine data for 6 grid points near 48.8, -18.8
+Downloading 2024-08 weather + marine data for 6 grid points near 48.8, -18.2
+Downloading 2024-08 weather + marine data for 6 grid points near 48.8, -17.8
+Downloading 2024-08 weather + marine data for 6 grid points near 49.5, -18.5
+Downloading 2024-08 weather + marine data for 5 grid points near 49.2, -17.5
+Downloading 2024-08 weather + marine data for 6 grid points near 49.2, -17.0
+Downloading 2024-08 weather + marine data for 6 grid points near 49.2, -16.5
+Downloading 2024-08 weather + marine data for 6 grid points near 49.2, -16.0
+Downloading 2024-08 weather + marine data for 6 grid points near 50.0, -16.8
+Downloading 2024-08 weather + marine data for 5 grid points near 49.8, -15.8
+Downloading 2024-08 weather + marine data for 7 grid points near 49.5, -15.5
+Downloading 2024-08 weather + marine data for 6 grid points near 49.5, -14.8
+Downloading 2024-08 weather + marine data for 6 grid points near 49.5, -14.2
+Downloading 2024-08 weather + marine data for 6 grid points near 50.2, -14.8
+Downloading 2024-08 weather + marine data for 6 grid points near 49.8, -13.8
+Downloading 2024-08 weather + marine data for 5 grid points near 50.5, -14.2
+Downloading 2024-08 weather + marine data for 6 grid points near 50.0, -13.2
+Downloading 2024-08 weather + marine data for 5 grid points near 50.8, -13.8
+Downloading 2024-08 weather + marine data for 6 grid points near 50.2, -12.8
+Downloading 2024-08 weather + marine data for 6 grid points near 50.2, -12.2
+Downloading 2024-08 weather + marine data for 6 grid points near 50.2, -11.8
+Downloading 2024-08 weather + marine data for 6 grid points near 51.0, -12.2
+Downloading 2024-08 weather + marine data for 6 grid points near 50.5, -11.2
+Downloading 2024-08 weather + marine data for 6 grid points near 50.5, -10.8
+Downloading 2024-08 weather + marine data for 6 grid points near 51.2, -11.5
+Downloading 2024-08 weather + marine data for 5 grid points near 51.0, -10.5
+Downloading 2024-08 weather + marine data for 7 grid points near 50.8, -10.2
+Downloading 2024-08 weather + marine data for 5 grid points near 51.5, -10.5
+grid 0.25 deg: arrived_reporting, 101.77 days, 6432.5 km, mean speed 1.42 kn
+Difference: +15.5 days. Under about 3 days means the 1-degree grid is fine for Monte Carlo; more than that, run Monte Carlo with "grid_deg": 0.25 (or 0.5) in your scenario file.
+=== DONE Sun 11/08/2026 20:34:02.74 

@@ -46,9 +46,15 @@ By launch month: April 41%, May 48%, June 52%, July 60%. With 22–30 runs a mon
 - **More groundings.** About 6% of boats were disabled early (usually a jammed rudder) and drifted north-east onto Nova Scotia, New England or Newfoundland.
 - **Same main killers.** Leaks (21 of 100) and electronics failures (12) still end most failed voyages. Sealing and electronics reliability remain the biggest levers on the odds.
 
+## First checks on real weather (run on Randolph's computer, Nov 8, 2026)
+
+- **The weather grid matters.** The default voyage (Ocean City to south-west Ireland, launched 15 May 2024) took **86 days on the 1° grid and 102 days on the 0.25° grid**. That's 6,432 km sailed against 5,682 km. The gap built up west of 40°W, where the Gulf Stream and North Atlantic Current are narrow; east of there both runs moved alike. The simulator now uses a 0.25° grid inside 30–50°N, 80–38°W and 1° elsewhere (`fine_grid` in the scenario).
+- **Real weather comes out close to the invented weather** for this one voyage: 102 days on real 2024 weather against about 100 on synthetic.
+- **A dead boat near the coast can drift back in.** With no steering, a boat dropped at John's point (36.85°N, 75.70°W) on 15 May 2023 was carried north and then into the Chesapeake Bay mouth. It went aground near the York River after 8.9 days, never reaching the Gulf Stream. Our own drop point, 25 km off Ocean City, is also on the shelf, so the same thing could happen to a boat that fails early. Worth testing a drop further offshore.
+
 ## Before trusting these numbers
 
-1. Run `python -m drone_sim.cli gridcheck` on your computer. It shows whether the 1° weather grid blurs the Gulf Stream; if crossing times move more than about 3 days, use a 0.25° grid.
+1. Done: the grid check (above) showed the 1° grid flatters crossings by about 15 days, so the Gulf Stream region now uses 0.25°.
 2. Run the Monte Carlo on historic weather (2022 onward) for April–July launches.
 3. Add hurricane tracks (NOAA's HURDAT2 best-track record) to the hazard model. That's the biggest gap for this route.
 
