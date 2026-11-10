@@ -135,10 +135,10 @@ hazards:
     panel_fwd: 4.0e-5        # GUESS: as ours
     panel_aft: 4.0e-5        # GUESS
     rudder: 1.5e-5           # GUESS: as ours
-    sail: 0.0009             # Rev C planning knockdown_damage, refitted 10 Nov 2026 on ERA5/MFWAM seas (3.5 knockdowns/day)
-    #                          so open-ocean rig losses come to 0.0024/day (Microtransat 0.0048 x 0.5). Ours is flat per
-    #                          knockdown; yours scales with (Hs/3 m)^2, so the matching value for your form is lower. GUESS
-    #                          until we send the knockdown-by-Hs counts our simulator now logs.
+    sail: 0.0003             # Rev C planning rig damage in YOUR (Hs/3 m)^2 form: our flat 0.0009 per knockdown (refitted
+    #                          10 Nov 2026 on ERA5/MFWAM seas so open-ocean rig losses are 0.0024/day) divided by the ~2.9
+    #                          mean (Hs/3)^2 at a knockdown that you measured (#50, 10 Nov). Use 0.0009 with
+    #                          damage_ref_hs_m ~5 instead if you prefer.
   ship_speed_ms: 7.0         # GUESS
   ship_beam_m: 32.0          # GUESS
   p_avoid_with_ais: 0.95     # no AIS: same as without

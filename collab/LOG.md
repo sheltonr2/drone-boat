@@ -8,6 +8,7 @@ Newest first. Each check of boat-sim records what was new and what we did.
 - Simulator: Rev C default (`default_design()`), Rev B preset kept; new keys `rudder.y_offsets`, `hull.flood_limit_kg`; per-rudder servo failures. Rev C 25.2 kg, DWL 98 mm, GM 0.187, max GZ 0.378, self-righting; ~7% slower in the VPP (weight 5%, second rudder 2%).
 - Build files regenerated: 20 sheets (new D09), templates T17/T18, 23 STL for 20 parts. Geometry for both sims in `designs/` (boat-sim YAML checked against its Rev B schema and `HazardParams`; not run here).
 - Budget correction: Rev C adds ~$260 of parts; my proposal's "~$300 cheaper" was wrong (the thruster was never in the sail-only budget). The YB3 (~$630) also wasn't budgeted.
+- John (#50): (Hs/3)² scaling averages ~2.9 at a knockdown on real seas (mean Hs 3.6–5.6 m), so 0.0009 flat ≈ 0.0003 at Hs 3 m in his form. Rev C boat-sim YAML now uses sail 0.0003. He's testing a forecast go/no-go launch rule (#163).
 - `run_revC_compare_2023.bat` copied to Randolph's PC: Rev C near-coast, Rev B near-coast, Rev C 100 km (250 each, 2023). Tonight's 500-voyage run (`run_bulk.bat`) now uses Rev C and the near-coast launch (scenario file updated; the old 100 km scenario is `collab/bulk_mc_100km.json`).
 
 ## 2026-11-10, 20:30
