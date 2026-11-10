@@ -768,7 +768,7 @@ def main():
                ("P13b_rudder_core_lower", "P14b_bulb_pattern_aft")]
     pairs = [printed[i:i+2] for i in range(0, len(printed), 2)]
     index = [["D00", "Cover, index and general notes"], ["D01", "General arrangement"], ["D02", "Hull lines and table of offsets"],
-             ["D03", "Interior arrangement and systems"], ["D04", "Keel fin and lead bulb"], ["D05", "Rudder, stock and steering"],
+             ["D03", "Interior arrangement and systems"], ["D04", "Keel fin and lead bulb"], ["D05", "Twin rudders, stocks and steering"],
              ["D06", "Wing sail and tail"], ["D07", "Mast step, spar and stern stub"], ["D08", "Deck hatch, solar layout, penetrations"],
              ["D09", "Watertight subdivision, foam fill, battery box, labels"]]
     for k, pr in enumerate(pairs):
