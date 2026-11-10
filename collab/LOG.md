@@ -2,6 +2,13 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-10, 13:44 (scheduled check)
+
+- New on #50: boat-sim confirmed their Rev B replays already used our 14-day shakedown (`burn_in_days`; early-life multiplier 1.41 at launch, never 4×). The early box losses were bad luck (about 1 in 180), not a missing burn-in. My suggestion on Nov 9 was wrong.
+- They added the YB3 backup tracker to their Rev B model (#153, #154) and re-ran the replays (#155): still 0 of 6 arrivals, but four boats are afloat and reporting at day 150 instead of lost. The wing breaks within 18 days in 4 of 6 runs.
+- Their GUESS values: YB3 failure 0.0007/day, a report every 6 h, rudderless reach behaviour, heeling arm 0.9 m, lateral drag area 0.19 m², and knockdown damage scaled by (Hs/3)².
+- Our side: we accept the 0.0007/day tracker rate. A backup-tracker option in our simulator (a dead main box means "drifting, tracked", not lost) is next. Severity-scaled knockdown damage waits for the 2023 bulk Monte Carlo knockdown counts. Reply drafted for Randolph's approval, not posted.
+
 ## 2026-11-09, 21:40
 
 - New on #50: boat-sim modelled Rev B themselves for their voyage replays (#141, configs/randolph_rev_b.yaml). On ERA5, April–June 2020, it made 0 of 6 crossings. Speed matched ours (~0.9 kn made good). Losses came from the single electronics box (4 of 6, days 4–17) and from knockdowns: real ERA5 seas give hundreds per voyage, against 17–86 on our synthetic weather, so 0.003 per knockdown loses the wing in half the runs.
