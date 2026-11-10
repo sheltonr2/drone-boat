@@ -54,9 +54,30 @@ By launch month: April 41%, May 48%, June 52%, July 60%. With 22–30 runs a mon
 - **Real weather comes out close to the invented weather** for this one voyage: 102 days on real 2024 weather against about 100 on synthetic.
 - **A dead boat near the coast can drift back in.** With no steering, a boat dropped at John's point (36.85°N, 75.70°W) on 15 May 2023 was carried north and then into the Chesapeake Bay mouth. It went aground near the York River after 8.9 days, never reaching the Gulf Stream. Our own drop point, 25 km off Ocean City, is also on the shelf, so the same thing could happen to a boat that fails early. Worth testing a drop further offshore.
 
-## Drift tests: how far out to drop the boat (real weather, Nov 8, 2026)
+## Drift tests on ERA5 + Copernicus data, leeway model (Nov 10, 2026)
 
-> **Correction, 9 Nov:** these tests used the simulator's old dead-boat model. That model held the boat on a heading about 110° off the wind, so a dead boat reached across the wind at 4–6% of wind speed. Real drifting objects go roughly downwind: a Sunfish with no sail drifts at about 2.1% of the wind, a 4.15 m skiff at about 4.0% (Breivik et al. 2010), and both stay within about 15° of downwind. The simulator now uses a leeway model: 3.3% of the wind, ±14°, from a windage balance for Rev B. The tests need re-running before the 100 km decision is final (`collab/drift_tests.py`, on real weather).
+The same worst case (a boat dead from the moment it is dropped: no steering, wing feathered, 30 days adrift), re-run with the corrected leeway model on the downloaded bulk data: ERA5 winds, Copernicus SMOC currents (which include wave-driven Stokes drift) and MFWAM waves. One drop every 3 days from 1 May to 15 June 2023 (16 dates) at each of four points, at three leeway factors for sensitivity ([log](../results/2026-11-10_drift_tests_ocean_city_bulk_2023.txt), [data](../results/2026-11-10_drift_tests_ocean_city_bulk_2023.json)).
+
+| Drop point | Aground within 30 days, at 2% / **3.3%** / 5% of wind | Median days to grounding (3.3%) | Where they went ashore (3.3%) | Median eastward progress of the rest (3.3%) |
+|---|---|---|---|---|
+| 25 km off (old plan) | 14 / **16** / 15 of 16 | 12 | Delmarva 11, New Jersey 2, Virginia Beach 2 | none left at sea |
+| 50 km off | 13 / **13** / 13 | 9 | Delmarva 8, Virginia Beach 4, Outer Banks 1 | +0.5° |
+| **100 km off (current plan)** | 8 / **8** / 12 | 9 | Outer Banks 7, Virginia Beach 1 | +5.2° |
+| 150 km off (shelf edge) | 5 / **5** / 6 | 13 | Outer Banks 4, Cape Cod area 1 | +11.8° |
+
+What this says:
+- **The 100 km drop is not the safe point the Nov 8 tests suggested.** With the corrected model, half the dead boats dropped there in May–June 2023 went ashore, nearly all on the North Carolina Outer Banks after 5–23 days. The shelf currents carried them south-west along the coast instead of east into the Gulf Stream. The Nov 8 result (4 of 4 at sea) came from the old model, which let a dead boat reach across the wind.
+- **The shelf edge (150 km) is better: 5 of 16 aground against 8**, and the boats that stayed at sea got more than twice as far east. This reverses the Nov 8 finding, which was based on one 2022 date that went ashore near Cape May.
+- **In 2023, timing mattered more than distance.** From 100 km, every drop between 7 and 28 May went ashore, and every drop from 31 May to 15 June stayed at sea. From 150 km, only 13–22 May and 9 June went ashore. That is one year's weather pattern, not a rule. The 2024 data (finishing tonight) is the second year we need before reading anything into dates.
+- **The leeway factor barely matters** between 2% and 3.3%. At 5% (a boat with more windage than we estimate), groundings from 100 km rise from 8 to 12. The windage estimate for Rev B is about right to within that range, so this is a second-order risk.
+- **A grounding is now often recoverable.** With the backup tracker fitted, a boat that dies early and washes up on the Outer Banks is a boat we can collect and relaunch, not a loss. That softens this result but doesn't remove it: a beached boat is a public nuisance and costs the launch season.
+- **Keep in mind what this test is.** It is the worst case. The boat only drifts like this if it fails at or soon after launch. The real-weather Monte Carlo (running now) puts this together with the actual chance of an early failure.
+
+**Recommendation (pending the 2024 drift run and the Monte Carlo):** move the drop to the shelf edge, about 150 km (81 nm) out at 37.86°N 73.47°W, unless 2024 reverses this. It is still inside the range of Ocean City's canyon charters, which fish the shelf edge. The cost is about an hour more each way on the charter.
+
+## Drift tests: how far out to drop the boat (Open-Meteo, Nov 8, 2026; superseded)
+
+> **Correction, 9 Nov:** these tests used the simulator's old dead-boat model. That model held the boat on a heading about 110° off the wind, so a dead boat reached across the wind at 4–6% of wind speed. Real drifting objects go roughly downwind: a Sunfish with no sail drifts at about 2.1% of the wind, a 4.15 m skiff at about 4.0% (Breivik et al. 2010), and both stay within about 15° of downwind. The simulator now uses a leeway model: 3.3% of the wind, ±14°, from a windage balance for Rev B. Re-run on Nov 10 (section above); the conclusions below no longer hold.
 
 This checks the worst case for the launch: a boat that is dead from the start, with no steering and the wing feathered, left to drift for 30 days. The tests used real Open-Meteo weather and currents from three drop points off Ocean City on 15 May of four years ([log](../collab/run_log_next_2026-11-08.txt), [table](../results/2026-11-08_drift_tests_ocean_city.txt)).
 

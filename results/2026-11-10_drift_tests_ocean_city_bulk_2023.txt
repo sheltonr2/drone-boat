@@ -1,0 +1,210 @@
+0.020 25 km off (old plan)       2023-05-01  aground           26.9 days  end 36.26, -75.77
+0.020 25 km off (old plan)       2023-05-04  aground           21.8 days  end 37.62, -75.6
+0.020 25 km off (old plan)       2023-05-07  aground           19.8 days  end 37.57, -75.59
+0.020 25 km off (old plan)       2023-05-10  aground           17.1 days  end 37.64, -75.59
+0.020 25 km off (old plan)       2023-05-13  aground           10.1 days  end 38.22, -75.12
+0.020 25 km off (old plan)       2023-05-16  aground            7.5 days  end 38.16, -75.15
+0.020 25 km off (old plan)       2023-05-19  aground            6.8 days  end 37.58, -75.59
+0.020 25 km off (old plan)       2023-05-22  aground            5.4 days  end 36.9, -75.99
+0.020 25 km off (old plan)       2023-05-25  aground            4.7 days  end 37.36, -75.83
+0.020 25 km off (old plan)       2023-05-28  aground            6.6 days  end 36.68, -75.9
+0.020 25 km off (old plan)       2023-05-31  aground           21.5 days  end 37.98, -75.27
+0.020 25 km off (old plan)       2023-06-03  at_sea_timeout    30.0 days  end 37.81, -72.31
+0.020 25 km off (old plan)       2023-06-06  at_sea_timeout    30.0 days  end 39.14, -71.15
+0.020 25 km off (old plan)       2023-06-09  aground           23.6 days  end 39.34, -74.52
+0.020 25 km off (old plan)       2023-06-12  aground           11.7 days  end 37.88, -75.36
+0.020 25 km off (old plan)       2023-06-15  aground            9.9 days  end 37.88, -75.37
+0.020 50 km off                  2023-05-01  at_sea_timeout    30.0 days  end 35.57, -75.46
+0.020 50 km off                  2023-05-04  aground           22.7 days  end 37.18, -75.92
+0.020 50 km off                  2023-05-07  aground           22.1 days  end 36.91, -76.01
+0.020 50 km off                  2023-05-10  aground           19.6 days  end 36.93, -76.11
+0.020 50 km off                  2023-05-13  aground           10.1 days  end 38.1, -75.18
+0.020 50 km off                  2023-05-16  aground            9.8 days  end 37.6, -75.59
+0.020 50 km off                  2023-05-19  aground            8.9 days  end 36.93, -76.13
+0.020 50 km off                  2023-05-22  aground            5.3 days  end 36.75, -75.93
+0.020 50 km off                  2023-05-25  aground            6.8 days  end 36.93, -76.12
+0.020 50 km off                  2023-05-28  aground            6.7 days  end 36.57, -75.87
+0.020 50 km off                  2023-05-31  aground           23.8 days  end 37.54, -75.62
+0.020 50 km off                  2023-06-03  at_sea_timeout    30.0 days  end 39.57, -69.77
+0.020 50 km off                  2023-06-06  at_sea_timeout    30.0 days  end 38.97, -71.33
+0.020 50 km off                  2023-06-09  aground           28.4 days  end 39.62, -74.18
+0.020 50 km off                  2023-06-12  aground           20.3 days  end 38.96, -74.88
+0.020 50 km off                  2023-06-15  aground           24.4 days  end 39.54, -74.37
+0.020 100 km off (current plan)  2023-05-01  at_sea_timeout    30.0 days  end 37.06, -68.49
+0.020 100 km off (current plan)  2023-05-04  aground           29.4 days  end 35.49, -75.46
+0.020 100 km off (current plan)  2023-05-07  at_sea_timeout    30.0 days  end 36.37, -73.41
+0.020 100 km off (current plan)  2023-05-10  aground           24.8 days  end 35.29, -75.51
+0.020 100 km off (current plan)  2023-05-13  aground           15.1 days  end 36.14, -75.71
+0.020 100 km off (current plan)  2023-05-16  aground           11.2 days  end 36.56, -75.86
+0.020 100 km off (current plan)  2023-05-19  aground            9.0 days  end 36.34, -75.79
+0.020 100 km off (current plan)  2023-05-22  aground            6.7 days  end 36.27, -75.77
+0.020 100 km off (current plan)  2023-05-25  aground            7.5 days  end 36.22, -75.76
+0.020 100 km off (current plan)  2023-05-28  aground            7.4 days  end 35.92, -75.58
+0.020 100 km off (current plan)  2023-05-31  at_sea_timeout    30.0 days  end 37.96, -72.03
+0.020 100 km off (current plan)  2023-06-03  at_sea_timeout    30.0 days  end 41.22, -62.94
+0.020 100 km off (current plan)  2023-06-06  at_sea_timeout    30.0 days  end 40.87, -69.3
+0.020 100 km off (current plan)  2023-06-09  at_sea_timeout    30.0 days  end 38.47, -67.93
+0.020 100 km off (current plan)  2023-06-12  at_sea_timeout    30.0 days  end 39.86, -69.97
+0.020 100 km off (current plan)  2023-06-15  at_sea_timeout    30.0 days  end 39.05, -67.73
+0.020 150 km off (shelf edge)    2023-05-01  at_sea_timeout    30.0 days  end 37.79, -73.24
+0.020 150 km off (shelf edge)    2023-05-04  at_sea_timeout    30.0 days  end 38.26, -61.67
+0.020 150 km off (shelf edge)    2023-05-07  aground           23.7 days  end 35.83, -75.54
+0.020 150 km off (shelf edge)    2023-05-10  aground           21.1 days  end 35.89, -75.56
+0.020 150 km off (shelf edge)    2023-05-13  aground           17.8 days  end 36.13, -75.7
+0.020 150 km off (shelf edge)    2023-05-16  aground           16.3 days  end 35.51, -75.46
+0.020 150 km off (shelf edge)    2023-05-19  aground           15.5 days  end 35.34, -75.49
+0.020 150 km off (shelf edge)    2023-05-22  at_sea_timeout    30.0 days  end 38.48, -65.02
+0.020 150 km off (shelf edge)    2023-05-25  at_sea_timeout    30.0 days  end 40.1, -61.56
+0.020 150 km off (shelf edge)    2023-05-28  at_sea_timeout    30.0 days  end 36.93, -74.53
+0.020 150 km off (shelf edge)    2023-05-31  at_sea_timeout    30.0 days  end 40.93, -62.72
+0.020 150 km off (shelf edge)    2023-06-03  at_sea_timeout    30.0 days  end 41.84, -62.03
+0.020 150 km off (shelf edge)    2023-06-06  at_sea_timeout    30.0 days  end 40.87, -56.76
+0.020 150 km off (shelf edge)    2023-06-09  at_sea_timeout    30.0 days  end 41.39, -70.4
+0.020 150 km off (shelf edge)    2023-06-12  at_sea_timeout    30.0 days  end 40.73, -69.16
+0.020 150 km off (shelf edge)    2023-06-15  at_sea_timeout    30.0 days  end 38.2, -73.41
+0.033 25 km off (old plan)       2023-05-01  aground           26.9 days  end 36.15, -75.72
+0.033 25 km off (old plan)       2023-05-04  aground           19.3 days  end 38.39, -75.05
+0.033 25 km off (old plan)       2023-05-07  aground           18.2 days  end 38.15, -75.16
+0.033 25 km off (old plan)       2023-05-10  aground           13.8 days  end 38.51, -75.04
+0.033 25 km off (old plan)       2023-05-13  aground            7.1 days  end 38.31, -75.14
+0.033 25 km off (old plan)       2023-05-16  aground            4.0 days  end 38.37, -75.07
+0.033 25 km off (old plan)       2023-05-19  aground            7.2 days  end 37.35, -75.84
+0.033 25 km off (old plan)       2023-05-22  aground            4.5 days  end 36.8, -75.95
+0.033 25 km off (old plan)       2023-05-25  aground            3.7 days  end 37.19, -75.92
+0.033 25 km off (old plan)       2023-05-28  aground            5.8 days  end 36.74, -75.93
+0.033 25 km off (old plan)       2023-05-31  aground           22.7 days  end 37.33, -75.84
+0.033 25 km off (old plan)       2023-06-03  aground           23.5 days  end 38.19, -75.13
+0.033 25 km off (old plan)       2023-06-06  aground           18.4 days  end 37.83, -75.49
+0.033 25 km off (old plan)       2023-06-09  aground           17.6 days  end 39.0, -74.8
+0.033 25 km off (old plan)       2023-06-12  aground           10.8 days  end 37.93, -75.31
+0.033 25 km off (old plan)       2023-06-15  aground            7.6 days  end 37.55, -75.6
+0.033 50 km off                  2023-05-01  at_sea_timeout    30.0 days  end 36.56, -75.56
+0.033 50 km off                  2023-05-04  aground           23.0 days  end 36.73, -75.92
+0.033 50 km off                  2023-05-07  aground           20.3 days  end 37.63, -75.6
+0.033 50 km off                  2023-05-10  aground           16.1 days  end 38.01, -75.25
+0.033 50 km off                  2023-05-13  aground            7.1 days  end 38.21, -75.13
+0.033 50 km off                  2023-05-16  aground            9.4 days  end 37.58, -75.59
+0.033 50 km off                  2023-05-19  aground            8.0 days  end 36.93, -76.14
+0.033 50 km off                  2023-05-22  aground            4.3 days  end 36.74, -75.93
+0.033 50 km off                  2023-05-25  aground            5.1 days  end 36.92, -76.1
+0.033 50 km off                  2023-05-28  aground            5.3 days  end 36.5, -75.84
+0.033 50 km off                  2023-05-31  aground           21.6 days  end 37.29, -75.86
+0.033 50 km off                  2023-06-03  at_sea_timeout    30.0 days  end 38.43, -71.8
+0.033 50 km off                  2023-06-06  at_sea_timeout    30.0 days  end 39.79, -74.0
+0.033 50 km off                  2023-06-09  aground           15.1 days  end 38.22, -75.12
+0.033 50 km off                  2023-06-12  aground           11.4 days  end 37.88, -75.36
+0.033 50 km off                  2023-06-15  aground            8.3 days  end 37.5, -75.73
+0.033 100 km off (current plan)  2023-05-01  at_sea_timeout    30.0 days  end 38.52, -64.31
+0.033 100 km off (current plan)  2023-05-04  at_sea_timeout    30.0 days  end 36.76, -69.11
+0.033 100 km off (current plan)  2023-05-07  aground           23.4 days  end 36.2, -75.74
+0.033 100 km off (current plan)  2023-05-10  aground           20.1 days  end 36.16, -75.72
+0.033 100 km off (current plan)  2023-05-13  aground           13.9 days  end 35.91, -75.58
+0.033 100 km off (current plan)  2023-05-16  aground           10.2 days  end 36.64, -75.88
+0.033 100 km off (current plan)  2023-05-19  aground            8.1 days  end 36.28, -75.77
+0.033 100 km off (current plan)  2023-05-22  aground            5.2 days  end 36.02, -75.64
+0.033 100 km off (current plan)  2023-05-25  aground            5.7 days  end 36.46, -75.83
+0.033 100 km off (current plan)  2023-05-28  aground            6.6 days  end 35.88, -75.56
+0.033 100 km off (current plan)  2023-05-31  at_sea_timeout    30.0 days  end 38.0, -74.96
+0.033 100 km off (current plan)  2023-06-03  at_sea_timeout    30.0 days  end 42.6, -65.76
+0.033 100 km off (current plan)  2023-06-06  at_sea_timeout    30.0 days  end 40.97, -68.03
+0.033 100 km off (current plan)  2023-06-09  at_sea_timeout    30.0 days  end 41.94, -68.8
+0.033 100 km off (current plan)  2023-06-12  at_sea_timeout    30.0 days  end 40.18, -73.75
+0.033 100 km off (current plan)  2023-06-15  at_sea_timeout    30.0 days  end 40.48, -73.42
+0.033 150 km off (shelf edge)    2023-05-01  at_sea_timeout    30.0 days  end 39.87, -60.63
+0.033 150 km off (shelf edge)    2023-05-04  at_sea_timeout    30.0 days  end 37.27, -67.83
+0.033 150 km off (shelf edge)    2023-05-07  at_sea_timeout    30.0 days  end 41.15, -60.52
+0.033 150 km off (shelf edge)    2023-05-10  at_sea_timeout    30.0 days  end 38.3, -69.02
+0.033 150 km off (shelf edge)    2023-05-13  aground           12.8 days  end 35.72, -75.48
+0.033 150 km off (shelf edge)    2023-05-16  aground           14.3 days  end 35.93, -75.59
+0.033 150 km off (shelf edge)    2023-05-19  aground           11.3 days  end 36.19, -75.74
+0.033 150 km off (shelf edge)    2023-05-22  aground            5.6 days  end 35.68, -75.47
+0.033 150 km off (shelf edge)    2023-05-25  at_sea_timeout    30.0 days  end 40.91, -61.67
+0.033 150 km off (shelf edge)    2023-05-28  at_sea_timeout    30.0 days  end 39.94, -58.91
+0.033 150 km off (shelf edge)    2023-05-31  at_sea_timeout    30.0 days  end 41.8, -61.08
+0.033 150 km off (shelf edge)    2023-06-03  at_sea_timeout    30.0 days  end 40.5, -51.87
+0.033 150 km off (shelf edge)    2023-06-06  at_sea_timeout    30.0 days  end 41.02, -64.91
+0.033 150 km off (shelf edge)    2023-06-09  aground           23.3 days  end 41.55, -70.97
+0.033 150 km off (shelf edge)    2023-06-12  at_sea_timeout    30.0 days  end 42.11, -68.58
+0.033 150 km off (shelf edge)    2023-06-15  at_sea_timeout    30.0 days  end 38.19, -73.36
+0.050 25 km off (old plan)       2023-05-01  at_sea_timeout    30.0 days  end 37.41, -60.75
+0.050 25 km off (old plan)       2023-05-04  aground           16.4 days  end 38.97, -74.87
+0.050 25 km off (old plan)       2023-05-07  aground           13.3 days  end 39.19, -74.66
+0.050 25 km off (old plan)       2023-05-10  aground           10.1 days  end 39.18, -74.66
+0.050 25 km off (old plan)       2023-05-13  aground            6.4 days  end 38.36, -75.14
+0.050 25 km off (old plan)       2023-05-16  aground            3.3 days  end 38.38, -75.05
+0.050 25 km off (old plan)       2023-05-19  aground            4.3 days  end 38.04, -75.22
+0.050 25 km off (old plan)       2023-05-22  aground            3.7 days  end 36.81, -75.95
+0.050 25 km off (old plan)       2023-05-25  aground            3.4 days  end 36.93, -76.15
+0.050 25 km off (old plan)       2023-05-28  aground            2.5 days  end 37.59, -75.59
+0.050 25 km off (old plan)       2023-05-31  aground            4.2 days  end 36.57, -75.86
+0.050 25 km off (old plan)       2023-06-03  aground           20.1 days  end 37.8, -75.5
+0.050 25 km off (old plan)       2023-06-06  aground           20.5 days  end 39.09, -74.73
+0.050 25 km off (old plan)       2023-06-09  aground           16.8 days  end 39.1, -74.72
+0.050 25 km off (old plan)       2023-06-12  aground           10.3 days  end 38.17, -75.15
+0.050 25 km off (old plan)       2023-06-15  aground            6.4 days  end 37.94, -75.3
+0.050 50 km off                  2023-05-01  at_sea_timeout    30.0 days  end 39.74, -52.56
+0.050 50 km off                  2023-05-04  aground           21.8 days  end 37.93, -75.31
+0.050 50 km off                  2023-05-07  aground           19.2 days  end 38.59, -75.18
+0.050 50 km off                  2023-05-10  aground           15.2 days  end 38.6, -75.13
+0.050 50 km off                  2023-05-13  aground            6.8 days  end 38.25, -75.12
+0.050 50 km off                  2023-05-16  aground            4.5 days  end 38.42, -75.1
+0.050 50 km off                  2023-05-19  aground            7.3 days  end 36.95, -76.25
+0.050 50 km off                  2023-05-22  aground            3.6 days  end 36.59, -75.87
+0.050 50 km off                  2023-05-25  aground            3.3 days  end 36.84, -75.96
+0.050 50 km off                  2023-05-28  aground            4.3 days  end 36.65, -75.89
+0.050 50 km off                  2023-05-31  aground            4.4 days  end 36.24, -75.76
+0.050 50 km off                  2023-06-03  at_sea_timeout    30.0 days  end 39.3, -74.4
+0.050 50 km off                  2023-06-06  at_sea_timeout    30.0 days  end 42.06, -67.7
+0.050 50 km off                  2023-06-09  aground           17.3 days  end 39.1, -74.73
+0.050 50 km off                  2023-06-12  aground           10.9 days  end 37.89, -75.33
+0.050 50 km off                  2023-06-15  aground            7.5 days  end 37.45, -75.79
+0.050 100 km off (current plan)  2023-05-01  at_sea_timeout    30.0 days  end 39.57, -52.49
+0.050 100 km off (current plan)  2023-05-04  aground           23.8 days  end 35.96, -75.6
+0.050 100 km off (current plan)  2023-05-07  aground           20.8 days  end 35.97, -75.61
+0.050 100 km off (current plan)  2023-05-10  aground           16.9 days  end 36.06, -75.66
+0.050 100 km off (current plan)  2023-05-13  aground           13.3 days  end 35.96, -75.61
+0.050 100 km off (current plan)  2023-05-16  aground            9.5 days  end 36.62, -75.88
+0.050 100 km off (current plan)  2023-05-19  aground            7.1 days  end 36.24, -75.76
+0.050 100 km off (current plan)  2023-05-22  aground            7.4 days  end 35.26, -76.52
+0.050 100 km off (current plan)  2023-05-25  aground            4.3 days  end 36.6, -75.87
+0.050 100 km off (current plan)  2023-05-28  aground            5.3 days  end 35.84, -75.54
+0.050 100 km off (current plan)  2023-05-31  at_sea_timeout    30.0 days  end 41.0, -68.15
+0.050 100 km off (current plan)  2023-06-03  at_sea_timeout    30.0 days  end 43.01, -65.87
+0.050 100 km off (current plan)  2023-06-06  aground           22.5 days  end 41.68, -70.03
+0.050 100 km off (current plan)  2023-06-09  at_sea_timeout    30.0 days  end 42.59, -67.76
+0.050 100 km off (current plan)  2023-06-12  aground           14.7 days  end 38.95, -74.9
+0.050 100 km off (current plan)  2023-06-15  aground            8.3 days  end 37.51, -75.71
+0.050 150 km off (shelf edge)    2023-05-01  at_sea_timeout    30.0 days  end 38.52, -55.46
+0.050 150 km off (shelf edge)    2023-05-04  aground           21.6 days  end 35.7, -75.48
+0.050 150 km off (shelf edge)    2023-05-07  at_sea_timeout    30.0 days  end 35.8, -72.65
+0.050 150 km off (shelf edge)    2023-05-10  at_sea_timeout    30.0 days  end 36.01, -64.75
+0.050 150 km off (shelf edge)    2023-05-13  at_sea_timeout    30.0 days  end 37.15, -70.89
+0.050 150 km off (shelf edge)    2023-05-16  aground           12.3 days  end 35.56, -75.9
+0.050 150 km off (shelf edge)    2023-05-19  aground            8.5 days  end 35.94, -75.6
+0.050 150 km off (shelf edge)    2023-05-22  aground            5.0 days  end 35.28, -75.51
+0.050 150 km off (shelf edge)    2023-05-25  aground            5.6 days  end 36.2, -75.74
+0.050 150 km off (shelf edge)    2023-05-28  at_sea_timeout    30.0 days  end 40.4, -64.48
+0.050 150 km off (shelf edge)    2023-05-31  at_sea_timeout    30.0 days  end 43.44, -59.19
+0.050 150 km off (shelf edge)    2023-06-03  at_sea_timeout    30.0 days  end 43.64, -62.69
+0.050 150 km off (shelf edge)    2023-06-06  at_sea_timeout    30.0 days  end 43.55, -64.86
+0.050 150 km off (shelf edge)    2023-06-09  at_sea_timeout    30.0 days  end 43.89, -68.21
+0.050 150 km off (shelf edge)    2023-06-12  at_sea_timeout    30.0 days  end 42.99, -68.09
+0.050 150 km off (shelf edge)    2023-06-15  aground           16.2 days  end 39.58, -74.28
+
+Summary (aground within the period / runs, median eastward progress):
+ leeway 2.0% of wind
+  25 km off (old plan)       aground 14/16   median east +3.5 deg lon
+  50 km off                  aground 13/16   median east +3.2 deg lon
+  100 km off (current plan)  aground 8/16   median east +5.5 deg lon
+  150 km off (shelf edge)    aground 5/16   median east +8.5 deg lon
+ leeway 3.3% of wind
+  25 km off (old plan)       aground 16/16   median east +nan deg lon
+  50 km off                  aground 13/16   median east +0.5 deg lon
+  100 km off (current plan)  aground 8/16   median east +5.2 deg lon
+  150 km off (shelf edge)    aground 5/16   median east +11.8 deg lon
+ leeway 5.0% of wind
+  25 km off (old plan)       aground 15/16   median east +13.9 deg lon
+  50 km off                  aground 13/16   median east +6.8 deg lon
+  100 km off (current plan)  aground 12/16   median east +8.1 deg lon
+  150 km off (shelf edge)    aground 6/16   median east +8.7 deg lon
+Saved ..\results\drift_tests_ocean_city_bulk.json

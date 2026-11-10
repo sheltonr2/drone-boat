@@ -27,6 +27,12 @@ ap.add_argument("--leeway", default="0.033", help="comma list of downwind leeway
 a = ap.parse_args()
 years = [int(y) for y in a.years.split(",") if y]
 if a.bulk:
+    from drone_sim.bulk import available_months
+    have = set(available_months(CACHE))
+    need = [y*100 + m for y in years for m in (5, 6, 7)]
+    missing = [n for n in need if n not in have]
+    if missing:
+        sys.exit(f"Bulk data missing for {missing}: let the download finish first (run_bulk.bat).")
     dates = [(dt.datetime(y, 5, 1, 12) + dt.timedelta(days=3*k)).isoformat() for y in years for k in range(16)]
 else:
     dates = [f"{y}-05-15T12:00:00" for y in years]
@@ -52,9 +58,9 @@ for lw in sorted({r["leeway"] for r in rows}):
     rr = [r for r in rows if r["drop"] == name and r["leeway"] == lw]
     ag = sum(r["outcome"] == "aground" for r in rr)
     east = sorted(r["end_lon"] - lon for r in rr if r["outcome"] != "aground")
-    med = east[len(east)//2] if east else float("nan")
-    print(f"  {name:26s} aground {ag}/{len(rr)}   median east {med:+.1f} deg lon")
+    med = f"{east[len(east)//2]:+.1f} deg lon" if east else "n/a (none left at sea)"
+    print(f"  {name:26s} aground {ag}/{len(rr)}   median east {med}")
 tag = "bulk" if a.bulk else "openmeteo"
-out = os.path.join("..", "results", f"drift_tests_ocean_city_{tag}.json")
+out = os.path.join("..", "results", f"drift_tests_ocean_city_{tag}_{'-'.join(map(str, years))}.json")
 json.dump(jsonable(rows), open(out, "w"), indent=1)
 print("Saved", out)

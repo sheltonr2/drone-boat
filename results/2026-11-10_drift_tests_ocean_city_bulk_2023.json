@@ -1,0 +1,1922 @@
+[
+ {
+  "leeway": 0.02,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-01",
+  "outcome": "aground",
+  "days": 26.93,
+  "km": 776.3,
+  "end_lat": 36.26,
+  "end_lon": -75.77
+ },
+ {
+  "leeway": 0.02,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-04",
+  "outcome": "aground",
+  "days": 21.81,
+  "km": 567.1,
+  "end_lat": 37.62,
+  "end_lon": -75.6
+ },
+ {
+  "leeway": 0.02,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-07",
+  "outcome": "aground",
+  "days": 19.81,
+  "km": 536.3,
+  "end_lat": 37.57,
+  "end_lon": -75.59
+ },
+ {
+  "leeway": 0.02,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-10",
+  "outcome": "aground",
+  "days": 17.07,
+  "km": 462.6,
+  "end_lat": 37.64,
+  "end_lon": -75.59
+ },
+ {
+  "leeway": 0.02,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-13",
+  "outcome": "aground",
+  "days": 10.1,
+  "km": 248.7,
+  "end_lat": 38.22,
+  "end_lon": -75.12
+ },
+ {
+  "leeway": 0.02,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-16",
+  "outcome": "aground",
+  "days": 7.54,
+  "km": 187.7,
+  "end_lat": 38.16,
+  "end_lon": -75.15
+ },
+ {
+  "leeway": 0.02,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-19",
+  "outcome": "aground",
+  "days": 6.83,
+  "km": 183.7,
+  "end_lat": 37.58,
+  "end_lon": -75.59
+ },
+ {
+  "leeway": 0.02,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-22",
+  "outcome": "aground",
+  "days": 5.36,
+  "km": 199.3,
+  "end_lat": 36.9,
+  "end_lon": -75.99
+ },
+ {
+  "leeway": 0.02,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-25",
+  "outcome": "aground",
+  "days": 4.72,
+  "km": 146.6,
+  "end_lat": 37.36,
+  "end_lon": -75.83
+ },
+ {
+  "leeway": 0.02,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-28",
+  "outcome": "aground",
+  "days": 6.62,
+  "km": 224.2,
+  "end_lat": 36.68,
+  "end_lon": -75.9
+ },
+ {
+  "leeway": 0.02,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-31",
+  "outcome": "aground",
+  "days": 21.49,
+  "km": 606.9,
+  "end_lat": 37.98,
+  "end_lon": -75.27
+ },
+ {
+  "leeway": 0.02,
+  "drop": "25 km off (old plan)",
+  "start": "2023-06-03",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 822.2,
+  "end_lat": 37.81,
+  "end_lon": -72.31
+ },
+ {
+  "leeway": 0.02,
+  "drop": "25 km off (old plan)",
+  "start": "2023-06-06",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 878.1,
+  "end_lat": 39.14,
+  "end_lon": -71.15
+ },
+ {
+  "leeway": 0.02,
+  "drop": "25 km off (old plan)",
+  "start": "2023-06-09",
+  "outcome": "aground",
+  "days": 23.56,
+  "km": 594.4,
+  "end_lat": 39.34,
+  "end_lon": -74.52
+ },
+ {
+  "leeway": 0.02,
+  "drop": "25 km off (old plan)",
+  "start": "2023-06-12",
+  "outcome": "aground",
+  "days": 11.66,
+  "km": 339.0,
+  "end_lat": 37.88,
+  "end_lon": -75.36
+ },
+ {
+  "leeway": 0.02,
+  "drop": "25 km off (old plan)",
+  "start": "2023-06-15",
+  "outcome": "aground",
+  "days": 9.9,
+  "km": 289.5,
+  "end_lat": 37.88,
+  "end_lon": -75.37
+ },
+ {
+  "leeway": 0.02,
+  "drop": "50 km off",
+  "start": "2023-05-01",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 863.6,
+  "end_lat": 35.57,
+  "end_lon": -75.46
+ },
+ {
+  "leeway": 0.02,
+  "drop": "50 km off",
+  "start": "2023-05-04",
+  "outcome": "aground",
+  "days": 22.74,
+  "km": 626.9,
+  "end_lat": 37.18,
+  "end_lon": -75.92
+ },
+ {
+  "leeway": 0.02,
+  "drop": "50 km off",
+  "start": "2023-05-07",
+  "outcome": "aground",
+  "days": 22.14,
+  "km": 652.8,
+  "end_lat": 36.91,
+  "end_lon": -76.01
+ },
+ {
+  "leeway": 0.02,
+  "drop": "50 km off",
+  "start": "2023-05-10",
+  "outcome": "aground",
+  "days": 19.61,
+  "km": 598.7,
+  "end_lat": 36.93,
+  "end_lon": -76.11
+ },
+ {
+  "leeway": 0.02,
+  "drop": "50 km off",
+  "start": "2023-05-13",
+  "outcome": "aground",
+  "days": 10.07,
+  "km": 269.6,
+  "end_lat": 38.1,
+  "end_lon": -75.18
+ },
+ {
+  "leeway": 0.02,
+  "drop": "50 km off",
+  "start": "2023-05-16",
+  "outcome": "aground",
+  "days": 9.77,
+  "km": 271.2,
+  "end_lat": 37.6,
+  "end_lon": -75.59
+ },
+ {
+  "leeway": 0.02,
+  "drop": "50 km off",
+  "start": "2023-05-19",
+  "outcome": "aground",
+  "days": 8.9,
+  "km": 276.7,
+  "end_lat": 36.93,
+  "end_lon": -76.13
+ },
+ {
+  "leeway": 0.02,
+  "drop": "50 km off",
+  "start": "2023-05-22",
+  "outcome": "aground",
+  "days": 5.34,
+  "km": 208.1,
+  "end_lat": 36.75,
+  "end_lon": -75.93
+ },
+ {
+  "leeway": 0.02,
+  "drop": "50 km off",
+  "start": "2023-05-25",
+  "outcome": "aground",
+  "days": 6.78,
+  "km": 224.0,
+  "end_lat": 36.93,
+  "end_lon": -76.12
+ },
+ {
+  "leeway": 0.02,
+  "drop": "50 km off",
+  "start": "2023-05-28",
+  "outcome": "aground",
+  "days": 6.65,
+  "km": 228.9,
+  "end_lat": 36.57,
+  "end_lon": -75.87
+ },
+ {
+  "leeway": 0.02,
+  "drop": "50 km off",
+  "start": "2023-05-31",
+  "outcome": "aground",
+  "days": 23.79,
+  "km": 711.4,
+  "end_lat": 37.54,
+  "end_lon": -75.62
+ },
+ {
+  "leeway": 0.02,
+  "drop": "50 km off",
+  "start": "2023-06-03",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1027.5,
+  "end_lat": 39.57,
+  "end_lon": -69.77
+ },
+ {
+  "leeway": 0.02,
+  "drop": "50 km off",
+  "start": "2023-06-06",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 809.1,
+  "end_lat": 38.97,
+  "end_lon": -71.33
+ },
+ {
+  "leeway": 0.02,
+  "drop": "50 km off",
+  "start": "2023-06-09",
+  "outcome": "aground",
+  "days": 28.39,
+  "km": 702.1,
+  "end_lat": 39.62,
+  "end_lon": -74.18
+ },
+ {
+  "leeway": 0.02,
+  "drop": "50 km off",
+  "start": "2023-06-12",
+  "outcome": "aground",
+  "days": 20.29,
+  "km": 581.9,
+  "end_lat": 38.96,
+  "end_lon": -74.88
+ },
+ {
+  "leeway": 0.02,
+  "drop": "50 km off",
+  "start": "2023-06-15",
+  "outcome": "aground",
+  "days": 24.41,
+  "km": 593.9,
+  "end_lat": 39.54,
+  "end_lon": -74.37
+ },
+ {
+  "leeway": 0.02,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-01",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1374.9,
+  "end_lat": 37.06,
+  "end_lon": -68.49
+ },
+ {
+  "leeway": 0.02,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-04",
+  "outcome": "aground",
+  "days": 29.45,
+  "km": 817.5,
+  "end_lat": 35.49,
+  "end_lon": -75.46
+ },
+ {
+  "leeway": 0.02,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-07",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1001.9,
+  "end_lat": 36.37,
+  "end_lon": -73.41
+ },
+ {
+  "leeway": 0.02,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-10",
+  "outcome": "aground",
+  "days": 24.76,
+  "km": 730.6,
+  "end_lat": 35.29,
+  "end_lon": -75.51
+ },
+ {
+  "leeway": 0.02,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-13",
+  "outcome": "aground",
+  "days": 15.09,
+  "km": 466.0,
+  "end_lat": 36.14,
+  "end_lon": -75.71
+ },
+ {
+  "leeway": 0.02,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-16",
+  "outcome": "aground",
+  "days": 11.21,
+  "km": 366.9,
+  "end_lat": 36.56,
+  "end_lon": -75.86
+ },
+ {
+  "leeway": 0.02,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-19",
+  "outcome": "aground",
+  "days": 9.04,
+  "km": 304.2,
+  "end_lat": 36.34,
+  "end_lon": -75.79
+ },
+ {
+  "leeway": 0.02,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-22",
+  "outcome": "aground",
+  "days": 6.67,
+  "km": 255.5,
+  "end_lat": 36.27,
+  "end_lon": -75.77
+ },
+ {
+  "leeway": 0.02,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-25",
+  "outcome": "aground",
+  "days": 7.45,
+  "km": 282.5,
+  "end_lat": 36.22,
+  "end_lon": -75.76
+ },
+ {
+  "leeway": 0.02,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-28",
+  "outcome": "aground",
+  "days": 7.4,
+  "km": 294.0,
+  "end_lat": 35.92,
+  "end_lon": -75.58
+ },
+ {
+  "leeway": 0.02,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-31",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 921.6,
+  "end_lat": 37.96,
+  "end_lon": -72.03
+ },
+ {
+  "leeway": 0.02,
+  "drop": "100 km off (current plan)",
+  "start": "2023-06-03",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1677.9,
+  "end_lat": 41.22,
+  "end_lon": -62.94
+ },
+ {
+  "leeway": 0.02,
+  "drop": "100 km off (current plan)",
+  "start": "2023-06-06",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1169.4,
+  "end_lat": 40.87,
+  "end_lon": -69.3
+ },
+ {
+  "leeway": 0.02,
+  "drop": "100 km off (current plan)",
+  "start": "2023-06-09",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 969.4,
+  "end_lat": 38.47,
+  "end_lon": -67.93
+ },
+ {
+  "leeway": 0.02,
+  "drop": "100 km off (current plan)",
+  "start": "2023-06-12",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 906.2,
+  "end_lat": 39.86,
+  "end_lon": -69.97
+ },
+ {
+  "leeway": 0.02,
+  "drop": "100 km off (current plan)",
+  "start": "2023-06-15",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1099.6,
+  "end_lat": 39.05,
+  "end_lon": -67.73
+ },
+ {
+  "leeway": 0.02,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-01",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 998.2,
+  "end_lat": 37.79,
+  "end_lon": -73.24
+ },
+ {
+  "leeway": 0.02,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-04",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1603.9,
+  "end_lat": 38.26,
+  "end_lon": -61.67
+ },
+ {
+  "leeway": 0.02,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-07",
+  "outcome": "aground",
+  "days": 23.74,
+  "km": 700.1,
+  "end_lat": 35.83,
+  "end_lon": -75.54
+ },
+ {
+  "leeway": 0.02,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-10",
+  "outcome": "aground",
+  "days": 21.12,
+  "km": 605.3,
+  "end_lat": 35.89,
+  "end_lon": -75.56
+ },
+ {
+  "leeway": 0.02,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-13",
+  "outcome": "aground",
+  "days": 17.75,
+  "km": 515.5,
+  "end_lat": 36.13,
+  "end_lon": -75.7
+ },
+ {
+  "leeway": 0.02,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-16",
+  "outcome": "aground",
+  "days": 16.31,
+  "km": 572.3,
+  "end_lat": 35.51,
+  "end_lon": -75.46
+ },
+ {
+  "leeway": 0.02,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-19",
+  "outcome": "aground",
+  "days": 15.49,
+  "km": 441.1,
+  "end_lat": 35.34,
+  "end_lon": -75.49
+ },
+ {
+  "leeway": 0.02,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-22",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1560.9,
+  "end_lat": 38.48,
+  "end_lon": -65.02
+ },
+ {
+  "leeway": 0.02,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-25",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1799.9,
+  "end_lat": 40.1,
+  "end_lon": -61.56
+ },
+ {
+  "leeway": 0.02,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-28",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 736.6,
+  "end_lat": 36.93,
+  "end_lon": -74.53
+ },
+ {
+  "leeway": 0.02,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-31",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1773.8,
+  "end_lat": 40.93,
+  "end_lon": -62.72
+ },
+ {
+  "leeway": 0.02,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-06-03",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1606.6,
+  "end_lat": 41.84,
+  "end_lon": -62.03
+ },
+ {
+  "leeway": 0.02,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-06-06",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1916.9,
+  "end_lat": 40.87,
+  "end_lon": -56.76
+ },
+ {
+  "leeway": 0.02,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-06-09",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1045.8,
+  "end_lat": 41.39,
+  "end_lon": -70.4
+ },
+ {
+  "leeway": 0.02,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-06-12",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1362.1,
+  "end_lat": 40.73,
+  "end_lon": -69.16
+ },
+ {
+  "leeway": 0.02,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-06-15",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 586.9,
+  "end_lat": 38.2,
+  "end_lon": -73.41
+ },
+ {
+  "leeway": 0.033,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-01",
+  "outcome": "aground",
+  "days": 26.94,
+  "km": 928.2,
+  "end_lat": 36.15,
+  "end_lon": -75.72
+ },
+ {
+  "leeway": 0.033,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-04",
+  "outcome": "aground",
+  "days": 19.3,
+  "km": 574.3,
+  "end_lat": 38.39,
+  "end_lon": -75.05
+ },
+ {
+  "leeway": 0.033,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-07",
+  "outcome": "aground",
+  "days": 18.22,
+  "km": 570.3,
+  "end_lat": 38.15,
+  "end_lon": -75.16
+ },
+ {
+  "leeway": 0.033,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-10",
+  "outcome": "aground",
+  "days": 13.81,
+  "km": 447.3,
+  "end_lat": 38.51,
+  "end_lon": -75.04
+ },
+ {
+  "leeway": 0.033,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-13",
+  "outcome": "aground",
+  "days": 7.1,
+  "km": 231.6,
+  "end_lat": 38.31,
+  "end_lon": -75.14
+ },
+ {
+  "leeway": 0.033,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-16",
+  "outcome": "aground",
+  "days": 4.01,
+  "km": 128.8,
+  "end_lat": 38.37,
+  "end_lon": -75.07
+ },
+ {
+  "leeway": 0.033,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-19",
+  "outcome": "aground",
+  "days": 7.2,
+  "km": 230.4,
+  "end_lat": 37.35,
+  "end_lon": -75.84
+ },
+ {
+  "leeway": 0.033,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-22",
+  "outcome": "aground",
+  "days": 4.51,
+  "km": 204.7,
+  "end_lat": 36.8,
+  "end_lon": -75.95
+ },
+ {
+  "leeway": 0.033,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-25",
+  "outcome": "aground",
+  "days": 3.67,
+  "km": 164.8,
+  "end_lat": 37.19,
+  "end_lon": -75.92
+ },
+ {
+  "leeway": 0.033,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-28",
+  "outcome": "aground",
+  "days": 5.84,
+  "km": 222.0,
+  "end_lat": 36.74,
+  "end_lon": -75.93
+ },
+ {
+  "leeway": 0.033,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-31",
+  "outcome": "aground",
+  "days": 22.66,
+  "km": 763.3,
+  "end_lat": 37.33,
+  "end_lon": -75.84
+ },
+ {
+  "leeway": 0.033,
+  "drop": "25 km off (old plan)",
+  "start": "2023-06-03",
+  "outcome": "aground",
+  "days": 23.48,
+  "km": 758.1,
+  "end_lat": 38.19,
+  "end_lon": -75.13
+ },
+ {
+  "leeway": 0.033,
+  "drop": "25 km off (old plan)",
+  "start": "2023-06-06",
+  "outcome": "aground",
+  "days": 18.41,
+  "km": 566.5,
+  "end_lat": 37.83,
+  "end_lon": -75.49
+ },
+ {
+  "leeway": 0.033,
+  "drop": "25 km off (old plan)",
+  "start": "2023-06-09",
+  "outcome": "aground",
+  "days": 17.64,
+  "km": 570.3,
+  "end_lat": 39.0,
+  "end_lon": -74.8
+ },
+ {
+  "leeway": 0.033,
+  "drop": "25 km off (old plan)",
+  "start": "2023-06-12",
+  "outcome": "aground",
+  "days": 10.77,
+  "km": 334.2,
+  "end_lat": 37.93,
+  "end_lon": -75.31
+ },
+ {
+  "leeway": 0.033,
+  "drop": "25 km off (old plan)",
+  "start": "2023-06-15",
+  "outcome": "aground",
+  "days": 7.6,
+  "km": 262.1,
+  "end_lat": 37.55,
+  "end_lon": -75.6
+ },
+ {
+  "leeway": 0.033,
+  "drop": "50 km off",
+  "start": "2023-05-01",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1066.8,
+  "end_lat": 36.56,
+  "end_lon": -75.56
+ },
+ {
+  "leeway": 0.033,
+  "drop": "50 km off",
+  "start": "2023-05-04",
+  "outcome": "aground",
+  "days": 22.97,
+  "km": 781.7,
+  "end_lat": 36.73,
+  "end_lon": -75.92
+ },
+ {
+  "leeway": 0.033,
+  "drop": "50 km off",
+  "start": "2023-05-07",
+  "outcome": "aground",
+  "days": 20.34,
+  "km": 694.6,
+  "end_lat": 37.63,
+  "end_lon": -75.6
+ },
+ {
+  "leeway": 0.033,
+  "drop": "50 km off",
+  "start": "2023-05-10",
+  "outcome": "aground",
+  "days": 16.07,
+  "km": 546.8,
+  "end_lat": 38.01,
+  "end_lon": -75.25
+ },
+ {
+  "leeway": 0.033,
+  "drop": "50 km off",
+  "start": "2023-05-13",
+  "outcome": "aground",
+  "days": 7.09,
+  "km": 247.9,
+  "end_lat": 38.21,
+  "end_lon": -75.13
+ },
+ {
+  "leeway": 0.033,
+  "drop": "50 km off",
+  "start": "2023-05-16",
+  "outcome": "aground",
+  "days": 9.36,
+  "km": 302.8,
+  "end_lat": 37.58,
+  "end_lon": -75.59
+ },
+ {
+  "leeway": 0.033,
+  "drop": "50 km off",
+  "start": "2023-05-19",
+  "outcome": "aground",
+  "days": 8.01,
+  "km": 291.8,
+  "end_lat": 36.93,
+  "end_lon": -76.14
+ },
+ {
+  "leeway": 0.033,
+  "drop": "50 km off",
+  "start": "2023-05-22",
+  "outcome": "aground",
+  "days": 4.26,
+  "km": 206.4,
+  "end_lat": 36.74,
+  "end_lon": -75.93
+ },
+ {
+  "leeway": 0.033,
+  "drop": "50 km off",
+  "start": "2023-05-25",
+  "outcome": "aground",
+  "days": 5.06,
+  "km": 216.1,
+  "end_lat": 36.92,
+  "end_lon": -76.1
+ },
+ {
+  "leeway": 0.033,
+  "drop": "50 km off",
+  "start": "2023-05-28",
+  "outcome": "aground",
+  "days": 5.27,
+  "km": 235.1,
+  "end_lat": 36.5,
+  "end_lon": -75.84
+ },
+ {
+  "leeway": 0.033,
+  "drop": "50 km off",
+  "start": "2023-05-31",
+  "outcome": "aground",
+  "days": 21.61,
+  "km": 711.1,
+  "end_lat": 37.29,
+  "end_lon": -75.86
+ },
+ {
+  "leeway": 0.033,
+  "drop": "50 km off",
+  "start": "2023-06-03",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 879.6,
+  "end_lat": 38.43,
+  "end_lon": -71.8
+ },
+ {
+  "leeway": 0.033,
+  "drop": "50 km off",
+  "start": "2023-06-06",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 818.8,
+  "end_lat": 39.79,
+  "end_lon": -74.0
+ },
+ {
+  "leeway": 0.033,
+  "drop": "50 km off",
+  "start": "2023-06-09",
+  "outcome": "aground",
+  "days": 15.09,
+  "km": 504.9,
+  "end_lat": 38.22,
+  "end_lon": -75.12
+ },
+ {
+  "leeway": 0.033,
+  "drop": "50 km off",
+  "start": "2023-06-12",
+  "outcome": "aground",
+  "days": 11.42,
+  "km": 358.9,
+  "end_lat": 37.88,
+  "end_lon": -75.36
+ },
+ {
+  "leeway": 0.033,
+  "drop": "50 km off",
+  "start": "2023-06-15",
+  "outcome": "aground",
+  "days": 8.28,
+  "km": 309.5,
+  "end_lat": 37.5,
+  "end_lon": -75.73
+ },
+ {
+  "leeway": 0.033,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-01",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1562.5,
+  "end_lat": 38.52,
+  "end_lon": -64.31
+ },
+ {
+  "leeway": 0.033,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-04",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1263.6,
+  "end_lat": 36.76,
+  "end_lon": -69.11
+ },
+ {
+  "leeway": 0.033,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-07",
+  "outcome": "aground",
+  "days": 23.42,
+  "km": 807.7,
+  "end_lat": 36.2,
+  "end_lon": -75.74
+ },
+ {
+  "leeway": 0.033,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-10",
+  "outcome": "aground",
+  "days": 20.05,
+  "km": 650.4,
+  "end_lat": 36.16,
+  "end_lon": -75.72
+ },
+ {
+  "leeway": 0.033,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-13",
+  "outcome": "aground",
+  "days": 13.95,
+  "km": 527.5,
+  "end_lat": 35.91,
+  "end_lon": -75.58
+ },
+ {
+  "leeway": 0.033,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-16",
+  "outcome": "aground",
+  "days": 10.18,
+  "km": 399.9,
+  "end_lat": 36.64,
+  "end_lon": -75.88
+ },
+ {
+  "leeway": 0.033,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-19",
+  "outcome": "aground",
+  "days": 8.05,
+  "km": 334.5,
+  "end_lat": 36.28,
+  "end_lon": -75.77
+ },
+ {
+  "leeway": 0.033,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-22",
+  "outcome": "aground",
+  "days": 5.16,
+  "km": 270.4,
+  "end_lat": 36.02,
+  "end_lon": -75.64
+ },
+ {
+  "leeway": 0.033,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-25",
+  "outcome": "aground",
+  "days": 5.72,
+  "km": 252.8,
+  "end_lat": 36.46,
+  "end_lon": -75.83
+ },
+ {
+  "leeway": 0.033,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-28",
+  "outcome": "aground",
+  "days": 6.57,
+  "km": 296.2,
+  "end_lat": 35.88,
+  "end_lon": -75.56
+ },
+ {
+  "leeway": 0.033,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-31",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 919.0,
+  "end_lat": 38.0,
+  "end_lon": -74.96
+ },
+ {
+  "leeway": 0.033,
+  "drop": "100 km off (current plan)",
+  "start": "2023-06-03",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1738.6,
+  "end_lat": 42.6,
+  "end_lon": -65.76
+ },
+ {
+  "leeway": 0.033,
+  "drop": "100 km off (current plan)",
+  "start": "2023-06-06",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1189.0,
+  "end_lat": 40.97,
+  "end_lon": -68.03
+ },
+ {
+  "leeway": 0.033,
+  "drop": "100 km off (current plan)",
+  "start": "2023-06-09",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1278.0,
+  "end_lat": 41.94,
+  "end_lon": -68.8
+ },
+ {
+  "leeway": 0.033,
+  "drop": "100 km off (current plan)",
+  "start": "2023-06-12",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 792.6,
+  "end_lat": 40.18,
+  "end_lon": -73.75
+ },
+ {
+  "leeway": 0.033,
+  "drop": "100 km off (current plan)",
+  "start": "2023-06-15",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 796.9,
+  "end_lat": 40.48,
+  "end_lon": -73.42
+ },
+ {
+  "leeway": 0.033,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-01",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1787.6,
+  "end_lat": 39.87,
+  "end_lon": -60.63
+ },
+ {
+  "leeway": 0.033,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-04",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1525.3,
+  "end_lat": 37.27,
+  "end_lon": -67.83
+ },
+ {
+  "leeway": 0.033,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-07",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1861.8,
+  "end_lat": 41.15,
+  "end_lon": -60.52
+ },
+ {
+  "leeway": 0.033,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-10",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1503.7,
+  "end_lat": 38.3,
+  "end_lon": -69.02
+ },
+ {
+  "leeway": 0.033,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-13",
+  "outcome": "aground",
+  "days": 12.76,
+  "km": 518.6,
+  "end_lat": 35.72,
+  "end_lon": -75.48
+ },
+ {
+  "leeway": 0.033,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-16",
+  "outcome": "aground",
+  "days": 14.34,
+  "km": 541.0,
+  "end_lat": 35.93,
+  "end_lon": -75.59
+ },
+ {
+  "leeway": 0.033,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-19",
+  "outcome": "aground",
+  "days": 11.34,
+  "km": 377.4,
+  "end_lat": 36.19,
+  "end_lon": -75.74
+ },
+ {
+  "leeway": 0.033,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-22",
+  "outcome": "aground",
+  "days": 5.62,
+  "km": 307.8,
+  "end_lat": 35.68,
+  "end_lon": -75.47
+ },
+ {
+  "leeway": 0.033,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-25",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 2030.5,
+  "end_lat": 40.91,
+  "end_lon": -61.67
+ },
+ {
+  "leeway": 0.033,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-28",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 2107.5,
+  "end_lat": 39.94,
+  "end_lon": -58.91
+ },
+ {
+  "leeway": 0.033,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-31",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1941.3,
+  "end_lat": 41.8,
+  "end_lon": -61.08
+ },
+ {
+  "leeway": 0.033,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-06-03",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 2933.7,
+  "end_lat": 40.5,
+  "end_lon": -51.87
+ },
+ {
+  "leeway": 0.033,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-06-06",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1333.2,
+  "end_lat": 41.02,
+  "end_lon": -64.91
+ },
+ {
+  "leeway": 0.033,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-06-09",
+  "outcome": "aground",
+  "days": 23.27,
+  "km": 809.9,
+  "end_lat": 41.55,
+  "end_lon": -70.97
+ },
+ {
+  "leeway": 0.033,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-06-12",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1164.6,
+  "end_lat": 42.11,
+  "end_lon": -68.58
+ },
+ {
+  "leeway": 0.033,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-06-15",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 730.4,
+  "end_lat": 38.19,
+  "end_lon": -73.36
+ },
+ {
+  "leeway": 0.05,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-01",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 2293.4,
+  "end_lat": 37.41,
+  "end_lon": -60.75
+ },
+ {
+  "leeway": 0.05,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-04",
+  "outcome": "aground",
+  "days": 16.4,
+  "km": 600.3,
+  "end_lat": 38.97,
+  "end_lon": -74.87
+ },
+ {
+  "leeway": 0.05,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-07",
+  "outcome": "aground",
+  "days": 13.31,
+  "km": 508.2,
+  "end_lat": 39.19,
+  "end_lon": -74.66
+ },
+ {
+  "leeway": 0.05,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-10",
+  "outcome": "aground",
+  "days": 10.13,
+  "km": 393.2,
+  "end_lat": 39.18,
+  "end_lon": -74.66
+ },
+ {
+  "leeway": 0.05,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-13",
+  "outcome": "aground",
+  "days": 6.4,
+  "km": 266.3,
+  "end_lat": 38.36,
+  "end_lon": -75.14
+ },
+ {
+  "leeway": 0.05,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-16",
+  "outcome": "aground",
+  "days": 3.29,
+  "km": 141.2,
+  "end_lat": 38.38,
+  "end_lon": -75.05
+ },
+ {
+  "leeway": 0.05,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-19",
+  "outcome": "aground",
+  "days": 4.3,
+  "km": 148.5,
+  "end_lat": 38.04,
+  "end_lon": -75.22
+ },
+ {
+  "leeway": 0.05,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-22",
+  "outcome": "aground",
+  "days": 3.68,
+  "km": 201.5,
+  "end_lat": 36.81,
+  "end_lon": -75.95
+ },
+ {
+  "leeway": 0.05,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-25",
+  "outcome": "aground",
+  "days": 3.41,
+  "km": 203.2,
+  "end_lat": 36.93,
+  "end_lon": -76.15
+ },
+ {
+  "leeway": 0.05,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-28",
+  "outcome": "aground",
+  "days": 2.47,
+  "km": 113.3,
+  "end_lat": 37.59,
+  "end_lon": -75.59
+ },
+ {
+  "leeway": 0.05,
+  "drop": "25 km off (old plan)",
+  "start": "2023-05-31",
+  "outcome": "aground",
+  "days": 4.18,
+  "km": 221.3,
+  "end_lat": 36.57,
+  "end_lon": -75.86
+ },
+ {
+  "leeway": 0.05,
+  "drop": "25 km off (old plan)",
+  "start": "2023-06-03",
+  "outcome": "aground",
+  "days": 20.15,
+  "km": 777.8,
+  "end_lat": 37.8,
+  "end_lon": -75.5
+ },
+ {
+  "leeway": 0.05,
+  "drop": "25 km off (old plan)",
+  "start": "2023-06-06",
+  "outcome": "aground",
+  "days": 20.53,
+  "km": 780.6,
+  "end_lat": 39.09,
+  "end_lon": -74.73
+ },
+ {
+  "leeway": 0.05,
+  "drop": "25 km off (old plan)",
+  "start": "2023-06-09",
+  "outcome": "aground",
+  "days": 16.83,
+  "km": 683.2,
+  "end_lat": 39.1,
+  "end_lon": -74.72
+ },
+ {
+  "leeway": 0.05,
+  "drop": "25 km off (old plan)",
+  "start": "2023-06-12",
+  "outcome": "aground",
+  "days": 10.33,
+  "km": 407.2,
+  "end_lat": 38.17,
+  "end_lon": -75.15
+ },
+ {
+  "leeway": 0.05,
+  "drop": "25 km off (old plan)",
+  "start": "2023-06-15",
+  "outcome": "aground",
+  "days": 6.41,
+  "km": 250.5,
+  "end_lat": 37.94,
+  "end_lon": -75.3
+ },
+ {
+  "leeway": 0.05,
+  "drop": "50 km off",
+  "start": "2023-05-01",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 2323.9,
+  "end_lat": 39.74,
+  "end_lon": -52.56
+ },
+ {
+  "leeway": 0.05,
+  "drop": "50 km off",
+  "start": "2023-05-04",
+  "outcome": "aground",
+  "days": 21.78,
+  "km": 857.3,
+  "end_lat": 37.93,
+  "end_lon": -75.31
+ },
+ {
+  "leeway": 0.05,
+  "drop": "50 km off",
+  "start": "2023-05-07",
+  "outcome": "aground",
+  "days": 19.24,
+  "km": 740.5,
+  "end_lat": 38.59,
+  "end_lon": -75.18
+ },
+ {
+  "leeway": 0.05,
+  "drop": "50 km off",
+  "start": "2023-05-10",
+  "outcome": "aground",
+  "days": 15.2,
+  "km": 594.4,
+  "end_lat": 38.6,
+  "end_lon": -75.13
+ },
+ {
+  "leeway": 0.05,
+  "drop": "50 km off",
+  "start": "2023-05-13",
+  "outcome": "aground",
+  "days": 6.84,
+  "km": 290.3,
+  "end_lat": 38.25,
+  "end_lon": -75.12
+ },
+ {
+  "leeway": 0.05,
+  "drop": "50 km off",
+  "start": "2023-05-16",
+  "outcome": "aground",
+  "days": 4.53,
+  "km": 179.1,
+  "end_lat": 38.42,
+  "end_lon": -75.1
+ },
+ {
+  "leeway": 0.05,
+  "drop": "50 km off",
+  "start": "2023-05-19",
+  "outcome": "aground",
+  "days": 7.34,
+  "km": 315.8,
+  "end_lat": 36.95,
+  "end_lon": -76.25
+ },
+ {
+  "leeway": 0.05,
+  "drop": "50 km off",
+  "start": "2023-05-22",
+  "outcome": "aground",
+  "days": 3.57,
+  "km": 215.4,
+  "end_lat": 36.59,
+  "end_lon": -75.87
+ },
+ {
+  "leeway": 0.05,
+  "drop": "50 km off",
+  "start": "2023-05-25",
+  "outcome": "aground",
+  "days": 3.28,
+  "km": 197.8,
+  "end_lat": 36.84,
+  "end_lon": -75.96
+ },
+ {
+  "leeway": 0.05,
+  "drop": "50 km off",
+  "start": "2023-05-28",
+  "outcome": "aground",
+  "days": 4.26,
+  "km": 223.7,
+  "end_lat": 36.65,
+  "end_lon": -75.89
+ },
+ {
+  "leeway": 0.05,
+  "drop": "50 km off",
+  "start": "2023-05-31",
+  "outcome": "aground",
+  "days": 4.43,
+  "km": 247.5,
+  "end_lat": 36.24,
+  "end_lon": -75.76
+ },
+ {
+  "leeway": 0.05,
+  "drop": "50 km off",
+  "start": "2023-06-03",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1019.5,
+  "end_lat": 39.3,
+  "end_lon": -74.4
+ },
+ {
+  "leeway": 0.05,
+  "drop": "50 km off",
+  "start": "2023-06-06",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1361.3,
+  "end_lat": 42.06,
+  "end_lon": -67.7
+ },
+ {
+  "leeway": 0.05,
+  "drop": "50 km off",
+  "start": "2023-06-09",
+  "outcome": "aground",
+  "days": 17.27,
+  "km": 705.3,
+  "end_lat": 39.1,
+  "end_lon": -74.73
+ },
+ {
+  "leeway": 0.05,
+  "drop": "50 km off",
+  "start": "2023-06-12",
+  "outcome": "aground",
+  "days": 10.92,
+  "km": 435.7,
+  "end_lat": 37.89,
+  "end_lon": -75.33
+ },
+ {
+  "leeway": 0.05,
+  "drop": "50 km off",
+  "start": "2023-06-15",
+  "outcome": "aground",
+  "days": 7.54,
+  "km": 316.4,
+  "end_lat": 37.45,
+  "end_lon": -75.79
+ },
+ {
+  "leeway": 0.05,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-01",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 2451.2,
+  "end_lat": 39.57,
+  "end_lon": -52.49
+ },
+ {
+  "leeway": 0.05,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-04",
+  "outcome": "aground",
+  "days": 23.78,
+  "km": 976.7,
+  "end_lat": 35.96,
+  "end_lon": -75.6
+ },
+ {
+  "leeway": 0.05,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-07",
+  "outcome": "aground",
+  "days": 20.75,
+  "km": 852.9,
+  "end_lat": 35.97,
+  "end_lon": -75.61
+ },
+ {
+  "leeway": 0.05,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-10",
+  "outcome": "aground",
+  "days": 16.94,
+  "km": 793.5,
+  "end_lat": 36.06,
+  "end_lon": -75.66
+ },
+ {
+  "leeway": 0.05,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-13",
+  "outcome": "aground",
+  "days": 13.26,
+  "km": 605.2,
+  "end_lat": 35.96,
+  "end_lon": -75.61
+ },
+ {
+  "leeway": 0.05,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-16",
+  "outcome": "aground",
+  "days": 9.49,
+  "km": 454.7,
+  "end_lat": 36.62,
+  "end_lon": -75.88
+ },
+ {
+  "leeway": 0.05,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-19",
+  "outcome": "aground",
+  "days": 7.13,
+  "km": 368.0,
+  "end_lat": 36.24,
+  "end_lon": -75.76
+ },
+ {
+  "leeway": 0.05,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-22",
+  "outcome": "aground",
+  "days": 7.4,
+  "km": 437.8,
+  "end_lat": 35.26,
+  "end_lon": -76.52
+ },
+ {
+  "leeway": 0.05,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-25",
+  "outcome": "aground",
+  "days": 4.35,
+  "km": 237.5,
+  "end_lat": 36.6,
+  "end_lon": -75.87
+ },
+ {
+  "leeway": 0.05,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-28",
+  "outcome": "aground",
+  "days": 5.34,
+  "km": 303.7,
+  "end_lat": 35.84,
+  "end_lon": -75.54
+ },
+ {
+  "leeway": 0.05,
+  "drop": "100 km off (current plan)",
+  "start": "2023-05-31",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1678.6,
+  "end_lat": 41.0,
+  "end_lon": -68.15
+ },
+ {
+  "leeway": 0.05,
+  "drop": "100 km off (current plan)",
+  "start": "2023-06-03",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1926.3,
+  "end_lat": 43.01,
+  "end_lon": -65.87
+ },
+ {
+  "leeway": 0.05,
+  "drop": "100 km off (current plan)",
+  "start": "2023-06-06",
+  "outcome": "aground",
+  "days": 22.48,
+  "km": 925.7,
+  "end_lat": 41.68,
+  "end_lon": -70.03
+ },
+ {
+  "leeway": 0.05,
+  "drop": "100 km off (current plan)",
+  "start": "2023-06-09",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1399.2,
+  "end_lat": 42.59,
+  "end_lon": -67.76
+ },
+ {
+  "leeway": 0.05,
+  "drop": "100 km off (current plan)",
+  "start": "2023-06-12",
+  "outcome": "aground",
+  "days": 14.71,
+  "km": 576.6,
+  "end_lat": 38.95,
+  "end_lon": -74.9
+ },
+ {
+  "leeway": 0.05,
+  "drop": "100 km off (current plan)",
+  "start": "2023-06-15",
+  "outcome": "aground",
+  "days": 8.31,
+  "km": 337.9,
+  "end_lat": 37.51,
+  "end_lon": -75.71
+ },
+ {
+  "leeway": 0.05,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-01",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 2136.6,
+  "end_lat": 38.52,
+  "end_lon": -55.46
+ },
+ {
+  "leeway": 0.05,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-04",
+  "outcome": "aground",
+  "days": 21.57,
+  "km": 1004.6,
+  "end_lat": 35.7,
+  "end_lon": -75.48
+ },
+ {
+  "leeway": 0.05,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-07",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1590.7,
+  "end_lat": 35.8,
+  "end_lon": -72.65
+ },
+ {
+  "leeway": 0.05,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-10",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1731.8,
+  "end_lat": 36.01,
+  "end_lon": -64.75
+ },
+ {
+  "leeway": 0.05,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-13",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1564.3,
+  "end_lat": 37.15,
+  "end_lon": -70.89
+ },
+ {
+  "leeway": 0.05,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-16",
+  "outcome": "aground",
+  "days": 12.32,
+  "km": 567.1,
+  "end_lat": 35.56,
+  "end_lon": -75.9
+ },
+ {
+  "leeway": 0.05,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-19",
+  "outcome": "aground",
+  "days": 8.54,
+  "km": 398.1,
+  "end_lat": 35.94,
+  "end_lon": -75.6
+ },
+ {
+  "leeway": 0.05,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-22",
+  "outcome": "aground",
+  "days": 4.98,
+  "km": 344.9,
+  "end_lat": 35.28,
+  "end_lon": -75.51
+ },
+ {
+  "leeway": 0.05,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-25",
+  "outcome": "aground",
+  "days": 5.58,
+  "km": 307.9,
+  "end_lat": 36.2,
+  "end_lon": -75.74
+ },
+ {
+  "leeway": 0.05,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-28",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 2008.9,
+  "end_lat": 40.4,
+  "end_lon": -64.48
+ },
+ {
+  "leeway": 0.05,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-05-31",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 2173.6,
+  "end_lat": 43.44,
+  "end_lon": -59.19
+ },
+ {
+  "leeway": 0.05,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-06-03",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 2024.9,
+  "end_lat": 43.64,
+  "end_lon": -62.69
+ },
+ {
+  "leeway": 0.05,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-06-06",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1733.5,
+  "end_lat": 43.55,
+  "end_lon": -64.86
+ },
+ {
+  "leeway": 0.05,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-06-09",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1349.5,
+  "end_lat": 43.89,
+  "end_lon": -68.21
+ },
+ {
+  "leeway": 0.05,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-06-12",
+  "outcome": "at_sea_timeout",
+  "days": 30.0,
+  "km": 1388.4,
+  "end_lat": 42.99,
+  "end_lon": -68.09
+ },
+ {
+  "leeway": 0.05,
+  "drop": "150 km off (shelf edge)",
+  "start": "2023-06-15",
+  "outcome": "aground",
+  "days": 16.19,
+  "km": 601.9,
+  "end_lat": 39.58,
+  "end_lon": -74.28
+ }
+]
