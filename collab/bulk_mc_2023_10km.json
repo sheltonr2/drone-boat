@@ -1,0 +1,6 @@
+{
+  "name": "Ocean City, ~10 km off the inlet (near-coast launch), to south-west Ireland, bulk real weather",
+  "provider": "bulk",
+  "start": {"lat": 38.32, "lon": -74.97},
+  "failure_rate_set": "planning"
+}

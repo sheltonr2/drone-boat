@@ -143,7 +143,7 @@ There are five phases, and each ends at a gate. Don't move on until the boat pas
    - *Gate:* self-rights from 180° every time, and stays dry inside after 24 h fully submerged.
 4. **Coastal trial (1–2 months).** Spend weeks offshore within recovery range, then recover and inspect it.
    - *Gate:* 3 weeks at sea unattended, with every fail-safe triggered and recovered.
-5. **Ocean launch (May).** Drop it about 25 km off Ocean City, Maryland, from a charter boat on a settled forecast, clear of the shipping lanes into Delaware Bay and the Chesapeake. After landfall it switches to roaming mode.
+5. **Ocean launch (May).** Launch it about 10 km (5.5 nm) off Ocean City Inlet, Maryland, from a small boat, on a forecast with at least three days of offshore (westerly) wind. Escort it for the first few hours and recover it if it fails in the first week. After landfall it switches to roaming mode.
 
 ## Things to watch out for
 
@@ -191,7 +191,7 @@ A first attempt has roughly a 10–20% chance of reaching Europe still sailing a
 - [ ] Thruster in version 1, or sail-only? Sail-only saves $270 and removes a leak path.
 - [ ] Accept going over budget (about $2,290), or take the trims to get to about $2,000?
 - [ ] Lower the battery onto a hull-bonded cooling plate below the waterline? (Recommended.)
-- [ ] Launch site: Ocean City, Maryland (the default), Virginia Beach or Cape May. In the simulator they came out within about two weeks of each other, so choose on access, ship traffic and distance to the Gulf Stream. Wherever it is, drop the boat about 100 km offshore: in real-weather drift tests (Nov 8, 2026), 3 of 4 dead boats dropped 25 km off Ocean City drifted ashore within 5 days, and all 4 dropped 100 km out were carried toward the Gulf Stream.
+- [ ] Launch site: Ocean City, Maryland (the default), Virginia Beach or Cape May. In the simulator they came out within about two weeks of each other, so choose on access, ship traffic and distance to the Gulf Stream. Decided 10 Nov 2026: launch near the coast (about 10 km off the inlet) to keep the boat trip short, and manage the risk of an early failure drifting ashore with an offshore-wind launch rule, an escort and early recovery ([Launch_Plan.md](Launch_Plan.md)).
 - [ ] Target: south-west Ireland (the default; any European landfall also counts). Brittany or Cornwall take about as long but sit beside the busiest shipping lanes in Europe. Galicia or Portugal take 3–6 weeks longer. Decide too whether a landfall in the Azores counts.
 - [ ] Who recovers the boat after the coastal trial, and how?
 

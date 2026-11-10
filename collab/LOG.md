@@ -2,6 +2,12 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-10, 20:30
+
+- **Decision (Randolph): launch near the coast, keeping the boat trip as short as practicable.** Planned point about 10 km (5.5 nm) east of Ocean City Inlet, 38.32°N 74.97°W, from a small boat. Closer is not practicable (inlet currents and traffic, surf). Launch_Plan, Route_MidAtlantic and Executive_Summary updated.
+- Mitigations written into the launch plan: launch only on a forecast with ≥72 h of westerly-component wind and no easterly spell; escort for the first 2–3 h; recover and relaunch on early failure during the first week (cheap close to shore, and the backup tracker finds a beached boat).
+- `run_launch_compare_2023.bat`: 250 voyages from the near-coast point and 250 from 100 km on 2023 bulk data with the refitted rates, same seeds, to put a number on the trade-off.
+
 ## 2026-11-10, 20:10
 
 - First real-weather Monte Carlo done (250 voyages, 2023, 100 km drop, YB3 fitted, all cores, 54 min): **34% verified arrivals (28–40)**: 26% reporting plus 8% logged by the tracker. May launches 40%, June 21%. Median crossing 123 days. 10.8% still at sea when the 2023 data ran out.

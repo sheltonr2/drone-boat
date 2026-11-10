@@ -8,7 +8,7 @@ All numbers come from the simulator's **synthetic (invented) weather**, because 
 
 ## Route
 
-- **Launch:** about **100 km (54 nm) off Ocean City, Maryland (38.02°N, 74.01°W)**, dropped from a charter boat. This changed on 8 Nov 2026 after the drift tests below: 3 of 4 boats dropped 25 km out drifted ashore within 2–5 days. Ocean City's offshore canyon-fishing charters already run this far. Virginia Beach and Cape May are the alternatives.
+- **Launch:** **near the coast, about 10 km (5.5 nm) east of Ocean City Inlet (38.32°N, 74.97°W)**, from a small boat. Decided 10 Nov 2026 to keep the boat trip as short as practicable. The risk is a boat that dies in its first days drifting ashore; the launch plan handles it with an offshore-wind rule, an escort for the first hours and early recovery ([Launch_Plan.md](Launch_Plan.md)). The simulator results below were run from 100 km (8–10 Nov); the near-coast run is next. Virginia Beach and Cape May are the alternatives.
 - **Waypoint:** 42°N, 48°W. This keeps the boat south of the Grand Banks and its fishing fleets, fog and spring icebergs.
 - **Target:** off Mizen Head, south-west Ireland (51.35°N, 9.7°W). Any landfall in Europe counts, judged against Natural Earth country borders. Iceland and the Faroes count. The Azores, Madeira and the Canaries count only if you switch that option on.
 - **Launch month:** May. That gets most of the crossing done before hurricane season peaks (mid-August to mid-October).
@@ -75,7 +75,7 @@ What this says:
 
 **What the full Monte Carlo adds (Nov 10, 250 voyages on 2023 weather):** only 2 of 250 voyages (0.8%) went aground near the US coast, because few boats actually fail in their first days after a 14-day shakedown. So the drop point is worth about 1% on the odds, not the 50% the worst case suggests. The launch date mattered far more: launches 1–15 May succeeded 44% of the time, 16–31 May 36%, and 1–15 June 21%. June boats met more breaking seas (4.1 knockdowns a day against 3.4) and arrived into autumn storms. That supports the 1–20 May window in [Launch_Plan.md](Launch_Plan.md). In 2023, early May is also when the 100 km drop grounds dead boats; that tension is another reason to prefer the shelf edge.
 
-**Recommendation (pending the 2024 drift run and the Monte Carlo):** move the drop to the shelf edge, about 150 km (81 nm) out at 37.86°N 73.47°W, unless 2024 reverses this. It is still inside the range of Ocean City's canyon charters, which fish the shelf edge. The cost is about an hour more each way on the charter.
+**Decision (10 Nov 2026): launch near the coast instead** (see the Launch line at the top). The analysis below is kept for the record. The earlier recommendation was to move the drop to the shelf edge, about 150 km (81 nm) out at 37.86°N 73.47°W, unless 2024 reverses this. It is still inside the range of Ocean City's canyon charters, which fish the shelf edge. The cost is about an hour more each way on the charter.
 
 ## Drift tests: how far out to drop the boat (Open-Meteo, Nov 8, 2026; superseded)
 
