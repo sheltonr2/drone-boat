@@ -2,6 +2,12 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-09, 21:40
+
+- New on #50: boat-sim modelled Rev B themselves for their voyage replays (#141, configs/randolph_rev_b.yaml). On ERA5, April–June 2020, it made 0 of 6 crossings. Speed matched ours (~0.9 kn made good). Losses came from the single electronics box (4 of 6, days 4–17) and from knockdowns: real ERA5 seas give hundreds per voyage, against 17–86 on our synthetic weather, so 0.003 per knockdown loses the wing in half the runs.
+- Posted ([comment](https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6757352322)): the backup tracker and 14-day shakedown in our plan (asked them to check `burn_in_days`); we will re-tune `knockdown_damage` on the bulk real-weather Monte Carlo so daily rig loss matches the record, probably scaled by breaking severity; spar going to 30–32 mm; status; and Randolph's new build rule (no union labor; ours only).
+- To do: re-tune knockdown damage against real-sea knockdown counts (bulk MC, 2023).
+
 ## 2026-11-09, 17:45 (scheduled check)
 
 - New on #50: Theo has put Rev B's GZ curve and inertia into boat-sim's 3D view (#136, credited). Rev B's calm-water roll period comes out at 1.66 s, and it rolls about 4° RMS (13° worst) in a beam gale; these are display-only figures. Live pages: jcolter11374.github.io/boat-sim. boat-sim also moved its default drop to 100 km out (#128).

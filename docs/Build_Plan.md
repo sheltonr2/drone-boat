@@ -215,3 +215,7 @@ The boat is most likely to be lost to water getting in, steering failure, or fou
 - Check the rules with the US Coast Guard for the launch, and with Irish, UK or French authorities for the arrival. Rules for small autonomous surface vessels are still evolving.
 - Iridium modems are type-approved, so you don't need a radio licence for the RockBLOCK.
 - Post the boat's live position publicly, as Microtransat teams do, so other mariners and authorities can see it.
+
+**Project rules**
+
+- Union labor is prohibited on this build (decided Nov 9, 2026). This covers anyone hired or contracted for the project, such as fabricators, the launch charter and service providers. Before applying it to anyone the project employs, check it with a lawyer: US federal labor law (the NLRA) generally bars refusing to hire or employ people because of union membership.
