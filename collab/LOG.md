@@ -6,6 +6,7 @@ Newest first. Each check of boat-sim records what was new and what we did.
 
 - Dead-boat drift tests re-run on the bulk data (ERA5 + SMOC + MFWAM) with the leeway model: 16 drop dates (1 May–15 June 2023) × 4 points × leeway 2/3.3/5%. Aground within 30 days at 3.3%: 25 km 16/16, 50 km 13/16, 100 km 8/16 (7 on the NC Outer Banks), 150 km 5/16. This overturns the Nov 8 "100 km is safe" result, which came from the old cross-wind drift model. Proposed: move the drop to the shelf edge (150 km), pending a 2024 run (`run_drift_bulk_2024.bat`, after tonight's download) and the 2023 bulk Monte Carlo (running).
 - In 2023 the drop date mattered more than the distance: from 100 km, every drop 7–28 May grounded and every drop 31 May–15 June stayed at sea. One year only.
+- Posted the drift results on #50 at Randolph's request ([comment](https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6773239793)), including a note that John's Chesapeake test point is on the inner shelf.
 - `drift_tests.py` now refuses to run if May–July of a requested year isn't downloaded, names its output by year, and no longer prints "nan".
 
 ## 2026-11-10, 15:50
