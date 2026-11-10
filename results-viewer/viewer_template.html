@@ -60,8 +60,8 @@ th { color:var(--muted); background:#f7f9fb; position:sticky; top:0; }
 const DEMO = __DEMO__;
 const $ = s => document.querySelector(s);
 const fmt = (v, d = 1) => (v === null || v === undefined || Number.isNaN(+v)) ? "-" : (+v).toFixed(d);
-const OUT = { arrived_reporting: "Arrived, reporting", arrived_silent: "Arrived, silent", at_sea_timeout: "Still at sea", aground: "Aground", lost: "Lost" };
-const OC = { arrived_reporting: "#2e8b57", arrived_silent: "#8fbf6f", at_sea_timeout: "#b7791f", aground: "#8e44ad", lost: "#c0392b" };
+const OUT = { arrived_reporting: "Arrived, reporting", arrived_tracked: "Arrived, backup tracker", arrived_silent: "Arrived, silent", arrived_adrift: "Washed up adrift", at_sea_timeout: "Still at sea", aground: "Aground", lost: "Lost" };
+const OC = { arrived_reporting: "#2e8b57", arrived_tracked: "#5aa469", arrived_silent: "#8fbf6f", arrived_adrift: "#7f8c8d", at_sea_timeout: "#b7791f", aground: "#8e44ad", lost: "#c0392b" };
 const card = (k, v, s = "", c = "") => `<div class="card ${c}"><div class="k">${k}</div><div class="v">${v}</div><div class="s">${s}</div></div>`;
 let charts = [];
 function resetCharts() { charts.forEach(c => c.destroy()); charts = []; $("#charts").innerHTML = ""; }
@@ -102,7 +102,7 @@ function showVoyage(r, isDemo) {
   resetCharts();
   $("#note").style.display = isDemo ? "block" : "none";
   $("#note").textContent = "Demo: one voyage of the Rev B design from off Ocean City, Maryland to south-west Ireland in the simulator's synthetic (invented) weather, with random failures switched off. Open your own results to see real historic-weather runs.";
-  const good = r.outcome === "arrived_reporting";
+  const good = r.outcome === "arrived_reporting" || r.outcome === "arrived_tracked";
   const lastFail = (r.failures || []).slice(-1)[0];
   $("#cards").innerHTML = [
     card("Outcome", OUT[r.outcome] || r.outcome, lastFail ? lastFail.msg : "", good ? "good" : (r.outcome.startsWith("arrived") ? "warn" : "bad")),

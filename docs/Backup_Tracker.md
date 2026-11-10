@@ -1,6 +1,6 @@
 # Backup tracker
 
-*9 November 2026. Why: in the Microtransat record, going silent is the most common way a boat is lost, and 12–13% of our simulated voyages now arrive with their main radio dead ([Failure_Rates.md](Failure_Rates.md)). A second tracker with its own battery, antenna and satellite modem turns most of those from "lost" into "found". In the simulator it lifts "arrived, and we know where" from about 37% to 47–49%.*
+*9 November 2026. Why: in the Microtransat record, going silent is the most common way a boat is lost, and 12–13% of our simulated voyages now arrive with their main radio dead ([Failure_Rates.md](Failure_Rates.md)). A second tracker with its own battery, antenna and satellite modem turns most of those from "lost" into "found". The simulator now models it directly (Nov 10, below): from the 100 km drop, verified arrivals rise from 40.5% to 54.5%, and we still know where the boat is at the end of 65.5% of voyages, against 40.5% without it.*
 
 ## Requirements
 
@@ -31,3 +31,31 @@
 2. **Wet:** 1 hour submerged at 0.5 m inside its compartment, then report.
 3. **On the boat:** reports arrive during all 14 days of the coastal trial, with the main system **switched off** for 48 hours. That proves it really is independent.
 4. **Inverted:** with the boat upside down for 10 minutes, note whether reports still go out. They probably won't; record it.
+
+## In the simulator (Nov 10, 2026)
+
+The tracker is now part of the default Rev B design (`design["backup_tracker"]`, `fitted: true`):
+
+- It sends a fix every 3 h for the first week, then every 12 h. 95% of fixes get through, and none do while the boat is upside down. Its battery budget is 60% of the rated 2,500 transmissions, which is never the limit on a 240-day voyage.
+- It dies at 0.0007/day, a flat rate with no sea-state or early-life factor (`failures["backup_tracker"]`, boat-sim #153's figure).
+- **A dead main box no longer ends the voyage.** If the tracker still works, the boat drifts on at leeway (3.3% of the wind plus current), still reporting, until it washes up, gets swamped, is picked up or the run ends. Without a tracker, an electronics failure is still counted as lost.
+- **New outcomes.** `arrived_tracked`: the boat sailed in with its main modem dead or hung, and the tracker logged the arrival. It counts as a success, because the crossing can be shown. `arrived_adrift`: the main box was dead and the boat washed up in Europe. That is not a sailed crossing, but the boat can be recovered.
+
+200 voyages from the 100 km drop, planning failure rates, synthetic weather, April–July launches in 2022–2025, same seeds for both:
+
+| | No tracker | YB3 fitted |
+|---|---|---|
+| **Arrived, verified** (main system reporting, or main modem dead and the tracker logged the arrival) | **40.5%** (95% CI 33.9–47.4) | **54.5%** (47.6–61.3) |
+| of which: main system still reporting | 40.5% | 42.5% |
+| of which: main modem dead, logged by the tracker | — | 12.0% |
+| Arrived silent (nobody knows) | 8.5% | 0.5% |
+| Main box dead, washed up in Europe | (counted as lost) | 8.5% |
+| Lost | 49.0% | 32.5% |
+| Position known at the end of the run | 40.5% | 65.5% |
+| Position known at day 30 / 60 / 90 / 150 | 0.81 / 0.69 / 0.54 / 0.43 | 0.94 / 0.88 / 0.81 / 0.70 |
+
+The no-tracker batch reproduces the earlier 100 km result exactly, which confirms the new code leaves the rest of the model unchanged. The main reporting share moves by 2 points only because the random draws diverge once the tracker is fitted; that is noise.
+
+Of the 39 boats whose main box died with the tracker working, 17 washed up in Europe, 1 went aground elsewhere and 21 were later lost, mostly to slow leaks over months of drifting. Leaks are now the largest single cause of loss (50 of 200 runs), so the leak test in [Field_Tests.md](Field_Tests.md) is the next thing that moves the odds.
+
+Results: `results/2026-11-10_midatlantic_montecarlo_drop100km_tracker.json` and `..._no-tracker.json`. To run without the tracker, set `backup_tracker.fitted` to false in the design.

@@ -105,7 +105,10 @@ class Voyage:
                   tail_stuck_alpha=0.0, wing_lost=False, entangled=False, hung=False, comms_dead=False,
                   brownout=False, leak_rate=0.0, leak_alarm=False, thrust_h_today=0.0, alive=True, credits=0,
                   sessions_ok=0, sessions_fail=0, last_report=t, last_report_ok=t, energy_in_wh=0.0,
-                  energy_out_wh=0.0, distance_km=0.0, knockdowns=0, capsizes=0)
+                  energy_out_wh=0.0, distance_km=0.0, knockdowns=0, capsizes=0, box_dead=False)
+        BT = d.get("backup_tracker") or {}
+        st.update(trk_ok=bool(BT.get("fitted")), trk_next=t, trk_sent=0, trk_fixes=0, trk_last_ok=None,
+                  trk_budget=int(BT.get("transmissions", 2500)*BT.get("cold_derate", 1.0)))
         self.st = st
         self.event(t, "start", f"Launch at {st['lat']:.2f}, {st['lon']:.2f}")
         backend = None
@@ -142,12 +145,12 @@ class Voyage:
             if math.floor(t/86400) != day_mark:
                 day_mark = math.floor(t/86400); st["thrust_h_today"] = 0.0
             # ---- autopilot decisions
-            controllable = st["alive"] and not st["brownout"] and not st["inverted"]
+            controllable = st["alive"] and not st["brownout"] and not st["inverted"] and not st["box_dead"]
             if controllable and t >= next_decision:
                 decision = self.ap.decide(t, st, envd)
                 next_decision = t + d["autopilot"]["decision_interval_min"]*60
             # ---- physics step
-            if mode6:
+            if mode6 and not st["box_dead"]:
                 twa_s = wrap180(twd - st["heading"])
                 pr = self.polar(tws, abs(twa_s), e["hs"], st["df"], ("alpha",))
                 decision["alpha_deg"] = math.degrees(pr["alpha"])
@@ -183,7 +186,7 @@ class Voyage:
                 isle = self.land.atlantic_island(nlat, nlon)
                 if self.land.in_europe(nlat, nlon, sc.get("atlantic_islands_count", False)) and sc.get("europe_landfall_counts", True):
                     st["lat"], st["lon"] = nlat, nlon
-                    outcome = "arrived_reporting" if not (st["comms_dead"] or st["hung"]) and st["alive"] else "arrived_silent"
+                    outcome = self._arrival_outcome(st)
                     self.event(t, "arrival", f"Landfall in Europe at {nlat:.2f}, {nlon:.2f}")
                 else:
                     outcome = "aground"
@@ -193,14 +196,16 @@ class Voyage:
                 break
             st["lat"], st["lon"] = nlat, nlon
             if haversine_km(nlat, nlon, sc["target"]["lat"], sc["target"]["lon"]) < sc["arrival_radius_km"]:
-                outcome = "arrived_reporting" if not (st["comms_dead"] or st["hung"]) and st["alive"] else "arrived_silent"
+                outcome = self._arrival_outcome(st)
                 self.event(t, "arrival", f"Reached the target area at {nlat:.2f}, {nlon:.2f}"); break
             # ---- power
-            self.power_step(st, e, decision, res, dt, t)
+            if not st["box_dead"]:
+                self.power_step(st, e, decision, res, dt, t)
             # ---- comms
             interval = 12.0 if self.ap.mode == "safe" else self.ap.report_h
             if t - st["last_report"] >= interval*3600:
                 self.comms_session(st, e, t, pending)
+            self.tracker_step(st, e, t)
             # ---- failures
             self.failure_step(st, e, envd, dt, t, L, Bm)
             if not st["alive"]:
@@ -213,7 +218,9 @@ class Voyage:
             if self.progress and k % 200 == 0:
                 self.progress(min((t - self.t0)/(t_end - self.t0), 1.0), st)
         if outcome is None:
-            outcome = "at_sea_timeout"; self.event(t, "end", f"Still at sea after {sc['max_days']} days")
+            outcome = "at_sea_timeout"
+            self.event(t, "end", f"Still at sea after {sc['max_days']} days" + (
+                (" (adrift, backup tracker reporting)" if st["trk_ok"] else " (adrift, silent)") if st["box_dead"] else ""))
         try:
             e_last = self.env.sample(st["lat"], st["lon"], t)
         except BulkDataMissing:
@@ -227,6 +234,10 @@ class Voyage:
             distance_km=round(st["distance_km"], 1), credits=st["credits"], airtime_usd=round(cost, 2),
             sessions_ok=st["sessions_ok"], sessions_failed=st["sessions_fail"],
             last_report_day=round((st["last_report_ok"] - self.t0)/86400, 2),
+            last_fix_day=round((max(st["last_report_ok"], st["trk_last_ok"] or 0) - self.t0)/86400, 2),
+            position_known_at_end=self._position_known(st, outcome),
+            box_dead=st["box_dead"], tracker_fitted=bool((d.get("backup_tracker") or {}).get("fitted")),
+            tracker_ok=st["trk_ok"], tracker_fixes=st["trk_fixes"],
             knockdowns=st["knockdowns"], capsizes=st["capsizes"],
             energy_in_wh=round(st["energy_in_wh"], 1), energy_out_wh=round(st["energy_out_wh"], 1),
             final_soc=round(st["soc"], 3), final_drag_factor=round(st["df"], 2),
@@ -245,7 +256,7 @@ class Voyage:
         df = st["df"] + (3.0 if st["entangled"] else 0) + st["water_kg"]/max(self.boat.mass, 1)*2
         df = min(df, 4.0)
         steer_possible = dec["steering"] and not st["brownout"] and st["rudder"] == "ok"
-        if st["inverted"] or (feather and not steer_possible):
+        if st["inverted"] or st["box_dead"] or (feather and not steer_possible):
             # Dead boat: leeway, i.e. drift through the water at a fixed share of the 10 m wind, close to downwind
             # (USCG/SAR leeway model; coefficients in design["drift"]). The VPP's feathered state assumes the
             # keel holds the boat on its heading, which made a dead boat reach across the wind at 4-6%.
@@ -328,7 +339,7 @@ class Voyage:
     def comms_session(self, st, e, t, pending):
         P = self.d["power"]; C = self.d["comms"]
         st["last_report"] = t
-        if st["brownout"] or st["comms_dead"]:
+        if st["brownout"] or st["comms_dead"] or st["box_dead"]:
             return
         if st["hung"]:
             st["sessions_fail"] += 1; return
@@ -352,6 +363,35 @@ class Voyage:
                 st["hung"] = False
             self.ap.apply_command(c["cmd"], c.get("args", {}), t, st)
         st["credits"] += credits
+
+    # -------------------------------------------------------------- backup tracker
+    def tracker_step(self, st, e, t):
+        """Independent YB3: own battery, GPS and Iridium modem. Fixes every 3 h for the first week, then every 12 h."""
+        if not st["trk_ok"] or t < st["trk_next"]:
+            return
+        BT = self.d.get("backup_tracker") or {}
+        week1 = (t - self.t0) < 7*86400
+        st["trk_next"] = t + 3600*(BT.get("first_week_interval_h", 3.0) if week1 else BT.get("report_interval_h", 12.0))
+        st["trk_sent"] += 1
+        if not st["inverted"] and self.rng.random() < BT.get("p_report_ok", 0.95):
+            st["trk_fixes"] += 1; st["trk_last_ok"] = t
+        if st["trk_sent"] >= st["trk_budget"]:
+            st["trk_ok"] = False; self.event(t, "failure", "Backup tracker battery flat")
+
+    @staticmethod
+    def _arrival_outcome(st):
+        if st["box_dead"]:
+            return "arrived_adrift"                       # washed up with the main box dead: not a sailed crossing
+        if not (st["comms_dead"] or st["hung"]):
+            return "arrived_reporting"
+        return "arrived_tracked" if st["trk_ok"] else "arrived_silent"
+
+    @staticmethod
+    def _position_known(st, outcome):
+        if outcome == "lost":
+            return False
+        main = not (st["comms_dead"] or st["hung"] or st["box_dead"])
+        return bool(main or st["trk_ok"])
 
     # -------------------------------------------------------------- failures
     def failure_step(self, st, e, envd, dt, t, L, B):
@@ -378,21 +418,30 @@ class Voyage:
                 st["leak_alarm"] = True; self.ap.mode = "safe"; self.event(t, "alarm", "Leak sensor wet -> SAFE mode")
             if st["water_kg"] > 0.35*self.boat.mass:
                 st["alive"] = False; self.event(t, "failure", "Swamped by leaking water: boat lost"); return
+        # backup tracker (independent box)
+        if st["trk_ok"] and rnd() < p_event(self.rate("backup_tracker"), dt):
+            st["trk_ok"] = False; self.event(t, "failure", "Backup tracker failed")
+        # once the main box is dead only the hull, the rig and the outside world can still change things
+        active = not st["box_dead"]
         # electronics
-        if rnd() < p_event(self.rate("electronics")*el*(1 + 5*(st["water_kg"] > 0.3)), dt):
-            st["alive"] = False; self.event(t, "failure", "Electronics failure (corrosion/humidity): boat silent and uncontrolled")
+        if active and rnd() < p_event(self.rate("electronics")*el*(1 + 5*(st["water_kg"] > 0.3)), dt):
+            if st["trk_ok"]:
+                st["box_dead"] = True; st["brownout"] = False
+                self.event(t, "failure", "Electronics failure (corrosion/humidity): main box dead, boat drifting; backup tracker still reporting")
+            else:
+                st["alive"] = False; self.event(t, "failure", "Electronics failure (corrosion/humidity): boat silent and uncontrolled")
             return
         # satellite modem, antenna or comms power path: the boat keeps sailing but goes quiet for good
-        if not st["comms_dead"] and rnd() < p_event(self.rate("comms_silent")*el*(1 + hs/4), dt):
+        if active and not st["comms_dead"] and rnd() < p_event(self.rate("comms_silent")*el*(1 + hs/4), dt):
             st["comms_dead"] = True; self.event(t, "failure", "Satellite modem or antenna failed: boat sails on but is silent")
         # steering
-        if st["rudder"] == "ok" and rnd() < p_event(self.rate("rudder_servo")*el*(1 + hs/4), dt):
+        if active and st["rudder"] == "ok" and rnd() < p_event(self.rate("rudder_servo")*el*(1 + hs/4), dt):
             if rnd() < 0.6:
                 st["rudder"] = "stuck"; st["rudder_stuck"] = rnd()*2 - 1
                 self.event(t, "failure", f"Rudder servo jammed at {st['rudder_stuck']*self.d['rudder']['max_angle_deg']:.0f} deg")
             else:
                 st["rudder"] = "limp"; self.event(t, "failure", "Rudder servo failed limp: no steering")
-        if st["tail"] == "ok" and rnd() < p_event(self.rate("tail_servo")*el*(1 + hs/4), dt):
+        if active and st["tail"] == "ok" and rnd() < p_event(self.rate("tail_servo")*el*(1 + hs/4), dt):
             if rnd() < 0.5:
                 st["tail"] = "stuck"; st["tail_stuck_alpha"] = math.radians(rnd()*15)
                 self.event(t, "failure", "Tail servo jammed: wing stuck at a fixed angle of attack")
@@ -414,7 +463,7 @@ class Voyage:
         if near(self.fr["capture"].get("capture_km", 50)) and rnd() < p_event(self.rate("capture"), dt):
             st["alive"] = False; self.event(t, "failure", "Picked up by a fishing boat or passer-by"); return
         # software hang
-        if not st["hung"] and rnd() < p_event(self.rate("software_hang"), dt):
+        if active and not st["hung"] and rnd() < p_event(self.rate("software_hang"), dt):
             if rnd() < 0.95:
                 self.event(t, "recovery", "Software hang cleared by watchdog")
             else:
@@ -430,7 +479,7 @@ class Voyage:
             lam = breaking_knockdown_rate(hs, e["tp"], u10, L, B)*self.rate("wave_capsize")
             if rnd() < p_event(lam, dt):
                 st["knockdowns"] += 1
-                if self.backend is not None:          # 6-DOF: hit the boat with a breaking crest, physics decides
+                if self.backend is not None and not st["box_dead"]:   # 6-DOF: hit the boat with a breaking crest, physics decides
                     self.backend.kick(side=1.0 if rnd() < 0.5 else -1.0, mag=3.0 + 2.0*rnd())
                     self.event(t, "knockdown", f"Breaking wave strike (Hs {hs:.1f} m)")
                     return
@@ -442,7 +491,7 @@ class Voyage:
                     self.event(t, "knockdown", f"Knocked down by a breaking wave (Hs {hs:.1f} m); self-righted")
                 if rnd() < self.rate("knockdown_damage")/1.0:
                     st["wing_lost"] = True; self.event(t, "failure", "Wing damaged in a knockdown: drifting")
-        elif st["inverted"] and self.backend is None:
+        elif st["inverted"] and (self.backend is None or st["box_dead"]):
             lam = breaking_knockdown_rate(hs, e["tp"], envd["tws"], L, B)*max(self.rate("wave_capsize"), 1) + 0.2
             pr = 1 - self.stab["p_stay_inverted"]
             if rnd() < p_event(lam*pr, dt):

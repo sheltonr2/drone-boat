@@ -23,6 +23,9 @@ _ORIGINAL = {
     "electronics":     {"enabled": True, "per_day": 0.0012, "note": "x6 once water is inside"},
     "comms_silent":    {"enabled": False, "per_day": 0.0, "note": "modem/antenna/power-path failure: boat sails on, silent"},
     "software_hang":   {"enabled": True, "per_day": 0.02, "note": "watchdog recovers 95%"},
+    "backup_tracker":  {"enabled": True, "per_day": 0.0007,
+                        "note": "the independent YB3 dies (only matters when design backup_tracker.fitted). Flat rate, no "
+                                "early-life or sea-state factor: off-the-shelf unit, proven in the shakedown. boat-sim #153 GUESS"},
     "wave_capsize":    {"enabled": True, "per_day": 1.0, "note": "multiplier on breaking-wave knockdown physics"},
     "knockdown_damage": {"enabled": True, "per_day": 0.002, "note": "probability per knockdown of rig damage"},
     "early_life":      {"enabled": False, "per_day": 0.0, "note": "extra multiplier k*exp(-(day+burn_in)/tau) on hardware hazards",

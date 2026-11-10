@@ -79,6 +79,14 @@ DEFAULT = {
                                         # Measured: Sunfish without sail 2.1%, 4.15 m skiff 4.0% (Breivik et al. 2010)
         "leeway_crosswind": 0.008,      # x U10, side picked at random per voyage (~14 deg divergence)
     },
+    "backup_tracker": {                 # independent YB3 (Iridium SBD), docs/Backup_Tracker.md. Own battery, GPS, modem, antenna.
+        "fitted": True,
+        "report_interval_h": 12.0,      # every 12 h after the first week
+        "first_week_interval_h": 3.0,
+        "transmissions": 2500,          # rated per charge
+        "cold_derate": 0.6,             # plan on 60% of the rating
+        "p_report_ok": 0.95,            # per scheduled fix (sky view, sea state); none while inverted
+    },
     "autopilot": {
         "heel_limit_deg": 25.0, "storm_tws_ms": 20.0, "reef_tws_ms": 13.0,
         "tack_hysteresis_deg": 20.0, "decision_interval_min": 10.0,

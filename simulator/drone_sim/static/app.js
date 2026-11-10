@@ -273,10 +273,10 @@ $("#in-results").onchange = async (e) => {
   const d = JSON.parse(await f.text());
   if (d.kind === "montecarlo") { $$("nav button")[3].click(); renderMC(d.result); } else renderVoyage(d.result || d);
 };
-const OUTCOME_TXT = { arrived_reporting: "Arrived, reporting", arrived_silent: "Arrived, silent", at_sea_timeout: "Still at sea", aground: "Aground", lost: "Lost" };
+const OUTCOME_TXT = { arrived_reporting: "Arrived, reporting", arrived_tracked: "Arrived, backup tracker", arrived_silent: "Arrived, silent", arrived_adrift: "Washed up adrift", at_sea_timeout: "Still at sea", aground: "Aground", lost: "Lost" };
 function renderVoyage(r) {
   S.lastVoyage = r;
-  const good = r.outcome === "arrived_reporting";
+  const good = r.outcome === "arrived_reporting" || r.outcome === "arrived_tracked";
   $("#run-summary").innerHTML = [
     card("Outcome", OUTCOME_TXT[r.outcome] || r.outcome, r.failures.length ? r.failures[r.failures.length - 1].msg : "", good ? "good" : (r.outcome.startsWith("arrived") ? "warn" : "bad")),
     card("Duration", fmt(r.days, 1) + " days", `${fmt(r.distance_km, 0)} km sailed`),
@@ -333,7 +333,7 @@ $("#btn-mc").onclick = async () => {
 };
 $("#btn-mc-cancel").onclick = () => S.mcJob && api(`/api/job/${S.mcJob}/cancel`, {});
 $("#btn-mc-export").onclick = () => S.mcJob && (window.location = `/api/export/${S.mcJob}`);
-const OC_COL = { arrived_reporting: "#2e8b57", arrived_silent: "#8fbf6f", at_sea_timeout: "#b7791f", aground: "#8e44ad", lost: "#c0392b" };
+const OC_COL = { arrived_reporting: "#2e8b57", arrived_tracked: "#5aa469", arrived_silent: "#8fbf6f", arrived_adrift: "#7f8c8d", at_sea_timeout: "#b7791f", aground: "#8e44ad", lost: "#c0392b" };
 function renderMC(r) {
   S.lastMC = r; const s = r.summary;
   $("#mc-cards").innerHTML = [

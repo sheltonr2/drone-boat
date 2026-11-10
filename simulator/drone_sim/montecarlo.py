@@ -7,7 +7,10 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 from .sim import Voyage, prepare_design, DEFAULT_SCENARIO
 from .env import OpenMeteoLimit, make_provider, LandMask, to_epoch, from_epoch, destination, bearing_deg, haversine_km
 
-OUTCOMES = ["arrived_reporting", "arrived_silent", "at_sea_timeout", "aground", "lost"]
+OUTCOMES = ["arrived_reporting", "arrived_tracked", "arrived_silent", "arrived_adrift", "at_sea_timeout", "aground", "lost"]
+# A crossing counts when the boat sailed in under its own control and we can show it: either the main system
+# is still reporting, or the main modem is dead but the independent backup tracker logged the arrival.
+SUCCESS = ("arrived_reporting", "arrived_tracked")
 
 
 def _one(args):
@@ -26,7 +29,9 @@ def _one(args):
     return dict(i=i, start_time=sc["start_time"], seed=sc["seed"], outcome=r["outcome"], days=r["days"],
                 distance_km=r["distance_km"], airtime_usd=r["airtime_usd"], knockdowns=r["knockdowns"],
                 capsizes=r["capsizes"], failures=fatal, end=r["end"], track=track, stats=r["stats"],
-                last_report_day=r.get("last_report_day"))
+                last_report_day=r.get("last_report_day"), last_fix_day=r.get("last_fix_day"),
+                position_known_at_end=r.get("position_known_at_end"), box_dead=r.get("box_dead"),
+                tracker_ok=r.get("tracker_ok"), tracker_fixes=r.get("tracker_fixes"))
 
 
 def start_times(window, n, rng):
@@ -114,32 +119,36 @@ def summarize(results):
     arr = [r["days"] for r in ok if r["outcome"].startswith("arrived")]
     causes = {}
     for r in ok:
-        if r["outcome"] in ("lost", "aground", "at_sea_timeout"):
+        if r["outcome"] in ("lost", "aground", "at_sea_timeout", "arrived_adrift"):
             key = r["failures"][-1] if r["failures"] else r["outcome"].replace("_", " ")
             key = key.split(" (")[0].split(":")[0].split(" at ")[0]
             causes[key] = causes.get(key, 0) + 1
     pct = lambda k: round(100*counts[k]/n, 1)
+    known = sum(1 for r in ok if r.get("position_known_at_end"))
     def ci(p, n):
         z = 1.96; ph = p/100
         den = 1 + z*z/n; c = (ph + z*z/(2*n))/den; h = z*math.sqrt(ph*(1 - ph)/n + z*z/(4*n*n))/den
         return [round(100*max(c - h, 0), 1), round(100*min(c + h, 1), 1)]
-    success = pct("arrived_reporting")
+    success = round(sum(pct(k) for k in SUCCESS), 1)
     # Odds by launch month (idea from jcolter11374/boat-sim): which months to launch in.
     by_month = {}
     for r in ok:
         mth = (r.get("start_time") or "")[:7][-2:]
         if not mth.isdigit():
             continue
-        b = by_month.setdefault(mth, dict(runs=0, arrived_reporting=0))
-        b["runs"] += 1; b["arrived_reporting"] += r["outcome"] == "arrived_reporting"
+        b = by_month.setdefault(mth, dict(runs=0, arrived=0))
+        b["runs"] += 1; b["arrived"] += r["outcome"] in SUCCESS
     for b in by_month.values():
-        b["success_percent"] = round(100*b["arrived_reporting"]/b["runs"], 1)
+        b["success_percent"] = round(100*b["arrived"]/b["runs"], 1)
         b["success_ci95"] = ci(b["success_percent"], b["runs"])
     by_month = dict(sorted(by_month.items()))
     return dict(runs=len(ok), errors=len(results) - len(ok), counts=counts,
                 percent={k: pct(k) for k in OUTCOMES},
                 success_percent=success, success_ci95=ci(success, n), by_launch_month=by_month,
-                any_arrival_percent=round(pct("arrived_reporting") + pct("arrived_silent"), 1),
+                success_definition="arrived_reporting + arrived_tracked",
+                reporting_percent=pct("arrived_reporting"),
+                any_arrival_percent=round(sum(pct(k) for k in OUTCOMES if k.startswith("arrived")), 1),
+                position_known_at_end_percent=round(100*known/n, 1),
                 arrival_days=dict(median=float(np.median(arr)) if arr else None,
                                   p10=float(np.percentile(arr, 10)) if arr else None,
                                   p90=float(np.percentile(arr, 90)) if arr else None, all=arr),
