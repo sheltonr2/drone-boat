@@ -10,6 +10,7 @@ This is a 1.5 m self-righting sailboat with a rigid wing sail, solar power and t
 | [`designs/`](designs/) | Rev C (and Rev B) design files for our simulator, John's boat-sim (`boat-sim/randolph_rev_c.yaml`), a whole-boat STL and a geometry summary. |
 | [`build-files/`](build-files/) | Rev C drawing set (`Drawings.pdf`, 20 tabloid sheets), full-size cutting templates (`Templates_1to1_Letter.pdf`), DXF templates for CNC/laser, 23 STL files for the 20 printed parts, and the Python that generates them all. See [`build-files/README.txt`](build-files/README.txt). |
 | [`simulator/`](simulator/) | Voyage simulator: historic ERA5 wind, waves, currents (incl. Gulf Stream), tides and solar from Open-Meteo (2022 on), hybrid or full 6-DOF physics, editable design (keel, wing, rudder, ballast) or your own STL/OBJ hull, power and satellite budget, autopilot and command testing, failures and Monte Carlo odds. See [`simulator/README.md`](simulator/README.md). |
+| [`viewer-3d/`](viewer-3d/) | Interactive 3D view of Rev C on open water (download `index.html` and open it in a browser): sliders for wind and waves, knockdown buttons. |
 | [`results/`](results/) | Saved simulator runs (open them in the results viewer). |
 | [`results-viewer/`](results-viewer/) | Standalone results page (`index.html`, open in any browser) with demo runs; drop in a results `.json` exported from the simulator. |
 
