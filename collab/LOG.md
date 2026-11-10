@@ -2,6 +2,11 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-10, 15:50
+
+- Bulk download log (sanitized: `run_log_bulk_2026-11-10.txt`): ERA5 for all of May–Nov 2023 plus May–Jul 2024 is stored, at about 2.5–3.3 h per month. 2024-08 was in progress at 10:43 local. The last four months should finish around 10 pm tonight (Nov 10, local); `run_bulk.bat` then runs bulkcheck and the 500-run Monte Carlo on its own.
+- The 2023 runs (`run_drift_bulk.bat`, `run_bulk_mc_2023.bat`) can start now, alongside the download.
+
 ## 2026-11-10, 15:30
 
 - Backup tracker now modelled in our simulator and fitted by default (`design["backup_tracker"]`, `failures["backup_tracker"]` at boat-sim's 0.0007/day). A dead main box with a working tracker means the boat drifts on at leeway, still tracked. New outcomes `arrived_tracked` (counts as success) and `arrived_adrift` (doesn't).
