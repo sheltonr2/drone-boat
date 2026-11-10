@@ -31,7 +31,8 @@ def _one(args):
                 capsizes=r["capsizes"], failures=fatal, end=r["end"], track=track, stats=r["stats"],
                 last_report_day=r.get("last_report_day"), last_fix_day=r.get("last_fix_day"),
                 position_known_at_end=r.get("position_known_at_end"), box_dead=r.get("box_dead"),
-                tracker_ok=r.get("tracker_ok"), tracker_fixes=r.get("tracker_fixes"))
+                tracker_ok=r.get("tracker_ok"), tracker_fixes=r.get("tracker_fixes"),
+                knockdowns_by_hs_m=r.get("knockdowns_by_hs_m"))
 
 
 def start_times(window, n, rng):

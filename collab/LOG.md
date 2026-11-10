@@ -2,6 +2,13 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-10, 20:10
+
+- First real-weather Monte Carlo done (250 voyages, 2023, 100 km drop, YB3 fitted, all cores, 54 min): **34% verified arrivals (28–40)**: 26% reporting plus 8% logged by the tracker. May launches 40%, June 21%. Median crossing 123 days. 10.8% still at sea when the 2023 data ran out.
+- Real seas: 3.5 knockdowns/day (522 per voyage). Wing broke in 140 of 250 voyages (hazard 0.0084/day vs target 0.0024). Leaks started at 0.0048/day vs glider 0.0026 (Hs factor ~1.9). **Refit**: knockdown_damage planning 0.003 → 0.0009, historical 0.006 → 0.0017; leak base 0.0025 → 0.00135 (planning and historical). Original set unchanged. Knockdowns now logged by Hs for a severity fit (boat-sim's (Hs/3)² form).
+- Only 2 of 250 went aground near the US coast, so the drop point is worth ~1%; launch date matters far more.
+- Updated code copied to Randolph's PC before tonight's 500-voyage 2023–2024 run, which will test the refit.
+
 ## 2026-11-10, 16:40
 
 - Dead-boat drift tests re-run on the bulk data (ERA5 + SMOC + MFWAM) with the leeway model: 16 drop dates (1 May–15 June 2023) × 4 points × leeway 2/3.3/5%. Aground within 30 days at 3.3%: 25 km 16/16, 50 km 13/16, 100 km 8/16 (7 on the NC Outer Banks), 150 km 5/16. This overturns the Nov 8 "100 km is safe" result, which came from the old cross-wind drift model. Proposed: move the drop to the shelf edge (150 km), pending a 2024 run (`run_drift_bulk_2024.bat`, after tonight's download) and the 2023 bulk Monte Carlo (running).

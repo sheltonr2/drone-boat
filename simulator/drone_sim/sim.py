@@ -105,7 +105,7 @@ class Voyage:
                   tail_stuck_alpha=0.0, wing_lost=False, entangled=False, hung=False, comms_dead=False,
                   brownout=False, leak_rate=0.0, leak_alarm=False, thrust_h_today=0.0, alive=True, credits=0,
                   sessions_ok=0, sessions_fail=0, last_report=t, last_report_ok=t, energy_in_wh=0.0,
-                  energy_out_wh=0.0, distance_km=0.0, knockdowns=0, capsizes=0, box_dead=False)
+                  energy_out_wh=0.0, distance_km=0.0, knockdowns=0, capsizes=0, box_dead=False, kd_hs=[0]*10)
         BT = d.get("backup_tracker") or {}
         st.update(trk_ok=bool(BT.get("fitted")), trk_next=t, trk_sent=0, trk_fixes=0, trk_last_ok=None,
                   trk_budget=int(BT.get("transmissions", 2500)*BT.get("cold_derate", 1.0)))
@@ -238,7 +238,7 @@ class Voyage:
             position_known_at_end=self._position_known(st, outcome),
             box_dead=st["box_dead"], tracker_fitted=bool((d.get("backup_tracker") or {}).get("fitted")),
             tracker_ok=st["trk_ok"], tracker_fixes=st["trk_fixes"],
-            knockdowns=st["knockdowns"], capsizes=st["capsizes"],
+            knockdowns=st["knockdowns"], capsizes=st["capsizes"], knockdowns_by_hs_m=st["kd_hs"],
             energy_in_wh=round(st["energy_in_wh"], 1), energy_out_wh=round(st["energy_out_wh"], 1),
             final_soc=round(st["soc"], 3), final_drag_factor=round(st["df"], 2),
             failures=[ev for ev in self.events if ev["kind"] == "failure"],
@@ -478,7 +478,7 @@ class Voyage:
             u10 = envd["tws"]
             lam = breaking_knockdown_rate(hs, e["tp"], u10, L, B)*self.rate("wave_capsize")
             if rnd() < p_event(lam, dt):
-                st["knockdowns"] += 1
+                st["knockdowns"] += 1; st["kd_hs"][min(int(hs), 9)] += 1   # knockdowns by Hs, 1 m bins (9 = 9 m+)
                 if self.backend is not None and not st["box_dead"]:   # 6-DOF: hit the boat with a breaking crest, physics decides
                     self.backend.kick(side=1.0 if rnd() < 0.5 else -1.0, mag=3.0 + 2.0*rnd())
                     self.event(t, "knockdown", f"Breaking wave strike (Hs {hs:.1f} m)")

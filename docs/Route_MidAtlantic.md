@@ -73,6 +73,8 @@ What this says:
 - **A grounding is now often recoverable.** With the backup tracker fitted, a boat that dies early and washes up on the Outer Banks is a boat we can collect and relaunch, not a loss. That softens this result but doesn't remove it: a beached boat is a public nuisance and costs the launch season.
 - **Keep in mind what this test is.** It is the worst case. The boat only drifts like this if it fails at or soon after launch. The real-weather Monte Carlo (running now) puts this together with the actual chance of an early failure.
 
+**What the full Monte Carlo adds (Nov 10, 250 voyages on 2023 weather):** only 2 of 250 voyages (0.8%) went aground near the US coast, because few boats actually fail in their first days after a 14-day shakedown. So the drop point is worth about 1% on the odds, not the 50% the worst case suggests. The launch date mattered far more: launches 1–15 May succeeded 44% of the time, 16–31 May 36%, and 1–15 June 21%. June boats met more breaking seas (4.1 knockdowns a day against 3.4) and arrived into autumn storms. That supports the 1–20 May window in [Launch_Plan.md](Launch_Plan.md). In 2023, early May is also when the 100 km drop grounds dead boats; that tension is another reason to prefer the shelf edge.
+
 **Recommendation (pending the 2024 drift run and the Monte Carlo):** move the drop to the shelf edge, about 150 km (81 nm) out at 37.86°N 73.47°W, unless 2024 reverses this. It is still inside the range of Ocean City's canyon charters, which fish the shelf edge. The cost is about an hour more each way on the charter.
 
 ## Drift tests: how far out to drop the boat (Open-Meteo, Nov 8, 2026; superseded)

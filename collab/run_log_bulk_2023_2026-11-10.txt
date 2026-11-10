@@ -1,0 +1,231 @@
+Bulk Monte Carlo 2023, started Tue 11/10/2026 10:51:58.99 
+Building the speed polar for this design (about 10-30 s) ...
+{
+ "runs": 250,
+ "errors": 0,
+ "counts": {
+  "arrived_reporting": 65,
+  "arrived_tracked": 20,
+  "arrived_silent": 1,
+  "arrived_adrift": 11,
+  "at_sea_timeout": 27,
+  "aground": 16,
+  "lost": 110
+ },
+ "percent": {
+  "arrived_reporting": 26.0,
+  "arrived_tracked": 8.0,
+  "arrived_silent": 0.4,
+  "arrived_adrift": 4.4,
+  "at_sea_timeout": 10.8,
+  "aground": 6.4,
+  "lost": 44.0
+ },
+ "success_percent": 34.0,
+ "success_ci95": [
+  28.4,
+  40.1
+ ],
+ "by_launch_month": {
+  "05": {
+   "runs": 170,
+   "arrived": 68,
+   "success_percent": 40.0,
+   "success_ci95": [
+    32.9,
+    47.5
+   ]
+  },
+  "06": {
+   "runs": 80,
+   "arrived": 17,
+   "success_percent": 21.2,
+   "success_ci95": [
+    13.7,
+    31.4
+   ]
+  }
+ },
+ "success_definition": "arrived_reporting + arrived_tracked",
+ "reporting_percent": 26.0,
+ "any_arrival_percent": 38.8,
+ "position_known_at_end_percent": 54.4,
+ "arrival_days": {
+  "median": 122.91,
+  "p10": 103.126,
+  "p90": 177.186,
+  "all": [
+   136.72,
+   147.61,
+   135.75,
+   103.25,
+   137.37,
+   112.49,
+   124.91,
+   133.8,
+   137.27,
+   91.39,
+   118.97,
+   131.63,
+   136.97,
+   109.75,
+   186.72,
+   124.86,
+   153.81,
+   165.73,
+   103.48,
+   103.27,
+   167.02,
+   176.05,
+   106.3,
+   111.55,
+   145.57,
+   188.54,
+   119.31,
+   118.92,
+   117.58,
+   122.38,
+   87.73,
+   109.71,
+   124.11,
+   144.88,
+   189.57,
+   105.21,
+   96.27,
+   108.6,
+   122.61,
+   141.99,
+   156.61,
+   109.91,
+   147.76,
+   103.25,
+   137.05,
+   94.63,
+   122.12,
+   116.33,
+   178.89,
+   166.0,
+   95.81,
+   105.86,
+   122.91,
+   111.34,
+   108.6,
+   181.16,
+   135.06,
+   185.5,
+   123.77,
+   110.26,
+   187.73,
+   107.09,
+   136.67,
+   96.78,
+   152.45,
+   113.93,
+   101.8,
+   173.03,
+   104.98,
+   112.58,
+   168.97,
+   108.22,
+   101.98,
+   161.0,
+   107.98,
+   154.77,
+   113.26,
+   114.47,
+   124.56,
+   126.56,
+   123.12,
+   122.13,
+   121.06,
+   137.01,
+   105.05,
+   189.45,
+   135.77,
+   190.67,
+   121.24,
+   192.02,
+   172.26,
+   105.32,
+   148.53,
+   102.94,
+   96.26,
+   148.25,
+   105.75
+  ]
+ },
+ "failure_causes": {
+  "Swamped by leaking water": 84,
+  "Wing damaged in a knockdown": 36,
+  "Picked up by a fishing boat or passer-by": 14,
+  "Electronics failure": 13,
+  "Struck by a vessel": 8,
+  "Rudder servo jammed": 4,
+  "Rudder servo failed limp": 2,
+  "Leak started": 2,
+  "Companion computer hung": 1
+ },
+ "mean_airtime_usd": 120.37,
+ "mean_knockdowns": 522.2
+}
+Saved ..\results\bulk_mc_2023_ocmd100_ireland.json
+{
+ "runs": 250,
+ "errors": 0,
+ "success_percent": 34.0,
+ "success_ci95": [
+  28.4,
+  40.1
+ ],
+ "reporting_percent": 26.0,
+ "any_arrival_percent": 38.8,
+ "position_known_at_end_percent": 54.4,
+ "percent": {
+  "arrived_reporting": 26.0,
+  "arrived_tracked": 8.0,
+  "arrived_silent": 0.4,
+  "arrived_adrift": 4.4,
+  "at_sea_timeout": 10.8,
+  "aground": 6.4,
+  "lost": 44.0
+ },
+ "arrival_days": {
+  "median": 122.91,
+  "p10": 103.126,
+  "p90": 177.186
+ },
+ "failure_causes": {
+  "Swamped by leaking water": 84,
+  "Wing damaged in a knockdown": 36,
+  "Picked up by a fishing boat or passer-by": 14,
+  "Electronics failure": 13,
+  "Struck by a vessel": 8,
+  "Rudder servo jammed": 4,
+  "Rudder servo failed limp": 2,
+  "Leak started": 2,
+  "Companion computer hung": 1
+ },
+ "by_launch_month": {
+  "05": {
+   "runs": 170,
+   "arrived": 68,
+   "success_percent": 40.0,
+   "success_ci95": [
+    32.9,
+    47.5
+   ]
+  },
+  "06": {
+   "runs": 80,
+   "arrived": 17,
+   "success_percent": 21.2,
+   "success_ci95": [
+    13.7,
+    31.4
+   ]
+  }
+ },
+ "mean_airtime_usd": 120.37,
+ "mean_knockdowns": 522.2
+}
+=== DONE Tue 11/10/2026 11:46:14.23 

@@ -31,12 +31,12 @@ These are the planning values (the default set). "Historical" is the fit to the 
 
 | Hazard (sim key) | Planning | Historical | Range | Multipliers in the sim | What happens | Grade | Main evidence |
 |---|---|---|---|---|---|---|---|
-| Leak starts (`leak`) | 0.0025 | 0.0025 | 0.0015–0.0045 | ×(1+(Hs/3)²); ×early-life | Water comes in at 0.05–2.55 kg/day. Leak sensor → SAFE mode. Swamped at 35% of displacement | B | Gliders: 15 leak aborts in 5,753 days = 0.0026/day (95% CI 0.0015–0.0043) |
+| Leak starts (`leak`) | 0.00135 (was 0.0025; refit Nov 10, §4.5) | 0.00135 | 0.0015–0.0045 | ×(1+(Hs/3)²); ×early-life | Water comes in at 0.05–2.55 kg/day. Leak sensor → SAFE mode. Swamped at 35% of displacement | B | Gliders: 15 leak aborts in 5,753 days = 0.0026/day (95% CI 0.0015–0.0043) |
 | Electronics die (`electronics`) | 0.0025 | 0.0035 | 0.0012–0.006 | ×6 once water is inside; ×early-life | Boat silent **and** uncontrolled. With the backup tracker working, it drifts on (leeway) and is still tracked; without one, it is lost | C | Microtransat open ocean: 2 silent + 2 erratic-then-silent + 1 antenna fault in 622 days = 0.008/day of silent-type endings, minus the leak-driven share the sim already produces (~0.0023/day). Gliders: power or battery 0.0016/day |
 | Comms go silent (`comms_silent`) **new** | 0.0011 | 0.0022 | 0.0005–0.004 | ×(1+Hs/4); ×early-life | Modem, antenna or comms power path fails. **The boat sails on, unheard.** If it arrives, it counts as "arrived silent", not a success | C | SB Wave 2017: antenna fault at day 69. In the Global Drifter Program, 68% of drifters that die simply stop transmitting |
 | Rudder servo (`rudder_servo`) | 0.002 | 0.002 | 0.001–0.004 | ×(1+Hs/4); ×early-life | Jams (60%) or goes limp (40%) | D | Microtransat: 1 actuator failure, plus 2 offshore boats that steered erratically before going silent. SeaCharger's steering failed after ~155 days. PC13 had to work round rudder faults |
 | Tail servo (`tail_servo`) | 0.002 | 0.002 | 0.001–0.004 | as above | Wing stuck at a fixed angle, or feathered | D | As above. Gortobot v4: sail motor failure |
-| Rig damage per knockdown (`knockdown_damage`) | 0.003 per knockdown | 0.006 | 0.002–0.01 | Knockdown rate comes from breaking-wave physics | Wing lost: the boat drifts | C | Microtransat open ocean: 3 rig or weather losses in 622 days = 0.0048/day. SD 1021's wing broke when it was rolled in the Gulf Stream |
+| Rig damage per knockdown (`knockdown_damage`) | 0.0009 per knockdown (was 0.003; refit Nov 10, §4.5) | 0.0017 | 0.002–0.01 | Knockdown rate comes from breaking-wave physics | Wing lost: the boat drifts | C | Microtransat open ocean: 3 rig or weather losses in 622 days = 0.0048/day. SD 1021's wing broke when it was rolled in the Gulf Stream |
 | Taken or snagged by fishermen near land (`capture`) | 0.01 within ~150 km | 0.02 | 0.005–0.03 | Only within `capture_km` (160) of land | Boat removed: lost | C | Microtransat near land: 4 taken in 215 days = 0.019/day (95% CI 0.005–0.048). USNA lost 3 of 6 Cape Cod starts to fishermen |
 | Entanglement (`entanglement`) | 0.003 | 0.003 | 0.001–0.01 | ×3 within 100 km of land; ×2 in the Sargasso | Drag ×4 until it clears (mean ~7 days) | D | ABoat Time 2014 (scallop net). Solar Voyager 2016, offshore. NMFS warned fixed-gear fishermen about Saildrone's casts |
 | Ship strike (`collision`) | 0.0004 | 0.0004 | 0.0002–0.002 | ×8 within 100 km of land; 60% fatal | Boat lost, or a leak | D | No confirmed strikes in 837 Microtransat boat-days (95% upper bound 0.0044/day). Kinematic model in §4.3 |
@@ -92,6 +92,17 @@ Our 0.0004/day offshore (×8 near land) corresponds to ρ ≈ 2×10⁻⁵ offsho
 ### 4.4 Early life
 Half the Microtransat boats were gone by day 7. Some of that is location (tides, fishermen), but the near-land *silent* rate (0.033/day, with no grounding or capture in it) is about 5× the open-ocean silent rate. Reliability engineering models that as a falling hazard (a Weibull shape below 1). We use a multiplier 1 + k·e^(−t/τ) with k = 3 and τ = 7 days, which averages about ×2.9 over the first week. A shakedown of S days before launch shifts the curve by S. Fourteen days cuts the launch-day multiplier from 4.0 to 1.4.
 
+### 4.5 Refit on real seas (Nov 10, 2026)
+
+The first Monte Carlo on downloaded real weather (250 voyages, 1 May–15 June 2023 launches, 100 km drop, ERA5 winds, Copernicus currents and MFWAM waves; [log](../collab/run_log_bulk_2023_2026-11-10.txt), [data](../results/2026-11-10_bulk_mc_2023_ocmd100_ireland.json)) showed two rates far above the evidence they were set from. Both were tuned on the synthetic weather, which has much calmer seas.
+
+- **Knockdowns.** Real seas gave 3.5 knockdowns a day on average (median 2.9; 522 per voyage), against 17–86 per voyage on synthetic weather. At 0.003 damage per knockdown, the wing broke in 140 of 250 voyages: a fitted hazard of 0.0084/day, against the planning target of 0.0024/day (Microtransat 0.0048/day ×0.5). boat-sim saw the same thing ("wing breaks within 18 days in 4 of 6"). Rescaled by 0.29: **planning 0.0009, historical 0.0017 per knockdown.**
+- **Leaks.** The leak rate is multiplied by (1+(Hs/3)²). On real seas that factor averaged about 1.9, so leaks started at 0.0048/day against the glider record of 0.0026/day, which is the only data. The multiplier was meant to shift leaks toward rough weather, not to double the average. The base rate is rescaled from 0.0025 to **0.00135**, so the real-sea mean matches the glider record.
+- The `original` set is unchanged, so old results can still be reproduced.
+- **Synthetic weather now under-produces both** (0 knockdowns in a 40-day synthetic test voyage). Use synthetic runs only to compare options, not for odds.
+- The simulator now logs knockdowns by significant wave height (1 m bins) for each voyage, so a severity-scaled damage model like boat-sim's (Hs/3)² can be fitted from the next run.
+- These refits are fitted to one season of weather (2023). The 500-voyage 2023–2024 run tonight uses them; that is the check.
+
 ## 5. What moves our odds (cheapest first)
 
 1. **Pass the 3-week unattended coastal trial against Field Test F's criteria** (now written into `Field_Tests.md`): 14 days in a row with no unexplained reboot, leak or reporting gap. This removes most of the early-life bump. The planning numbers already assume it, so **skipping or shortening the trial puts us back on the historical curve** (see the no-shakedown row in §6).
@@ -112,6 +123,7 @@ Mid-Atlantic → SW Ireland, 100 runs per rate set, launches April–July 2022�
 | planning + second tracker (`comms_silent` off) | 41% (32–51) | 6% | 49% | 4% | 0.79 / 0.68 / 0.52 | Electronics 24, leaks 20, fishermen 4 |
 | planning, 100 km drop, no tracker (Nov 10, 200 runs) | 40.5% (34–47) | 8.5% | 49% | 1% | 0.81 / 0.69 / 0.54 (position known) | Leaks 44, electronics 43, fishermen 7 |
 | **planning, 100 km drop, YB3 fitted (Nov 10, 200 runs; new default)** | **54.5%** (48–61) verified, of which 12% logged by the tracker | 0.5% | 32.5% (+8.5% washed up adrift) | 1.5% | 0.94 / 0.88 / 0.81 (position known) | Leaks 50, rig damage 12, electronics 8, fishermen 7 |
+| **bulk real weather 2023, 100 km drop, YB3, pre-refit rates (Nov 10, 250 runs)** | **34%** (28–40) verified (26% reporting + 8% tracker). May launches 40%, June 21% | 0.4% | 44% (+4.4% adrift) | 6.4% (2 near the US coast, the rest dead boats on Nova Scotia/Newfoundland) | position known at end 54% | Leaks 84, rig damage 36, fishermen 14, electronics 13. 10.8% still at sea when the data ran out (Nov 30) |
 | historical | **22%** (15–31) | 13% | 60% | 5% | 0.58 / 0.45 / 0.33 | Electronics 28, leaks 16, fishermen 14 |
 | *Microtransat record, west to east (17 boats)* | *1 of 17 finished* | | | | *0.47 (0.23–0.68) / 0.29 (0.11–0.51) / 0.09 (0.01–0.30)* | *Silent, fishermen, rig damage* |
 

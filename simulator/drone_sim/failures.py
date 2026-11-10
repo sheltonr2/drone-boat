@@ -50,14 +50,18 @@ RATE_SETS = {
         "electronics":  {"per_day": 0.0035, "note": "x6 once water is inside; Microtransat open-ocean silent/erratic losses"},
         "comms_silent": {"enabled": True, "per_day": 0.0022},
         "capture":      {"per_day": 0.02, "capture_km": 160, "note": "within ~150 km of land (rings at 100 and 150 km); Microtransat near-land rate 0.019/day"},
-        "knockdown_damage": {"per_day": 0.006, "note": "fitted to Microtransat open-ocean rig/weather losses 0.0048/day"},
+        "knockdown_damage": {"per_day": 0.0017, "note": "per knockdown; refitted 10 Nov 2026 on ERA5/MFWAM seas (~3.5 knockdowns/day) "
+                                                       "so open-ocean rig losses come out at the Microtransat 0.0048/day"},
+        "leak":         {"per_day": 0.00135, "note": "x(1+(Hs/3)^2); base refitted 10 Nov 2026 so the mean on real seas (factor ~1.9) "
+                                                    "matches the glider record 0.0026/day"},
         "early_life":   {"enabled": True, "per_day": 3.0, "tau_days": 7.0, "burn_in_days": 0.0},
     }),
     "planning": _derive(_ORIGINAL, {
         "electronics":  {"per_day": 0.0025, "note": "x6 once water is inside; historical 0.0035 x0.7 for the potted IP68 box + desiccant"},
         "comms_silent": {"enabled": True, "per_day": 0.0011, "note": "historical 0.0022 x0.5 for the backup D-cell and watchdog"},
         "capture":      {"per_day": 0.01, "capture_km": 160, "note": "within ~150 km of land; historical 0.02 x0.5: labels, notices to fishermen, offshore drop"},
-        "knockdown_damage": {"per_day": 0.003, "note": "historical 0.006 x0.5: buoyant, balanced wing on a self-righting hull"},
+        "knockdown_damage": {"per_day": 0.0009, "note": "historical 0.0017 x0.5: buoyant, balanced wing on a self-righting hull"},
+        "leak":         {"per_day": 0.00135, "note": "same as historical: no credit until the hull passes the leak tests"},
         "early_life":   {"enabled": True, "per_day": 3.0, "tau_days": 7.0, "burn_in_days": 14.0},
     }),
 }
