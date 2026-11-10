@@ -9,9 +9,9 @@ The plan is a 1.5 m sealed, self-righting sailboat. It sails west to east across
 | Target | Value |
 | --- | --- |
 | Length overall | \~1.5 m (under the 2.4 m Microtransat small class) |
-| Displacement | 15–25 kg, at least 40% of it in a ballast bulb |
+| Displacement | 15–25 kg, at least 35–40% of it in a ballast bulb (Rev C: about 25 kg, 36% in a 9.2 kg bulb) |
 | Primary propulsion | Rigid wing sail (no cloth to tear) |
-| Backup propulsion | Small brushless thruster, used in calms only |
+| Backup propulsion | None (Rev C, 10 Nov 2026: sail-only, no thruster provision) |
 | Solar | 40–60 W of flexible panels on deck |
 | Battery | \~200 Wh LiFePO4 (12.8 V, 15–20 Ah) |
 | Average power draw | Under 1.5 W while sailing |
@@ -25,15 +25,15 @@ The launch date is open, so the plan is built around testing gates, not deadline
 
 The boat is designed so nothing needs to open at sea: every penetration is either a sealed shaft or a cable gland. Robustness matters more than performance. Every past failure has come from leaks, broken steering, or fouling.
 
-**Hull and keel.** Build a narrow monohull in fiberglass over a foam core. A deep fin keel with a lead bulb makes it self-righting from 180°. Split the hull into two or three sealed compartments filled with closed-cell foam, so one leak can't sink it. Use a weed-shedding swept-back keel and rudder leading edges, because Sargassum and fishing line are common killers.
+**Hull and keel.** Build a narrow monohull in fiberglass over a foam core. A deep fin keel with a lead bulb makes it self-righting from 180°. Rev C: two glassed-in bulkheads split the hull into three spaces; the bow and stern are foam-filled solid, and fitted, removable foam blocks fill the dry bay around the boxes so 3 L or less can flood. The battery sits in its own sealed box. One leak can no longer swamp it. Use a weed-shedding swept-back keel and rudder leading edges, because Sargassum and fishing line are common killers.
 
 **Wing sail.** Use a free-rotating rigid wing with a small tail flap (the Saildrone approach). The wing weathervanes on its own, and a tiny servo on the tail sets the angle of attack. That takes a fraction of the power of winching a sail. Because the wing can always swing to point into the wind, the boat sheds load in a storm.
 
-**Rudder.** Fit a single spade rudder on a stainless or carbon shaft through a lip-sealed bearing tube. Drive it with a sealed linear actuator or a worm-gear servo that holds position with no power. Rudder friction nearly ended the Oshen crossing, so oversize the bearings.
+**Rudders.** Rev C fits two spade rudders, 100 mm either side of the centreline, each on a stainless shaft in its own trunk with its own servo, so either one can steer alone (one rudder servo was a single point of failure in a quarter of simulated voyages). Drive each with a sealed servo (a worm-gear servo that holds position with no power is a later upgrade). Rudder friction nearly ended the Oshen crossing, so oversize the bearings.
 
-**Thruster.** Mount a sealed rim-drive or magnetically coupled thruster that needs no shaft seal. It runs only when the batteries are above 70% and the boat speed is under 0.5 knots.
+**Thruster.** Removed in Rev C. It was never in the sail-only budget, the simulator never used it, and it was one more fitting to leak.
 
-**Power.** Laminate flexible 12 V panels into the deck and wing faces. Route them through an MPPT charge controller (Victron 75/10 or a Genasun GV-5) into a LiFePO4 pack with a cold-charge cutoff. Add a separate small primary lithium cell as a last-resort beacon supply.
+**Power.** Laminate flexible 12 V panels into the deck and wing faces. Route them through an MPPT charge controller (Victron 75/10 or a Genasun GV-5) into a LiFePO4 pack with a cold-charge cutoff. (Rev C drops the separate backup lithium cell: the independent YB3 backup tracker now covers a main-power failure.)
 
 **Electronics.** Mount everything in a sealed IP68 box potted to the hull, with desiccant packs and a humidity sensor. The parts are a Pixhawk-class autopilot, a GPS with a compass, a wind vane with an angle encoder, an ESP32 companion computer, and the RockBLOCK 9603 with an external antenna on the mast.
 
@@ -123,19 +123,20 @@ Every part below runs on 12.8 V or 5 V and works with stock ArduPilot. The picks
 | Leak sensor | [Blue Robotics SOS Leak Sensor](https://www.robotshop.com/products/sos-leak-sensor) | Four probes for the bilge and enclosure; outputs a 3.3/5 V logic signal | 35 |
 | Charge controller | [Genasun GV-5-Li-14.2V](https://reach.dog/shop/build-the-power/products/genasun-gv-5-lithium-14-2-volt-mppt) | 4S LiFePO4 profile, up to 65 W panels, 0.125 mA at night, rated −40 to 85 °C, 10-year warranty | 104 |
 | Battery | [Bioenno BLF-1215A, 12 V 15 Ah LiFePO4](https://www.bioennopower.com/collections/all/ebike-batteries?page=1) | 192 Wh, which matches the 200 Wh target; compact and well known in ham-radio field use | 150 |
-| Backup power | Saft LS33600 lithium D-cell + small 5 V boost converter, diode-ORed onto the comms rail | 17 Ah primary cell that can't be drained by charging faults; keeps the RockBLOCK reporting if the main pack dies | \~35 |
+| Backup tracker | YB3 (Yellowbrick), own battery, GPS and Iridium modem, on platform P19 on the stern post | Keeps reporting if the main box dies (docs/Backup_Tracker.md). Replaces the backup D-cell in Rev C | \~630 (check current) |
 | Solar | Two \~20 W ETFE semi-flexible panels, about 42 × 28 cm each, wired in parallel | Must fit the deck: a [Renogy 50 W flexible](https://offgridstores.com/products/renogy-50-watt-12-volt-flexible-monocrystalline-solar-panel) is 67 × 51 cm, wider than the hull. ETFE resists salt and UV better than PET | \~80 |
-| Thruster (optional) | [Blue Robotics T200 + Basic ESC](https://www.robotshop.com/products/bluerobotics-t200-thruster-w-basic-esc) | Flooded-motor design, so no shaft seal to leak; 316 stainless and polycarbonate | 270 |
-| Rudder actuator | [Savöx SW-1210SG](https://hillsborohobbyshop.com/products/savox-sw-1210sg) waterproof servo | 20 kg·cm at 6 V, steel gears, IP67, 12-bit resolution | \~93 |
+| Thruster | Removed in Rev C | Sail-only | 0 |
+| Rudder actuators | 2 × [Savöx SW-1210SG](https://hillsborohobbyshop.com/products/savox-sw-1210sg) waterproof servo (Rev C: one per rudder) | 20 kg·cm at 6 V, steel gears, IP67, 12-bit resolution | \~186 |
 | Wing-tail actuator | Second Savöx SW-1210SG | Same part as the rudder, so one spare covers both | \~93 |
-| Rudder bearings | [igus iglide](https://www.igus.com/info/industries-marine) J or T500 flanged bushings on a 316 stainless rudder stock | Self-lubricating, saltwater-proof, no grease to wash out | \~20 |
-| Cable penetrations | [Blue Robotics WetLink Penetrator LC (M10)](https://www.robotshop.com/products/bluerobotics-wetlink-penetrator-lc-1-pack-m10-65-mm) × 4 | Rated to 95 m; no glue or potting; one each for solar, servos, antenna and sensors | 52 |
+| Rudder bearings | 4 × [igus iglide](https://www.igus.com/info/industries-marine) J or T500 flanged bushings on two 316 stainless stocks, plus a lip seal and boot on each trunk top | Self-lubricating, saltwater-proof, no grease to wash out; the trunk tops go under in a knockdown | \~55 |
+| Cable penetrations | [Blue Robotics WetLink Penetrator LC (M10)](https://www.robotshop.com/products/bluerobotics-wetlink-penetrator-lc-1-pack-m10-65-mm) × 6 | Rated to 95 m; no glue or potting; solar, antenna/sensors, slip ring, light, and two in the aft bulkhead for the rudder servos | 78 |
 | Electronics box | Hammond 1554-series IP68 polycarbonate enclosure | NEMA 6P rated; UV-stabilized; screw-down gasket lid | \~40 |
 | Radar reflector | [Davis Emergency Radar Reflector 151](https://davisinstruments.com/products/emergency-radar-reflector) | 11.5 in across and about 1 lb, which suits a 1.5 m boat | 38 |
 | Hull | Divinycell H80 foam core (10 mm), 6 oz E-glass, West System 105/205 epoxy | Standard cored-composite layup; forgiving for a first-time builder | \~350 |
-| Ballast | \~8 kg lead, cast into the keel bulb | Gives self-righting stability; scrap lead works | \~60 |
-| Wing sail | XPS foam ribs + glass skin on a 25 mm carbon tube spar, two sealed 316 stainless bearings | Light, rigid, and weathervanes freely | \~120 |
-| Wiring and safety | Marine tinned wire, inline fuses, hi-vis paint, ID plate | Bare copper corrodes within weeks at sea | \~60 |
+| Ballast | \~9.2 kg lead, cast into the keel bulb (Rev C: D72) | Gives self-righting stability; scrap lead works | \~67 |
+| Wing sail | XPS foam ribs + glass skin on a 30 × 26 mm carbon tube spar (Rev C), two 6806-2RS 316 stainless bearings | Light, rigid, weathervanes freely; about 1.8× the bending strength of the 25 mm spar (docs/Storm_Loads.md) | \~155 |
+| Wiring and safety | Marine tinned wire, inline fuses, hi-vis paint, labels, ID plate, all-round white LED light (Rev C) | Bare copper corrodes within weeks at sea | \~85 |
+| Hull fill and battery box (Rev C) | About 60 L of XPS board, bulkhead foam and glass, battery-box materials | A leak can't swamp the boat | \~55 |
 | Testing | Lake-prototype hull (foam and fiberglass, rough finish) | Breaks first so the ocean boat doesn't | \~100 |
 
 **Three changes to the architecture above, prompted by the parts**
@@ -156,6 +157,19 @@ Every part below runs on 12.8 V or 5 V and works with stock ArduPilot. The picks
 - **Effect in the simulator:** the boat stays at about 21 kg with a stronger righting curve (GM 0.20 m vs 0.11 m). Crossings run about 4 days faster in identical weather (about 80 vs 84 days).
 - **Parts:** spar clamp P08 gains a forward socket; new pod P18. Supplies add about 1 kg of lead shot and 246 mm more 12 mm carbon tube (about $10 extra).
 
+**Changed in Rev C (Nov 10, 2026)**
+
+The first Monte Carlo on real weather (250 voyages, 2023) showed what actually ends voyages: a leak swamped the boat in a third of them, the wing broke in a knockdown, and a single rudder servo failure left the boat drifting in a quarter of them. Rev C answers those three:
+
+- **Foam-filled hull, two bulkheads, sealed battery box:** a leak can add at most about 3 kg of water, so it can't swamp the boat (D03, D09; templates T17, T18).
+- **Twin rudders,** each with its own trunk, servo and tiller, 100 mm either side of the centreline: either one steers alone (D05; P11, P12, P13 × 2).
+- **30 × 26 mm spar on 6806-2RS bearings** (was 25 mm / 6805): about 1.8× the bending strength for the knockdown and breaking-crest loads in Storm_Loads.md (D06, D07; P07, P08).
+- **Bulb D72 (was D68), about 9.2 kg:** holds the stability at the higher mass (D04, P14).
+- **YB3 platform P19 and all-round light P20** on the stern post; label areas on the hull and wing (D07, D09).
+- **Removed:** thruster provision and the backup D-cell.
+- **Effect (simulator):** about 25.2 kg all-up (was 20.8), waterline z 98 (was 88), GM 0.187 m (was 0.201), maximum righting arm 0.38 m at 105° (was 0.43), still self-righting from 180°. About 7% slower in the speed model: 5% from the weight, 2% from the second rudder. The real-weather comparison against Rev B is `simulator/run_revC_compare_2023.bat`.
+- **Files for both simulators:** `designs/revC_design.json` (ours; also the default), `designs/boat-sim/randolph_rev_c.yaml` (boat-sim's format), `designs/revC_boat_wing_feathered.stl` and `designs/revC_geometry.json`.
+
 **Changed: launch from the Mid-Atlantic (Nov 8, 2026)**
 
 The boat now launches about 25 km off the Mid-Atlantic coast (Ocean City, Maryland by default) and aims for south-west Ireland; any landfall in Europe counts. The route rides the Gulf Stream and the North Atlantic Current and passes south of the Grand Banks at 42°N, 48°W. It is about 5,400 km instead of 3,000, and a May launch keeps most of it ahead of peak hurricane season.
@@ -171,13 +185,14 @@ These come from the simulator on invented weather, without hurricanes. Virginia 
 
 ## Budget
 
-The recommended parts total about $2,280 with the thruster and $2,010 without it. Both are over the $2,000 limit, so the boat needs to be sail-only plus one or two savings. Airtime is a separate running cost of $40–$60 a month.
+Rev C (10 Nov 2026) parts total about $2,270, plus about $630 for the YB3 backup tracker. Rev B sail-only was about $2,010; Rev C adds about $260 (second servo, rudder bushings and seals, bigger spar and bearings, two more WetLinks, hull foam, battery box, light, lead) and drops the $35 backup D-cell. The thruster was already outside the sail-only figure, so removing it saves nothing here. Airtime is a separate running cost of $40–$60 a month, plus the tracker's airtime.
 
 | Configuration | Hardware total (USD) |
 | --- | --- |
-| All parts, including the T200 thruster | \~2,280 |
-| Sail-only (no thruster) | \~2,010 |
-| Sail-only + Pixhawk 6C clone + skip the backup D-cell | \~1,880 |
+| Rev C as listed | \~2,270 |
+| Rev C + YB3 backup tracker | \~2,900 |
+| Rev C + YB3, with a Pixhawk 6C clone | \~2,800 |
+| *Rev B sail-only, for reference* | *\~2,010* |
 
 Other ways to save:
 
@@ -199,12 +214,12 @@ The boat is most likely to be lost to water getting in, steering failure, or fou
 
 | Risk | Likelihood | Mitigation |
 | --- | --- | --- |
-| Water ingress through seals or the enclosure | High | No hatches; potted cable glands; foam-filled compartments; leak sensors trigger safe mode |
-| Rudder or wing-tail actuator failure | High | Oversized bearings; worm-gear actuators that hold position with no power; wing designed to weathervane safely if the tail fails |
-| Fouling by weed, fishing line or barnacles | High | Swept-back leading edges; antifouling paint; no exposed propeller (use a rim drive or ducted thruster) |
+| Water ingress through seals or the enclosure | High | Rev C: foam-filled hull behind two bulkheads (3 L or less can flood), sealed battery box; one bolted, O-ringed hatch; WetLink cable glands; leak sensors trigger safe mode; pressure and submersion tests |
+| Rudder or wing-tail actuator failure | High | Rev C: twin rudders with separate servos; oversized bushings; wing designed to weathervane safely if the tail fails (a tail-servo backup is a candidate for Rev D) |
+| Fouling by weed, fishing line or barnacles | High | Swept-back leading edges; antifouling paint; no propeller |
 | Knockdown or rollover in a gale | Medium | Self-righting from 180°; rigid wing with no sheets; everything strapped down |
 | Hurricane, or a gale against the Gulf Stream | Medium | Launch in May; follow the National Hurricane Center outlook and send a new route away from forecast tracks; self-righting with no sheets |
-| Power starvation in a long overcast spell | Medium | Deep-sleep budget under 1.5 W; safe mode below 25%; thruster disabled below 70% |
+| Power starvation in a long overcast spell | Medium | Deep-sleep budget under 1.5 W; safe mode below 25%; the navigation light runs only at night (about 0.3 W) |
 | Collision with a ship | Low–medium | Hi-vis paint and radar reflector; avoid shipping lanes with geofences; consider an AIS transponder later |
 | Software hang | Medium | Hardware watchdog; boots into safe mode; autopilot keeps sailing if the ESP32 dies |
 | Theft or capture by fishers | Low | ID plate with contact details and a "research vessel" notice |

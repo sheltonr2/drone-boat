@@ -6,3 +6,4 @@ workspace/
 result_*.json
 .DS_Store
 .venv-bulk/
+build-files/source/out/

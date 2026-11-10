@@ -44,13 +44,13 @@ This measures GM, the boat's stiffness against heeling. It is the number the sel
 2. Float it in still water, sheltered from wind, with the wing removed or tied fore and aft. Zero the inclinometer on the deck.
 3. Put the 1 kg weight on the centreline, then move it **30 cm to one side** and read the heel angle. Move it 30 cm to the other side and read again.
 
-The model expects about **4.1°** for 1 kg moved 30 cm. Work out the real GM:
+The Rev C model expects about **3.6°** for 1 kg moved 30 cm (Rev B: 4.1°). Work out the real GM:
 
 ```
 python -m drone_sim.calibrate incline 1.0 0.30 <heel angles in degrees, comma separated> --mass <weighed kg>
 ```
 
-If the measured GM is more than about 15% below the model's 0.20 m, find out why (a heavy deck fitting, or a light bulb) before going to sea.
+If the measured GM is more than about 15% below the model's 0.19 m (Rev C; Rev B 0.20 m), find out why (a heavy deck fitting, or a light bulb) before going to sea.
 
 ## Test C: self-righting (15 minutes)
 
@@ -83,3 +83,11 @@ Any failure resets the 14-day count after the fix. Record the start date and the
 - **Test C, spar proof load:** with the hull clamped, hang 32 kg from the wing spar 0.8 m above the lower bearing for one minute (≈250 N·m, the knockdown case in [Storm_Loads.md](Storm_Loads.md)). There must be no cracks or permanent set. With the recommended 30–32 mm spar, repeat at 38 kg.
 - **Test F, backup tracker:** during the coastal trial, switch the main system off for 48 hours and confirm that the backup tracker's reports keep arriving ([Backup_Tracker.md](Backup_Tracker.md)).
 
+
+## Additions for Rev C (10 Nov 2026)
+
+- **Test G, compartment leak test (before the deck goes on, and again on the finished hull):** pressurise each space to about 0.1 bar through a temporary fitting and brush soapy water over every joint, bulkhead tape and penetration. No bubbles anywhere. Then submerge the finished hull for 72 hours and weigh any water you can sponge out of each space: it must be zero.
+- **Test H, free-flood volume:** with the dry-bay foam blocks and both boxes in place, fill the dry bay with water from a measuring jug through the hatch until it reaches the deck. It must take **3 L or less** (the simulator's `flood_limit_kg`). If it takes more, cut more blocks. Sponge it dry and leave the hatch open to dry for a day.
+- **Test I, one-rudder steering:** on the lake, disconnect one rudder servo (leave the blade free) and sail the 20 km gate course on the other alone; then repeat with the first one clamped at 10° to the side. The boat must hold course within ±15° in both cases. Then swap sides.
+- **Test C, spar proof load (Rev C):** with the 30 × 26 mm spar fitted, hang 38 kg (1.2× the knockdown case) 0.8 m above the lower bearing for one minute; no cracks, no permanent set.
+- **Test B (Rev C):** the expected heel and GM above are for the Rev C mass of about 25 kg. Weigh the boat first: the model expects about 25.2 kg. More than 26 kg means the foam fill or a laminate came out heavy; update the design file.

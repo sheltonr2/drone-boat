@@ -7,6 +7,8 @@ BMAX = 200.0          # max half-beam (400 mm beam)
 X_BMAX = 0.55         # fraction of L where beam is max
 B_TRANSOM = 150.0     # transom half-beam
 DECK_Z = 230.0
+DWL = 98.0            # Rev C design waterline at about 25 kg all-up (Rev B: 90 at about 21 kg)
+MASS_KG = 25.2        # Rev C all-up mass, from the simulator's mass model
 SECTION_N = 2.2       # superellipse exponent of the sections (round bilge)
 
 def half_beam(x):
@@ -51,31 +53,60 @@ def naca(t, c=1.0, n=80):
 
 # ---- appendages -------------------------------------------------------
 FIN = dict(root_chord=170, tip_chord=150, root_le_x=657, tip_le_x=670, root_z=0, tip_z=-430, t=0.12)
-BULB = dict(length=320, dia=68, nose_x=579, axis_z=-430 - 4, max_at=0.40)   # lead, ~8 kg
-RUDDER = dict(stock_x=1400, chord=120, stock_from_le=22, top_z=40, bot_z=-190, t=0.12, stock_d=12)
+BULB = dict(length=320, dia=72, nose_x=579, axis_z=-430 - 6, max_at=0.40)   # Rev C: D72 (was D68), lead ~9.2 kg
+RUDDER = dict(stock_x=1400, chord=120, stock_from_le=22, top_z=72, bot_z=-158, t=0.12, stock_d=12, trunk_top_z=175)   # Rev C: top at the hull surface 100 mm off centre
+RUDDER_Y = (-100.0, 100.0)   # Rev C: twin rudders, each on its own stock, trunk and servo, 100 mm either side of the centreline
 LEAD_DENSITY = 11.34e-6  # kg/mm^3
 
 # ---- rig ----------------------------------------------------------------
 MAST_X = 600.0
-SPAR_OD = 25.0
+SPAR_OD = 30.0          # Rev C: 30 x 26 carbon (was 25 x 22)
+SPAR_ID = 26.0
 WING = dict(chord=300, span=1000, pivot_from_le=66, root_z=300, t=0.15)
 MAST_TUBE = dict(od=60.3, id=52.5, top_z=250)          # 2 in. sch 40 PVC, bonded hull-to-deck
-BEARING = dict(id=25, od=37, w=7, name="6805-2RS stainless")
+BEARING = dict(id=30, od=42, w=7, name="6806-2RS stainless")   # Rev C (was 6805, 25 x 37 x 7)
 BOOM = dict(od=12.0, z=276, length=600)                # spar axis to tail pivot
 TAIL = dict(chord=120, span=200, pivot_from_le=24, bot_z=300, t=0.12, pivot_d=6)
 # Rev B: counterweight pod on a 12 mm carbon arm, pod axis 300 forward of the spar axis, at boom height
-CWARM = dict(reach=300, tube_len=246, od=12.0, z=276, pod_od=64, pod_h=74, pod_bot_z=264, lead_kg=0.8)
+CWARM = dict(reach=300, tube_len=244, od=12.0, z=276, pod_od=64, pod_h=74, pod_bot_z=264, lead_kg=0.8)   # unchanged in Rev C: the heavier spar sits on the pivot axis
 
 # ---- deck & stern -------------------------------------------------------
 HATCH = dict(x0=330, x1=530, w=220, lid_margin=30)
 SOLAR = [dict(x0=650, x1=1070, w=280), dict(x0=1080, x1=1480, w=280)]
 STUB = dict(x=1530, od=20.0, bot_z=150, top_z=650)
+# Rev C additions on the stub: YB3 backup tracker platform (P19) and all-round white light (P20)
+YB3 = dict(z=480, plate_l=170, plate_w=100, box=(150, 86, 32), kg=0.33)   # YB3 size approximate: confirm on the unit
+NAVLIGHT = dict(z=600, reach=45, puck_d=30)
 VANE_Z = 650
 ANT_Z = 560
 
 # ---- interior -----------------------------------------------------------
 BATTERY = dict(x0=780, x1=960, w=80, h=170)
+# Rev C: battery in its own sealed box (laminated foam/glass, O-ring lid like the hatch)
+BATTBOX = dict(x0=774, x1=966, w=96, z0=34, z1=213, wall=4)   # removable; comes out through the hatch
+# Rev C: watertight subdivision and foam fill
+BULKHEADS = (300.0, 1260.0)          # glassed-in 10 mm foam bulkheads (templates T17, T18)
+FOAM_DENSITY = 28e-9                 # kg/mm^3, extruded polystyrene (XPS) blocks
+FREE_FLOOD_L = 3.0                   # target: floodable volume left in the dry bay after the fitted blocks
 EBOX = dict(x0=980, x1=1220, w=160, h=90)
+
+def hull_z_at(x, y):
+    """Height of the outside hull surface at station x, distance y off the centreline (bottom half)."""
+    zk, zd = float(keel_z(x)), float(deck_z(x))
+    zz = np.linspace(zk, zd, 400)
+    yy = np.array([half_beam_at(x, z) for z in zz])
+    return float(np.interp(abs(y), yy, zz))
+
+def inner_volume(x0, x1, skin=11.0, nx=120, nz=80):
+    """Volume (litres) inside the hull skin between stations x0 and x1, up to the underside of the deck."""
+    xs = np.linspace(x0, x1, nx); A = []
+    for x in xs:
+        zk, zd = float(keel_z(x)) + skin, float(deck_z(x)) - skin
+        if zd <= zk: A.append(0.0); continue
+        zz = np.linspace(zk, zd, nz)
+        yy = np.array([max(half_beam_at(x, z) - skin, 0.0) for z in zz])
+        A.append(2 * np.trapezoid(yy, zz))
+    return float(np.trapezoid(A, xs)) / 1e6
 
 def bulb_radius(xl):
     """Radius along bulb from nose (xl in 0..length)."""

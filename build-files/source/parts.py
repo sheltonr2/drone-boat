@@ -130,35 +130,36 @@ def p06():
 
 # ------------------------------------------------------------------- rig
 @part("P07", "Mast bearing housing", 1, "PETG or ASA, 100% infill",
-      ["Bonds into the top of the 2 in. sch 40 PVC mast tube (ID 52.5); flange rests on the tube end.",
-       "Two 6805-2RS stainless bearings (25x37x7), 78 mm apart, carry the 25 mm carbon wing spar.",
+      ["Rev C: bonds into the top of the 2 in. sch 40 PVC mast tube (ID 52.5); flange rests on the tube end.",
+       "Two 6806-2RS stainless bearings (30x42x7), 78 mm apart, carry the 30 mm carbon wing spar (was 6805 / 25 mm).",
+       "Wall between the bearing seat and the tube is 5 mm: print 100% infill and check the fit in the PVC tube.",
        "Printed flange-down as modelled."],
-      {"OD": 52.3, "Flange": "D66 x 5", "Length": 85, "Bearing seats": "2 x D37.05 x 7"})
+      {"OD": 52.3, "Flange": "D66 x 5", "Length": 85, "Bearing seats": "2 x D42.05 x 7", "Spar clearance": "D31"})
 def p07():
     solid = union(cyl(33, 0, 5), cyl(26.15, 5, 85))
-    return diff(solid, cyl(14.5, -1, 86), cyl(18.525, -1, 7), cyl(18.525, 78, 86)), ((-33, 33), (-33, 33), (0, 85))
+    return diff(solid, cyl(15.5, -1, 86), cyl(21.025, -1, 7), cyl(21.025, 78, 86)), ((-33, 33), (-33, 33), (0, 85))
 
 @part("P08", "Spar clamp with tail-boom and counterweight-arm sockets", 1, "ASA or PETG, 100% infill",
-      ["Rev B: clamps the 25 mm spar just below the wing root (2 x M5 bolts through the side ears).",
+      ["Rev C: clamps the 30 mm spar just below the wing root (2 x M5 bolts through the side ears). Rev B was 25 mm.",
        "Aft socket (+x): 12 mm carbon tail boom, 40 deep. Forward socket (-x): 12 mm carbon counterweight arm, 40 deep.",
        "Pin each tube with an M4 bolt through the D4.3 vertical holes. Both tube axes are 11 mm above the bottom face.",
        "Line the forward socket up with the wing chord: the arm must point straight at the wing's leading edge."],
-      {"Collar": "OD41, ID25.2 x 40", "Boom socket (aft)": "D12.2 x 40", "Arm socket (fwd)": "D12.2 x 40",
-       "Ears (side)": "24 x 22", "Overall": "124 x 57 x 40"})
+      {"Collar": "OD46, ID30.2 x 40", "Boom socket (aft)": "D12.2 x 37", "Arm socket (fwd)": "D12.2 x 37",
+       "Ears (side)": "24 x 22", "Overall": "126 x 62 x 40"})
 def p08():
-    collar = cyl(20.5, 0, 40)
-    boss = box(14, 62, -11, 11, 0, 22)
-    fboss = box(-62, -14, -11, 11, 0, 22)
-    ears = box(-12, 12, 14, 36, 0, 40)
+    collar = cyl(23, 0, 40)
+    boss = box(16, 63, -11, 11, 0, 22)
+    fboss = box(-63, -16, -11, 11, 0, 22)
+    ears = box(-12, 12, 16, 39, 0, 40)
     solid = union(collar, boss, fboss, ears)
-    bore = cyl(12.6, -1, 41)
-    boom = hole_x(6.1, 22, 63, 0, 11)
-    arm = hole_x(6.1, -63, -22, 0, 11)
-    slit = box(-1, 1, 10, 37, -1, 41)
-    b1 = hole_x(2.75, -13, 13, 27, 10); b2 = hole_x(2.75, -13, 13, 27, 30)
+    bore = cyl(15.1, -1, 41)
+    boom = hole_x(6.1, 26, 64, 0, 11)
+    arm = hole_x(6.1, -64, -26, 0, 11)
+    slit = box(-1, 1, 12, 40, -1, 41)
+    b1 = hole_x(2.75, -13, 13, 30, 10); b2 = hole_x(2.75, -13, 13, 30, 30)
     pin = cyl(2.15, -1, 23, c1=50, c2=0)
     fpin = cyl(2.15, -1, 23, c1=-50, c2=0)
-    return diff(solid, bore, boom, arm, slit, b1, b2, pin, fpin), ((-63, 63), (-21, 37), (0, 40))
+    return diff(solid, bore, boom, arm, slit, b1, b2, pin, fpin), ((-64, 64), (-24, 40), (0, 40))
 
 def servo_cradle(x0, base_z=0):
     """Pocket for a Savox SW-1210SG (40.6 x 20.7 x 42 body) standing output-up, with tab ledge
@@ -204,8 +205,8 @@ def p10(half="lower"):
     return diff(solid, *cuts), ((0, 120), (-8, 8), (0, 100))
 
 # ---------------------------------------------------------------- rudder
-@part("P11", "Rudder tiller arm", 1, "PETG, 100% infill",
-      ["Clamps the 12 mm 316 rudder stock (M4 bolt through the ears).",
+@part("P11", "Rudder tiller arm", 2, "PETG, 100% infill",
+      ["Rev C: one per rudder (two rudders). Clamps the 12 mm 316 rudder stock (M4 bolt through the ears).",
        "Cross-drill the stock 3 mm through the D3.2 hole and fit a 316 pin.",
        "Pushrod holes (D2.2) at 35, 45 and 55 mm from the stock give three throw settings."],
       {"Hub": "D26 x 16", "Arm": "65 x 12 x 6", "Stock bore": "D12.1"})
@@ -218,8 +219,8 @@ def p11():
             hole_y(1.6, -14, 14, 0, 11)] + [cyl(1.1, -1, 7, c1=r, c2=0) for r in (35, 45, 55)]
     return diff(solid, *cuts), ((-25, 66), (-14, 14), (0, 16))
 
-@part("P12", "Rudder servo mount", 1, "PETG or ASA",
-      ["Bonds to a glass-reinforced pad on the hull floor beside the rudder tube (4 x M4 or bond + screw).",
+@part("P12", "Rudder servo mount", 2, "PETG or ASA",
+      ["Rev C: one per rudder, each with its own servo. Bonds to a glass-reinforced pad beside its rudder trunk, in a pocket in the aft foam.",
        "Holds a Savox SW-1210SG output-up, level with the tiller arm.",
        "Tab screw slots allow 47.5-51.5 mm tab spacing: check your servo before printing."],
       {"Base": "100 x 54 x 5", "Cradle": "60 x 30 x 48"})
@@ -229,8 +230,8 @@ def p12():
     holes = [cyl(2.15, -1, 6, c1=x, c2=y) for x in (-12, 72) for y in (-19, 19)]
     return diff(union(base, blk), *cuts, *holes), ((-21, 81), (-28, 28), (0, 48))
 
-@part("P13", "Rudder blade core, upper and lower halves", 1, "PETG, 15% gyroid",
-      ["NACA 0012, 120 mm chord; each half 115 mm, printed standing up.",
+@part("P13", "Rudder blade core, upper and lower halves", 2, "PETG, 15% gyroid",
+      ["Rev C: two blades (print two of each half). NACA 0012, 120 mm chord; each half 115 mm, printed standing up.",
        "Slide both halves on the 12 mm 316 stock, pin each with a 4 mm 316 pin (D4.2 holes), fill the joint with epoxy.",
        "Sand, then laminate 2 layers of 6 oz glass over the whole blade.",
        "Stock sits 22 mm behind the leading edge (about 15% balance area)."],
@@ -245,8 +246,8 @@ def p13(half="upper"):
       ["Pattern for a plaster or sand mould: do NOT pour lead into the print.",
        "Halves split at 160 mm; join with two 4 mm dowels (D4.2 holes) and fill/sand smooth.",
        "Slot on top matches the fin tip (NACA 0012, 150 mm chord), 15 mm deep.",
-       "Finished lead bulb: about 8.2 kg; allow 1-2% for shrinkage when sizing the mould."],
-      {"Length": 320, "Max diameter": 68, "Fin slot": "150 x 18 x 15"})
+       "Rev C: 72 mm diameter (was 68). Finished lead bulb about 9.2 kg; allow 1-2% for shrinkage when sizing the mould."],
+      {"Length": 320, "Max diameter": 72, "Fin slot": "150 x 18 x 15"})
 def p14(half="fwd"):
     Lb = D.BULB['length']; R = D.bulb_radius
     split = 160.0
@@ -272,7 +273,7 @@ def p14(half="fwd"):
             d = np.maximum(d, -dw)
         return d
     h = split if half == "fwd" else Lb - split
-    return f, ((-35, 35), (-35, 35), (0, h))
+    return f, ((-37, 37), (-37, 37), (0, h))
 
 # ---------------------------------------------------------------- interior
 @part("P15", "Electronics tray", 1, "PETG",
@@ -294,7 +295,7 @@ def p15():
     return diff(union(plate, rim), *cuts), ((-101, 101), (-66, 66), (0, 6))
 
 @part("P16", "Battery strap anchor", 4, "PETG",
-      ["Bond to the hull floor with thickened epoxy around the battery; 25 mm webbing passes under the bridge.",
+      ["Rev C: bond to the hull floor around the sealed battery box; the straps hold the box (the battery is wedged inside it).",
        "Use two straps with cam buckles; strap tension holds the battery against capsize loads."],
       {"Base": "60 x 24 x 3", "Webbing slot": "28 x 4"})
 def p16():
@@ -311,7 +312,7 @@ def p17():
     return diff(cyl(20, 0, 10), cyl(5.25, -1, 11)), ((-20, 20), (-20, 20), (0, 10))
 
 @part("P18", "Wing counterweight pod", 1, "PETG or ASA, 4 walls, 40% infill",
-      ["Rev B: balances the rotating wing, tail and boom on the spar axis.",
+      ["Balances the rotating wing, tail and boom on the spar axis (Rev B; unchanged in Rev C).",
        "Sits on the forward end of the 12 mm carbon arm; pod axis 300 mm forward of the spar axis. Pin with M4 (D4.3 hole).",
        "Fill the open top with lead shot + epoxy (about 0.8 kg, roughly 115 cm3) a little at a time,",
        "until the assembled rig balances level on the spar with the tail at 0 deg. Cap the top with epoxy.",
@@ -326,6 +327,44 @@ def p18():
     pin = cyl(2.15, -1, 29, c1=46, c2=0)
     return diff(solid, cav, sock, pin), ((-33, 61), (-33, 33), (0, 74))
 
+# ---------------------------------------------------------------- Rev C stub fittings
+@part("P19", "Backup tracker (YB3) platform clamp", 1, "ASA, 5 walls, 40% infill",
+      ["Rev C: clamps the 20 mm stern stub at z 480, between the radar reflector and the Iridium antenna.",
+       "The platform points forward (toward the bow), plate face up, clear of the tail's 700 mm sweep by about 55 mm.",
+       "Strap the YB3 down with two 316 hose clamps or 20 mm webbing through the four slots; add a bead of sealant under it.",
+       "The YB3 size here is approximate: check your unit before printing. Squeeze slot closed with an M4 bolt."],
+      {"Plate": "160 x 100 x 5", "Collar": "OD32, ID20.3 x 25", "Strap slots": "4 x 24 x 5"})
+def p19():
+    collar = cyl(16, 0, 25)
+    plate = box(-170, -10, -50, 50, 0, 5)
+    rib = prism(np.array([[5, -14], [5, -110], [25, -14]]), -3, 3, axis='y')     # (z, x)
+    ears = box(14, 30, -7, 7, 0, 25)
+    solid = union(collar, plate, rib, ears)
+    bore = cyl(10.15, -1, 26)
+    slit = box(9, 31, -1, 1, -1, 26)
+    bolt = hole_y(2.15, -8, 8, 23, 12.5)
+    slots = [box(xc - 12, xc + 12, sy * 44 - 2.5, sy * 44 + 2.5, -1, 6) for xc in (-140, -45) for sy in (-1, 1)]
+    return diff(solid, bore, slit, bolt, *slots), ((-171, 31), (-51, 51), (0, 25))
+
+@part("P20", "Navigation light clamp", 1, "ASA",
+      ["Rev C: clamps the stub at z 600, below the vane; holds a 30 mm all-round white LED puck 45 mm aft of the stub.",
+       "Cable runs down the D5 hole and along the groove into the stub through a 6 mm hole drilled in the tube.",
+       "The controller switches the light on at night (about 0.3 W). Squeeze slot closed with an M4 bolt."],
+      {"Collar": "OD32, ID20.3 x 20", "Puck seat": "D30.5 x 5 deep", "Reach": 45})
+def p20():
+    collar = cyl(16, 0, 20)
+    arm = box(10, 50, -9, 9, 0, 9)
+    seat = cyl(18, 0, 10, c1=45, c2=0)
+    ears = box(-30, -14, -7, 7, 0, 20)
+    solid = union(collar, arm, seat, ears)
+    bore = cyl(10.15, -1, 21)
+    pocket = cyl(15.25, 5, 11, c1=45, c2=0)
+    cable = cyl(2.5, -1, 6, c1=45, c2=0)
+    groove = box(12, 45, -2, 2, -1, 3)
+    slit = box(-31, -9, -1, 1, -1, 21)
+    bolt = hole_y(2.15, -8, 8, -23, 10)
+    return diff(solid, bore, pocket, cable, groove, slit, bolt), ((-31, 64), (-19, 19), (0, 20))
+
 # build list: (file stem, part id, builder kwargs)
 BUILD = [("P01_vane_housing", "P01", {}), ("P02_vane_arm", "P02", {}), ("P03_sensor_cap", "P03", {}),
          ("P04_magnet_holder", "P04", {}), ("P05_antenna_platform", "P05", {}), ("P06_transom_bracket", "P06", {}),
@@ -335,4 +374,5 @@ BUILD = [("P01_vane_housing", "P01", {}), ("P02_vane_arm", "P02", {}), ("P03_sen
          ("P12_rudder_servo_mount", "P12", {}), ("P13a_rudder_core_upper", "P13", {"half": "upper"}),
          ("P13b_rudder_core_lower", "P13", {"half": "lower"}), ("P14a_bulb_pattern_fwd", "P14", {"half": "fwd"}),
          ("P14b_bulb_pattern_aft", "P14", {"half": "aft"}), ("P15_electronics_tray", "P15", {}),
-         ("P16_battery_strap_anchor_x4", "P16", {}), ("P17_penetrator_pad_x4", "P17", {}), ("P18_counterweight_pod", "P18", {})]
+         ("P16_battery_strap_anchor_x4", "P16", {}), ("P17_penetrator_pad_x4", "P17", {}), ("P18_counterweight_pod", "P18", {}),
+         ("P19_yb3_platform", "P19", {}), ("P20_nav_light_clamp", "P20", {})]

@@ -1,13 +1,14 @@
 """Boat design parameters (SI units: metres, kilograms, seconds, degrees where noted).
 
-A design is a nested dict that round-trips to JSON. `default_design()` returns the Rev B
-1.5 m drone from the drawing set. Coordinates follow the drawings: x aft from the bow,
+A design is a nested dict that round-trips to JSON. `default_design()` returns the Rev C
+1.5 m drone from the drawing set (10 Nov 2026); `default_design("revB")` returns Rev B. Coordinates follow the drawings: x aft from the bow,
 y to port, z up from the hull bottom at midships.
 """
 import copy, json, hashlib
 
 DEFAULT = {
-    "name": "Rev B 1.5 m solar-sail drone",
+    "name": "Rev C 1.5 m solar-sail drone",
+    "revision": "C",
     "hull": {
         "length": 1.50, "beam": 0.40, "depth": 0.23,
         "max_beam_at": 0.55,            # fraction of length
@@ -16,6 +17,9 @@ DEFAULT = {
         "section_exponent": 2.2,        # 2 = round bilge, larger = boxier
         "laminate_kg_m2": 1.6,          # foam core + glass + resin, hull and deck
         "stl": None,                    # optional uploaded mesh: {"path":..., "role": "hull"|"full", "units": "mm"|"m"}
+        # Rev C: hull foam-filled (XPS blocks) behind two glassed-in bulkheads (x 0.30, 1.26), battery in its own sealed
+        # box. A leak can only fill the free space left in the dry bay, so it can no longer swamp the boat.
+        "flood_limit_kg": 3.0,
     },
     "keel": {
         "x_le_root": 0.657, "span": 0.43, "root_chord": 0.17, "tip_chord": 0.15,
@@ -26,19 +30,20 @@ DEFAULT = {
         "kg_per_m2_skin": 1.2, "core_density": 35.0, "rod_kg": 0.65,
     },
     "bulb": {
-        "length": 0.32, "diameter": 0.068, "max_at": 0.40,
+        "length": 0.32, "diameter": 0.072, "max_at": 0.40,   # Rev C: D72 (was D68), ~9.2 kg
         "nose_from_tip_le": -0.091,     # bulb nose position relative to fin tip LE (m, + aft)
         "density": 11340.0,             # lead
     },
     "rudder": {
         "stock_x": 1.40, "chord": 0.12, "span": 0.23, "stock_from_le": 0.022,
-        "top_z": 0.04, "thickness": 0.12, "max_angle_deg": 35.0, "rate_deg_s": 60.0,
+        "y_offsets": [-0.10, 0.10],     # Rev C: twin rudders, each with its own servo and trunk ([0.0] = one, Rev B)
+        "top_z": 0.072, "thickness": 0.12, "max_angle_deg": 35.0, "rate_deg_s": 60.0,   # top at the hull surface at y 100
         "kg_per_m2_skin": 1.0, "stock_kg": 0.37,
     },
     "wing": {
         "mast_x": 0.60, "span": 1.00, "chord": 0.30, "thickness": 0.15,
         "pivot_from_le": 0.066, "root_z": 0.30,
-        "skin_kg_m2": 0.45, "core_density": 30.0, "spar_kg": 0.32,
+        "skin_kg_m2": 0.45, "core_density": 30.0, "spar_kg": 0.43,    # Rev C: 30 x 26 carbon spar (was 25 x 22, 0.32)
         "buoyant": True,                # sealed foam core (True) or free-flooding (False)
         "balanced": True,               # counterweight puts the rig CG on the pivot axis
         "counterweight_arm": 0.30,      # m forward of the pivot (0.036 = nose pocket only)
@@ -50,10 +55,15 @@ DEFAULT = {
     },
     "equipment": {   # point masses: [kg, x, y, z]
         "battery": [2.0, 0.87, 0.0, 0.10],
-        "electronics_box": [1.2, 1.10, 0.0, 0.10],
+        "electronics_box": [1.1, 1.10, 0.0, 0.10],          # Rev C: no backup D-cell (the YB3 covers it)
         "solar_panels": [1.0, 1.06, 0.0, 0.235],
         "mast_tube_and_housing": [0.45, 0.60, 0.0, 0.13],
-        "rudder_servo_and_tube": [0.25, 1.36, 0.0, 0.14],
+        "rudder_servos_and_trunks": [0.50, 1.36, 0.0, 0.14],   # Rev C: two of each
+        "foam_fill_xps": [1.65, 0.80, 0.0, 0.13],           # Rev C: ~59 L of XPS at 28 kg/m3
+        "bulkheads": [0.20, 0.78, 0.0, 0.12],               # Rev C: x 0.30 and 1.26, 10 mm foam + glass
+        "battery_box": [0.35, 0.87, 0.0, 0.10],             # Rev C: sealed box with O-ring lid
+        "yb3_tracker_and_platform": [0.40, 1.53, 0.0, 0.48],  # Rev C: P19 on the stern stub
+        "nav_light": [0.06, 1.53, 0.0, 0.60],               # Rev C: all-round white LED on P20
         "stern_stub_vane_antenna_reflector": [0.9, 1.53, 0.0, 0.42],
         "keel_box_and_backing": [0.5, 0.745, 0.0, 0.02],
         "misc_fittings": [0.6, 0.80, 0.0, 0.12],
@@ -106,7 +116,30 @@ DEFAULT = {
 }
 
 
-def default_design():
+# Rev B (8 Nov 2026), kept so older results can be reproduced and compared.
+REV_B_CHANGES = {
+    "name": "Rev B 1.5 m solar-sail drone", "revision": "B",
+    "hull": {"flood_limit_kg": None},
+    "bulb": {"diameter": 0.068},
+    "rudder": {"y_offsets": [0.0], "top_z": 0.04},
+    "wing": {"spar_kg": 0.32},
+}
+REV_B_DROP_EQUIPMENT = ("rudder_servos_and_trunks", "foam_fill_xps", "bulkheads", "battery_box",
+                        "yb3_tracker_and_platform", "nav_light")
+
+
+def _rev_b():
+    d = merge(DEFAULT, REV_B_CHANGES)
+    for k in REV_B_DROP_EQUIPMENT:
+        d["equipment"].pop(k, None)
+    d["equipment"]["electronics_box"] = [1.2, 1.10, 0.0, 0.10]
+    d["equipment"]["rudder_servo_and_tube"] = [0.25, 1.36, 0.0, 0.14]
+    return d
+
+
+def default_design(name=None):
+    if name and name.lower().replace(" ", "").replace("_", "") in ("revb", "b"):
+        return _rev_b()
     return copy.deepcopy(DEFAULT)
 
 
@@ -122,8 +155,16 @@ def merge(base, over):
 
 
 def load(path):
+    """A saved design merged onto its own revision's defaults. Files saved before Rev C carry no
+    "revision" key: they are Rev B designs, so they merge onto Rev B, not Rev C."""
     with open(path, "r", encoding="utf-8") as fh:
-        return merge(DEFAULT, json.load(fh))
+        d = json.load(fh)
+    base = DEFAULT if d.get("revision", "B") == "C" else _rev_b()
+    if base is not DEFAULT:
+        eq = d.get("equipment")
+        if eq is not None:            # a full equipment list replaces the base list (no Rev C items sneak in)
+            base = copy.deepcopy(base); base["equipment"] = {}
+    return merge(base, d)
 
 
 def save(design, path):

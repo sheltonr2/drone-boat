@@ -182,7 +182,7 @@ class SixDOF:
             z = r["top_z"] - r["span"]*(i + 0.5)/3
             ctr = np.array([le + 0.25*r["chord"], 0, z])
             self.rudder_idx.append(len(strips))
-            strips.append(("rudder", S @ (ctr - cg), r["chord"]*r["span"]/3, min(2*r["span"]/r["chord"], 8),
+            strips.append(("rudder", S @ (ctr - cg), r["chord"]*r["span"]/3*len(r.get("y_offsets") or [0.0]), min(2*r["span"]/r["chord"], 8),
                            np.array([0, 1.0, 0]), r["chord"]))
         self.rudder_stock_b = S @ (np.array([r["stock_x"], 0, 0]) - cg)
         self.fixed_strips = strips

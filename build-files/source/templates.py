@@ -45,7 +45,7 @@ def frame_template(i, x):
     frame = np.r_[inner, [[inner[-1, 0], datum], [inner[0, 0], datum]]]
     polys = [(outer, "HULL_OUTSIDE", False), (frame, "FRAME_CUT", True),
              (np.array([[0, float(D.keel_z(x)) - 15], [0, datum + 10]]), "CENTRELINE", False),
-             (np.array([[-float(D.half_beam(x)) - 20, 90], [float(D.half_beam(x)) + 20, 90]]), "DWL", False)]
+             (np.array([[-float(D.half_beam(x)) - 20, D.DWL], [float(D.half_beam(x)) + 20, D.DWL]]), "DWL", False)]
     xl = -0.6 * float(D.half_beam(x))
     texts = [(xl, datum - 22, 6, f"T{i:02d}  STATION {i}  (x = {x:.0f})", "TEXT"),
              (xl, datum - 32, 3.5, "Cut on the solid FRAME line (hull minus 11 mm).", "TEXT"),
@@ -95,6 +95,22 @@ def hatch_template():
                        (-l/2 + 10, 10, 4, "x along the boat (bow to the left).", "TEXT")],
                 desc="Hatch lid, opening and bolt pattern")
 
+def bulkhead_template(n, x):
+    from drawings import bulkhead_outline
+    P = bulkhead_outline(x)
+    y, z = D.section(x, 120)
+    outer = np.r_[np.c_[-y[::-1], z[::-1]], np.c_[y[1:], z[1:]]]
+    polys = [(P, "BULKHEAD_CUT", True), (outer, "HULL_OUTSIDE", False),
+             (np.array([[0, float(D.keel_z(x)) - 10], [0, float(D.deck_z(x)) + 10]]), "CENTRELINE", False),
+             (np.array([[-float(D.half_beam(x)) - 20, D.DWL], [float(D.half_beam(x)) + 20, D.DWL]]), "DWL", False)]
+    circles = [(yy, 160, 5.25, "HOLES") for yy in (-60, 60)] if x > 1000 else []
+    xl = -0.55 * float(D.half_beam(x))
+    texts = [(xl, float(D.deck_z(x)) - 50, 6, f"T{n}  BULKHEAD x {x:.0f}  (Rev C)", "TEXT"),
+             (xl, float(D.deck_z(x)) - 60, 3.5, "10 mm H80 foam + 2 x 6 oz glass each side. Cut on the solid line.", "TEXT")]
+    if circles:
+        texts.append((xl, float(D.deck_z(x)) - 67, 3.5, "Holes: WetLink M10 for the two rudder-servo cables.", "TEXT"))
+    return dict(name=f"T{n}_bulkhead_x{x:.0f}", polys=polys, circles=circles, texts=texts, desc=f"Watertight bulkhead at x {x:.0f}")
+
 def all_templates():
     T = []
     for i, x in enumerate(np.arange(0, 1501, 150)):
@@ -104,11 +120,11 @@ def all_templates():
     F = D.FIN
     T.append(foil_template("T12_fin_root", 0.12, F['root_chord'], [(50, 6), (105, 6)], "T12  FIN ROOT  NACA 0012  chord 170  (rod holes D12)"))
     T.append(foil_template("T13_fin_tip", 0.12, F['tip_chord'], [(37, 6), (92, 6)], "T13  FIN TIP  NACA 0012  chord 150  (rod holes D12)"))
-    T.append(foil_template("T14_rudder", 0.12, D.RUDDER['chord'], [(22, 6)], "T14  RUDDER  NACA 0012  chord 120  (stock D12)"))
-    nose = np.array([[4, -6], [29, -6], [29, 6], [4, 6]])
-    T.append(foil_template("T15_wing", 0.15, D.WING['chord'], [(66, 12.7)], "T15  WING  NACA 0015  chord 300  (spar D25.4)",
-                           extra=[(nose, "WEIGHT_POCKET", True)]))
+    T.append(foil_template("T14_rudder", 0.12, D.RUDDER['chord'], [(22, 6)], "T14  RUDDER  NACA 0012  chord 120  (stock D12)  MAKE 2"))
+    T.append(foil_template("T15_wing", 0.15, D.WING['chord'], [(66, D.SPAR_OD / 2 + 0.2)], "T15  WING  NACA 0015  chord 300  (Rev C spar bore D30.4)"))
     T.append(hatch_template())
+    for k, xb in enumerate(D.BULKHEADS):
+        T.append(bulkhead_template(17 + k, xb))
     return T
 
 # ------------------------------------------------------------------ tiled PDF
@@ -119,7 +135,7 @@ def draw_template(ax, T):
         if layer in ("CENTRELINE", "CHORDLINE", "QUARTER_CHORD"): style = dict(color="#777", lw=0.3, ls="-.")
         if layer == "DWL": style = dict(color="#3b8bd4", lw=0.4)
         if layer == "HULL_OUTSIDE": style = dict(color="#777", lw=0.4, ls="--")
-        if layer in ("FRAME_CUT",): style = dict(color="#111", lw=0.8)
+        if layer in ("FRAME_CUT", "BULKHEAD_CUT"): style = dict(color="#111", lw=0.8)
         if layer == "ORING_CENTRELINE": style = dict(color="#3b8bd4", lw=0.4, ls="--")
         ax.plot(Q[:, 0], Q[:, 1], **style)
     for x, y, r, layer in T['circles']:

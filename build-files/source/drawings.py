@@ -59,7 +59,7 @@ def sheet_cover(pdf, index):
     table(bg, 170, 240, ["Part", "3D-printed part", "Qty", "Material / settings"], rows, [12, 95, 9, 62], fs=5.6, rh=4.1)
     notes(bg, 20, y - 6, "General notes", [
         "1. All dimensions in millimetres. Model origin: x aft from the bow, z up from the hull bottom at midships, y to port.",
-        "2. Design waterline (DWL) z = 90 at about 21 kg all-up mass (hull 19.4 kg displacement + appendages).",
+        f"2. Design waterline (DWL) z = {D.DWL:.0f} at about {D.MASS_KG:.0f} kg all-up mass (Rev B: z 90 at about 21 kg).",
         "3. Printed parts: 0.4 mm nozzle, 0.2 mm layers, 4+ walls. Use ASA outdoors in UV; PETG is fine below deck.",
         "   STL files are in print orientation; no supports needed except where a sheet says so.",
         "4. Bought-in parts follow the Recommended Parts list in the build plan. Servo tab spacing, AS5600 board size and",
@@ -70,8 +70,13 @@ def sheet_cover(pdf, index):
         "7. This is a hobby design, not a classed or certified vessel. Tank-test self-righting before going to sea.",
         "",
         "Rev B (2026-11-08): wing counterweight moved from the wing's nose pocket to pod P18 on a 300 mm forward arm.",
-        "   P08 now has a forward socket for the arm. The nose pocket alone would need about 7.6 kg of lead; the arm needs about 0.8 kg.",
-        "   Sheets changed: D00, D01, D06, D12 (P08), D17 (P18). New part P18."], fs=6.2, lh=3.8)
+        "Rev C (2026-11-10), after the first real-weather Monte Carlo (leaks, wing damage and steering failures were the top losses):",
+        "   1. Hull foam-filled behind two glassed-in bulkheads (x 300, 1260), battery in its own sealed box: a leak can't swamp it (D03, D09).",
+        "   2. Twin rudders, 100 mm either side of the centreline, each with its own trunk, servo and tiller: either one steers alone (D05).",
+        "   3. Wing spar 30 x 26 carbon on 6806-2RS bearings (was 25 mm / 6805): about 1.8x the bending strength (D06, D07, P07, P08).",
+        "   4. Bulb D72 (was D68), about 9.2 kg, to hold stability at the higher mass (D04, P14).",
+        "   5. YB3 backup tracker platform P19 and all-round white light P20 on the stub; label areas (D01, D07, D09).",
+        "   Removed: thruster provision and the backup D-cell. Mass about 25 kg, DWL z 98, still self-righting from 180 deg."], fs=6.0, lh=3.6)
     pdf.savefig(fig); plt.close(fig)
 
 # ------------------------------------------------------------------ D01 general arrangement
@@ -84,7 +89,13 @@ def sheet_ga(pdf):
     poly(ax, rudder_poly())
     R = D.RUDDER
     ax.plot([R['stock_x']] * 2, [R['bot_z'] + 10, D.DECK_Z - 20], color=INK, lw=THIN, ls="--")
-    ax.plot([-20, 1520], [90, 90], color=WATER, lw=0.8); ax.text(-25, 90, "DWL", color=WATER, fontsize=5.5, ha="right", va="center")
+    ax.plot([-20, 1520], [D.DWL, D.DWL], color=WATER, lw=0.8); ax.text(-25, D.DWL, "DWL", color=WATER, fontsize=5.5, ha="right", va="center")
+    for xb in D.BULKHEADS:
+        ax.plot([xb, xb], [float(D.keel_z(xb)) + 11, float(D.deck_z(xb)) - 11], color=INK, lw=MED, ls="--")
+    Y = D.YB3; NL = D.NAVLIGHT
+    ax.plot([D.STUB['x'] - 165, D.STUB['x']], [Y['z'] + 5] * 2, color=INK, lw=MED)
+    ax.add_patch(Rectangle((D.STUB['x'] - 160, Y['z'] + 5), Y['box'][0], Y['box'][2], fc="#f6c443", ec=INK, lw=THIN))
+    ax.add_patch(Circle((D.STUB['x'] + NL['reach'], NL['z'] + 8), 12, fc="white", ec=INK, lw=THIN))
     MT = D.MAST_TUBE
     ax.add_patch(Rectangle((D.MAST_X - MT['od']/2, float(D.keel_z(D.MAST_X))), MT['od'], MT['top_z'] - float(D.keel_z(D.MAST_X)), fill=False, lw=THIN, ls="--"))
     le, te, z0, z1 = wing_rect()
@@ -109,13 +120,17 @@ def sheet_ga(pdf):
     for P in D.SOLAR:
         ax.plot([P['x0'], P['x1']], [float(D.deck_z(P['x0'])) + 3] * 2, color=BLUE, lw=2)
     dim(ax, (0, -510), (1500, -510), 0, "LOA 1500")
-    dim(ax, (1590, 90), (1590, -468), 0, "draft 558")
-    dim(ax, (1590, 90), (1590, 1300), 0, "air draft 1210")
+    zb = D.BULB['axis_z'] - D.BULB['dia'] / 2
+    dim(ax, (1590, D.DWL), (1590, zb), 0, f"draft {D.DWL - zb:.0f}")
+    dim(ax, (1590, D.DWL), (1590, 1300), 0, f"air draft {1300 - D.DWL:.0f}")
     dim(ax, (le, 1320), (te, 1320), 0, "300")
     dim(ax, (440, 300), (440, 1300), 0, "wing 1000")
     leader(ax, (700, -200), (300, -250), "Keel fin  NACA 0012\n170/150 chord  (D04)")
-    leader(ax, (750, -434), (300, -400), "Lead bulb 8.2 kg  (D04)")
-    leader(ax, (1440, -100), (1100, -330), "Spade rudder  (D05)")
+    leader(ax, (750, D.BULB['axis_z']), (300, -400), f"Lead bulb {D.bulb_mass()[1]:.1f} kg  (D04)")
+    leader(ax, (1440, -80), (1050, -330), "Twin spade rudders, 100 mm\neither side of centre  (D05)")
+    leader(ax, (D.STUB['x'] - 90, Y['z'] + 30), (1150, 640), "YB3 backup tracker on P19  (D07)")
+    leader(ax, (D.STUB['x'] + NL['reach'], NL['z'] + 20), (1640, 820), "All-round white\nlight P20", ha="left")
+    leader(ax, (D.BULKHEADS[1], 150), (1050, 60), "Watertight bulkheads x 300, 1260;\nhull foam-filled  (D09)")
     leader(ax, (te, 900), (1000, 1000), "Rigid wing sail\nNACA 0015  (D06)")
     leader(ax, (1250, 450), (1150, 760), "Tail flap on servo  (D06)")
     leader(ax, (S['x'], 400), (1250, 600), "Radar reflector")
@@ -136,6 +151,15 @@ def sheet_ga(pdf):
         ax2.add_patch(Rectangle((P['x0'], -P['w']/2), P['x1'] - P['x0'], P['w'], fc="#cfe0f3", ec=BLUE, lw=THIN))
         ax2.text((P['x0'] + P['x1'])/2, 0, f"solar panel {i+1}\n~20 W  420 x 280", fontsize=5, ha="center", va="center", color=BLUE)
     ax2.add_patch(Circle((D.STUB['x'], 0), 10, fill=False, lw=MED))
+    for yr in D.RUDDER_Y:
+        le_r = D.RUDDER['stock_x'] - D.RUDDER['stock_from_le']
+        ax2.add_patch(Polygon(foil_xy(0.12, D.RUDDER['chord'], le_r, yr), closed=True, fill=False, lw=THIN, ls="--"))
+    for xb in D.BULKHEADS:
+        hb = float(D.half_beam(xb)) - 11
+        ax2.plot([xb, xb], [-hb, hb], color=INK, lw=MED, ls="--")
+    ax2.add_patch(Rectangle((D.STUB['x'] - 170, -50), 160, 100, fill=False, lw=THIN))
+    ax2.text(D.STUB['x'] - 90, 0, "YB3", fontsize=5, ha="center", va="center")
+    ax2.text(1330, -150, "rudders (dashed,\nbelow hull)", fontsize=4.8, ha="center", color=GREY)
     ax2.add_patch(Circle((D.MAST_X, 0), 700, fill=False, lw=0.3, ls=":", ec=GREY))
     ax2.text(D.MAST_X + 495, -215, "tail sweep R 700", fontsize=5, color=GREY, rotation=45)
     ax2.add_patch(Circle((D.MAST_X, 0), D.CWARM['reach'] + D.CWARM['pod_od']/2, fill=False, lw=0.3, ls=":", ec=GREY))
@@ -146,13 +170,14 @@ def sheet_ga(pdf):
     ax2.text(1515, 0, "beam 400\n(max at x 825)", fontsize=5.5, va="center")
     dim(ax2, (0, 215), (D.MAST_X, 215), 0, "600")
     dim(ax2, (0, -222), (H['x0'], -222), 0, "330")
-    notes(bg, 225, 180, "Key data", [
+    notes(bg, 225, 180, "Key data (Rev C)", [
         "Length overall 1500   Beam 400   Hull depth 230",
-        "Draft 558 (DWL to bulb bottom)   Air draft 1210",
-        "Displacement about 21 kg   Ballast 8.2 kg lead + 0.8 kg rig counterweight",
-        "Wing 1000 x 300 (0.30 m2), free-rotating on 25 mm spar",
-        "Solar about 40 W on deck   Battery 192 Wh LiFePO4",
-        "Self-righting: verify in a tank test (Gate 3)"], fs=6.3)
+        f"Draft {D.DWL - zb:.0f} (DWL to bulb bottom)   Air draft {1300 - D.DWL:.0f}",
+        f"Displacement about {D.MASS_KG:.0f} kg   Ballast {D.bulb_mass()[1]:.1f} kg lead + about 0.8 kg rig counterweight",
+        "Wing 1000 x 300 (0.30 m2), free-rotating on a 30 mm spar",
+        "Two rudders, two servos; hull foam-filled, two bulkheads",
+        "Solar about 40 W on deck   Battery 192 Wh LiFePO4 in a sealed box",
+        "Self-righting from 180 deg (simulator): verify in a tank test (Gate 3)"], fs=6.3)
     pdf.savefig(fig); plt.close(fig)
 
 # ------------------------------------------------------------------ D02 hull lines
@@ -165,16 +190,16 @@ def sheet_lines(pdf):
     for i, x in enumerate(STATIONS):
         ax.plot([x, x], [float(D.keel_z(x)), float(D.deck_z(x))], color=GREY, lw=0.3)
         ax.text(x, -8, str(i), fontsize=5, ha="center", va="top")
-    for wl in (30, 60, 90, 120, 150):
+    for wl in (30, 60, D.DWL, 120, 150):
         xs = np.linspace(0, 1500, 300); m = D.keel_z(xs) < wl
-        ax.plot(xs[m], np.full(m.sum(), wl), color=WATER if wl == 90 else GREY, lw=0.6 if wl == 90 else 0.25, ls="-" if wl == 90 else ":")
+        ax.plot(xs[m], np.full(m.sum(), wl), color=WATER if wl == D.DWL else GREY, lw=0.6 if wl == D.DWL else 0.25, ls="-" if wl == D.DWL else ":")
     ax2 = view(fig, 20, 152, (-20, 1520), (-10, 215), s, "")
     bg.text(20, 200, "HALF-BREADTH PLAN (deck edge solid, DWL blue, waterlines z 30/60/120/150 dotted)", fontsize=7, weight="bold")
     xs = np.linspace(0, 1500, 300)
     ax2.plot(xs, D.half_beam(xs), color=INK, lw=MED); ax2.plot([0, 1500], [0, 0], color=INK, lw=0.3)
     ax2.plot([1500, 1500], [0, D.B_TRANSOM], color=INK, lw=MED)
-    for wl in (30, 60, 90, 120, 150):
-        ax2.plot(xs, [D.half_beam_at(x, wl) for x in xs], color=WATER if wl == 90 else GREY, lw=0.4 if wl == 90 else 0.25, ls="-" if wl == 90 else ":")
+    for wl in (30, 60, D.DWL, 120, 150):
+        ax2.plot(xs, [D.half_beam_at(x, wl) for x in xs], color=WATER if wl == D.DWL else GREY, lw=0.4 if wl == D.DWL else 0.25, ls="-" if wl == D.DWL else ":")
     for x in STATIONS:
         ax2.plot([x, x], [0, float(D.half_beam(x))], color=GREY, lw=0.3)
     ax3 = view(fig, 15, 28, (-215, 215), (-10, 275), 2.5, "")
@@ -186,11 +211,11 @@ def sheet_lines(pdf):
         if i in (0, 5, 10) or True:
             ax3.text(side * (y[-1] + 3), z[-1] + 2, str(i), fontsize=4.8, ha="center")
     ax3.plot([0, 0], [-5, 270], color=INK, lw=0.3, ls="-.")
-    ax3.plot([-210, 210], [90, 90], color=WATER, lw=0.5)
+    ax3.plot([-210, 210], [D.DWL, D.DWL], color=WATER, lw=0.5)
     rows = []
     for i, x in enumerate(STATIONS):
         rows.append([i, int(x), f"{float(D.keel_z(x)):.1f}", f"{float(D.deck_z(x)):.1f}", f"{float(D.half_beam(x)):.1f}",
-                     f"{D.half_beam_at(x, 30):.1f}", f"{D.half_beam_at(x, 60):.1f}", f"{D.half_beam_at(x, 90):.1f}",
+                     f"{D.half_beam_at(x, 30):.1f}", f"{D.half_beam_at(x, 60):.1f}", f"{D.half_beam_at(x, D.DWL):.1f}",
                      f"{D.half_beam_at(x, 150):.1f}"])
     table(bg, 205, 145, ["Stn", "x", "keel z", "deck z", "1/2 b deck", "1/2 b z30", "1/2 b z60", "1/2 b DWL", "1/2 b z150"],
           rows, [9, 11, 13, 13, 17, 16, 16, 17, 17], fs=5.4, rh=3.8)
@@ -201,16 +226,39 @@ def sheet_lines(pdf):
         "Deck z = 230 + 30 (1 - x/600)^2 forward of x 600;  230 aft",
         "",
         "Construction: 10 mm H80 foam strips over 11 MDF frames (Templates T01-T11, cut on the",
-        "dashed frame line = hull minus 11 mm), 2 x 6 oz glass outside, 1 x 6 oz inside, peel ply."], fs=6.0, lh=3.4)
+        "dashed frame line = hull minus 11 mm), 2 x 6 oz glass outside, 1 x 6 oz inside, peel ply.",
+        f"Rev C: hull form unchanged; DWL now z {D.DWL:.0f} at about {D.MASS_KG:.0f} kg (the 1/2 b DWL column is at z {D.DWL:.0f})."], fs=6.0, lh=3.4)
     pdf.savefig(fig); plt.close(fig)
 
 # ------------------------------------------------------------------ D03 interior
+def inner_profile(x0, x1, skin=11.0):
+    x = np.linspace(x0, x1, 120)
+    return np.r_[np.c_[x, D.keel_z(x) + skin], np.c_[x[::-1], D.deck_z(x[::-1]) - skin]]
+
+def inner_plan(x0, x1, z=None, skin=11.0):
+    x = np.linspace(x0, x1, 120)
+    b = np.maximum(D.half_beam(x) - skin, 0)
+    return np.r_[np.c_[x, b], np.c_[x[::-1], -b[::-1]]]
+
+FOAM = dict(fc="#f3ecd9", ec="#b8a77a", lw=0.3, hatch="....")
+
 def sheet_interior(pdf):
     fig, bg = new_sheet("D03", "Interior arrangement and systems", "Scale 1:7.5")
     s = 7.5
-    ax = view(fig, 15, 165, (-20, 1560), (-40, 270), s, "INBOARD PROFILE")
+    ax = view(fig, 15, 165, (-20, 1560), (-40, 270), s, "INBOARD PROFILE (Rev C: foam fill shaded, dry spaces white)")
     poly(ax, hull_profile(), lw=MED, ec=GREY)
+    b0, b1 = D.BULKHEADS
+    for x0, x1 in ((0, b0), (b0, b1), (b1, D.L)):
+        ax.add_patch(Polygon(inner_profile(x0, x1), closed=True, **FOAM))
     MT = D.MAST_TUBE; kz = float(D.keel_z(D.MAST_X))
+    BB = D.BATTBOX; E = D.EBOX; B = D.BATTERY; R = D.RUDDER
+    # dry spaces cut out of the foam (white)
+    for (x0, z0, w, h) in [(D.MAST_X - MT['od']/2, kz, MT['od'], MT['top_z'] - kz), (BB['x0'], BB['z0'], BB['x1'] - BB['x0'], BB['z1'] - BB['z0']),
+                           (E['x0'] - 8, 52, E['x1'] - E['x0'] + 16, E['h'] + 16), (650, 0, 190, 40), (330, 160, 200, 59),
+                           (1295, 112, 70, 64), (R['stock_x'] - 14, 76, 28, 104)]:
+        ax.add_patch(Rectangle((x0, z0), w, h, fc="white", ec="none"))
+    for xb in D.BULKHEADS:
+        ax.plot([xb, xb], [float(D.keel_z(xb)) + 11, float(D.deck_z(xb)) - 11], color=INK, lw=1.4)
     ax.add_patch(Rectangle((D.MAST_X - MT['od']/2, kz), MT['od'], MT['top_z'] - kz, fill=False, lw=MED))
     ax.add_patch(Rectangle((D.MAST_X - 27, MT['top_z'] - 80), 54, 85, fill=False, lw=THIN, hatch="////"))
     ax.plot([D.MAST_X] * 2, [150, 270], color=INK, lw=0.8)
@@ -218,46 +266,61 @@ def sheet_interior(pdf):
     ax.add_patch(Rectangle((650, 0), 190, 40, fill=False, lw=MED, hatch="\\\\"))
     for xr in (707, 762):
         ax.plot([xr, xr], [-30, 40], color=INK, lw=1)
-    B = D.BATTERY; E = D.EBOX
+    ax.add_patch(Rectangle((BB['x0'], BB['z0']), BB['x1'] - BB['x0'], BB['z1'] - BB['z0'], fill=False, lw=MED, ec=INK))
     ax.add_patch(Rectangle((B['x0'], 42), B['x1'] - B['x0'], B['h'], fc="#f4e3c3", ec=INK, lw=MED))
     ax.add_patch(Rectangle((E['x0'], 60), E['x1'] - E['x0'], E['h'], fc="#d9e8d4", ec=INK, lw=MED))
-    R = D.RUDDER
-    ax.add_patch(Rectangle((R['stock_x'] - 9, float(D.keel_z(R['stock_x']))), 18, 175 - float(D.keel_z(R['stock_x'])), fill=False, lw=MED))
-    ax.plot([R['stock_x']] * 2, [-30, 185], color=INK, lw=0.8)
+    zt = D.hull_z_at(R['stock_x'], D.RUDDER_Y[1])
+    ax.add_patch(Rectangle((R['stock_x'] - 9, zt), 18, R['trunk_top_z'] - zt, fill=False, lw=MED))
+    ax.plot([R['stock_x']] * 2, [R['bot_z'] + 8, 196], color=INK, lw=0.8)
     ax.add_patch(Rectangle((1300, 120), 60, 48, fc="#eee", ec=INK, lw=THIN))
-    ax.add_patch(Rectangle((1380, 170), 90, 6, fc=INK))
+    ax.add_patch(Rectangle((1380, 180), 50, 16, fc=INK))
     ax.add_patch(Rectangle((330, 230), 200, 8, fill=False, lw=MED))
-    for xp in (500, 900, 1350):
-        ax.add_patch(Circle((xp, float(D.keel_z(xp)) + 8), 5, fc=BLUE, ec=BLUE))
+    for xp in (560, 1000, 1330):
+        zp = float(D.keel_z(xp)) + 14 if xp < b1 else 116
+        ax.add_patch(Circle((xp, zp), 5, fc=BLUE, ec=BLUE))
     leader(ax, (D.MAST_X + 27, 200), (330, 140), "Mast tube 2 in. sch 40 PVC,\nglassed to hull + deck")
     leader(ax, (D.MAST_X, 135), (200, 70), "6-wire capsule slip ring\n(tail servo power + signal)")
     leader(ax, (745, 20), (600, -25), "Keel box: 2 x M10 316 rods,\nG10 backing plate 190 x 60 x 10", ha="right")
-    leader(ax, (870, 180), (830, 255), "Battery 12 V 15 Ah (strap anchors P16)")
-    leader(ax, (1100, 150), (1050, 225), "IP68 box: Pixhawk, ESP32, RockBLOCK,\nGPS, GV-5 MPPT (tray P15)")
-    leader(ax, (R['stock_x'], 100), (1500, 30), "Rudder tube, top at z 175\n(above DWL, no seal)")
-    leader(ax, (1330, 168), (1180, 40), "Servo P12 + tiller P11")
-    leader(ax, (500, float(D.keel_z(500)) + 8), (420, 60), "Leak probes (SOS) at\nlowest points", color=BLUE)
-    ax.plot([0, 1500], [90, 90], color=WATER, lw=0.5)
-    ax2 = view(fig, 15, 70, (-20, 1560), (-220, 220), s, "INTERIOR PLAN (below deck)")
+    leader(ax, (870, 210), (830, 258), "Sealed battery box (O-ring lid, removable), strapped down on P16")
+    leader(ax, (1100, 150), (1180, 230), "IP68 box: Pixhawk, ESP32, RockBLOCK,\nGPS, GV-5 MPPT (tray P15)")
+    leader(ax, (R['stock_x'], 120), (1500, 30), "Twin rudder trunks (x2,\n100 off centre), top z 175")
+    leader(ax, (1330, 168), (1180, 40), "Servos P12 + tillers P11 (x2)\nin pockets in the aft foam")
+    leader(ax, (150, 120), (20, 258), "Foam-filled, sealed (no fittings)", ha="left")
+    leader(ax, (b0, 60), (250, -25), "Bulkhead x 300 (T17)", ha="right")
+    leader(ax, (b1, 60), (1150, -25), "Bulkhead x 1260 (T18)", ha="right")
+    leader(ax, (560, float(D.keel_z(560)) + 14), (420, 258), "Leak probes (SOS) at the low points of each dry space", color=BLUE)
+    ax.plot([0, 1500], [D.DWL, D.DWL], color=WATER, lw=0.5)
+    ax2 = view(fig, 15, 70, (-20, 1560), (-220, 220), s, "INTERIOR PLAN (below deck, at z 120)")
     poly(ax2, hull_plan(), lw=MED, ec=GREY)
-    ax2.add_patch(Circle((D.MAST_X, 0), MT['od']/2, fill=False, lw=MED))
+    for x0, x1 in ((0, b0), (b0, b1), (b1, D.L)):
+        ax2.add_patch(Polygon(inner_plan(x0, x1), closed=True, **FOAM))
+    for (x0, y0, w, h) in [(BB['x0'], -BB['w']/2, BB['x1'] - BB['x0'], BB['w']), (E['x0'] - 8, -E['w']/2 - 8, E['x1'] - E['x0'] + 16, E['w'] + 16),
+                           (650, -30, 190, 60), (330, -110, 200, 220)]:
+        ax2.add_patch(Rectangle((x0, y0), w, h, fc="white", ec="none"))
+    ax2.add_patch(Circle((D.MAST_X, 0), MT['od']/2, fc="white", ec=INK, lw=MED))
+    for xb in D.BULKHEADS:
+        hb = float(D.half_beam(xb)) - 11
+        ax2.plot([xb, xb], [-hb, hb], color=INK, lw=1.4)
     ax2.add_patch(Rectangle((650, -30), 190, 60, fill=False, lw=MED, hatch="\\\\"))
-    ax2.add_patch(Rectangle((B['x0'], -B['w']/2 + 60), B['x1'] - B['x0'], B['w'], fc="#f4e3c3", ec=INK))
+    ax2.add_patch(Rectangle((BB['x0'], -BB['w']/2), BB['x1'] - BB['x0'], BB['w'], fill=False, lw=MED))
+    ax2.add_patch(Rectangle((B['x0'], -B['w']/2), B['x1'] - B['x0'], B['w'], fc="#f4e3c3", ec=INK))
     ax2.add_patch(Rectangle((E['x0'], -E['w']/2), E['x1'] - E['x0'], E['w'], fc="#d9e8d4", ec=INK))
-    ax2.add_patch(Circle((R['stock_x'], 0), 9, fill=False, lw=MED))
-    ax2.add_patch(Rectangle((1300, -15), 60, 30, fc="#eee", ec=INK, lw=THIN))
-    ax2.plot([1360, R['stock_x']], [0, 0], color=INK, lw=0.6)
-    for xb in (B['x0'] - 10, B['x1'] + 10):
-        for yb in (-12, 98):
-            ax2.add_patch(Rectangle((xb - 6, yb - 6), 12, 12, fc=INK))
+    for yr in D.RUDDER_Y:
+        ax2.add_patch(Rectangle((1290, yr - 22), 80, 44, fc="white", ec="none"))
+        ax2.add_patch(Circle((R['stock_x'], yr), 9, fill=False, lw=MED))
+        ax2.add_patch(Rectangle((1300, yr - 15), 60, 30, fc="#eee", ec=INK, lw=THIN))
+        ax2.plot([1360, R['stock_x']], [yr, yr], color=INK, lw=0.6)
     ax2.plot([1100, 1250, 1530], [0, 60, 0], color=BLUE, lw=0.4, ls="--")
     ax2.plot([1000, D.MAST_X], [-50, -20], color=BLUE, lw=0.4, ls="--")
-    ax2.text(1260, 70, "cable to stub (vane, antenna)", fontsize=5, color=BLUE)
+    ax2.plot([1200, 1300], [-20, -100], color=BLUE, lw=0.4, ls="--"); ax2.plot([1200, 1300], [20, 100], color=BLUE, lw=0.4, ls="--")
+    ax2.text(1260, 160, "servo cables through a\nWetLink in bulkhead 1260", fontsize=4.8, color=BLUE, ha="center")
     ax2.text(700, -70, "cable to slip ring", fontsize=5, color=BLUE)
-    notes(bg, 15, 37 + 22, "Systems notes", [
-        "Masses (approx, kg): hull + deck 4.5, fin 1.2, bulb 8.2, rudder 0.3, wing + spar + tail 1.6, battery 2.0, electronics + cables 1.2, solar 1.0, misc 1.0  -> about 21 kg.",
-        "Battery sits beside the keel box to keep weight low and on the centreline; the IP68 box is aft of it so cables to the stub and rudder stay short.",
-        "All penetrations use WetLink M10 on P17 pads. Solar cables enter through one penetrator per panel just inside the panel edge."], fs=6.0, lh=3.6)
+    ax2.text(430, 0, "hatch\naccess", fontsize=5, ha="center", va="center")
+    vf, vm, va = D.inner_volume(0, b0), D.inner_volume(b0, b1), D.inner_volume(b1, D.L)
+    notes(bg, 15, 37 + 22, "Systems notes (Rev C)", [
+        f"Inside volume: forward {vf:.1f} L (solid foam), dry bay {vm:.1f} L, aft {va:.1f} L (foam except the rudder trunks and servo pockets). XPS blocks at about 28 kg/m3, about 1.6 kg in all.",
+        f"Fitted, removable blocks fill the dry bay around the boxes: aim for no more than {D.FREE_FLOOD_L:.0f} L of open space, so a leak can't add more than about 3 kg of water (12% of displacement). See D09.",
+        "Masses (approx, kg): hull + deck 4.5, bulkheads 0.2, foam 1.6, fin 1.2, bulb 9.2, rudders 1.0, servos + trunks 0.5, rig 2.3, battery + box 2.35, electronics 1.1, solar 1.0, stub items 1.4, misc 0.6 -> about 25 kg."], fs=5.8, lh=3.5)
     pdf.savefig(fig); plt.close(fig)
 
 # ------------------------------------------------------------------ D04 keel
@@ -275,7 +338,8 @@ def sheet_keel(pdf):
     dim(ax, (F['tip_le_x'], -395), (F['tip_le_x'] + F['tip_chord'], -395), 0, "150 tip chord")
     dim(ax, (890, 0), (890, -430), 0, "430")
     dim(ax, (D.BULB['nose_x'], -485 + 10), (D.BULB['nose_x'] + 320, -485 + 10), 0, "bulb 320")
-    dim(ax, (D.BULB['nose_x'] + 128, -434 - 34), (D.BULB['nose_x'] + 128, -434 + 34), 0, "D68")
+    zb, rb = D.BULB['axis_z'], D.BULB['dia'] / 2
+    dim(ax, (D.BULB['nose_x'] + 128, zb - rb), (D.BULB['nose_x'] + 128, zb + rb), 0, f"D{D.BULB['dia']:.0f}")
     dim(ax, (657, 45), (707, 45), 0, "50"); dim(ax, (707, 45), (762, 45), 0, "55")
     leader(ax, (735, -200), (560, -150), "2 x M10 316 threaded rod,\nfull length, bonded in\nfin core and bulb")
     ax2 = view(fig, 120, 150, (-10, 180), (-15, 15), 1.3, "FIN ROOT SECTION  NACA 0012  (1:1.3)")
@@ -292,7 +356,7 @@ def sheet_keel(pdf):
         "2. Bore 2 x 12 mm holes at 50 and 105 from the root LE; bond the M10 rods in with thickened epoxy.",
         "3. Glass 3 x 6 oz each side, +/-45 deg on the inner layer; fair, then 2-part epoxy primer.",
         "4. Rods pass 40 mm into the keel box and take 316 nuts on a G10 plate (190 x 60 x 10) glassed into the hull.",
-        "", "Bulb", f"Volume {v/1e3:.0f} cm3 -> {m:.1f} kg of lead. Make a plaster mould from pattern P14a/b",
+        "", "Bulb (Rev C: D72, was D68)", f"Volume {v/1e3:.0f} cm3 -> {m:.1f} kg of lead. Make a plaster mould from pattern P14a/b",
         "(printed), cast outdoors with PPE, then drill 2 x 12 mm holes 60 deep at the rod positions",
         "(91 + 37 and 91 + 92 mm from the nose, measured on the slot) and bond the rods in with epoxy.",
         "Fair with epoxy filler; seal with 2 coats epoxy barrier coat."], fs=6.0, lh=3.6)
@@ -300,38 +364,70 @@ def sheet_keel(pdf):
 
 # ------------------------------------------------------------------ D05 rudder
 def sheet_rudder(pdf):
-    fig, bg = new_sheet("D05", "Rudder, stock and steering", "Scale 1:2")
+    fig, bg = new_sheet("D05", "Twin rudders, stocks and steering", "Scale 1:2")
     R = D.RUDDER; s = 2
     le = R['stock_x'] - R['stock_from_le']
-    ax = view(fig, 20, 45, (1340, 1540), (-215, 220), s, "RUDDER ELEVATION (looking to port)")
+    yr = D.RUDDER_Y[1]
+    kz = D.hull_z_at(R['stock_x'], yr)
+    tt = R['trunk_top_z']
+    ax = view(fig, 20, 45, (1340, 1540), (-215, 230), s, "ONE RUDDER, ELEVATION (looking to port; both are the same)")
     poly(ax, rudder_poly(), lw=MED)
-    kz = float(D.keel_z(R['stock_x']))
-    ax.plot([1340, 1540], [kz, kz], color=GREY, lw=0.3, ls="--"); ax.text(1342, kz + 3, "hull bottom", fontsize=5, color=GREY)
+    ax.plot([1340, 1540], [kz, kz], color=GREY, lw=0.3, ls="--"); ax.text(1342, kz + 3, "hull surface at y 100", fontsize=5, color=GREY)
     ax.add_patch(Rectangle((R['stock_x'] - 6, R['bot_z'] + 8), 12, 210 - R['bot_z'] - 8, fill=False, lw=THIN))
-    ax.add_patch(Rectangle((R['stock_x'] - 9, kz), 18, 175 - kz, fill=False, lw=MED, hatch="////"))
-    for zb in (kz, 175 - 15):
+    ax.add_patch(Rectangle((R['stock_x'] - 9, kz), 18, tt - kz, fill=False, lw=MED, hatch="////"))
+    for zb in (kz, tt - 15):
         ax.add_patch(Rectangle((R['stock_x'] - 9, zb), 18, 15, fc="#bbb", ec=INK, lw=THIN))
-    ax.add_patch(Rectangle((R['stock_x'] - 13, 180), 26, 16, fill=False, lw=MED))
-    ax.plot([1340, 1540], [90, 90], color=WATER, lw=0.5)
+    ax.add_patch(Rectangle((R['stock_x'] - 12, tt), 24, 5, fc=BLUE, ec=INK, lw=THIN))
+    ax.add_patch(Rectangle((R['stock_x'] - 13, 182), 26, 16, fill=False, lw=MED))
+    ax.plot([1340, 1540], [D.DWL, D.DWL], color=WATER, lw=0.5)
     dim(ax, (le, R['top_z'] + 12), (le + R['chord'], R['top_z'] + 12), 0, "120 chord")
     dim(ax, (le, -205), (R['stock_x'], -205), 0, "22")
     dim(ax, (1525, R['top_z']), (1525, R['bot_z']), 0, "230 span")
-    dim(ax, (1525, kz), (1525, 175), 0, "tube")
-    leader(ax, (R['stock_x'], 120), (1450, 150), "Rudder tube: GRP or 316 tube,\nID 14, glassed to hull floor,\ntop at z 175 (85 above DWL)")
-    leader(ax, (R['stock_x'] + 9, kz + 7), (1460, 20), "igus iglide J flange\nbushing 12 x 14 (x2)")
-    leader(ax, (R['stock_x'] + 13, 188), (1460, 205), "Tiller arm P11")
-    leader(ax, (R['stock_x'], -100), (1460, -120), "12 mm 316 stock,\nlength 420")
-    ax2 = view(fig, 150, 200, (-5, 125), (-12, 12), 1, "BLADE SECTION  NACA 0012  (1:1)")
+    dim(ax, (1525, kz), (1525, tt), 0, "trunk")
+    leader(ax, (R['stock_x'], 120), (1450, 150), "Trunk: GRP or 316 tube, ID 14,\nglassed through the hull and\nfoamed in; top at z 175")
+    leader(ax, (R['stock_x'] + 12, tt + 3), (1450, 215), "Top seal: lip seal + rubber boot\n(the trunk top goes under\nin a knockdown)", color=BLUE)
+    leader(ax, (R['stock_x'] + 9, kz + 7), (1460, 40), "igus iglide J flange\nbushing 12 x 14 (x2)")
+    leader(ax, (R['stock_x'] + 13, 190), (1345, 225), "Tiller arm P11", ha="left")
+    leader(ax, (R['stock_x'], -100), (1460, -120), "12 mm 316 stock,\nlength 360")
+    # section through both rudders, looking forward
+    ax3 = view(fig, 140, 50, (-200, 200), (-200, 260), 2.5, "SECTION AT x 1400, LOOKING FORWARD (1:2.5)")
+    y, z = D.section(R['stock_x'])
+    ax3.plot(y, z, color=INK, lw=MED); ax3.plot(-y, z, color=INK, lw=MED)
+    ax3.plot([-y[-1], y[-1]], [z[-1], z[-1]], color=INK, lw=MED)
+    yi = np.maximum(y - 11, 0); zi = z + 11
+    ax3.add_patch(Polygon(np.r_[np.c_[-yi[::-1], zi[::-1]], np.c_[yi, zi], [[yi[-1], z[-1] - 11], [-yi[-1], z[-1] - 11]]], closed=True, **FOAM))
+    for yy in D.RUDDER_Y:
+        zh = D.hull_z_at(R['stock_x'], yy)
+        ax3.add_patch(Rectangle((yy - 20, zh), 40, tt + 25 - zh, fc="white", ec="none"))
+        ax3.add_patch(Rectangle((yy - 9, zh), 18, tt - zh, fill=False, lw=MED, hatch="////"))
+        ax3.add_patch(Rectangle((yy - 7.2, R['bot_z']), 14.4, R['top_z'] - R['bot_z'], fc="#ddd", ec=INK, lw=MED))
+        ax3.plot([yy, yy], [R['bot_z'] + 8, 198], color=INK, lw=0.6)
+        ax3.add_patch(Rectangle((yy - 13, 182), 26, 16, fill=False, lw=THIN))
+    ax3.plot([-200, 200], [D.DWL, D.DWL], color=WATER, lw=0.5)
+    ax3.plot([0, 0], [-200, 255], color=GREY, lw=0.25, ls="-.")
+    dim(ax3, (D.RUDDER_Y[0], -185), (D.RUDDER_Y[1], -185), 0, "200 between stocks")
+    ax3.text(0, 140, "aft foam", fontsize=5, ha="center", color="#8a7a50")
+    ax2 = view(fig, 345, 225, (-5, 125), (-12, 12), 1, "BLADE SECTION  NACA 0012  (1:1)")
     poly(ax2, foil_xy(0.12, 120), lw=MED); ax2.add_patch(Circle((22, 0), 6, fill=False, lw=THIN))
     dim(ax2, (0, 11), (22, 11), 0, "22", fs=5)
-    notes(bg, 150, 180, "Build", [
-        "1. Print cores P13a/b, slide on the stock, pin with 4 mm 316 pins, epoxy the joint.",
-        "2. Glass 2 x 6 oz over the blade, wrapping the tip; fair to template T14.",
-        "3. Balanced rudder: about 15% of the area is ahead of the stock, so the servo",
-        "   needs little holding torque and can be powered down between corrections.",
-        "4. Stock: 12 mm 316 round bar, 420 long; 3 mm cross-hole for the tiller pin.",
-        "5. Bottom bushing sits flush with the hull bottom; top bushing at the tube top.",
-        "6. Stop the rudder at +/-35 deg with the servo end points (ArduPilot SERVO1_MIN/MAX)."], fs=6.2, lh=3.8)
+    notes(bg, 340, 205, "Build (make two of everything)", [
+        "1. Print cores P13a/b (two sets), slide on each stock,",
+        "   pin with 4 mm 316 pins, epoxy the joints.",
+        "2. Glass 2 x 6 oz over each blade, wrapping the tip;",
+        "   fair to template T14.",
+        "3. Balanced: about 15% of the area is ahead of the",
+        "   stock, so each servo needs little holding torque.",
+        "4. Stocks: 12 mm 316 round bar, 360 long; 3 mm",
+        "   cross-hole for each tiller pin.",
+        "5. Trunk bottoms flush with the hull; glass a 40 mm",
+        "   fillet pad where each meets the curved bottom.",
+        "6. Each rudder has its own servo (P12), tiller (P11)",
+        "   and cable. Either one alone can steer the boat.",
+        "7. ArduPilot: two outputs set to GroundSteering.",
+        "   If one servo jams, the mission manager trims the",
+        "   other to compensate; if one goes limp it trails.",
+        "8. Stop each rudder at +/-35 deg with the servo end",
+        "   points. Check both blades clear the bulb's wake."], fs=5.8, lh=3.5)
     pdf.savefig(fig); plt.close(fig)
 
 # ------------------------------------------------------------------ D06 wing & tail
@@ -365,7 +461,7 @@ def sheet_wing(pdf):
     leader(ax, (tp + 40, 420), (1050, 600), "Tail fin P10a/b\nNACA 0012, 120 chord")
     ax2 = view(fig, 200, 160, (-10, 320), (-30, 30), 2, "WING SECTION  NACA 0015  (1:2)")
     poly(ax2, foil_xy(0.15, 300), lw=MED)
-    ax2.add_patch(Circle((66, 0), 12.7, fill=False, lw=MED))
+    ax2.add_patch(Circle((66, 0), D.SPAR_OD / 2 + 0.2, fill=False, lw=MED))
     dim(ax2, (0, 28), (66, 28), 0, "66", fs=5); dim(ax2, (66, 28), (300, 28), 0, "234", fs=5)
     ax3 = view(fig, 200, 62, (-750, 360), (-60, 100), 6, "PLAN OF ROTATING RIG (1:6)")
     poly(ax3, np.c_[-(foil_xy(0.15, 300)[:, 0] - 66), foil_xy(0.15, 300)[:, 1]], lw=MED)
@@ -378,8 +474,8 @@ def sheet_wing(pdf):
     ax3.text(5, 80, "apparent wind", fontsize=5.5, ha="center")
     ax3.text(-600, -40, "tail", fontsize=5.5, ha="center"); ax3.text(-80, -40, "wing", fontsize=5.5, ha="center")
     notes(bg, 200, 140, "Wing build", [
-        "Core: two 500 mm XPS blocks hot-wire cut with template T15 (same root and tip), bored 25.4 mm for the spar.",
-        "Skin: 2 x 6 oz glass, vacuum bagged if possible. Root and tip: 3 mm ply caps. Spar: 25 mm OD carbon tube, 1100 long.",
+        "Core: two 500 mm XPS blocks hot-wire cut with template T15 (same root and tip), bored 30.4 mm for the spar (Rev C).",
+        "Skin: 2 x 6 oz glass, vacuum bagged if possible. Root and tip: 3 mm ply caps. Spar: 30 x 26 carbon tube, 1150 long (Rev C; was 25 mm).",
         "Balance: assemble wing, tail, boom, arm and pod; add lead shot + epoxy to P18 until the rig sits level on the spar at any heading.",
         "Expect about 0.8 kg. The pod sweeps a 332 mm radius at z 264-338, about 15 mm over the hatch bolts: keep anything on deck in that circle below z 255.",
         "Tail angle sets the wing's angle of attack: about +/-8 deg tail gives the working range; 0 deg = wing feathered."], fs=5.9, lh=3.5)
@@ -396,16 +492,17 @@ def sheet_mast(pdf):
                                (MT['od'] - MT['id'])/2, MT['top_z'] - kz, fc="#ddd", ec=INK, lw=THIN))
     ax.add_patch(Rectangle((D.MAST_X - 26.15, MT['top_z'] - 80), 52.3, 80, fill=False, lw=MED, hatch="////"))
     ax.add_patch(Rectangle((D.MAST_X - 33, MT['top_z']), 66, 5, fill=False, lw=MED, hatch="////"))
+    Bg = D.BEARING
     for zb in (MT['top_z'] - 2, MT['top_z'] - 80):
-        ax.add_patch(Rectangle((D.MAST_X - 18.5, zb), 37, 7, fc="#999", ec=INK, lw=THIN))
-    ax.add_patch(Rectangle((D.MAST_X - 12.5, 150), 25, 270, fill=False, lw=MED))
+        ax.add_patch(Rectangle((D.MAST_X - Bg['od']/2, zb), Bg['od'], 7, fc="#999", ec=INK, lw=THIN))
+    ax.add_patch(Rectangle((D.MAST_X - D.SPAR_OD/2, 150), D.SPAR_OD, 270, fill=False, lw=MED))
     ax.add_patch(Rectangle((D.MAST_X - 7, 115), 14, 35, fc="#ccc", ec=INK, lw=THIN))
     ax.plot([520, 680], [D.DECK_Z, D.DECK_Z], color=GREY, lw=0.4, ls="--"); ax.text(522, D.DECK_Z + 3, "deck", fontsize=5)
     ax.plot([520, 680], [kz, kz], color=GREY, lw=0.4, ls="--"); ax.text(522, kz + 3, "hull bottom", fontsize=5)
     dim(ax, (670, MT['top_z'] - 80), (670, MT['top_z'] + 5), 0, "85")
     dim(ax, (D.MAST_X - 30.15, 120), (D.MAST_X + 30.15, 120), 0, "OD 60.3")
-    leader(ax, (D.MAST_X + 18, MT['top_z'] + 2), (640, 330), "6805-2RS 316 (x2)")
-    leader(ax, (D.MAST_X + 12, 300), (640, 300), "Spar 25 OD carbon")
+    leader(ax, (D.MAST_X + 20, MT['top_z'] + 2), (640, 330), "6806-2RS 316 (x2),\n30 x 42 x 7")
+    leader(ax, (D.MAST_X + 15, 300), (640, 300), "Spar 30 x 26 carbon")
     leader(ax, (D.MAST_X + 7, 140), (640, 80), "Slip ring, 12.5 mm,\n6 wire, in spar end")
     leader(ax, (D.MAST_X + 26, 200), (640, 200), "Bearing housing P07")
     ax.text(D.MAST_X, 405, "wing root z 300 above", fontsize=5, ha="center")
@@ -431,8 +528,15 @@ def sheet_mast(pdf):
     leader(ax2, (S['x'], D.VANE_Z - 15), (1600, 600), "Sensor cap P03")
     leader(ax2, (S['x'] + 20, D.VANE_Z + 30), (1630, 690), "Housing P01, arm P02")
     leader(ax2, (S['x'] + 50, 400), (1610, 380), "Davis 151 radar reflector")
+    Y = D.YB3; NL = D.NAVLIGHT
+    ax2.add_patch(Rectangle((S['x'] - 50, Y['z']), 60, 5, fill=False, lw=THIN))
+    ax2.add_patch(Rectangle((S['x'] - 50, Y['z'] + 5), 40, Y['box'][2], fc="#f6c443", ec=INK, lw=THIN))
+    ax2.add_patch(Rectangle((S['x'] - 16, NL['z']), 32 + NL['reach'], 9, fill=False, lw=THIN))
+    ax2.add_patch(Rectangle((S['x'] + NL['reach'] - 15, NL['z'] + 9), 30, 10, fc="white", ec=INK, lw=THIN))
+    leader(ax2, (S['x'] - 30, Y['z'] + 20), (1600, 470), "YB3 on platform P19 (points\nforward, 160 x 100)")
+    leader(ax2, (S['x'] + NL['reach'], NL['z'] + 15), (1610, 630), "All-round white light on P20")
     notes(bg, 260, 250, "Notes", [
-        "Spar: 25 mm OD carbon tube, 1150 long (z 150 to 1300).",
+        "Spar: 30 x 26 carbon tube, 1150 long (z 150 to 1300). Rev C.",
         "Slip ring in the spar's lower end carries 3 wires to the",
         "tail servo; it must turn freely through 360 deg.",
         "Lock the spar against lifting with a 316 collar under",
@@ -441,7 +545,12 @@ def sheet_mast(pdf):
         "Stub: 20 mm OD x 1.5 wall 6061 aluminium (anodised) or",
         "carbon tube, 500 long; cables run inside it to the",
         "vane cap and down through a WetLink in the transom.",
-        "Vane shaft: 8 mm 316, 75 long, 2 x S608-2RS bearings."], fs=6.0, lh=3.6)
+        "Vane shaft: 8 mm 316, 75 long, 2 x S608-2RS bearings.",
+        "",
+        "Rev C on the stub, bottom to top: radar reflector",
+        "(z 330-470), YB3 platform P19 (z 480), Iridium patch",
+        "P05 (z 560), light P20 (z 600), vane (z 650). The YB3",
+        "has its own battery and antenna: no cables to the hull."], fs=6.0, lh=3.6)
     pdf.savefig(fig); plt.close(fig)
 
 # ------------------------------------------------------------------ D08 deck & hatch
@@ -475,6 +584,89 @@ def sheet_deck(pdf):
     ax2.add_patch(Circle((D.MAST_X, 0), 30, fill=False, lw=THIN))
     for (x, y, t) in [(660, -150, "solar 1"), (1090, -150, "solar 2"), (1490, 60, "transom: stub cable")]:
         ax2.add_patch(Circle((x, y), 6, fc=INK)); ax2.text(x + 12, y, t, fontsize=5, va="center")
+    pdf.savefig(fig); plt.close(fig)
+
+# ------------------------------------------------------------------ D09 subdivision, foam fill, labels (Rev C)
+def bulkhead_outline(x, skin=11.0):
+    y, z = D.section(x, 120)
+    yi = np.maximum(y - skin, 0); zi = z + skin
+    top = float(D.deck_z(x)) - skin
+    m = zi <= top
+    yi, zi = yi[m], zi[m]
+    return np.r_[np.c_[-yi[::-1], zi[::-1]], np.c_[yi, zi], [[yi[-1], top], [-yi[-1], top]]]
+
+def sheet_subdivision(pdf):
+    fig, bg = new_sheet("D09", "Watertight subdivision, foam fill, battery box, labels", "Bulkheads 1:4, plan 1:7.5, labels 1:9")
+    b0, b1 = D.BULKHEADS
+    for k, (xb, tname, x0) in enumerate(((b0, "T17", 15), (b1, "T18", 120))):
+        ax = view(fig, x0, 188, (-200, 200), (-10, 280), 4, f"BULKHEAD x {xb:.0f}  ({tname}, 1:4)")
+        P = bulkhead_outline(xb)
+        ax.add_patch(Polygon(P, closed=True, fc="#eef3f8", ec=INK, lw=MED))
+        y, z = D.section(xb)
+        ax.plot(y, z, color=GREY, lw=0.3, ls="--"); ax.plot(-y, z, color=GREY, lw=0.3, ls="--")
+        ax.plot([-200, 200], [D.DWL, D.DWL], color=WATER, lw=0.4)
+        w = P[:, 0].max() - P[:, 0].min(); h = P[:, 1].max() - P[:, 1].min()
+        dim(ax, (P[:, 0].min(), P[:, 1].max() + 8), (P[:, 0].max(), P[:, 1].max() + 8), 0, f"{w:.0f}")
+        dim(ax, (185, P[:, 1].min()), (185, P[:, 1].max()), 0, f"{h:.0f}")
+        if xb == b1:
+            for yy in (-60, 60):
+                ax.add_patch(Circle((yy, 160), 5.25, fill=False, lw=THIN))
+            ax.text(0, 185, "2 x WetLink M10\n(servo cables)", fontsize=4.5, ha="center")
+    notes(bg, 228, 268, "Bulkheads", [
+        "10 mm H80 foam, 2 x 6 oz glass each side. Cut on the solid line (hull inside, 11 mm in from the outside).",
+        "Fit after the hull is off the mould, before the deck goes on. Glass in with 50 mm tapes both sides,",
+        "on a thickened-epoxy fillet. They make three spaces: forward (solid foam), dry bay, aft (trunks and servos).",
+        "No hatches or cables through bulkhead x 300. Bulkhead x 1260 carries the two servo cables in WetLinks.",
+        "",
+        "Leak test, each space: 0.1 bar of air through a temporary fitting with soapy water on every joint and",
+        "penetration, then a 72-hour submersion of the finished hull before Field Test F (Failure_Rates.md, section 5)."], fs=5.9, lh=3.4)
+    vf, vm, va = D.inner_volume(0, b0), D.inner_volume(b0, b1), D.inner_volume(b1, D.L)
+    BB = D.BATTBOX; E = D.EBOX
+    vbb = (BB['x1'] - BB['x0']) * BB['w'] * (BB['z1'] - BB['z0']) / 1e6
+    veb = (E['x1'] - E['x0'] + 16) * (E['w'] + 16) * (E['h'] + 16) / 1e6
+    other = 0.6 + 0.5 + 1.0
+    foam_mid = vm - vbb - veb - other - D.FREE_FLOOD_L
+    rows = [["Forward  0-300", f"{vf:.1f}", "nothing", f"{vf:.1f}", "0"],
+            ["Dry bay  300-1260", f"{vm:.1f}", f"battery box {vbb:.1f}, IP68 box {veb:.1f}, mast tube, keel box, cable runs {other:.1f}", f"{foam_mid:.1f}", f"<= {D.FREE_FLOOD_L:.0f}"],
+            ["Aft  1260-1500", f"{va:.1f}", "2 trunks, 2 servo pockets about 1.5", f"{va - 1.5:.1f}", "<= 0.5"]]
+    tot_foam = vf + foam_mid + va - 1.5
+    yb = table(bg, 228, 236, ["Space (x)", "Inside L", "Kept dry for", "Foam L", "Free L"], rows, [30, 15, 107, 15, 15], fs=5.4, rh=4.2)
+    notes(bg, 228, yb - 3, "Foam fill", [
+        f"About {tot_foam:.0f} L of extruded polystyrene (XPS, 25-30 kg/m3, closed cell), about {tot_foam * 28e-3:.1f} kg.",
+        "Forward space: blocks bonded in solid with expanding PU adhesive before the deck goes on.",
+        "Aft space: blocks bonded around the trunks; leave fitted pockets for the two servos (lids of foam, taped).",
+        "Dry bay: numbered, removable blocks cut to fit around the boxes, taped together; they come out through the",
+        f"hatch for maintenance. Fill until no more than {D.FREE_FLOOD_L:.0f} L of open space is left (pour water in to check, then dry).",
+        "Why: a leak can then add at most about 3 kg of water (12% of displacement) and can't swamp the boat."], fs=5.8, lh=3.4)
+    ax2 = view(fig, 15, 60, (-20, 1560), (-220, 220), 7.5, "DRY-BAY BLOCK LAYOUT (plan at z 120; numbers = removal order through the hatch)")
+    poly(ax2, hull_plan(), lw=MED, ec=GREY)
+    for x0, x1 in ((0, b0), (b0, b1), (b1, D.L)):
+        ax2.add_patch(Polygon(inner_plan(x0, x1), closed=True, **FOAM))
+    for (x0, y0, w, h) in [(BB['x0'], -BB['w']/2, BB['x1'] - BB['x0'], BB['w']), (E['x0'] - 8, -E['w']/2 - 8, E['x1'] - E['x0'] + 16, E['w'] + 16),
+                           (650, -30, 190, 60)]:
+        ax2.add_patch(Rectangle((x0, y0), w, h, fc="white", ec=INK, lw=THIN))
+    ax2.add_patch(Circle((D.MAST_X, 0), D.MAST_TUBE['od']/2, fc="white", ec=INK, lw=THIN))
+    for xb in D.BULKHEADS:
+        hb = float(D.half_beam(xb)) - 11; ax2.plot([xb, xb], [-hb, hb], color=INK, lw=1.4)
+    cuts = [330, 530, 650, 774, 966, 1230]
+    for xc in cuts[1:-1]:
+        hb = float(D.half_beam(xc)) - 11
+        ax2.plot([xc, xc], [-hb, hb], color="#8a7a50", lw=0.4, ls="--")
+    for n, xc in enumerate([(cuts[k] + cuts[k + 1]) / 2 for k in range(len(cuts) - 1)]):
+        for sy in (-1, 1):
+            ax2.text(xc, sy * 120, f"{2*n + (1 if sy < 0 else 2)}", fontsize=5.5, ha="center", va="center", color="#6b5a30")
+    ax2.add_patch(Rectangle((D.HATCH['x0'], -D.HATCH['w']/2), D.HATCH['x1'] - D.HATCH['x0'], D.HATCH['w'], fill=False, lw=THIN, ls="--"))
+    ax2.text(430, 0, "hatch", fontsize=5, ha="center", va="center")
+    ax2.text(870, 0, "battery\nbox", fontsize=5, ha="center", va="center"); ax2.text(1100, 0, "IP68 box", fontsize=5, ha="center", va="center")
+    # labels
+    ax3 = view(fig, 240, 75, (-20, 1560), (-20, 300), 9, "LABEL AREAS (each side of the hull, both faces of the wing; 1:9)")
+    poly(ax3, hull_profile(), lw=MED)
+    ax3.add_patch(Rectangle((360, 140), 760, 70, fc="#ffe2c4", ec="#d26a1b", lw=THIN))
+    ax3.text(740, 175, "RESEARCH VESSEL - UNMANNED - NOT ADRIFT\nPLEASE DO NOT REMOVE   REWARD FOR REPORT\n+ phone / email, FR / ES / GA lines", fontsize=4.6, ha="center", va="center")
+    ax3.plot([0, 1500], [D.DWL, D.DWL], color=WATER, lw=0.4)
+    notes(bg, 240, 62, "Labels and colour", [
+        "Fluorescent orange deck, wing panels and label areas. Text black, 25 mm capitals; vinyl, sealed under clear epoxy.",
+        "Wing: same text on both faces, lower half, so it reads with the boat heeled. Wording: Launch_Plan.md."], fs=5.8, lh=3.4)
     pdf.savefig(fig); plt.close(fig)
 
 def hatch_bolts():
@@ -577,15 +769,16 @@ def main():
     pairs = [printed[i:i+2] for i in range(0, len(printed), 2)]
     index = [["D00", "Cover, index and general notes"], ["D01", "General arrangement"], ["D02", "Hull lines and table of offsets"],
              ["D03", "Interior arrangement and systems"], ["D04", "Keel fin and lead bulb"], ["D05", "Rudder, stock and steering"],
-             ["D06", "Wing sail and tail"], ["D07", "Mast step, spar and stern stub"], ["D08", "Deck hatch, solar layout, penetrations"]]
+             ["D06", "Wing sail and tail"], ["D07", "Mast step, spar and stern stub"], ["D08", "Deck hatch, solar layout, penetrations"],
+             ["D09", "Watertight subdivision, foam fill, battery box, labels"]]
     for k, pr in enumerate(pairs):
-        index.append([f"D{9 + k:02d}", "Printed parts " + ", ".join(p for _, p in pr)])
+        index.append([f"D{10 + k:02d}", "Printed parts " + ", ".join(p for _, p in pr)])
     with PdfPages(f"{OUT}/Drawings.pdf") as pdf:
         sheet_cover(pdf, index)
         sheet_ga(pdf); sheet_lines(pdf); sheet_interior(pdf); sheet_keel(pdf)
-        sheet_rudder(pdf); sheet_wing(pdf); sheet_mast(pdf); sheet_deck(pdf)
+        sheet_rudder(pdf); sheet_wing(pdf); sheet_mast(pdf); sheet_deck(pdf); sheet_subdivision(pdf)
         for k, pr in enumerate(pairs):
-            sheet_parts(pdf, pr, f"D{9 + k:02d}")
+            sheet_parts(pdf, pr, f"D{10 + k:02d}")
     print("ok", len(index), "sheets")
 
 if __name__ == "__main__":

@@ -1,5 +1,7 @@
 # Solar-Sail Drone Simulator
 
+> **Design:** since 10 Nov 2026 the default design is **Rev C** (foam-filled hull with bounded flooding, twin rudders, 30 mm spar; see `docs/Design_RevC.md`). Rev B is `default_design("revB")` or `--design ../designs/revB_design.json`. Design files saved before Rev C (no `"revision"` key) load as Rev B.
+
 A voyage simulator for the 1.5 m solar-and-sail ocean drone, with real historic weather, waves,
 ocean currents and tides. You can change the design (hull, keel, bulb, rudder, wing, tail, power)
 or upload a whole new design, then run single voyages or hundreds of Monte Carlo runs to estimate

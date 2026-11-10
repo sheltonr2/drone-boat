@@ -1,0 +1,302 @@
+{
+ "name": "Rev C 1.5 m solar-sail drone",
+ "units": "SI (m, kg)",
+ "frame": "x aft from bow, y to port, z up from hull bottom at midships",
+ "mass_kg": 25.21,
+ "cg_m": [
+  0.853,
+  -0.0,
+  -0.034
+ ],
+ "waterline_z_m": 0.098,
+ "inertia_kg_m2": [
+  [
+   2.898,
+   -0.0,
+   -0.699
+  ],
+  [
+   -0.0,
+   5.0,
+   0.0
+  ],
+  [
+   -0.699,
+   0.0,
+   2.151
+  ]
+ ],
+ "counterweight_kg": 0.8,
+ "stability": {
+  "gm_m": 0.187,
+  "max_gz_m": 0.378,
+  "angle_max_gz_deg": 105.0,
+  "avs_deg": 179.9999856045948,
+  "self_righting": true
+ },
+ "reference": {
+  "lwl": 1.4322,
+  "bwl": 0.3411,
+  "z_wl": 0.0981,
+  "s_hull": 0.4569,
+  "s_total": 0.7733,
+  "keel_area": 0.0688,
+  "keel_ar": 5.375,
+  "x_keel": 0.7052,
+  "z_keel": -0.1835,
+  "rudder_area": 0.0552,
+  "rudder_ar": 3.8333,
+  "x_rudder": 1.408,
+  "z_rudder": -0.043,
+  "wing_area": 0.3,
+  "wing_ar": 5.3333,
+  "z_wing_ce": 0.75,
+  "tail_area": 0.024,
+  "tail_ar": 1.6667,
+  "hull_lat_area": 0.1403,
+  "hull_windage_area": 0.2728,
+  "bulb_frontal": 0.0041,
+  "mass": 25.209
+ },
+ "rudders": {
+  "count": 2,
+  "y_m": [
+   -0.1,
+   0.1
+  ],
+  "stock_x_m": 1.4,
+  "chord_m": 0.12,
+  "span_m": 0.23,
+  "top_z_m": 0.072
+ },
+ "spar": {
+  "od_mm": 30,
+  "id_mm": 26,
+  "bearings": "6806-2RS x2"
+ },
+ "flood_limit_kg": 3.0,
+ "mass_items": [
+  {
+   "name": "hull + deck shell",
+   "kg": 2.316,
+   "xyz_m": [
+    0.809,
+    -0.0,
+    0.149
+   ]
+  },
+  {
+   "name": "keel fin",
+   "kg": 0.855,
+   "xyz_m": [
+    0.73,
+    -0.0,
+    -0.196
+   ]
+  },
+  {
+   "name": "lead bulb",
+   "kg": 8.983,
+   "xyz_m": [
+    0.723,
+    -0.0,
+    -0.424
+   ]
+  },
+  {
+   "name": "rudders",
+   "kg": 0.992,
+   "xyz_m": [
+    1.428,
+    0.0,
+    -0.043
+   ]
+  },
+  {
+   "name": "wing",
+   "kg": 0.561,
+   "xyz_m": [
+    0.66,
+    0.0,
+    0.8
+   ]
+  },
+  {
+   "name": "wing spar",
+   "kg": 0.43,
+   "xyz_m": [
+    0.6,
+    0.0,
+    0.75
+   ]
+  },
+  {
+   "name": "tail + servo housing",
+   "kg": 0.37,
+   "xyz_m": [
+    1.2,
+    0.0,
+    0.35
+   ]
+  },
+  {
+   "name": "tail boom",
+   "kg": 0.066,
+   "xyz_m": [
+    0.9,
+    0.0,
+    0.276
+   ]
+  },
+  {
+   "name": "counterweight arm tube",
+   "kg": 0.018,
+   "xyz_m": [
+    0.45,
+    0.0,
+    0.286
+   ]
+  },
+  {
+   "name": "counterweight pod shell",
+   "kg": 0.11,
+   "xyz_m": [
+    0.3,
+    0.0,
+    0.286
+   ]
+  },
+  {
+   "name": "rig counterweight (lead)",
+   "kg": 0.798,
+   "xyz_m": [
+    0.3,
+    0.0,
+    0.286
+   ]
+  },
+  {
+   "name": "battery",
+   "kg": 2.0,
+   "xyz_m": [
+    0.87,
+    0.0,
+    0.1
+   ]
+  },
+  {
+   "name": "electronics box",
+   "kg": 1.1,
+   "xyz_m": [
+    1.1,
+    0.0,
+    0.1
+   ]
+  },
+  {
+   "name": "solar panels",
+   "kg": 1.0,
+   "xyz_m": [
+    1.06,
+    0.0,
+    0.235
+   ]
+  },
+  {
+   "name": "mast tube and housing",
+   "kg": 0.45,
+   "xyz_m": [
+    0.6,
+    0.0,
+    0.13
+   ]
+  },
+  {
+   "name": "rudder servos and trunks",
+   "kg": 0.5,
+   "xyz_m": [
+    1.36,
+    0.0,
+    0.14
+   ]
+  },
+  {
+   "name": "foam fill xps",
+   "kg": 1.65,
+   "xyz_m": [
+    0.8,
+    0.0,
+    0.13
+   ]
+  },
+  {
+   "name": "bulkheads",
+   "kg": 0.2,
+   "xyz_m": [
+    0.78,
+    0.0,
+    0.12
+   ]
+  },
+  {
+   "name": "battery box",
+   "kg": 0.35,
+   "xyz_m": [
+    0.87,
+    0.0,
+    0.1
+   ]
+  },
+  {
+   "name": "yb3 tracker and platform",
+   "kg": 0.4,
+   "xyz_m": [
+    1.53,
+    0.0,
+    0.48
+   ]
+  },
+  {
+   "name": "nav light",
+   "kg": 0.06,
+   "xyz_m": [
+    1.53,
+    0.0,
+    0.6
+   ]
+  },
+  {
+   "name": "stern stub vane antenna reflector",
+   "kg": 0.9,
+   "xyz_m": [
+    1.53,
+    0.0,
+    0.42
+   ]
+  },
+  {
+   "name": "keel box and backing",
+   "kg": 0.5,
+   "xyz_m": [
+    0.745,
+    0.0,
+    0.02
+   ]
+  },
+  {
+   "name": "misc fittings",
+   "kg": 0.6,
+   "xyz_m": [
+    0.8,
+    0.0,
+    0.12
+   ]
+  }
+ ],
+ "files": {
+  "our_simulator": "designs/revC_design.json (python -m drone_sim.cli ... --design ../designs/revC_design.json; also the default)",
+  "boat_sim": "designs/boat-sim/randolph_rev_c.yaml",
+  "mesh": "designs/revC_boat_wing_feathered.stl (metres)",
+  "build": "build-files/source/design.py (millimetres, master dimensions)"
+ }
+}

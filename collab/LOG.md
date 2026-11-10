@@ -2,6 +2,14 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-10, 22:30
+
+- **Rev C approved by Randolph and built** ([Design_RevC.md](../docs/Design_RevC.md)): foam-filled hull behind two bulkheads + sealed battery box (flooding capped at ~3 kg), twin rudders with separate servos, 30 × 26 mm spar on 6806 bearings, bulb D72, YB3 platform P19 and light P20 on the stub; thruster provision and backup D-cell removed. Outer pontoons considered and rejected (stable inverted).
+- Simulator: Rev C default (`default_design()`), Rev B preset kept; new keys `rudder.y_offsets`, `hull.flood_limit_kg`; per-rudder servo failures. Rev C 25.2 kg, DWL 98 mm, GM 0.187, max GZ 0.378, self-righting; ~7% slower in the VPP (weight 5%, second rudder 2%).
+- Build files regenerated: 20 sheets (new D09), templates T17/T18, 23 STL for 20 parts. Geometry for both sims in `designs/` (boat-sim YAML checked against its Rev B schema and `HazardParams`; not run here).
+- Budget correction: Rev C adds ~$260 of parts; my proposal's "~$300 cheaper" was wrong (the thruster was never in the sail-only budget). The YB3 (~$630) also wasn't budgeted.
+- `run_revC_compare_2023.bat` copied to Randolph's PC: Rev C near-coast, Rev B near-coast, Rev C 100 km (250 each, 2023). Tonight's 500-voyage run (`run_bulk.bat`) now uses Rev C and the near-coast launch (scenario file updated; the old 100 km scenario is `collab/bulk_mc_100km.json`).
+
 ## 2026-11-10, 20:30
 
 - **Decision (Randolph): launch near the coast, keeping the boat trip as short as practicable.** Planned point about 10 km (5.5 nm) east of Ocean City Inlet, 38.32°N 74.97°W, from a small boat. Closer is not practicable (inlet currents and traffic, surf). Launch_Plan, Route_MidAtlantic and Executive_Summary updated.

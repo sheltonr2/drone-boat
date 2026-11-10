@@ -1,12 +1,12 @@
 # Solar-Sail Ocean Drone: Executive Summary
 
-Nov 8, 2026 · @Randolph
+Nov 8, 2026 (updated Nov 10 for Rev C) · @Randolph
 
 ## Bottom line
 
-The plan is a 1.5 m, self-righting autonomous sailboat with a rigid wing sail. It reports by Iridium satellite and takes commands from shore, and it is meant to cross the North Atlantic from the Mid-Atlantic coast (Maryland, Virginia or New Jersey) to Europe, aiming for south-west Ireland, then keep roaming.
+The plan is a 1.5 m, self-righting autonomous sailboat with a rigid wing sail (design Rev C, 10 Nov 2026: foam-filled hull, twin rudders, 30 mm spar). It reports by Iridium satellite and takes commands from shore, and it is meant to cross the North Atlantic from the Mid-Atlantic coast (Maryland, Virginia or New Jersey) to Europe, aiming for south-west Ireland, then keep roaming.
 
-- **Hardware cost:** about $2,290 sail-only, or about $2,000 after the trims in the budget section. The optional thruster adds $270. Satellite airtime adds $40–$60 a month.
+- **Hardware cost:** about $2,550 for Rev C, or about $2,290 after the trims in the budget section, plus about $630 for the backup tracker (YB3). Rev C adds about $260 over Rev B; there is no thruster. Satellite airtime adds $40–$60 a month, plus the tracker's own airtime.
 - **Build time:** 9–13 months through five test gates. The realistic first ocean launch is May 2028; 2027 is possible only if every gate passes first time.
 - **Odds:** about 10–20% that the first boat reaches Europe still sailing and reporting. Building a second boat and passing every gate raises that to about 30–40%. These are estimates, not calculations.
 - **Biggest risks:** water getting in, steering failure, and fouling by weed or fishing line. Navigation and weather matter less.
@@ -17,19 +17,21 @@ The plan is a 1.5 m, self-righting autonomous sailboat with a rigid wing sail. I
 | --- | --- |
 | Length overall | 1,500 mm |
 | Beam / hull depth | 400 mm / 230 mm |
-| Draft (waterline to bottom of bulb) | 558 mm |
-| Height above waterline (top of wing) | 1,210 mm |
-| All-up mass | about 21 kg |
-| Ballast | 8.2 kg lead bulb, 320 mm long × 68 mm diameter |
+| Draft (waterline to bottom of bulb) | 570 mm |
+| Height above waterline (top of wing) | 1,202 mm |
+| All-up mass | about 25 kg (Rev C; Rev B was 21 kg) |
+| Ballast | about 9.2 kg lead bulb, 320 mm long × 72 mm diameter |
 | Keel fin | NACA 0012, 430 mm deep, 170 mm chord at the root and 150 mm at the tip |
-| Rudder | NACA 0012 spade, 120 mm chord × 230 mm span, 12 mm 316 stock |
-| Wing sail | NACA 0015, 1,000 × 300 mm (0.30 m²), free-rotating on a 25 mm carbon spar, balanced by about 0.8 kg of lead in a pod 300 mm forward of the spar |
+| Rudders | Two NACA 0012 spades, 100 mm either side of the centreline, each 120 mm chord × 230 mm span on a 12 mm 316 stock, with its own trunk and servo |
+| Wing sail | NACA 0015, 1,000 × 300 mm (0.30 m²), free-rotating on a 30 × 26 mm carbon spar on 6806 bearings, balanced by about 0.8 kg of lead in a pod 300 mm forward of the spar |
 | Tail flap | NACA 0012, 120 × 200 mm, on a 600 mm boom |
 | Solar | 2 panels of about 42 × 28 cm, about 40 W in total |
 | Battery | 12.8 V 15 Ah LiFePO4 (192 Wh) |
 | Average power draw | under 1.5 W |
 | Comms | Iridium SBD, two-way; reports every 1–12 h |
 | Access | 200 × 220 mm bolted, gasketed hatch (12 × M5) |
+| Hull subdivision | Two glassed-in bulkheads; ends foam-filled, dry bay filled with removable foam blocks to leave 3 L or less of open space; battery in its own sealed box |
+| Stern post | Radar reflector, YB3 backup tracker (P19), Iridium antenna, all-round white light (P20), wind vane |
 
 ## Supplies
 
@@ -49,33 +51,33 @@ Everything below is needed for one boat. Prices are approximate US prices from N
 | [Blue Robotics SOS leak sensor](https://www.robotshop.com/products/sos-leak-sensor) | 1 | 4 probes | 35 |
 | [Genasun GV-5-Li-14.2V MPPT charge controller](https://reach.dog/shop/build-the-power/products/genasun-gv-5-lithium-14-2-volt-mppt) | 1 | — | 104 |
 | [Bioenno BLF-1215A LiFePO4 battery](https://www.bioennopower.com/collections/all/ebike-batteries?page=1), 12 V 15 Ah | 1 | about 180 × 77 × 167 mm | 150 |
-| Saft LS33600 lithium D-cell + 5 V boost converter (backup power) | 1 | D-cell | 35 |
 | ETFE semi-flexible solar panels, \~20 W | 2 | about 420 × 280 mm | 80 |
-| [Savöx SW-1210SG waterproof servo](https://hillsborohobbyshop.com/products/savox-sw-1210sg) | 2 | 40.6 × 20.7 × 42 mm | 186 |
+| [Savöx SW-1210SG waterproof servo](https://hillsborohobbyshop.com/products/savox-sw-1210sg) | 3 | 40.6 × 20.7 × 42 mm | 279 |
+| All-round white LED navigation light (12 V, about 0.3 W, 30 mm puck) | 1 | 30 mm | 25 |
 | 6-wire capsule slip ring | 1 | 12.5 mm diameter | 15 |
-| [Blue Robotics T200 thruster + ESC](https://www.robotshop.com/products/bluerobotics-t200-thruster-w-basic-esc) (optional) | 1 | — | 270 |
 
 **Hardware and fittings**
 
 | Item | Qty | Approx. size | Approx. USD |
 | --- | --- | --- | --- |
 | Hammond 1554-series IP68 enclosure | 1 | \~240 × 160 × 90 mm | 40 |
-| [Blue Robotics WetLink LC penetrators](https://www.robotshop.com/products/bluerobotics-wetlink-penetrator-lc-1-pack-m10-65-mm) (cable seals) | 4 | M10 | 52 |
+| [Blue Robotics WetLink LC penetrators](https://www.robotshop.com/products/bluerobotics-wetlink-penetrator-lc-1-pack-m10-65-mm) (cable seals; 2 of them in the aft bulkhead) | 6 | M10 | 78 |
 | [Davis 151 emergency radar reflector](https://davisinstruments.com/products/emergency-radar-reflector) | 1 | 290 mm | 38 |
-| 6805-2RS stainless bearings (mast) | 2 | 25 × 37 × 7 mm | 25 |
+| 6806-2RS stainless bearings (mast) | 2 | 30 × 42 × 7 mm | 35 |
 | S608-2RS stainless bearings (wind vane) | 2 | 8 × 22 × 7 mm | 12 |
-| [igus iglide](https://www.igus.com/info/industries-marine) J flange bushings (rudder) | 2 | 12 mm ID × 14 mm OD | 20 |
-| 316 rod: rudder stock | 1 | 12 mm × 420 mm | 20 |
+| [igus iglide](https://www.igus.com/info/industries-marine) J flange bushings (rudders) | 4 | 12 mm ID × 14 mm OD | 40 |
+| 316 rod: rudder stocks | 2 | 12 mm × 360 mm | 30 |
+| Rudder lip seals + rubber boots (trunk tops) | 2 | 12 mm shaft | 15 |
 | 316 rod: vane shaft | 1 | 8 mm × 75 mm | 5 |
 | 316 threaded rod for keel bolts, with nuts | 2 | M10 × \~530 mm | 25 |
 | G10 keel backing plate | 1 | 190 × 60 × 10 mm | 20 |
 | 2 in. sch 40 PVC pipe (mast tube) | 1 | 60.3 OD × \~250 mm | 8 |
-| Carbon tube: wing spar | 1 | 25 mm OD × 1,150 mm | 45 |
-| Carbon tube: tail boom and counterweight arm | 1 | 12 mm OD × 1 m (cut 600 + 246 mm) | 15 |
+| Carbon tube: wing spar | 1 | 30 × 26 mm × 1,150 mm | 70 |
+| Carbon tube: tail boom and counterweight arm | 1 | 12 mm OD × 1 m (cut 600 + 244 mm) | 15 |
 | Carbon rods: tail pivot and alignment | 1 each | 6 mm and 3 mm | 10 |
 | Aluminium or carbon tube: stern post | 1 | 20 mm OD × 500 mm | 15 |
 | 316 fasteners (M3, M4, M5), 4 mm pins, set screws | kit | — | 30 |
-| EPDM O-ring cord for the hatch | 1 | 4 mm × 1 m | 8 |
+| EPDM O-ring cord for the hatch and battery box | 1 | 4 mm × 2 m | 12 |
 | 25 mm webbing + cam buckles (battery straps) | 2 | — | 12 |
 | Marine tinned wire, inline fuses, connectors | kit | — | 40 |
 
@@ -87,16 +89,18 @@ Everything below is needed for one boat. Prices are approximate US prices from N
 | 6 oz E-glass cloth | \~6 m² | hull, deck, fin, rudder, wing skins | 70 |
 | West System 105/205 epoxy + fillers (colloidal silica, microballoons) | \~1.5 kg kit | lamination, fillets, fairing | 130 |
 | XPS foam blocks | \~0.05 m³ | wing and fin cores (hot-wire cut) | 25 |
-| Lead (scrap or ingot) | \~8.5 kg | ballast bulb | 60 |
+| XPS foam board, 25–50 mm | \~0.06 m³ (60 L) | hull fill: forward and aft spaces, removable dry-bay blocks | 40 |
+| Battery box: foam, glass, M5 inserts | — | sealed box with O-ring lid | 15 |
+| Lead (scrap or ingot) | \~9.5 kg | ballast bulb (Rev C, D72) | 67 |
 | Lead shot | \~1 kg | wing counterweight pod (P18), set in epoxy | 10 |
 | Plaster of Paris or casting sand | \~10 kg | bulb mould | 15 |
 | MDF or ply sheet for frames + strongback | 1 sheet | 9 frames, stem, strongback | 40 |
 | Epoxy primer, barrier coat, hi-vis paint, antifouling | — | finishing | 60 |
-| 3D-printer filament: ASA (\~0.8 kg) + PETG (\~0.8 kg) | 2 spools | 18 printed parts | 50 |
+| 3D-printer filament: ASA (\~0.8 kg) + PETG (\~0.8 kg) | 2 spools | 20 printed parts | 50 |
 
 **Printed parts (files in the drawing set)**
 
-These are the wind-vane housing, arm, cap and magnet holder; the antenna platform and transom bracket; the mast bearing housing and spar clamp; the tail servo housing and tail fin; the tiller arm, rudder servo mount and rudder blade core; the bulb casting pattern; the electronics tray; 4 battery strap anchors; 4 penetrator pads; and the wing counterweight pod.
+These are the wind-vane housing, arm, cap and magnet holder; the antenna platform and transom bracket; the mast bearing housing and spar clamp; the tail servo housing and tail fin; two each of the tiller arm, rudder servo mount and rudder blade core; the bulb casting pattern; the electronics tray; 4 battery strap anchors; 4 penetrator pads; the wing counterweight pod; and (Rev C) the YB3 platform and the navigation-light clamp.
 
 **Tools and consumables you'll need**
 
@@ -104,21 +108,21 @@ Hot-wire foam cutter, oscillating or jig saw, random-orbit sander, drill and bit
 
 ## Budget and running costs
 
-Itemised in full, the boat comes to about $2,290 sail-only, which is over the $2,000 target. Three trims, listed below the table, bring it to about $2,000. Tools you don't already own are extra.
+Itemised in full, Rev C comes to about $2,550, plus about $630 for the YB3 backup tracker. That is over the $2,000 target. The trims below the table bring the boat to about $2,290 (about $2,920 with the tracker). Tools you don't already own are extra.
 
 | Category | Approx. USD |
 | --- | --- |
-| Electronics and power (sail-only) | 1,172 |
-| Hardware and fittings | 440 |
-| Build materials | 580 |
+| Electronics and power (Rev C: second rudder servo, nav light; no backup D-cell) | 1,255 |
+| Hardware and fittings (Rev C: twin rudder bushings and stocks, 6806 bearings, 30 mm spar, 2 more WetLinks, trunk seals) | 550 |
+| Build materials (Rev C: XPS hull fill, battery box, 1 kg more lead) | 642 |
 | Lake-test prototype (foam, scrap glass) | 100 |
-| **Total, sail-only** | **\~2,290** |
-| Optional T200 thruster | +270 |
+| **Total, Rev C** | **\~2,550** |
+| YB3 backup tracker (decided 9 Nov; hardware, check current price) | +630 |
 
-**Getting to about $2,000 (saves about $290)**
+**Getting to about $2,290 (saves about $255)**
 
 - Use a Pixhawk 6C clone: saves about $95.
-- Drop the backup D-cell for version 1: saves $35. It still gets tracked through the main battery.
+- (The backup D-cell is gone in Rev C: the YB3 backup tracker does its job.)
 - Use one 1,000-credit airtime bundle at a time and buy epoxy and glass as a kit: about $40.
 - Reuse the lake prototype's electronics and wing in the ocean boat: about $120 less in duplicate materials.
 
@@ -151,11 +155,11 @@ The top three entries in this table account for most lost ocean robots. That's w
 
 | Risk | What to do |
 | --- | --- |
-| **Water getting in** through seals, the hatch or the enclosure | Keep penetrations to a minimum (4 WetLink seals). Bolt and O-ring the hatch, foam-fill the compartments, use leak sensors that trigger safe mode, and do the 24 h submerged test. |
-| **Steering failure** (rudder or tail servo) | Run the rudder tube up above the waterline so it needs no seal. Use a balanced rudder and oversized bushings. Make sure the wing feathers safely if the tail fails. |
-| **Fouling** by weed, fishing line or barnacles | Sweep back the keel and rudder leading edges, use antifouling paint, and don't fit an exposed propeller. |
+| **Water getting in** through seals, the hatch or the enclosure | Rev C makes a leak survivable: two bulkheads, the hull foam-filled so 3 L or less can flood, the battery in its own sealed box. Still keep penetrations few, bolt and O-ring the hatch, use leak sensors that trigger safe mode, pressure-test each space and do the 72 h submerged test. |
+| **Steering failure** (rudder or tail servo) | Rev C has two rudders, each with its own servo: either one steers alone. Seal the trunk tops (they go under in a knockdown). Use balanced rudders and oversized bushings. Make sure the wing feathers safely if the tail fails. |
+| **Fouling** by weed, fishing line or barnacles | Sweep back the keel and rudder leading edges and use antifouling paint. (There is no propeller in Rev C.) |
 | **Humidity killing the electronics** | Use desiccant and a humidity sensor, conformal-coat the boards, and pot the connectors. |
-| **Running out of power** in long grey spells | Deep-sleep the electronics. Go to safe mode below 25% (heave-to, report every 12 h), and only run the thruster above 70%. |
+| **Running out of power** in long grey spells | Deep-sleep the electronics. Go to safe mode below 25% (heave-to, report every 12 h). |
 | **Hurricanes** and Gulf Stream storms | Hurricane season runs June to November and peaks mid-August to mid-October. Launch in May so the boat is well east before the peak, watch the National Hurricane Center outlook, and send a new route to steer it away from forecast tracks. Wind against the Gulf Stream builds steep, breaking seas: the simulator gives about 5 times as many knockdowns on this route as from Newfoundland. Keep the ESP32 cutting charging below 2 °C. |
 | **Ship strike, or capture by fishing boats** | Use hi-vis paint and a radar reflector, avoid shipping lanes with geofences, and fit an ID plate with your contact details. |
 | **Software hang** | Use a hardware watchdog and boot into safe mode. The autopilot should keep sailing even if the ESP32 dies. |
@@ -163,7 +167,7 @@ The top three entries in this table account for most lost ocean robots. That's w
 | **Lead casting** | Cast outdoors with a face shield and gloves, and keep the mould bone-dry: steam in a damp mould can make molten lead explode. Never pour lead into a 3D print. |
 | **Legal liability** | An uncrewed roaming vessel is your responsibility. Check US Coast Guard rules for the launch and the rules wherever it lands (Ireland, the UK or France), talk to a marine insurer, and publish the boat's live position. |
 
-**Design numbers not yet verified by testing:** self-righting from 180°, the waterline at 21 kg, the wing's balance on the spar, and real-world solar output on a 40 cm deck.
+**Design numbers not yet verified by testing:** self-righting from 180°, the waterline at about 25 kg (z 98 mm), the 3 L free-flood volume, the wing's balance on the spar, and real-world solar output on a 40 cm deck.
 
 ## Odds of success
 
@@ -188,8 +192,8 @@ A first attempt has roughly a 10–20% chance of reaching Europe still sailing a
 
 ## Open decisions
 
-- [ ] Thruster in version 1, or sail-only? Sail-only saves $270 and removes a leak path.
-- [ ] Accept going over budget (about $2,290), or take the trims to get to about $2,000?
+- [x] Thruster in version 1, or sail-only? Decided 10 Nov 2026 (Rev C): sail-only, no thruster provision.
+- [ ] Accept going over budget (Rev C about $2,550 plus the YB3), or take the trims to get to about $2,290 plus the YB3?
 - [ ] Lower the battery onto a hull-bonded cooling plate below the waterline? (Recommended.)
 - [ ] Launch site: Ocean City, Maryland (the default), Virginia Beach or Cape May. In the simulator they came out within about two weeks of each other, so choose on access, ship traffic and distance to the Gulf Stream. Decided 10 Nov 2026: launch near the coast (about 10 km off the inlet) to keep the boat trip short, and manage the risk of an early failure drifting ashore with an offshore-wind launch rule, an escort and early recovery ([Launch_Plan.md](Launch_Plan.md)).
 - [ ] Target: south-west Ireland (the default; any European landfall also counts). Brittany or Cornwall take about as long but sit beside the busiest shipping lanes in Europe. Galicia or Portugal take 3–6 weeks longer. Decide too whether a landfall in the Azores counts.

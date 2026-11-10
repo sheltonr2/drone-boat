@@ -2327,7 +2327,7 @@ TEXT
 40
 6.00
 1
-T14  RUDDER  NACA 0012  chord 120  (stock D12)
+T14  RUDDER  NACA 0012  chord 120  (stock D12)  MAKE 2
 0
 TEXT
 8

@@ -172,13 +172,23 @@ def bulb_mesh(d, nax=30, nrad=20):
     return _loft(rings)
 
 
+def rudder_offsets(d):
+    """Lateral positions of the rudders: [0] for one centreline rudder (Rev B), [-y, +y] for twins (Rev C)."""
+    r = d["rudder"]
+    return list(r.get("y_offsets") or [0.0])
+
+
 def rudder_mesh(d, n=20):
     r = d["rudder"]; le = r["stock_x"] - r["stock_from_le"]
-    rings = []
-    for z in (r["top_z"], r["top_z"] - r["span"]):
-        P = naca(r["thickness"], r["chord"], n)
-        rings.append(np.c_[le + P[:, 0], P[:, 1], np.full(len(P), z)])
-    return _loft(rings)
+    Vs, Fs, k = [], [], 0
+    for y0 in rudder_offsets(d):
+        rings = []
+        for z in (r["top_z"], r["top_z"] - r["span"]):
+            P = naca(r["thickness"], r["chord"], n)
+            rings.append(np.c_[le + P[:, 0], y0 + P[:, 1], np.full(len(P), z)])
+        V, F = _loft(rings)
+        Vs.append(V); Fs.append(F + k); k += len(V)
+    return np.vstack(Vs), np.vstack(Fs)
 
 
 def wing_mesh(d, n=24, local=False):
@@ -317,7 +327,8 @@ class Boat:
             Vb, Fb = bulb_mesh(d); bv, bc = mesh_volume_centroid(Vb, Fb)
             items.append(("lead bulb", bv * d["bulb"]["density"], bc)); self.bulb_volume = bv
             Vr, Fr = rudder_mesh(d); ra, rc = mesh_area(Vr, Fr); rv, rvc = mesh_volume_centroid(Vr, Fr)
-            items.append(("rudder", ra * d["rudder"]["kg_per_m2_skin"] + rv * 250 + d["rudder"]["stock_kg"], rvc))
+            nr = len(rudder_offsets(d))
+            items.append(("rudder" + ("s" if nr > 1 else ""), ra * d["rudder"]["kg_per_m2_skin"] + rv * 250 + d["rudder"]["stock_kg"] * nr, rvc))
             self.fin_area_wet = fa; self.rudder_area_wet = ra
             self.bulb_area_wet = mesh_area(Vb, Fb)[0]
         else:
@@ -464,7 +475,7 @@ class Boat:
             s_total=s_hull + self.fin_area_wet + self.rudder_area_wet + self.bulb_area_wet,
             keel_area=keel_area, keel_ar=2*k["span"]/(0.5*(k["root_chord"]+k["tip_chord"])),
             x_keel=x_keel_qc, z_keel=z_keel_ce,
-            rudder_area=r["chord"]*r["span"], rudder_ar=2*r["span"]/r["chord"],
+            rudder_area=r["chord"]*r["span"]*len(rudder_offsets(d)), rudder_ar=2*r["span"]/r["chord"],
             x_rudder=r["stock_x"] - r["stock_from_le"] + 0.25*r["chord"], z_rudder=r["top_z"] - r["span"]/2,
             wing_area=w["chord"]*w["span"], wing_ar=1.6*w["span"]/w["chord"],
             z_wing_ce=w["root_z"] + 0.45*w["span"],

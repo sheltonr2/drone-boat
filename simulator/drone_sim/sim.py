@@ -102,6 +102,7 @@ class Voyage:
         st = dict(lat=sc["start"]["lat"], lon=sc["start"]["lon"], heading=bearing_deg(sc["start"]["lat"], sc["start"]["lon"],
                   sc["target"]["lat"], sc["target"]["lon"]), soc=0.9, stw=0.0, sog=0.0, heel=0.0, df=1.0,
                   water_kg=0.0, inverted=False, knocked=False, rudder="ok", rudder_stuck=0.0, tail="ok",
+                  rudders_ok=len(d["rudder"].get("y_offsets") or [0.0]),
                   tail_stuck_alpha=0.0, wing_lost=False, entangled=False, hung=False, comms_dead=False,
                   brownout=False, leak_rate=0.0, leak_alarm=False, thrust_h_today=0.0, alive=True, credits=0,
                   sessions_ok=0, sessions_fail=0, last_report=t, last_report_ok=t, energy_in_wh=0.0,
@@ -414,6 +415,9 @@ class Voyage:
             self.event(t, "failure", f"Leak started ({st['leak_rate']:.2f} kg/day of water)")
         if st["leak_rate"] > 0:
             st["water_kg"] += st["leak_rate"]*dt/86400
+            lim = self.d["hull"].get("flood_limit_kg")          # Rev C: foam-filled hull, only the free space can flood
+            if lim is not None:
+                st["water_kg"] = min(st["water_kg"], lim)
             if st["water_kg"] > 0.1 and not st["leak_alarm"]:
                 st["leak_alarm"] = True; self.ap.mode = "safe"; self.event(t, "alarm", "Leak sensor wet -> SAFE mode")
             if st["water_kg"] > 0.35*self.boat.mass:
@@ -435,7 +439,13 @@ class Voyage:
         if active and not st["comms_dead"] and rnd() < p_event(self.rate("comms_silent")*el*(1 + hs/4), dt):
             st["comms_dead"] = True; self.event(t, "failure", "Satellite modem or antenna failed: boat sails on but is silent")
         # steering
-        if active and st["rudder"] == "ok" and rnd() < p_event(self.rate("rudder_servo")*el*(1 + hs/4), dt):
+        # steering. Each rudder has its own servo (Rev C has two): the boat keeps steering until the last one fails.
+        if active and st["rudder"] == "ok" and st["rudders_ok"] > 1:
+            if rnd() < p_event(self.rate("rudder_servo")*el*(1 + hs/4)*st["rudders_ok"], dt):
+                st["rudders_ok"] -= 1
+                how = "jammed" if rnd() < 0.6 else "failed limp"
+                self.event(t, "failure", f"One rudder servo {how}: the other rudder still steers")
+        elif active and st["rudder"] == "ok" and rnd() < p_event(self.rate("rudder_servo")*el*(1 + hs/4), dt):
             if rnd() < 0.6:
                 st["rudder"] = "stuck"; st["rudder_stuck"] = rnd()*2 - 1
                 self.event(t, "failure", f"Rudder servo jammed at {st['rudder_stuck']*self.d['rudder']['max_angle_deg']:.0f} deg")
