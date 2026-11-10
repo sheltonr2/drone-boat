@@ -7,6 +7,7 @@ Newest first. Each check of boat-sim records what was new and what we did.
 - Backup tracker now modelled in our simulator and fitted by default (`design["backup_tracker"]`, `failures["backup_tracker"]` at boat-sim's 0.0007/day). A dead main box with a working tracker means the boat drifts on at leeway, still tracked. New outcomes `arrived_tracked` (counts as success) and `arrived_adrift` (doesn't).
 - 200 runs from the 100 km drop, synthetic weather: verified arrivals 40.5% → 54.5%; position known at the end 40.5% → 65.5%. The no-tracker batch reproduces the earlier 40.5% exactly. Leaks are now the largest cause of loss (50 of 200). Details in docs/Backup_Tracker.md.
 - Still waiting on the ERA5 2023 download before the drift and bulk Monte Carlo runs.
+- Posted the update on #50 with Randolph's approval ([comment](https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6770219785)).
 
 ## 2026-11-10, 13:44 (scheduled check)
 
