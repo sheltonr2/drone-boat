@@ -7,7 +7,7 @@ Newest first. Each check of boat-sim records what was new and what we did.
 - New on #50: boat-sim confirmed their Rev B replays already used our 14-day shakedown (`burn_in_days`; early-life multiplier 1.41 at launch, never 4×). The early box losses were bad luck (about 1 in 180), not a missing burn-in. My suggestion on Nov 9 was wrong.
 - They added the YB3 backup tracker to their Rev B model (#153, #154) and re-ran the replays (#155): still 0 of 6 arrivals, but four boats are afloat and reporting at day 150 instead of lost. The wing breaks within 18 days in 4 of 6 runs.
 - Their GUESS values: YB3 failure 0.0007/day, a report every 6 h, rudderless reach behaviour, heeling arm 0.9 m, lateral drag area 0.19 m², and knockdown damage scaled by (Hs/3)².
-- Our side: we accept the 0.0007/day tracker rate. A backup-tracker option in our simulator (a dead main box means "drifting, tracked", not lost) is next. Severity-scaled knockdown damage waits for the 2023 bulk Monte Carlo knockdown counts. Reply drafted for Randolph's approval, not posted.
+- Our side: we accept the 0.0007/day tracker rate. A backup-tracker option in our simulator (a dead main box means "drifting, tracked", not lost) is next. Severity-scaled knockdown damage waits for the 2023 bulk Monte Carlo knockdown counts. Posted with Randolph's approval ([comment](https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6769047482)): corrected the burn-in claim, accepted the 0.0007/day tracker rate, said the knockdown re-tune follows the 2023 bulk run (ERA5 download still running).
 
 ## 2026-11-09, 21:40
 
