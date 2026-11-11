@@ -2,6 +2,12 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-11, 09:40: C1 comparison and 2024 drift tests in
+
+- Rev C1, 250 voyages, 2023, near-coast: 45.6% (39.5-51.8) verified arrivals against 38.8% for Rev C as first drawn. Electronics failures 31 vs 37, but wing damage also fell 38 to 28, so most of the gap is chance.
+- 2024 bulk drift tests (3.3% leeway), aground within 30 days: 25 km 8/16, 50 km 7/16, 100 km 2/16, 150 km 0/16 (2023: 16, 13, 8, 5). Early-May drops grounded in both years.
+- Both logs saved in collab/. Docs: Design_RevC.md, Route_MidAtlantic.md. These runs used the C1 masses (before the C2 fin).
+
 ## 2026-11-11, later: Rev C2 keel fin
 
 - Randolph approved the fin change (option 1). Rev C2: hardwood core, 6 x 6 oz + carbon strip each side, 60 mm tenon into a keel-box socket, floors at x 650 and x 800, hull doubler. D00, D03, D04 redrawn; T12, T13 relabelled; new T19, T20; Field Test K (60 kg proof load).

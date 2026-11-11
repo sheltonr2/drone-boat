@@ -68,10 +68,26 @@ The same worst case (a boat dead from the moment it is dropped: no steering, win
 What this says:
 - **The 100 km drop is not the safe point the Nov 8 tests suggested.** With the corrected model, half the dead boats dropped there in May–June 2023 went ashore, nearly all on the North Carolina Outer Banks after 5–23 days. The shelf currents carried them south-west along the coast instead of east into the Gulf Stream. The Nov 8 result (4 of 4 at sea) came from the old model, which let a dead boat reach across the wind.
 - **The shelf edge (150 km) is better: 5 of 16 aground against 8**, and the boats that stayed at sea got more than twice as far east. This reverses the Nov 8 finding, which was based on one 2022 date that went ashore near Cape May.
-- **In 2023, timing mattered more than distance.** From 100 km, every drop between 7 and 28 May went ashore, and every drop from 31 May to 15 June stayed at sea. From 150 km, only 13–22 May and 9 June went ashore. That is one year's weather pattern, not a rule. The 2024 data (finishing tonight) is the second year we need before reading anything into dates.
+- **In 2023, timing mattered more than distance.** From 100 km, every drop between 7 and 28 May went ashore, and every drop from 31 May to 15 June stayed at sea. From 150 km, only 13–22 May and 9 June went ashore. That is one year's weather pattern, not a rule. The 2024 results are in the table below.
 - **The leeway factor barely matters** between 2% and 3.3%. At 5% (a boat with more windage than we estimate), groundings from 100 km rise from 8 to 12. The windage estimate for Rev B is about right to within that range, so this is a second-order risk.
 - **A grounding is now often recoverable.** With the backup tracker fitted, a boat that dies early and washes up on the Outer Banks is a boat we can collect and relaunch, not a loss. That softens this result but doesn't remove it: a beached boat is a public nuisance and costs the launch season.
 - **Keep in mind what this test is.** It is the worst case. The boat only drifts like this if it fails at or soon after launch. The real-weather Monte Carlo (running now) puts this together with the actual chance of an early failure.
+
+**Second year (11 Nov): the same drift tests on 2024 weather** (`collab/run_log_drift_bulk_2024_2026-11-11.txt`). Aground within 30 days, at 2% / **3.3%** / 5% of wind:
+
+| Drop point | 2023 | 2024 |
+|---|---|---|
+| 25 km off | 14 / **16** / 15 of 16 | 6 / **8** / 13 of 16 |
+| 50 km off | 13 / **13** / 13 | 5 / **7** / 10 |
+| 100 km off | 8 / **8** / 12 | 1 / **2** / 5 |
+| 150 km off (shelf edge) | 5 / **5** / 6 | 0 / **0** / 1 |
+
+- **2024 was a much kinder year than 2023:** about half as many groundings from 25 and 50 km, a quarter as many from 100 km, and none from the shelf edge at our leeway estimate.
+- **Distance still helps in both years,** and the step from 50 to 100 km is the big one.
+- **The early-May drops went ashore in both years.** In 2024 every drop on 1–10 May from 25 and 50 km grounded within 13 days on Delmarva or the Outer Banks; drops from 13 May to early June stayed at sea. In 2023 the bad spell was 7–28 May. Two years is not enough to call it a rule, but it supports waiting for a spell of offshore wind over fixing a date.
+- **Late drops (after about 10 June) from 25–50 km drifted north-east and went ashore around Cape Cod and Long Island** after 2–4 weeks.
+- **Leeway mattered more in 2024:** at 5% of wind, groundings from 25 km rose from 8 to 13.
+- This is still the worst case (a boat dead at launch). The near-coast launch at 10 km is closer in than any point tested here, so the launch-plan rules (72 hours of offshore wind, escort, early recovery) carry the weight.
 
 **What the full Monte Carlo adds (Nov 10, 250 voyages on 2023 weather):** only 2 of 250 voyages (0.8%) went aground near the US coast, because few boats actually fail in their first days after a 14-day shakedown. So the drop point is worth about 1% on the odds, not the 50% the worst case suggests. The launch date mattered far more: launches 1–15 May succeeded 44% of the time, 16–31 May 36%, and 1–15 June 21%. June boats met more breaking seas (4.1 knockdowns a day against 3.4) and arrived into autumn storms. That supports the 1–20 May window in [Launch_Plan.md](Launch_Plan.md). In 2023, early May is also when the 100 km drop grounds dead boats; that tension is another reason to prefer the shelf edge.
 

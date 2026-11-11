@@ -1,0 +1,210 @@
+0.020 25 km off (old plan)       2024-05-01  aground            3.8 days  end 38.01, -75.25
+0.020 25 km off (old plan)       2024-05-04  aground            7.4 days  end 38.24, -75.12
+0.020 25 km off (old plan)       2024-05-07  aground            7.2 days  end 38.01, -75.25
+0.020 25 km off (old plan)       2024-05-10  aground           10.2 days  end 36.29, -75.78
+0.020 25 km off (old plan)       2024-05-13  at_sea_timeout    30.0 days  end 37.74, -67.62
+0.020 25 km off (old plan)       2024-05-16  at_sea_timeout    30.0 days  end 38.63, -68.17
+0.020 25 km off (old plan)       2024-05-19  at_sea_timeout    30.0 days  end 38.96, -73.06
+0.020 25 km off (old plan)       2024-05-22  at_sea_timeout    30.0 days  end 39.87, -72.22
+0.020 25 km off (old plan)       2024-05-25  at_sea_timeout    30.0 days  end 39.67, -71.89
+0.020 25 km off (old plan)       2024-05-28  at_sea_timeout    30.0 days  end 39.77, -71.51
+0.020 25 km off (old plan)       2024-05-31  at_sea_timeout    30.0 days  end 39.75, -71.46
+0.020 25 km off (old plan)       2024-06-03  at_sea_timeout    30.0 days  end 40.57, -71.44
+0.020 25 km off (old plan)       2024-06-06  at_sea_timeout    30.0 days  end 40.41, -71.46
+0.020 25 km off (old plan)       2024-06-09  at_sea_timeout    30.0 days  end 40.18, -71.89
+0.020 25 km off (old plan)       2024-06-12  aground           29.4 days  end 41.67, -70.08
+0.020 25 km off (old plan)       2024-06-15  aground           26.7 days  end 41.67, -70.1
+0.020 50 km off                  2024-05-01  aground            4.2 days  end 37.91, -75.32
+0.020 50 km off                  2024-05-04  aground            7.6 days  end 38.09, -75.19
+0.020 50 km off                  2024-05-07  aground           12.7 days  end 36.48, -75.84
+0.020 50 km off                  2024-05-10  aground            9.5 days  end 36.48, -75.84
+0.020 50 km off                  2024-05-13  at_sea_timeout    30.0 days  end 38.08, -68.49
+0.020 50 km off                  2024-05-16  at_sea_timeout    30.0 days  end 37.89, -67.65
+0.020 50 km off                  2024-05-19  at_sea_timeout    30.0 days  end 36.4, -74.46
+0.020 50 km off                  2024-05-22  at_sea_timeout    30.0 days  end 39.28, -72.49
+0.020 50 km off                  2024-05-25  at_sea_timeout    30.0 days  end 39.28, -72.02
+0.020 50 km off                  2024-05-28  at_sea_timeout    30.0 days  end 38.18, -73.24
+0.020 50 km off                  2024-05-31  at_sea_timeout    30.0 days  end 39.88, -71.36
+0.020 50 km off                  2024-06-03  at_sea_timeout    30.0 days  end 39.84, -71.6
+0.020 50 km off                  2024-06-06  at_sea_timeout    30.0 days  end 40.35, -71.45
+0.020 50 km off                  2024-06-09  at_sea_timeout    30.0 days  end 39.47, -72.73
+0.020 50 km off                  2024-06-12  at_sea_timeout    30.0 days  end 41.08, -70.88
+0.020 50 km off                  2024-06-15  aground           27.8 days  end 41.71, -70.7
+0.020 100 km off (current plan)  2024-05-01  at_sea_timeout    30.0 days  end 40.37, -62.72
+0.020 100 km off (current plan)  2024-05-04  aground           17.3 days  end 35.68, -75.47
+0.020 100 km off (current plan)  2024-05-07  at_sea_timeout    30.0 days  end 38.45, -65.43
+0.020 100 km off (current plan)  2024-05-10  at_sea_timeout    30.0 days  end 38.69, -63.82
+0.020 100 km off (current plan)  2024-05-13  at_sea_timeout    30.0 days  end 35.54, -64.65
+0.020 100 km off (current plan)  2024-05-16  at_sea_timeout    30.0 days  end 38.82, -57.86
+0.020 100 km off (current plan)  2024-05-19  at_sea_timeout    30.0 days  end 39.81, -70.73
+0.020 100 km off (current plan)  2024-05-22  at_sea_timeout    30.0 days  end 37.24, -73.97
+0.020 100 km off (current plan)  2024-05-25  at_sea_timeout    30.0 days  end 39.57, -69.09
+0.020 100 km off (current plan)  2024-05-28  at_sea_timeout    30.0 days  end 39.21, -72.49
+0.020 100 km off (current plan)  2024-05-31  at_sea_timeout    30.0 days  end 38.17, -73.75
+0.020 100 km off (current plan)  2024-06-03  at_sea_timeout    30.0 days  end 38.41, -71.79
+0.020 100 km off (current plan)  2024-06-06  at_sea_timeout    30.0 days  end 39.56, -73.03
+0.020 100 km off (current plan)  2024-06-09  at_sea_timeout    30.0 days  end 39.98, -73.03
+0.020 100 km off (current plan)  2024-06-12  at_sea_timeout    30.0 days  end 39.73, -73.18
+0.020 100 km off (current plan)  2024-06-15  at_sea_timeout    30.0 days  end 40.41, -72.24
+0.020 150 km off (shelf edge)    2024-05-01  at_sea_timeout    30.0 days  end 33.46, -67.13
+0.020 150 km off (shelf edge)    2024-05-04  at_sea_timeout    30.0 days  end 41.26, -61.77
+0.020 150 km off (shelf edge)    2024-05-07  at_sea_timeout    30.0 days  end 38.75, -69.93
+0.020 150 km off (shelf edge)    2024-05-10  at_sea_timeout    30.0 days  end 38.87, -69.24
+0.020 150 km off (shelf edge)    2024-05-13  at_sea_timeout    30.0 days  end 38.58, -57.2
+0.020 150 km off (shelf edge)    2024-05-16  at_sea_timeout    30.0 days  end 35.78, -71.47
+0.020 150 km off (shelf edge)    2024-05-19  at_sea_timeout    30.0 days  end 39.28, -55.2
+0.020 150 km off (shelf edge)    2024-05-22  at_sea_timeout    30.0 days  end 41.45, -58.08
+0.020 150 km off (shelf edge)    2024-05-25  at_sea_timeout    30.0 days  end 40.33, -62.93
+0.020 150 km off (shelf edge)    2024-05-28  at_sea_timeout    30.0 days  end 40.26, -65.19
+0.020 150 km off (shelf edge)    2024-05-31  at_sea_timeout    30.0 days  end 40.02, -62.12
+0.020 150 km off (shelf edge)    2024-06-03  at_sea_timeout    30.0 days  end 39.26, -71.15
+0.020 150 km off (shelf edge)    2024-06-06  at_sea_timeout    30.0 days  end 37.94, -68.26
+0.020 150 km off (shelf edge)    2024-06-09  at_sea_timeout    30.0 days  end 40.71, -61.87
+0.020 150 km off (shelf edge)    2024-06-12  at_sea_timeout    30.0 days  end 38.63, -72.92
+0.020 150 km off (shelf edge)    2024-06-15  at_sea_timeout    30.0 days  end 40.06, -66.57
+0.033 25 km off (old plan)       2024-05-01  aground            3.2 days  end 38.11, -75.18
+0.033 25 km off (old plan)       2024-05-04  aground            1.4 days  end 38.18, -75.14
+0.033 25 km off (old plan)       2024-05-07  aground            6.9 days  end 37.99, -75.39
+0.033 25 km off (old plan)       2024-05-10  aground            4.9 days  end 37.91, -75.44
+0.033 25 km off (old plan)       2024-05-13  at_sea_timeout    30.0 days  end 40.85, -63.57
+0.033 25 km off (old plan)       2024-05-16  at_sea_timeout    30.0 days  end 40.65, -61.21
+0.033 25 km off (old plan)       2024-05-19  at_sea_timeout    30.0 days  end 40.26, -72.74
+0.033 25 km off (old plan)       2024-05-22  at_sea_timeout    30.0 days  end 41.29, -70.72
+0.033 25 km off (old plan)       2024-05-25  at_sea_timeout    30.0 days  end 40.93, -70.82
+0.033 25 km off (old plan)       2024-05-28  at_sea_timeout    30.0 days  end 40.11, -70.71
+0.033 25 km off (old plan)       2024-05-31  at_sea_timeout    30.0 days  end 40.72, -70.46
+0.033 25 km off (old plan)       2024-06-03  aground           22.6 days  end 41.35, -70.82
+0.033 25 km off (old plan)       2024-06-06  aground           29.9 days  end 41.28, -70.18
+0.033 25 km off (old plan)       2024-06-09  at_sea_timeout    30.0 days  end 41.12, -70.83
+0.033 25 km off (old plan)       2024-06-12  aground           10.9 days  end 40.65, -73.21
+0.033 25 km off (old plan)       2024-06-15  aground           14.2 days  end 41.04, -71.95
+0.033 50 km off                  2024-05-01  aground            3.7 days  end 37.89, -75.34
+0.033 50 km off                  2024-05-04  aground            6.2 days  end 38.49, -75.04
+0.033 50 km off                  2024-05-07  aground            7.2 days  end 37.88, -75.35
+0.033 50 km off                  2024-05-10  aground            8.9 days  end 36.68, -75.9
+0.033 50 km off                  2024-05-13  at_sea_timeout    30.0 days  end 38.31, -66.17
+0.033 50 km off                  2024-05-16  at_sea_timeout    30.0 days  end 37.94, -63.33
+0.033 50 km off                  2024-05-19  at_sea_timeout    30.0 days  end 39.12, -72.36
+0.033 50 km off                  2024-05-22  at_sea_timeout    30.0 days  end 40.23, -71.37
+0.033 50 km off                  2024-05-25  at_sea_timeout    30.0 days  end 40.61, -71.49
+0.033 50 km off                  2024-05-28  at_sea_timeout    30.0 days  end 38.6, -73.56
+0.033 50 km off                  2024-05-31  at_sea_timeout    30.0 days  end 39.8, -70.39
+0.033 50 km off                  2024-06-03  aground           27.9 days  end 41.3, -70.16
+0.033 50 km off                  2024-06-06  at_sea_timeout    30.0 days  end 40.64, -70.83
+0.033 50 km off                  2024-06-09  at_sea_timeout    30.0 days  end 40.41, -71.77
+0.033 50 km off                  2024-06-12  aground           17.8 days  end 41.52, -71.12
+0.033 50 km off                  2024-06-15  aground           15.3 days  end 41.47, -71.34
+0.033 100 km off (current plan)  2024-05-01  aground           17.6 days  end 36.35, -75.79
+0.033 100 km off (current plan)  2024-05-04  aground           10.8 days  end 37.86, -75.47
+0.033 100 km off (current plan)  2024-05-07  at_sea_timeout    30.0 days  end 37.89, -65.91
+0.033 100 km off (current plan)  2024-05-10  at_sea_timeout    30.0 days  end 38.41, -62.88
+0.033 100 km off (current plan)  2024-05-13  at_sea_timeout    30.0 days  end 37.52, -69.64
+0.033 100 km off (current plan)  2024-05-16  at_sea_timeout    30.0 days  end 38.81, -56.06
+0.033 100 km off (current plan)  2024-05-19  at_sea_timeout    30.0 days  end 40.38, -57.55
+0.033 100 km off (current plan)  2024-05-22  at_sea_timeout    30.0 days  end 39.49, -72.09
+0.033 100 km off (current plan)  2024-05-25  at_sea_timeout    30.0 days  end 39.89, -65.31
+0.033 100 km off (current plan)  2024-05-28  at_sea_timeout    30.0 days  end 41.68, -59.38
+0.033 100 km off (current plan)  2024-05-31  at_sea_timeout    30.0 days  end 37.28, -74.26
+0.033 100 km off (current plan)  2024-06-03  at_sea_timeout    30.0 days  end 38.34, -74.31
+0.033 100 km off (current plan)  2024-06-06  at_sea_timeout    30.0 days  end 39.27, -73.96
+0.033 100 km off (current plan)  2024-06-09  at_sea_timeout    30.0 days  end 40.56, -72.5
+0.033 100 km off (current plan)  2024-06-12  at_sea_timeout    30.0 days  end 41.6, -70.77
+0.033 100 km off (current plan)  2024-06-15  at_sea_timeout    30.0 days  end 41.2, -70.71
+0.033 150 km off (shelf edge)    2024-05-01  at_sea_timeout    30.0 days  end 39.56, -67.15
+0.033 150 km off (shelf edge)    2024-05-04  at_sea_timeout    30.0 days  end 38.5, -65.09
+0.033 150 km off (shelf edge)    2024-05-07  at_sea_timeout    30.0 days  end 38.24, -62.76
+0.033 150 km off (shelf edge)    2024-05-10  at_sea_timeout    30.0 days  end 41.27, -61.63
+0.033 150 km off (shelf edge)    2024-05-13  at_sea_timeout    30.0 days  end 38.1, -66.72
+0.033 150 km off (shelf edge)    2024-05-16  at_sea_timeout    30.0 days  end 36.87, -65.49
+0.033 150 km off (shelf edge)    2024-05-19  at_sea_timeout    30.0 days  end 43.2, -50.96
+0.033 150 km off (shelf edge)    2024-05-22  at_sea_timeout    30.0 days  end 37.68, -59.32
+0.033 150 km off (shelf edge)    2024-05-25  at_sea_timeout    30.0 days  end 40.91, -53.15
+0.033 150 km off (shelf edge)    2024-05-28  at_sea_timeout    30.0 days  end 42.71, -56.52
+0.033 150 km off (shelf edge)    2024-05-31  at_sea_timeout    30.0 days  end 42.68, -60.23
+0.033 150 km off (shelf edge)    2024-06-03  at_sea_timeout    30.0 days  end 37.97, -72.74
+0.033 150 km off (shelf edge)    2024-06-06  at_sea_timeout    30.0 days  end 40.25, -72.79
+0.033 150 km off (shelf edge)    2024-06-09  at_sea_timeout    30.0 days  end 42.34, -67.76
+0.033 150 km off (shelf edge)    2024-06-12  at_sea_timeout    30.0 days  end 40.87, -71.44
+0.033 150 km off (shelf edge)    2024-06-15  at_sea_timeout    30.0 days  end 41.17, -68.03
+0.050 25 km off (old plan)       2024-05-01  aground            2.8 days  end 38.27, -75.11
+0.050 25 km off (old plan)       2024-05-04  aground            1.0 days  end 38.12, -75.17
+0.050 25 km off (old plan)       2024-05-07  aground            5.7 days  end 37.82, -75.49
+0.050 25 km off (old plan)       2024-05-10  aground            3.7 days  end 37.55, -75.61
+0.050 25 km off (old plan)       2024-05-13  at_sea_timeout    30.0 days  end 38.57, -61.61
+0.050 25 km off (old plan)       2024-05-16  at_sea_timeout    30.0 days  end 37.92, -60.4
+0.050 25 km off (old plan)       2024-05-19  aground            8.4 days  end 38.95, -74.91
+0.050 25 km off (old plan)       2024-05-22  aground           22.8 days  end 41.26, -70.08
+0.050 25 km off (old plan)       2024-05-25  aground           25.1 days  end 41.56, -70.67
+0.050 25 km off (old plan)       2024-05-28  at_sea_timeout    30.0 days  end 41.7, -69.41
+0.050 25 km off (old plan)       2024-05-31  aground           24.1 days  end 41.37, -70.55
+0.050 25 km off (old plan)       2024-06-03  aground           17.1 days  end 41.0, -72.08
+0.050 25 km off (old plan)       2024-06-06  aground           17.4 days  end 41.01, -72.04
+0.050 25 km off (old plan)       2024-06-09  aground           14.5 days  end 40.74, -72.9
+0.050 25 km off (old plan)       2024-06-12  aground            6.2 days  end 39.67, -74.14
+0.050 25 km off (old plan)       2024-06-15  aground            3.8 days  end 39.18, -74.67
+0.050 50 km off                  2024-05-01  aground            3.1 days  end 38.01, -75.24
+0.050 50 km off                  2024-05-04  aground            1.3 days  end 38.08, -75.2
+0.050 50 km off                  2024-05-07  aground            6.3 days  end 37.72, -75.55
+0.050 50 km off                  2024-05-10  aground            4.2 days  end 37.53, -75.64
+0.050 50 km off                  2024-05-13  at_sea_timeout    30.0 days  end 40.93, -63.81
+0.050 50 km off                  2024-05-16  at_sea_timeout    30.0 days  end 39.06, -62.32
+0.050 50 km off                  2024-05-19  at_sea_timeout    30.0 days  end 40.56, -72.14
+0.050 50 km off                  2024-05-22  at_sea_timeout    30.0 days  end 41.78, -69.6
+0.050 50 km off                  2024-05-25  aground           26.6 days  end 41.39, -70.74
+0.050 50 km off                  2024-05-28  at_sea_timeout    30.0 days  end 40.67, -70.67
+0.050 50 km off                  2024-05-31  at_sea_timeout    30.0 days  end 42.31, -69.22
+0.050 50 km off                  2024-06-03  aground           20.1 days  end 41.37, -71.57
+0.050 50 km off                  2024-06-06  aground           21.2 days  end 41.67, -70.09
+0.050 50 km off                  2024-06-09  aground           29.6 days  end 41.25, -70.07
+0.050 50 km off                  2024-06-12  aground            9.3 days  end 40.64, -73.42
+0.050 50 km off                  2024-06-15  aground            6.0 days  end 39.63, -74.19
+0.050 100 km off (current plan)  2024-05-01  aground           10.8 days  end 37.53, -75.64
+0.050 100 km off (current plan)  2024-05-04  aground            8.7 days  end 37.84, -75.48
+0.050 100 km off (current plan)  2024-05-07  at_sea_timeout    30.0 days  end 37.41, -61.92
+0.050 100 km off (current plan)  2024-05-10  at_sea_timeout    30.0 days  end 38.86, -59.71
+0.050 100 km off (current plan)  2024-05-13  at_sea_timeout    30.0 days  end 37.17, -64.07
+0.050 100 km off (current plan)  2024-05-16  at_sea_timeout    30.0 days  end 37.13, -67.57
+0.050 100 km off (current plan)  2024-05-19  at_sea_timeout    30.0 days  end 40.9, -58.44
+0.050 100 km off (current plan)  2024-05-22  at_sea_timeout    30.0 days  end 40.28, -70.66
+0.050 100 km off (current plan)  2024-05-25  at_sea_timeout    30.0 days  end 40.24, -71.24
+0.050 100 km off (current plan)  2024-05-28  at_sea_timeout    30.0 days  end 42.34, -50.5
+0.050 100 km off (current plan)  2024-05-31  aground           21.4 days  end 37.51, -75.72
+0.050 100 km off (current plan)  2024-06-03  at_sea_timeout    30.0 days  end 40.33, -70.07
+0.050 100 km off (current plan)  2024-06-06  at_sea_timeout    30.0 days  end 41.02, -70.68
+0.050 100 km off (current plan)  2024-06-09  at_sea_timeout    30.0 days  end 40.93, -72.13
+0.050 100 km off (current plan)  2024-06-12  aground           26.7 days  end 41.25, -70.06
+0.050 100 km off (current plan)  2024-06-15  aground           24.5 days  end 41.36, -70.6
+0.050 150 km off (shelf edge)    2024-05-01  at_sea_timeout    30.0 days  end 36.5, -69.14
+0.050 150 km off (shelf edge)    2024-05-04  at_sea_timeout    30.0 days  end 34.98, -66.22
+0.050 150 km off (shelf edge)    2024-05-07  at_sea_timeout    30.0 days  end 39.72, -61.72
+0.050 150 km off (shelf edge)    2024-05-10  at_sea_timeout    30.0 days  end 39.09, -56.88
+0.050 150 km off (shelf edge)    2024-05-13  at_sea_timeout    30.0 days  end 34.19, -70.16
+0.050 150 km off (shelf edge)    2024-05-16  at_sea_timeout    30.0 days  end 36.05, -67.33
+0.050 150 km off (shelf edge)    2024-05-19  at_sea_timeout    30.0 days  end 40.47, -59.54
+0.050 150 km off (shelf edge)    2024-05-22  at_sea_timeout    30.0 days  end 37.5, -60.98
+0.050 150 km off (shelf edge)    2024-05-25  at_sea_timeout    30.0 days  end 39.96, -53.79
+0.050 150 km off (shelf edge)    2024-05-28  at_sea_timeout    30.0 days  end 40.8, -53.67
+0.050 150 km off (shelf edge)    2024-05-31  at_sea_timeout    30.0 days  end 43.24, -50.18
+0.050 150 km off (shelf edge)    2024-06-03  at_sea_timeout    30.0 days  end 38.99, -62.96
+0.050 150 km off (shelf edge)    2024-06-06  at_sea_timeout    30.0 days  end 40.83, -70.98
+0.050 150 km off (shelf edge)    2024-06-09  at_sea_timeout    30.0 days  end 38.22, -64.42
+0.050 150 km off (shelf edge)    2024-06-12  aground           27.2 days  end 41.26, -70.11
+0.050 150 km off (shelf edge)    2024-06-15  at_sea_timeout    30.0 days  end 39.61, -72.53
+
+Summary (aground within the period / runs, median eastward progress):
+ leeway 2.0% of wind
+  25 km off (old plan)       aground 6/16   median east +3.2 deg lon
+  50 km off                  aground 5/16   median east +2.9 deg lon
+  100 km off (current plan)  aground 1/16   median east +2.2 deg lon
+  150 km off (shelf edge)    aground 0/16   median east +8.3 deg lon
+ leeway 3.3% of wind
+  25 km off (old plan)       aground 8/16   median east +3.9 deg lon
+  50 km off                  aground 7/16   median east +3.2 deg lon
+  100 km off (current plan)  aground 2/16   median east +4.4 deg lon
+  150 km off (shelf edge)    aground 0/16   median east +8.4 deg lon
+ leeway 5.0% of wind
+  25 km off (old plan)       aground 13/16   median east +13.0 deg lon
+  50 km off                  aground 10/16   median east +5.3 deg lon
+  100 km off (current plan)  aground 5/16   median east +6.4 deg lon
+  150 km off (shelf edge)    aground 1/16   median east +10.5 deg lon
+Saved ..\results\drift_tests_ocean_city_bulk_2024.json

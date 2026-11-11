@@ -102,7 +102,18 @@ The comparison above showed that a leak in Rev C no longer sinks the boat but st
 - **Cable glands go on the top of the box,** with drip loops, gel-filled connectors and desiccant inside.
 - **Effect on the boat:** +0.08 kg (shelf), CG 3 mm higher, GM 0.184 m (was 0.187), still self-righting. No new printed parts.
 - **In the simulator:** water in the bay now multiplies the electronics hazard by `hull.wet_electronics_factor` = 2 for C1 (it was 6 for Rev B and Rev C). **The 2 is a guess.** In a knockdown the water still splashes the box briefly, and humid air still reaches the connectors. Field Test J (below in [Field_Tests.md](Field_Tests.md)) is what would justify it.
-- **To measure it:** `simulator/run_revC1_compare_2023.bat` runs C1 from the near-coast point on the same 250 voyages as the Rev C run above. `designs/revC0_design.json` is Rev C as first drawn, for reference.
+- **Measured (11 Nov, 250 voyages, 2023 weather, near-coast launch; log in `collab/run_log_revC1_compare_2023_2026-11-11.txt`):**
+
+| | Rev C as first drawn | Rev C1 |
+|---|---|---|
+| Verified arrivals | 38.8% (33.0–45.0) | **45.6% (39.5–51.8)** |
+| Arrived still reporting | 29.6% | 36.0% |
+| Lost | 18.8% | 18.0% |
+| Position known at the end | 77.6% | 81.2% |
+| Electronics failures | 37 | 31 |
+| Wing damaged in a knockdown | 38 | 28 |
+
+  C1 came out 7 points higher, but the two ranges overlap, and wing damage (which C1 does not touch) fell by as much as electronics failures did. So most of the gap is chance. The fair reading is that C1 helps by a few points at most, and that the `wet_electronics_factor` of 2 is still a guess. `designs/revC0_design.json` is Rev C as first drawn, for reference.
 
 ## Rev C2: keel fin rebuilt after a strength check (11 Nov 2026)
 
