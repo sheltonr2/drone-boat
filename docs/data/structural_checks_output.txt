@@ -1,0 +1,29 @@
+part                                       load case                                                                         value   limit unit    FoS  note
+Hull bottom over the sump (unbacked)       slam 37 kPa, 1 in 20 strike: inner skin tension                                    79.4     250 MPa     3.1  1 ply inside
+Hull bottom over the sump (unbacked)       same: core shear                                                                    0.4       1 MPa     3.0  
+Hull bottom over the sump (unbacked)       slam 52 kPa, 1 in 1,000 strike: inner skin tension                                112.0     250 MPa     2.2  1 ply inside
+Hull bottom over the sump (unbacked)       same: core shear                                                                    0.5       1 MPa     2.2  
+Hull and deck where foam-backed            slam 52 kPa on XPS fill (250 kPa at 10% strain)                                    52.3     250 kPa     4.8  local dent, not a hole
+Hatch lid, 4 mm G10 lid                    plunging jet on deck 33 kPa                                                        26.3     300 MPa    11.4  G10 flexural strength 300+ MPa
+Hatch bolts (12 x M5 into inserts)         same, lifting when inverted: 122 N each                                           122.1    1500 N      12.3  brass insert in glass/foam: pull-out about 1.5 kN, check
+Hatch lid, 3 x 6 oz over 6 mm foam         same                                                                               46.4     200 MPa     4.3  
+Hatch lid, 3 x 6 oz over 6 mm foam         same: core shear                                                                    0.5       1 MPa     2.2  must be H80, not XPS
+Bearing housing P07 (printed PETG)         spar at its breaking load: 8.8 kN on a 42 x 7 mm seat                              30.1      50 MPa     1.7  PETG yield about 50 MPa; creeps above about 15
+Mast tube to deck ring                     spar at its breaking load: 8.8 kN sideways at the deck                             13.9      60 MPa     4.3  bearing of the tube on the deck skins + collar; needs a 60 mm wide glass collar
+Bearing housing P07 (printed PETG)         30 x 22 spar at its breaking load: 14.5 kN on a 42 x 7 mm seat                     49.3      50 MPa     1.0  PETG yield about 50 MPa; creeps above about 15  <-- marginal
+Mast tube to deck ring                     30 x 22 spar at its breaking load: 14.5 kN sideways at the deck                    22.8      60 MPa     2.6  bearing of the tube on the deck skins + collar; needs a 60 mm wide glass collar
+Keel rods (2 x M10 316) in a bottom slam   bulb 9.2 kg x 50 g                                                                 38.9     450 MPa    11.6  tension in each rod
+Hull girder in a bottom slam               bending 846 N*m amidships                                                          15.3     200 MPa    13.0  deck skins in compression
+Battery straps and anchors P16             60 g jolt: 1383 N shared by 4 anchors                                               0.2       5 MPa    20.8  epoxy bond of a printed part to the hull: 5 MPa shear, peel is worse
+Rudder lower bushing / trunk               blade broadside at 4 m/s: 272 N                                                   583.9    3000 N       5.1  iglide J 12 mm bushing static rating, trunk glassed to hull and deck
+Wing spar, wind alone                      33 m/s, wing feathered (CdA 0.015 m2) / jammed broadside (0.36 m2)                132.1     690 N*m     5.2  feathered 6 N*m
+Wing spar, wind alone                      50 m/s, wing feathered (CdA 0.015 m2) / jammed broadside (0.36 m2)                303.2     690 N*m     2.3  feathered 13 N*m
+Counterweight arm, 12 x 10 carbon          bottom slam, velocity step 1 m/s (drop of 5 cm)                                    24.7      53 N*m     2.1  
+Counterweight arm, 12 mm solid glass rod   bottom slam, velocity step 1 m/s (drop of 5 cm)                                    21.7     119 N*m     5.5  
+Tail boom, 12 x 10 carbon                  bottom slam, velocity step 1 m/s (drop of 5 cm)                                     8.4      53 N*m     6.3  
+Counterweight arm, 12 x 10 carbon          bottom slam, velocity step 2 m/s (drop of 20 cm)                                   49.3      53 N*m     1.1    <-- marginal
+Counterweight arm, 12 mm solid glass rod   bottom slam, velocity step 2 m/s (drop of 20 cm)                                   43.3     119 N*m     2.7  
+Tail boom, 12 x 10 carbon                  bottom slam, velocity step 2 m/s (drop of 20 cm)                                   16.8      53 N*m     3.2  
+Counterweight arm, 12 x 10 carbon          bottom slam, velocity step 3 m/s (drop of 46 cm)                                   74.0      53 N*m     0.7    <-- FAILS
+Counterweight arm, 12 mm solid glass rod   bottom slam, velocity step 3 m/s (drop of 46 cm)                                   65.0     119 N*m     1.8  
+Tail boom, 12 x 10 carbon                  bottom slam, velocity step 3 m/s (drop of 46 cm)                                   25.2      53 N*m     2.1  

@@ -2,6 +2,15 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-11, midday: whole-boat structural review
+
+- Randolph asked for a naval-engineer's review of every stress point, with simulation behind the guesses. Wrote `docs/data/strike_sim.py` (sway/roll strike simulation with flexible parts), `docs/data/structural_checks.py` and `docs/Structural_Review.md`.
+- Simulated values that replace guesses (Hs 5 m): hull picks up 75% of the water speed; half of it in 0.014 s (plunging) or 0.2 s (spilling); roll rate median 0.9-1.5 rad/s, 95% about 3; peak hull acceleration 16 g typical, 68 g 1 in 20 (plunging).
+- Fail points: stern post (carries both the main antenna and the YB3), counterweight arm, rudder servos back-driven, wing spar. Hull, deck, hatch, keel rods, battery mounts pass.
+- Wing loss per knockdown: model 0.0002-0.03 depending on breaker assumptions; simulator uses 0.0009. Not changed.
+- Proposed (not drawn, waiting for Randolph): YB3 to the deck + fibreglass post, fibreglass rod counterweight arm, servo-savers, 30 x 22 spar with stronger bearing housing, second inner ply over the sump. Proposed tests L (breaker test with IMU logging) and M (wing slap).
+- Not posted to John.
+
 ## 2026-11-11, 09:40: C1 comparison and 2024 drift tests in
 
 - Rev C1, 250 voyages, 2023, near-coast: 45.6% (39.5-51.8) verified arrivals against 38.8% for Rev C as first drawn. Electronics failures 31 vs 37, but wing damage also fell 38 to 28, so most of the gap is chance.
