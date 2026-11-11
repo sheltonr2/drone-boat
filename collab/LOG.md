@@ -2,6 +2,11 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-11, 16:10: personal question relayed; John's wing check disagrees
+
+- Posted on #50 at Randolph's request: a personal question for John's project manager to put to John directly ("I see the Habaneros have moved, how are they doing?").
+- John's team ran C4 vs C5 through their port of our foil model: -16% averaged over 3-15 m/s and 50-165 deg (downwind -2 to -12%; at 50 deg from about 9 m/s C5 makes no way), against our -4%. They think theirs is pessimistic (earlier stall at low aspect ratio, 20 deg angle cap) and asked what our 4% averages over and whether our stall angle changes with aspect ratio. Not yet answered or investigated.
+
 ## 2026-11-11, 16:30: run queue for the PC
 
 - The PC was locked, so Claude could not start `run_revC5_2023.bat` by double-click (File Explorer access was granted; nothing was clicked). Randolph chose the run queue.
