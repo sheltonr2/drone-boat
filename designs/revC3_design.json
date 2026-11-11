@@ -4,7 +4,7 @@
   "revision_note": "C3: structural review changes (YB3 to the foredeck, fibreglass post and counterweight arm, servo-savers, 30 x 22 spar), 11 Nov 2026; C2: hardwood keel fin; C1: electronics box above the flood level",
   "structure": {
     "parts": "C3",
-    "breakers": "gentle",
+    "breakers": "measured",
     "tracker_on_post": false
   },
   "hull": {

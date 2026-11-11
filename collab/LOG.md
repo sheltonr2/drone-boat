@@ -2,6 +2,15 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-11, 13:00: research review; strike model corrected against buoy data
+
+- Randolph asked for deeper research (naval design, ocean loads, materials) while his C3 run goes. Wrote `docs/Research_Review.md`.
+- Main correction: measured buoy accelerations in real breakers (about 1 g sideways; JMSE 2021 9(2) 214) show the slam model for plunging breakers overstated shock by about ten times. Added `plunge_model="measured"` to `docs/data/strike_sim.py`. Stern post (40 vs 115 N*m) and counterweight arm (20 vs 53) are not fail points; wing spar and rudder servos unchanged. Correction added at the top of Structural_Review.md.
+- Simulator default breaker set is now "measured" (tables regenerated; wing factor for C3 0.27). New `simulator/run_revC3_measured_2023.bat` and `designs/revC2_structure_measured_design.json`. NOT copied to the PC: Randolph's run with the older "gentle" set is in progress.
+- Other findings: C-Star PC13 (1.2 m) completed the autonomous Microtransat in Sept 2026, 0.96 kn average (our sim: 1.0 kn); stainless in stagnant seawater (mast bearings, rudder stocks, keel rods); white oak bonds with prep; H80 minimum shear 0.95 MPa.
+- Proposed, not drawn: mast bearing spec and seal, drawing notes, sticking-rudder detection, a shorter wider wing study.
+- `collab/draft_50_correction.md`: draft correction for John, not posted.
+
 ## 2026-11-11, afternoon: Rev C3 and the structural-failure model
 
 - Randolph approved all five structural-review changes and asked for drawings, documents, simulator and a post to John.

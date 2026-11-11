@@ -54,6 +54,9 @@ ASSUME = dict(
     kappa=(0.6, 1.1),            # water speed in the crest as a fraction of the breaker's speed
     cs0=(math.pi, 2 * math.pi),  # peak slamming coefficient (von Karman to Wagner)
     spill_time=(0.2, 0.6),       # s, time for a spilling roller to engage the whole hull side
+    plunge_model="slam",         # "slam": Wienke wall of water with a slamming coefficient (upper bound for a free body);
+                                 # "measured": ramps up over plunge_time, set from buoy measurements in real breakers (see MEASURED)
+    plunge_time=(0.06, 0.20),    # s, "measured" model only
     depth_scale=(0.1, 0.3),      # depth over which the moving water fades, as a fraction of breaker height
     jet_thickness=(0.1, 0.3),    # plunging: thickness of the falling jet, fraction of breaker height (0.8 of water density)
     jet_centre=(0.2, 1.0),       # plunging: height of the jet's centre above the boat's waterline, fraction of breaker height
@@ -63,6 +66,10 @@ ASSUME = dict(
     wing_align_time=0.08,        # s, time for the free wing to swing into line with the water
 )
 
+# Brown, Thomson and others' style drifting-buoy data: Feddersen-type 40 cm, 18 kg sphere in 1-2 m breakers
+# (J. Mar. Sci. Eng. 2021, 9(2), 214, Table 2; accelerations low-pass filtered at 10 Hz):
+MEASURED = dict(horiz_g_spilling=(0.80, 0.32), horiz_g_plunging=(1.18, 0.44), rot_spilling=(4.15, 1.26), rot_plunging=(8.70, 4.89))
+
 def simulate(hs, n, rng, A=ASSUME, parts=PARTS, dt=2e-4, T=0.45, post_area=POST_AREA):
     hb_s = 0.25 * hs
     hb = hb_s * np.sqrt((H_CRIT / hb_s)**2 - np.log(rng.random(n)) / 2)
@@ -70,7 +77,7 @@ def simulate(hs, n, rng, A=ASSUME, parts=PARTS, dt=2e-4, T=0.45, post_area=POST_
     sin_t = np.abs(np.sin(rng.uniform(0, np.pi, n)))
     u0 = rng.uniform(*A["kappa"], n) * c * sin_t                       # lateral water speed at the surface
     plunging = rng.random(n) < A["plunging_fraction"]
-    cs0 = rng.uniform(*A["cs0"], n); t_sp = rng.uniform(*A["spill_time"], n)
+    cs0 = rng.uniform(*A["cs0"], n); t_sp = rng.uniform(*A["spill_time"], n); t_pl = rng.uniform(*A.get("plunge_time", (0.06, 0.2)), n)
     delta = rng.uniform(*A["depth_scale"], n) * hb
     tj = rng.uniform(*A["jet_thickness"], n) * hb; hc = rng.uniform(*A["jet_centre"], n) * hb
     tr = rng.uniform(*A["roller_thickness"], n) * hb
@@ -99,7 +106,10 @@ def simulate(hs, n, rng, A=ASSUME, parts=PARTS, dt=2e-4, T=0.45, post_area=POST_
     for i in range(int(T / dt)):
         t = i * dt
         urel = u0 - (v + w * Z_HULL)
-        C = np.where(plunging, 1 + (cs0 - 1) * np.clip(1 - pen / (0.41 * HULL_R), 0, 1), np.minimum(t / t_sp, 1.0))
+        if A.get("plunge_model", "slam") == "slam":
+            C = np.where(plunging, 1 + (cs0 - 1) * np.clip(1 - pen / (0.41 * HULL_R), 0, 1), np.minimum(t / t_sp, 1.0))
+        else:
+            C = np.where(plunging, 1.5 * np.minimum(t / t_pl, 1.0), np.minimum(t / t_sp, 1.0))
         Fh = RHO * HULL_R * L_e * C * urel * np.abs(urel)
         pen += np.maximum(urel, 0) * dt
         vf = v[:, None] + w[:, None] * FIN_Z[None, :] - u_fin

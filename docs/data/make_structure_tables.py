@@ -5,10 +5,13 @@ import json, sys
 import numpy as np
 import strike_sim as S
 
-SETS = {"gentle": dict(plunging_fraction=0.1, kappa=(0.4, 0.9)), "central": {}}
-N = {"gentle": 60_000, "central": 20_000}
+SETS = {"measured": dict(plunge_model="measured")}     # calibrated to drifting-buoy accelerations (docs/Research_Review.md)
+N = {"measured": 40_000}
+import os
+PATH = "../../simulator/drone_sim/structure_tables.json"
+prev = json.load(open(PATH)) if os.path.exists(PATH) else {}
 out = {"_about": "chance per knockdown of breaking each part, by significant wave height in 1 m bins (0-1, 1-2, ... 9+ m); "
-                 "from docs/data/strike_sim.py; see docs/Structural_Review.md", "C2": {}, "C3": {}}
+                 "from docs/data/strike_sim.py; see docs/Structural_Review.md", "C2": dict(prev.get("C2", {})), "C3": dict(prev.get("C3", {}))}
 P3, S3 = S.with_options()
 rng = np.random.default_rng(11)
 for name, ch in SETS.items():
@@ -26,4 +29,4 @@ for name, ch in SETS.items():
         print(name, b, {k: tabs["C3"][k][-1] for k in tabs["C3"]}, flush=True)
     for rev in ("C2", "C3"):
         out[rev][name] = tabs[rev]
-    json.dump(out, open("../../simulator/drone_sim/structure_tables.json", "w"), indent=1)
+    json.dump(out, open(PATH, "w"), indent=1)

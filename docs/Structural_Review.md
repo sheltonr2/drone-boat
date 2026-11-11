@@ -4,6 +4,10 @@
 
 Scripts and their output are in `docs/data/`: `strike_sim.py` (breaking-wave strike simulation), `structural_checks.py` (hand checks), `keel_reliability.py` (the earlier fin study).
 
+## Correction (later the same day)
+
+Measured buoy data ([Research_Review.md](Research_Review.md)) shows the plunging-breaker model below is an upper bound, not a best estimate: it gives sideways accelerations of tens of g where a drifting buoy in real breakers recorded about 1 g. With strikes matched to that data, the worst 1-in-1,000 loads on the **stern post (40 N·m against 115) and counterweight arm (20 against 53) are well inside their strength**, and the keel joint's margin grows. The **wing spar and rudder-servo findings stand**, because they depend on speed and roll rate, not shock. Read the per-voyage percentages for the post and arm in the table below as the pessimistic bound. The Rev C3 changes were kept.
+
 ## Verdict
 
 The hull, deck, hatch, keel bolts and battery mounts have comfortable margins. **Four parts above the deck do not: the stern post, the counterweight arm, the rudder servos and the wing spar.** The first three have cheap fixes. The wing spar is the one large risk that this review cannot settle either way.

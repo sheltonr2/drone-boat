@@ -10,8 +10,9 @@ DEFAULT = {
     "name": "Rev C 1.5 m solar-sail drone",
     "revision": "C", "revision_note": "C3: structural review changes (YB3 to the foredeck, fibreglass post and counterweight arm, servo-savers, 30 x 22 spar), 11 Nov 2026; C2: hardwood keel fin; C1: electronics box above the flood level",
     # Structural failures in knockdowns, from the strike simulation (docs/Structural_Review.md, drone_sim/structure_tables.json).
-    # parts: which set of parts (C2 = before the review, C3 = with its changes). breakers: gentle or central. None = off.
-    "structure": {"parts": "C3", "breakers": "gentle", "tracker_on_post": False},
+    # parts: which set of parts (C2 = before the review, C3 = with its changes). breakers: "measured" (strikes matched to
+    # drifting-buoy accelerations, docs/Research_Review.md; the default), or the older "gentle" / "central" slam-model sets. None = off.
+    "structure": {"parts": "C3", "breakers": "measured", "tracker_on_post": False},
     "hull": {
         "length": 1.50, "beam": 0.40, "depth": 0.23,
         "max_beam_at": 0.55,            # fraction of length

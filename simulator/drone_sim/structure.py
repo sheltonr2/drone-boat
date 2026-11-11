@@ -6,8 +6,9 @@ stored in structure_tables.json next to this file. A design switches the model o
     "structure": {"parts": "C3", "breakers": "gentle", "tracker_on_post": false}
 
 parts     "C2" = the boat before the structural review, "C3" = with its changes
-breakers  "gentle" or "central" (assumptions about how hard the breakers hit). "gentle" is the default because it is the
-          set that reproduces the wing-loss rate the simulator was already calibrated to (0.0009 per knockdown).
+breakers  "measured" (default): plunging strikes matched to accelerations measured on a drifting buoy in real breakers
+          (docs/Research_Review.md). "gentle" and "central" are the earlier slam-model sets, kept for comparison; they
+          overstate shock loads on the stern post and counterweight arm.
 None switches the model off; designs saved before Rev C3 load with it off.
 
 The wing keeps its calibrated rate (failures.py, knockdown_damage). For C3 that rate is multiplied by the ratio of the
