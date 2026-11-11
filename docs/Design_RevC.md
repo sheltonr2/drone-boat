@@ -74,6 +74,17 @@ What it says:
 - **Launch point: near-coast costs more than estimated earlier.** Groundings near the US coast were 11 of 250 from the near-coast point against 2 of 250 from 100 km, and verified arrivals were 38.8% against 44.8% (a 6-point gap, at the edge of the noise). The earlier "about 1%" figure was wrong: it came from the 100 km run. Most of these groundings were boats whose electronics died in the first weeks (5 of 11 within 14 days). The simulator does not model the launch plan's offshore-wind rule, escort or early recovery, which are aimed at exactly these cases, so the real cost should be smaller than 6 points, but it is not zero.
 - **Knockdowns by wave height** (new log): 4% happen below Hs 3 m, 60% between 3 and 6 m, 35% above 6 m. The mean (Hs/3)² at a knockdown is 3.6 (boat-sim measured 2.9 on its model), so our flat 0.0009 per knockdown equals about 0.00025 at Hs 3 m in the scaled form.
 
+## Rev C1: electronics box above the flood level (11 Nov 2026)
+
+The comparison above showed that a leak in Rev C no longer sinks the boat but still kills the main electronics, because the trapped water sits in the same bay as the box. C1 separates them:
+
+- **The box moves up onto a glassed foam shelf,** bottom at z 118 mm (was 60), still under the deck with 11 mm to spare.
+- **The 3 L of open space becomes one sump** at the low point of the dry bay (x 560–770, below z 45). Everything above it is foam. Water stays about 70 mm below the shelf upright and at 30° of heel. The leak probe sits in the sump.
+- **Cable glands go on the top of the box,** with drip loops, gel-filled connectors and desiccant inside.
+- **Effect on the boat:** +0.08 kg (shelf), CG 3 mm higher, GM 0.184 m (was 0.187), still self-righting. No new printed parts.
+- **In the simulator:** water in the bay now multiplies the electronics hazard by `hull.wet_electronics_factor` = 2 for C1 (it was 6 for Rev B and Rev C). **The 2 is a guess.** In a knockdown the water still splashes the box briefly, and humid air still reaches the connectors. Field Test J (below in [Field_Tests.md](Field_Tests.md)) is what would justify it.
+- **To measure it:** `simulator/run_revC1_compare_2023.bat` runs C1 from the near-coast point on the same 250 voyages as the Rev C run above. `designs/revC0_design.json` is Rev C as first drawn, for reference.
+
 ## Files
 
 - **Drawings and build files:** `build-files/Drawings.pdf` (20 sheets; new D09 for subdivision, foam fill, battery box and labels), `Templates_1to1_Letter.pdf` (new T17 and T18 bulkheads; T15 spar bore 30.4 mm), 19 DXF files, and 23 STL files for 20 printed parts (P07 and P08 for the 30 mm spar, P14 for the D72 bulb, new P19 and P20; print two each of P11, P12 and P13).

@@ -428,7 +428,7 @@ class Voyage:
         # once the main box is dead only the hull, the rig and the outside world can still change things
         active = not st["box_dead"]
         # electronics
-        if active and rnd() < p_event(self.rate("electronics")*el*(1 + 5*(st["water_kg"] > 0.3)), dt):
+        if active and rnd() < p_event(self.rate("electronics")*el*(1 + (self.d["hull"].get("wet_electronics_factor", 6.0) - 1)*(st["water_kg"] > 0.3)), dt):
             if st["trk_ok"]:
                 st["box_dead"] = True; st["brownout"] = False
                 self.event(t, "failure", "Electronics failure (corrosion/humidity): main box dead, boat drifting; backup tracker still reporting")

@@ -8,7 +8,7 @@ import copy, json, hashlib
 
 DEFAULT = {
     "name": "Rev C 1.5 m solar-sail drone",
-    "revision": "C",
+    "revision": "C", "revision_note": "C1: electronics box above the flood level (11 Nov 2026)",
     "hull": {
         "length": 1.50, "beam": 0.40, "depth": 0.23,
         "max_beam_at": 0.55,            # fraction of length
@@ -20,6 +20,9 @@ DEFAULT = {
         # Rev C: hull foam-filled (XPS blocks) behind two glassed-in bulkheads (x 0.30, 1.26), battery in its own sealed
         # box. A leak can only fill the free space left in the dry bay, so it can no longer swamp the boat.
         "flood_limit_kg": 3.0,
+        # Rev C1 (11 Nov 2026): electronics box on a shelf 70 mm above the sump, glands on top. Water in the bay multiplies
+        # the electronics hazard by this (Rev B and Rev C: 6). 2 is a GUESS until Field Test J (wet-bay soak) is done.
+        "wet_electronics_factor": 2.0,
     },
     "keel": {
         "x_le_root": 0.657, "span": 0.43, "root_chord": 0.17, "tip_chord": 0.15,
@@ -55,7 +58,8 @@ DEFAULT = {
     },
     "equipment": {   # point masses: [kg, x, y, z]
         "battery": [2.0, 0.87, 0.0, 0.10],
-        "electronics_box": [1.1, 1.10, 0.0, 0.10],          # Rev C: no backup D-cell (the YB3 covers it)
+        "electronics_box": [1.1, 1.10, 0.0, 0.163],         # Rev C: no backup D-cell. C1: raised onto a shelf (was z 0.10)
+        "electronics_shelf": [0.08, 1.10, 0.0, 0.115],      # Rev C1: glassed foam shelf
         "solar_panels": [1.0, 1.06, 0.0, 0.235],
         "mast_tube_and_housing": [0.45, 0.60, 0.0, 0.13],
         "rudder_servos_and_trunks": [0.50, 1.36, 0.0, 0.14],   # Rev C: two of each
@@ -119,12 +123,12 @@ DEFAULT = {
 # Rev B (8 Nov 2026), kept so older results can be reproduced and compared.
 REV_B_CHANGES = {
     "name": "Rev B 1.5 m solar-sail drone", "revision": "B",
-    "hull": {"flood_limit_kg": None},
+    "hull": {"flood_limit_kg": None, "wet_electronics_factor": 6.0},
     "bulb": {"diameter": 0.068},
     "rudder": {"y_offsets": [0.0], "top_z": 0.04},
     "wing": {"spar_kg": 0.32},
 }
-REV_B_DROP_EQUIPMENT = ("rudder_servos_and_trunks", "foam_fill_xps", "bulkheads", "battery_box",
+REV_B_DROP_EQUIPMENT = ("electronics_shelf", "rudder_servos_and_trunks", "foam_fill_xps", "bulkheads", "battery_box",
                         "yb3_tracker_and_platform", "nav_light")
 
 

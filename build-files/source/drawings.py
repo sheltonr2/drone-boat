@@ -76,7 +76,9 @@ def sheet_cover(pdf, index):
         "   3. Wing spar 30 x 26 carbon on 6806-2RS bearings (was 25 mm / 6805): about 1.8x the bending strength (D06, D07, P07, P08).",
         "   4. Bulb D72 (was D68), about 9.2 kg, to hold stability at the higher mass (D04, P14).",
         "   5. YB3 backup tracker platform P19 and all-round white light P20 on the stub; label areas (D01, D07, D09).",
-        "   Removed: thruster provision and the backup D-cell. Mass about 25 kg, DWL z 98, still self-righting from 180 deg."], fs=6.0, lh=3.6)
+        "   Removed: thruster provision and the backup D-cell. Mass about 25 kg, DWL z 98, still self-righting from 180 deg.",
+        "Rev C1 (2026-11-11): electronics box raised onto a shelf (bottom z 118, was 60), above the 3 L sump at the low point of the dry bay;",
+        "   cable glands on the box top with drip loops, gel-filled connectors, desiccant. A leak no longer sits against the box (D03, D09)."], fs=6.0, lh=3.6)
     pdf.savefig(fig); plt.close(fig)
 
 # ------------------------------------------------------------------ D01 general arrangement
@@ -254,7 +256,7 @@ def sheet_interior(pdf):
     BB = D.BATTBOX; E = D.EBOX; B = D.BATTERY; R = D.RUDDER
     # dry spaces cut out of the foam (white)
     for (x0, z0, w, h) in [(D.MAST_X - MT['od']/2, kz, MT['od'], MT['top_z'] - kz), (BB['x0'], BB['z0'], BB['x1'] - BB['x0'], BB['z1'] - BB['z0']),
-                           (E['x0'] - 8, 52, E['x1'] - E['x0'] + 16, E['h'] + 16), (650, 0, 190, 40), (330, 160, 200, 59),
+                           (E['x0'] - 8, E['z0'] - 6, E['x1'] - E['x0'] + 16, E['h'] + 14), (D.SUMP['x0'], 11, D.SUMP['x1'] - D.SUMP['x0'], D.SUMP['top_z'] - 11), (650, 0, 190, 40), (330, 160, 200, 59),
                            (1295, 112, 70, 64), (R['stock_x'] - 14, 76, 28, 104)]:
         ax.add_patch(Rectangle((x0, z0), w, h, fc="white", ec="none"))
     for xb in D.BULKHEADS:
@@ -268,7 +270,11 @@ def sheet_interior(pdf):
         ax.plot([xr, xr], [-30, 40], color=INK, lw=1)
     ax.add_patch(Rectangle((BB['x0'], BB['z0']), BB['x1'] - BB['x0'], BB['z1'] - BB['z0'], fill=False, lw=MED, ec=INK))
     ax.add_patch(Rectangle((B['x0'], 42), B['x1'] - B['x0'], B['h'], fc="#f4e3c3", ec=INK, lw=MED))
-    ax.add_patch(Rectangle((E['x0'], 60), E['x1'] - E['x0'], E['h'], fc="#d9e8d4", ec=INK, lw=MED))
+    ax.add_patch(Rectangle((E['x0'], E['z0']), E['x1'] - E['x0'], E['h'], fc="#d9e8d4", ec=INK, lw=MED))
+    ax.plot([E['x0'] - 8, E['x1'] + 8], [E['z0'] - 3] * 2, color=INK, lw=1.2)
+    ax.plot([D.SUMP['x0'], D.SUMP['x1']], [D.SUMP['top_z']] * 2, color=WATER, lw=0.6, ls="--")
+    leader(ax, (D.SUMP['x0'] + 30, 30), (640, 318), "Sump: the only open space (3 L max), water line dashed", color=BLUE, ha="right")
+    leader(ax, (E['x0'] + 40, E['z0'] - 3), (1010, 288), "C1: box on a glassed foam shelf, bottom z 118,\n70 mm above the sump; glands on top", ha="right")
     zt = D.hull_z_at(R['stock_x'], D.RUDDER_Y[1])
     ax.add_patch(Rectangle((R['stock_x'] - 9, zt), 18, R['trunk_top_z'] - zt, fill=False, lw=MED))
     ax.plot([R['stock_x']] * 2, [R['bot_z'] + 8, 196], color=INK, lw=0.8)
@@ -282,13 +288,13 @@ def sheet_interior(pdf):
     leader(ax, (D.MAST_X, 135), (200, 70), "6-wire capsule slip ring\n(tail servo power + signal)")
     leader(ax, (745, 20), (600, -25), "Keel box: 2 x M10 316 rods,\nG10 backing plate 190 x 60 x 10", ha="right")
     leader(ax, (870, 210), (830, 258), "Sealed battery box (O-ring lid, removable), strapped down on P16")
-    leader(ax, (1100, 150), (1180, 230), "IP68 box: Pixhawk, ESP32, RockBLOCK,\nGPS, GV-5 MPPT (tray P15)")
+    leader(ax, (1100, 190), (1060, 318), "IP68 box: Pixhawk, ESP32, RockBLOCK, GPS, GV-5 MPPT (tray P15)")
     leader(ax, (R['stock_x'], 120), (1500, 30), "Twin rudder trunks (x2,\n100 off centre), top z 175")
     leader(ax, (1330, 168), (1180, 40), "Servos P12 + tillers P11 (x2)\nin pockets in the aft foam")
     leader(ax, (150, 120), (20, 258), "Foam-filled, sealed (no fittings)", ha="left")
     leader(ax, (b0, 60), (250, -25), "Bulkhead x 300 (T17)", ha="right")
     leader(ax, (b1, 60), (1150, -25), "Bulkhead x 1260 (T18)", ha="right")
-    leader(ax, (560, float(D.keel_z(560)) + 14), (420, 258), "Leak probes (SOS) at the low points of each dry space", color=BLUE)
+    leader(ax, (560, float(D.keel_z(560)) + 14), (60, 288), "Leak probes (SOS) at the low points of each dry space", color=BLUE)
     ax.plot([0, 1500], [D.DWL, D.DWL], color=WATER, lw=0.5)
     ax2 = view(fig, 15, 70, (-20, 1560), (-220, 220), s, "INTERIOR PLAN (below deck, at z 120)")
     poly(ax2, hull_plan(), lw=MED, ec=GREY)
@@ -637,7 +643,9 @@ def sheet_subdivision(pdf):
         "Aft space: blocks bonded around the trunks; leave fitted pockets for the two servos (lids of foam, taped).",
         "Dry bay: numbered, removable blocks cut to fit around the boxes, taped together; they come out through the",
         f"hatch for maintenance. Fill until no more than {D.FREE_FLOOD_L:.0f} L of open space is left (pour water in to check, then dry).",
-        "Why: a leak can then add at most about 3 kg of water (12% of displacement) and can't swamp the boat."], fs=5.8, lh=3.4)
+        "Why: a leak can then add at most about 3 kg of water (12% of displacement) and can't swamp the boat.",
+        "C1: leave the open space as one sump at the low point (x 560-770, below z 45). Everything above it is foam, so the water",
+        "stays 70 mm below the electronics shelf upright and at 30 deg of heel. Test J in Field_Tests.md checks this."], fs=5.8, lh=3.4)
     ax2 = view(fig, 15, 60, (-20, 1560), (-220, 220), 7.5, "DRY-BAY BLOCK LAYOUT (plan at z 120; numbers = removal order through the hatch)")
     poly(ax2, hull_plan(), lw=MED, ec=GREY)
     for x0, x1 in ((0, b0), (b0, b1), (b1, D.L)):

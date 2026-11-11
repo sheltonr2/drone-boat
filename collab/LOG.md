@@ -2,6 +2,12 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-11, 04:40
+
+- Posted tonight's comparison on #50 ([comment](https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6786560712)). John had posted a round-up: Rev C and Rev B are in his Boatyard and replays (his yaml load test passed); his Rev C replays grounded twice from the 10 km drop. Accepted his offer to rerun Rev C from ~85 km; gave him our inertias (Ixx 2.90, Iyy 5.00, Izz 2.15, Ixz −0.70).
+- **Rev C1 (approved by Randolph):** electronics box raised onto a shelf (bottom z 118), open space reduced to one 3 L sump at the low point, glands on top. Simulator: `hull.wet_electronics_factor` 2 for C1 (GUESS; 6 for B and C), Field Test J added. GM 0.184, self-righting. Drawings D00/D03/D09 regenerated as C1.
+- `run_revC1_compare_2023.bat` on Randolph's PC (sim.py + design files only; his default design stays Rev C so tonight's 500-voyage run is unchanged).
+
 ## 2026-11-11, 04:00
 
 - **Rev C comparison on 2023 real weather (250 each, refit rates):** Rev C near-coast 38.8% verified (33–45), Rev B near-coast 41.2%, Rev C 100 km 44.8%. Rev C: 0 swamped (Rev B 31), steering losses 19 (62), lost 18.8% (25.6%). But arrivals are level: saved boats die of wet electronics (82 vs 64) or a broken wing (95 vs 76), and Rev C is slower. Next levers: electronics above the flood level, and the wing.

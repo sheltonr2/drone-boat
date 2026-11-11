@@ -88,7 +88,8 @@ BATTBOX = dict(x0=774, x1=966, w=96, z0=34, z1=213, wall=4)   # removable; comes
 BULKHEADS = (300.0, 1260.0)          # glassed-in 10 mm foam bulkheads (templates T17, T18)
 FOAM_DENSITY = 28e-9                 # kg/mm^3, extruded polystyrene (XPS) blocks
 FREE_FLOOD_L = 3.0                   # target: floodable volume left in the dry bay after the fitted blocks
-EBOX = dict(x0=980, x1=1220, w=160, h=90)
+EBOX = dict(x0=980, x1=1220, w=160, h=90, z0=118)   # Rev C1 (11 Nov 2026): box raised on a shelf, bottom at z 118 (was 60), above the flood level
+SUMP = dict(x0=560, x1=770, top_z=45)                # Rev C1: the only open space in the dry bay, at its low point; leak probe here
 
 def hull_z_at(x, y):
     """Height of the outside hull surface at station x, distance y off the centreline (bottom half)."""
