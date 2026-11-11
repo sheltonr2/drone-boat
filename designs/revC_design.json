@@ -1,11 +1,12 @@
 {
   "name": "Rev C 1.5 m solar-sail drone",
   "revision": "C",
-  "revision_note": "C3: structural review changes (YB3 to the foredeck, fibreglass post and counterweight arm, servo-savers, 30 x 22 spar), 11 Nov 2026; C2: hardwood keel fin; C1: electronics box above the flood level",
+  "revision_note": "C5: wing 0.80 x 0.375 m (same area), 11 Nov 2026; C4: acetal mast bearings; C3: structural review changes (YB3 to the foredeck, fibreglass post and counterweight arm, servo-savers, 30 x 22 spar), 11 Nov 2026; C2: hardwood keel fin; C1: electronics box above the flood level",
   "structure": {
     "parts": "C3",
     "breakers": "measured",
-    "tracker_on_post": false
+    "tracker_on_post": false,
+    "wing_shape_factor": 0.25
   },
   "hull": {
     "length": 1.5,
@@ -60,14 +61,14 @@
   },
   "wing": {
     "mast_x": 0.6,
-    "span": 1.0,
-    "chord": 0.3,
+    "span": 0.8,
+    "chord": 0.375,
     "thickness": 0.15,
-    "pivot_from_le": 0.066,
+    "pivot_from_le": 0.082,
     "root_z": 0.3,
     "skin_kg_m2": 0.45,
     "core_density": 30.0,
-    "spar_kg": 0.8,
+    "spar_kg": 0.67,
     "buoyant": true,
     "balanced": true,
     "counterweight_arm": 0.3,

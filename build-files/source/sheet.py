@@ -12,7 +12,7 @@ DATE = "2026-11-11"
 INK = "#111111"; THIN = 0.35; MED = 0.6; THICK = 1.0
 BLUE = "#1f5fa8"; GREY = "#888888"; WATER = "#3b8bd4"
 
-def new_sheet(num, title, scale_note="", rev="C4"):
+def new_sheet(num, title, scale_note="", rev="C5"):
     fig = plt.figure(figsize=(SHEET_W * MM, SHEET_H * MM))
     bg = fig.add_axes([0, 0, 1, 1]); bg.set_xlim(0, SHEET_W); bg.set_ylim(0, SHEET_H); bg.axis("off")
     bg.add_patch(Rectangle((8, 8), SHEET_W - 16, SHEET_H - 16, fill=False, lw=THICK, ec=INK))

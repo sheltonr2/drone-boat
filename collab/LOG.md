@@ -2,6 +2,12 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-11, 16:10: Rev C5 wing, results to John
+
+- Randolph approved the 0.8 x 0.375 m wing and posting the study. Rev C5: D00, D01, D06, T15; simulator wing dims, spar 0.67 kg, `wing_shape_factor` 0.25; 26.92 kg, GM 0.188, counterweight 0.85 kg. `designs/revC5_design.json`, `simulator/run_revC5_2023.bat` (C5 then C2, measured breaker model). Copied to the PC.
+- Posted the wing study and C5 to John on #50.
+- Randolph asked what it would take for Claude to start PC runs itself: answered (no command tool in this session; options are his go-ahead to double-click batch files in File Explorer, or a scheduled-task run queue). Nothing set up.
+
 ## 2026-11-11, 15:30: Rev C4 shared, wing shape study done
 
 - Randolph: correct the record with John, decide Delrin vs 316 and draw all changes, share, tell John about a wing study and run it.

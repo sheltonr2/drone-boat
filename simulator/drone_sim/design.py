@@ -8,11 +8,11 @@ import copy, json, hashlib
 
 DEFAULT = {
     "name": "Rev C 1.5 m solar-sail drone",
-    "revision": "C", "revision_note": "C3: structural review changes (YB3 to the foredeck, fibreglass post and counterweight arm, servo-savers, 30 x 22 spar), 11 Nov 2026; C2: hardwood keel fin; C1: electronics box above the flood level",
+    "revision": "C", "revision_note": "C5: wing 0.80 x 0.375 m (same area), 11 Nov 2026; C4: acetal mast bearings; C3: structural review changes (YB3 to the foredeck, fibreglass post and counterweight arm, servo-savers, 30 x 22 spar), 11 Nov 2026; C2: hardwood keel fin; C1: electronics box above the flood level",
     # Structural failures in knockdowns, from the strike simulation (docs/Structural_Review.md, drone_sim/structure_tables.json).
     # parts: which set of parts (C2 = before the review, C3 = with its changes). breakers: "measured" (strikes matched to
     # drifting-buoy accelerations, docs/Research_Review.md; the default), or the older "gentle" / "central" slam-model sets. None = off.
-    "structure": {"parts": "C3", "breakers": "measured", "tracker_on_post": False},
+    "structure": {"parts": "C3", "breakers": "measured", "tracker_on_post": False, "wing_shape_factor": 0.25},
     "hull": {
         "length": 1.50, "beam": 0.40, "depth": 0.23,
         "max_beam_at": 0.55,            # fraction of length
@@ -50,9 +50,9 @@ DEFAULT = {
         "kg_per_m2_skin": 1.0, "stock_kg": 0.37,
     },
     "wing": {
-        "mast_x": 0.60, "span": 1.00, "chord": 0.30, "thickness": 0.15,
-        "pivot_from_le": 0.066, "root_z": 0.30,
-        "skin_kg_m2": 0.45, "core_density": 30.0, "spar_kg": 0.80,    # Rev C3: 30 x 22 carbon spar, 1195 long (Rev C: 30 x 26, 0.43; Rev B: 25 x 22, 0.32)
+        "mast_x": 0.60, "span": 0.80, "chord": 0.375, "thickness": 0.15,   # Rev C5: shorter, wider wing, same 0.30 m2 (was 1.00 x 0.30): docs/Wing_Shape_Study.md
+        "pivot_from_le": 0.082, "root_z": 0.30,
+        "skin_kg_m2": 0.45, "core_density": 30.0, "spar_kg": 0.67,    # Rev C5: 30 x 22 carbon spar, 995 long (C3: 1195 long, 0.80; Rev C: 30 x 26, 0.43; Rev B: 25 x 22, 0.32)
         "buoyant": True,                # sealed foam core (True) or free-flooding (False)
         "balanced": True,               # counterweight puts the rig CG on the pivot axis
         "counterweight_arm": 0.30,      # m forward of the pivot (0.036 = nose pocket only)
@@ -134,7 +134,7 @@ REV_B_CHANGES = {
     "keel": {"kg_per_m2_skin": 1.2, "core_density": 35.0},
     "bulb": {"diameter": 0.068},
     "rudder": {"y_offsets": [0.0], "top_z": 0.04},
-    "wing": {"spar_kg": 0.32},
+    "wing": {"spar_kg": 0.32, "span": 1.00, "chord": 0.30, "pivot_from_le": 0.066},
 }
 REV_B_DROP_EQUIPMENT = ("electronics_shelf", "rudder_servos_and_trunks", "foam_fill_xps", "bulkheads", "battery_box",
                         "yb3_tracker_and_platform", "nav_light")
@@ -182,6 +182,8 @@ def load(path):
     out = merge(base, d)
     if "structure" not in d:          # files saved before Rev C3 have no structural-failure model: keep them as they were run
         out["structure"] = None
+    elif isinstance(d["structure"], dict) and "wing_shape_factor" not in d["structure"]:
+        out["structure"]["wing_shape_factor"] = 1.0      # files saved before Rev C5 have the 1.0 m wing
     return out
 
 

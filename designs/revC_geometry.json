@@ -2,34 +2,34 @@
  "name": "Rev C 1.5 m solar-sail drone",
  "units": "SI (m, kg)",
  "frame": "x aft from bow, y to port, z up from hull bottom at midships",
- "mass_kg": 26.93,
+ "mass_kg": 26.92,
  "cg_m": [
   0.824,
   -0.0,
-  -0.028
+  -0.033
  ],
  "waterline_z_m": 0.102,
  "inertia_kg_m2": [
   [
-   3.1,
+   2.866,
    -0.0,
-   -0.449
+   -0.486
   ],
   [
    -0.0,
-   5.256,
+   5.031,
    0.0
   ],
   [
-   -0.449,
+   -0.486,
    0.0,
-   2.206
+   2.214
   ]
  ],
- "counterweight_kg": 0.8,
+ "counterweight_kg": 0.85,
  "stability": {
-  "gm_m": 0.182,
-  "max_gz_m": 0.363,
+  "gm_m": 0.188,
+  "max_gz_m": 0.372,
   "angle_max_gz_deg": 105.0,
   "avs_deg": 179.9999856045948,
   "self_righting": true
@@ -72,7 +72,7 @@
  "spar": {
   "od_mm": 30,
   "id_mm": 22,
-  "length_mm": 1195,
+  "length_mm": 995,
   "bearings": "6806-2RS x2, 130 mm apart",
   "strength_nm_estimate": 1130
  },
@@ -116,20 +116,20 @@
   },
   {
    "name": "wing",
-   "kg": 0.561,
+   "kg": 0.634,
    "xyz_m": [
-    0.66,
+    0.675,
     0.0,
-    0.8
+    0.7
    ]
   },
   {
    "name": "wing spar",
-   "kg": 0.8,
+   "kg": 0.67,
    "xyz_m": [
     0.6,
     0.0,
-    0.75
+    0.65
    ]
   },
   {
@@ -170,7 +170,7 @@
   },
   {
    "name": "rig counterweight (lead)",
-   "kg": 0.798,
+   "kg": 0.845,
    "xyz_m": [
     0.3,
     0.0,
@@ -310,7 +310,7 @@
   "mesh": "designs/revC_boat_wing_feathered.stl (metres)",
   "build": "build-files/source/design.py (millimetres, master dimensions)"
  },
- "revision_note": "C3: structural review changes (11 Nov 2026): YB3 in a foredeck well, fibreglass stern post and counterweight arm, servo-savers, 30 x 22 spar on bearings 130 mm apart. C2: hardwood keel fin. C1: electronics box above the flood level.",
+ "revision_note": "C5: wing 0.80 x 0.375 m, same 0.30 m2 (11 Nov 2026). C4: acetal mast bearings with catcher lands. C3: structural review changes. C2: hardwood keel fin. C1: electronics box above the flood level.",
  "wet_electronics_factor": 2.0,
  "keel_fin": {
   "core": "hardwood, about 680 kg/m3",
@@ -321,5 +321,12 @@
  },
  "backup_tracker": {
   "where": "well in the foredeck, centred x 0.18 m, top flush with the deck"
+ },
+ "wing": {
+  "span_m": 0.8,
+  "chord_m": 0.375,
+  "pivot_from_le_m": 0.082,
+  "root_z_m": 0.3,
+  "area_m2": 0.3
  }
 }

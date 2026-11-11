@@ -69,7 +69,8 @@ SPAR_OD = 30.0          # Rev C: 30 x 26 carbon (was 25 x 22)
 SPAR_ID = 22.0          # Rev C3: 30 x 22 (was 30 x 26): 1.6 times the bending strength, same bearings and printed bores
 SPAR_BOT_Z = 105.0      # Rev C3: spar reaches down to z 105 (was 150) for the wider bearing spacing
 BEARING_SPACING = 130.0  # Rev C3: bearing centres 130 apart in a longer housing P07 (was 78)
-WING = dict(chord=300, span=1000, pivot_from_le=66, root_z=300, t=0.15)
+WING = dict(chord=375, span=800, pivot_from_le=82, root_z=300, t=0.15)   # Rev C5: was 300 x 1000, pivot 66. Same area; about half the wing-slap load (docs/Wing_Shape_Study.md)
+WING_TOP_Z = WING['root_z'] + WING['span']
 MAST_TUBE = dict(od=60.3, id=52.5, top_z=250)          # 2 in. sch 40 PVC, bonded hull-to-deck
 BEARING = dict(id=30, od=42, w=7, name="6806 acetal (Delrin-type) ball bearing, glass balls")   # Rev C4: was 6806-2RS stainless; corrosion-proof, floats on an O-ring, with catcher lands in P07 for wave loads
 CATCHER = dict(bore=30.6, length=20)   # Rev C4: plain lands in P07 beside each bearing; the spar touches them only above about 150 N

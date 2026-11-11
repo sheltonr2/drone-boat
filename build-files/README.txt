@@ -1,4 +1,4 @@
-SOLAR-SAIL OCEAN DRONE 1.5 m  -  BUILD FILES (Rev C4, 2026-11-11)
+SOLAR-SAIL OCEAN DRONE 1.5 m  -  BUILD FILES (Rev C5, 2026-11-11)
 
 Drawings.pdf                 20 tabloid sheets (11 x 17 in): general arrangement, hull lines + offsets,
                              interior, keel + bulb, twin rudders, wing + tail, mast/stub, hatch,
@@ -72,3 +72,9 @@ Rev C4 (2026-11-11)
      epoxy and paint every exposed printed part; three coats of ablative copper antifouling (D00).
   3. docs/Rudder_Health_Spec.md: autopilot detection of a sticking rudder; needs a current sensor per rudder servo.
   Sheets with real changes: D00, D04, D05, D07 and the P07 sheet. No change to mass or templates.
+
+Rev C5 (2026-11-11)
+  Wing 800 x 375 (was 1000 x 300), same 0.30 m2, after docs/Wing_Shape_Study.md: about half the load when a knockdown
+  slaps the wing on the water, about 4% slower. Spar 82 from the leading edge; spar tube 995 long (was 1195).
+  New template T15 (print it again). Wing core: two 400 mm blocks. Counterweight about 0.85 kg.
+  Sheets with real changes: D00, D01, D06. No printed part changed.

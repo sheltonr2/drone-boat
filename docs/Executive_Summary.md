@@ -23,7 +23,7 @@ The plan is a 1.5 m, self-righting autonomous sailboat with a rigid wing sail (d
 | Ballast | about 9.2 kg lead bulb, 320 mm long × 72 mm diameter |
 | Keel fin | NACA 0012, 430 mm deep, 170 mm chord at the root and 150 mm at the tip. Rev C2: hardwood core, 6 × 6 oz glass and a carbon strip each side, 60 mm tenon into the keel box |
 | Rudders | Two NACA 0012 spades, 100 mm either side of the centreline, each 120 mm chord × 230 mm span on a 12 mm 316 stock, with its own trunk and servo |
-| Wing sail | NACA 0015, 1,000 × 300 mm (0.30 m²), free-rotating on a 30 × 22 mm carbon spar (Rev C3) on 6806 bearings 130 mm apart, balanced by about 0.8 kg of lead in a pod on a fibreglass rod 300 mm forward of the spar |
+| Wing sail | NACA 0015, 800 × 375 mm (0.30 m²; Rev C5), free-rotating on a 30 × 22 mm carbon spar (Rev C3) on 6806 bearings 130 mm apart, balanced by about 0.8 kg of lead in a pod on a fibreglass rod 300 mm forward of the spar |
 | Tail flap | NACA 0012, 120 × 200 mm, on a 600 mm boom |
 | Solar | 2 panels of about 42 × 28 cm, about 40 W in total |
 | Battery | 12.8 V 15 Ah LiFePO4 (192 Wh) |
@@ -74,7 +74,7 @@ Everything below is needed for one boat. Prices are approximate US prices from N
 | 316 threaded rod for keel bolts, with nuts | 2 | M10 × \~580 mm | 25 |
 | G10 keel backing plate | 1 | 122 × 60 × 10 mm | 20 |
 | 2 in. sch 40 PVC pipe (mast tube) | 1 | 60.3 OD × \~250 mm | 8 |
-| Carbon tube: wing spar (Rev C3) | 1 | 30 × 22 mm × 1,195 mm | 95 |
+| Carbon tube: wing spar (Rev C5) | 1 | 30 × 22 mm × 995 mm | 85 |
 | Carbon tube: tail boom | 1 | 12 mm OD × 600 mm | 10 |
 | Solid pultruded fibreglass rod: counterweight arm (Rev C3) | 1 | 12 mm × 246 mm | 8 |
 | Spring servo-savers for the rudder servos (Rev C3) | 2 | 25T spline, 1/8-scale RC car type | 20 |

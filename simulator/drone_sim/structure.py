@@ -38,6 +38,7 @@ def load_tables(design):
     overall = (tot3 / tot2) if tot2 > 0 else 1.0
     # one ratio for all wave heights (the per-height ratios are too noisy), and never below 0.1: the harsher "central"
     # set gives 0.1-0.2, so the stronger spar is not credited with more than a tenfold improvement
-    wf = [min(max(overall, 0.1), 1.0)] * 10
+    # wing_shape_factor: a shorter wing than the 1.0 m one the tables were made for (docs/Wing_Shape_Study.md: 0.25 for 0.8 m)
+    wf = [min(max(overall, 0.1), 1.0) * float(cfg.get("wing_shape_factor", 1.0))] * 10
     return dict(keel=add(KEEL), post=t[POST], arm=t[ARM], boom=t[BOOM], rudder=add(RUDDER), wing_factor=wf,
                 tracker_on_post=bool(cfg.get("tracker_on_post", parts == "C2")), parts=parts, breakers=br)

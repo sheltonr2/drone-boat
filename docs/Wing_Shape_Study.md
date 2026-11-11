@@ -34,6 +34,6 @@ All five have 0.30 m² of area and the Rev C3 spar (30 × 22 mm, about 1,130 N·
 - Below about 0.7 m the remaining risk is the breaker's own water hitting the wing, which a shorter wing does not avoid.
 - Not checked: whether the tail still has enough leverage on a wider wing in very light wind, and the fit of the solar-panel shadow. Both look fine on the drawing but need a look if the wing is redrawn.
 
-## Recommendation
+## Outcome
 
-Adopt 0.8 × 0.375 m at the next drawing change. It needs a new wing template (T15), sheet D06 and the simulator's wing dimensions; the spar, bearings, tail and printed parts stay as they are.
+Adopted as Rev C5 the same day (0.8 × 0.375 m): new wing template T15, sheets D01 and D06, simulator wing dimensions. The spar is shorter (995 mm); bearings, tail and printed parts are unchanged.

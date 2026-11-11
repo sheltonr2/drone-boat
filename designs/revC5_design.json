@@ -1,0 +1,245 @@
+{
+  "name": "Rev C 1.5 m solar-sail drone",
+  "revision": "C",
+  "revision_note": "C5: wing 0.80 x 0.375 m (same area), 11 Nov 2026; C4: acetal mast bearings; C3: structural review changes (YB3 to the foredeck, fibreglass post and counterweight arm, servo-savers, 30 x 22 spar), 11 Nov 2026; C2: hardwood keel fin; C1: electronics box above the flood level",
+  "structure": {
+    "parts": "C3",
+    "breakers": "measured",
+    "tracker_on_post": false,
+    "wing_shape_factor": 0.25
+  },
+  "hull": {
+    "length": 1.5,
+    "beam": 0.4,
+    "depth": 0.23,
+    "max_beam_at": 0.55,
+    "transom_beam": 0.3,
+    "bow_rocker": 0.12,
+    "stern_rocker": 0.06,
+    "bow_sheer": 0.03,
+    "section_exponent": 2.2,
+    "laminate_kg_m2": 1.6,
+    "stl": null,
+    "flood_limit_kg": 3.0,
+    "wet_electronics_factor": 2.0
+  },
+  "keel": {
+    "x_le_root": 0.657,
+    "span": 0.43,
+    "root_chord": 0.17,
+    "tip_chord": 0.15,
+    "sweep_deg": 1.7,
+    "rake_deg": 0.0,
+    "cant_deg": 0.0,
+    "thickness": 0.12,
+    "kg_per_m2_skin": 3.2,
+    "core_density": 680.0,
+    "rod_kg": 0.65
+  },
+  "bulb": {
+    "length": 0.32,
+    "diameter": 0.072,
+    "max_at": 0.4,
+    "nose_from_tip_le": -0.091,
+    "density": 11340.0
+  },
+  "rudder": {
+    "stock_x": 1.4,
+    "chord": 0.12,
+    "span": 0.23,
+    "stock_from_le": 0.022,
+    "y_offsets": [
+      -0.1,
+      0.1
+    ],
+    "top_z": 0.072,
+    "thickness": 0.12,
+    "max_angle_deg": 35.0,
+    "rate_deg_s": 60.0,
+    "kg_per_m2_skin": 1.0,
+    "stock_kg": 0.37
+  },
+  "wing": {
+    "mast_x": 0.6,
+    "span": 0.8,
+    "chord": 0.375,
+    "thickness": 0.15,
+    "pivot_from_le": 0.082,
+    "root_z": 0.3,
+    "skin_kg_m2": 0.45,
+    "core_density": 30.0,
+    "spar_kg": 0.67,
+    "buoyant": true,
+    "balanced": true,
+    "counterweight_arm": 0.3,
+    "bearing_friction_nm": 0.02
+  },
+  "tail": {
+    "chord": 0.12,
+    "span": 0.2,
+    "boom_length": 0.6,
+    "boom_z": 0.276,
+    "bot_z": 0.3,
+    "pivot_from_le": 0.024,
+    "thickness": 0.12,
+    "max_angle_deg": 20.0,
+    "kg": 0.25
+  },
+  "equipment": {
+    "battery": [
+      2.0,
+      0.87,
+      0.0,
+      0.1
+    ],
+    "electronics_box": [
+      1.1,
+      1.1,
+      0.0,
+      0.163
+    ],
+    "electronics_shelf": [
+      0.08,
+      1.1,
+      0.0,
+      0.115
+    ],
+    "solar_panels": [
+      1.0,
+      1.06,
+      0.0,
+      0.235
+    ],
+    "mast_tube_and_housing": [
+      0.52,
+      0.6,
+      0.0,
+      0.13
+    ],
+    "rudder_servos_and_trunks": [
+      0.53,
+      1.36,
+      0.0,
+      0.14
+    ],
+    "foam_fill_xps": [
+      1.65,
+      0.8,
+      0.0,
+      0.13
+    ],
+    "bulkheads": [
+      0.2,
+      0.78,
+      0.0,
+      0.12
+    ],
+    "battery_box": [
+      0.35,
+      0.87,
+      0.0,
+      0.1
+    ],
+    "yb3_tracker_and_platform": [
+      0.45,
+      0.18,
+      0.0,
+      0.225
+    ],
+    "nav_light": [
+      0.06,
+      1.53,
+      0.0,
+      0.6
+    ],
+    "stern_stub_vane_antenna_reflector": [
+      0.9,
+      1.53,
+      0.0,
+      0.42
+    ],
+    "keel_box_and_backing": [
+      0.75,
+      0.745,
+      0.0,
+      0.02
+    ],
+    "misc_fittings": [
+      0.6,
+      0.8,
+      0.0,
+      0.12
+    ]
+  },
+  "power": {
+    "solar_peak_w": 40.0,
+    "panel_area_m2": 0.235,
+    "panel_eff": 0.17,
+    "battery_wh": 192.0,
+    "battery_min_soc": 0.05,
+    "sleep_w": 0.25,
+    "autopilot_w": 1.1,
+    "servo_j_per_deg": 0.04,
+    "modem_session_j": 6.0,
+    "modem_failed_session_j": 10.0,
+    "thruster_w": 35.0,
+    "thruster_n": 6.0,
+    "cold_charge_cutoff_c": 2.0,
+    "soiling_salt": 0.93,
+    "mppt_eff": 0.95,
+    "wiring_eff": 0.98,
+    "temp_coeff_per_c": -0.0037,
+    "noct_c": 55.0
+  },
+  "comms": {
+    "report_interval_h": 4.0,
+    "report_bytes": 45,
+    "credit_usd": 0.12,
+    "line_rental_usd_month": 17.0
+  },
+  "drift": {
+    "leeway_downwind": 0.033,
+    "leeway_crosswind": 0.008
+  },
+  "backup_tracker": {
+    "fitted": true,
+    "report_interval_h": 12.0,
+    "first_week_interval_h": 3.0,
+    "transmissions": 2500,
+    "cold_derate": 0.6,
+    "p_report_ok": 0.95
+  },
+  "autopilot": {
+    "heel_limit_deg": 25.0,
+    "storm_tws_ms": 20.0,
+    "reef_tws_ms": 13.0,
+    "tack_hysteresis_deg": 20.0,
+    "decision_interval_min": 10.0,
+    "min_upwind_twa_deg": 50.0,
+    "min_downwind_twa_deg": 165.0,
+    "land_clearance_km": 15.0,
+    "thruster_policy": {
+      "enabled": false,
+      "min_soc": 0.7,
+      "max_speed_ms": 0.25,
+      "max_hours_per_day": 2.0
+    },
+    "safe_soc": 0.25
+  },
+  "hydro": {
+    "form_factor": 1.15,
+    "wave_resistance_scale": 1.0,
+    "added_resistance_scale": 1.0,
+    "hull_lateral_cd": 0.8
+  },
+  "cost": {
+    "electronics_and_power_usd": 1172.0,
+    "hardware_usd": 440.0,
+    "hull_materials_usd_per_m2": 105.0,
+    "foil_materials_usd_per_m2": 60.0,
+    "lead_usd_per_kg": 7.0,
+    "wing_materials_usd_per_m2": 55.0,
+    "printing_and_misc_usd": 150.0,
+    "thruster_usd": 270.0
+  }
+}

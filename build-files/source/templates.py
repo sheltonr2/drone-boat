@@ -139,7 +139,7 @@ def all_templates():
     T.append(foil_template("T12_fin_root", 0.12, F['root_chord'], [(50, 5.5), (105, 5.5)], "T12  FIN ROOT  NACA 0012  chord 170  (Rev C2 hardwood core: rod grooves D11)", wood=True))
     T.append(foil_template("T13_fin_tip", 0.12, F['tip_chord'], [(37, 5.5), (92, 5.5)], "T13  FIN TIP  NACA 0012  chord 150  (Rev C2 hardwood core: rod grooves D11)", wood=True))
     T.append(foil_template("T14_rudder", 0.12, D.RUDDER['chord'], [(22, 6)], "T14  RUDDER  NACA 0012  chord 120  (stock D12)  MAKE 2"))
-    T.append(foil_template("T15_wing", 0.15, D.WING['chord'], [(66, D.SPAR_OD / 2 + 0.2)], "T15  WING  NACA 0015  chord 300  (Rev C spar bore D30.4)"))
+    T.append(foil_template("T15_wing", 0.15, D.WING['chord'], [(D.WING['pivot_from_le'], D.SPAR_OD / 2 + 0.2)], f"T15  WING  NACA 0015  chord {D.WING['chord']}  (Rev C5; spar bore D30.4 at {D.WING['pivot_from_le']})"))
     T.append(hatch_template())
     for k, xb in enumerate(D.BULKHEADS):
         T.append(bulkhead_template(17 + k, xb))

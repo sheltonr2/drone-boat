@@ -194,6 +194,20 @@ Randolph asked for Delrin (acetal) and 316 stainless to be weighed before choosi
 
 No change to mass, stability or the simulator's design file.
 
+## Rev C5: shorter, wider wing (11 Nov 2026)
+
+Randolph approved the wing from [Wing_Shape_Study.md](Wing_Shape_Study.md).
+
+- **Wing 0.80 m tall × 0.375 m wide** (was 1.00 × 0.30). Same 0.30 m² of area. The spar sits 82 mm behind the leading edge (22% of the width, as before).
+- **Why:** when a knockdown slaps the wing onto the water, the load depends on how fast the tip is moving and how far out it is. The shorter wing has about half the worst slap load and is four to eight times less likely to break the spar in a knockdown.
+- **Cost:** about 4% less speed in the speed model, roughly 5 more days on a 130-day crossing.
+- **Spar:** 995 mm long (was 1,195), same 30 × 22 mm tube and bearings. About 0.13 kg lighter.
+- **Counterweight:** about 0.85 kg (was 0.80), because the wider wing's weight sits a little further behind the spar. The pod holds up to 1.2 kg.
+- **Effect on the boat:** 26.9 kg, waterline z 102 mm, GM 0.188 m (was 0.182), maximum righting arm 0.37 m, still self-righting.
+- **Changed:** sheets D00, D01 and D06, template T15 (new width and spar position). No printed part changed.
+- **In the simulator:** wing dimensions and spar mass, and `structure.wing_shape_factor` 0.25, which multiplies the wing-loss rate. The 0.25 is the more cautious end of the study's range (0.13 to 0.26).
+- **Not updated:** the whole-boat STL (`designs/revC_boat_wing_feathered.stl`) and the 3D page still show the 1.0 m wing.
+
 ## Files
 
 - **Drawings and build files:** `build-files/Drawings.pdf` (20 sheets; new D09 for subdivision, foam fill, battery box and labels), `Templates_1to1_Letter.pdf` (new T17 and T18 bulkheads; T15 spar bore 30.4 mm), 19 DXF files, and 23 STL files for 20 printed parts (P07 and P08 for the 30 mm spar, P14 for the D72 bulb, new P19 and P20; print two each of P11, P12 and P13).

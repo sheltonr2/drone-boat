@@ -86,7 +86,8 @@ def sheet_cover(pdf, index):
         f"   stops on each rudder (D05). 4. Spar 30 x 22 carbon, bearings 130 apart in a longer P07 (D06, D07). 5. Second inner ply over the sump (D03). {D.MASS_KG:.1f} kg, DWL z {D.DWL:.0f}.",
         "Rev C4 (2026-11-11), after the research review (docs/Research_Review.md): mast bearings are acetal (Delrin-type) with glass balls, floating on O-rings, with",
         "   plain catcher lands in P07 for wave loads, and a V-ring seal on the spar (D07, P07). Notes added: fin glue-up and rod bedding (D04), rudder trunks (D05).",
-        "   ALL printed parts that see sun or sea: 2 coats of epoxy, then paint. Antifouling: 3 coats of ablative copper paint on hull, fin, bulb and rudders."], fs=5.5, lh=3.15)
+        "   ALL printed parts that see sun or sea: 2 coats of epoxy, then paint. Antifouling: 3 coats of ablative copper paint on hull, fin, bulb and rudders.",
+        f"Rev C5 (2026-11-11): wing 800 x 375 (was 1000 x 300), same area, spar 995 long, after docs/Wing_Shape_Study.md (D01, D06, T15). {D.MASS_KG:.1f} kg, DWL z {D.DWL:.0f}."], fs=5.4, lh=3.05)
     pdf.savefig(fig); plt.close(fig)
 
 # ------------------------------------------------------------------ D01 general arrangement
@@ -132,9 +133,9 @@ def sheet_ga(pdf):
     dim(ax, (0, -510), (1500, -510), 0, "LOA 1500")
     zb = D.BULB['axis_z'] - D.BULB['dia'] / 2
     dim(ax, (1590, D.DWL), (1590, zb), 0, f"draft {D.DWL - zb:.0f}")
-    dim(ax, (1590, D.DWL), (1590, 1300), 0, f"air draft {1300 - D.DWL:.0f}")
-    dim(ax, (le, 1320), (te, 1320), 0, "300")
-    dim(ax, (440, 300), (440, 1300), 0, "wing 1000")
+    dim(ax, (1590, D.DWL), (1590, D.WING_TOP_Z), 0, f"air draft {D.WING_TOP_Z - D.DWL:.0f}")
+    dim(ax, (le, D.WING_TOP_Z + 20), (te, D.WING_TOP_Z + 20), 0, f"{D.WING['chord']}")
+    dim(ax, (440, 300), (440, D.WING_TOP_Z), 0, f"wing {D.WING['span']}")
     leader(ax, (700, -200), (300, -250), "Keel fin  NACA 0012\n170/150 chord  (D04)")
     leader(ax, (750, D.BULB['axis_z']), (300, -400), f"Lead bulb {D.bulb_mass()[1]:.1f} kg  (D04)")
     leader(ax, (1440, -80), (1050, -330), "Twin spade rudders, 100 mm\neither side of centre  (D05)")
@@ -182,9 +183,9 @@ def sheet_ga(pdf):
     dim(ax2, (0, -222), (H['x0'], -222), 0, "330")
     notes(bg, 225, 180, "Key data (Rev C)", [
         "Length overall 1500   Beam 400   Hull depth 230",
-        f"Draft {D.DWL - zb:.0f} (DWL to bulb bottom)   Air draft {1300 - D.DWL:.0f}",
+        f"Draft {D.DWL - zb:.0f} (DWL to bulb bottom)   Air draft {D.WING_TOP_Z - D.DWL:.0f}",
         f"Displacement about {D.MASS_KG:.0f} kg   Ballast {D.bulb_mass()[1]:.1f} kg lead + about 0.8 kg rig counterweight",
-        "Wing 1000 x 300 (0.30 m2), free-rotating on a 30 mm spar",
+        f"Wing {D.WING['span']} x {D.WING['chord']} (0.30 m2; Rev C5), free-rotating on a 30 mm spar",
         "Two rudders, two servos; hull foam-filled, two bulkheads",
         "Solar about 40 W on deck   Battery 192 Wh LiFePO4 in a sealed box",
         "Self-righting from 180 deg (simulator): verify in a tank test (Gate 3)"], fs=6.3)
@@ -541,7 +542,7 @@ def sheet_wing(pdf):
     le, te, z0, z1 = wing_rect()
     ax = view(fig, 15, 45, (240, 1350), (230, 1340), 6, "WING, TAIL + COUNTERWEIGHT ELEVATION")
     ax.add_patch(Rectangle((le, z0), W['chord'], W['span'], fill=False, lw=MED))
-    ax.plot([le, te], [z0 + 500] * 2, color=GREY, lw=0.4, ls="--"); ax.text(te + 5, z0 + 500, "core joint", fontsize=5, va="center")
+    ax.plot([le, te], [z0 + W['span'] / 2] * 2, color=GREY, lw=0.4, ls="--"); ax.text(te + 5, z0 + W['span'] / 2, "core joint", fontsize=5, va="center")
     ax.plot([D.MAST_X] * 2, [240, z1 - 10], color=INK, lw=0.8, ls="-.")
     C = D.CWARM; px = D.MAST_X - C['reach']
     ax.plot([px, D.MAST_X], [C['z']] * 2, color=INK, lw=1.2)
@@ -553,9 +554,9 @@ def sheet_wing(pdf):
     ax.add_patch(Rectangle((tp - 28, 252), 92, 48, fill=False, lw=THIN))
     ax.add_patch(Rectangle((tp - T['pivot_from_le'], T['bot_z']), T['chord'], T['span'], fill=False, lw=MED))
     ax.plot([tp, tp], [T['bot_z'], T['bot_z'] + T['span']], color=INK, lw=0.4, ls="-.")
-    dim(ax, (le, z1 + 20), (te, z1 + 20), 0, "300")
-    dim(ax, (le, z1 + 45), (D.MAST_X, z1 + 45), 0, "66")
-    dim(ax, (430 + 40, z0), (430 + 40, z1), 0, "1000")
+    dim(ax, (le, z1 + 20), (te, z1 + 20), 0, f"{D.WING['chord']}")
+    dim(ax, (le, z1 + 45), (D.MAST_X, z1 + 45), 0, f"{D.WING['pivot_from_le']}")
+    dim(ax, (430 + 40, z0), (430 + 40, z1), 0, f"{W['span']}")
     dim(ax, (D.MAST_X, 245), (tp, 245), 0, "boom 600 (spar to tail pivot)")
     dim(ax, (px, 245), (D.MAST_X, 245), 0, "300 (spar to pod axis)")
     dim(ax, (tp + 110, T['bot_z']), (tp + 110, T['bot_z'] + T['span']), 0, "200")
@@ -563,12 +564,12 @@ def sheet_wing(pdf):
     leader(ax, (D.MAST_X, 276), (700, 330), "Spar clamp P08")
     leader(ax, (tp + 10, 276), (1000, 380), "Tail servo housing P09")
     leader(ax, (tp + 40, 420), (1050, 600), "Tail fin P10a/b\nNACA 0012, 120 chord")
-    ax2 = view(fig, 200, 160, (-10, 320), (-30, 30), 2, "WING SECTION  NACA 0015  (1:2)")
-    poly(ax2, foil_xy(0.15, 300), lw=MED)
-    ax2.add_patch(Circle((66, 0), D.SPAR_OD / 2 + 0.2, fill=False, lw=MED))
-    dim(ax2, (0, 28), (66, 28), 0, "66", fs=5); dim(ax2, (66, 28), (300, 28), 0, "234", fs=5)
+    ax2 = view(fig, 200, 160, (-10, 395), (-34, 40), 2, "WING SECTION  NACA 0015  (1:2)")
+    poly(ax2, foil_xy(0.15, W['chord']), lw=MED)
+    ax2.add_patch(Circle((D.WING['pivot_from_le'], 0), D.SPAR_OD / 2 + 0.2, fill=False, lw=MED))
+    dim(ax2, (0, 34), (D.WING['pivot_from_le'], 34), 0, f"{D.WING['pivot_from_le']}", fs=5); dim(ax2, (D.WING['pivot_from_le'], 34), (D.WING['chord'], 34), 0, f"{D.WING['chord'] - D.WING['pivot_from_le']}", fs=5)
     ax3 = view(fig, 200, 62, (-750, 360), (-60, 100), 6, "PLAN OF ROTATING RIG (1:6)")
-    poly(ax3, np.c_[-(foil_xy(0.15, 300)[:, 0] - 66), foil_xy(0.15, 300)[:, 1]], lw=MED)
+    poly(ax3, np.c_[-(foil_xy(0.15, D.WING['chord'])[:, 0] - D.WING['pivot_from_le']), foil_xy(0.15, D.WING['chord'])[:, 1]], lw=MED)
     ax3.plot([0, -600], [0, 0], color=INK, lw=1)
     P = foil_xy(0.12, 120); poly(ax3, np.c_[-(P[:, 0] - 24) - 600, P[:, 1]], lw=MED)
     ax3.add_patch(Circle((0, 0), 12.5, fill=False, lw=MED))
@@ -578,10 +579,11 @@ def sheet_wing(pdf):
     ax3.text(5, 80, "apparent wind", fontsize=5.5, ha="center")
     ax3.text(-600, -40, "tail", fontsize=5.5, ha="center"); ax3.text(-80, -40, "wing", fontsize=5.5, ha="center")
     notes(bg, 200, 140, "Wing build", [
-        "Core: two 500 mm XPS blocks hot-wire cut with template T15 (same root and tip), bored 30.4 mm for the spar (Rev C).",
-        "Skin: 2 x 6 oz glass, vacuum bagged if possible. Root and tip: 3 mm ply caps. Spar: 30 x 22 carbon tube, 1195 long (Rev C3; was 30 x 26).",
+        "Core: two 400 mm XPS blocks hot-wire cut with template T15 (same root and tip), bored 30.4 mm for the spar (Rev C).",
+        "Skin: 2 x 6 oz glass, vacuum bagged if possible. Root and tip: 3 mm ply caps. Spar: 30 x 22 carbon tube, 995 long.",
+        "Rev C5: wing 800 x 375 (was 1000 x 300), same 0.30 m2, spar 82 from the leading edge: about half the load when a knockdown slaps the wing on the water, 4% slower.",
         "Balance: assemble wing, tail, boom, arm and pod; add lead shot + epoxy to P18 until the rig sits level on the spar at any heading.",
-        "Expect about 0.8 kg. The pod sweeps a 332 mm radius at z 264-338, about 15 mm over the hatch bolts: keep anything on deck in that circle below z 255.",
+        "Expect about 0.85 kg (C5). The pod sweeps a 332 mm radius at z 264-338, about 15 mm over the hatch bolts: keep anything on deck in that circle below z 255.",
         "Tail angle sets the wing's angle of attack: about +/-8 deg tail gives the working range; 0 deg = wing feathered."], fs=5.9, lh=3.5)
     pdf.savefig(fig); plt.close(fig)
 
@@ -646,7 +648,7 @@ def sheet_mast(pdf):
     ax2.add_patch(Rectangle((S['x'] + NL['reach'] - 15, NL['z'] + 9), 30, 10, fc="white", ec=INK, lw=THIN))
     leader(ax2, (S['x'] + NL['reach'], NL['z'] + 15), (1610, 630), "All-round white light on P20")
     notes(bg, 260, 250, "Notes", [
-        f"Spar: 30 x 22 carbon tube, 1195 long (z {D.SPAR_BOT_Z:.0f} to 1300). Rev C3:",
+        f"Spar: 30 x 22 carbon tube, {D.WING_TOP_Z - D.SPAR_BOT_Z:.0f} long (z {D.SPAR_BOT_Z:.0f} to {D.WING_TOP_Z}). Rev C3:",
         "1.6 x the strength of 30 x 26. Bearings 130 apart in the",
         "longer housing P07; give the mast tube a 60 mm wide glass",
         "collar where it meets the deck.",
