@@ -33,3 +33,7 @@ Run `python -m drone_sim.cli gridcheck` too. It tells us whether the default 1°
 ## Batch files
 
 Every `.bat` in `simulator/` shows a banner (what it is, the expected time, the start time) and a live progress line in its window (`drone_sim/console.py`: count, percent, elapsed, time left). Full output goes to a log in `collab/`. New batch files should do the same; a blank window is not acceptable.
+
+## Run queue (11 Nov 2026)
+
+Randolph chose to let Claude start simulator runs on the PC. `simulator/setup_run_queue.bat` (run once on the PC) creates a scheduled task that runs `simulator/run_queue.bat` every 5 minutes. Claude starts a run by writing a request file `simulator/queue/<name>.run` containing the batch file's name; only `run_*.bat` files in `simulator/` are accepted. `simulator/remove_run_queue.bat` switches it off. Details in `simulator/queue/README.txt`.

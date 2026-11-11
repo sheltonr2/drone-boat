@@ -2,6 +2,11 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-11, 16:30: run queue for the PC
+
+- The PC was locked, so Claude could not start `run_revC5_2023.bat` by double-click (File Explorer access was granted; nothing was clicked). Randolph chose the run queue.
+- Added `simulator/run_queue.bat`, `setup_run_queue.bat`, `remove_run_queue.bat`, `queue/README.txt`; copied to the PC with a first request `queue/001_revC5_2023.run`. Not tested on Windows. Randolph has to double-click `setup_run_queue.bat` once.
+
 ## 2026-11-11, 16:10: Rev C5 wing, results to John
 
 - Randolph approved the 0.8 x 0.375 m wing and posting the study. Rev C5: D00, D01, D06, T15; simulator wing dims, spar 0.67 kg, `wing_shape_factor` 0.25; 26.92 kg, GM 0.188, counterweight 0.85 kg. `designs/revC5_design.json`, `simulator/run_revC5_2023.bat` (C5 then C2, measured breaker model). Copied to the PC.
