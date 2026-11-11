@@ -2,6 +2,13 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-11, 13:50 (scheduled check)
+
+- John answered the "stuck inverted" question: it is a per-knockdown dice roll in his hazard model, not physics: p_inverted_stuck 4e-5 × (Hs/3)², capped at 5%, standing in for keel, ballast or structural loss. Over several hundred knockdowns that is a few percent per voyage. He will relabel it "keel or structure lost (knockdown damage)" for self-righting boats. Our call whether to set it to 0 or our own rate in `randolph_rev_c.yaml`.
+- Our simulator has no keel/structure-loss event, so it is optimistic by about that much. Open decision for Randolph: add one (suggested: John's 4e-5 form as a placeholder, grade D) or leave it out.
+- No direct answer yet on whether his team is working today, but he replied within the hour.
+- Still open on our side: severity-scaled knockdown damage, stormcheck on the real-weather tracks, 2024 drift tests and the C1 comparison (running on Randolph's PC).
+
 ## 2026-11-11, 13:20
 
 - Posted the two-year run, Rev C1 and a Veterans Day "are you working today?" question on #50 ([comment](https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6796314219)).
