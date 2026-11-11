@@ -2,6 +2,13 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-11, 04:00
+
+- **Rev C comparison on 2023 real weather (250 each, refit rates):** Rev C near-coast 38.8% verified (33–45), Rev B near-coast 41.2%, Rev C 100 km 44.8%. Rev C: 0 swamped (Rev B 31), steering losses 19 (62), lost 18.8% (25.6%). But arrivals are level: saved boats die of wet electronics (82 vs 64) or a broken wing (95 vs 76), and Rev C is slower. Next levers: electronics above the flood level, and the wing.
+- **Near-coast launch costs more than I said:** 11 US-coast groundings vs 2 from 100 km; ~6 points of verified arrivals (edge of noise). My "about 1%" came from the 100 km run. Docs corrected. Launch rule, escort and recovery aren't modelled.
+- Knockdowns by Hs: mean (Hs/3)² = 3.6 at a knockdown → 0.0009 flat ≈ 0.00025 at Hs 3 m.
+- 3D viewer added (`viewer-3d/`), noted on #50.
+
 ## 2026-11-10, 22:30
 
 - **Rev C approved by Randolph and built** ([Design_RevC.md](../docs/Design_RevC.md)): foam-filled hull behind two bulkheads + sealed battery box (flooding capped at ~3 kg), twin rudders with separate servos, 30 × 26 mm spar on 6806 bearings, bulb D72, YB3 platform P19 and light P20 on the stub; thruster provision and backup D-cell removed. Outer pontoons considered and rejected (stable inverted).

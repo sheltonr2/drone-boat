@@ -75,6 +75,8 @@ What this says:
 
 **What the full Monte Carlo adds (Nov 10, 250 voyages on 2023 weather):** only 2 of 250 voyages (0.8%) went aground near the US coast, because few boats actually fail in their first days after a 14-day shakedown. So the drop point is worth about 1% on the odds, not the 50% the worst case suggests. The launch date mattered far more: launches 1–15 May succeeded 44% of the time, 16–31 May 36%, and 1–15 June 21%. June boats met more breaking seas (4.1 knockdowns a day against 3.4) and arrived into autumn storms. That supports the 1–20 May window in [Launch_Plan.md](Launch_Plan.md). In 2023, early May is also when the 100 km drop grounds dead boats; that tension is another reason to prefer the shelf edge.
 
+**Correction (10 Nov, evening):** the near-coast launch was then run directly (Rev C, 250 voyages, 2023): 11 groundings near the US coast against 2 from 100 km, and 38.8% verified arrivals against 44.8%. So the launch point is worth up to about 6 points, not 1; see [Design_RevC.md](Design_RevC.md). The simulator does not model the offshore-wind rule, escort or early recovery.
+
 **Decision (10 Nov 2026): launch near the coast instead** (see the Launch line at the top). The analysis below is kept for the record. The earlier recommendation was to move the drop to the shelf edge, about 150 km (81 nm) out at 37.86°N 73.47°W, unless 2024 reverses this. It is still inside the range of Ocean City's canyon charters, which fish the shelf edge. The cost is about an hour more each way on the charter.
 
 ## Drift tests: how far out to drop the boat (Open-Meteo, Nov 8, 2026; superseded)

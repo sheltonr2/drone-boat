@@ -49,6 +49,31 @@ The wing and leak rates were then refitted (they had been tuned on calm syntheti
 
 **Correction (10 Nov):** when proposing Rev C I estimated it would cost about $300 less. That was wrong. The thruster was never in the sail-only budget, so removing it saves nothing there. Rev C adds about $260 of parts, and the YB3 (decided 9 Nov) wasn't in the budget either.
 
+## Real-weather result (10 Nov 2026, evening)
+
+250 voyages each on 2023 weather (1 May–15 June launches, refitted rates, same seeds; [log](../collab/run_log_revC_compare_2023_2026-11-10.txt), data in `results/2026-11-10_bulk_mc_2023_rev*_refit.json`).
+
+| | Rev C, near-coast (the plan) | Rev B, near-coast | Rev C, 100 km drop |
+|---|---|---|---|
+| **Verified arrivals** (95% CI) | **38.8%** (33–45) | 41.2% (35–47) | 44.8% (39–51) |
+| Lost | 18.8% | 25.6% | 13.2% |
+| Position known at the end | 77.6% | 73.2% | 84.4% |
+| Swamped by a leak | 0 | 31 | 0 |
+| Steering lost (both rudders, or the one) | 19 | 62 | 16 |
+| Wing broken | 95 | 76 | 113 |
+| Electronics failure | 82 | 64 | 103 |
+| Aground near the US coast | 11 (4.4%) | 11 (4.4%) | 2 (0.8%) |
+| Still at sea when the data ended (30 Nov) | 20.4% | 17.6% | 26.4% |
+| Median crossing | 133 days | 127 days | 131 days |
+
+What it says:
+
+- **Rev C does what it was designed to do, but that has not yet turned into more arrivals.** No boat was swamped (31 before) and steering losses fell from 62 to 19. Losses fell from 25.6% to 18.8% and we know where more boats are at the end. Verified arrivals are level with Rev B (38.8% against 41.2%, well inside the ±6-point noise).
+- **Why not more arrivals: the boats Rev C saves then fail another way.** A leaking Rev C boat stays afloat, but the water stays in the dry bay, the electronics hazard stays at ×6, and the main box dies (82 electronics failures against 64). Boats also live longer and so meet more knockdowns (95 broken wings against 76). And Rev C is about 7% slower, so more voyages run past the end of the 2023 data. Of the 51 Rev C boats still at sea on 30 Nov, 33 had a dead main box and 33 a broken wing; only 6 were still sailing normally.
+- **The next two levers are clear: keep trapped water away from the electronics, and the wing.** Mounting the IP68 box above the 3 L flood level (or adding a small bilge pump) would stop a leak from becoming an electronics failure. The wing needs either the severity-scaled damage model checked against the 30 mm spar, or a storm-stowed rig.
+- **Launch point: near-coast costs more than estimated earlier.** Groundings near the US coast were 11 of 250 from the near-coast point against 2 of 250 from 100 km, and verified arrivals were 38.8% against 44.8% (a 6-point gap, at the edge of the noise). The earlier "about 1%" figure was wrong: it came from the 100 km run. Most of these groundings were boats whose electronics died in the first weeks (5 of 11 within 14 days). The simulator does not model the launch plan's offshore-wind rule, escort or early recovery, which are aimed at exactly these cases, so the real cost should be smaller than 6 points, but it is not zero.
+- **Knockdowns by wave height** (new log): 4% happen below Hs 3 m, 60% between 3 and 6 m, 35% above 6 m. The mean (Hs/3)² at a knockdown is 3.6 (boat-sim measured 2.9 on its model), so our flat 0.0009 per knockdown equals about 0.00025 at Hs 3 m in the scaled form.
+
 ## Files
 
 - **Drawings and build files:** `build-files/Drawings.pdf` (20 sheets; new D09 for subdivision, foam fill, battery box and labels), `Templates_1to1_Letter.pdf` (new T17 and T18 bulkheads; T15 spar bore 30.4 mm), 19 DXF files, and 23 STL files for 20 printed parts (P07 and P08 for the 30 mm spar, P14 for the D72 bulb, new P19 and P20; print two each of P11, P12 and P13).
