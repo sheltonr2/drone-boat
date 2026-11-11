@@ -141,7 +141,15 @@ def _main():
         win = dict(**({"from": a.frm + "T12:00:00", "to": (a.to or a.frm) + "T12:00:00"} if a.frm else {}),
                    years=[int(y) for y in a.years.split(",") if y.strip()]) if a.frm else None
         procs = a.processes or ((os.cpu_count() or 2) if sc.get("provider") == "bulk" else None)
-        r = run_montecarlo(design, sc, n_runs=a.runs, window=win, processes=procs, cache_dir=CACHE)
+        from .console import Progress, say
+        say(f"Monte Carlo: {design.get('name', 'design')}, {a.runs} voyages, {sc.get('name', '')[:70]}")
+        say("Building the speed model first (10-30 s) ...")
+        pg, ok = Progress("Voyages", a.runs), [0, 0]
+        def _prog(frac, res):
+            ok[0] += 1; ok[1] += res.get("outcome") in ("arrived_reporting", "arrived_tracked")
+            pg.update(ok[0], f"arrived so far: {ok[1]}")
+        r = run_montecarlo(design, sc, n_runs=a.runs, window=win, processes=procs, cache_dir=CACHE, progress=_prog)
+        s_ = r["summary"]; say(f"Done: {s_.get('success_percent')}% verified arrivals. Full results are in the log and the results file.")
         print(json.dumps(jsonable(r["summary"]), indent=1))
     out = a.out or f"result_{a.cmd}_{int(time.time())}.json"
     json.dump(jsonable(dict(kind="voyage" if a.cmd == "voyage" else "montecarlo", design=design, result=r)), open(out, "w"))

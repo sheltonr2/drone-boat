@@ -29,3 +29,7 @@ It uses a 0.25° weather grid to resolve the Gulf Stream. Commit the result file
 Run `python -m drone_sim.cli gridcheck` too. It tells us whether the default 1° grid blurs the Gulf Stream.
 
 `LOG.md` records each check of their repo and what we did about it.
+
+## Batch files
+
+Every `.bat` in `simulator/` shows a banner (what it is, the expected time, the start time) and a live progress line in its window (`drone_sim/console.py`: count, percent, elapsed, time left). Full output goes to a log in `collab/`. New batch files should do the same; a blank window is not acceptable.
