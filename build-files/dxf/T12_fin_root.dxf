@@ -2315,7 +2315,7 @@ HOLES
 20
 0.000
 40
-6.000
+5.500
 0
 CIRCLE
 8
@@ -2325,7 +2325,7 @@ HOLES
 20
 0.000
 40
-6.000
+5.500
 0
 TEXT
 8
@@ -2337,7 +2337,7 @@ TEXT
 40
 6.00
 1
-T12  FIN ROOT  NACA 0012  chord 170  (rod holes D12)
+T12  FIN ROOT  NACA 0012  chord 170  (Rev C2 hardwood core: rod grooves D11)
 0
 TEXT
 8
@@ -2349,7 +2349,19 @@ TEXT
 40
 4.00
 1
-Hot-wire: screw template to the block end; lead in and out at the trailing edge.
+Planing gauge: cut this shape out of thin ply and plane the core until the gauge fits. Shape is the bare core:
+0
+TEXT
+8
+TEXT
+10
+0.000
+20
+-43.200
+40
+4.00
+1
+glass adds about 1.2 mm a side. Carbon recess 60 x 1.5, from 25 to 85 behind the LE, both sides.
 0
 ENDSEC
 0

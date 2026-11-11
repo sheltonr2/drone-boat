@@ -1,7 +1,7 @@
 {
   "name": "Rev C 1.5 m solar-sail drone",
   "revision": "C",
-  "revision_note": "C1: electronics box above the flood level (11 Nov 2026)",
+  "revision_note": "C2: hardwood-cored keel fin with carbon strips, keel-box floors (11 Nov 2026); C1: electronics box above the flood level",
   "hull": {
     "length": 1.5,
     "beam": 0.4,
@@ -26,8 +26,8 @@
     "rake_deg": 0.0,
     "cant_deg": 0.0,
     "thickness": 0.12,
-    "kg_per_m2_skin": 1.2,
-    "core_density": 35.0,
+    "kg_per_m2_skin": 3.2,
+    "core_density": 680.0,
     "rod_kg": 0.65
   },
   "bulb": {
@@ -153,7 +153,7 @@
       0.42
     ],
     "keel_box_and_backing": [
-      0.5,
+      0.75,
       0.745,
       0.0,
       0.02

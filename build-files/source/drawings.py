@@ -59,7 +59,7 @@ def sheet_cover(pdf, index):
     table(bg, 170, 240, ["Part", "3D-printed part", "Qty", "Material / settings"], rows, [12, 95, 9, 62], fs=5.6, rh=4.1)
     notes(bg, 20, y - 6, "General notes", [
         "1. All dimensions in millimetres. Model origin: x aft from the bow, z up from the hull bottom at midships, y to port.",
-        f"2. Design waterline (DWL) z = {D.DWL:.0f} at about {D.MASS_KG:.0f} kg all-up mass (Rev B: z 90 at about 21 kg).",
+        f"2. Design waterline (DWL) z = {D.DWL:.0f} at about {D.MASS_KG:.1f} kg all-up mass (Rev B: z 90 at about 21 kg).",
         "3. Printed parts: 0.4 mm nozzle, 0.2 mm layers, 4+ walls. Use ASA outdoors in UV; PETG is fine below deck.",
         "   STL files are in print orientation; no supports needed except where a sheet says so.",
         "4. Bought-in parts follow the Recommended Parts list in the build plan. Servo tab spacing, AS5600 board size and",
@@ -78,7 +78,9 @@ def sheet_cover(pdf, index):
         "   5. YB3 backup tracker platform P19 and all-round white light P20 on the stub; label areas (D01, D07, D09).",
         "   Removed: thruster provision and the backup D-cell. Mass about 25 kg, DWL z 98, still self-righting from 180 deg.",
         "Rev C1 (2026-11-11): electronics box raised onto a shelf (bottom z 118, was 60), above the 3 L sump at the low point of the dry bay;",
-        "   cable glands on the box top with drip loops, gel-filled connectors, desiccant. A leak no longer sits against the box (D03, D09)."], fs=6.0, lh=3.6)
+        "   cable glands on the box top with drip loops, gel-filled connectors, desiccant. A leak no longer sits against the box (D03, D09).",
+        "Rev C2 (2026-11-11): keel fin rebuilt after a strength check: hardwood core, 6 x 6 oz glass and a carbon strip each side, 60 mm tenon into",
+        "   a keel-box socket, two ply floors across the hull (D04, T12, T13, T19, T20). About +1.1 kg: 26.4 kg, DWL z 101. Proof-load before launch."], fs=5.8, lh=3.4)
     pdf.savefig(fig); plt.close(fig)
 
 # ------------------------------------------------------------------ D01 general arrangement
@@ -256,7 +258,7 @@ def sheet_interior(pdf):
     BB = D.BATTBOX; E = D.EBOX; B = D.BATTERY; R = D.RUDDER
     # dry spaces cut out of the foam (white)
     for (x0, z0, w, h) in [(D.MAST_X - MT['od']/2, kz, MT['od'], MT['top_z'] - kz), (BB['x0'], BB['z0'], BB['x1'] - BB['x0'], BB['z1'] - BB['z0']),
-                           (E['x0'] - 8, E['z0'] - 6, E['x1'] - E['x0'] + 16, E['h'] + 14), (D.SUMP['x0'], 11, D.SUMP['x1'] - D.SUMP['x0'], D.SUMP['top_z'] - 11), (650, 0, 190, 40), (330, 160, 200, 59),
+                           (E['x0'] - 8, E['z0'] - 6, E['x1'] - E['x0'] + 16, E['h'] + 14), (D.SUMP['x0'], 11, D.SUMP['x1'] - D.SUMP['x0'], D.SUMP['top_z'] - 11), (D.KEELBOX['x0'], 0, D.KEELBOX['x1'] - D.KEELBOX['x0'], 84), (330, 160, 200, 59),
                            (1295, 112, 70, 64), (R['stock_x'] - 14, 76, 28, 104)]:
         ax.add_patch(Rectangle((x0, z0), w, h, fc="white", ec="none"))
     for xb in D.BULKHEADS:
@@ -265,9 +267,13 @@ def sheet_interior(pdf):
     ax.add_patch(Rectangle((D.MAST_X - 27, MT['top_z'] - 80), 54, 85, fill=False, lw=THIN, hatch="////"))
     ax.plot([D.MAST_X] * 2, [150, 270], color=INK, lw=0.8)
     ax.add_patch(Rectangle((D.MAST_X - 8, 120), 16, 30, fc="#ddd", ec=INK, lw=THIN))
-    ax.add_patch(Rectangle((650, 0), 190, 40, fill=False, lw=MED, hatch="\\\\"))
+    KB = D.KEELBOX
+    ax.add_patch(Rectangle((KB['x0'], 0), KB['x1'] - KB['x0'], KB['h'], fill=False, lw=MED, hatch="\\\\"))
+    ax.add_patch(Rectangle((KB['x0'], KB['h']), KB['x1'] - KB['x0'], KB['plate_t'], fc="#bbb", ec=INK, lw=THIN))
     for xr in (707, 762):
-        ax.plot([xr, xr], [-30, 40], color=INK, lw=1)
+        ax.plot([xr, xr], [-30, KB['h'] + KB['plate_t'] + 12], color=INK, lw=1)
+    for xf, zf in D.FLOORS:
+        ax.plot([xf, xf], [float(D.keel_z(xf)) + 11, zf], color=INK, lw=1.6)
     ax.add_patch(Rectangle((BB['x0'], BB['z0']), BB['x1'] - BB['x0'], BB['z1'] - BB['z0'], fill=False, lw=MED, ec=INK))
     ax.add_patch(Rectangle((B['x0'], 42), B['x1'] - B['x0'], B['h'], fc="#f4e3c3", ec=INK, lw=MED))
     ax.add_patch(Rectangle((E['x0'], E['z0']), E['x1'] - E['x0'], E['h'], fc="#d9e8d4", ec=INK, lw=MED))
@@ -286,7 +292,7 @@ def sheet_interior(pdf):
         ax.add_patch(Circle((xp, zp), 5, fc=BLUE, ec=BLUE))
     leader(ax, (D.MAST_X + 27, 200), (330, 140), "Mast tube 2 in. sch 40 PVC,\nglassed to hull + deck")
     leader(ax, (D.MAST_X, 135), (200, 70), "6-wire capsule slip ring\n(tail servo power + signal)")
-    leader(ax, (745, 20), (600, -25), "Keel box: 2 x M10 316 rods,\nG10 backing plate 190 x 60 x 10", ha="right")
+    leader(ax, (700, 20), (600, -25), "C2: keel box takes the fin tenon (60 deep), 2 x M10 rods,\nG10 plate on top; ply floors at x 650 and x 800 (D04)", ha="right")
     leader(ax, (870, 210), (830, 258), "Sealed battery box (O-ring lid, removable), strapped down on P16")
     leader(ax, (1100, 190), (1060, 318), "IP68 box: Pixhawk, ESP32, RockBLOCK, GPS, GV-5 MPPT (tray P15)")
     leader(ax, (R['stock_x'], 120), (1500, 30), "Twin rudder trunks (x2,\n100 off centre), top z 175")
@@ -326,46 +332,120 @@ def sheet_interior(pdf):
     notes(bg, 15, 37 + 22, "Systems notes (Rev C)", [
         f"Inside volume: forward {vf:.1f} L (solid foam), dry bay {vm:.1f} L, aft {va:.1f} L (foam except the rudder trunks and servo pockets). XPS blocks at about 28 kg/m3, about 1.6 kg in all.",
         f"Fitted, removable blocks fill the dry bay around the boxes: aim for no more than {D.FREE_FLOOD_L:.0f} L of open space, so a leak can't add more than about 3 kg of water (12% of displacement). See D09.",
-        "Masses (approx, kg): hull + deck 4.5, bulkheads 0.2, foam 1.6, fin 1.2, bulb 9.2, rudders 1.0, servos + trunks 0.5, rig 2.3, battery + box 2.35, electronics 1.1, solar 1.0, stub items 1.4, misc 0.6 -> about 25 kg."], fs=5.8, lh=3.5)
+        "Masses (approx, kg): hull + deck 4.5, bulkheads 0.2, foam 1.6, fin 2.1, bulb 9.2, rudders 1.0, servos + trunks 0.5, rig 2.3, battery + box 2.35, electronics 1.1, solar 1.0, stub items 1.4, keel box + floors 0.4, misc 0.4 -> about 26.4 kg."], fs=5.8, lh=3.5)
     pdf.savefig(fig); plt.close(fig)
 
 # ------------------------------------------------------------------ D04 keel
 def sheet_keel(pdf):
-    fig, bg = new_sheet("D04", "Keel fin and lead bulb", "Scale 1:4")
+    fig, bg = new_sheet("D04", "Keel fin, keel box and lead bulb (Rev C2)", "Scale 1:4, sections as noted")
     s = 4
-    F = D.FIN
-    ax = view(fig, 15, 45, (540, 920), (-480, 60), s, "FIN + BULB ELEVATION")
+    F = D.FIN; FB = D.FIN_BUILD; KB = D.KEELBOX
+    ax = view(fig, 15, 40, (540, 920), (-480, 100), s, "FIN + BULB ELEVATION")
     poly(ax, fin_poly(), lw=MED)
     poly(ax, bulb_profile(), lw=MED, fc="#ccc", fill=True)
+    # tenon, keel box, plate, floors
+    ax.add_patch(Rectangle((F['root_le_x'], 0), FB['tenon_x1'] - 2 - F['root_le_x'], FB['tenon_h'], fc="#e9d3ae", ec=INK, lw=MED))
+    ax.add_patch(Rectangle((KB['x0'], 0), KB['x1'] - KB['x0'], KB['h'], fill=False, lw=THIN, hatch="////"))
+    ax.add_patch(Rectangle((KB['x0'], KB['h']), KB['x1'] - KB['x0'], KB['plate_t'], fc="#bbb", ec=INK, lw=THIN))
     for xr in (707, 762):
-        ax.plot([xr, xr], [-490 + 50, 45], color=INK, lw=0.5, ls="--")
-    ax.add_patch(Rectangle((650, 0), 190, 10, fill=False, lw=THIN, hatch="////"))
-    dim(ax, (F['root_le_x'], 25), (F['root_le_x'] + F['root_chord'], 25), 0, "170 root chord")
+        ax.plot([xr, xr], [-490 + 50, KB['h'] + KB['plate_t'] + 12], color=INK, lw=0.5, ls="--")
+        ax.add_patch(Rectangle((xr - 8.5, KB['h'] + KB['plate_t']), 17, 8, fc=INK))
+    for xf, zf in D.FLOORS:
+        ax.add_patch(Rectangle((xf - 4.5, float(D.keel_z(xf)) + 3), 9, zf - float(D.keel_z(xf)) - 3, fc="#c9a877", ec=INK, lw=THIN))
+    xs = np.linspace(545, 915, 60); ax.plot(xs, D.keel_z(xs), color=INK, lw=MED)
+    # carbon strip
+    cx0 = F['root_le_x'] + FB['carbon_x0']
+    ax.plot([cx0 + FB['carbon_w'] / 2] * 2, [-425, FB['tenon_h']], color="#333", lw=2.2, alpha=0.35)
+    dim(ax, (F['root_le_x'], -60), (F['root_le_x'] + F['root_chord'], -60), 0, "170 root chord")
     dim(ax, (F['tip_le_x'], -395), (F['tip_le_x'] + F['tip_chord'], -395), 0, "150 tip chord")
     dim(ax, (890, 0), (890, -430), 0, "430")
+    dim(ax, (625, 0), (625, FB['tenon_h']), 0, f"tenon {FB['tenon_h']}")
     dim(ax, (D.BULB['nose_x'], -485 + 10), (D.BULB['nose_x'] + 320, -485 + 10), 0, "bulb 320")
     zb, rb = D.BULB['axis_z'], D.BULB['dia'] / 2
     dim(ax, (D.BULB['nose_x'] + 128, zb - rb), (D.BULB['nose_x'] + 128, zb + rb), 0, f"D{D.BULB['dia']:.0f}")
-    dim(ax, (657, 45), (707, 45), 0, "50"); dim(ax, (707, 45), (762, 45), 0, "55")
-    leader(ax, (735, -200), (560, -150), "2 x M10 316 threaded rod,\nfull length, bonded in\nfin core and bulb")
-    ax2 = view(fig, 120, 150, (-10, 180), (-15, 15), 1.3, "FIN ROOT SECTION  NACA 0012  (1:1.3)")
-    P = foil_xy(0.12, 170); poly(ax2, P, lw=MED)
-    for xr in (50, 105): ax2.add_patch(Circle((xr, 0), 5.5, fill=False, lw=THIN))
-    ax2.plot([0, 170], [0, 0], color=GREY, lw=0.25, ls="-.")
+    dim(ax, (657, 92), (707, 92), 0, "50"); dim(ax, (707, 92), (762, 92), 0, "55")
+    leader(ax, (735, -200), (560, -150), "2 x M10 316 threaded rod,\nfull length, bonded between\nthe core halves and in the bulb")
+    leader(ax, (cx0 + 30, -300), (850, -300), "carbon strip 60 x 1.5,\neach side, tip to top\nof tenon")
+    leader(ax, (800, 25), (850, 60), "floor x 800\n(top z 32)")
+    leader(ax, (650, 70), (560, 85), "floor x 650\n(top z 80)")
+    leader(ax, (760, 65), (850, 92), "G10 plate 122 x 60 x 10,\n316 nuts + washers")
+    # root section
+    ax2 = view(fig, 120, 232, (-10, 180), (-15, 15), 1.3, "FIN ROOT SECTION  NACA 0012  (1:1.3)")
+    P = foil_xy(0.12, 170); poly(ax2, P, lw=1.6, fc="#e9d3ae", fill=True)
+    ax2.plot([0, 170], [0, 0], color=INK, lw=0.5)
+    for xr in FB['rods_x']: ax2.add_patch(Circle((xr, 0), 5.5, fc="white", ec=INK, lw=THIN)); ax2.add_patch(Circle((xr, 0), 4.2, fc="#888", ec="none"))
+    xq = np.linspace(FB['carbon_x0'], FB['carbon_x0'] + FB['carbon_w'], 30)
+    xs_, ys_ = D.naca(0.12, 170, 200); up = ys_ > 0
+    yq = np.interp(xq, xs_[up][np.argsort(xs_[up])], ys_[up][np.argsort(xs_[up])])
+    for sg in (1, -1):
+        ax2.fill_between(xq, sg * (yq - 0.6), sg * (yq - 0.6 - 1.5 * 1.6), color="#222")
     dim(ax2, (0, 15), (50, 15), 0, "50", fs=5); dim(ax2, (50, 15), (105, 15), 0, "55", fs=5)
+    leader(ax2, (55, 9.0), (118, 13.5), "carbon strip let into the core, under the glass", fs=5)
+    leader(ax2, (140, 0), (150, -12.5), "glue line between the two core halves", fs=5)
+    leader(ax2, (20, -6.5), (0, -13.5), "6 x 6 oz glass (about 1.2 mm)", fs=5)
+    # transverse section at the keel box
+    xsct = 735.0
+    ax3 = view(fig, 300, 150, (-150, 150), (-70, 110), 2.5, f"SECTION AT x {xsct:.0f}, LOOKING AFT  (1:2.5)")
+    y, z = D.section(xsct, 120); m = z < 108
+    outer = np.r_[np.c_[-y[m][::-1], z[m][::-1]], np.c_[y[m][1:], z[m][1:]]]
+    ax3.plot(outer[:, 0], outer[:, 1], color=INK, lw=MED)
+    yi, zi = np.maximum(y - 11, 0), z + 11; mi = (zi < 108) & (yi > 0)
+    ax3.plot(np.r_[-yi[mi][::-1], yi[mi]], np.r_[zi[mi][::-1], zi[mi]], color=INK, lw=THIN)
+    zf = D.FLOORS[0][1]; yf, zfv = np.maximum(D.section(D.FLOORS[0][0], 120)[0] - 11, 0), D.section(D.FLOORS[0][0], 120)[1] + 11
+    mf = zfv <= zf
+    ax3.add_patch(Polygon(np.r_[np.c_[-yf[mf][::-1], zfv[mf][::-1]], np.c_[yf[mf], zfv[mf]], [[yf[mf][-1], zf], [-yf[mf][-1], zf]]], closed=True, fc="#c9a877", ec=INK, lw=THIN, alpha=0.55))
+    ax3.add_patch(Rectangle((-KB['w'] / 2, 0), KB['w'], KB['h'], fc="white", ec=INK, lw=MED, hatch="////"))
+    ax3.add_patch(Rectangle((-10.2, -70), 20.4, 70 + FB['tenon_h'], fc="#e9d3ae", ec=INK, lw=MED))
+    ax3.add_patch(Rectangle((-KB['w'] / 2, KB['h']), KB['w'], KB['plate_t'], fc="#bbb", ec=INK, lw=THIN))
+    ax3.plot([0, 0], [-70, KB['h'] + KB['plate_t'] + 14], color=INK, lw=1.0)
+    ax3.add_patch(Rectangle((-8.5, KB['h'] + KB['plate_t']), 17, 8, fc=INK))
+    zl = float(np.interp(45, yf, zfv)) + 10
+    for yl in (-45, 45): ax3.add_patch(Circle((yl, zl), 7.5, fc="white", ec=INK, lw=THIN))
+    dim(ax3, (-KB['w'] / 2, 100), (KB['w'] / 2, 100), 0, "60", fs=5)
+    dim(ax3, (60, 0), (60, KB['h']), 0, "60", fs=5)
+    leader(ax3, (22, 12), (55, -58), "keel box: glass + thickened\nepoxy cast round the tenon", fs=5)
+    leader(ax3, (80, 50), (95, 95), "floor at x 650 (beyond),\n9 ply, tabbed to the hull", fs=5)
+    leader(ax3, (50, zl - 5), (75, -30), "limber holes D15, 45 off centre", fs=5)
+    leader(ax3, (-90, 20), (-140, -30), "hull doubler: 3 extra plies\ninside, floor to floor", fs=5)
+    leader(ax3, (-10, -40), (-70, -55), "fin", fs=5)
     xl = np.arange(0, 321, 20)
     rows = [[int(v), f"{float(D.bulb_radius(v))*2:.1f}"] for v in xl]
-    table(bg, 255, 252, ["from nose", "diameter"], rows, [20, 18], fs=5.5, rh=3.7)
+    table(bg, 255, 222, ["from nose", "diameter"], rows, [20, 18], fs=5.5, rh=3.7)
     v, m = D.bulb_mass()
-    notes(bg, 120, 125, "Fin construction", [
-        "1. Hot-wire cut a blue XPS or Divinycell core with templates T12 (root) and T13 (tip).",
-        "2. Bore 2 x 12 mm holes at 50 and 105 from the root LE; bond the M10 rods in with thickened epoxy.",
-        "3. Glass 3 x 6 oz each side, +/-45 deg on the inner layer; fair, then 2-part epoxy primer.",
-        "4. Rods pass 40 mm into the keel box and take 316 nuts on a G10 plate (190 x 60 x 10) glassed into the hull.",
+    notes(bg, 120, 222, "Fin construction (Rev C2)", [
+        "1. Core: two planks of straight-grained hardwood (white oak, ash or",
+        "   sapele), each 10.5 thick x 175 x 495, grain along the span.",
+        "2. Rout two half-round grooves (R5.5) in each plank at 50 and 105 from",
+        "   the root LE, parallel to the LE. Glue the planks together round the",
+        "   2 x M10 316 rods with thickened epoxy. Rods project 30 above the",
+        "   tenon and 60 below the tip.",
+        "3. Plane to templates T12 (root) and T13 (tip). The top 60 mm is the",
+        "   tenon: keep the root section, cut it back to 113 long (x 657-770).",
+        "4. Rout a recess 60 wide x 1.5 deep each side, 25-85 from the LE, full",
+        "   length incl. the tenon. Bond in unidirectional carbon (pultruded",
+        "   strip, or 5 layers of 300 g tape).",
+        "5. Glass 6 x 6 oz each side, layers 2 and 5 at +/-45 deg, wrapped",
+        "   round the LE; fair, then 2-part epoxy primer.",
+        "", "Keel box, floors and hull",
+        "6. Floors: 9 mm marine ply to T19 (x 650) and T20 (x 800), 2 x 6 oz",
+        "   each side, tabbed to the hull with 3 x 6 oz, 50 mm each way.",
+        "7. Doubler: 3 extra plies of 6 oz inside the hull bottom between the",
+        "   floors, out to 120 either side.",
+        "8. Keel box: wax the tenon, stand the fin in the hull slot, build 6 plies",
+        "   of glass round the tenon and fill out to 60 wide with thickened",
+        "   epoxy between the floor at x 650 and a ply end plate at x 772.",
+        "9. G10 plate 122 x 60 x 10 on top, 316 nuts + washers, 15 N.m,",
+        "   thread-lock. Seal the hull slot with polyurethane.",
+        "10. PROOF TEST before paint: Field Test K (60 kg on the bulb)."], fs=5.6, lh=3.25)
+    notes(bg, 300, 138, "Why (docs/Keel_Structure_Loads.md)", [
+        "The foam-cored fin with 3 x 6 oz was good for about 113 N.m at the root: 3 times the",
+        "load of the bulb with the boat on its side (36 N.m). A breaking-wave strike is estimated",
+        "at 65 N.m typically and 350 N.m once in 1,000. This fin is estimated at 1,100 N.m and",
+        "the tenon joint at about 700 N.m. Both are hand calculations: the proof test decides.",
         "", "Bulb (Rev C: D72, was D68)", f"Volume {v/1e3:.0f} cm3 -> {m:.1f} kg of lead. Make a plaster mould from pattern P14a/b",
         "(printed), cast outdoors with PPE, then drill 2 x 12 mm holes 60 deep at the rod positions",
         "(91 + 37 and 91 + 92 mm from the nose, measured on the slot) and bond the rods in with epoxy.",
-        "Fair with epoxy filler; seal with 2 coats epoxy barrier coat."], fs=6.0, lh=3.6)
+        "Fair with epoxy filler; seal with 2 coats epoxy barrier coat."], fs=5.8, lh=3.4)
     pdf.savefig(fig); plt.close(fig)
 
 # ------------------------------------------------------------------ D05 rudder

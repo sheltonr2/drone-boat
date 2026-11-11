@@ -38,8 +38,8 @@ The wing and leak rates were then refitted (they had been tuned on calm syntheti
 
 | | Rev B | Rev C |
 |---|---|---|
-| All-up mass | 20.8 kg | 25.2 kg |
-| Waterline (z above the hull bottom) | 88 mm | 98 mm |
+| All-up mass | 20.8 kg | 25.2 kg (26.4 kg from Rev C2) |
+| Waterline (z above the hull bottom) | 88 mm | 98 mm (101 mm from Rev C2) |
 | GM | 0.201 m | 0.187 m |
 | Maximum righting arm | 0.434 m at 105° | 0.378 m at 105° |
 | Self-righting from 180° | yes | yes |
@@ -103,6 +103,20 @@ The comparison above showed that a leak in Rev C no longer sinks the boat but st
 - **Effect on the boat:** +0.08 kg (shelf), CG 3 mm higher, GM 0.184 m (was 0.187), still self-righting. No new printed parts.
 - **In the simulator:** water in the bay now multiplies the electronics hazard by `hull.wet_electronics_factor` = 2 for C1 (it was 6 for Rev B and Rev C). **The 2 is a guess.** In a knockdown the water still splashes the box briefly, and humid air still reaches the connectors. Field Test J (below in [Field_Tests.md](Field_Tests.md)) is what would justify it.
 - **To measure it:** `simulator/run_revC1_compare_2023.bat` runs C1 from the near-coast point on the same 250 voyages as the Rev C run above. `designs/revC0_design.json` is Rev C as first drawn, for reference.
+
+## Rev C2: keel fin rebuilt after a strength check (11 Nov 2026)
+
+A physics estimate ([Keel_Structure_Loads.md](Keel_Structure_Loads.md)) found the fin as drawn was only about 3 times as strong as the load of the bulb with the boat on its side, and would break in the first breaking seas. C2 changes the fin and its joint to the hull. The outside shape is unchanged.
+
+- **Fin core is solid hardwood** (white oak, ash or sapele) in two halves glued round the two M10 rods, instead of foam.
+- **Skin is 6 × 6 oz glass each side** (was 3), over a 60 × 1.5 mm unidirectional carbon strip let into each face.
+- **The fin has a 60 mm tenon** that stands in a socket (the keel box) cast round it inside the hull. Before, only the two rods on the centreline crossed the joint.
+- **Two 9 mm plywood floors** cross the hull at x 650 and x 800 (templates T19, T20), with three extra plies inside the hull bottom between them, to spread the keel load into the hull.
+- **Estimated strength:** fin about 1,100 N·m at the root (was 113), joint about 700 N·m, against 36 N·m static and about 350 N·m for a 1-in-1,000 wave strike. All hand calculations.
+- **Proof test:** Field Test K (60 kg hung from the bulb with the boat on its side) before paint.
+- **Effect on the boat:** +1.1 kg, so 26.4 kg all-up, waterline z 101 mm (was 98), GM 0.190 m (was 0.184), maximum righting arm 0.37 m at 105°, still self-righting. The speed model has not been rerun for the extra weight; expect about 1% slower.
+- **Sheets and templates changed:** D00, D03, D04 (redrawn), T12, T13 (now planing gauges), new T19 and T20. No printed part changed.
+- **In the simulator:** masses only (`keel.core_density`, `keel.kg_per_m2_skin`, keel box item). There is still no keel-loss event; see the note for the options.
 
 ## Files
 

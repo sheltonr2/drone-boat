@@ -15,7 +15,7 @@ John's boat-sim rolls a dice at every knockdown for "keel or structure lost" (4e
 | As drawn: XPS foam core, 3 × 6 oz glass each side, two M10 rods | 113 N·m | 3.2 | 100% / 100% / 100% | 0 |
 | H80 PVC foam core, same skins | 234 N·m | 6.5 | 4% / 100% / 100% | 0.05 kg |
 | Hardwood core, 6 × 6 oz each side | 661 N·m | 18.5 | 0% / 3.5% / 97% | 0.60 kg |
-| Hardwood core, 6 × 6 oz, plus a 60 × 1.5 mm carbon strip each side | 1,103 N·m | 31 | 0% / 0% / 10% | 0.75 kg |
+| Hardwood core, 6 × 6 oz, plus a 60 × 1.5 mm carbon strip each side | 1,103 N·m | 31 | 0% / 0% / 10% | 0.75 kg (1.1 kg as built into Rev C2, with tenon and floors) |
 
 "Static load" is 36 N·m: the weight of the 9.2 kg bulb in water on its 0.436 m arm with the boat lying on its side. A voyage sees about 660 knockdowns (mean of the 500 real-weather voyages of 11 November).
 
@@ -38,7 +38,13 @@ Typical strike at Hs 5 m: median root moment 65 N·m, 1 in 20 above 190 N·m, 1 
 - Not modelled: fatigue beyond a simple check (everyday rolling puts about 27 N·m on the root, a quarter of the as-drawn strength, which is at the limit for glass over millions of cycles), groundings, and collisions.
 - After the shell fails the rods fold at about 82 N·m rather than snap, so the bulb would probably stay attached but hang off to one side. For the voyage that is the same as losing the keel.
 
-## Recommended
+## Done in Rev C2 (11 November 2026)
+
+Randolph approved the fin change. Rev C2 has the hardwood core, 6 × 6 oz skins and carbon strips (last row of the table), a 60 mm tenon into a keel-box socket, two plywood floors and a hull doubler (drawing D04, templates T12, T13, T19, T20), and Field Test K as the proof test. The real added mass is 1.1 kg, not 0.75: the earlier figure left out part of the wood and the floors.
+
+The joint is estimated at about 700 N·m (tenon 60 deep × 113 long bearing in the socket at 10 MPa), so it, not the fin, is now the weaker of the two. That is still twice the 1-in-1,000 strike in the central case.
+
+## Recommended (as written before the change)
 
 1. Change the fin to a hardwood core with 6 × 6 oz each side and a carbon strip each side, and add floors at the keel box. This needs a drawing change (D04, templates) and is not done yet.
 2. Add a proof test to Field_Tests.md: boat on its side, 60 kg hung from the bulb (260 N·m, 7 times static), no cracking sounds, no permanent set. It tests the fin and the hull joint together, which the calculation cannot.

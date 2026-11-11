@@ -7,7 +7,7 @@ _con = None
 def _open():
     global _con
     if _con is None:
-        for dev in ("CON", "/dev/tty"):
+        for dev in (("CON",) if os.name == "nt" else ("/dev/tty",)):
             try:
                 _con = open(dev, "w"); break
             except OSError:

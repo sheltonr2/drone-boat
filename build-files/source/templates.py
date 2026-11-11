@@ -72,7 +72,7 @@ def stem_template():
                        (120, 190, 4, "Cut a 12 mm ply stem piece; frames 1 and 2 notch into it.", "TEXT")],
                 desc="Bow stem profile")
 
-def foil_template(name, t, c, holes, label, extra=()):
+def foil_template(name, t, c, holes, label, extra=(), wood=False):
     xs, ys = D.naca(t, c, 140)
     P = np.c_[xs, ys]
     circles = [(hx, 0, hr, "HOLES") for hx, hr in holes]
@@ -82,6 +82,9 @@ def foil_template(name, t, c, holes, label, extra=()):
     polys += list(extra)
     texts = [(0, -c * t * 0.5 - 18, 6, label, "TEXT"),
              (0, -c * t * 0.5 - 26, 4, "Hot-wire: screw template to the block end; lead in and out at the trailing edge.", "TEXT")]
+    if wood:
+        texts[1] = (0, -c * t * 0.5 - 26, 4, "Planing gauge: cut this shape out of thin ply and plane the core until the gauge fits. Shape is the bare core:", "TEXT")
+        texts.append((0, -c * t * 0.5 - 33, 4, "glass adds about 1.2 mm a side. Carbon recess 60 x 1.5, from 25 to 85 behind the LE, both sides.", "TEXT"))
     return dict(name=name, polys=polys, circles=circles, texts=texts, desc=label)
 
 def hatch_template():
@@ -111,6 +114,21 @@ def bulkhead_template(n, x):
         texts.append((xl, float(D.deck_z(x)) - 67, 3.5, "Holes: WetLink M10 for the two rudder-servo cables.", "TEXT"))
     return dict(name=f"T{n}_bulkhead_x{x:.0f}", polys=polys, circles=circles, texts=texts, desc=f"Watertight bulkhead at x {x:.0f}")
 
+def floor_template(n, x, top):
+    y, z = D.section(x, 160)
+    yi, zi = np.maximum(y - 11.0, 0), z + 11.0
+    m = zi <= top
+    yi, zi = yi[m], zi[m]
+    P = np.r_[np.c_[-yi[::-1], zi[::-1]], np.c_[yi, zi], [[yi[-1], top], [-yi[-1], top]]]
+    outer = np.r_[np.c_[-y[::-1], z[::-1]], np.c_[y[1:], z[1:]]]; outer = outer[outer[:, 1] < top + 25]
+    polys = [(P, "BULKHEAD_CUT", True), (outer, "HULL_OUTSIDE", False),
+             (np.array([[0, float(D.keel_z(x)) - 10], [0, top + 30]]), "CENTRELINE", False)]
+    zl = float(np.interp(45, yi, zi)) + 10
+    circles = [(-45, zl, 7.5, "HOLES"), (45, zl, 7.5, "HOLES")] if top > 50 else []
+    texts = [(-90, top + 14, 6, f"T{n}  KEEL-BOX FLOOR x {x:.0f}  (Rev C2)", "TEXT"),
+             (-90, top + 6, 3.5, "9 mm marine ply + 2 x 6 oz each side. Cut on the solid line; trim to fit the hull." + (" Limber holes D15." if circles else ""), "TEXT")]
+    return dict(name=f"T{n}_keel_floor_x{x:.0f}", polys=polys, circles=circles, texts=texts, desc=f"Keel-box floor at x {x:.0f}")
+
 def all_templates():
     T = []
     for i, x in enumerate(np.arange(0, 1501, 150)):
@@ -118,13 +136,15 @@ def all_templates():
             T.append(frame_template(i, x))
     T.append(transom_template()); T.append(stem_template())
     F = D.FIN
-    T.append(foil_template("T12_fin_root", 0.12, F['root_chord'], [(50, 6), (105, 6)], "T12  FIN ROOT  NACA 0012  chord 170  (rod holes D12)"))
-    T.append(foil_template("T13_fin_tip", 0.12, F['tip_chord'], [(37, 6), (92, 6)], "T13  FIN TIP  NACA 0012  chord 150  (rod holes D12)"))
+    T.append(foil_template("T12_fin_root", 0.12, F['root_chord'], [(50, 5.5), (105, 5.5)], "T12  FIN ROOT  NACA 0012  chord 170  (Rev C2 hardwood core: rod grooves D11)", wood=True))
+    T.append(foil_template("T13_fin_tip", 0.12, F['tip_chord'], [(37, 5.5), (92, 5.5)], "T13  FIN TIP  NACA 0012  chord 150  (Rev C2 hardwood core: rod grooves D11)", wood=True))
     T.append(foil_template("T14_rudder", 0.12, D.RUDDER['chord'], [(22, 6)], "T14  RUDDER  NACA 0012  chord 120  (stock D12)  MAKE 2"))
     T.append(foil_template("T15_wing", 0.15, D.WING['chord'], [(66, D.SPAR_OD / 2 + 0.2)], "T15  WING  NACA 0015  chord 300  (Rev C spar bore D30.4)"))
     T.append(hatch_template())
     for k, xb in enumerate(D.BULKHEADS):
         T.append(bulkhead_template(17 + k, xb))
+    for k, (xf, zf) in enumerate(D.FLOORS):
+        T.append(floor_template(19 + k, xf, zf))
     return T
 
 # ------------------------------------------------------------------ tiled PDF

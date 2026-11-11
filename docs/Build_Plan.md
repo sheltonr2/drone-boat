@@ -168,6 +168,7 @@ The first Monte Carlo on real weather (250 voyages, 2023) showed what actually e
 - **YB3 platform P19 and all-round light P20** on the stern post; label areas on the hull and wing (D07, D09).
 - **Removed:** thruster provision and the backup D-cell.
 - **Effect (simulator):** about 25.2 kg all-up (was 20.8), waterline z 98 (was 88), GM 0.187 m (was 0.201), maximum righting arm 0.38 m at 105° (was 0.43), still self-righting from 180°. About 7% slower in the speed model: 5% from the weight, 2% from the second rudder. The real-weather comparison against Rev B is `simulator/run_revC_compare_2023.bat`.
+- **Rev C2 (11 Nov 2026), keel fin:** hardwood core, 6 × 6 oz glass and a carbon strip each side, a 60 mm tenon into a keel-box socket, and two plywood floors across the hull (D04; T12, T13, T19, T20). The foam-cored fin was about 3 times the static knockdown load and would not have survived breaking seas (Keel_Structure_Loads.md). +1.1 kg: 26.4 kg, waterline z 101, GM 0.190 m. Proof-load it (Field Test K) before paint.
 - **Files for both simulators:** `designs/revC_design.json` (ours; also the default), `designs/boat-sim/randolph_rev_c.yaml` (boat-sim's format), `designs/revC_boat_wing_feathered.stl` and `designs/revC_geometry.json`.
 
 **Changed: launch from the Mid-Atlantic (Nov 8, 2026)**

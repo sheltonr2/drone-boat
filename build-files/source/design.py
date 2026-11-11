@@ -7,8 +7,8 @@ BMAX = 200.0          # max half-beam (400 mm beam)
 X_BMAX = 0.55         # fraction of L where beam is max
 B_TRANSOM = 150.0     # transom half-beam
 DECK_Z = 230.0
-DWL = 98.0            # Rev C design waterline at about 25 kg all-up (Rev B: 90 at about 21 kg)
-MASS_KG = 25.2        # Rev C all-up mass, from the simulator's mass model
+DWL = 101.0           # Rev C2 design waterline at about 26.4 kg all-up (Rev C/C1: 98 at 25.3 kg; Rev B: 90 at about 21 kg)
+MASS_KG = 26.4        # Rev C2 all-up mass, from the simulator's mass model
 SECTION_N = 2.2       # superellipse exponent of the sections (round bilge)
 
 def half_beam(x):
@@ -53,6 +53,11 @@ def naca(t, c=1.0, n=80):
 
 # ---- appendages -------------------------------------------------------
 FIN = dict(root_chord=170, tip_chord=150, root_le_x=657, tip_le_x=670, root_z=0, tip_z=-430, t=0.12)
+# Rev C2 (11 Nov 2026): solid hardwood core, 6 x 6 oz glass and a carbon strip each side, and a tenon into the keel box.
+# The XPS-cored fin with 3 x 6 oz was about 3 times the static knockdown load: docs/Keel_Structure_Loads.md
+FIN_BUILD = dict(core="hardwood", plies=6, carbon_w=60, carbon_t=1.5, carbon_x0=25, rods_x=(50, 105), tenon_h=60, tenon_x1=772)
+KEELBOX = dict(x0=650, x1=772, w=60, h=60, plate_t=10)     # socket for the fin tenon; G10 plate 122 x 60 x 10 on top takes the rod nuts
+FLOORS = ((650.0, 80.0), (800.0, 32.0))                    # (x, top z): 9 mm marine-ply floors glassed across the hull at the keel box
 BULB = dict(length=320, dia=72, nose_x=579, axis_z=-430 - 6, max_at=0.40)   # Rev C: D72 (was D68), lead ~9.2 kg
 RUDDER = dict(stock_x=1400, chord=120, stock_from_le=22, top_z=72, bot_z=-158, t=0.12, stock_d=12, trunk_top_z=175)   # Rev C: top at the hull surface 100 mm off centre
 RUDDER_Y = (-100.0, 100.0)   # Rev C: twin rudders, each on its own stock, trunk and servo, 100 mm either side of the centreline

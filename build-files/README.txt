@@ -1,4 +1,4 @@
-SOLAR-SAIL OCEAN DRONE 1.5 m  -  BUILD FILES (Rev C, 2026-11-10)
+SOLAR-SAIL OCEAN DRONE 1.5 m  -  BUILD FILES (Rev C2, 2026-11-11)
 
 Drawings.pdf                 20 tabloid sheets (11 x 17 in): general arrangement, hull lines + offsets,
                              interior, keel + bulb, twin rudders, wing + tail, mast/stub, hatch,
@@ -7,7 +7,7 @@ Templates_1to1_Letter.pdf    Full-size cutting templates tiled on US Letter. Pri
                              and check the 100 mm bar on each page. Overlap 12 mm; align red dashed lines.
                              T01-T09 hull frames, T10 transom, T11 stem, T12/T13 fin root/tip,
                              T14 rudder (make 2), T15 wing rib/hot-wire template, T16 hatch,
-                             T17 bulkhead x 300, T18 bulkhead x 1260.
+                             T17 bulkhead x 300, T18 bulkhead x 1260, T19/T20 keel-box floors.
 dxf/                         The same templates as DXF (R12, millimetres) for CNC, laser or a vinyl cutter,
                              plus body_plan_all_stations.dxf.
 stl/                         23 STL files for the 20 printed parts (P01-P20), already in print orientation.
@@ -40,3 +40,13 @@ Rev C (2026-11-10)  -  reasons and numbers: docs/Design_RevC.md
   Removed: thruster provision, backup D-cell. Mass about 25 kg, DWL z 98.
   Sheets changed: all (title blocks), with real changes on D00, D01, D02 (DWL), D03, D04, D05, D06, D07, D09 (new),
   and the parts sheets for P07, P08, P11-P14, P19, P20. Printed-part sheets are now D10-D19.
+
+Rev C2 (2026-11-11)
+  Keel fin rebuilt after a strength check (docs/Keel_Structure_Loads.md). Outside shape unchanged.
+  Core: two hardwood planks glued round the 2 x M10 rods (was foam). Skin: 6 x 6 oz each side (was 3) over a
+  60 x 1.5 mm unidirectional carbon strip let into each face. The top 60 mm of the core is a tenon standing in a
+  keel-box socket cast round it; G10 plate 122 x 60 x 10 on top (was 190 x 60). Two 9 mm marine-ply floors at
+  x 650 and x 800 (new templates T19, T20) and 3 extra plies inside the hull bottom between them.
+  T12 and T13 are now planing gauges for the wood core. Rods are about 580 long. No printed part changed.
+  Mass about 26.4 kg, DWL z 101. Proof-load the keel before paint: Field Test K (60 kg hung from the bulb).
+  Sheets changed: all (title blocks), with real changes on D00, D03, D04.

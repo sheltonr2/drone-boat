@@ -21,7 +21,7 @@ The plan is a 1.5 m, self-righting autonomous sailboat with a rigid wing sail (d
 | Height above waterline (top of wing) | 1,202 mm |
 | All-up mass | about 25 kg (Rev C; Rev B was 21 kg) |
 | Ballast | about 9.2 kg lead bulb, 320 mm long × 72 mm diameter |
-| Keel fin | NACA 0012, 430 mm deep, 170 mm chord at the root and 150 mm at the tip |
+| Keel fin | NACA 0012, 430 mm deep, 170 mm chord at the root and 150 mm at the tip. Rev C2: hardwood core, 6 × 6 oz glass and a carbon strip each side, 60 mm tenon into the keel box |
 | Rudders | Two NACA 0012 spades, 100 mm either side of the centreline, each 120 mm chord × 230 mm span on a 12 mm 316 stock, with its own trunk and servo |
 | Wing sail | NACA 0015, 1,000 × 300 mm (0.30 m²), free-rotating on a 30 × 26 mm carbon spar on 6806 bearings, balanced by about 0.8 kg of lead in a pod 300 mm forward of the spar |
 | Tail flap | NACA 0012, 120 × 200 mm, on a 600 mm boom |
@@ -69,8 +69,8 @@ Everything below is needed for one boat. Prices are approximate US prices from N
 | 316 rod: rudder stocks | 2 | 12 mm × 360 mm | 30 |
 | Rudder lip seals + rubber boots (trunk tops) | 2 | 12 mm shaft | 15 |
 | 316 rod: vane shaft | 1 | 8 mm × 75 mm | 5 |
-| 316 threaded rod for keel bolts, with nuts | 2 | M10 × \~530 mm | 25 |
-| G10 keel backing plate | 1 | 190 × 60 × 10 mm | 20 |
+| 316 threaded rod for keel bolts, with nuts | 2 | M10 × \~580 mm | 25 |
+| G10 keel backing plate | 1 | 122 × 60 × 10 mm | 20 |
 | 2 in. sch 40 PVC pipe (mast tube) | 1 | 60.3 OD × \~250 mm | 8 |
 | Carbon tube: wing spar | 1 | 30 × 26 mm × 1,150 mm | 70 |
 | Carbon tube: tail boom and counterweight arm | 1 | 12 mm OD × 1 m (cut 600 + 244 mm) | 15 |
@@ -88,7 +88,10 @@ Everything below is needed for one boat. Prices are approximate US prices from N
 | Divinycell H80 foam, 10 mm | \~1.5 m² | hull and deck strips | 120 |
 | 6 oz E-glass cloth | \~6 m² | hull, deck, fin, rudder, wing skins | 70 |
 | West System 105/205 epoxy + fillers (colloidal silica, microballoons) | \~1.5 kg kit | lamination, fillets, fairing | 130 |
-| XPS foam blocks | \~0.05 m³ | wing and fin cores (hot-wire cut) | 25 |
+| XPS foam blocks | \~0.05 m³ | wing core (hot-wire cut) | 25 |
+| Hardwood planks (white oak, ash or sapele), straight-grained | 2 | 12 × 180 × 500 mm, for the keel fin core (Rev C2) | 30 |
+| Unidirectional carbon strip or tape | \~1.1 m | 60 mm wide, 1.5 mm thick built up; keel fin faces (Rev C2) | 35 |
+| Marine plywood, 9 mm | 1 | 400 × 200 mm, keel-box floors (Rev C2) | 10 |
 | XPS foam board, 25–50 mm | \~0.06 m³ (60 L) | hull fill: forward and aft spaces, removable dry-bay blocks | 40 |
 | Battery box: foam, glass, M5 inserts | — | sealed box with O-ring lid | 15 |
 | Lead (scrap or ingot) | \~9.5 kg | ballast bulb (Rev C, D72) | 67 |
@@ -167,7 +170,7 @@ The top three entries in this table account for most lost ocean robots. That's w
 | **Lead casting** | Cast outdoors with a face shield and gloves, and keep the mould bone-dry: steam in a damp mould can make molten lead explode. Never pour lead into a 3D print. |
 | **Legal liability** | An uncrewed roaming vessel is your responsibility. Check US Coast Guard rules for the launch and the rules wherever it lands (Ireland, the UK or France), talk to a marine insurer, and publish the boat's live position. |
 
-**Design numbers not yet verified by testing:** self-righting from 180°, the waterline at about 25 kg (z 98 mm), the 3 L free-flood volume, the wing's balance on the spar, and real-world solar output on a 40 cm deck.
+**Design numbers not yet verified by testing:** self-righting from 180°, the waterline at about 26.4 kg (z 101 mm), the keel fin and its joint (proof test K), the 3 L free-flood volume, the wing's balance on the spar, and real-world solar output on a 40 cm deck.
 
 ## Odds of success
 

@@ -2,6 +2,14 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-11, later: Rev C2 keel fin
+
+- Randolph approved the fin change (option 1). Rev C2: hardwood core, 6 x 6 oz + carbon strip each side, 60 mm tenon into a keel-box socket, floors at x 650 and x 800, hull doubler. D00, D03, D04 redrawn; T12, T13 relabelled; new T19, T20; Field Test K (60 kg proof load).
+- Simulator default is now C2 masses: 26.41 kg, waterline z 101, GM 0.190, max GZ 0.372 at 105 deg, self-righting. Rev B and the C0/C1 files are unchanged. No keel-loss event added (not asked for).
+- Real added mass is 1.1 kg, not the 0.75 kg first quoted.
+- Removed `simulator/CON` (written by console.py on Linux; CON is a reserved name on Windows and would break a checkout there). console.py now uses CON only on Windows.
+- Not done: speed model rerun at 26.4 kg, 3D viewer and live docs still say C/C1, proof test and keel-loss event options 2 and 3 partly open (test K written; simulator event not added). Not posted to John.
+
 ## 2026-11-11, evening: keel fin strength model
 
 - Randolph asked for a physics estimate of John's "keel or structure lost" event. Wrote `docs/data/keel_reliability.py` and `docs/Keel_Structure_Loads.md`.

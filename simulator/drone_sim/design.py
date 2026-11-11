@@ -8,7 +8,7 @@ import copy, json, hashlib
 
 DEFAULT = {
     "name": "Rev C 1.5 m solar-sail drone",
-    "revision": "C", "revision_note": "C1: electronics box above the flood level (11 Nov 2026)",
+    "revision": "C", "revision_note": "C2: hardwood-cored keel fin with carbon strips, keel-box floors (11 Nov 2026); C1: electronics box above the flood level",
     "hull": {
         "length": 1.50, "beam": 0.40, "depth": 0.23,
         "max_beam_at": 0.55,            # fraction of length
@@ -30,7 +30,9 @@ DEFAULT = {
         "rake_deg": 0.0,                # whole fin rotated aft (positive) about the root LE
         "cant_deg": 0.0,                # fixed cant to port (positive), for experiments
         "thickness": 0.12,              # t/c
-        "kg_per_m2_skin": 1.2, "core_density": 35.0, "rod_kg": 0.65,
+        # Rev C2 (11 Nov 2026): hardwood core (680 kg/m3), 6 x 6 oz glass and a 60 x 1.5 mm carbon strip each side
+        # (was XPS core 35 kg/m3 and 3 x 6 oz, 1.2 kg/m2). docs/Keel_Structure_Loads.md
+        "kg_per_m2_skin": 3.2, "core_density": 680.0, "rod_kg": 0.65,
     },
     "bulb": {
         "length": 0.32, "diameter": 0.072, "max_at": 0.40,   # Rev C: D72 (was D68), ~9.2 kg
@@ -69,7 +71,7 @@ DEFAULT = {
         "yb3_tracker_and_platform": [0.40, 1.53, 0.0, 0.48],  # Rev C: P19 on the stern stub
         "nav_light": [0.06, 1.53, 0.0, 0.60],               # Rev C: all-round white LED on P20
         "stern_stub_vane_antenna_reflector": [0.9, 1.53, 0.0, 0.42],
-        "keel_box_and_backing": [0.5, 0.745, 0.0, 0.02],
+        "keel_box_and_backing": [0.75, 0.745, 0.0, 0.02],      # Rev C2: + fin tenon, two floors and a hull doubler (was 0.5)
         "misc_fittings": [0.6, 0.80, 0.0, 0.12],
     },
     "power": {
@@ -124,6 +126,7 @@ DEFAULT = {
 REV_B_CHANGES = {
     "name": "Rev B 1.5 m solar-sail drone", "revision": "B",
     "hull": {"flood_limit_kg": None, "wet_electronics_factor": 6.0},
+    "keel": {"kg_per_m2_skin": 1.2, "core_density": 35.0},
     "bulb": {"diameter": 0.068},
     "rudder": {"y_offsets": [0.0], "top_z": 0.04},
     "wing": {"spar_kg": 0.32},
@@ -137,6 +140,7 @@ def _rev_b():
     for k in REV_B_DROP_EQUIPMENT:
         d["equipment"].pop(k, None)
     d["equipment"]["electronics_box"] = [1.2, 1.10, 0.0, 0.10]
+    d["equipment"]["keel_box_and_backing"] = [0.5, 0.745, 0.0, 0.02]
     d["equipment"]["rudder_servo_and_tube"] = [0.25, 1.36, 0.0, 0.14]
     return d
 
