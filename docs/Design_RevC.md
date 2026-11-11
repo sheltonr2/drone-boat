@@ -163,6 +163,37 @@ At every knockdown the simulator now rolls for each of these, using chances per 
 - **Older designs are untouched:** design files saved before C3 load with the model off, so earlier results still reproduce. `designs/revC2_structure_design.json` is Rev C2 with the model on, for a like-for-like comparison.
 - **Caution on reading it:** the simulator's servo, comms and wing rates were fitted to the historical record, which already includes some of these breakages. With the model on, Rev C2 is therefore counted somewhat twice and looks worse than its earlier runs. The fair comparison is C3 against C2 with the model on for both.
 
+## Rev C4: mast bearings and build notes from the research review (11 Nov 2026)
+
+### Mast bearings: Delrin against 316 stainless
+
+Randolph asked for Delrin (acetal) and 316 stainless to be weighed before choosing. Three ways to carry the spar were compared:
+
+| Option | Rust or seizing in still salt water | Friction | Load it can take | Verdict |
+|---|---|---|---|---|
+| Ball bearings in 316 stainless | Corrodes where trapped water loses its oxygen; maker says fine only with flowing seawater | Very low | Low: 316 is soft (the usual hardened 440 grade takes 3.4 kN but rusts faster) | No |
+| Plain Delrin sleeve bushings | None | High: about half the tail's turning effort in every wind, so the wing would not weathervane properly | Several kN | No, as the only bearing |
+| **Acetal (Delrin-type) ball bearings with glass balls, plus plain catcher lands** | None | Very low in normal sailing | Ball bearing about 170 N; lands several kN | **Chosen** |
+
+- **Why not either alone:** a wave strike puts 4–9 kN on the bearings, more than any ball bearing of this size is rated for, stainless included. And the free wing only works if friction is low. So no single bearing does both jobs.
+- **How the chosen design works:** each acetal ball bearing sits 0.3 mm loose in its seat on an O-ring. In normal sailing (bearing loads up to about 150 N) the spar turns on the balls. Above that the O-ring gives, the spar moves 0.3 mm and bears on a plain land beside each bearing, which takes the wave load. When the load passes, the O-ring recentres it.
+- **Seal:** a V-ring on the spar above the housing. No drain in the mast tube, because the slip ring sits at its foot (my first suggestion of a drain was wrong).
+- **Reprint P07.** Buy two 6806 acetal bearings with glass balls, two 42 × 1.5 O-rings, a VA-30 V-ring, and a Delrin collar for the spar. If you can bore Delrin, sleeve the lands with it for lower friction.
+- **Not yet verified:** the 150 N changeover is a calculation. Check it on the bench by hanging weights from the spar and feeling when it stops turning freely.
+
+### Build notes added to the drawings
+
+- **Fin (D04):** sand glue faces to 80 grit and wipe twice with alcohol; glue the core with G/flex; bed the rods fully in epoxy; seal the end grain.
+- **Rudders (D05):** pack the trunks with waterproof grease; pull and inspect the 316 stocks after the shakedown.
+- **All printed parts (D00):** two coats of epoxy, then paint.
+- **Antifouling (D00):** three coats of ablative copper paint on hull, fin, bulb and rudders.
+
+### Autopilot
+
+[Rudder_Health_Spec.md](Rudder_Health_Spec.md) specifies how the boat detects a sticking or dead rudder and switches to the other. It needs a current sensor and a power switch on each rudder servo.
+
+No change to mass, stability or the simulator's design file.
+
 ## Files
 
 - **Drawings and build files:** `build-files/Drawings.pdf` (20 sheets; new D09 for subdivision, foam fill, battery box and labels), `Templates_1to1_Letter.pdf` (new T17 and T18 bulkheads; T15 spar bore 30.4 mm), 19 DXF files, and 23 STL files for 20 printed parts (P07 and P08 for the 30 mm spar, P14 for the D72 bulb, new P19 and P20; print two each of P11, P12 and P13).

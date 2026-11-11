@@ -83,7 +83,10 @@ def sheet_cover(pdf, index):
         "   a keel-box socket, two ply floors across the hull (D04, T12, T13, T19, T20). About +1.1 kg. Proof-load before launch.",
         "Rev C3 (2026-11-11), after the whole-boat structural review (docs/Structural_Review.md): 1. YB3 moved from the stern post to a well in the foredeck;",
         "   post is now 20 x 2 fibreglass tube (D01, D07, P19). 2. Counterweight arm is a 12 mm solid fibreglass rod (D06). 3. Spring servo-saver and tiller",
-        f"   stops on each rudder (D05). 4. Spar 30 x 22 carbon, bearings 130 apart in a longer P07 (D06, D07). 5. Second inner ply over the sump (D03). {D.MASS_KG:.1f} kg, DWL z {D.DWL:.0f}."], fs=5.6, lh=3.25)
+        f"   stops on each rudder (D05). 4. Spar 30 x 22 carbon, bearings 130 apart in a longer P07 (D06, D07). 5. Second inner ply over the sump (D03). {D.MASS_KG:.1f} kg, DWL z {D.DWL:.0f}.",
+        "Rev C4 (2026-11-11), after the research review (docs/Research_Review.md): mast bearings are acetal (Delrin-type) with glass balls, floating on O-rings, with",
+        "   plain catcher lands in P07 for wave loads, and a V-ring seal on the spar (D07, P07). Notes added: fin glue-up and rod bedding (D04), rudder trunks (D05).",
+        "   ALL printed parts that see sun or sea: 2 coats of epoxy, then paint. Antifouling: 3 coats of ablative copper paint on hull, fin, bulb and rudders."], fs=5.5, lh=3.15)
     pdf.savefig(fig); plt.close(fig)
 
 # ------------------------------------------------------------------ D01 general arrangement
@@ -440,7 +443,10 @@ def sheet_keel(pdf):
         "   epoxy between the floor at x 650 and a ply end plate at x 772.",
         "9. G10 plate 122 x 60 x 10 on top, 316 nuts + washers, 15 N.m,",
         "   thread-lock. Seal the hull slot with polyurethane.",
-        "10. PROOF TEST before paint: Field Test K (60 kg on the bulb)."], fs=5.6, lh=3.25)
+        "10. PROOF TEST before paint: Field Test K (60 kg on the bulb).",
+        "C4: sand glue faces to 80 grit and wipe twice with alcohol (oak",
+        "   especially); glue the core with G/flex. Bed the rods fully in",
+        "   epoxy, no voids; seal the end grain at tip and tenon."], fs=5.5, lh=3.1)
     notes(bg, 300, 138, "Why (docs/Keel_Structure_Loads.md)", [
         "The foam-cored fin with 3 x 6 oz was good for about 113 N.m at the root: 3 times the",
         "load of the bulb with the boat on its side (36 N.m). A breaking-wave strike is estimated",
@@ -519,6 +525,9 @@ def sheet_rudder(pdf):
         "   saver (1/8-scale RC car type, 25T) on each servo,",
         "   and bond two G10 stop blocks beside each tiller",
         "   so it cannot pass +/-40 deg.",
+        "9. C4: 316 corrodes in trapped, still sea water. Pack",
+        "   each trunk with waterproof grease; pull and inspect",
+        "   the stocks for pitting after the shakedown test.",
         "   If one servo jams, the mission manager trims the",
         "   other to compensate; if one goes limp it trails.",
         "8. Stop each rudder at +/-35 deg with the servo end",
@@ -598,7 +607,14 @@ def sheet_mast(pdf):
     dim(ax, (670, MT['top_z'] - HL), (670, MT['top_z'] + 5), 0, f"{HL + 5:.0f}")
     dim(ax, (540, MT['top_z'] + 1.5 - D.BEARING_SPACING), (540, MT['top_z'] + 1.5), 0, f"{D.BEARING_SPACING:.0f}")
     dim(ax, (D.MAST_X - 30.15, 40), (D.MAST_X + 30.15, 40), 0, "OD 60.3")
-    leader(ax, (D.MAST_X + 20, MT['top_z'] + 2), (640, 330), "6806-2RS 316 (x2),\n30 x 42 x 7")
+    for zb in (MT['top_z'] - 2 - 20, MT['top_z'] - 2 - D.BEARING_SPACING + 7):
+        for sx in (-1, 1):
+            ax.add_patch(Rectangle((D.MAST_X + sx * 15.3 - (0 if sx > 0 else 4), zb), 4, 20, fc="#e9d3ae", ec=INK, lw=THIN))
+    ax.add_patch(Polygon([[D.MAST_X - 15, MT['top_z'] + 5], [D.MAST_X - 24, MT['top_z'] + 5], [D.MAST_X - 15, MT['top_z'] + 13]], closed=True, fc=INK))
+    ax.add_patch(Polygon([[D.MAST_X + 15, MT['top_z'] + 5], [D.MAST_X + 24, MT['top_z'] + 5], [D.MAST_X + 15, MT['top_z'] + 13]], closed=True, fc=INK))
+    leader(ax, (D.MAST_X + 20, MT['top_z'] + 2), (640, 345), "C4: 6806 acetal ball bearings,\nglass balls (x2), each floating\non a 42 x 1.5 O-ring")
+    leader(ax, (D.MAST_X + 17, MT['top_z'] - 14), (640, 262), "C4: catcher land D30.6 x 20\n(spar touches above ~150 N)")
+    leader(ax, (D.MAST_X + 22, MT['top_z'] + 8), (640, 395), "C4: V-ring seal VA-30 on the spar")
     leader(ax, (D.MAST_X + 15, 300), (640, 300), "Spar 30 x 22 carbon (C3)")
     leader(ax, (D.MAST_X + 7, D.SPAR_BOT_Z - 15), (640, 80), "Slip ring, 12.5 mm,\n6 wire, in spar end")
     leader(ax, (D.MAST_X + 26, 200), (640, 200), "Bearing housing P07")
@@ -634,6 +650,13 @@ def sheet_mast(pdf):
         "1.6 x the strength of 30 x 26. Bearings 130 apart in the",
         "longer housing P07; give the mast tube a 60 mm wide glass",
         "collar where it meets the deck.",
+        "C4 bearings: acetal rings and glass balls cannot rust or",
+        "seize (stainless ones do, in still salt water) but carry only",
+        "about 170 N. Each floats 0.3 in its seat on an O-ring; in a",
+        "wave strike (several kN) the spar bears on the two plain",
+        "lands. Grease the lands. A Delrin thrust collar clamped on",
+        "the spar rests on the upper bearing and carries the rig.",
+        "No drain in the mast tube: the slip ring sits at its foot.",
         "Slip ring in the spar's lower end carries 3 wires to the",
         "tail servo; it must turn freely through 360 deg.",
         "Lock the spar against lifting with a 316 collar under",

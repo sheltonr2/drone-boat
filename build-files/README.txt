@@ -1,4 +1,4 @@
-SOLAR-SAIL OCEAN DRONE 1.5 m  -  BUILD FILES (Rev C3, 2026-11-11)
+SOLAR-SAIL OCEAN DRONE 1.5 m  -  BUILD FILES (Rev C4, 2026-11-11)
 
 Drawings.pdf                 20 tabloid sheets (11 x 17 in): general arrangement, hull lines + offsets,
                              interior, keel + bulb, twin rudders, wing + tail, mast/stub, hatch,
@@ -62,3 +62,13 @@ Rev C3 (2026-11-11)
      Slip ring moves down with the spar end.
   6. Second inner ply of 6 oz over the sump (hull bottom, x 560-770).
   Mass about 26.9 kg, DWL z 102. Sheets with real changes: D00, D01, D03, D05, D06, D07, and the P07 and P19 sheets.
+
+Rev C4 (2026-11-11)
+  From the research review (docs/Research_Review.md):
+  1. Mast bearings: two 6806 acetal (Delrin-type) ball bearings with glass balls, each floating 0.3 mm on a
+     42 x 1.5 O-ring, with plain catcher lands (D30.6 x 20) in P07 that take wave loads. V-ring VA-30 on the spar
+     above the housing; a Delrin thrust collar on the spar. REPRINT P07 (same outside size, new inside).
+  2. Notes: fin glue-up and rod bedding (D04); grease the rudder trunks and inspect the stocks (D05);
+     epoxy and paint every exposed printed part; three coats of ablative copper antifouling (D00).
+  3. docs/Rudder_Health_Spec.md: autopilot detection of a sticking rudder; needs a current sensor per rudder servo.
+  Sheets with real changes: D00, D04, D05, D07 and the P07 sheet. No change to mass or templates.

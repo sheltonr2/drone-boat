@@ -84,7 +84,7 @@ Worst load in a 1-in-1,000 strike in 5 m seas, in N·m:
 
 ## 4. Proposed design iterations
 
-For your approval; nothing here is drawn.
+Items 1 to 3 were approved and done the same day as Rev C4 ([Design_RevC.md](Design_RevC.md), [Rudder_Health_Spec.md](Rudder_Health_Spec.md)); the bearing choice changed from 316 to acetal with catcher lands after a closer look at load ratings. Item 4 is being studied ([Wing_Shape_Study.md](Wing_Shape_Study.md)).
 
 1. **Mast bearings:** 316 bearings, grease, V-ring seal, mast-tube drain, and a rotation check in the shakedown test.
 2. **Drawing notes:** oak preparation and G/flex for the fin; full epoxy bedding of the keel rods; epoxy and paint on printed parts; antifouling specification.

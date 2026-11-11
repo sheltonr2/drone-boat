@@ -71,7 +71,9 @@ SPAR_BOT_Z = 105.0      # Rev C3: spar reaches down to z 105 (was 150) for the w
 BEARING_SPACING = 130.0  # Rev C3: bearing centres 130 apart in a longer housing P07 (was 78)
 WING = dict(chord=300, span=1000, pivot_from_le=66, root_z=300, t=0.15)
 MAST_TUBE = dict(od=60.3, id=52.5, top_z=250)          # 2 in. sch 40 PVC, bonded hull-to-deck
-BEARING = dict(id=30, od=42, w=7, name="6806-2RS stainless")   # Rev C (was 6805, 25 x 37 x 7)
+BEARING = dict(id=30, od=42, w=7, name="6806 acetal (Delrin-type) ball bearing, glass balls")   # Rev C4: was 6806-2RS stainless; corrosion-proof, floats on an O-ring, with catcher lands in P07 for wave loads
+CATCHER = dict(bore=30.6, length=20)   # Rev C4: plain lands in P07 beside each bearing; the spar touches them only above about 150 N
+BEARING_OLD = dict(id=30, od=42, w=7, name="6806-2RS stainless")   # Rev C (was 6805, 25 x 37 x 7)
 BOOM = dict(od=12.0, z=276, length=600)                # spar axis to tail pivot
 TAIL = dict(chord=120, span=200, pivot_from_le=24, bot_z=300, t=0.12, pivot_d=6)
 # Rev B: counterweight pod on a 12 mm carbon arm, pod axis 300 forward of the spar axis, at boom height

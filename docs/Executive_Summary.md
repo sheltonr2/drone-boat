@@ -63,7 +63,9 @@ Everything below is needed for one boat. Prices are approximate US prices from N
 | Hammond 1554-series IP68 enclosure | 1 | \~240 × 160 × 90 mm | 40 |
 | [Blue Robotics WetLink LC penetrators](https://www.robotshop.com/products/bluerobotics-wetlink-penetrator-lc-1-pack-m10-65-mm) (cable seals; 2 of them in the aft bulkhead) | 6 | M10 | 78 |
 | [Davis 151 emergency radar reflector](https://davisinstruments.com/products/emergency-radar-reflector) | 1 | 290 mm | 38 |
-| 6806-2RS stainless bearings (mast) | 2 | 30 × 42 × 7 mm | 35 |
+| 6806 acetal ball bearings with glass balls (mast, Rev C4) | 2 | 30 × 42 × 7 mm | 30 |
+| O-rings 42 × 1.5, V-ring VA-30, Delrin collar 30 mm bore (mast, Rev C4) | 1 set | — | 15 |
+| Current sensor and MOSFET switch per rudder servo (Rev C4) | 2 | INA260 or similar | 25 |
 | S608-2RS stainless bearings (wind vane) | 2 | 8 × 22 × 7 mm | 12 |
 | [igus iglide](https://www.igus.com/info/industries-marine) J flange bushings (rudders) | 4 | 12 mm ID × 14 mm OD | 40 |
 | 316 rod: rudder stocks | 2 | 12 mm × 360 mm | 30 |

@@ -57,7 +57,7 @@
  },
  "P07_mast_bearing_housing": {
   "pid": "P07",
-  "tris": 11964,
+  "tris": 18508,
   "watertight": true,
   "bad_edges": 0,
   "extent": [
@@ -65,9 +65,9 @@
    66.0,
    137.0
   ],
-  "volume_cm3": 188.4,
+  "volume_cm3": 174.9,
   "res": 0.45,
-  "sec": 45.9
+  "sec": 53.0
  },
  "P08_spar_clamp_two_sockets": {
   "pid": "P08",

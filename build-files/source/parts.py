@@ -129,16 +129,20 @@ def p06():
     return diff(solid, tube, ss1, ss2, *holes), ((-31, 31), (-1, 101), (0, 44))
 
 # ------------------------------------------------------------------- rig
-@part("P07", "Mast bearing housing", 1, "PETG or ASA, 100% infill",
-      ["Rev C: bonds into the top of the 2 in. sch 40 PVC mast tube (ID 52.5); flange rests on the tube end.",
-       "Rev C3: two 6806-2RS stainless bearings (30x42x7), 130 mm apart (was 78), carry the 30 x 22 mm carbon wing spar.",
-       "The wider spacing keeps the load on the printed seats at about 30 MPa when the stronger spar is at its limit.",
-       "Wall between the bearing seat and the tube is 5 mm: print 100% infill and check the fit in the PVC tube.",
-       "Printed flange-down as modelled."],
-      {"OD": 52.3, "Flange": "D66 x 5", "Length": 137, "Bearing seats": "2 x D42.05 x 7", "Spar clearance": "D31"})
+@part("P07", "Mast bearing housing with catcher lands", 1, "PETG or ASA, 100% infill",
+      ["Bonds into the top of the 2 in. sch 40 PVC mast tube (ID 52.5); flange rests on the tube end. Printed flange-down as modelled.",
+       "Rev C4: two 6806 acetal ball bearings with glass balls (30x42x7), 130 mm apart. They cannot rust or seize, but carry only about 170 N each.",
+       "Each bearing floats 0.3 mm in its seat on a 42 x 1.5 O-ring (groove in the seat). Beside each is a plain land, D30.6 x 20:",
+       "above about 150 N the spar moves 0.3 mm and bears on the lands, which take wave loads of several kN. Wax or grease the lands.",
+       "If you can bore Delrin, open the lands to D36 and bond in Delrin sleeves 36 x 30.6 x 20 (lower friction than the print)."],
+      {"OD": 52.3, "Flange": "D66 x 5", "Length": 137, "Bearing seats": "2 x D42.6 x 7, O-ring groove D45.4 x 2.6", "Catcher lands": "2 x D30.6 x 20", "Clearance bore": "D34"})
 def p07():
     solid = union(cyl(33, 0, 5), cyl(26.15, 5, 137))
-    return diff(solid, cyl(15.5, -1, 138), cyl(21.025, -1, 7), cyl(21.025, 130, 138)), ((-33, 33), (-33, 33), (0, 137))
+    cut = [cyl(15.3, -1, 138),                 # catcher land bore D30.6 right through
+           cyl(17.0, 27, 110),                 # clearance between the lands
+           cyl(21.3, -1, 7), cyl(21.3, 130, 138),          # floating bearing seats D42.6
+           cyl(22.7, 2.2, 4.8), cyl(22.7, 132.2, 134.8)]   # O-ring grooves D45.4
+    return diff(solid, *cut), ((-33, 33), (-33, 33), (0, 137))
 
 @part("P08", "Spar clamp with tail-boom and counterweight-arm sockets", 1, "ASA or PETG, 100% infill",
       ["Rev C: clamps the 30 mm spar just below the wing root (2 x M5 bolts through the side ears). Rev B was 25 mm.",
