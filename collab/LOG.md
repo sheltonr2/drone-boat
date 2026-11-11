@@ -2,6 +2,13 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-11, 15:30: Rev C4 shared, wing shape study done
+
+- Randolph: correct the record with John, decide Delrin vs 316 and draw all changes, share, tell John about a wing study and run it.
+- Already on #50: the correction with sources, and the Rev C4 post (acetal ball bearings with glass balls on O-rings plus plain catcher lands in P07; build notes; `docs/Rudder_Health_Spec.md`), which also says the wing study is starting. Commit b08ed2c.
+- Wing shape study (`docs/Wing_Shape_Study.md`): 0.8 x 0.375 m gives -4% speed, slap load 52%, spar-break chance per knockdown 4-8 times lower. Recommended; not drawn. Results not yet posted to John.
+- The PC had not started the C3 run (no log there). Copied the current simulator ("measured" breaker default), `run_revC3_measured_2023.bat`, C4 drawings and docs to the PC.
+
 ## 2026-11-11, 13:00: research review; strike model corrected against buoy data
 
 - Randolph asked for deeper research (naval design, ocean loads, materials) while his C3 run goes. Wrote `docs/Research_Review.md`.

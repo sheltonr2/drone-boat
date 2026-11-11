@@ -47,6 +47,7 @@ STRENGTH = {
 }
 RUD_AREA, RUD_ARM, RUD_TORQUE_ARM = 0.0276, 0.115, 0.038
 WING_CHORD, WING_ROOT_ABOVE_WL, WING_BEARING_TO_ROOT = 0.30, 0.20, 0.055
+WING_SPAN = 1.0          # change with set_wing() for the wing shape study
 POST_AREA = 0.012
 
 ASSUME = dict(
@@ -98,7 +99,7 @@ def simulate(hs, n, rng, A=ASSUME, parts=PARTS, dt=2e-4, T=0.45, post_area=POST_
     kk = {k: 3 * p["EI"] / p["L"]**3 for k, p in parts.items()}
     u_rud = u0 * np.exp(-0.143 / delta)                                  # water speed at the middle of the rudder blades
     a_peak = np.zeros(n); v_rud = np.zeros(n); t50 = np.full(n, np.nan); w_peak = np.zeros(n)
-    w_lo, w_hi = np.clip(lo, WING_ROOT_ABOVE_WL, WING_ROOT_ABOVE_WL + 1.0), np.clip(hi, WING_ROOT_ABOVE_WL, WING_ROOT_ABOVE_WL + 1.0)
+    w_lo, w_hi = np.clip(lo, WING_ROOT_ABOVE_WL, WING_ROOT_ABOVE_WL + WING_SPAN), np.clip(hi, WING_ROOT_ABOVE_WL, WING_ROOT_ABOVE_WL + WING_SPAN)
     s_imm = w_hi - w_lo                                                  # wing span in the moving water
     w_arm = WING_BEARING_TO_ROOT + (w_lo + w_hi) / 2 - WING_ROOT_ABOVE_WL
     cn = np.minimum(2 * np.pi * 0.6 * np.sin(beta), 1.1)               # normal-force coefficient of the wing in water
@@ -139,8 +140,8 @@ def simulate(hs, n, rng, A=ASSUME, parts=PARTS, dt=2e-4, T=0.45, post_area=POST_
         v_rud = np.maximum(v_rud, np.abs(v + w * Z(-0.043) - u_rud))
         hit = np.isnan(t50) & (v + w * Z_HULL >= 0.5 * u0); t50[hit] = t
     # the wing slapping into the water as the boat goes over: tip speed from the roll rate, wet for wing_align_time
-    vt = np.abs(w) * 1.15; sw = np.minimum(vt * A["wing_align_time"], 1.0)
-    slap = 0.5 * RHO * WING_CHORD * cn * vt**2 * sw * (1.05 - sw / 2)
+    vt = np.abs(w) * (0.15 + WING_SPAN); sw = np.minimum(vt * A["wing_align_time"], WING_SPAN)
+    slap = 0.5 * RHO * WING_CHORD * cn * vt**2 * sw * (0.05 + WING_SPAN - sw / 2)
     key = [k for k in parts if k.startswith("wing")][0]
     strike_only = peak[key].copy(); peak[key] = np.maximum(peak[key], slap)
     f_rud = 0.5 * RHO * 1.2 * RUD_AREA * v_rud**2
@@ -152,10 +153,17 @@ def simulate(hs, n, rng, A=ASSUME, parts=PARTS, dt=2e-4, T=0.45, post_area=POST_
     peak["keel-box joint (tenon)"] = peak["keel-box joint (tenon)"] + static_fin * 0.8
     return dict(wing_strike=strike_only, wing_slap=slap, peak=peak, hb=hb, c=c, u0=u0, dv=v + w * Z_HULL, a_peak=a_peak, w_end=w, w_peak=w_peak, t50=t50, plunging=plunging, phi=phi)
 
+def set_wing(span, chord, parts=PARTS):
+    """Change the wing's shape (same construction). Updates the module's wing numbers and the spar's spring-mass entry."""
+    global WING_SPAN, WING_CHORD
+    WING_SPAN, WING_CHORD = span, chord
+    for P in (parts,):
+        P["wing spar at upper bearing"].update(z=Z(0.30 + span / 2), L=WING_BEARING_TO_ROOT + span / 2)
+
 def with_options():
     """The same boat with the changes recommended in docs/Structural_Review.md."""
     P = {k: dict(v) for k, v in PARTS.items()}; S = dict(STRENGTH)
-    P["wing spar at upper bearing"].update(EI=2826.0); S["wing spar at upper bearing"] = (1130, 0.15, "30 x 22 carbon tube")
+    P["wing spar at upper bearing"].update(EI=2826.0, z=Z(0.30 + WING_SPAN / 2), L=WING_BEARING_TO_ROOT + WING_SPAN / 2); S["wing spar at upper bearing"] = (1130, 0.15, "30 x 22 carbon tube")
     P["counterweight arm"].update(EI=40.7); S["counterweight arm"] = (119, 0.10, "12 mm solid pultruded glass rod at 700 MPa")
     P["stern post (YB3, antenna)"].update(m=0.5, L=0.30, EI=139.0); S["stern post (YB3, antenna)"] = (185, 0.12, "20 x 2 pultruded glass tube, YB3 moved to the deck")
     S["rudder servo (back-driven)"] = (30.0, 0.2, "spring servo-saver in the linkage: the tiller gives, the servo does not see it")
