@@ -208,6 +208,26 @@ Randolph approved the wing from [Wing_Shape_Study.md](Wing_Shape_Study.md).
 - **In the simulator:** wing dimensions and spar mass, and `structure.wing_shape_factor` 0.25, which multiplies the wing-loss rate. The 0.25 is the more cautious end of the study's range (0.13 to 0.26).
 - **Not updated:** the whole-boat STL (`designs/revC_boat_wing_feathered.stl`) and the 3D page still show the 1.0 m wing.
 
+## First real-weather run of Rev C5 (11 Nov 2026)
+
+250 voyages on 2023 weather from the near-coast launch point, with the structural-failure model on (strikes matched to buoy data). Started automatically by the PC's run queue. Log: `collab/run_log_revC5_2023_2026-11-11.txt`.
+
+| | Rev C as first drawn (10 Nov, no structural model) | Rev C2, structural model on | **Rev C5, structural model on** |
+|---|---|---|---|
+| Verified arrivals | 38.8% (33.0–45.0) | 20.0% (15.5–25.4) | **40.4% (34.5–46.6)** |
+| Still at sea on 30 Nov | 20.4% | 43.2% | 28.0% |
+| Lost | 18.8% | 21.2% | 16.0% |
+| Median crossing, arrivals | 133 days | 171 days | 145 days |
+| Wing damaged in a knockdown | 38 | 45 | **4** |
+| Keel or its joint broken | not modelled | 13 | 10 |
+| Electronics failure | 37 | 30 | 47 |
+
+- **The wing is no longer the main killer:** 4 wing losses against 38. Electronics is now the top cause by a wide margin.
+- **The C2 column is not a fair baseline.** With the structural model on, every C2 boat that arrived still reporting had lost a rudder servo to a wave strike: the model's servo-stripping rate for a C2 boat with no servo-saver comes out near certain over a voyage, on top of servo failure rates that were already fitted to real voyages. Read it as "without servo-savers and the stronger spar, this goes badly", not as a measured 20%.
+- **The fair comparison is with the earlier C runs (38.8%, and C1's 45.6%).** C5 is level with them while now carrying two losses the earlier runs did not model: keel joint (10 voyages, 4%) and wave-stripped rudder servos.
+- **C5 is slower than the 4% the wing study predicted.** On voyages with no steering or wing fault, mean speed over ground was 1.17 knots against 1.23 for Rev C (5% slower), and the median crossing 130 days against 118 (10% longer). Samples are small (23 and 26 voyages). John's team's wing model gives 16%. More voyages at sea on 30 November (28% against 20%) is the cost.
+- **The keel joint is now a measurable loss** (4% of voyages, almost all in seas over 8 m). It is the tenon estimate (about 700 N·m) that sets it; proof test K will tell.
+
 ## Files
 
 - **Drawings and build files:** `build-files/Drawings.pdf` (20 sheets; new D09 for subdivision, foam fill, battery box and labels), `Templates_1to1_Letter.pdf` (new T17 and T18 bulkheads; T15 spar bore 30.4 mm), 19 DXF files, and 23 STL files for 20 printed parts (P07 and P08 for the 30 mm spar, P14 for the D72 bulb, new P19 and P20; print two each of P11, P12 and P13).

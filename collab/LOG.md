@@ -2,6 +2,14 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-11, 18:30: first Rev C5 run (via the run queue)
+
+- Run queue worked: request picked up 15:32, run finished 18:15 (`collab/queue_log_2026-11-11.txt`).
+- C5: 40.4% (34.5-46.6) verified arrivals, lost 16%, at sea 28%, median 145 days; wing damage 4 (was 38), keel joint 10, electronics 47 (top cause).
+- C2 with the structural model on: 20.0%; every reporting arrival had lost a rudder servo (model near-certain without servo-savers, on top of fitted rates). Not a fair baseline.
+- C5 speed on fault-free voyages 1.17 kn vs Rev C 1.23 (-5%); median 130 vs 118 days. Between our 4% and John's 16%. Wing-speed discrepancy still not investigated.
+- Not posted to John.
+
 ## 2026-11-11, 16:10: personal question relayed; John's wing check disagrees
 
 - Posted on #50 at Randolph's request: a personal question for John's project manager to put to John directly ("I see the Habaneros have moved, how are they doing?").

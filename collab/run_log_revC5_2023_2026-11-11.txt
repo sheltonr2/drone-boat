@@ -1,0 +1,488 @@
+Rev C5 run 2023, started Wed 11/11/2026 15:32:36.95 
+==== STEP 1: Rev C5, structural model on ==== 
+Building the speed polar for this design (about 10-30 s) ...
+{
+ "runs": 250,
+ "errors": 0,
+ "counts": {
+  "arrived_reporting": 76,
+  "arrived_tracked": 25,
+  "arrived_silent": 0,
+  "arrived_adrift": 21,
+  "at_sea_timeout": 70,
+  "aground": 18,
+  "lost": 40
+ },
+ "percent": {
+  "arrived_reporting": 30.4,
+  "arrived_tracked": 10.0,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 8.4,
+  "at_sea_timeout": 28.0,
+  "aground": 7.2,
+  "lost": 16.0
+ },
+ "success_percent": 40.4,
+ "success_ci95": [
+  34.5,
+  46.6
+ ],
+ "by_launch_month": {
+  "05": {
+   "runs": 170,
+   "arrived": 78,
+   "success_percent": 45.9,
+   "success_ci95": [
+    38.6,
+    53.4
+   ]
+  },
+  "06": {
+   "runs": 80,
+   "arrived": 23,
+   "success_percent": 28.8,
+   "success_ci95": [
+    20.0,
+    39.5
+   ]
+  }
+ },
+ "success_definition": "arrived_reporting + arrived_tracked",
+ "reporting_percent": 30.4,
+ "any_arrival_percent": 48.8,
+ "position_known_at_end_percent": 80.4,
+ "arrival_days": {
+  "median": 144.785,
+  "p10": 112.02900000000001,
+  "p90": 179.88400000000001,
+  "all": [
+   114.07,
+   138.31,
+   124.81,
+   151.96,
+   119.06,
+   117.03,
+   156.62,
+   110.7,
+   126.39,
+   131.76,
+   154.37,
+   146.23,
+   141.31,
+   122.41,
+   124.22,
+   141.2,
+   121.09,
+   155.31,
+   182.09,
+   158.4,
+   179.2,
+   198.42,
+   163.57,
+   185.41,
+   146.51,
+   106.98,
+   163.68,
+   92.19,
+   119.71,
+   108.95,
+   123.37,
+   147.22,
+   148.86,
+   178.86,
+   189.22,
+   130.81,
+   147.61,
+   160.86,
+   126.67,
+   152.43,
+   117.33,
+   110.93,
+   135.0,
+   178.55,
+   127.72,
+   157.97,
+   140.36,
+   144.86,
+   156.25,
+   168.97,
+   187.71,
+   166.76,
+   184.97,
+   108.81,
+   133.18,
+   173.64,
+   105.26,
+   187.22,
+   115.92,
+   138.62,
+   106.41,
+   151.91,
+   175.3,
+   128.33,
+   136.05,
+   189.14,
+   169.38,
+   152.54,
+   176.66,
+   160.02,
+   144.73,
+   112.2,
+   131.15,
+   121.5,
+   137.51,
+   110.45,
+   181.26,
+   114.08,
+   146.58,
+   166.9,
+   178.75,
+   117.14,
+   149.57,
+   167.47,
+   117.76,
+   173.55,
+   129.51,
+   113.49,
+   144.84,
+   179.96,
+   127.43,
+   119.1,
+   104.77,
+   145.43,
+   126.83,
+   114.5,
+   132.06,
+   172.99,
+   105.77,
+   145.59,
+   119.14,
+   105.75,
+   144.3,
+   141.91,
+   147.7,
+   161.62,
+   145.03,
+   127.49,
+   178.78,
+   116.9,
+   150.64,
+   179.06,
+   189.08,
+   152.61,
+   112.01,
+   172.6,
+   149.58,
+   187.54,
+   141.34,
+   198.5,
+   128.48,
+   139.1
+  ]
+ },
+ "failure_causes": {
+  "Electronics failure": 47,
+  "Picked up by a fishing boat or passer-by": 20,
+  "Fouled by weed or fishing line": 16,
+  "Leak started": 14,
+  "Keel fin or its joint broke in a knockdown": 10,
+  "Struck by a vessel": 7,
+  "One rudder servo stripped by a wave strike": 7,
+  "Backup tracker failed": 7,
+  "Wing damaged in a knockdown": 4,
+  "Tail servo jammed": 4,
+  "Rudder servo stripped by a wave strike": 3,
+  "Rudder servo jammed": 3,
+  "One rudder servo jammed": 2,
+  "Satellite modem or antenna failed": 2,
+  "One rudder servo failed limp": 1,
+  "Companion computer hung": 1,
+  "Tail servo failed": 1
+ },
+ "mean_airtime_usd": 142.71,
+ "mean_knockdowns": 829.4
+}
+Saved ..\results\bulk_mc_2023_revC5_10km.json
+{
+ "runs": 250,
+ "errors": 0,
+ "success_percent": 40.4,
+ "success_ci95": [
+  34.5,
+  46.6
+ ],
+ "reporting_percent": 30.4,
+ "any_arrival_percent": 48.8,
+ "position_known_at_end_percent": 80.4,
+ "percent": {
+  "arrived_reporting": 30.4,
+  "arrived_tracked": 10.0,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 8.4,
+  "at_sea_timeout": 28.0,
+  "aground": 7.2,
+  "lost": 16.0
+ },
+ "arrival_days": {
+  "median": 144.785,
+  "p10": 112.02900000000001,
+  "p90": 179.88400000000001
+ },
+ "failure_causes": {
+  "Electronics failure": 47,
+  "Picked up by a fishing boat or passer-by": 20,
+  "Fouled by weed or fishing line": 16,
+  "Leak started": 14,
+  "Keel fin or its joint broke in a knockdown": 10,
+  "Struck by a vessel": 7,
+  "One rudder servo stripped by a wave strike": 7,
+  "Backup tracker failed": 7,
+  "Wing damaged in a knockdown": 4,
+  "Tail servo jammed": 4,
+  "Rudder servo stripped by a wave strike": 3,
+  "Rudder servo jammed": 3,
+  "One rudder servo jammed": 2,
+  "Satellite modem or antenna failed": 2,
+  "One rudder servo failed limp": 1,
+  "Companion computer hung": 1,
+  "Tail servo failed": 1
+ },
+ "by_launch_month": {
+  "05": {
+   "runs": 170,
+   "arrived": 78,
+   "success_percent": 45.9,
+   "success_ci95": [
+    38.6,
+    53.4
+   ]
+  },
+  "06": {
+   "runs": 80,
+   "arrived": 23,
+   "success_percent": 28.8,
+   "success_ci95": [
+    20.0,
+    39.5
+   ]
+  }
+ },
+ "mean_airtime_usd": 142.71,
+ "mean_knockdowns": 829.4
+}
+==== STEP 2: Rev C2, structural model on ==== 
+Building the speed polar for this design (about 10-30 s) ...
+{
+ "runs": 250,
+ "errors": 0,
+ "counts": {
+  "arrived_reporting": 36,
+  "arrived_tracked": 14,
+  "arrived_silent": 0,
+  "arrived_adrift": 14,
+  "at_sea_timeout": 108,
+  "aground": 25,
+  "lost": 53
+ },
+ "percent": {
+  "arrived_reporting": 14.4,
+  "arrived_tracked": 5.6,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 5.6,
+  "at_sea_timeout": 43.2,
+  "aground": 10.0,
+  "lost": 21.2
+ },
+ "success_percent": 20.0,
+ "success_ci95": [
+  15.5,
+  25.4
+ ],
+ "by_launch_month": {
+  "05": {
+   "runs": 170,
+   "arrived": 44,
+   "success_percent": 25.9,
+   "success_ci95": [
+    19.9,
+    33.0
+   ]
+  },
+  "06": {
+   "runs": 80,
+   "arrived": 6,
+   "success_percent": 7.5,
+   "success_ci95": [
+    3.5,
+    15.4
+   ]
+  }
+ },
+ "success_definition": "arrived_reporting + arrived_tracked",
+ "reporting_percent": 14.4,
+ "any_arrival_percent": 25.6,
+ "position_known_at_end_percent": 76.4,
+ "arrival_days": {
+  "median": 171.44,
+  "p10": 157.167,
+  "p90": 183.54,
+  "all": [
+   171.75,
+   168.12,
+   169.48,
+   148.97,
+   171.25,
+   160.08,
+   164.93,
+   172.23,
+   171.02,
+   172.52,
+   181.4,
+   179.4,
+   180.01,
+   156.39,
+   166.99,
+   164.24,
+   195.33,
+   178.81,
+   170.33,
+   171.55,
+   158.28,
+   187.49,
+   155.9,
+   167.76,
+   167.54,
+   172.31,
+   162.55,
+   156.69,
+   171.65,
+   183.6,
+   170.52,
+   184.49,
+   182.9,
+   164.78,
+   165.05,
+   169.06,
+   161.03,
+   172.2,
+   172.53,
+   177.23,
+   174.2,
+   189.56,
+   169.14,
+   175.38,
+   173.29,
+   180.0,
+   150.92,
+   188.82,
+   183.4,
+   181.64,
+   193.68,
+   160.6,
+   180.06,
+   178.85,
+   171.33,
+   166.5,
+   114.43,
+   174.13,
+   163.69,
+   154.99,
+   177.03,
+   182.79,
+   163.37,
+   159.28
+  ]
+ },
+ "failure_causes": {
+  "Wing damaged in a knockdown": 45,
+  "Electronics failure": 30,
+  "Picked up by a fishing boat or passer-by": 24,
+  "Rudder servo stripped by a wave strike": 19,
+  "Leak started": 18,
+  "Fouled by weed or fishing line": 14,
+  "Keel fin or its joint broke in a knockdown": 13,
+  "Struck by a vessel": 12,
+  "Satellite modem or antenna failed": 7,
+  "Backup tracker failed": 5,
+  "Companion computer hung": 3,
+  "Tail servo failed": 3,
+  "Collision damage": 2,
+  "Rudder servo failed limp": 1,
+  "One rudder servo jammed": 1,
+  "One rudder servo failed limp": 1,
+  "Tail servo jammed": 1,
+  "Rudder servo jammed": 1
+ },
+ "mean_airtime_usd": 158.99,
+ "mean_knockdowns": 1058.7
+}
+Saved ..\results\bulk_mc_2023_revC2_structure_measured_10km.json
+{
+ "runs": 250,
+ "errors": 0,
+ "success_percent": 20.0,
+ "success_ci95": [
+  15.5,
+  25.4
+ ],
+ "reporting_percent": 14.4,
+ "any_arrival_percent": 25.6,
+ "position_known_at_end_percent": 76.4,
+ "percent": {
+  "arrived_reporting": 14.4,
+  "arrived_tracked": 5.6,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 5.6,
+  "at_sea_timeout": 43.2,
+  "aground": 10.0,
+  "lost": 21.2
+ },
+ "arrival_days": {
+  "median": 171.44,
+  "p10": 157.167,
+  "p90": 183.54
+ },
+ "failure_causes": {
+  "Wing damaged in a knockdown": 45,
+  "Electronics failure": 30,
+  "Picked up by a fishing boat or passer-by": 24,
+  "Rudder servo stripped by a wave strike": 19,
+  "Leak started": 18,
+  "Fouled by weed or fishing line": 14,
+  "Keel fin or its joint broke in a knockdown": 13,
+  "Struck by a vessel": 12,
+  "Satellite modem or antenna failed": 7,
+  "Backup tracker failed": 5,
+  "Companion computer hung": 3,
+  "Tail servo failed": 3,
+  "Collision damage": 2,
+  "Rudder servo failed limp": 1,
+  "One rudder servo jammed": 1,
+  "One rudder servo failed limp": 1,
+  "Tail servo jammed": 1,
+  "Rudder servo jammed": 1
+ },
+ "by_launch_month": {
+  "05": {
+   "runs": 170,
+   "arrived": 44,
+   "success_percent": 25.9,
+   "success_ci95": [
+    19.9,
+    33.0
+   ]
+  },
+  "06": {
+   "runs": 80,
+   "arrived": 6,
+   "success_percent": 7.5,
+   "success_ci95": [
+    3.5,
+    15.4
+   ]
+  }
+ },
+ "mean_airtime_usd": 158.99,
+ "mean_knockdowns": 1058.7
+}
+=== DONE Wed 11/11/2026 18:15:37.72 
