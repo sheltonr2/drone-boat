@@ -1,0 +1,38 @@
+Static moment at the fin root with the boat on its side: 36 N*m
+
+construction                              EI N*m2  strength x static   +kg  note
+as drawn: XPS core, 3 x 6 oz                  248     113 N*m     3.2x  0.00  skin wrinkles on the soft core at 65 MPa
+H80 PVC core, 3 x 6 oz                        248     234 N*m     6.5x  0.05  skin wrinkling at 162 MPa
+hardwood core, 6 x 6 oz                       977     661 N*m    18.5x  0.60  solid core, no wrinkling
+hardwood core, 6 x 6 oz + carbon caps        2501    1103 N*m    30.8x  0.75  carbon reaches its limit first
+Rods alone (after the shell has failed): yield 48 N*m, fold at about 82 N*m
+Everyday rolling (30 deg each way, a few million cycles): about 27 N*m at the root; glass lasts that long at about 25% of its strength
+
+Knockdowns per voyage by wave height (mean of 500 voyages): total 661
+
+Chance of breaking the fin in ONE knockdown, central
+construction                             Hs  3m Hs  4m Hs  5m Hs  6m Hs  7m Hs  8m   per voyage
+as drawn: XPS core, 3 x 6 oz              19.4%  20.9%  22.7%  24.5%  26.1%  27.9%    100.0%
+H80 PVC core, 3 x 6 oz                     1.9%   2.3%   2.8%   3.4%   4.2%   4.9%    100.0%
+hardwood core, 6 x 6 oz                    0.0%   0.0%   0.0%   0.0%   0.0%   0.0%      3.5%
+hardwood core, 6 x 6 oz + carbon caps      0.0%   0.0%   0.0%   0.0%   0.0%   0.0%      0.0%
+
+Chance of breaking the fin in ONE knockdown, gentle strikes (hull picks up 15-50% of crest speed, slower)
+construction                             Hs  3m Hs  4m Hs  5m Hs  6m Hs  7m Hs  8m   per voyage
+as drawn: XPS core, 3 x 6 oz               0.6%   0.8%   1.0%   1.3%   1.6%   2.0%    100.0%
+H80 PVC core, 3 x 6 oz                     0.0%   0.0%   0.0%   0.0%   0.0%   0.0%      3.9%
+hardwood core, 6 x 6 oz                    0.0%   0.0%   0.0%   0.0%   0.0%   0.0%      0.0%
+hardwood core, 6 x 6 oz + carbon caps      0.0%   0.0%   0.0%   0.0%   0.0%   0.0%      0.0%
+
+Chance of breaking the fin in ONE knockdown, hard strikes (40-100%, faster)
+construction                             Hs  3m Hs  4m Hs  5m Hs  6m Hs  7m Hs  8m   per voyage
+as drawn: XPS core, 3 x 6 oz              42.3%  44.1%  46.2%  47.7%  50.0%  51.5%    100.0%
+H80 PVC core, 3 x 6 oz                     9.0%  10.4%  11.8%  13.5%  15.2%  16.9%    100.0%
+hardwood core, 6 x 6 oz                    0.2%   0.3%   0.4%   0.6%   0.8%   1.0%     97.2%
+hardwood core, 6 x 6 oz + carbon caps      0.0%   0.0%   0.0%   0.0%   0.0%   0.0%     10.3%
+
+Per-knockdown chance, 4 million strikes each (central / gentle / hard), for comparison with boat-sim's 4e-5 x (Hs/3)^2
+hardwood core, 6 x 6 oz                  Hs 3 m: 3.2e-06 / 0.0e+00 / 2.1e-03   (boat-sim placeholder 4.0e-05)
+hardwood core, 6 x 6 oz                  Hs 6 m: 6.2e-05 / 0.0e+00 / 6.5e-03   (boat-sim placeholder 1.6e-04)
+hardwood core, 6 x 6 oz + carbon caps    Hs 3 m: 0.0e+00 / 0.0e+00 / 2.6e-05   (boat-sim placeholder 4.0e-05)
+hardwood core, 6 x 6 oz + carbon caps    Hs 6 m: 0.0e+00 / 0.0e+00 / 2.0e-04   (boat-sim placeholder 1.6e-04)

@@ -2,6 +2,13 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-11, evening: keel fin strength model
+
+- Randolph asked for a physics estimate of John's "keel or structure lost" event. Wrote `docs/data/keel_reliability.py` and `docs/Keel_Structure_Loads.md`.
+- Finding: the Rev C fin as drawn (XPS core, 3 x 6 oz) has 113 N*m root strength, 3.2 times the static knockdown load, and the model breaks it within one voyage under every load assumption. Hardwood core + 6 x 6 oz + carbon strips: 1,103 N*m, 0 to 10% per voyage.
+- John's placeholder (4e-5 x (Hs/3)^2) is about right for a solid-cored fin; about 8% of voyages on our knockdown counts.
+- Not done: drawing change, hull-joint floors, proof test in Field_Tests.md, simulator event. Waiting for Randolph's decision. Not posted to John.
+
 ## 2026-11-11, 13:50 (scheduled check)
 
 - John answered the "stuck inverted" question: it is a per-knockdown dice roll in his hazard model, not physics: p_inverted_stuck 4e-5 × (Hs/3)², capped at 5%, standing in for keel, ballast or structural loss. Over several hundred knockdowns that is a few percent per voyage. He will relabel it "keel or structure lost (knockdown damage)" for self-righting boats. Our call whether to set it to 0 or our own rate in `randolph_rev_c.yaml`.
