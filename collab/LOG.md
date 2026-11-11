@@ -2,6 +2,13 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-11, 13:00
+
+- **500-voyage run done (Rev C as first drawn, near-coast, 2023+2024): 41.0% verified (36.8–45.4).** 2023 43.2%, 2024 38.8%. Lost 15.4%, position known 81.6%, US-coast groundings 8/500. 30.4% still at sea on 30 Nov, only 18 of 152 still sailing normally.
+- The 2023 half (43.2%) vs last night's 250-run (38.8%) for the same configuration shows the noise is ~±4 points; Rev B vs Rev C and 10 km vs 100 km are not resolved at 250 runs.
+- Early-May launches did worst in both years (36%, 33%); suggestive only.
+- Bulk download complete (all 14 months). Bulk vs Open-Meteo on one no-failure voyage: 112.7 vs 117.6 days.
+
 ## 2026-11-11, 04:40
 
 - Posted tonight's comparison on #50 ([comment](https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6786560712)). John had posted a round-up: Rev C and Rev B are in his Boatyard and replays (his yaml load test passed); his Rev C replays grounded twice from the 10 km drop. Accepted his offer to rerun Rev C from ~85 km; gave him our inertias (Ixx 2.90, Iyy 5.00, Izz 2.15, Ixz −0.70).

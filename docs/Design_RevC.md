@@ -74,6 +74,25 @@ What it says:
 - **Launch point: near-coast costs more than estimated earlier.** Groundings near the US coast were 11 of 250 from the near-coast point against 2 of 250 from 100 km, and verified arrivals were 38.8% against 44.8% (a 6-point gap, at the edge of the noise). The earlier "about 1%" figure was wrong: it came from the 100 km run. Most of these groundings were boats whose electronics died in the first weeks (5 of 11 within 14 days). The simulator does not model the launch plan's offshore-wind rule, escort or early recovery, which are aimed at exactly these cases, so the real cost should be smaller than 6 points, but it is not zero.
 - **Knockdowns by wave height** (new log): 4% happen below Hs 3 m, 60% between 3 and 6 m, 35% above 6 m. The mean (Hs/3)² at a knockdown is 3.6 (boat-sim measured 2.9 on its model), so our flat 0.0009 per knockdown equals about 0.00025 at Hs 3 m in the scaled form.
 
+### Two-year run (11 Nov 2026)
+
+500 voyages of Rev C (as first drawn) from the near-coast launch, 1 May–15 June launches in 2023 and 2024 ([log](../collab/run_log_bulk_2026-11-11.txt), `results/2026-11-11_bulk_mc_2023-2024_revC_10km.json`):
+
+| | Both years | 2023 | 2024 |
+|---|---|---|---|
+| **Verified arrivals** | **41.0%** (95% CI 36.8–45.4) | 43.2% | 38.8% |
+| Lost | 15.4% | 16.4% | 14.4% |
+| Position known at the end | 81.6% | 80.4% | 82.8% |
+| Aground near the US coast | 8 of 500 (1.6%) | 7 | 1 |
+| Still at sea when the data ended (30 Nov) | 30.4% | 21.2% | 39.6% |
+| Knockdowns a day | 4.0 | 4.45 | 3.53 |
+
+- **41% is the best current estimate for Rev C from the near-coast launch.** The 2023 half of this run gave 43.2% where the 250-voyage run the night before gave 38.8% for the same boat and launch point (different launch dates and random draws). That 4-point spread is the noise level, so the Rev B / Rev C / launch-point differences in the table above are not resolved by 250 voyages.
+- **Groundings near the US coast were 1.6% over the two years** (7 in 2023, 1 in 2024), lower than the 4.4% in the 250-voyage run. The cost of the near-coast launch is real but looks nearer 2–4 points than 6, and it depends on the year.
+- **Three in ten boats were still at sea on 30 Nov,** but only 18 of those 152 were still sailing normally; the rest had a dead main box or a broken wing and were drifting, most of them between 13°W and 38°W. Counting the 18 as likely arrivals would add at most 3.6 points. Downloading December would settle it.
+- **Launch date:** in both years the first half of May did worst (36% and 33%) and 16–31 May best (49% and 42%), with June in between. With about 85 voyages per bin that is suggestive, not proven, and it is the opposite of the first (pre-refit) run. The 1–20 May window stands for now on hurricane grounds.
+- **Bulk data check:** the same no-failure voyage took 112.7 days on the bulk data and 117.6 days on Open-Meteo, so the two weather sources agree to about 4%.
+
 ## Rev C1: electronics box above the flood level (11 Nov 2026)
 
 The comparison above showed that a leak in Rev C no longer sinks the boat but still kills the main electronics, because the trapped water sits in the same bay as the box. C1 separates them:

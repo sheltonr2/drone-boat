@@ -1,0 +1,791 @@
+Bulk run, started Sun 11/08/2026 22:50:18.95 
+=== DOWNLOAD 
+Bulk data in <repo>\simulator\workspace\cache\bulk
+  era5: 0 of 14 months already stored, 14 to fetch
+  smoc: 0 of 14 months already stored, 14 to fetch
+  wav: 0 of 14 months already stored, 14 to fetch
+[CDS] requesting era5 202305 ...
+[Marine] requesting smoc 202305 ...
+<repo>\simulator\.venv-bulk\Lib\site-packages\ecmwf\datastores\client.py:88: UserWarning: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/catalogue/v1/messages
+  warnings.warn(str(exc), UserWarning)
+[CDS] era5 202305 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+INFO - 2026-11-09T03:50:22Z - Selected dataset version: "202211"
+INFO - 2026-11-09T03:50:22Z - Selected dataset part: "default"
+[CDS] requesting era5 202305 ...
+<repo>\simulator\.venv-bulk\Lib\site-packages\ecmwf\datastores\client.py:88: UserWarning: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/catalogue/v1/messages
+  warnings.warn(str(exc), UserWarning)
+[CDS] era5 202305 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+[CDS] requesting era5 202305 ...
+[CDS] era5 202305 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); giving up on this month for now
+[CDS] requesting era5 202306 ...
+[CDS] era5 202306 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+[CDS] requesting era5 202306 ...
+[CDS] era5 202306 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+[CDS] requesting era5 202306 ...
+[CDS] era5 202306 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); giving up on this month for now
+[CDS] requesting era5 202307 ...
+[CDS] era5 202307 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+[CDS] requesting era5 202307 ...
+[CDS] era5 202307 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+[CDS] requesting era5 202307 ...
+[CDS] era5 202307 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); giving up on this month for now
+[CDS] requesting era5 202308 ...
+[CDS] era5 202308 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+[CDS] requesting era5 202308 ...
+[CDS] era5 202308 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+[CDS] requesting era5 202308 ...
+[CDS] era5 202308 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); giving up on this month for now
+[CDS] requesting era5 202309 ...
+[CDS] era5 202309 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+INFO - 2026-11-09T04:07:58Z - Total size of the download: 2.23 GB.
+    stored smoc 202305: 744 times x 409 x 985 (1.20 GB)
+[Marine] smoc 202305 done in 17.8 min
+[Marine] requesting wav 202305 ...
+INFO - 2026-11-09T04:08:06Z - Selected dataset version: "202411"
+INFO - 2026-11-09T04:08:06Z - Selected dataset part: "default"
+[CDS] requesting era5 202309 ...
+<repo>\simulator\.venv-bulk\Lib\site-packages\ecmwf\datastores\client.py:88: UserWarning: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/catalogue/v1/messages
+  warnings.warn(str(exc), UserWarning)
+[CDS] era5 202309 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+[CDS] requesting era5 202309 ...
+[CDS] era5 202309 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); giving up on this month for now
+[CDS] requesting era5 202310 ...
+[CDS] era5 202310 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+[CDS] requesting era5 202310 ...
+[CDS] era5 202310 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+[CDS] requesting era5 202310 ...
+[CDS] era5 202310 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); giving up on this month for now
+[CDS] requesting era5 202311 ...
+[CDS] era5 202311 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+[CDS] requesting era5 202311 ...
+[CDS] era5 202311 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+INFO - 2026-11-09T04:16:36Z - Total size of the download: 953.37 MB.
+    stored wav 202305: 248 times x 409 x 985 (1.00 GB)
+[Marine] wav 202305 done in 8.7 min
+[Marine] requesting smoc 202306 ...
+INFO - 2026-11-09T04:16:46Z - Selected dataset version: "202211"
+INFO - 2026-11-09T04:16:46Z - Selected dataset part: "default"
+[CDS] requesting era5 202311 ...
+<repo>\simulator\.venv-bulk\Lib\site-packages\ecmwf\datastores\client.py:88: UserWarning: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/catalogue/v1/messages
+  warnings.warn(str(exc), UserWarning)
+[CDS] era5 202311 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); giving up on this month for now
+[CDS] requesting era5 202405 ...
+[CDS] era5 202405 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+[CDS] requesting era5 202405 ...
+[CDS] era5 202405 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+[CDS] requesting era5 202405 ...
+[CDS] era5 202405 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); giving up on this month for now
+[CDS] requesting era5 202406 ...
+[CDS] era5 202406 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+[CDS] requesting era5 202406 ...
+[CDS] era5 202406 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+[CDS] requesting era5 202406 ...
+[CDS] era5 202406 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); giving up on this month for now
+[CDS] requesting era5 202407 ...
+[CDS] era5 202407 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+[CDS] requesting era5 202407 ...
+[CDS] era5 202407 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+[CDS] requesting era5 202407 ...
+[CDS] era5 202407 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); giving up on this month for now
+[CDS] requesting era5 202408 ...
+[CDS] era5 202408 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+[CDS] requesting era5 202408 ...
+[CDS] era5 202408 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+INFO - 2026-11-09T04:33:24Z - Total size of the download: 2.16 GB.
+    stored smoc 202306: 720 times x 409 x 985 (1.16 GB)
+[Marine] smoc 202306 done in 16.8 min
+[Marine] requesting wav 202306 ...
+INFO - 2026-11-09T04:33:32Z - Selected dataset version: "202411"
+INFO - 2026-11-09T04:33:32Z - Selected dataset part: "default"
+[CDS] requesting era5 202408 ...
+<repo>\simulator\.venv-bulk\Lib\site-packages\ecmwf\datastores\client.py:88: UserWarning: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/catalogue/v1/messages
+  warnings.warn(str(exc), UserWarning)
+[CDS] era5 202408 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); giving up on this month for now
+[CDS] requesting era5 202409 ...
+[CDS] era5 202409 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+[CDS] requesting era5 202409 ...
+[CDS] era5 202409 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+[CDS] requesting era5 202409 ...
+[CDS] era5 202409 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); giving up on this month for now
+[CDS] requesting era5 202410 ...
+[CDS] era5 202410 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+[CDS] requesting era5 202410 ...
+[CDS] era5 202410 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+INFO - 2026-11-09T04:42:01Z - Total size of the download: 922.62 MB.
+    stored wav 202306: 240 times x 409 x 985 (0.97 GB)
+[Marine] wav 202306 done in 8.6 min
+[Marine] requesting smoc 202307 ...
+INFO - 2026-11-09T04:42:11Z - Selected dataset version: "202211"
+INFO - 2026-11-09T04:42:11Z - Selected dataset part: "default"
+[CDS] requesting era5 202410 ...
+<repo>\simulator\.venv-bulk\Lib\site-packages\ecmwf\datastores\client.py:88: UserWarning: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/catalogue/v1/messages
+  warnings.warn(str(exc), UserWarning)
+[CDS] era5 202410 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); giving up on this month for now
+[CDS] requesting era5 202411 ...
+[CDS] era5 202411 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+[CDS] requesting era5 202411 ...
+[CDS] era5 202411 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); retrying in 2 min
+[CDS] requesting era5 202411 ...
+[CDS] era5 202411 failed (HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels); giving up on this month for now
+INFO - 2026-11-09T05:00:08Z - Total size of the download: 2.23 GB.
+    stored smoc 202307: 744 times x 409 x 985 (1.20 GB)
+[Marine] smoc 202307 done in 18.1 min
+[Marine] requesting wav 202307 ...
+INFO - 2026-11-09T05:00:16Z - Selected dataset version: "202411"
+INFO - 2026-11-09T05:00:16Z - Selected dataset part: "default"
+INFO - 2026-11-09T05:08:45Z - Total size of the download: 953.37 MB.
+    stored wav 202307: 248 times x 409 x 985 (1.00 GB)
+[Marine] wav 202307 done in 8.7 min
+[Marine] requesting smoc 202308 ...
+INFO - 2026-11-09T05:08:55Z - Selected dataset version: "202211"
+INFO - 2026-11-09T05:08:55Z - Selected dataset part: "default"
+INFO - 2026-11-09T05:26:56Z - Total size of the download: 2.23 GB.
+    stored smoc 202308: 744 times x 409 x 985 (1.20 GB)
+[Marine] smoc 202308 done in 18.1 min
+[Marine] requesting wav 202308 ...
+INFO - 2026-11-09T05:27:04Z - Selected dataset version: "202411"
+INFO - 2026-11-09T05:27:04Z - Selected dataset part: "default"
+INFO - 2026-11-09T05:36:09Z - Total size of the download: 953.37 MB.
+    stored wav 202308: 248 times x 409 x 985 (1.00 GB)
+[Marine] wav 202308 done in 9.3 min
+[Marine] requesting smoc 202309 ...
+INFO - 2026-11-09T05:36:19Z - Selected dataset version: "202211"
+INFO - 2026-11-09T05:36:19Z - Selected dataset part: "default"
+INFO - 2026-11-09T05:53:08Z - Total size of the download: 2.16 GB.
+    stored smoc 202309: 720 times x 409 x 985 (1.16 GB)
+[Marine] smoc 202309 done in 16.9 min
+[Marine] requesting wav 202309 ...
+INFO - 2026-11-09T05:53:15Z - Selected dataset version: "202411"
+INFO - 2026-11-09T05:53:15Z - Selected dataset part: "default"
+INFO - 2026-11-09T06:02:15Z - Total size of the download: 922.62 MB.
+    stored wav 202309: 240 times x 409 x 985 (0.97 GB)
+[Marine] wav 202309 done in 9.1 min
+[Marine] requesting smoc 202310 ...
+INFO - 2026-11-09T06:02:24Z - Selected dataset version: "202211"
+INFO - 2026-11-09T06:02:24Z - Selected dataset part: "default"
+INFO - 2026-11-09T06:20:06Z - Total size of the download: 2.23 GB.
+    stored smoc 202310: 744 times x 409 x 985 (1.20 GB)
+[Marine] smoc 202310 done in 17.8 min
+[Marine] requesting wav 202310 ...
+INFO - 2026-11-09T06:20:14Z - Selected dataset version: "202411"
+INFO - 2026-11-09T06:20:14Z - Selected dataset part: "default"
+INFO - 2026-11-09T06:29:13Z - Total size of the download: 953.37 MB.
+    stored wav 202310: 248 times x 409 x 985 (1.00 GB)
+[Marine] wav 202310 done in 9.1 min
+[Marine] requesting smoc 202311 ...
+INFO - 2026-11-09T06:29:23Z - Selected dataset version: "202211"
+INFO - 2026-11-09T06:29:23Z - Selected dataset part: "default"
+INFO - 2026-11-09T06:45:49Z - Total size of the download: 2.16 GB.
+    stored smoc 202311: 720 times x 409 x 985 (1.16 GB)
+[Marine] smoc 202311 done in 16.6 min
+[Marine] requesting wav 202311 ...
+INFO - 2026-11-09T06:45:57Z - Selected dataset version: "202411"
+INFO - 2026-11-09T06:45:57Z - Selected dataset part: "default"
+INFO - 2026-11-09T06:54:56Z - Total size of the download: 922.62 MB.
+    stored wav 202311: 240 times x 409 x 985 (0.97 GB)
+[Marine] wav 202311 done in 9.2 min
+[Marine] requesting smoc 202405 ...
+INFO - 2026-11-09T06:55:06Z - Selected dataset version: "202211"
+INFO - 2026-11-09T06:55:06Z - Selected dataset part: "default"
+INFO - 2026-11-09T07:12:50Z - Total size of the download: 2.23 GB.
+    stored smoc 202405: 744 times x 409 x 985 (1.20 GB)
+[Marine] smoc 202405 done in 17.9 min
+[Marine] requesting wav 202405 ...
+INFO - 2026-11-09T07:12:58Z - Selected dataset version: "202411"
+INFO - 2026-11-09T07:12:58Z - Selected dataset part: "default"
+INFO - 2026-11-09T07:21:43Z - Total size of the download: 953.37 MB.
+    stored wav 202405: 248 times x 409 x 985 (1.00 GB)
+[Marine] wav 202405 done in 8.9 min
+[Marine] requesting smoc 202406 ...
+INFO - 2026-11-09T07:21:53Z - Selected dataset version: "202211"
+INFO - 2026-11-09T07:21:53Z - Selected dataset part: "default"
+INFO - 2026-11-09T07:39:37Z - Total size of the download: 2.16 GB.
+    stored smoc 202406: 720 times x 409 x 985 (1.16 GB)
+[Marine] smoc 202406 done in 17.9 min
+[Marine] requesting wav 202406 ...
+INFO - 2026-11-09T07:39:45Z - Selected dataset version: "202411"
+INFO - 2026-11-09T07:39:45Z - Selected dataset part: "default"
+INFO - 2026-11-09T07:48:25Z - Total size of the download: 922.62 MB.
+    stored wav 202406: 240 times x 409 x 985 (0.97 GB)
+[Marine] wav 202406 done in 8.8 min
+[Marine] requesting smoc 202407 ...
+INFO - 2026-11-09T07:48:35Z - Selected dataset version: "202211"
+INFO - 2026-11-09T07:48:35Z - Selected dataset part: "default"
+INFO - 2026-11-09T08:06:35Z - Total size of the download: 2.23 GB.
+    stored smoc 202407: 744 times x 409 x 985 (1.20 GB)
+[Marine] smoc 202407 done in 18.1 min
+[Marine] requesting wav 202407 ...
+INFO - 2026-11-09T08:06:43Z - Selected dataset version: "202411"
+INFO - 2026-11-09T08:06:43Z - Selected dataset part: "default"
+INFO - 2026-11-09T08:15:31Z - Total size of the download: 953.37 MB.
+    stored wav 202407: 248 times x 409 x 985 (1.00 GB)
+[Marine] wav 202407 done in 9.0 min
+[Marine] requesting smoc 202408 ...
+INFO - 2026-11-09T08:15:41Z - Selected dataset version: "202211"
+INFO - 2026-11-09T08:15:41Z - Selected dataset part: "default"
+INFO - 2026-11-09T08:32:34Z - Total size of the download: 2.23 GB.
+    stored smoc 202408: 744 times x 409 x 985 (1.20 GB)
+[Marine] smoc 202408 done in 17.0 min
+[Marine] requesting wav 202408 ...
+INFO - 2026-11-09T08:32:42Z - Selected dataset version: "202411"
+INFO - 2026-11-09T08:32:42Z - Selected dataset part: "default"
+INFO - 2026-11-09T08:41:31Z - Total size of the download: 953.37 MB.
+    stored wav 202408: 248 times x 409 x 985 (1.00 GB)
+[Marine] wav 202408 done in 9.0 min
+[Marine] requesting smoc 202409 ...
+INFO - 2026-11-09T08:41:41Z - Selected dataset version: "202211"
+INFO - 2026-11-09T08:41:41Z - Selected dataset part: "default"
+INFO - 2026-11-09T08:58:24Z - Total size of the download: 2.16 GB.
+    stored smoc 202409: 720 times x 409 x 985 (1.16 GB)
+[Marine] smoc 202409 done in 16.8 min
+[Marine] requesting wav 202409 ...
+INFO - 2026-11-09T08:58:32Z - Selected dataset version: "202411"
+INFO - 2026-11-09T08:58:32Z - Selected dataset part: "default"
+INFO - 2026-11-09T09:07:21Z - Total size of the download: 922.62 MB.
+    stored wav 202409: 240 times x 409 x 985 (0.97 GB)
+[Marine] wav 202409 done in 9.0 min
+[Marine] requesting smoc 202410 ...
+INFO - 2026-11-09T09:07:30Z - Selected dataset version: "202211"
+INFO - 2026-11-09T09:07:30Z - Selected dataset part: "default"
+INFO - 2026-11-09T09:25:14Z - Total size of the download: 2.23 GB.
+    stored smoc 202410: 744 times x 409 x 985 (1.20 GB)
+[Marine] smoc 202410 done in 17.9 min
+[Marine] requesting wav 202410 ...
+INFO - 2026-11-09T09:25:22Z - Selected dataset version: "202411"
+INFO - 2026-11-09T09:25:22Z - Selected dataset part: "default"
+INFO - 2026-11-09T09:34:11Z - Total size of the download: 953.37 MB.
+    stored wav 202410: 248 times x 409 x 985 (1.00 GB)
+[Marine] wav 202410 done in 9.0 min
+[Marine] requesting smoc 202411 ...
+INFO - 2026-11-09T09:34:21Z - Selected dataset version: "202211"
+INFO - 2026-11-09T09:34:21Z - Selected dataset part: "default"
+INFO - 2026-11-09T09:50:26Z - Total size of the download: 2.16 GB.
+    stored smoc 202411: 720 times x 409 x 985 (1.16 GB)
+[Marine] smoc 202411 done in 16.2 min
+[Marine] requesting wav 202411 ...
+INFO - 2026-11-09T09:50:34Z - Selected dataset version: "202411"
+INFO - 2026-11-09T09:50:34Z - Selected dataset part: "default"
+INFO - 2026-11-09T09:59:37Z - Total size of the download: 922.62 MB.
+    stored wav 202411: 240 times x 409 x 985 (0.97 GB)
+[Marine] wav 202411 done in 9.2 min
+Bulk download finished: 14 source-months still missing. Run it again to retry them.
+Some months failed:
+  era5 202305: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels
+  era5 202306: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels
+  era5 202307: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels
+  era5 202308: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels
+  era5 202309: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels
+  era5 202310: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels
+  era5 202311: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels
+  era5 202405: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels
+  era5 202406: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels
+  era5 202407: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels
+  era5 202408: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels
+  era5 202409: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels
+  era5 202410: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels
+  era5 202411: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels
+=== CHECK AGAINST OPEN-METEO 
+Downloaded months (all three sources): []
+No Open-Meteo cache files overlap the downloaded bulk months, so there is nothing to compare.
+=== MONTE CARLO (all cores) 
+{
+ "runs": 0,
+ "errors": 500,
+ "counts": {
+  "arrived_reporting": 0,
+  "arrived_silent": 0,
+  "at_sea_timeout": 0,
+  "aground": 0,
+  "lost": 0
+ },
+ "percent": {
+  "arrived_reporting": 0.0,
+  "arrived_silent": 0.0,
+  "at_sea_timeout": 0.0,
+  "aground": 0.0,
+  "lost": 0.0
+ },
+ "success_percent": 0.0,
+ "success_ci95": [
+  0.0,
+  79.3
+ ],
+ "by_launch_month": {},
+ "any_arrival_percent": 0.0,
+ "arrival_days": {
+  "median": null,
+  "p10": null,
+  "p90": null,
+  "all": []
+ },
+ "failure_causes": {},
+ "mean_airtime_usd": 0,
+ "mean_knockdowns": 0
+}
+Saved ..\results\bulk_mc_ocmd100_ireland.json
+{
+ "runs": 0,
+ "errors": 500,
+ "success_percent": 0.0,
+ "success_ci95": [
+  0.0,
+  79.3
+ ],
+ "any_arrival_percent": 0.0,
+ "percent": {
+  "arrived_reporting": 0.0,
+  "arrived_silent": 0.0,
+  "at_sea_timeout": 0.0,
+  "aground": 0.0,
+  "lost": 0.0
+ },
+ "arrival_days": {
+  "median": null,
+  "p10": null,
+  "p90": null
+ },
+ "failure_causes": {},
+ "by_launch_month": {},
+ "mean_airtime_usd": 0,
+ "mean_knockdowns": 0
+}
+=== DONE Mon 11/09/2026  5:00:33.87 
+Bulk run, started Mon 11/09/2026  7:07:41.85 
+=== DOWNLOAD 
+Bulk data in <repo>\simulator\workspace\cache\bulk
+  era5: 0 of 14 months already stored, 14 to fetch
+  smoc: 14 of 14 months already stored, 0 to fetch
+  wav: 14 of 14 months already stored, 0 to fetch
+[CDS] requesting era5 202305 ...
+    stored era5 202305: 744 times x 137 x 329 (0.47 GB)
+[CDS] era5 202305 done in 180.9 min
+[CDS] requesting era5 202306 ...
+    stored era5 202306: 720 times x 137 x 329 (0.45 GB)
+[CDS] era5 202306 done in 164.5 min
+[CDS] requesting era5 202307 ...
+    stored era5 202307: 744 times x 137 x 329 (0.47 GB)
+[CDS] era5 202307 done in 167.0 min
+[CDS] requesting era5 202308 ...
+    stored era5 202308: 744 times x 137 x 329 (0.47 GB)
+[CDS] era5 202308 done in 146.7 min
+[CDS] requesting era5 202309 ...
+    stored era5 202309: 720 times x 137 x 329 (0.45 GB)
+[CDS] era5 202309 done in 140.4 min
+[CDS] requesting era5 202310 ...
+    stored era5 202310: 744 times x 137 x 329 (0.47 GB)
+[CDS] era5 202310 done in 150.7 min
+[CDS] requesting era5 202311 ...
+    stored era5 202311: 720 times x 137 x 329 (0.45 GB)
+[CDS] era5 202311 done in 153.1 min
+[CDS] requesting era5 202405 ...
+    stored era5 202405: 744 times x 137 x 329 (0.47 GB)
+[CDS] era5 202405 done in 158.7 min
+[CDS] requesting era5 202406 ...
+    stored era5 202406: 720 times x 137 x 329 (0.45 GB)
+[CDS] era5 202406 done in 196.8 min
+[CDS] requesting era5 202407 ...
+    stored era5 202407: 744 times x 137 x 329 (0.47 GB)
+[CDS] era5 202407 done in 197.2 min
+[CDS] requesting era5 202408 ...
+    stored era5 202408: 744 times x 137 x 329 (0.47 GB)
+[CDS] era5 202408 done in 228.8 min
+[CDS] requesting era5 202409 ...
+    stored era5 202409: 720 times x 137 x 329 (0.45 GB)
+[CDS] era5 202409 done in 189.1 min
+[CDS] requesting era5 202410 ...
+    stored era5 202410: 744 times x 137 x 329 (0.47 GB)
+[CDS] era5 202410 done in 178.9 min
+[CDS] requesting era5 202411 ...
+    stored era5 202411: 720 times x 137 x 329 (0.45 GB)
+[CDS] era5 202411 done in 168.6 min
+Bulk download finished: 0 source-months still missing.
+=== CHECK AGAINST OPEN-METEO 
+Downloaded months (all three sources): [202305, 202306, 202307, 202308, 202309, 202310, 202311, 202405, 202406, 202407, 202408, 202409, 202410, 202411]
+No Open-Meteo cache files overlap the downloaded bulk months, so there is nothing to compare.
+Same voyage (Ocean City 25 km, 15 May 2024, no failures) on openmeteo: arrived_reporting, 117.59 days, 6299.5 km, mean 1.21 kn [333 s]
+Same voyage (Ocean City 25 km, 15 May 2024, no failures) on bulk     : arrived_reporting, 112.67 days, 6644.8 km, mean 1.33 kn [46 s]
+=== MONTE CARLO (all cores) 
+{
+ "runs": 500,
+ "errors": 0,
+ "counts": {
+  "arrived_reporting": 155,
+  "arrived_tracked": 50,
+  "arrived_silent": 4,
+  "arrived_adrift": 31,
+  "at_sea_timeout": 152,
+  "aground": 31,
+  "lost": 77
+ },
+ "percent": {
+  "arrived_reporting": 31.0,
+  "arrived_tracked": 10.0,
+  "arrived_silent": 0.8,
+  "arrived_adrift": 6.2,
+  "at_sea_timeout": 30.4,
+  "aground": 6.2,
+  "lost": 15.4
+ },
+ "success_percent": 41.0,
+ "success_ci95": [
+  36.8,
+  45.4
+ ],
+ "by_launch_month": {
+  "05": {
+   "runs": 347,
+   "arrived": 140,
+   "success_percent": 40.3,
+   "success_ci95": [
+    35.3,
+    45.5
+   ]
+  },
+  "06": {
+   "runs": 153,
+   "arrived": 65,
+   "success_percent": 42.5,
+   "success_ci95": [
+    34.9,
+    50.4
+   ]
+  }
+ },
+ "success_definition": "arrived_reporting + arrived_tracked",
+ "reporting_percent": 31.0,
+ "any_arrival_percent": 48.0,
+ "position_known_at_end_percent": 81.6,
+ "arrival_days": {
+  "median": 132.885,
+  "p10": 110.442,
+  "p90": 176.248,
+  "all": [
+   133.13,
+   109.18,
+   126.93,
+   167.07,
+   147.36,
+   182.63,
+   137.34,
+   108.82,
+   159.88,
+   167.53,
+   144.66,
+   139.64,
+   122.14,
+   140.62,
+   129.92,
+   151.95,
+   144.75,
+   182.39,
+   165.74,
+   113.37,
+   127.84,
+   148.44,
+   115.11,
+   177.04,
+   114.61,
+   129.39,
+   125.91,
+   139.99,
+   116.48,
+   105.11,
+   171.63,
+   131.34,
+   110.16,
+   122.14,
+   139.08,
+   125.22,
+   94.67,
+   115.52,
+   108.36,
+   179.9,
+   106.54,
+   177.12,
+   130.65,
+   144.41,
+   105.64,
+   153.82,
+   146.14,
+   140.81,
+   191.09,
+   149.77,
+   172.18,
+   110.52,
+   121.45,
+   98.5,
+   116.92,
+   127.64,
+   114.99,
+   110.28,
+   128.37,
+   123.0,
+   191.47,
+   173.99,
+   142.27,
+   126.23,
+   135.43,
+   119.09,
+   134.43,
+   184.36,
+   159.84,
+   129.97,
+   163.85,
+   133.62,
+   180.95,
+   124.74,
+   141.9,
+   130.52,
+   111.72,
+   94.66,
+   186.42,
+   124.5,
+   132.52,
+   117.56,
+   122.77,
+   125.81,
+   145.41,
+   165.62,
+   112.16,
+   131.81,
+   94.75,
+   144.07,
+   158.01,
+   128.16,
+   118.69,
+   118.3,
+   136.11,
+   147.55,
+   141.77,
+   126.93,
+   140.26,
+   114.35,
+   140.22,
+   136.92,
+   163.47,
+   134.75,
+   189.56,
+   136.51,
+   180.92,
+   107.68,
+   187.79,
+   184.61,
+   192.64,
+   164.36,
+   134.05,
+   131.23,
+   132.91,
+   141.97,
+   128.93,
+   98.49,
+   189.16,
+   127.6,
+   119.78,
+   129.71,
+   119.29,
+   110.76,
+   119.58,
+   153.76,
+   134.39,
+   181.8,
+   129.87,
+   114.53,
+   163.7,
+   135.45,
+   156.18,
+   118.88,
+   120.69,
+   116.34,
+   136.38,
+   149.36,
+   132.86,
+   169.97,
+   171.79,
+   179.76,
+   116.34,
+   128.15,
+   111.44,
+   140.35,
+   122.67,
+   124.97,
+   134.05,
+   129.74,
+   116.91,
+   100.38,
+   116.63,
+   106.27,
+   183.34,
+   163.77,
+   179.9,
+   141.44,
+   147.91,
+   122.8,
+   128.2,
+   119.03,
+   121.35,
+   140.96,
+   159.99,
+   145.07,
+   142.57,
+   137.65,
+   190.5,
+   173.95,
+   119.78,
+   123.31,
+   119.92,
+   129.07,
+   171.81,
+   152.3,
+   128.77,
+   127.04,
+   107.29,
+   129.18,
+   132.24,
+   100.03,
+   157.95,
+   126.46,
+   110.46,
+   134.83,
+   153.19,
+   114.2,
+   134.05,
+   177.85,
+   147.77,
+   118.45,
+   119.73,
+   142.92,
+   130.86,
+   182.96,
+   157.67,
+   167.83,
+   135.78,
+   123.13,
+   136.86,
+   166.57,
+   118.26,
+   113.72,
+   101.85,
+   132.7,
+   114.45,
+   102.28,
+   89.28,
+   139.69,
+   118.55,
+   149.03,
+   108.58,
+   152.58,
+   178.62,
+   131.88,
+   128.72,
+   134.27,
+   168.32,
+   108.85,
+   144.35,
+   143.21,
+   118.36,
+   158.31,
+   123.58,
+   138.39,
+   113.71,
+   151.35,
+   129.12,
+   116.57,
+   144.6,
+   114.24,
+   138.24,
+   115.03,
+   108.21,
+   137.38,
+   176.16,
+   135.52,
+   132.81,
+   136.48
+  ]
+ },
+ "failure_causes": {
+  "Wing damaged in a knockdown": 84,
+  "Electronics failure": 74,
+  "Picked up by a fishing boat or passer-by": 44,
+  "Leak started": 26,
+  "Fouled by weed or fishing line": 20,
+  "Struck by a vessel": 18,
+  "Backup tracker failed": 4,
+  "Satellite modem or antenna failed": 4,
+  "Collision damage": 4,
+  "Rudder servo jammed": 4,
+  "Tail servo jammed": 4,
+  "One rudder servo failed limp": 2,
+  "One rudder servo jammed": 1,
+  "Companion computer hung": 1,
+  "Rudder servo failed limp": 1
+ },
+ "mean_airtime_usd": 140.46,
+ "mean_knockdowns": 660.8
+}
+Saved ..\results\bulk_mc_ocmd100_ireland.json
+{
+ "runs": 500,
+ "errors": 0,
+ "success_percent": 41.0,
+ "success_ci95": [
+  36.8,
+  45.4
+ ],
+ "reporting_percent": 31.0,
+ "any_arrival_percent": 48.0,
+ "position_known_at_end_percent": 81.6,
+ "percent": {
+  "arrived_reporting": 31.0,
+  "arrived_tracked": 10.0,
+  "arrived_silent": 0.8,
+  "arrived_adrift": 6.2,
+  "at_sea_timeout": 30.4,
+  "aground": 6.2,
+  "lost": 15.4
+ },
+ "arrival_days": {
+  "median": 132.885,
+  "p10": 110.442,
+  "p90": 176.248
+ },
+ "failure_causes": {
+  "Wing damaged in a knockdown": 84,
+  "Electronics failure": 74,
+  "Picked up by a fishing boat or passer-by": 44,
+  "Leak started": 26,
+  "Fouled by weed or fishing line": 20,
+  "Struck by a vessel": 18,
+  "Backup tracker failed": 4,
+  "Satellite modem or antenna failed": 4,
+  "Collision damage": 4,
+  "Rudder servo jammed": 4,
+  "Tail servo jammed": 4,
+  "One rudder servo failed limp": 2,
+  "One rudder servo jammed": 1,
+  "Companion computer hung": 1,
+  "Rudder servo failed limp": 1
+ },
+ "by_launch_month": {
+  "05": {
+   "runs": 347,
+   "arrived": 140,
+   "success_percent": 40.3,
+   "success_ci95": [
+    35.3,
+    45.5
+   ]
+  },
+  "06": {
+   "runs": 153,
+   "arrived": 65,
+   "success_percent": 42.5,
+   "success_ci95": [
+    34.9,
+    50.4
+   ]
+  }
+ },
+ "mean_airtime_usd": 140.46,
+ "mean_knockdowns": 660.8
+}
+=== DONE Wed 11/11/2026  1:31:33.70 
