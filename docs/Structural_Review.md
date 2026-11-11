@@ -102,7 +102,7 @@ Two notes on the passes:
 4. 30 × 22 mm spar with a machined or longer bearing housing.
 5. Second inner ply over the sump.
 
-None of these is drawn yet. Items 1–3 and 5 add about 0.1 kg; item 4 about 0.3 kg.
+**All five were approved and drawn the same day as Rev C3** ([Design_RevC.md](Design_RevC.md)). The YB3 went to a well in the foredeck, not the aft deck: the aft deck is under the solar panels and the tail boom sweeps the rest. The spar's bearing housing was lengthened (bearings 130 mm apart) so it can stay printed. Total added mass 0.5 kg.
 
 ## Sources
 

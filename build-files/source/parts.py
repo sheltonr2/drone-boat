@@ -131,17 +131,18 @@ def p06():
 # ------------------------------------------------------------------- rig
 @part("P07", "Mast bearing housing", 1, "PETG or ASA, 100% infill",
       ["Rev C: bonds into the top of the 2 in. sch 40 PVC mast tube (ID 52.5); flange rests on the tube end.",
-       "Two 6806-2RS stainless bearings (30x42x7), 78 mm apart, carry the 30 mm carbon wing spar (was 6805 / 25 mm).",
+       "Rev C3: two 6806-2RS stainless bearings (30x42x7), 130 mm apart (was 78), carry the 30 x 22 mm carbon wing spar.",
+       "The wider spacing keeps the load on the printed seats at about 30 MPa when the stronger spar is at its limit.",
        "Wall between the bearing seat and the tube is 5 mm: print 100% infill and check the fit in the PVC tube.",
        "Printed flange-down as modelled."],
-      {"OD": 52.3, "Flange": "D66 x 5", "Length": 85, "Bearing seats": "2 x D42.05 x 7", "Spar clearance": "D31"})
+      {"OD": 52.3, "Flange": "D66 x 5", "Length": 137, "Bearing seats": "2 x D42.05 x 7", "Spar clearance": "D31"})
 def p07():
-    solid = union(cyl(33, 0, 5), cyl(26.15, 5, 85))
-    return diff(solid, cyl(15.5, -1, 86), cyl(21.025, -1, 7), cyl(21.025, 78, 86)), ((-33, 33), (-33, 33), (0, 85))
+    solid = union(cyl(33, 0, 5), cyl(26.15, 5, 137))
+    return diff(solid, cyl(15.5, -1, 138), cyl(21.025, -1, 7), cyl(21.025, 130, 138)), ((-33, 33), (-33, 33), (0, 137))
 
 @part("P08", "Spar clamp with tail-boom and counterweight-arm sockets", 1, "ASA or PETG, 100% infill",
       ["Rev C: clamps the 30 mm spar just below the wing root (2 x M5 bolts through the side ears). Rev B was 25 mm.",
-       "Aft socket (+x): 12 mm carbon tail boom, 40 deep. Forward socket (-x): 12 mm carbon counterweight arm, 40 deep.",
+       "Aft socket (+x): 12 mm carbon tail boom, 40 deep. Forward socket (-x): counterweight arm, 40 deep (Rev C3: 12 mm solid fibreglass rod).",
        "Pin each tube with an M4 bolt through the D4.3 vertical holes. Both tube axes are 11 mm above the bottom face.",
        "Line the forward socket up with the wing chord: the arm must point straight at the wing's leading edge."],
       {"Collar": "OD46, ID30.2 x 40", "Boom socket (aft)": "D12.2 x 37", "Arm socket (fwd)": "D12.2 x 37",
@@ -313,7 +314,7 @@ def p17():
 
 @part("P18", "Wing counterweight pod", 1, "PETG or ASA, 4 walls, 40% infill",
       ["Balances the rotating wing, tail and boom on the spar axis (Rev B; unchanged in Rev C).",
-       "Sits on the forward end of the 12 mm carbon arm; pod axis 300 mm forward of the spar axis. Pin with M4 (D4.3 hole).",
+       "Sits on the forward end of the 12 mm arm (Rev C3: solid fibreglass rod); pod axis 300 mm forward of the spar axis. Pin with M4 (D4.3 hole).",
        "Fill the open top with lead shot + epoxy (about 0.8 kg, roughly 115 cm3) a little at a time,",
        "until the assembled rig balances level on the spar with the tail at 0 deg. Cap the top with epoxy.",
        "Capacity about 175 cm3 (about 1.2 kg) leaves room if the tail parts come out heavier."],
@@ -328,23 +329,19 @@ def p18():
     return diff(solid, cav, sock, pin), ((-33, 61), (-33, 33), (0, 74))
 
 # ---------------------------------------------------------------- Rev C stub fittings
-@part("P19", "Backup tracker (YB3) platform clamp", 1, "ASA, 5 walls, 40% infill",
-      ["Rev C: clamps the 20 mm stern stub at z 480, between the radar reflector and the Iridium antenna.",
-       "The platform points forward (toward the bow), plate face up, clear of the tail's 700 mm sweep by about 55 mm.",
-       "Strap the YB3 down with two 316 hose clamps or 20 mm webbing through the four slots; add a bead of sealant under it.",
-       "The YB3 size here is approximate: check your unit before printing. Squeeze slot closed with an M4 bolt."],
-      {"Plate": "160 x 100 x 5", "Collar": "OD32, ID20.3 x 25", "Strap slots": "4 x 24 x 5"})
+@part("P19", "Backup tracker (YB3) deck cradle", 1, "ASA, 5 walls, 40% infill",
+      ["Rev C3: the YB3 sits in a 38 mm deep well in the foredeck, centred at x 180, not on the stern post, so a bent post cannot take the backup tracker with it.",
+       "Bond the plate to the floor of the well with thickened epoxy and add two M5 316 bolts (D5.3 holes, countersink by hand) with sealant and backing washers.",
+       "Strap the YB3 down with two 316 hose clamps or 20 mm webbing through the four slots; the end lips stop it sliding.",
+       "The YB3 size here is approximate: check your unit before printing."],
+      {"Plate": "170 x 100 x 5", "End lips": "2 x 86 x 4 x 8 high", "Strap slots": "4 x 24 x 5", "Bolt holes": "2 x D5.3"})
 def p19():
-    collar = cyl(16, 0, 25)
-    plate = box(-170, -10, -50, 50, 0, 5)
-    rib = prism(np.array([[5, -14], [5, -110], [25, -14]]), -3, 3, axis='y')     # (z, x)
-    ears = box(14, 30, -7, 7, 0, 25)
-    solid = union(collar, plate, rib, ears)
-    bore = cyl(10.15, -1, 26)
-    slit = box(9, 31, -1, 1, -1, 26)
-    bolt = hole_y(2.15, -8, 8, 23, 12.5)
-    slots = [box(xc - 12, xc + 12, sy * 44 - 2.5, sy * 44 + 2.5, -1, 6) for xc in (-140, -45) for sy in (-1, 1)]
-    return diff(solid, bore, slit, bolt, *slots), ((-171, 31), (-51, 51), (0, 25))
+    plate = box(-85, 85, -50, 50, 0, 5)
+    lips = union(box(-81, -77, -43, 43, 5, 13), box(77, 81, -43, 43, 5, 13))
+    solid = union(plate, lips)
+    slots = [box(xc - 12, xc + 12, sy * 46 - 2.5, sy * 46 + 2.5, -1, 6) for xc in (-45, 45) for sy in (-1, 1)]
+    bolts = [cyl(2.65, -1, 6, c1=xc, c2=0) for xc in (-55, 55)]
+    return diff(solid, *slots, *bolts), ((-86, 86), (-51, 51), (0, 13))
 
 @part("P20", "Navigation light clamp", 1, "ASA",
       ["Rev C: clamps the stub at z 600, below the vane; holds a 30 mm all-round white LED puck 45 mm aft of the stub.",

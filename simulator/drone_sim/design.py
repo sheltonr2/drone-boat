@@ -8,7 +8,10 @@ import copy, json, hashlib
 
 DEFAULT = {
     "name": "Rev C 1.5 m solar-sail drone",
-    "revision": "C", "revision_note": "C2: hardwood-cored keel fin with carbon strips, keel-box floors (11 Nov 2026); C1: electronics box above the flood level",
+    "revision": "C", "revision_note": "C3: structural review changes (YB3 to the foredeck, fibreglass post and counterweight arm, servo-savers, 30 x 22 spar), 11 Nov 2026; C2: hardwood keel fin; C1: electronics box above the flood level",
+    # Structural failures in knockdowns, from the strike simulation (docs/Structural_Review.md, drone_sim/structure_tables.json).
+    # parts: which set of parts (C2 = before the review, C3 = with its changes). breakers: gentle or central. None = off.
+    "structure": {"parts": "C3", "breakers": "gentle", "tracker_on_post": False},
     "hull": {
         "length": 1.50, "beam": 0.40, "depth": 0.23,
         "max_beam_at": 0.55,            # fraction of length
@@ -48,7 +51,7 @@ DEFAULT = {
     "wing": {
         "mast_x": 0.60, "span": 1.00, "chord": 0.30, "thickness": 0.15,
         "pivot_from_le": 0.066, "root_z": 0.30,
-        "skin_kg_m2": 0.45, "core_density": 30.0, "spar_kg": 0.43,    # Rev C: 30 x 26 carbon spar (was 25 x 22, 0.32)
+        "skin_kg_m2": 0.45, "core_density": 30.0, "spar_kg": 0.80,    # Rev C3: 30 x 22 carbon spar, 1195 long (Rev C: 30 x 26, 0.43; Rev B: 25 x 22, 0.32)
         "buoyant": True,                # sealed foam core (True) or free-flooding (False)
         "balanced": True,               # counterweight puts the rig CG on the pivot axis
         "counterweight_arm": 0.30,      # m forward of the pivot (0.036 = nose pocket only)
@@ -63,12 +66,12 @@ DEFAULT = {
         "electronics_box": [1.1, 1.10, 0.0, 0.163],         # Rev C: no backup D-cell. C1: raised onto a shelf (was z 0.10)
         "electronics_shelf": [0.08, 1.10, 0.0, 0.115],      # Rev C1: glassed foam shelf
         "solar_panels": [1.0, 1.06, 0.0, 0.235],
-        "mast_tube_and_housing": [0.45, 0.60, 0.0, 0.13],
-        "rudder_servos_and_trunks": [0.50, 1.36, 0.0, 0.14],   # Rev C: two of each
+        "mast_tube_and_housing": [0.52, 0.60, 0.0, 0.13],       # Rev C3: longer bearing housing (was 0.45)
+        "rudder_servos_and_trunks": [0.53, 1.36, 0.0, 0.14],   # Rev C: two of each
         "foam_fill_xps": [1.65, 0.80, 0.0, 0.13],           # Rev C: ~59 L of XPS at 28 kg/m3
         "bulkheads": [0.20, 0.78, 0.0, 0.12],               # Rev C: x 0.30 and 1.26, 10 mm foam + glass
         "battery_box": [0.35, 0.87, 0.0, 0.10],             # Rev C: sealed box with O-ring lid
-        "yb3_tracker_and_platform": [0.40, 1.53, 0.0, 0.48],  # Rev C: P19 on the stern stub
+        "yb3_tracker_and_platform": [0.45, 0.18, 0.0, 0.225],  # Rev C3: in a well in the foredeck (was on the stern post, x 1.53, z 0.48); +0.05 for the well's glass  # Rev C: P19 on the stern stub
         "nav_light": [0.06, 1.53, 0.0, 0.60],               # Rev C: all-round white LED on P20
         "stern_stub_vane_antenna_reflector": [0.9, 1.53, 0.0, 0.42],
         "keel_box_and_backing": [0.75, 0.745, 0.0, 0.02],      # Rev C2: + fin tenon, two floors and a hull doubler (was 0.5)
@@ -126,6 +129,7 @@ DEFAULT = {
 REV_B_CHANGES = {
     "name": "Rev B 1.5 m solar-sail drone", "revision": "B",
     "hull": {"flood_limit_kg": None, "wet_electronics_factor": 6.0},
+    "structure": None,
     "keel": {"kg_per_m2_skin": 1.2, "core_density": 35.0},
     "bulb": {"diameter": 0.068},
     "rudder": {"y_offsets": [0.0], "top_z": 0.04},
@@ -141,6 +145,8 @@ def _rev_b():
         d["equipment"].pop(k, None)
     d["equipment"]["electronics_box"] = [1.2, 1.10, 0.0, 0.10]
     d["equipment"]["keel_box_and_backing"] = [0.5, 0.745, 0.0, 0.02]
+    d["equipment"]["mast_tube_and_housing"] = [0.45, 0.60, 0.0, 0.13]
+    d["structure"] = None
     d["equipment"]["rudder_servo_and_tube"] = [0.25, 1.36, 0.0, 0.14]
     return d
 
@@ -172,7 +178,10 @@ def load(path):
         eq = d.get("equipment")
         if eq is not None:            # a full equipment list replaces the base list (no Rev C items sneak in)
             base = copy.deepcopy(base); base["equipment"] = {}
-    return merge(base, d)
+    out = merge(base, d)
+    if "structure" not in d:          # files saved before Rev C3 have no structural-failure model: keep them as they were run
+        out["structure"] = None
+    return out
 
 
 def save(design, path):

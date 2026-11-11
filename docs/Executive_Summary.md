@@ -23,7 +23,7 @@ The plan is a 1.5 m, self-righting autonomous sailboat with a rigid wing sail (d
 | Ballast | about 9.2 kg lead bulb, 320 mm long × 72 mm diameter |
 | Keel fin | NACA 0012, 430 mm deep, 170 mm chord at the root and 150 mm at the tip. Rev C2: hardwood core, 6 × 6 oz glass and a carbon strip each side, 60 mm tenon into the keel box |
 | Rudders | Two NACA 0012 spades, 100 mm either side of the centreline, each 120 mm chord × 230 mm span on a 12 mm 316 stock, with its own trunk and servo |
-| Wing sail | NACA 0015, 1,000 × 300 mm (0.30 m²), free-rotating on a 30 × 26 mm carbon spar on 6806 bearings, balanced by about 0.8 kg of lead in a pod 300 mm forward of the spar |
+| Wing sail | NACA 0015, 1,000 × 300 mm (0.30 m²), free-rotating on a 30 × 22 mm carbon spar (Rev C3) on 6806 bearings 130 mm apart, balanced by about 0.8 kg of lead in a pod on a fibreglass rod 300 mm forward of the spar |
 | Tail flap | NACA 0012, 120 × 200 mm, on a 600 mm boom |
 | Solar | 2 panels of about 42 × 28 cm, about 40 W in total |
 | Battery | 12.8 V 15 Ah LiFePO4 (192 Wh) |
@@ -72,10 +72,12 @@ Everything below is needed for one boat. Prices are approximate US prices from N
 | 316 threaded rod for keel bolts, with nuts | 2 | M10 × \~580 mm | 25 |
 | G10 keel backing plate | 1 | 122 × 60 × 10 mm | 20 |
 | 2 in. sch 40 PVC pipe (mast tube) | 1 | 60.3 OD × \~250 mm | 8 |
-| Carbon tube: wing spar | 1 | 30 × 26 mm × 1,150 mm | 70 |
-| Carbon tube: tail boom and counterweight arm | 1 | 12 mm OD × 1 m (cut 600 + 244 mm) | 15 |
+| Carbon tube: wing spar (Rev C3) | 1 | 30 × 22 mm × 1,195 mm | 95 |
+| Carbon tube: tail boom | 1 | 12 mm OD × 600 mm | 10 |
+| Solid pultruded fibreglass rod: counterweight arm (Rev C3) | 1 | 12 mm × 246 mm | 8 |
+| Spring servo-savers for the rudder servos (Rev C3) | 2 | 25T spline, 1/8-scale RC car type | 20 |
 | Carbon rods: tail pivot and alignment | 1 each | 6 mm and 3 mm | 10 |
-| Aluminium or carbon tube: stern post | 1 | 20 mm OD × 500 mm | 15 |
+| Pultruded fibreglass tube: stern post (Rev C3) | 1 | 20 mm OD × 2 mm wall × 500 mm | 15 |
 | 316 fasteners (M3, M4, M5), 4 mm pins, set screws | kit | — | 30 |
 | EPDM O-ring cord for the hatch and battery box | 1 | 4 mm × 2 m | 12 |
 | 25 mm webbing + cam buckles (battery straps) | 2 | — | 12 |
@@ -170,7 +172,7 @@ The top three entries in this table account for most lost ocean robots. That's w
 | **Lead casting** | Cast outdoors with a face shield and gloves, and keep the mould bone-dry: steam in a damp mould can make molten lead explode. Never pour lead into a 3D print. |
 | **Legal liability** | An uncrewed roaming vessel is your responsibility. Check US Coast Guard rules for the launch and the rules wherever it lands (Ireland, the UK or France), talk to a marine insurer, and publish the boat's live position. |
 
-**Design numbers not yet verified by testing:** self-righting from 180°, the waterline at about 26.4 kg (z 101 mm), the keel fin and its joint (proof test K), the 3 L free-flood volume, the wing's balance on the spar, and real-world solar output on a 40 cm deck.
+**Design numbers not yet verified by testing:** self-righting from 180°, the waterline at about 26.9 kg (z 102 mm), the wave-strike loads (breaker test L), the keel fin and its joint (proof test K), the 3 L free-flood volume, the wing's balance on the spar, and real-world solar output on a 40 cm deck.
 
 ## Odds of success
 

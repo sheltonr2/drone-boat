@@ -1,4 +1,4 @@
-SOLAR-SAIL OCEAN DRONE 1.5 m  -  BUILD FILES (Rev C2, 2026-11-11)
+SOLAR-SAIL OCEAN DRONE 1.5 m  -  BUILD FILES (Rev C3, 2026-11-11)
 
 Drawings.pdf                 20 tabloid sheets (11 x 17 in): general arrangement, hull lines + offsets,
                              interior, keel + bulb, twin rudders, wing + tail, mast/stub, hatch,
@@ -50,3 +50,15 @@ Rev C2 (2026-11-11)
   T12 and T13 are now planing gauges for the wood core. Rods are about 580 long. No printed part changed.
   Mass about 26.4 kg, DWL z 101. Proof-load the keel before paint: Field Test K (60 kg hung from the bulb).
   Sheets changed: all (title blocks), with real changes on D00, D03, D04.
+
+Rev C3 (2026-11-11)
+  Changes from the whole-boat structural review (docs/Structural_Review.md):
+  1. YB3 backup tracker moved from the stern post to a glassed well in the foredeck (176 x 106 x 38 deep, centred
+     x 180, scupper slots to the deck edges). P19 is now a flat deck cradle: reprint it.
+  2. Stern post: 20 x 2 mm pultruded fibreglass tube (was aluminium). Clamps P05, P06, P20 unchanged.
+  3. Counterweight arm: 12 mm solid pultruded fibreglass rod (was carbon tube). P08 and P18 unchanged.
+  4. Rudders: a spring servo-saver on each servo and two G10 stop blocks per tiller (+/-40 deg).
+  5. Spar 30 x 22 carbon, 1195 long, bottom at z 105. Bearings 130 apart: P07 is now 137 long: reprint it.
+     Slip ring moves down with the spar end.
+  6. Second inner ply of 6 oz over the sump (hull bottom, x 560-770).
+  Mass about 26.9 kg, DWL z 102. Sheets with real changes: D00, D01, D03, D05, D06, D07, and the P07 and P19 sheets.

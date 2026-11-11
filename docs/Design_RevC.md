@@ -129,6 +129,40 @@ A physics estimate ([Keel_Structure_Loads.md](Keel_Structure_Loads.md)) found th
 - **Sheets and templates changed:** D00, D03, D04 (redrawn), T12, T13 (now planing gauges), new T19 and T20. No printed part changed.
 - **In the simulator:** masses only (`keel.core_density`, `keel.kg_per_m2_skin`, keel box item). There is still no keel-loss event; see the note for the options.
 
+## Rev C3: changes from the structural review (11 Nov 2026)
+
+A breaking-wave strike simulation ([Structural_Review.md](Structural_Review.md)) found four weak parts above the deck. Randolph approved all five recommended changes.
+
+| Change | Why | Drawing / part |
+|---|---|---|
+| **YB3 backup tracker moves to a well in the foredeck** (centred at x 180, top flush with the deck); the stern post becomes a 20 × 2 mm fibreglass tube | The post carried the main antenna and the backup tracker, and the model bent it on most voyages. One bent post silenced both. A fibreglass tube bends instead of kinking | D01, D07; P19 is now a deck cradle |
+| **Counterweight arm is a 12 mm solid fibreglass rod** (was a 12 × 10 carbon tube) | A drop of 46 cm onto the water broke the carbon tube. The rod takes about six times the shock energy in the same sockets | D06 |
+| **Spring servo-saver on each rudder servo, and stop blocks at ±40°** | A wave strike pushes the blade round with up to four times the servo's stall torque | D05 |
+| **Wing spar 30 × 22 mm** (was 30 × 26), bearings 130 mm apart in a longer housing P07 (was 78), spar 1,195 long | 1.6 times the bending strength with the same bearings and bores. The wider spacing keeps the printed housing from becoming the weak link | D06, D07; P07 |
+| **Second inner ply over the sump** | The only hull panel with no foam behind it | D03 |
+
+- **Why a well for the YB3:** the tail boom sweeps over the whole deck 40 mm up (underside z 270), so a tracker standing on the deck would be hit. The aft deck beyond the sweep is under the solar panels. A 38 mm well in the solid bow foam puts the tracker's top flush with the deck, with scupper slots to drain it.
+- **Effect on the boat:** 26.9 kg (was 26.4), waterline z 102 mm, GM 0.182 m (was 0.190; the heavier spar is high up), maximum righting arm 0.36 m, still self-righting. The centre of gravity moves 24 mm forward.
+- **Printed parts changed:** P07 (longer) and P19 (new shape). All other STL files are unchanged.
+- **In the simulator:** the masses, and a new structural-failure model, described below.
+
+### The structural-failure model in the simulator
+
+At every knockdown the simulator now rolls for each of these, using chances per knockdown by wave height from the strike simulation (`simulator/drone_sim/structure_tables.json`):
+
+| Break | What happens in the voyage |
+|---|---|
+| Keel fin or its joint | Boat capsizes and is lost |
+| Stern post | Main antenna lost: the boat sails on silent. On Rev C2 the backup tracker goes too |
+| Counterweight arm | Wing unbalanced: drifting |
+| Tail boom | Wing feathers: drifting |
+| Rudder servo or stock | That rudder is lost; the other still steers |
+| Wing spar | Keeps its calibrated rate (0.0009 per knockdown, planning rates). For C3 that rate is multiplied by the C3-to-C2 ratio from the strike simulation |
+
+- **Which breaker assumptions:** the "gentle" set, because it is the one that reproduces the wing-loss rate the simulator was already calibrated to. `"breakers": "central"` in the design file selects the harsher set.
+- **Older designs are untouched:** design files saved before C3 load with the model off, so earlier results still reproduce. `designs/revC2_structure_design.json` is Rev C2 with the model on, for a like-for-like comparison.
+- **Caution on reading it:** the simulator's servo, comms and wing rates were fitted to the historical record, which already includes some of these breakages. With the model on, Rev C2 is therefore counted somewhat twice and looks worse than its earlier runs. The fair comparison is C3 against C2 with the model on for both.
+
 ## Files
 
 - **Drawings and build files:** `build-files/Drawings.pdf` (20 sheets; new D09 for subdivision, foam fill, battery box and labels), `Templates_1to1_Letter.pdf` (new T17 and T18 bulkheads; T15 spar bore 30.4 mm), 19 DXF files, and 23 STL files for 20 printed parts (P07 and P08 for the 30 mm spar, P14 for the D72 bulb, new P19 and P20; print two each of P11, P12 and P13).

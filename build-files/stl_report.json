@@ -57,17 +57,17 @@
  },
  "P07_mast_bearing_housing": {
   "pid": "P07",
-  "tris": 13356,
+  "tris": 11964,
   "watertight": true,
   "bad_edges": 0,
   "extent": [
    66.0,
    66.0,
-   85.0
+   137.0
   ],
-  "volume_cm3": 115.9,
-  "res": 0.35,
-  "sec": 111.5
+  "volume_cm3": 188.4,
+  "res": 0.45,
+  "sec": 45.9
  },
  "P08_spar_clamp_two_sockets": {
   "pid": "P08",
@@ -267,17 +267,17 @@
  },
  "P19_yb3_platform": {
   "pid": "P19",
-  "tris": 12776,
+  "tris": 8064,
   "watertight": true,
   "bad_edges": 0,
   "extent": [
-   200.0,
+   170.0,
    100.0,
-   25.0
+   13.0
   ],
-  "volume_cm3": 98.4,
+  "volume_cm3": 87.8,
   "res": 0.45,
-  "sec": 53.4
+  "sec": 47.1
  },
  "P20_nav_light_clamp": {
   "pid": "P20",

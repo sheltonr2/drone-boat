@@ -78,6 +78,8 @@ class Voyage:
         self.events = []
         self.ap = Autopilot(design, sc, self.polar, self.land, self.event)
         self.fr = rates_for(sc)
+        from .structure import load_tables
+        self.struct = load_tables(design)     # structural failures in knockdowns (None = off)
         self.fail_on = sc.get("failures_enabled", True)
         self.cmds = sorted(sc.get("commands", []), key=lambda c: c["t_hours"])
 
@@ -106,7 +108,7 @@ class Voyage:
                   tail_stuck_alpha=0.0, wing_lost=False, entangled=False, hung=False, comms_dead=False,
                   brownout=False, leak_rate=0.0, leak_alarm=False, thrust_h_today=0.0, alive=True, credits=0,
                   sessions_ok=0, sessions_fail=0, last_report=t, last_report_ok=t, energy_in_wh=0.0,
-                  energy_out_wh=0.0, distance_km=0.0, knockdowns=0, capsizes=0, box_dead=False, kd_hs=[0]*10)
+                  energy_out_wh=0.0, distance_km=0.0, knockdowns=0, capsizes=0, box_dead=False, kd_hs=[0]*10, post_bent=False)
         BT = d.get("backup_tracker") or {}
         st.update(trk_ok=bool(BT.get("fitted")), trk_next=t, trk_sent=0, trk_fixes=0, trk_last_ok=None,
                   trk_budget=int(BT.get("transmissions", 2500)*BT.get("cold_derate", 1.0)))
@@ -489,6 +491,30 @@ class Voyage:
             lam = breaking_knockdown_rate(hs, e["tp"], u10, L, B)*self.rate("wave_capsize")
             if rnd() < p_event(lam, dt):
                 st["knockdowns"] += 1; st["kd_hs"][min(int(hs), 9)] += 1   # knockdowns by Hs, 1 m bins (9 = 9 m+)
+                S = self.struct if self.fail_on else None
+                kb = min(int(hs), 9)
+                if S:                                              # what the strike breaks (docs/Structural_Review.md)
+                    if rnd() < S["keel"][kb]:
+                        st["alive"] = False
+                        self.event(t, "failure", f"Keel fin or its joint broke in a knockdown (Hs {hs:.1f} m): capsized, boat lost"); return
+                    if not st["post_bent"] and rnd() < S["post"][kb]:
+                        st["post_bent"] = True; st["comms_dead"] = True
+                        if S["tracker_on_post"] and st["trk_ok"]:
+                            st["trk_ok"] = False
+                            self.event(t, "failure", "Stern post bent in a knockdown: main antenna and backup tracker both lost")
+                        else:
+                            self.event(t, "failure", "Stern post bent in a knockdown: main antenna lost, boat sails on silent")
+                    if not st["wing_lost"] and rnd() < S["arm"][kb]:
+                        st["wing_lost"] = True; self.event(t, "failure", "Counterweight arm broke in a knockdown: wing unbalanced, drifting")
+                    if st["tail"] == "ok" and rnd() < S["boom"][kb]:
+                        st["tail"] = "feathered"; self.event(t, "failure", "Tail boom broke in a knockdown: wing feathers, boat drifts")
+                    for _ in range(max(int(st["rudders_ok"]), 1)):
+                        if st["rudder"] == "ok" and rnd() < S["rudder"][kb]:
+                            if st["rudders_ok"] > 1:
+                                st["rudders_ok"] -= 1
+                                self.event(t, "failure", "One rudder servo stripped by a wave strike: the other rudder still steers")
+                            else:
+                                st["rudder"] = "limp"; self.event(t, "failure", "Rudder servo stripped by a wave strike: no steering")
                 if self.backend is not None and not st["box_dead"]:   # 6-DOF: hit the boat with a breaking crest, physics decides
                     self.backend.kick(side=1.0 if rnd() < 0.5 else -1.0, mag=3.0 + 2.0*rnd())
                     self.event(t, "knockdown", f"Breaking wave strike (Hs {hs:.1f} m)")
@@ -499,7 +525,7 @@ class Voyage:
                     self.event(t, "failure", f"Capsized by a breaking wave (Hs {hs:.1f} m): boat inverted")
                 else:
                     self.event(t, "knockdown", f"Knocked down by a breaking wave (Hs {hs:.1f} m); self-righted")
-                if rnd() < self.rate("knockdown_damage")/1.0:
+                if rnd() < self.rate("knockdown_damage")*(S["wing_factor"][kb] if S else 1.0):
                     st["wing_lost"] = True; self.event(t, "failure", "Wing damaged in a knockdown: drifting")
         elif st["inverted"] and (self.backend is None or st["box_dead"]):
             lam = breaking_knockdown_rate(hs, e["tp"], envd["tws"], L, B)*max(self.rate("wave_capsize"), 1) + 0.2

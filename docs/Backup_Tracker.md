@@ -17,6 +17,8 @@
 | **Second RockBLOCK 9603 + small MCU + primary lithium cells** | Iridium SBD | 2× Saft LS33600 D-cells (17 Ah, 3.6 V) | Months to years with a duty-cycled MCU | Cheapest at scale, but it's another custom board to test. It shares a failure mode with the main build if the same code or the same flaw is reused | ~$300 hardware + Rock7 line rental and credits |
 | **SmartOne Solar (Globalstar)** | Globalstar simplex | Solar + NiMH | Effectively unlimited | Rugged and fit-and-forget; boat-sim carries one. One-way only, with possible mid-ocean gaps | ~$200–300 + service plan **(check)** |
 
+**Where it goes (Rev C3):** in a 38 mm well in the foredeck, centred 180 mm from the bow, top flush with the deck, on cradle P19. It was on the stern post in Rev C; the structural review found that one bent post would take the main antenna and the tracker together.
+
 **Recommendation: YB3.** It's independent by design, needs no custom electronics, has global Iridium coverage, and has a long ocean-racing track record. Set it to report every 12 hours, and every 3 hours for the first week.
 
 ## Fitting

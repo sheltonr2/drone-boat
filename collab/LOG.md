@@ -2,6 +2,15 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-11, afternoon: Rev C3 and the structural-failure model
+
+- Randolph approved all five structural-review changes and asked for drawings, documents, simulator and a post to John.
+- Rev C3: YB3 in a flush foredeck well (the tail boom sweeps the deck at z 270 and the aft deck is under the solar panels, so not the aft deck as first proposed); 20 x 2 fibreglass stern post; 12 mm fibreglass rod counterweight arm; servo-savers and +/-40 deg stops; 30 x 22 spar, bearings 130 apart, P07 137 long; second inner ply over the sump. P07 and P19 reprinted (STL rebuilt). 26.93 kg, waterline z 102, GM 0.182, CG 24 mm forward (trim about 0.4 deg bow down: check at the float test).
+- Simulator: `drone_sim/structure.py` + `structure_tables.json` (from `docs/data/make_structure_tables.py`): per-knockdown breaks of keel joint, stern post, counterweight arm, tail boom, rudder servo/stock; wing rate x max(C3/C2 ratio, 0.1). Default design = C3 with the model on ("gentle" breakers). Designs saved before C3 load with it off. `designs/revC2_structure_design.json` = C2 with it on.
+- New run file `simulator/run_revC3_2023.bat` (C3, then C2 with the model on; 250 voyages each, 2023). Copied to the PC with the simulator.
+- Live docs (Executive Summary, Build Plan) got a "Changes since Rev C" section. 3D page not updated (still shows the YB3 on the post).
+- Posted to John on #50 at Randolph's request.
+
 ## 2026-11-11, midday: whole-boat structural review
 
 - Randolph asked for a naval-engineer's review of every stress point, with simulation behind the guesses. Wrote `docs/data/strike_sim.py` (sway/roll strike simulation with flexible parts), `docs/data/structural_checks.py` and `docs/Structural_Review.md`.

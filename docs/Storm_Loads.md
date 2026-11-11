@@ -2,6 +2,8 @@
 
 *9 November 2026. Purpose: put numbers behind the storm-damage assumptions in [Hurricane_Risk.md](Hurricane_Risk.md) (30% loss for a tropical storm within 100 km, 70% for a hurricane) and check whether the 25 mm carbon spar is strong enough. Grade D: textbook coefficients, no test data yet.*
 
+*Update 11 Nov 2026: superseded for knockdown loads by the strike simulation in [Structural_Review.md](Structural_Review.md). Rev C3 uses a 30 × 22 mm spar (about 1,130 N·m).*
+
 ## Spar strength
 
 | Spar | Section modulus | Bending moment at failure (UD carbon ~600 MPa) | Mass per metre |
