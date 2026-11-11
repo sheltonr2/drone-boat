@@ -2,6 +2,13 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-11, 13:20
+
+- Posted the two-year run, Rev C1 and a Veterans Day "are you working today?" question on #50 ([comment](https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6796314219)).
+- John's 10 km vs 85 km rerun of Rev C (six 2020 dates): beach groundings 2 → 1, no finishes either way; "the drop point cured the too-close groundings, not the overall picture". Two of his Rev C runs ended "stuck inverted"; asked what causes it, since our GZ curve is positive to 180°.
+- John asked for details of Randolph's own (personal) boat to add to his sim. Left for Randolph to answer.
+- Batch files now show a banner and a live progress line (`drone_sim/console.py`); Randolph asked for this.
+
 ## 2026-11-11, 13:00
 
 - **500-voyage run done (Rev C as first drawn, near-coast, 2023+2024): 41.0% verified (36.8–45.4).** 2023 43.2%, 2024 38.8%. Lost 15.4%, position known 81.6%, US-coast groundings 8/500. 30.4% still at sea on 30 Nov, only 18 of 152 still sailing normally.
