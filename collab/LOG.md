@@ -2,6 +2,15 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-12, 19:45 UTC (14:45 local): launch-point study added
+
+- Randolph asked to add launch points up and down the US Atlantic coast, then launch + destination pairs, guided by research. Plan and sources: docs/Launch_Point_Study.md.
+- Research in brief: 8 Microtransat boats left Cape Cod and none passed 2,100 km (3 caught by fishing boats within 6 days); Newfoundland starts did far better; miniboats are dropped into the Gulf Stream, which is 1-3 miles off Palm Beach, 15-25 miles off Hatteras and about 250 km from Ocean City.
+- Stage A: 12 launch points (Maine to Palm Beach, plus charter launches 100 km off Ocean City and 45 km off Hatteras), all to SW Ireland, Rev C5, 150 voyages, 2023. Queued on the PC as 009 (run_launch_points_2023.bat, about 8 h, resumes after a reboot). Stage B: best 3 launches x best 3 destinations. Stage C: best pairs on Rev D, 2023 + 2024.
+- Simulator: new scenario option waypoint_rule "abeam" (a waypoint also counts once passed), used only by the launch scenarios; old scenarios unchanged. Ocean City is rerun with it as the baseline.
+- In the batch-1 Ireland run from Ocean City, 9% of boats were lost or aground within 3 weeks and 11% ended aground on the home side.
+- Scheduled: 19:30 destination check revised (no destination confirmation run; that is now stage C); new check 02:45 on 13 Nov for stage A and to queue stage B.
+
 ## 2026-11-12, 19:25 UTC (14:25 local): destination study, batch 1 (interim)
 
 - 006 finished 12:32 local; 007 (batch 2) started 12:37 and takes about 37 minutes per aim point, so about 5:00 pm finish (not 1:30 pm as first estimated). 008 (Rev D) follows, about 6:25 pm. The 7:30 pm final check should find both done.

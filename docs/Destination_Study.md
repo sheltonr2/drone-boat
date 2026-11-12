@@ -50,7 +50,7 @@ The choice is driven by two things more than by the name on the map:
 - **The Caribbean and South America:** not across from North America in the sense asked. (The trade-wind route runs the other way, Europe to the Caribbean.)
 - **Madeira:** a single small island, bracketed by the Portugal and Canaries runs.
 - **Different routes to the northern targets:** the waypoint at 42°N 48°W is held fixed. Tuning it is the next step for whichever targets win.
-- **A different launch point:** out of scope; the launch is fixed off Ocean City.
+- **A different launch point:** was out of scope here. Added on 12 Nov as its own study, which also tests launch and destination pairs: [Launch_Point_Study.md](Launch_Point_Study.md).
 
 ## What the physics suggests before the runs
 

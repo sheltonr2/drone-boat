@@ -1,0 +1,22 @@
+{
+ "name": "Launch study: New Jersey: 10 km east of Barnegat Inlet to South-west Ireland (Mizen Head)",
+ "provider": "bulk",
+ "start": {
+  "lat": 39.76,
+  "lon": -73.98
+ },
+ "failure_rate_set": "planning",
+ "target": {
+  "lat": 51.35,
+  "lon": -9.7
+ },
+ "waypoints": [
+  [
+   42.0,
+   -48.0
+  ]
+ ],
+ "waypoint_rule": "abeam",
+ "atlantic_islands_count": "no_azores",
+ "africa_landfall_counts": true
+}

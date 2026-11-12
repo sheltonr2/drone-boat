@@ -1,0 +1,22 @@
+{
+ "name": "Launch study: Virginia Beach: 10 km off, south of the Chesapeake Bay mouth to South-west Ireland (Mizen Head)",
+ "provider": "bulk",
+ "start": {
+  "lat": 36.83,
+  "lon": -75.85
+ },
+ "failure_rate_set": "planning",
+ "target": {
+  "lat": 51.35,
+  "lon": -9.7
+ },
+ "waypoints": [
+  [
+   42.0,
+   -48.0
+  ]
+ ],
+ "waypoint_rule": "abeam",
+ "atlantic_islands_count": "no_azores",
+ "africa_landfall_counts": true
+}

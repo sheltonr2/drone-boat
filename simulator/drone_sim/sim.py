@@ -16,6 +16,7 @@ DEFAULT_SCENARIO = {
     "target": {"lat": 51.35, "lon": -9.7},       # off Mizen Head; any landfall in Europe also counts
     "waypoints": [[42.0, -48.0]],                # stay south of the Grand Banks (fishing fleets, fog, icebergs)
     "arrival_radius_km": 40.0,
+    "waypoint_rule": "radius",         # radius: within 25 km (original) | abeam: also once passed (launch study)
     "europe_landfall_counts": True,
     "atlantic_islands_count": False,   # Azores, Madeira, Canaries: count a landfall there as reaching Europe?
     "africa_landfall_counts": False,   # North-west Africa's Atlantic coast counts as across (destination study)

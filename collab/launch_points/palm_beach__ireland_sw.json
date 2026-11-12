@@ -1,0 +1,34 @@
+{
+ "name": "Launch study: Palm Beach, FL: 10 km off, in the Florida Current to South-west Ireland (Mizen Head)",
+ "provider": "bulk",
+ "start": {
+  "lat": 26.77,
+  "lon": -79.93
+ },
+ "failure_rate_set": "planning",
+ "target": {
+  "lat": 51.35,
+  "lon": -9.7
+ },
+ "waypoints": [
+  [
+   30.0,
+   -79.8
+  ],
+  [
+   32.0,
+   -78.6
+  ],
+  [
+   35.0,
+   -74.5
+  ],
+  [
+   42.0,
+   -48.0
+  ]
+ ],
+ "waypoint_rule": "abeam",
+ "atlantic_islands_count": "no_azores",
+ "africa_landfall_counts": true
+}

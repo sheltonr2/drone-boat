@@ -18,6 +18,9 @@ class Autopilot:
         tgt = scenario["target"]
         self.route = [tuple(w) for w in scenario.get("waypoints", [])] + [(tgt["lat"], tgt["lon"])]
         self.wp = 0
+        # "radius": a waypoint counts only within 25 km (the original rule). "abeam": it also counts once the boat
+        # has passed it, so a boat swept by in the Gulf Stream does not turn back against the current (launch study).
+        self.wp_rule = scenario.get("waypoint_rule", "radius")
         self.mode = scenario.get("initial_mode", "sail")
         self.tack = None                 # +1 = wind over starboard side, -1 = port
         self.heading = None
@@ -67,6 +70,12 @@ class Autopilot:
             self._vmg_cache[key] = (up, dn)
         return self._vmg_cache[key]
 
+    def _passed(self, lat, lon):
+        """True once the boat is past the current waypoint, measured along the leg to the next one."""
+        w, n = self.route[self.wp], self.route[self.wp + 1]
+        c = math.cos(math.radians(w[0]))
+        return ((lon - w[1])*c*(n[1] - w[1])*c + (lat - w[0])*(n[0] - w[0])) > 0
+
     def blocked(self, lat, lon, hdg, km):
         if self.land.land_ahead(lat, lon, hdg, km, steps=4):
             return True
@@ -92,8 +101,13 @@ class Autopilot:
             out.update(alpha_mode="feather", steering=False, heading=s["heading"])
             return out
         # waypoint management
-        while self.wp < len(self.route) - 1 and haversine_km(s["lat"], s["lon"], *self.route[self.wp]) < 25:
-            self.event(t, "nav", f"Reached waypoint {self.wp + 1}"); self.wp += 1
+        while self.wp < len(self.route) - 1:
+            if haversine_km(s["lat"], s["lon"], *self.route[self.wp]) < 25:
+                self.event(t, "nav", f"Reached waypoint {self.wp + 1}"); self.wp += 1
+            elif self.wp_rule == "abeam" and self._passed(s["lat"], s["lon"]):
+                self.event(t, "nav", f"Passed waypoint {self.wp + 1}"); self.wp += 1
+            else:
+                break
         tgt = self.route[self.wp]
         if self.mode == "station" and self.station and haversine_km(s["lat"], s["lon"], *self.station) < 5:
             out.update(alpha_mode="feather", steering=True); return out

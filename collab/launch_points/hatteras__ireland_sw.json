@@ -1,0 +1,26 @@
+{
+ "name": "Launch study: Hatteras Inlet, NC: 10 km off to South-west Ireland (Mizen Head)",
+ "provider": "bulk",
+ "start": {
+  "lat": 35.1,
+  "lon": -75.72
+ },
+ "failure_rate_set": "planning",
+ "target": {
+  "lat": 51.35,
+  "lon": -9.7
+ },
+ "waypoints": [
+  [
+   35.0,
+   -74.9
+  ],
+  [
+   42.0,
+   -48.0
+  ]
+ ],
+ "waypoint_rule": "abeam",
+ "atlantic_islands_count": "no_azores",
+ "africa_landfall_counts": true
+}
