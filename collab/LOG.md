@@ -2,6 +2,13 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-12, 01:30 UTC (20:30 local): destination study queued
+
+- Randolph asked for destinations other than Ireland with the highest survival odds across the Atlantic.
+- Simulator: scenario `africa_landfall_counts`; `atlantic_islands_count` can be "no_azores"; `LandMask.far_side()`. Arrival record gains `landfall`.
+- `collab/destinations/` six scenarios (SW Ireland, Cornwall, Brittany, Galicia, Portugal, Canaries); `simulator/run_destinations_2023.bat` (150 voyages each, C5, 2023). Queued as 006 after the four electronics/baseline runs. `docs/Destination_Study.md` has the plan and expectations.
+- Weather box 26-60N, 82W-0: Norway, Iceland, West Africa south of 26N not possible without new downloads.
+
 ## 2026-11-12, 01:15 UTC (20:15 local): limp-home option, overnight runs
 
 - Randolph: check results and post overnight; asked what potting and the backup controller do to survival odds.

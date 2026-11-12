@@ -1,0 +1,16 @@
+{
+ "name": "Destination study: Ocean City (10 km) to Portugal (Cabo da Roca, Lisbon)",
+ "provider": "bulk",
+ "start": {
+  "lat": 38.32,
+  "lon": -74.97
+ },
+ "failure_rate_set": "planning",
+ "target": {
+  "lat": 38.75,
+  "lon": -9.6
+ },
+ "waypoints": [],
+ "atlantic_islands_count": "no_azores",
+ "africa_landfall_counts": true
+}

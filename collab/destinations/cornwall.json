@@ -1,0 +1,21 @@
+{
+ "name": "Destination study: Ocean City (10 km) to Cornwall and the Isles of Scilly",
+ "provider": "bulk",
+ "start": {
+  "lat": 38.32,
+  "lon": -74.97
+ },
+ "failure_rate_set": "planning",
+ "target": {
+  "lat": 49.95,
+  "lon": -6.3
+ },
+ "waypoints": [
+  [
+   42.0,
+   -48.0
+  ]
+ ],
+ "atlantic_islands_count": "no_azores",
+ "africa_landfall_counts": true
+}

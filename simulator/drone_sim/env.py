@@ -429,10 +429,23 @@ class LandMask:
             if a <= lat <= b and c <= lon <= d: return name
         return None
 
+    def in_africa_atlantic(self, lat, lon):
+        """North-west Africa's Atlantic coast (Morocco, Western Sahara, northern Mauritania), as a far-side landfall
+        for the destination study. Rough box: the weather data stops at 26 N."""
+        return 15.0 <= lat <= 36.0 and -18.0 <= lon <= -1.0 and not self.atlantic_island(lat, lon)
+
+    def far_side(self, lat, lon, islands=False, africa=False):
+        """Landfall across the Atlantic: Europe (always), the Atlantic islands if islands=True, North-west Africa if africa=True."""
+        if islands == "no_azores":
+            if self.atlantic_island(lat, lon) == "Azores": return False
+            islands = True
+        return self.in_europe(lat, lon, islands) or (africa and self.in_africa_atlantic(lat, lon))
+
     def in_europe(self, lat, lon, islands=False):
         """Is a landfall at (lat, lon) a landfall in Europe? Iceland, the Faroes, the British Isles and
         mainland Europe count; North Africa and Greenland don't. The Azores, Madeira and the Canaries
         count only when islands=True."""
+        islands = bool(islands)
         if self.atlantic_island(lat, lon):
             return bool(islands)
         if self.europe:

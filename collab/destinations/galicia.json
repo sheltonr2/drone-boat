@@ -1,0 +1,21 @@
+{
+ "name": "Destination study: Ocean City (10 km) to Galicia (Cape Finisterre)",
+ "provider": "bulk",
+ "start": {
+  "lat": 38.32,
+  "lon": -74.97
+ },
+ "failure_rate_set": "planning",
+ "target": {
+  "lat": 42.9,
+  "lon": -9.35
+ },
+ "waypoints": [
+  [
+   40.0,
+   -48.0
+  ]
+ ],
+ "atlantic_islands_count": "no_azores",
+ "africa_landfall_counts": true
+}

@@ -18,6 +18,7 @@ DEFAULT_SCENARIO = {
     "arrival_radius_km": 40.0,
     "europe_landfall_counts": True,
     "atlantic_islands_count": False,   # Azores, Madeira, Canaries: count a landfall there as reaching Europe?
+    "africa_landfall_counts": False,   # North-west Africa's Atlantic coast counts as across (destination study)
     "max_days": 240,
     "mode": "hybrid",              # hybrid | 6dof
     "dt_s": 300.0,                 # hybrid step
@@ -188,10 +189,12 @@ class Voyage:
             # land / arrival
             if self.land.is_land(nlat, nlon):
                 isle = self.land.atlantic_island(nlat, nlon)
-                if self.land.in_europe(nlat, nlon, sc.get("atlantic_islands_count", False)) and sc.get("europe_landfall_counts", True):
+                if self.land.far_side(nlat, nlon, sc.get("atlantic_islands_count", False), sc.get("africa_landfall_counts", False)) \
+                        and sc.get("europe_landfall_counts", True):
                     st["lat"], st["lon"] = nlat, nlon
                     outcome = self._arrival_outcome(st)
-                    self.event(t, "arrival", f"Landfall in Europe at {nlat:.2f}, {nlon:.2f}")
+                    st["landfall"] = [round(nlat, 2), round(nlon, 2)]
+                    self.event(t, "arrival", f"Landfall across the Atlantic at {nlat:.2f}, {nlon:.2f}")
                 else:
                     outcome = "aground"
                     self.event(t, "end", f"Landed on the {isle} (not counted as Europe in this scenario)" if isle
