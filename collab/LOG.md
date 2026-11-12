@@ -2,6 +2,11 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-12, 02:20 UTC (21:20 local): Pearson link not posted; PC offline
+
+- Randolph asked to send John the sailboatdata link for his Pearson 31-2. Not posted: the browser and file tools for the PC disappeared and the device bridge reports the PC not connected. gh in this session cannot write to boat-sim, and attaching the repo with push access was refused. Draft saved in collab/draft_50_pearson.md.
+- The overnight checks (03:15, 08:30, 13:45) need the PC connected to read results.
+
 ## 2026-11-12, 01:35 UTC (20:35 local): plan and ETAs posted to John
 
 - At Randolph's request, posted the overnight run plan and expected finish times on #50 (six queue items, results post about 03:15; destination ranking Thursday afternoon if Randolph wants it shared). Asked whether they have a view on landfall or regional traffic data.
