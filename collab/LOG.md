@@ -4,7 +4,7 @@ Newest first. Each check of boat-sim records what was new and what we did.
 
 ## 2026-11-12, 19:25 UTC (14:25 local): destination study, batch 1 (interim)
 
-- 006 finished 12:32 local; 007 (batch 2) started 12:37 and takes about 37 minutes per aim point, so about 7:00 pm finish (not 1:30 pm as first estimated). 008 (Rev D) follows, about 8:20 pm.
+- 006 finished 12:32 local; 007 (batch 2) started 12:37 and takes about 37 minutes per aim point, so about 5:00 pm finish (not 1:30 pm as first estimated). 008 (Rev D) follows, about 6:25 pm. The 7:30 pm final check should find both done.
 - Batch 1 (Rev C5, 150 paired voyages each): SW Ireland 44.7%, Cornwall 44.7%, Brittany 41.3%, Galicia 38.0%, Portugal 33.4%, Canaries 10.7%. Southern routes slower and more often still at sea at season end. Interim table in docs/Destination_Study.md. No recommendation until batch 2. Not posted to John.
 
 ## 2026-11-12, 16:45 UTC (11:45 local): Rev D posted to John
