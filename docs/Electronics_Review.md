@@ -46,7 +46,18 @@ A flat 0.25% per day over the average 139-day voyage predicts about 72 failures,
 2. **Report humidity and box temperature** in every satellite message, so a slow leak shows up as a trend before it kills anything.
 3. **Locking connectors throughout** (the Pixhawk's are already locking). No pin headers or push-on jumper wires in the box.
 
-## What it is worth: simulator studies, queued
+## Results (12 Nov 2026, corrected simulator)
+
+| | Rev C5 as drawn | With better-protected electronics |
+|---|---|---|
+| Verified arrivals | 48.0% (41.9–54.2) | 52.8% (46.6–58.9) |
+| Arrived still reporting | 33.6% | 39.6% |
+| Voyages with an electronics failure | 61 | 35 |
+| Electronics as first failure | 31 | 16 |
+
+**Coating, potting and the encapsulated modem add about 5 points of arrivals (paired difference +4.8, 95% range +1.5 to +8.1), and 6 points of boats still reporting on arrival** — if the guessed factors hold (dry electronics rate ×0.6, modem ×0.5, wet factor 1.3 against 2.0). The improvement is real in the model; its size rests on those guesses. The limp-home controller run was interrupted by a Windows update reboot and has been restarted.
+
+## What it is worth: simulator studies
 
 The limp-home controller is now an option in the simulator (`limp_home` in the design, off by default): when the main box dies, it keeps steering toward Ireland at 85% of normal speed (fixed wing angle, simple steering), and fails at half the main box's rate because it is a small, separately potted board. Both factors are guesses. While it is in charge, rudder and tail failures are not rolled, which flatters it slightly.
 

@@ -208,7 +208,27 @@ Randolph approved the wing from [Wing_Shape_Study.md](Wing_Shape_Study.md).
 - **In the simulator:** wing dimensions and spar mass, and `structure.wing_shape_factor` 0.25, which multiplies the wing-loss rate. The 0.25 is the more cautious end of the study's range (0.13 to 0.26).
 - **Not updated:** the whole-boat STL (`designs/revC_boat_wing_feathered.stl`) and the 3D page still show the 1.0 m wing.
 
-## First real-weather run of Rev C5 (11 Nov 2026)
+## First results on the corrected simulator (12 Nov 2026)
+
+The earlier runs were made with the wind-angle bug ([Simulator_Angle_Bug.md](Simulator_Angle_Bug.md)) and are superseded. 250 voyages each on 2023 weather, launch 10 km off Ocean City, same launch dates and random seeds for every design, so differences are paired.
+
+| | Rev C as first drawn | **Rev C5** | Rev C5, better-protected electronics (guessed factors) |
+|---|---|---|---|
+| Verified arrivals | 43.6% (37.6–49.8) | **48.0% (41.9–54.2)** | 52.8% (46.6–58.9) |
+| Arrived still reporting | 34.4% | 33.6% | 39.6% |
+| Still at sea on 30 Nov | 22.4% | 18.8% | 19.2% |
+| Lost | 15.6% | 15.2% | 14.0% |
+| Aground (US coast or elsewhere) | 10.4% | 11.2% | 9.6% |
+| Median crossing | 121 days | 121 days | 121 days |
+| Wing broken in a knockdown | 40 | 3 | — |
+| Voyages with an electronics failure | 84 | 61 | 35 |
+
+- **C5 against Rev C:** +4.4 points paired (95% range −3.1 to +11.9). The wing changes nearly remove wing loss (40 to 3), but C5 also carries the keel-joint and wave-strike servo losses the Rev C run did not model, so the net gain is modest and not yet certain.
+- **Median crossing is 121 days for both**, so the shorter wing costs no measurable time on a real voyage.
+- **Keel joint:** 2 voyages in 250 (was 10 on the old simulator, which had more knockdowns over longer voyages).
+- The remaining large causes: pickups by fishing boats (24), electronics (31 as first failure), leaks (20), fouling (15), ship strikes (10).
+
+## First real-weather run of Rev C5 (11 Nov 2026, superseded: wind-angle bug)
 
 250 voyages on 2023 weather from the near-coast launch point, with the structural-failure model on (strikes matched to buoy data). Started automatically by the PC's run queue. Log: `collab/run_log_revC5_2023_2026-11-11.txt`.
 

@@ -2,6 +2,12 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-12, 11:45 UTC (06:45 local): PC back after a Windows update reboot; first corrected results
+
+- PC rebooted overnight (Windows update) during 004 run_limp_2023.bat (started 23:17, lost). 002 and 003 finished before it. Cleared the stale lock (queue/unlock.run) and requeued 004 as 004b; 005, 006, 007 still queued.
+- Corrected simulator, 2023, 250 voyages paired: Rev C 43.6%, C5 48.0% (+4.4, -3.1..+11.9), C5 + better electronics 52.8% (+4.8 vs C5, +1.5..+8.1). Median 121 days all. Wing losses 40 -> 3. Keel joint 2.
+- Results and sanitized logs saved with 2026-11-12 names; Design_RevC.md and Electronics_Review.md updated.
+
 ## 2026-11-12, 02:20 UTC (21:20 local): Pearson link not posted; PC offline
 
 - Randolph asked to send John the sailboatdata link for his Pearson 31-2. Not posted: the browser and file tools for the PC disappeared and the device bridge reports the PC not connected. gh in this session cannot write to boat-sim, and attaching the repo with push access was refused. Draft saved in collab/draft_50_pearson.md.
