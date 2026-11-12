@@ -108,7 +108,8 @@ class Voyage:
                   tail_stuck_alpha=0.0, wing_lost=False, entangled=False, hung=False, comms_dead=False,
                   brownout=False, leak_rate=0.0, leak_alarm=False, thrust_h_today=0.0, alive=True, credits=0,
                   sessions_ok=0, sessions_fail=0, last_report=t, last_report_ok=t, energy_in_wh=0.0,
-                  energy_out_wh=0.0, distance_km=0.0, knockdowns=0, capsizes=0, box_dead=False, kd_hs=[0]*10, post_bent=False)
+                  energy_out_wh=0.0, distance_km=0.0, knockdowns=0, capsizes=0, box_dead=False, kd_hs=[0]*10, post_bent=False,
+                  limp_ok=bool((d.get("limp_home") or {}).get("fitted")), limp_on=False)
         BT = d.get("backup_tracker") or {}
         st.update(trk_ok=bool(BT.get("fitted")), trk_next=t, trk_sent=0, trk_fixes=0, trk_last_ok=None,
                   trk_budget=int(BT.get("transmissions", 2500)*BT.get("cold_derate", 1.0)))
@@ -148,7 +149,7 @@ class Voyage:
             if math.floor(t/86400) != day_mark:
                 day_mark = math.floor(t/86400); st["thrust_h_today"] = 0.0
             # ---- autopilot decisions
-            controllable = st["alive"] and not st["brownout"] and not st["inverted"] and not st["box_dead"]
+            controllable = st["alive"] and not st["brownout"] and not st["inverted"] and (not st["box_dead"] or st["limp_on"])
             if controllable and t >= next_decision:
                 decision = self.ap.decide(t, st, envd)
                 next_decision = t + d["autopilot"]["decision_interval_min"]*60
@@ -259,7 +260,7 @@ class Voyage:
         df = st["df"] + (3.0 if st["entangled"] else 0) + st["water_kg"]/max(self.boat.mass, 1)*2
         df = min(df, 4.0)
         steer_possible = dec["steering"] and not st["brownout"] and st["rudder"] == "ok"
-        if st["inverted"] or st["box_dead"] or (feather and not steer_possible):
+        if st["inverted"] or (st["box_dead"] and not st["limp_on"]) or (feather and not steer_possible):
             # Dead boat: leeway, i.e. drift through the water at a fixed share of the 10 m wind, close to downwind
             # (USCG/SAR leeway model; coefficients in design["drift"]). The VPP's feathered state assumes the
             # keel holds the boat on its heading, which made a dead boat reach across the wind at 4-6%.
@@ -280,6 +281,8 @@ class Voyage:
             u, v, phi, dl, al = r["u_f"], r["v_f"], r["phi_f"], r["delta_f"], 0.0
         else:
             u, v, phi, dl, al = r["u"], r["v"], r["phi"], r["delta"], r["alpha"]
+        if st["limp_on"] and not feather:
+            u *= (self.d.get("limp_home") or {}).get("speed_factor", 0.85)   # limp-home: fixed wing angle, simple steering
         if st["tail"] == "stuck" and wing_ok:
             al = st["tail_stuck_alpha"]
             u *= max(0.2, 1 - abs(al - r.get("alpha", al))/0.3)
@@ -429,10 +432,23 @@ class Voyage:
         # backup tracker (independent box)
         if st["trk_ok"] and rnd() < p_event(self.rate("backup_tracker"), dt):
             st["trk_ok"] = False; self.event(t, "failure", "Backup tracker failed")
+        # limp-home controller (Rev C6 study, docs/Electronics_Review.md): its own sealed, potted board, used only
+        # after the main box dies. It fails at its own rate, scaled by the same early-life and wetness factors.
+        if st["limp_on"]:
+            LH = self.d.get("limp_home") or {}
+            wet = 1 + (self.d["hull"].get("wet_electronics_factor", 6.0) - 1)*(st["water_kg"] > 0.3)
+            if rnd() < p_event(self.rate("electronics")*LH.get("rate_factor", 0.5)*el*wet, dt):
+                st["limp_on"] = False; st["limp_ok"] = False
+                self.event(t, "failure", "Limp-home controller failed: boat drifting")
         # once the main box is dead only the hull, the rig and the outside world can still change things
         active = not st["box_dead"]
         # electronics
         if active and rnd() < p_event(self.rate("electronics")*el*(1 + (self.d["hull"].get("wet_electronics_factor", 6.0) - 1)*(st["water_kg"] > 0.3)), dt):
+            if st["limp_ok"]:
+                st["box_dead"] = True; st["brownout"] = False; st["limp_on"] = True
+                self.event(t, "failure", "Electronics failure (corrosion/humidity): main box dead; limp-home controller sailing on"
+                           + ("; backup tracker reporting" if st["trk_ok"] else ", silent"))
+                return
             if st["trk_ok"]:
                 st["box_dead"] = True; st["brownout"] = False
                 self.event(t, "failure", "Electronics failure (corrosion/humidity): main box dead, boat drifting; backup tracker still reporting")

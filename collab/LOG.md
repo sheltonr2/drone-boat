@@ -2,6 +2,13 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-12, 01:15 UTC (20:15 local): limp-home option, overnight runs
+
+- Randolph: check results and post overnight; asked what potting and the backup controller do to survival odds.
+- Added a limp-home controller option to the simulator (`design["limp_home"]`, off by default): when the main box dies, a separate potted board keeps steering at 0.85 x speed; fails at 0.5 x the electronics rate (GUESSES). While it runs, rudder/tail failures are not rolled (slightly optimistic).
+- Queued on the PC: 004 run_limp_2023.bat (C5 + limp-home), 005 run_limp_electronics_2023.bat (both). With 002 and 003 that is four runs, done about 03:00 local.
+- Overnight check scheduled: read results, post to John (approved), report.
+
 ## 2026-11-12, 01:00 UTC (19:50 local): simulator angle bug, wing study corrected, electronics review
 
 - Scheduled resume after Randolph's usage reset. Posted update 1 to John (C5 run data, answers on the wing questions).

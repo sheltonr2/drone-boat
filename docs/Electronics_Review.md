@@ -46,7 +46,13 @@ A flat 0.25% per day over the average 139-day voyage predicts about 72 failures,
 2. **Report humidity and box temperature** in every satellite message, so a slow leak shows up as a trend before it kills anything.
 3. **Locking connectors throughout** (the Pixhawk's are already locking). No pin headers or push-on jumper wires in the box.
 
-## What it is worth: simulator study, queued
+## What it is worth: simulator studies, queued
+
+The limp-home controller is now an option in the simulator (`limp_home` in the design, off by default): when the main box dies, it keeps steering toward Ireland at 85% of normal speed (fixed wing angle, simple steering), and fails at half the main box's rate because it is a small, separately potted board. Both factors are guesses. While it is in charge, rudder and tail failures are not rolled, which flatters it slightly.
+
+Four runs, all 250 voyages on 2023 weather with the corrected simulator: Rev C5 as drawn (`run_fixed_compare_2023.bat`), with better-protected electronics (`run_electronics_2023.bat`), with the limp-home controller (`run_limp_2023.bat`), and with both (`run_limp_electronics_2023.bat`).
+
+### Better-protected electronics
 
 `simulator/run_electronics_2023.bat` runs Rev C5 with three changes, all **guesses** about what coating, potting and the encapsulated modem would achieve:
 

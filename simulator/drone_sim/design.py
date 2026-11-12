@@ -99,6 +99,9 @@ DEFAULT = {
                                         # Measured: Sunfish without sail 2.1%, 4.15 m skiff 4.0% (Breivik et al. 2010)
         "leeway_crosswind": 0.008,      # x U10, side picked at random per voyage (~14 deg divergence)
     },
+    # Limp-home controller (proposed, not drawn; docs/Electronics_Review.md). A separate potted board (ESP32 class) with
+    # its own GPS and compass that takes over steering and the tail when the main box dies. Off unless a design sets it.
+    "limp_home": {"fitted": False, "speed_factor": 0.85, "rate_factor": 0.5},
     "backup_tracker": {                 # independent YB3 (Iridium SBD), docs/Backup_Tracker.md. Own battery, GPS, modem, antenna.
         "fitted": True,
         "report_interval_h": 12.0,      # every 12 h after the first week
