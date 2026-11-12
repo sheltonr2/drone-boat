@@ -2,6 +2,12 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-12, 15:25 UTC (10:25 local): limp-home results
+
+- 004b and 005 finished (07:44, 08:43); 006 destinations started 08:47.
+- Scoring bug: `_arrival_outcome` returned arrived_adrift for any box-dead arrival, including limp-home sailed arrivals. Fixed (limp_on -> tracked/silent). Runs rescored from event logs: limp 59.6% (+11.6 vs C5, +7.6..+15.6), limp+elec 61.2% (+13.2, +8.7..+17.7). Guessed factors: 85% speed, 0.5x failure rate, no rudder/tail failures while it steers.
+- Electronics_Review.md updated. Posting to John (approved).
+
 ## 2026-11-12, 14:50 UTC (09:50 local): re-score reply posted
 
 - Randolph approved; posted on #50 accepting John's offer to re-score C5 our way, with the corrected 121-day median. Removed the posted drafts.

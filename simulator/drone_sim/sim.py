@@ -391,8 +391,10 @@ class Voyage:
 
     @staticmethod
     def _arrival_outcome(st):
-        if st["box_dead"]:
+        if st["box_dead"] and not st.get("limp_on"):
             return "arrived_adrift"                       # washed up with the main box dead: not a sailed crossing
+        if st["box_dead"]:                                # sailed in under the limp-home controller (12 Nov 2026 fix)
+            return "arrived_tracked" if st["trk_ok"] else "arrived_silent"
         if not (st["comms_dead"] or st["hung"]):
             return "arrived_reporting"
         return "arrived_tracked" if st["trk_ok"] else "arrived_silent"

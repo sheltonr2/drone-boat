@@ -55,7 +55,21 @@ A flat 0.25% per day over the average 139-day voyage predicts about 72 failures,
 | Voyages with an electronics failure | 61 | 35 |
 | Electronics as first failure | 31 | 16 |
 
-**Coating, potting and the encapsulated modem add about 5 points of arrivals (paired difference +4.8, 95% range +1.5 to +8.1), and 6 points of boats still reporting on arrival** — if the guessed factors hold (dry electronics rate ×0.6, modem ×0.5, wet factor 1.3 against 2.0). The improvement is real in the model; its size rests on those guesses. The limp-home controller run was interrupted by a Windows update reboot and has been restarted.
+**Coating, potting and the encapsulated modem add about 5 points of arrivals (paired difference +4.8, 95% range +1.5 to +8.1), and 6 points of boats still reporting on arrival** — if the guessed factors hold (dry electronics rate ×0.6, modem ×0.5, wet factor 1.3 against 2.0). The improvement is real in the model; its size rests on those guesses. The limp-home runs followed (below).
+
+### Limp-home controller
+
+| | Rev C5 | + better electronics | + limp-home | + both |
+|---|---|---|---|---|
+| Verified arrivals | 48.0% (41.9–54.2) | 52.8% (46.6–58.9) | **59.6% (53.4–65.5)** | **61.2% (55.0–67.0)** |
+| Paired gain over C5 | — | +4.8 (+1.5 to +8.1) | **+11.6 (+7.6 to +15.6)** | **+13.2 (+8.7 to +17.7)** |
+| Lost | 15.2% | 14.0% | 12.8% | 12.8% |
+| Aground | 11.2% | 9.6% | 7.2% | 7.2% |
+
+- **The limp-home controller is the bigger win.** In the C5 run, 61 boats lost their main electronics. Without a backup, 14 of them washed up somewhere across and 47 drifted, grounded or were lost. With limp-home, the same 61 boats took over. About 29 sailed in, most still tracked by the YB3, and groundings among them fell from 11 to 1.
+- **With both, the gains overlap.** Better electronics means fewer box deaths, so the controller has less to rescue: +13.2 together, against +11.6 and +4.8 apart.
+- **A scoring fix was needed.** The simulator labelled every arrival with a dead main box "arrived adrift" and did not count it as a success, even when the limp-home controller had sailed it in and the YB3 was tracking it. This is fixed in `sim.py`. The two runs were rescored from their event logs: a takeover voyage that arrived, whose controller never failed and whose tracker was working, counts as tracked. As-run, both runs showed exactly the C5 and electronics figures, because every limp-home arrival was being thrown away.
+- **This flatters the controller.** It assumes 85% of normal speed, half the main box's failure rate, and no rudder or tail failures while it steers. All three are guesses. Read +12 as "large, probably 5–15 points", not as a measurement.
 
 ## What it is worth: simulator studies
 
