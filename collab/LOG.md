@@ -2,6 +2,11 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-12, 16:45 UTC (11:45 local): Rev D posted to John
+
+- Posted on #50 ([comment](https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6829060738)): what Rev D is, mass and cost, new randolph_rev_d.yaml (rev_c back to C5, matching their Boatyard preset), the backup steering their schema can't express, the queued Rev D run, and our revision convention (C6 = Rev D).
+- Their latest: C5 re-score our way needs fresh runs; their team is on a game push for a day or so.
+
 ## 2026-11-12, 16:30 UTC (11:30 local): C6 renamed Rev D; revision convention
 
 - Randolph agreed C6 should be a new letter: it adds a system. Renamed throughout (drawings, docs, simulator `revision` "D", designs/revD_design.json, run_revD_2023.bat, boat-sim randolph_rev_d.yaml; randolph_rev_c.yaml and revC_design.json back to C5). New docs/Design_RevD.md and docs/Revisions.md (convention + history).
