@@ -1,6 +1,6 @@
-# Coating and potting (Rev C6)
+# Coating and potting (Rev D)
 
-12 Nov 2026. Why: `docs/Electronics_Review.md`. In the simulator this is worth about 5 points of arrivals, but only if the guessed factors hold (electronics failures ×0.6, modem ×0.5, wet-bay factor 1.3 instead of 2.0). Rev C6 now carries those factors in the design (`electronics_protection`, `wet_electronics_factor`).
+12 Nov 2026. Why: `docs/Electronics_Review.md`. In the simulator this is worth about 5 points of arrivals, but only if the guessed factors hold (electronics failures ×0.6, modem ×0.5, wet-bay factor 1.3 instead of 2.0). Rev D now carries those factors in the design (`electronics_protection`, `wet_electronics_factor`).
 
 ## What gets what
 

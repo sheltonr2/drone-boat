@@ -35,11 +35,11 @@ The boat is designed so nothing needs to open at sea: every penetration is eithe
 
 **Power.** Laminate flexible 12 V panels into the deck and wing faces. Route them through an MPPT charge controller (Victron 75/10 or a Genasun GV-5) into a LiFePO4 pack with a cold-charge cutoff. (Rev C drops the separate backup lithium cell: the independent YB3 backup tracker now covers a main-power failure.)
 
-**Electronics.** Mount everything in a sealed IP68 box potted to the hull, with desiccant packs and a humidity sensor. The parts are a Pixhawk-class autopilot, a GPS with a compass, a wind vane with an angle encoder, an ESP32 companion computer. Rev C6: every board is conformal-coated and the sensors, power boards and wire joints are potted (docs/Potting_Spec.md); the modem is a factory-encapsulated RockBLOCK Plus in the hatch lid, outside the box; the main GPS sits on the stern post, clear of the solar panels; and a separate potted limp-home controller with its own GPS, compass and power feed takes over the starboard rudder and the tail if the main box dies (docs/Limp_Home_Spec.md).
+**Electronics.** Mount everything in a sealed IP68 box potted to the hull, with desiccant packs and a humidity sensor. The parts are a Pixhawk-class autopilot, a GPS with a compass, a wind vane with an angle encoder, an ESP32 companion computer. Rev D: every board is conformal-coated and the sensors, power boards and wire joints are potted (docs/Potting_Spec.md); the modem is a factory-encapsulated RockBLOCK Plus in the hatch lid, outside the box; the main GPS sits on the stern post, clear of the solar panels; and a separate potted limp-home controller with its own GPS, compass and power feed takes over the starboard rudder and the tail if the main box dies (docs/Limp_Home_Spec.md).
 
 ## Satellite comms and commanding
 
-One RockBLOCK (Rev C6: a RockBLOCK Plus) handles both directions, so commanding adds no hardware. Each time the boat wakes to send a report, the same Iridium session downloads any commands you've queued for it. Your commands reach the boat at its next report: within 1–6 hours, depending on the interval you set.
+One RockBLOCK (Rev D: a RockBLOCK Plus) handles both directions, so commanding adds no hardware. Each time the boat wakes to send a report, the same Iridium session downloads any commands you've queued for it. Your commands reach the boat at its next report: within 1–6 hours, depending on the interval you set.
 
 **How a command gets to the boat**
 
@@ -95,7 +95,7 @@ Use ArduPilot Rover's built-in sailboat mode for steering and sail trim. Your cu
 | Mission manager | ESP32 (MAVLink to the Pixhawk) | Custom, built with Claude Code | Route, weather avoidance, thruster policy, safe mode, watchdog |
 | Comms | ESP32 + RockBLOCK | Custom | Packing reports, unpacking and verifying commands, scheduling |
 | Power manager | ESP32 | Custom | Switches the Pixhawk, sensors and modem off between tasks; deep-sleep budget |
-| Limp-home (Rev C6) | Second ESP32, potted, in P21 | Custom, about 600 lines | Listens for the main box's heartbeat; after 10 silent minutes steers for the next waypoint with the starboard rudder and tail; hands back after 30 minutes of heartbeat |
+| Limp-home (Rev D) | Second ESP32, potted, in P21 | Custom, about 600 lines | Listens for the main box's heartbeat; after 10 silent minutes steers for the next waypoint with the starboard rudder and tail; hands back after 30 minutes of heartbeat |
 | Shore server | Small cloud service | Custom | Webhook receiver, decoder, command signer, database |
 | Dashboard | Web page | Custom | Map track, charts, command form, alerts by email or text |
 
@@ -113,11 +113,11 @@ Every part below runs on 12.8 V or 5 V and works with stock ArduPilot. The picks
 
 | Subsystem | Recommended part | Why this one | Price (USD) |
 | --- | --- | --- | --- |
-| Satellite modem | [RockBLOCK Plus](https://www.groundcontrol.com/wp-content/uploads/2026/08/RockBLOCK-Plus-Data-Sheet.pdf) (Rev C6; was the RockBLOCK 9603) | Same Iridium SBD service and code, in a factory-encapsulated case with its own antenna, 9–30 V supply, RS-232 link. Mounted in bowl P23 in the hatch lid | \~450 (price not confirmed) |
+| Satellite modem | [RockBLOCK Plus](https://www.groundcontrol.com/wp-content/uploads/2026/08/RockBLOCK-Plus-Data-Sheet.pdf) (Rev D; was the RockBLOCK 9603) | Same Iridium SBD service and code, in a factory-encapsulated case with its own antenna, 9–30 V supply, RS-232 link. Mounted in bowl P23 in the hatch lid | \~450 (price not confirmed) |
 | RS-232 level shifter | MAX3232-class breakout | Links the RockBLOCK Plus to the companion ESP32 | \~5 |
-| Limp-home controller (Rev C6) | ESP32-S3 Feather, Micro M10 GPS, BNO085, 6 V regulator, 4-channel servo mux, ideal diodes, fuse, cases P21/P22 | docs/Limp_Home_Spec.md | \~190 |
-| ~~Satellite antenna~~ (deleted in Rev C6: the RockBLOCK Plus has its own) | [Ground Control External Iridium Patch Antenna](https://store.groundcontrol.com/products/external-iridium-patch-antenna) (2J7426MPz) | Passive, outdoor-rated, comes with a 1.8 m SMA cable; mount on the mast stub above the deck | 30 |
-| ~~Modem cable~~ (deleted in Rev C6) | [RockBLOCK 9603 Tails Cable](https://store.groundcontrol.com/collections/accessories) | Pre-stripped leads to wire straight to the ESP32 | 17 |
+| Limp-home controller (Rev D) | ESP32-S3 Feather, Micro M10 GPS, BNO085, 6 V regulator, 4-channel servo mux, ideal diodes, fuse, cases P21/P22 | docs/Limp_Home_Spec.md | \~190 |
+| ~~Satellite antenna~~ (deleted in Rev D: the RockBLOCK Plus has its own) | [Ground Control External Iridium Patch Antenna](https://store.groundcontrol.com/products/external-iridium-patch-antenna) (2J7426MPz) | Passive, outdoor-rated, comes with a 1.8 m SMA cable; mount on the mast stub above the deck | 30 |
+| ~~Modem cable~~ (deleted in Rev D) | [RockBLOCK 9603 Tails Cable](https://store.groundcontrol.com/collections/accessories) | Pre-stripped leads to wire straight to the ESP32 | 17 |
 | Autopilot | [Holybro Pixhawk 6C Mini (Model A)](https://pyrodrone.com/collections/everything-excluding-dji/products/holybro-pixhawk-6c-mini-model-a-flight-controller-only) | H7 processor, IMU redundancy, supported by ArduPilot, rated −40 to 85 °C | 177 |
 | GPS + compass | [Holybro Micro M10 GPS](https://rcdrone.top/products/holybro-micro-m10-gps-module) | u-blox M10, 4 constellations, IST8310 compass, small enough to fit in the enclosure lid | 37 |
 | Companion computer | Adafruit Feather ESP32-S3 | Low deep-sleep current, two spare UARTs (Pixhawk + RockBLOCK), and good Arduino/PlatformIO support for Claude Code | \~18 |
@@ -194,7 +194,7 @@ Rev C (10 Nov 2026) parts total about $2,270, plus about $630 for the YB3 backup
 
 | Configuration | Hardware total (USD) |
 | --- | --- |
-| Rev C6 as listed (limp-home, RockBLOCK Plus, potting: about +$365) | \~2,635 |
+| Rev D as listed (limp-home, RockBLOCK Plus, potting: about +$365) | \~2,635 |
 | Rev C as listed | \~2,270 |
 | Rev C + YB3 backup tracker | \~2,900 |
 | Rev C + YB3, with a Pixhawk 6C clone | \~2,800 |
@@ -203,7 +203,7 @@ Rev C (10 Nov 2026) parts total about $2,270, plus about $630 for the YB3 backup
 Other ways to save:
 
 - Build the lake prototype from scrap foam instead of glass (save about $60).
-- Rev C6: the RockBLOCK Plus has its own antenna, so there is no external antenna to buy. For desk and lake tests a RockBLOCK 9603 with its built-in patch works with the same code if you already have one.
+- Rev D: the RockBLOCK Plus has its own antenna, so there is no external antenna to buy. For desk and lake tests a RockBLOCK 9603 with its built-in patch works with the same code if you already have one.
 - Watch for sales: the Pixhawk and Genasun prices above swing by $20–$80 between sellers.
 
 ## Phased build and test plan
@@ -227,7 +227,7 @@ The boat is most likely to be lost to water getting in, steering failure, or fou
 | Hurricane, or a gale against the Gulf Stream | Medium | Launch in May; follow the National Hurricane Center outlook and send a new route away from forecast tracks; self-righting with no sheets |
 | Power starvation in a long overcast spell | Medium | Deep-sleep budget under 1.5 W; safe mode below 25%; the navigation light runs only at night (about 0.3 W) |
 | Collision with a ship | Low–medium | Hi-vis paint and radar reflector; avoid shipping lanes with geofences; consider an AIS transponder later |
-| Software hang | Medium | Hardware watchdog; boots into safe mode; autopilot keeps sailing if the ESP32 dies; Rev C6 limp-home controller steers if the whole main box stops |
+| Software hang | Medium | Hardware watchdog; boots into safe mode; autopilot keeps sailing if the ESP32 dies; Rev D limp-home controller steers if the whole main box stops |
 | Theft or capture by fishers | Low | ID plate with contact details and a "research vessel" notice |
 
 **Legal and responsibility**

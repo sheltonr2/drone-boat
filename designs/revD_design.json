@@ -1,7 +1,7 @@
 {
-  "name": "Rev C 1.5 m solar-sail drone",
-  "revision": "C",
-  "revision_note": "C6: limp-home controller, potted electronics, RockBLOCK Plus in the hatch lid, main GPS to the stern post, 12 Nov 2026; C5: wing 0.80 x 0.375 m (same area), 11 Nov 2026; C4: acetal mast bearings; C3: structural review changes (YB3 to the foredeck, fibreglass post and counterweight arm, servo-savers, 30 x 22 spar), 11 Nov 2026; C2: hardwood keel fin; C1: electronics box above the flood level",
+  "name": "Rev D 1.5 m solar-sail drone",
+  "revision": "D",
+  "revision_note": "Rev D (12 Nov 2026): Rev C5 plus a limp-home controller, potted electronics, RockBLOCK Plus in the hatch lid, main GPS to the stern post. From Rev C: C5: wing 0.80 x 0.375 m (same area), 11 Nov 2026; C4: acetal mast bearings; C3: structural review changes (YB3 to the foredeck, fibreglass post and counterweight arm, servo-savers, 30 x 22 spar), 11 Nov 2026; C2: hardwood keel fin; C1: electronics box above the flood level",
   "structure": {
     "parts": "C3",
     "breakers": "measured",

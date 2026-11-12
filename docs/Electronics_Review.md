@@ -1,6 +1,6 @@
 # Electronics: why they fail in the simulator, and potting
 
-> **12 Nov 2026: adopted as Rev C6.** The limp-home controller, coating and potting, and the RockBLOCK Plus are now in the drawings and the default simulator design ([Design_RevC.md](Design_RevC.md#rev-c6-limp-home-controller-potting-and-the-encapsulated-modem-12-nov-2026)).
+> **12 Nov 2026: adopted as Rev D.** The limp-home controller, coating and potting, and the RockBLOCK Plus are now in the drawings and the default simulator design ([Design_RevD.md](Design_RevD.md)).
 
 12 November 2026. Grade D: the failure rates are fitted to other people's boats, and the improvement factors in the study run are guesses.
 
@@ -44,7 +44,7 @@ A flat 0.25% per day over the average 139-day voyage predicts about 72 failures,
 
 ## Other changes worth more than potting alone
 
-1. **A limp-home controller.** If the Pixhawk dies today, the boat drifts. The ESP32 watchdog could drive the tail and one rudder directly on a simple compass course toward Ireland. That turns "box dead, drifting" into "sailing slowly". In the C5 run, of the 83 boats whose electronics died, 39 were still at sea at the end and 21 drifted to the far side without steering; a boat that keeps sailing would turn some of those into arrivals. Not yet modelled. It needs its own compass and a separate power feed. This is a design change for review, not drawn. **Update 12 Nov: drawn as Rev C6 with the potting and the RockBLOCK Plus ([Limp_Home_Spec.md](Limp_Home_Spec.md), [Potting_Spec.md](Potting_Spec.md)).**
+1. **A limp-home controller.** If the Pixhawk dies today, the boat drifts. The ESP32 watchdog could drive the tail and one rudder directly on a simple compass course toward Ireland. That turns "box dead, drifting" into "sailing slowly". In the C5 run, of the 83 boats whose electronics died, 39 were still at sea at the end and 21 drifted to the far side without steering; a boat that keeps sailing would turn some of those into arrivals. Not yet modelled. It needs its own compass and a separate power feed. This is a design change for review, not drawn. **Update 12 Nov: drawn as Rev D with the potting and the RockBLOCK Plus ([Limp_Home_Spec.md](Limp_Home_Spec.md), [Potting_Spec.md](Potting_Spec.md)).**
 2. **Report humidity and box temperature** in every satellite message, so a slow leak shows up as a trend before it kills anything.
 3. **Locking connectors throughout** (the Pixhawk's are already locking). No pin headers or push-on jumper wires in the box.
 

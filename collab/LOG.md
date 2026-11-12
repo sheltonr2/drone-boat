@@ -2,6 +2,12 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-12, 16:30 UTC (11:30 local): C6 renamed Rev D; revision convention
+
+- Randolph agreed C6 should be a new letter: it adds a system. Renamed throughout (drawings, docs, simulator `revision` "D", designs/revD_design.json, run_revD_2023.bat, boat-sim randolph_rev_d.yaml; randolph_rev_c.yaml and revC_design.json back to C5). New docs/Design_RevD.md and docs/Revisions.md (convention + history).
+- PC: Rev D files copied; queue item 008_revC6_2023.run now runs run_revD_2023.bat (filename kept; stale revC6 files on the PC are unused).
+- Randolph approved sharing Rev D with John, with our revision convention.
+
 ## 2026-11-12, 16:05 UTC (11:05 local): Rev C6 drawn
 
 - Randolph approved drawing the limp-home controller as Rev C6, with potting and the RockBLOCK Plus.

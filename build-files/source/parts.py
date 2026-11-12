@@ -95,7 +95,7 @@ def p04():
 # ------------------------------------------------------------ stern stub
 @part("P05", "Antenna platform clamp", 1, "ASA",
       ["Clamps to the 20 mm stub tube at 560 mm above the hull bottom.",
-       "Rev C6: carries the main GPS + compass (Holybro Micro M10, potted in soft silicone, patch up), not the Iridium patch (the RockBLOCK Plus has its own). Bond it in the D42 pocket; no steel washer near the compass.",
+       "Rev D: carries the main GPS + compass (Holybro Micro M10, potted in soft silicone, patch up), not the Iridium patch (the RockBLOCK Plus has its own). Bond it in the D42 pocket; no steel washer near the compass.",
        "Squeeze slot closed with an M4 bolt (D4.3 hole) through the ears."],
       {"Platform": "80 x 64 x 5", "Collar": "OD32, ID20.3 x 25"})
 def p05():
@@ -366,9 +366,9 @@ def p20():
     bolt = hole_y(2.15, -8, 8, -23, 10)
     return diff(solid, bore, pocket, cable, groove, slit, bolt), ((-31, 64), (-19, 19), (0, 20))
 
-# ---------------------------------------------------------------- Rev C6 electronics
+# ---------------------------------------------------------------- Rev D electronics
 @part("P21", "Limp-home controller case (potting shell)", 1, "PETG, 4 walls, 100% infill on the back",
-      ["Rev C6 (docs/Limp_Home_Spec.md). Bond the back to the aft face of",
+      ["Rev D (docs/Limp_Home_Spec.md). Bond the back to the aft face of",
        "bulkhead x 300, top edge 10 mm under the deck, clear of the hatch opening.",
        "Print back-down. ESP32, 6 V regulator, opto-isolators and supervisor",
        "on the floor; GPS and BNO085 face-up on the shelf under the top wall.",
@@ -387,7 +387,7 @@ def p21():
     return diff(solid, *cables, *bolts), ((-63, 63), (-34, 34), (0, 30))
 
 @part("P22", "Servo switchover pod (potting shell)", 1, "PETG",
-      ["Rev C6: holds the 4-channel servo multiplexer and two ideal-diode",
+      ["Rev D: holds the 4-channel servo multiplexer and two ideal-diode",
        "boards for the starboard rudder and tail servos. Bond to the forward",
        "face of bulkhead x 1260, high, beside the servo WetLink.",
        "Pot to the rim with urethane after Bench Test N.",
@@ -403,7 +403,7 @@ def p22():
     return diff(solid, *cables, *bolts), ((-35, 35), (-21, 21), (0, 22))
 
 @part("P23", "RockBLOCK Plus bowl (hatch lid)", 1, "ASA, 5 walls, 40% infill",
-      ["Rev C6: seats the RockBLOCK Plus (137 x 40) in the hatch lid, its",
+      ["Rev D: seats the RockBLOCK Plus (137 x 40) in the hatch lid, its",
        "top 2 mm proud of the flange and below z 255 (counterweight pod sweep).",
        "Cut D146 in the lid (T16); bed the flange in thickened epoxy, then one",
        "6 oz tape over the flange onto the lid. Print floor-down: the flange",

@@ -91,7 +91,7 @@ class Voyage:
         f = self.fr[name]
         if not (self.fail_on and f.get("enabled", True)):
             return 0.0
-        m = (self.d.get("electronics_protection") or {}).get(name, 1.0)   # Rev C6 coating/potting credit
+        m = (self.d.get("electronics_protection") or {}).get(name, 1.0)   # Rev D coating/potting credit
         return f["per_day"] * m
 
     # -------------------------------------------------------------- run
@@ -440,7 +440,7 @@ class Voyage:
         # backup tracker (independent box)
         if st["trk_ok"] and rnd() < p_event(self.rate("backup_tracker"), dt):
             st["trk_ok"] = False; self.event(t, "failure", "Backup tracker failed")
-        # limp-home controller (Rev C6 study, docs/Electronics_Review.md): its own sealed, potted board, used only
+        # limp-home controller (Rev D study, docs/Electronics_Review.md): its own sealed, potted board, used only
         # after the main box dies. It fails at its own rate, scaled by the same early-life and wetness factors.
         if st["limp_on"]:
             LH = self.d.get("limp_home") or {}

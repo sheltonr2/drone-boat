@@ -1,4 +1,4 @@
-# Limp-home controller (Rev C6)
+# Limp-home controller (Rev D)
 
 12 Nov 2026. Drawn on D03 (P21, P22), D00; parts P21 and P22 on the printed-parts sheets.
 

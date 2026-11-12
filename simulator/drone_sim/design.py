@@ -1,14 +1,14 @@
 """Boat design parameters (SI units: metres, kilograms, seconds, degrees where noted).
 
-A design is a nested dict that round-trips to JSON. `default_design()` returns the Rev C
-1.5 m drone from the drawing set (10 Nov 2026); `default_design("revB")` returns Rev B. Coordinates follow the drawings: x aft from the bow,
+A design is a nested dict that round-trips to JSON. `default_design()` returns the Rev D
+1.5 m drone from the drawing set (12 Nov 2026); `default_design("revB")` returns Rev B. Coordinates follow the drawings: x aft from the bow,
 y to port, z up from the hull bottom at midships.
 """
 import copy, json, hashlib
 
 DEFAULT = {
-    "name": "Rev C 1.5 m solar-sail drone",
-    "revision": "C", "revision_note": "C6: limp-home controller, potted electronics, RockBLOCK Plus in the hatch lid, main GPS to the stern post, 12 Nov 2026; C5: wing 0.80 x 0.375 m (same area), 11 Nov 2026; C4: acetal mast bearings; C3: structural review changes (YB3 to the foredeck, fibreglass post and counterweight arm, servo-savers, 30 x 22 spar), 11 Nov 2026; C2: hardwood keel fin; C1: electronics box above the flood level",
+    "name": "Rev D 1.5 m solar-sail drone",
+    "revision": "D", "revision_note": "Rev D (12 Nov 2026): Rev C5 plus a limp-home controller, potted electronics, RockBLOCK Plus in the hatch lid, main GPS to the stern post. From Rev C: C5: wing 0.80 x 0.375 m (same area), 11 Nov 2026; C4: acetal mast bearings; C3: structural review changes (YB3 to the foredeck, fibreglass post and counterweight arm, servo-savers, 30 x 22 spar), 11 Nov 2026; C2: hardwood keel fin; C1: electronics box above the flood level",
     # Structural failures in knockdowns, from the strike simulation (docs/Structural_Review.md, drone_sim/structure_tables.json).
     # parts: which set of parts (C2 = before the review, C3 = with its changes). breakers: "measured" (strikes matched to
     # drifting-buoy accelerations, docs/Research_Review.md; the default), or the older "gentle" / "central" slam-model sets. None = off.
@@ -25,7 +25,7 @@ DEFAULT = {
         # box. A leak can only fill the free space left in the dry bay, so it can no longer swamp the boat.
         "flood_limit_kg": 3.0,
         # Rev C1 (11 Nov 2026): electronics box on a shelf 70 mm above the sump, glands on top. Water in the bay multiplies
-        # the electronics hazard by this (Rev B and Rev C: 6). C1-C5: 2. Rev C6: 1.3 with every board coated and the
+        # the electronics hazard by this (Rev B and Rev C: 6). C1-C5: 2. Rev D: 1.3 with every board coated and the
         # sensors, power boards and joints potted (docs/Potting_Spec.md). Both are GUESSES until Field Test J is done.
         "wet_electronics_factor": 1.3,
     },
@@ -65,7 +65,7 @@ DEFAULT = {
     },
     "equipment": {   # point masses: [kg, x, y, z]
         "battery": [2.0, 0.87, 0.0, 0.10],
-        "electronics_box": [1.18, 1.10, 0.0, 0.163],        # Rev C: no backup D-cell. C1: raised onto a shelf (was z 0.10). C6: modem out, potting in (was 1.1)
+        "electronics_box": [1.18, 1.10, 0.0, 0.163],        # Rev C: no backup D-cell. C1: raised onto a shelf (was z 0.10). Rev D: modem out, potting in (was 1.1)
         "electronics_shelf": [0.08, 1.10, 0.0, 0.115],      # Rev C1: glassed foam shelf
         "solar_panels": [1.0, 1.06, 0.0, 0.235],
         "mast_tube_and_housing": [0.52, 0.60, 0.0, 0.13],       # Rev C3: longer bearing housing (was 0.45)
@@ -75,10 +75,10 @@ DEFAULT = {
         "battery_box": [0.35, 0.87, 0.0, 0.10],             # Rev C: sealed box with O-ring lid
         "yb3_tracker_and_platform": [0.45, 0.18, 0.0, 0.225],  # Rev C3: in a well in the foredeck (was on the stern post, x 1.53, z 0.48); +0.05 for the well's glass  # Rev C: P19 on the stern stub
         "nav_light": [0.06, 1.53, 0.0, 0.60],               # Rev C: all-round white LED on P20
-        "stern_stub_vane_antenna_reflector": [0.85, 1.53, 0.0, 0.42],   # Rev C6: Iridium patch and cable off, main GPS on P05 (was 0.9)
-        "rockblock_plus_in_hatch_lid": [0.48, 0.43, 0.0, 0.225],       # Rev C6: 450 g with its cable, in bowl P23 in the hatch lid
-        "limp_home_controller": [0.22, 0.315, 0.0, 0.17],              # Rev C6: potted unit P21 on the forward bulkhead
-        "limp_home_mux_feed_and_wiring": [0.15, 0.95, 0.0, 0.15],      # Rev C6: mux pod P22, fused 12 V feed, signal cable
+        "stern_stub_vane_antenna_reflector": [0.85, 1.53, 0.0, 0.42],   # Rev D: Iridium patch and cable off, main GPS on P05 (was 0.9)
+        "rockblock_plus_in_hatch_lid": [0.48, 0.43, 0.0, 0.225],       # Rev D: 450 g with its cable, in bowl P23 in the hatch lid
+        "limp_home_controller": [0.22, 0.315, 0.0, 0.17],              # Rev D: potted unit P21 on the forward bulkhead
+        "limp_home_mux_feed_and_wiring": [0.15, 0.95, 0.0, 0.15],      # Rev D: mux pod P22, fused 12 V feed, signal cable
         "keel_box_and_backing": [0.75, 0.745, 0.0, 0.02],      # Rev C2: + fin tenon, two floors and a hull doubler (was 0.5)
         "misc_fittings": [0.6, 0.80, 0.0, 0.12],
     },
@@ -103,11 +103,11 @@ DEFAULT = {
                                         # Measured: Sunfish without sail 2.1%, 4.15 m skiff 4.0% (Breivik et al. 2010)
         "leeway_crosswind": 0.008,      # x U10, side picked at random per voyage (~14 deg divergence)
     },
-    # Limp-home controller (Rev C6, docs/Limp_Home_Spec.md). A separate potted board (ESP32 class) with its own GPS,
+    # Limp-home controller (Rev D, docs/Limp_Home_Spec.md). A separate potted board (ESP32 class) with its own GPS,
     # compass and power feed that takes over the starboard rudder and the tail when the main box dies.
     # speed_factor and rate_factor are GUESSES until Field Test N and the on-water takeover trial.
     "limp_home": {"fitted": True, "speed_factor": 0.85, "rate_factor": 0.5},
-    # Rev C6: multipliers on the scenario's failure rates for coating and potting (docs/Potting_Spec.md). GUESSES:
+    # Rev D: multipliers on the scenario's failure rates for coating and potting (docs/Potting_Spec.md). GUESSES:
     # electronics x0.6 (all boards coated, sensors/power/joints potted), comms_silent x0.5 (encapsulated RockBLOCK Plus).
     "electronics_protection": {"electronics": 0.6, "comms_silent": 0.5},
     "backup_tracker": {                 # independent YB3 (Iridium SBD), docs/Backup_Tracker.md. Own battery, GPS, modem, antenna.
@@ -185,7 +185,7 @@ def load(path):
     "revision" key: they are Rev B designs, so they merge onto Rev B, not Rev C."""
     with open(path, "r", encoding="utf-8") as fh:
         d = json.load(fh)
-    base = DEFAULT if d.get("revision", "B") == "C" else _rev_b()
+    base = DEFAULT if d.get("revision", "B") in ("C", "D") else _rev_b()   # Rev C files merge onto Rev D, then lose the D-only items below
     eq = d.get("equipment")
     if eq is not None:                # a full equipment list replaces the base list (no newer items sneak in)
         base = copy.deepcopy(base); base["equipment"] = {}
@@ -194,9 +194,9 @@ def load(path):
         out["structure"] = None
     elif isinstance(d["structure"], dict) and "wing_shape_factor" not in d["structure"]:
         out["structure"]["wing_shape_factor"] = 1.0      # files saved before Rev C5 have the 1.0 m wing
-    if "limp_home" not in d:          # files saved before Rev C6: no limp-home controller
+    if "limp_home" not in d:          # files saved before Rev D: no limp-home controller
         out["limp_home"] = dict(out["limp_home"], fitted=False)
-    if "electronics_protection" not in d:   # files saved before Rev C6: no coating/potting credit
+    if "electronics_protection" not in d:   # files saved before Rev D: no coating/potting credit
         out["electronics_protection"] = {}
     return out
 

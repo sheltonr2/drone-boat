@@ -1,4 +1,4 @@
-SOLAR-SAIL OCEAN DRONE 1.5 m  -  BUILD FILES (Rev C6, 2026-11-12)
+SOLAR-SAIL OCEAN DRONE 1.5 m  -  BUILD FILES (Rev D, 2026-11-12)
 
 Drawings.pdf                 22 tabloid sheets (11 x 17 in): general arrangement, hull lines + offsets,
                              interior, keel + bulb, twin rudders, wing + tail, mast/stub, hatch,
@@ -79,7 +79,7 @@ Rev C5 (2026-11-11)
   New template T15 (print it again). Wing core: two 400 mm blocks. Counterweight about 0.85 kg.
   Sheets with real changes: D00, D01, D06. No printed part changed.
 
-Rev C6 (2026-11-12)
+Rev D (2026-11-12)   [drafted as C6; a new letter because it adds a system: see docs/Revisions.md]
   After docs/Electronics_Review.md: a limp-home controller, coating and potting, and the encapsulated modem.
   1. Limp-home controller in potted case P21 on the aft face of bulkhead x 300 (own ESP32, GPS, BNO085 heading,
      fused 12 V feed). Takes the starboard rudder and the tail through switchover pod P22 (bulkhead x 1260) if the
@@ -90,3 +90,6 @@ Rev C6 (2026-11-12)
   4. Every board coated; sensors, power boards and joints potted after the shakedown. docs/Potting_Spec.md.
   About 27.8 kg, DWL z 104. Sheets with real changes: D00, D01, D03, D07, D08, and new parts sheets D20, D21.
   New STL: P21_limp_home_case, P22_switchover_pod, P23_rockblock_plus_bowl. P05 notes changed (same part).
+
+Revision convention (docs/Revisions.md): a new letter when a system is added or removed, the way parts connect
+changes, or a set is frozen for building; numbered sub-revisions (D1, D2...) for part fixes within a letter.

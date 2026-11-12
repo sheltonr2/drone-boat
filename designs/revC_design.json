@@ -1,7 +1,7 @@
 {
   "name": "Rev C 1.5 m solar-sail drone",
   "revision": "C",
-  "revision_note": "C6: limp-home controller, potted electronics, RockBLOCK Plus in the hatch lid, main GPS to the stern post, 12 Nov 2026; C5: wing 0.80 x 0.375 m (same area), 11 Nov 2026; C4: acetal mast bearings; C3: structural review changes (YB3 to the foredeck, fibreglass post and counterweight arm, servo-savers, 30 x 22 spar), 11 Nov 2026; C2: hardwood keel fin; C1: electronics box above the flood level",
+  "revision_note": "C5: wing 0.80 x 0.375 m (same area), 11 Nov 2026; C4: acetal mast bearings; C3: structural review changes (YB3 to the foredeck, fibreglass post and counterweight arm, servo-savers, 30 x 22 spar), 11 Nov 2026; C2: hardwood keel fin; C1: electronics box above the flood level",
   "structure": {
     "parts": "C3",
     "breakers": "measured",
@@ -21,7 +21,7 @@
     "laminate_kg_m2": 1.6,
     "stl": null,
     "flood_limit_kg": 3.0,
-    "wet_electronics_factor": 1.3
+    "wet_electronics_factor": 2.0
   },
   "keel": {
     "x_le_root": 0.657,
@@ -93,7 +93,7 @@
       0.1
     ],
     "electronics_box": [
-      1.18,
+      1.1,
       1.1,
       0.0,
       0.163
@@ -153,28 +153,10 @@
       0.6
     ],
     "stern_stub_vane_antenna_reflector": [
-      0.85,
+      0.9,
       1.53,
       0.0,
       0.42
-    ],
-    "rockblock_plus_in_hatch_lid": [
-      0.48,
-      0.43,
-      0.0,
-      0.225
-    ],
-    "limp_home_controller": [
-      0.22,
-      0.315,
-      0.0,
-      0.17
-    ],
-    "limp_home_mux_feed_and_wiring": [
-      0.15,
-      0.95,
-      0.0,
-      0.15
     ],
     "keel_box_and_backing": [
       0.75,
@@ -218,15 +200,6 @@
   "drift": {
     "leeway_downwind": 0.033,
     "leeway_crosswind": 0.008
-  },
-  "limp_home": {
-    "fitted": true,
-    "speed_factor": 0.85,
-    "rate_factor": 0.5
-  },
-  "electronics_protection": {
-    "electronics": 0.6,
-    "comms_silent": 0.5
   },
   "backup_tracker": {
     "fitted": true,
