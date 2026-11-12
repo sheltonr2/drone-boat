@@ -2,6 +2,12 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-12, 13:55 UTC (08:55 local): daily check-in
+
+- John on #50: their 15% vs our 48% is scoring. Their finish = Microtransat rule (within 25 km of 39.5N 13.5W; landfall doesn't count; >10 days silent DQ), 150-day cutoff, launches 1 Apr-30 Jun 2015-2019. Offered to re-score C5 our way. Reply drafted in collab/draft_50_rescore.md (accepts the offer; notes our corrected median is 121 days). Not posted: needs Randolph's approval.
+- Old check-in items: both logs (drift 2024, C1 compare) were analysed on 11 Nov; verbose batch files are on the PC. Still open: severity-scaled knockdown damage, stormcheck on real-weather tracks.
+- Queue: 004b limp run in progress since 06:57.
+
 ## 2026-11-12, 11:45 UTC (06:45 local): PC back after a Windows update reboot; first corrected results
 
 - PC rebooted overnight (Windows update) during 004 run_limp_2023.bat (started 23:17, lost). 002 and 003 finished before it. Cleared the stale lock (queue/unlock.run) and requeued 004 as 004b; 005, 006, 007 still queued.
