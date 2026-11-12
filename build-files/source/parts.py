@@ -95,7 +95,7 @@ def p04():
 # ------------------------------------------------------------ stern stub
 @part("P05", "Antenna platform clamp", 1, "ASA",
       ["Clamps to the 20 mm stub tube at 560 mm above the hull bottom.",
-       "Platform face printed on the bed; the D42 x 1.5 pocket takes a steel fender washer for the magnet-mount patch antenna.",
+       "Rev C6: carries the main GPS + compass (Holybro Micro M10, potted in soft silicone, patch up), not the Iridium patch (the RockBLOCK Plus has its own). Bond it in the D42 pocket; no steel washer near the compass.",
        "Squeeze slot closed with an M4 bolt (D4.3 hole) through the ears."],
       {"Platform": "80 x 64 x 5", "Collar": "OD32, ID20.3 x 25"})
 def p05():
@@ -366,6 +366,65 @@ def p20():
     bolt = hole_y(2.15, -8, 8, -23, 10)
     return diff(solid, bore, pocket, cable, groove, slit, bolt), ((-31, 64), (-19, 19), (0, 20))
 
+# ---------------------------------------------------------------- Rev C6 electronics
+@part("P21", "Limp-home controller case (potting shell)", 1, "PETG, 4 walls, 100% infill on the back",
+      ["Rev C6 (docs/Limp_Home_Spec.md). Bond the back to the aft face of",
+       "bulkhead x 300, top edge 10 mm under the deck, clear of the hatch opening.",
+       "Print back-down. ESP32, 6 V regulator, opto-isolators and supervisor",
+       "on the floor; GPS and BNO085 face-up on the shelf under the top wall.",
+       "Pot in two pours: soft silicone round the GPS and BNO085, then",
+       "urethane to the rim. Cables out through the D8 holes (drip loop).",
+       "Pot only after Bench Test N. Updates over Wi-Fi: no connector inside."],
+      {"Case": "96 x 66 x 30", "Walls": "2.5 (top 2.0)", "GPS shelf": "38 wide, 12 under the top", "Cable holes": "2 x D8", "Ears": "2 x D5.3"})
+def p21():
+    shell = box(-48, 48, -33, 33, 0, 30)
+    cav = box(-45.5, 45.5, -30.5, 31, 3, 31)
+    shelf = box(-19, 19, 17, 19, 3, 27)
+    ears = box(-62, 62, -8, 8, 0, 3)
+    solid = union(diff(shell, cav), shelf, ears)
+    cables = [hole_y(4, -34, -29, xc, 15) for xc in (-20, 20)]
+    bolts = [cyl(2.65, -1, 4, c1=xc, c2=0) for xc in (-55, 55)]
+    return diff(solid, *cables, *bolts), ((-63, 63), (-34, 34), (0, 30))
+
+@part("P22", "Servo switchover pod (potting shell)", 1, "PETG",
+      ["Rev C6: holds the 4-channel servo multiplexer and two ideal-diode",
+       "boards for the starboard rudder and tail servos. Bond to the forward",
+       "face of bulkhead x 1260, high, beside the servo WetLink.",
+       "Pot to the rim with urethane after Bench Test N.",
+       "Cable holes: main box, limp-home controller, servos."],
+      {"Case": "50 x 40 x 22", "Walls": "2.5", "Cable holes": "3 x D7", "Ears": "2 x D4.3"})
+def p22():
+    shell = box(-25, 25, -20, 20, 0, 22)
+    cav = box(-22.5, 22.5, -17.5, 17.5, 3, 23)
+    ears = box(-34, 34, -7, 7, 0, 3)
+    solid = union(diff(shell, cav), ears)
+    cables = [hole_y(3.5, -21, -16, xc, 12) for xc in (-12, 0, 12)]
+    bolts = [cyl(2.15, -1, 4, c1=xc, c2=0) for xc in (-29, 29)]
+    return diff(solid, *cables, *bolts), ((-35, 35), (-21, 21), (0, 22))
+
+@part("P23", "RockBLOCK Plus bowl (hatch lid)", 1, "ASA, 5 walls, 40% infill",
+      ["Rev C6: seats the RockBLOCK Plus (137 x 40) in the hatch lid, its",
+       "top 2 mm proud of the flange and below z 255 (counterweight pod sweep).",
+       "Cut D146 in the lid (T16); bed the flange in thickened epoxy, then one",
+       "6 oz tape over the flange onto the lid. Print floor-down: the flange",
+       "is chamfered underneath, so no supports.",
+       "Bolt the puck through the four slots into its M5 inserts (check the",
+       "pattern on your unit). M20 IP68 cable gland in the centre hole.",
+       "Soft sealant fillet round the top of the puck: no standing water."],
+      {"Flange": "OD166 x 3, 45 deg chamfer under", "Bowl": "ID141 x 38 deep, wall 2.5", "Floor": "5 thick, D20.5 gland hole", "Bolt slots": "4 x 5.5 wide, r 40-62"})
+def p23():
+    rf = lambda w: np.where(w < 30, 73.0, np.where(w < 40, 73.0 + (w - 30), 83.0))
+    outer = revolve(rf, 0, 43, axis='z')
+    solid = diff(outer, cyl(70.5, 5, 44))
+    gland = cyl(10.25, -1, 6)
+    slots = []
+    for a in np.radians([45, 135, 225, 315]):
+        c, sn = np.cos(a), np.sin(a)
+        pts = capsule_pts(22, 2.75)
+        R = np.c_[pts[:, 0] * c - pts[:, 1] * sn, pts[:, 0] * sn + pts[:, 1] * c] + [51 * c, 51 * sn]
+        slots.append(prism(R, -1, 6))
+    return diff(solid, gland, *slots), ((-84, 84), (-84, 84), (0, 43))
+
 # build list: (file stem, part id, builder kwargs)
 BUILD = [("P01_vane_housing", "P01", {}), ("P02_vane_arm", "P02", {}), ("P03_sensor_cap", "P03", {}),
          ("P04_magnet_holder", "P04", {}), ("P05_antenna_platform", "P05", {}), ("P06_transom_bracket", "P06", {}),
@@ -376,4 +435,5 @@ BUILD = [("P01_vane_housing", "P01", {}), ("P02_vane_arm", "P02", {}), ("P03_sen
          ("P13b_rudder_core_lower", "P13", {"half": "lower"}), ("P14a_bulb_pattern_fwd", "P14", {"half": "fwd"}),
          ("P14b_bulb_pattern_aft", "P14", {"half": "aft"}), ("P15_electronics_tray", "P15", {}),
          ("P16_battery_strap_anchor_x4", "P16", {}), ("P17_penetrator_pad_x4", "P17", {}), ("P18_counterweight_pod", "P18", {}),
-         ("P19_yb3_platform", "P19", {}), ("P20_nav_light_clamp", "P20", {})]
+         ("P19_yb3_platform", "P19", {}), ("P20_nav_light_clamp", "P20", {}),
+         ("P21_limp_home_case", "P21", {}), ("P22_switchover_pod", "P22", {}), ("P23_rockblock_plus_bowl", "P23", {})]

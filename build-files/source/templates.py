@@ -93,8 +93,9 @@ def hatch_template():
     from drawings import hatch_bolts
     return dict(name="T16_hatch", polys=[(rect(l + 2*m, w + 2*m), "LID_OUTLINE", True), (rect(l, w), "DECK_OPENING", True),
                                         (rect(l + 24, w + 24), "ORING_CENTRELINE", True)],
-                circles=[(x, y, 2.75, "BOLT_HOLES_M5") for x, y in hatch_bolts()],
+                circles=[(x, y, 2.75, "BOLT_HOLES_M5") for x, y in hatch_bolts()] + [(0.0, 0.0, D.RBPLUS['bowl_od'] / 2, "LID_CUT_D146_ROCKBLOCK_BOWL")],
                 texts=[(-l/2 + 10, 20, 6, "T16  HATCH: lid, opening, O-ring, 12 x M5", "TEXT"),
+                       (-30, -60, 4, "C6: cut the D146 circle in the LID only (bowl P23)", "TEXT"),
                        (-l/2 + 10, 10, 4, "x along the boat (bow to the left).", "TEXT")],
                 desc="Hatch lid, opening and bolt pattern")
 

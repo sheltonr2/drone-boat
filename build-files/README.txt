@@ -1,6 +1,6 @@
-SOLAR-SAIL OCEAN DRONE 1.5 m  -  BUILD FILES (Rev C5, 2026-11-11)
+SOLAR-SAIL OCEAN DRONE 1.5 m  -  BUILD FILES (Rev C6, 2026-11-12)
 
-Drawings.pdf                 20 tabloid sheets (11 x 17 in): general arrangement, hull lines + offsets,
+Drawings.pdf                 22 tabloid sheets (11 x 17 in): general arrangement, hull lines + offsets,
                              interior, keel + bulb, twin rudders, wing + tail, mast/stub, hatch,
                              subdivision + foam fill + labels (D09), and one sheet per pair of printed parts.
 Templates_1to1_Letter.pdf    Full-size cutting templates tiled on US Letter. Print at 100% / Actual size
@@ -10,7 +10,7 @@ Templates_1to1_Letter.pdf    Full-size cutting templates tiled on US Letter. Pri
                              T17 bulkhead x 300, T18 bulkhead x 1260, T19/T20 keel-box floors.
 dxf/                         The same templates as DXF (R12, millimetres) for CNC, laser or a vinyl cutter,
                              plus body_plan_all_stations.dxf.
-stl/                         23 STL files for the 20 printed parts (P01-P20), already in print orientation.
+stl/                         26 STL files for the 23 printed parts (P01-P23), already in print orientation.
                              Files ending _x4 are needed four times; print P11, P12 and P13a/b twice (two rudders).
 source/                      Python that generates everything (design.py holds every master dimension).
                              Change a number there and rerun build_stl.py, drawings.py, templates.py.
@@ -78,3 +78,15 @@ Rev C5 (2026-11-11)
   slaps the wing on the water, about 4% slower. Spar 82 from the leading edge; spar tube 995 long (was 1195).
   New template T15 (print it again). Wing core: two 400 mm blocks. Counterweight about 0.85 kg.
   Sheets with real changes: D00, D01, D06. No printed part changed.
+
+Rev C6 (2026-11-12)
+  After docs/Electronics_Review.md: a limp-home controller, coating and potting, and the encapsulated modem.
+  1. Limp-home controller in potted case P21 on the aft face of bulkhead x 300 (own ESP32, GPS, BNO085 heading,
+     fused 12 V feed). Takes the starboard rudder and the tail through switchover pod P22 (bulkhead x 1260) if the
+     main box's heartbeat stops. docs/Limp_Home_Spec.md. Bench Test N before and after potting.
+  2. RockBLOCK Plus in bowl P23 bonded into a D146 hole in the hatch lid (template T16 shows the cut).
+     The Iridium patch on the stern post and its cable are deleted.
+  3. Main GPS + compass moves to P05 on the stern post (it was in the box, under the aft solar panel).
+  4. Every board coated; sensors, power boards and joints potted after the shakedown. docs/Potting_Spec.md.
+  About 27.8 kg, DWL z 104. Sheets with real changes: D00, D01, D03, D07, D08, and new parts sheets D20, D21.
+  New STL: P21_limp_home_case, P22_switchover_pod, P23_rockblock_plus_bowl. P05 notes changed (same part).

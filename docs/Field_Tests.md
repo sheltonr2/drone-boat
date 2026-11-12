@@ -101,3 +101,20 @@ Any failure resets the 14-day count after the fix. Record the start date and the
 - **Rudder servo-savers (Rev C3):** with the boat ashore, push each blade hard over by hand: the saver must give before the servo is forced, and the tiller must meet its stop block at about 40°.
 - **Mast bearing changeover (Rev C4), on the bench:** with the spar in the housing, hang weights from the spar 0.55 m above the upper bearing, pulling sideways, and turn the spar by hand. It should turn freely on the balls up to about 3 kg and begin to drag on the lands above that. If it drags at 1 kg, the O-rings are too soft or the lands too tight.
 - **Wing free rotation (Rev C4), in Test F:** before and after the shakedown, spin the wing by hand and time how long it takes to stop. It must not have stiffened.
+
+## Additions for Rev C6 (12 Nov 2026)
+
+- **Test N, limp-home switchover, on the bench (before potting, and again after):** wire the main box, the limp-home controller (P21), the switchover pod (P22), all three servos and a bench supply set to 12.8 V. Put an oscilloscope or a cheap logic analyser on the starboard rudder and tail signal lines, and an ammeter in the limp-home feed. `docs/Limp_Home_Spec.md` has the logic.
+  1. **Standby:** heartbeat running. The servos follow the Pixhawk; the backup draws **under 3 mA** at 12.8 V averaged over 10 minutes.
+  2. **Takeover:** stop the heartbeat (unplug it, or command the companion to stop). The backup must take the starboard rudder and tail **at 10 minutes ± 1**, with no servo jump larger than 5° at the switch. The port rudder stays with the Pixhawk.
+  3. **Steering:** turn the bench (or the box with P21 on it) through 90° by hand. The rudder must answer the heading change. Tilt it 30° and check the heading stays within 5°.
+  4. **Main supply dead:** cut the main 6 V servo supply while the backup is in charge. The starboard rudder and tail must keep working on the backup regulator with no reset.
+  5. **Backup dead:** cut the backup's fuse while it is in charge. The mux must hand the servos back to the Pixhawk (FAILMODE jumper) within 1 second.
+  6. **Hand-back:** restore the heartbeat. The backup releases at **30 minutes ± 2** and its draw falls back to standby.
+  7. **Brown-out:** ramp the supply from 12.8 V down to 9 V and back over a minute. Nothing resets except as the supervisor intends; the backup recovers on its own.
+  8. **Soak:** 72 hours of heartbeat on and off at random, logging every switchover. No missed takeover, no false one.
+- **Test N, after potting:** run steps 1, 2, 5 and 6 again, then submerge P21 and P22 1 m deep for 24 hours (`docs/Potting_Spec.md`) and repeat step 2.
+- **Test I (Rev C6):** add a run with the port rudder clamped at 10° to each side and the backup steering on the starboard rudder alone. It must hold the gate course.
+- **Takeover at sea, in Test F:** stop the heartbeat from shore for 2 hours in moderate wind. Compare the speed toward the waypoint on the YB3 and main tracks with the main autopilot's on the same leg. That ratio replaces the simulator's 0.85 guess (`limp_home.speed_factor`).
+- **RockBLOCK Plus (Rev C6):** with the lid fitted and the wing rotating overhead, send 50 reports over a day. At least 45 should get through first time. Then pour a cupful of water over the lid: it must run off, with none standing over the puck.
+- **Test B (Rev C6):** the model now expects about 27.8 kg and GM 0.18 m, trimmed about 0.3° more bow-down than C5.

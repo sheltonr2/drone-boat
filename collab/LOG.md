@@ -2,6 +2,13 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-12, 16:05 UTC (11:05 local): Rev C6 drawn
+
+- Randolph approved drawing the limp-home controller as Rev C6, with potting and the RockBLOCK Plus.
+- Drawn: P21 limp-home case (bulkhead x 300), P22 switchover pod (bulkhead x 1260), P23 RockBLOCK Plus bowl in the hatch lid; main GPS moved to P05 (it sat under the aft solar panel). Sheets D00, D01, D03, D07, D08, D20, D21; T16 lid cut. 27.8 kg, GM 0.182, DWL z 104.
+- New docs: Limp_Home_Spec.md, Potting_Spec.md; Test N in Field_Tests.md; C6 section in Design_RevC.md; parts and budget updated (+~$370, RockBLOCK Plus price not confirmed).
+- Simulator: C6 is the default (limp_home fitted, electronics_protection 0.6/0.5, wet factor 1.3); pre-C6 files keep their behaviour. Copied to the PC; queued 008 run_revC6_2023.bat behind 007. Not shared with John yet.
+
 ## 2026-11-12, 15:25 UTC (10:25 local): limp-home results
 
 - 004b and 005 finished (07:44, 08:43); 006 destinations started 08:47.

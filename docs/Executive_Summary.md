@@ -41,8 +41,10 @@ Everything below is needed for one boat. Prices are approximate US prices from N
 
 | Item | Qty | Approx. size | Approx. USD |
 | --- | --- | --- | --- |
-| [RockBLOCK 9603 Iridium modem](https://www.sparkfun.com/rockblock-9603n-iridium-satcomm-module.html) + tails cable | 1 | small module | 285 |
-| [Ground Control external Iridium patch antenna](https://store.groundcontrol.com/products/external-iridium-patch-antenna) | 1 | 1.8 m cable | 30 |
+| [RockBLOCK Plus](https://www.groundcontrol.com/wp-content/uploads/2026/08/RockBLOCK-Plus-Data-Sheet.pdf) Iridium modem, encapsulated, own antenna (Rev C6; replaces the 9603, tails cable and external antenna) | 1 | 137 × 40 mm, 450 g | \~450 (price not confirmed) |
+| MAX3232-class RS-232 level shifter | 1 | — | 5 |
+| Limp-home controller parts (Rev C6: ESP32-S3, GPS, BNO085, regulator, servo mux, ideal diodes, fuse; docs/Limp_Home_Spec.md) | 1 set | — | 190 |
+| Conformal coating and potting compounds (Rev C6, docs/Potting_Spec.md) | 1 set | — | 40 |
 | [Holybro Pixhawk 6C Mini](https://pyrodrone.com/collections/everything-excluding-dji/products/holybro-pixhawk-6c-mini-model-a-flight-controller-only) (or a cheaper clone) | 1 | — | 80–177 |
 | [Holybro Micro M10 GPS + compass](https://rcdrone.top/products/holybro-micro-m10-gps-module) | 1 | — | 37 |
 | Adafruit Feather ESP32-S3 | 1 | — | 18 |
@@ -115,15 +117,15 @@ Hot-wire foam cutter, oscillating or jig saw, random-orbit sander, drill and bit
 
 ## Budget and running costs
 
-Itemised in full, Rev C comes to about $2,550, plus about $630 for the YB3 backup tracker. That is over the $2,000 target. The trims below the table bring the boat to about $2,290 (about $2,920 with the tracker). Tools you don't already own are extra.
+Itemised in full, Rev C6 comes to about $2,920, plus about $630 for the YB3 backup tracker. Rev C was about $2,550; C6 adds about $370 for the limp-home controller, the encapsulated RockBLOCK Plus and potting, which the simulator rates as the biggest single gain since Rev C. That is well over the $2,000 target. The trims below the table bring the boat to about $2,665 (about $3,295 with the tracker). Tools you don't already own are extra.
 
 | Category | Approx. USD |
 | --- | --- |
-| Electronics and power (Rev C: second rudder servo, nav light; no backup D-cell) | 1,255 |
+| Electronics and power (Rev C: second rudder servo, nav light; no backup D-cell. C6: limp-home, RockBLOCK Plus, potting +$370) | 1,625 |
 | Hardware and fittings (Rev C: twin rudder bushings and stocks, 6806 bearings, 30 mm spar, 2 more WetLinks, trunk seals) | 550 |
 | Build materials (Rev C: XPS hull fill, battery box, 1 kg more lead) | 642 |
 | Lake-test prototype (foam, scrap glass) | 100 |
-| **Total, Rev C** | **\~2,550** |
+| **Total, Rev C6** | **\~2,920** (Rev C: \~2,550) |
 | YB3 backup tracker (decided 9 Nov; hardware, check current price) | +630 |
 
 **Getting to about $2,290 (saves about $255)**
@@ -165,16 +167,16 @@ The top three entries in this table account for most lost ocean robots. That's w
 | **Water getting in** through seals, the hatch or the enclosure | Rev C makes a leak survivable: two bulkheads, the hull foam-filled so 3 L or less can flood, the battery in its own sealed box. Still keep penetrations few, bolt and O-ring the hatch, use leak sensors that trigger safe mode, pressure-test each space and do the 72 h submerged test. |
 | **Steering failure** (rudder or tail servo) | Rev C has two rudders, each with its own servo: either one steers alone. Seal the trunk tops (they go under in a knockdown). Use balanced rudders and oversized bushings. Make sure the wing feathers safely if the tail fails. |
 | **Fouling** by weed, fishing line or barnacles | Sweep back the keel and rudder leading edges and use antifouling paint. (There is no propeller in Rev C.) |
-| **Humidity killing the electronics** | Use desiccant and a humidity sensor, conformal-coat the boards, and pot the connectors. |
+| **Humidity killing the electronics** | Rev C6: every board coated, sensors, power boards and joints potted, modem encapsulated outside the box. Also use desiccant and a humidity sensor. Was: conformal-coat the boards, and pot the connectors. |
 | **Running out of power** in long grey spells | Deep-sleep the electronics. Go to safe mode below 25% (heave-to, report every 12 h). |
 | **Hurricanes** and Gulf Stream storms | Hurricane season runs June to November and peaks mid-August to mid-October. Launch in May so the boat is well east before the peak, watch the National Hurricane Center outlook, and send a new route to steer it away from forecast tracks. Wind against the Gulf Stream builds steep, breaking seas: the simulator gives about 5 times as many knockdowns on this route as from Newfoundland. Keep the ESP32 cutting charging below 2 °C. |
 | **Ship strike, or capture by fishing boats** | Use hi-vis paint and a radar reflector, avoid shipping lanes with geofences, and fit an ID plate with your contact details. |
-| **Software hang** | Use a hardware watchdog and boot into safe mode. The autopilot should keep sailing even if the ESP32 dies. |
+| **Software hang** | Rev C6: a separate potted limp-home controller steers if the main box stops. Use a hardware watchdog and boot into safe mode. The autopilot should keep sailing even if the ESP32 dies. |
 | **Supplier parts not matching the drawings** | Measure servo tab spacing, the AS5600 board, the antenna footprint and the enclosure before printing the mounts. |
 | **Lead casting** | Cast outdoors with a face shield and gloves, and keep the mould bone-dry: steam in a damp mould can make molten lead explode. Never pour lead into a 3D print. |
 | **Legal liability** | An uncrewed roaming vessel is your responsibility. Check US Coast Guard rules for the launch and the rules wherever it lands (Ireland, the UK or France), talk to a marine insurer, and publish the boat's live position. |
 
-**Design numbers not yet verified by testing:** self-righting from 180°, the waterline at about 26.9 kg (z 102 mm), the wave-strike loads (breaker test L), the keel fin and its joint (proof test K), the 3 L free-flood volume, the wing's balance on the spar, and real-world solar output on a 40 cm deck.
+**Design numbers not yet verified by testing:** self-righting from 180°, the waterline at about 27.8 kg (z 104 mm, Rev C6), the limp-home switchover (Test N) and its speed at sea, the wave-strike loads (breaker test L), the keel fin and its joint (proof test K), the 3 L free-flood volume, the wing's balance on the spar, and real-world solar output on a 40 cm deck.
 
 ## Odds of success
 

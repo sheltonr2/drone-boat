@@ -1,0 +1,28 @@
+@echo off
+REM Rev C6 as drawn (12 Nov 2026): limp-home controller, potting and RockBLOCK Plus are now in the design itself.
+REM 250 voyages, 2023 weather, near-coast launch. About 1 hour 20 minutes. docs/Design_RevC.md (C6), docs/Limp_Home_Spec.md
+REM Needs the 2023 bulk weather data already on this PC (run_bulk.bat). Log: ..\collab\run_log_revC6_2023.txt
+cd /d "%~dp0"
+echo ============================================================
+echo  Rev C6 as drawn (250 voyages)
+echo  Should land near the C5 limp-home + electronics study (61%)
+echo  Expected time: about 1 hour 20 minutes. Progress shows below.
+echo  Started %date% %time%
+echo ============================================================
+set PYTHONIOENCODING=utf-8
+set PYTHONUNBUFFERED=1
+set LOG=..\collab\run_log_revC6_2023.txt
+echo Rev C6 as drawn (250 voyages), started %date% %time% > "%LOG%"
+echo.
+echo Rev C6 as drawn (250 voyages)
+echo ==== Rev C6 as drawn (250 voyages) ==== >> "%LOG%"
+.venv\Scripts\python.exe -m drone_sim.cli mc --design ..\designs\revC6_design.json --scenario ..\collab\bulk_mc_2023_10km.json --runs 250 --from 2023-05-01 --to 2023-06-15 --years 2023 --out ..\results\bulk_mc_2023_revC6_10km.json >> "%LOG%" 2>&1
+if exist ..\results\bulk_mc_2023_revC6_10km.json .venv\Scripts\python.exe ..\collab\summarize_mc.py ..\results\bulk_mc_2023_revC6_10km.json >> "%LOG%" 2>&1
+echo.
+echo === DONE %date% %time% >> "%LOG%"
+echo.
+echo ============================================================
+echo  ALL DONE %date% %time%
+echo  Upload this file to Claude:  collab\run_log_revC6_2023.txt
+echo ============================================================
+pause

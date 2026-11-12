@@ -39,7 +39,7 @@
   ],
   "volume_cm3": 43.0,
   "res": 0.35,
-  "sec": 55.5
+  "sec": 45.1
  },
  "P06_transom_bracket": {
   "pid": "P06",
@@ -320,5 +320,47 @@
   "volume_cm3": 57.0,
   "res": 0.45,
   "sec": 46.6
+ },
+ "P21_limp_home_case": {
+  "pid": "P21",
+  "tris": 9800,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   124.0,
+   66.0,
+   30.0
+  ],
+  "volume_cm3": 41.7,
+  "res": 0.35,
+  "sec": 59.3
+ },
+ "P22_switchover_pod": {
+  "pid": "P22",
+  "tris": 5800,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   68.0,
+   40.0,
+   22.0
+  ],
+  "volume_cm3": 14.4,
+  "res": 0.35,
+  "sec": 23.5
+ },
+ "P23_rockblock_plus_bowl": {
+  "pid": "P23",
+  "tris": 12586,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   166.0,
+   166.0,
+   43.0
+  ],
+  "volume_cm3": 160.6,
+  "res": 0.45,
+  "sec": 70.5
  }
 }

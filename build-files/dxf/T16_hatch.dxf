@@ -259,6 +259,16 @@ BOLT_HOLES_M5
 40
 2.750
 0
+CIRCLE
+8
+LID_CUT_D146_ROCKBLOCK_BOWL
+10
+0.000
+20
+0.000
+40
+73.000
+0
 TEXT
 8
 TEXT
@@ -270,6 +280,18 @@ TEXT
 6.00
 1
 T16  HATCH: lid, opening, O-ring, 12 x M5
+0
+TEXT
+8
+TEXT
+10
+-30.000
+20
+-60.000
+40
+4.00
+1
+C6: cut the D146 circle in the LID only (bowl P23)
 0
 TEXT
 8

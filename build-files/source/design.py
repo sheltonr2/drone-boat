@@ -7,8 +7,8 @@ BMAX = 200.0          # max half-beam (400 mm beam)
 X_BMAX = 0.55         # fraction of L where beam is max
 B_TRANSOM = 150.0     # transom half-beam
 DECK_Z = 230.0
-DWL = 102.0           # Rev C3 design waterline at about 26.9 kg all-up (C2: 101 at 26.4; C/C1: 98 at 25.3; Rev B: 90 at about 21 kg)
-MASS_KG = 26.9        # Rev C3 all-up mass, from the simulator mass model
+DWL = 104.0           # Rev C6 design waterline at about 27.8 kg all-up (C3-C5: 102 at 26.9; C2: 101 at 26.4; C/C1: 98 at 25.3; Rev B: 90 at about 21 kg)
+MASS_KG = 27.8        # Rev C6 all-up mass, from the simulator mass model (C3-C5: 26.9)
 SECTION_N = 2.2       # superellipse exponent of the sections (round bilge)
 
 def half_beam(x):
@@ -102,6 +102,11 @@ FOAM_DENSITY = 28e-9                 # kg/mm^3, extruded polystyrene (XPS) block
 FREE_FLOOD_L = 3.0                   # target: floodable volume left in the dry bay after the fitted blocks
 EBOX = dict(x0=980, x1=1220, w=160, h=90, z0=118)   # Rev C1 (11 Nov 2026): box raised on a shelf, bottom at z 118 (was 60), above the flood level
 SUMP = dict(x0=560, x1=770, top_z=45)                # Rev C1: the only open space in the dry bay, at its low point; leak probe here
+# Rev C6 (12 Nov 2026): limp-home controller, servo switchover pod, RockBLOCK Plus in the hatch lid (docs/Limp_Home_Spec.md)
+LHC = dict(x0=302, x1=332, w=96, z0=150, z1=216)      # P21 on the aft face of bulkhead x 300, beside the hatch opening (x 330-530)
+MUXPOD = dict(x0=1236, x1=1258, y=-60, w=50, z0=150, z1=190)   # P22 on the forward face of bulkhead x 1260, starboard
+RBPLUS = dict(x=430.0, dia=137, h=40, bowl_od=146, flange_od=166, depth=38)   # P23 in the hatch lid; puck top 2 proud of the flange
+LIMP_RUDDER_Y = -100.0                               # the starboard rudder (y to port) is the one the limp-home controller can drive
 
 def hull_z_at(x, y):
     """Height of the outside hull surface at station x, distance y off the centreline (bottom half)."""

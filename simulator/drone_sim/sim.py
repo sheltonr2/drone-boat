@@ -89,7 +89,10 @@ class Voyage:
 
     def rate(self, name):
         f = self.fr[name]
-        return f["per_day"] if (self.fail_on and f.get("enabled", True)) else 0.0
+        if not (self.fail_on and f.get("enabled", True)):
+            return 0.0
+        m = (self.d.get("electronics_protection") or {}).get(name, 1.0)   # Rev C6 coating/potting credit
+        return f["per_day"] * m
 
     # -------------------------------------------------------------- run
     def run(self):

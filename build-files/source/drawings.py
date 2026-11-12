@@ -87,7 +87,10 @@ def sheet_cover(pdf, index):
         "Rev C4 (2026-11-11), after the research review (docs/Research_Review.md): mast bearings are acetal (Delrin-type) with glass balls, floating on O-rings, with",
         "   plain catcher lands in P07 for wave loads, and a V-ring seal on the spar (D07, P07). Notes added: fin glue-up and rod bedding (D04), rudder trunks (D05).",
         "   ALL printed parts that see sun or sea: 2 coats of epoxy, then paint. Antifouling: 3 coats of ablative copper paint on hull, fin, bulb and rudders.",
-        f"Rev C5 (2026-11-11): wing 800 x 375 (was 1000 x 300), same area, spar 995 long, after docs/Wing_Shape_Study.md (D01, D06, T15). {D.MASS_KG:.1f} kg, DWL z {D.DWL:.0f}."], fs=5.4, lh=3.05)
+        "Rev C5 (2026-11-11): wing 800 x 375 (was 1000 x 300), same area, spar 995 long, after docs/Wing_Shape_Study.md (D01, D06, T15).",
+        "Rev C6 (2026-11-12), after docs/Electronics_Review.md: limp-home controller P21 with its own GPS, compass and fused feed takes the starboard rudder and the tail",
+        "   through switchover pod P22 if the main box dies; RockBLOCK Plus in bowl P23 in the hatch lid; main GPS to P05; every board coated, sensors,",
+        f"   power boards and joints potted (D01, D03, D07, D08; docs/Limp_Home_Spec.md, docs/Potting_Spec.md). {D.MASS_KG:.1f} kg, DWL z {D.DWL:.0f}."], fs=5.4, lh=3.05)
     pdf.savefig(fig); plt.close(fig)
 
 # ------------------------------------------------------------------ D01 general arrangement
@@ -145,7 +148,7 @@ def sheet_ga(pdf):
     leader(ax, (te, 900), (1000, 1000), "Rigid wing sail\nNACA 0015  (D06)")
     leader(ax, (1250, 450), (1150, 760), "Tail flap on servo  (D06)")
     leader(ax, (S['x'], 400), (1250, 600), "Radar reflector")
-    leader(ax, (S['x'] + 160, D.VANE_Z + 40), (1300, 1100), "Wind vane P01-P04\nantenna platform P05\non 20 mm stub  (D07)")
+    leader(ax, (S['x'] + 160, D.VANE_Z + 40), (1300, 1100), "Wind vane P01-P04, main\nGPS on P05 (C6)\non 20 mm stub  (D07)")
     leader(ax, (D.MAST_X, 200), (250, 520), "2 in. PVC mast tube +\nbearing housing P07  (D07)")
     leader(ax, (px, C['pod_bot_z'] + C['pod_h']), (120, 760), "Counterweight pod P18\non 300 mm arm  (D06)")
     ax.text(820, 150, "solar", fontsize=5, color=BLUE)
@@ -266,7 +269,9 @@ def sheet_interior(pdf):
     # dry spaces cut out of the foam (white)
     for (x0, z0, w, h) in [(D.MAST_X - MT['od']/2, kz, MT['od'], MT['top_z'] - kz), (BB['x0'], BB['z0'], BB['x1'] - BB['x0'], BB['z1'] - BB['z0']),
                            (E['x0'] - 8, E['z0'] - 6, E['x1'] - E['x0'] + 16, E['h'] + 14), (D.SUMP['x0'], 11, D.SUMP['x1'] - D.SUMP['x0'], D.SUMP['top_z'] - 11), (D.KEELBOX['x0'], 0, D.KEELBOX['x1'] - D.KEELBOX['x0'], 84), (330, 160, 200, 59),
-                           (1295, 112, 70, 64), (R['stock_x'] - 14, 76, 28, 104)]:
+                           (1295, 112, 70, 64), (R['stock_x'] - 14, 76, 28, 104),
+                           (D.LHC['x0'], D.LHC['z0'] - 4, D.LHC['x1'] - D.LHC['x0'] + 2, D.LHC['z1'] - D.LHC['z0'] + 4),
+                           (D.MUXPOD['x0'] - 2, D.MUXPOD['z0'] - 4, D.MUXPOD['x1'] - D.MUXPOD['x0'] + 2, D.MUXPOD['z1'] - D.MUXPOD['z0'] + 4)]:
         ax.add_patch(Rectangle((x0, z0), w, h, fc="white", ec="none"))
     for xb in D.BULKHEADS:
         ax.plot([xb, xb], [float(D.keel_z(xb)) + 11, float(D.deck_z(xb)) - 11], color=INK, lw=1.4)
@@ -294,6 +299,14 @@ def sheet_interior(pdf):
     ax.add_patch(Rectangle((1300, 120), 60, 48, fc="#eee", ec=INK, lw=THIN))
     ax.add_patch(Rectangle((1380, 180), 50, 16, fc=INK))
     ax.add_patch(Rectangle((330, 230), 200, 8, fill=False, lw=MED))
+    LH, MX, RB = D.LHC, D.MUXPOD, D.RBPLUS
+    ax.add_patch(Rectangle((LH['x0'], LH['z0']), 30, LH['z1'] - LH['z0'], fc="#f2d7d0", ec=INK, lw=MED))
+    ax.add_patch(Rectangle((MX['x0'], MX['z0']), MX['x1'] - MX['x0'], MX['z1'] - MX['z0'], fc="#f2d7d0", ec=INK, lw=MED))
+    ax.add_patch(Rectangle((RB['x'] - RB['bowl_od']/2, 238 - RB['depth']), RB['bowl_od'], RB['depth'], fill=False, lw=THIN))
+    ax.add_patch(Rectangle((RB['x'] - RB['dia']/2, 238 - RB['depth'] + 2), RB['dia'], RB['h'], fc="#cfd8e3", ec=INK, lw=MED))
+    leader(ax, (LH['x0'] + 15, LH['z0']), (20, 122), "C6: limp-home controller P21\n(own GPS, compass, fused feed)", ha="left")
+    leader(ax, (RB['x'] - 40, 236), (60, 336), "C6: RockBLOCK Plus in bowl P23 in the hatch lid", ha="left")
+    leader(ax, (MX['x0'] + 10, MX['z1']), (1290, 300), "C6: switchover pod P22", ha="left")
     for xp in (560, 1000, 1330):
         zp = float(D.keel_z(xp)) + 14 if xp < b1 else 116
         ax.add_patch(Circle((xp, zp), 5, fc=BLUE, ec=BLUE))
@@ -301,7 +314,7 @@ def sheet_interior(pdf):
     leader(ax, (D.MAST_X, 135), (200, 70), "6-wire capsule slip ring\n(tail servo power + signal)")
     leader(ax, (700, 20), (600, -25), "C2: keel box takes the fin tenon (60 deep), 2 x M10 rods,\nG10 plate on top; ply floors at x 650 and x 800 (D04)", ha="right")
     leader(ax, (870, 210), (830, 258), "Sealed battery box (O-ring lid, removable), strapped down on P16")
-    leader(ax, (1100, 190), (1060, 318), "IP68 box: Pixhawk, ESP32, RockBLOCK, GPS, GV-5 MPPT (tray P15)")
+    leader(ax, (1100, 190), (1060, 318), "IP68 box: Pixhawk, ESP32, GV-5 MPPT (tray P15); C6: boards coated")
     leader(ax, (R['stock_x'], 120), (1500, 30), "Twin rudder trunks (x2,\n100 off centre), top z 175")
     leader(ax, (1330, 168), (1180, 40), "Servos P12 + tillers P11 (x2)\nin pockets in the aft foam")
     leader(ax, (150, 120), (20, 258), "Foam-filled, sealed (no fittings)", ha="left")
@@ -335,12 +348,19 @@ def sheet_interior(pdf):
     ax2.text(1260, 160, "servo cables through a\nWetLink in bulkhead 1260", fontsize=4.8, color=BLUE, ha="center")
     ax2.text(700, -70, "cable to slip ring", fontsize=5, color=BLUE)
     ax2.text(430, 0, "hatch\naccess", fontsize=5, ha="center", va="center")
+    ax2.add_patch(Rectangle((LH['x0'], -LH['w']/2), LH['x1'] - LH['x0'], LH['w'], fc="#f2d7d0", ec=INK, lw=MED))
+    ax2.add_patch(Rectangle((MX['x0'], MX['y'] - MX['w']/2), MX['x1'] - MX['x0'], MX['w'], fc="#f2d7d0", ec=INK, lw=MED))
+    ax2.add_patch(Circle((RB['x'], 0), RB['dia']/2, fill=False, lw=THIN, ls="--"))
+    ax2.plot([LH['x1'], 700, 1100, MX['x0']], [-40, -95, -95, MX['y']], color="#b0413e", lw=0.5, ls="--")
+    ax2.plot([BB['x0'], 700, LH['x1']], [-BB['w']/2, -85, -30], color="#b0413e", lw=0.5, ls=":")
+    ax2.text(820, -120, "C6: limp-home signal cable (dashed) and fused 12 V feed from the battery box (dotted), starboard side", fontsize=4.6, color="#b0413e", ha="center")
     vf, vm, va = D.inner_volume(0, b0), D.inner_volume(b0, b1), D.inner_volume(b1, D.L)
     notes(bg, 15, 37 + 22, "Systems notes (Rev C)", [
         f"Inside volume: forward {vf:.1f} L (solid foam), dry bay {vm:.1f} L, aft {va:.1f} L (foam except the rudder trunks and servo pockets). XPS blocks at about 28 kg/m3, about 1.6 kg in all.",
         f"Fitted, removable blocks fill the dry bay around the boxes: aim for no more than {D.FREE_FLOOD_L:.0f} L of open space, so a leak can't add more than about 3 kg of water (12% of displacement). See D09.",
-        f"Masses (approx, kg): hull + deck 4.5, bulkheads 0.2, foam 1.6, fin 2.1, bulb 9.2, rudders 1.0, servos + trunks 0.5, rig 2.7, battery + box 2.35, electronics 1.1, solar 1.0, post items 1.0, YB3 + cradle 0.4, keel box + floors 0.4, misc 0.4 -> about {D.MASS_KG:.1f} kg.",
-        "C3: the hull bottom over the sump (x 560-770) has no foam behind it: give it a second ply of 6 oz inside."], fs=5.8, lh=3.5)
+        f"Masses (approx, kg): hull + deck 4.5, bulkheads 0.2, foam 1.6, fin 2.1, bulb 9.2, rudders 1.0, servos + trunks 0.5, rig 2.7, battery + box 2.35, electronics 1.2, C6 limp-home + RockBLOCK Plus + wiring 0.85, solar 1.0, post items 0.95, YB3 0.45, keel box + floors 0.75, misc 0.6 -> about {D.MASS_KG:.1f} kg.",
+        "C3: the hull bottom over the sump (x 560-770) has no foam behind it: give it a second ply of 6 oz inside.",
+        "C6: trim the fitted foam blocks round P21, P22 and the P23 bowl; the bowl leaves with the lid. Limp-home wiring and logic: docs/Limp_Home_Spec.md."], fs=5.8, lh=3.5)
     pdf.savefig(fig); plt.close(fig)
 
 # ------------------------------------------------------------------ D04 keel
@@ -639,7 +659,7 @@ def sheet_mast(pdf):
     ax2.add_patch(Polygon([[S['x'], 330], [S['x'] + 70, 400], [S['x'], 470], [S['x'] - 70, 400]], fill=False, lw=THIN))
     dim(ax2, (1690, S['bot_z']), (1690, S['top_z']), 0, "stub 500")
     leader(ax2, (D.L + 22, 170), (1600, 150), "Transom bracket P06")
-    leader(ax2, (S['x'] + 50, D.ANT_Z + 6), (1620, 520), "Iridium patch on P05")
+    leader(ax2, (S['x'] + 50, D.ANT_Z + 6), (1620, 520), "C6: main GPS + compass on P05")
     leader(ax2, (S['x'], D.VANE_Z - 15), (1600, 600), "Sensor cap P03")
     leader(ax2, (S['x'] + 20, D.VANE_Z + 30), (1630, 690), "Housing P01, arm P02")
     leader(ax2, (S['x'] + 50, 400), (1610, 380), "Davis 151 radar reflector")
@@ -671,7 +691,8 @@ def sheet_mast(pdf):
         "Vane shaft: 8 mm 316, 75 long, 2 x S608-2RS bearings.",
         "",
         "On the post, bottom to top: radar reflector (z 330-470),",
-        "Iridium patch P05 (z 560), light P20 (z 600), vane (z 650).",
+        "main GPS on P05 (z 560; C6, was the Iridium patch), light P20",
+        "(z 600), vane (z 650).",
         "",
         "YB3 (C3): in a glassed well in the foredeck, 176 x 106 x 38",
         f"deep, centred at x {D.YB3['x']:.0f}, cut into the solid bow foam, with a",
@@ -696,20 +717,31 @@ def sheet_deck(pdf):
     dim(ax, (l/2 + m + 10, -w/2 - m), (l/2 + m + 10, w/2 + m), 0, f"{w + 2*m:.0f}")
     dim(ax, (-l/2, -w/2 - m - 10), (l/2, -w/2 - m - 10), 0, f"opening {l:.0f}")
     dim(ax, (-l/2 - m - 10, -w/2), (-l/2 - m - 10, w/2), 0, f"{w:.0f}")
-    ax.text(0, 0, "lid: 4 mm G10 or\n3 x 6 oz glass over\n6 mm foam", fontsize=5.5, ha="center", va="center")
+    RB = D.RBPLUS
+    ax.add_patch(Circle((0, 0), RB['flange_od']/2, fill=False, lw=THIN))
+    ax.add_patch(Circle((0, 0), RB['bowl_od']/2, fill=False, lw=MED))
+    ax.add_patch(Circle((0, 0), RB['dia']/2, fc="#cfd8e3", ec=INK, lw=THIN))
+    ax.add_patch(Circle((0, 0), 10.25, fill=False, lw=THIN, ls="--"))
+    ax.text(0, 30, "C6: RockBLOCK Plus\nin bowl P23", fontsize=5.5, ha="center", va="center")
+    dim(ax, (-RB['bowl_od']/2, -18), (RB['bowl_od']/2, -18), 0, f"cut D{RB['bowl_od']:.0f}")
+    ax.text(-l/2 - m, -w/2 - m - 4, "lid: 4 mm G10 or 3 x 6 oz glass over 6 mm foam", fontsize=4.8, ha="left", va="top")
     leader(ax, (l/2 + 12, 0), (150, 60), "O-ring cord 4 mm EPDM\nin a 3 mm deep printed\nor routed groove", color=BLUE)
     notes(bg, 200, 250, "Hatch", [
         "12 x M5 316 bolts into bonded-in M5 inserts (or nuts glassed on a doubler).",
         "Doubler under the deck: 30 mm wide frame of 6 mm foam + 2 x 6 oz glass.",
         "Torque evenly; grease the O-ring with silicone grease; tape the seam for the crossing.",
-        "Template T16 gives the opening, bolt holes and lid outline at 1:1."], fs=6.0, lh=3.6)
+        "Template T16 gives the opening, bolt holes and lid outline at 1:1.",
+        "C6: the RockBLOCK Plus sits in bowl P23 bonded into a D146 hole in the lid, its top 2 mm proud and below z 255",
+        "(counterweight pod sweep). Its cable passes an M20 IP68 gland in the bowl floor to an inline IP68 connector inside:",
+        "unplug it before lifting the lid. Sealant fillet round the puck so no water stands over the antenna.",
+        "The Iridium patch and its cable on the stern post are deleted; the post cable now carries the main GPS (P05)."], fs=6.0, lh=3.6)
     ax2 = view(fig, 200, 110, (-20, 1560), (-220, 220), 7.5, "DECK PENETRATIONS (P17 pads + WetLink)")
     poly(ax2, hull_plan(), lw=MED)
     for P in D.SOLAR:
         ax2.add_patch(Rectangle((P['x0'], -P['w']/2), P['x1'] - P['x0'], P['w'], fc="#cfe0f3", ec=BLUE, lw=THIN))
     ax2.add_patch(Rectangle((H['x0'], -H['w']/2), l, w, fill=False, lw=THIN, ls="--"))
     ax2.add_patch(Circle((D.MAST_X, 0), 30, fill=False, lw=THIN))
-    for (x, y, t) in [(660, -150, "solar 1"), (1090, -150, "solar 2"), (1490, 60, "transom: stub cable")]:
+    for (x, y, t) in [(660, -150, "solar 1"), (1090, -150, "solar 2"), (1490, 60, "transom: stub cable (C6: GPS)"), (430, 0, "C6: gland in P23")]:
         ax2.add_patch(Circle((x, y), 6, fc=INK)); ax2.text(x + 12, y, t, fontsize=5, va="center")
     pdf.savefig(fig); plt.close(fig)
 
