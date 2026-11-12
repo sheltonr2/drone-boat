@@ -2,6 +2,11 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-12, 01:25 UTC (20:25 local): destination study widened to 13
+
+- Randolph asked how the six were chosen and whether others should be simulated. They were a quick latitude sweep, not optimised. Added batch 2 (queue item 007, `run_destinations2_2023.bat`): Bay of Biscay, west of Ireland, Outer Hebrides, Gulf of Cadiz, Morocco, Canaries by the northern arc, Azores (flagged: only if it counts as across). Rationale and exclusions in docs/Destination_Study.md.
+- Scheduled checks: 08:30 interim (first six), 13:45 final (all 13, recommendation, confirmation run). The original 08:30 check could not be deleted (permission denied), so its message was replaced with a "superseded, do nothing" note.
+
 ## 2026-11-12, 01:30 UTC (20:30 local): destination study queued
 
 - Randolph asked for destinations other than Ireland with the highest survival odds across the Atlantic.

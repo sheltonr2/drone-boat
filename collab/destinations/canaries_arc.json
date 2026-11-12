@@ -1,0 +1,25 @@
+{
+ "name": "Destination study: Ocean City (10 km) to Canary Islands by the northern arc (westerlies to 40N 20W, then south with the Portuguese trades)",
+ "provider": "bulk",
+ "start": {
+  "lat": 38.32,
+  "lon": -74.97
+ },
+ "failure_rate_set": "planning",
+ "target": {
+  "lat": 29.0,
+  "lon": -13.4
+ },
+ "waypoints": [
+  [
+   42.0,
+   -48.0
+  ],
+  [
+   40.0,
+   -20.0
+  ]
+ ],
+ "atlantic_islands_count": "no_azores",
+ "africa_landfall_counts": true
+}

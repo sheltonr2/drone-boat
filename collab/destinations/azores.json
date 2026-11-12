@@ -1,0 +1,16 @@
+{
+ "name": "Destination study: Ocean City (10 km) to Azores (Faial) - only if the Azores count as across",
+ "provider": "bulk",
+ "start": {
+  "lat": 38.32,
+  "lon": -74.97
+ },
+ "failure_rate_set": "planning",
+ "target": {
+  "lat": 38.55,
+  "lon": -28.75
+ },
+ "waypoints": [],
+ "atlantic_islands_count": true,
+ "africa_landfall_counts": true
+}

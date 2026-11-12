@@ -1,0 +1,16 @@
+{
+ "name": "Destination study: Ocean City (10 km) to Gulf of Cadiz (between the Algarve and Morocco)",
+ "provider": "bulk",
+ "start": {
+  "lat": 38.32,
+  "lon": -74.97
+ },
+ "failure_rate_set": "planning",
+ "target": {
+  "lat": 36.55,
+  "lon": -6.4
+ },
+ "waypoints": [],
+ "atlantic_islands_count": "no_azores",
+ "africa_landfall_counts": true
+}

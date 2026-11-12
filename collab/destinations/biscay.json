@@ -1,0 +1,21 @@
+{
+ "name": "Destination study: Ocean City (10 km) to Bay of Biscay (Vendee coast, Les Sables-d'Olonne)",
+ "provider": "bulk",
+ "start": {
+  "lat": 38.32,
+  "lon": -74.97
+ },
+ "failure_rate_set": "planning",
+ "target": {
+  "lat": 46.45,
+  "lon": -1.85
+ },
+ "waypoints": [
+  [
+   42.0,
+   -48.0
+  ]
+ ],
+ "atlantic_islands_count": "no_azores",
+ "africa_landfall_counts": true
+}
