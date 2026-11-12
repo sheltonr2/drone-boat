@@ -2,6 +2,10 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-12, 14:50 UTC (09:50 local): re-score reply posted
+
+- Randolph approved; posted on #50 accepting John's offer to re-score C5 our way, with the corrected 121-day median. Removed the posted drafts.
+
 ## 2026-11-12, 13:55 UTC (08:55 local): daily check-in
 
 - John on #50: their 15% vs our 48% is scoring. Their finish = Microtransat rule (within 25 km of 39.5N 13.5W; landfall doesn't count; >10 days silent DQ), 150-day cutoff, launches 1 Apr-30 Jun 2015-2019. Offered to re-score C5 our way. Reply drafted in collab/draft_50_rescore.md (accepts the offer; notes our corrected median is 121 days). Not posted: needs Randolph's approval.
