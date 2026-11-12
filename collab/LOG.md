@@ -2,6 +2,11 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-12, 01:35 UTC (20:35 local): plan and ETAs posted to John
+
+- At Randolph's request, posted the overnight run plan and expected finish times on #50 (six queue items, results post about 03:15; destination ranking Thursday afternoon if Randolph wants it shared). Asked whether they have a view on landfall or regional traffic data.
+- Queue check: 002 running since 19:57, no errors in its log so far.
+
 ## 2026-11-12, 01:25 UTC (20:25 local): destination study widened to 13
 
 - Randolph asked how the six were chosen and whether others should be simulated. They were a quick latitude sweep, not optimised. Added batch 2 (queue item 007, `run_destinations2_2023.bat`): Bay of Biscay, west of Ireland, Outer Hebrides, Gulf of Cadiz, Morocco, Canaries by the northern arc, Azores (flagged: only if it counts as across). Rationale and exclusions in docs/Destination_Study.md.
