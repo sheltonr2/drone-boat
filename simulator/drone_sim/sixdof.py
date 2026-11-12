@@ -21,7 +21,7 @@ water-loaded surfaces make the equations stiff.
 import math, os
 import numpy as np
 from . import geometry as geo
-from .vpp import foil_coeffs, friction_cf, wave_resistance, RHO_W, RHO_A, G
+from .vpp import foil_coeffs, friction_cf, wave_resistance, RHO_W, RHO_A, G, WING_CL_STALL
 
 S = np.diag([-1.0, 1.0, 1.0])     # design frame -> body frame (x flipped)
 
@@ -211,6 +211,7 @@ class SixDOF:
         self._ny0 = np.vstack([self.fs_norm, np.tile([0, 1.0, 0], (nr, 1))])
         self._cd0 = np.r_[np.full(nf, 0.009), np.full(nr, 0.012)]
         self._area = np.r_[self.fs_area, self.rs_area]; self._ar = np.r_[self.fs_ar, self.rs_ar]
+        self._clstall = np.r_[np.zeros(nf), np.where(self.rs_tail, 0.0, WING_CL_STALL)]   # wing panels use the lift-based stall rule
         self._subscale = np.maximum(0.6*np.r_[self.fs_chord, self.rs_chord], 0.03)
 
     def _build_rig_points(self):
@@ -324,7 +325,7 @@ class SixDOF:
         rho = sub*RHO_W + (1 - sub)*RHO_A
         V2 = wx*wx + wy*wy; Vm = np.sqrt(V2) + 1e-9
         alpha = np.arctan2(wy, -wx)
-        cl, cd = foil_coeffs(alpha, ar, self._cd0)
+        cl, cd = foil_coeffs(alpha, ar, self._cd0, cl_stall=self._clstall)
         q = 0.5*rho*V2*area
         ex_, ey_ = wx/Vm, wy/Vm
         px, py = -ey_, ex_
@@ -417,7 +418,7 @@ class SixDOF:
                 flow = math.atan2(aw_b[1], aw_b[0])           # direction the air moves toward (body)
                 best = None
                 for sg in (1, -1):
-                    cl_, cd_ = foil_coeffs(sg*alpha_cmd, self.vpp.ar_wing, 0.012)
+                    cl_, cd_ = foil_coeffs(sg*alpha_cmd, self.vpp.ar_wing, 0.012, cl_stall=WING_CL_STALL)
                     # force in flow axes: drag along flow, lift perpendicular (sign follows the foil model)
                     ex_, ey_ = math.cos(flow), math.sin(flow)
                     gam_t = flow + math.pi + sg*alpha_cmd

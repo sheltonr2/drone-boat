@@ -2,6 +2,16 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-12, 01:00 UTC (19:50 local): simulator angle bug, wing study corrected, electronics review
+
+- Scheduled resume after Randolph's usage reset. Posted update 1 to John (C5 run data, answers on the wing questions).
+- John's team: Habaneros fine (brought in as a precaution). Their -16% was their stall-rule bug (PR #325); our VPP has the same rule.
+- Found: the voyage simulator passed wind angles in DEGREES to the radians polar since the first commit (sim.py hybrid_step and 6-DOF alpha lookup), so every heading sailed at the dead-downwind speed. All results before today are superseded. The wing study script had the same bug (its -4% was dead downwind only). Fixed; Polar now raises on angles > 3.2; polar cache keyed with MODEL_VERSION 2. Wing stall now lift-based (cl_stall 1.03) for the wing only. docs/Simulator_Angle_Bug.md.
+- Corrected wing study: 0.8 x 0.375 m -1.7% average speed, -3% upwind VMG. C5 stands.
+- Electronics review (docs/Electronics_Review.md): board potting not considered before; 83/250 C5 voyages had an electronics failure, ~60 from the dry base rate. Recommended: coat all, pot sensors/power/joints, RockBLOCK Plus, limp-home controller (not drawn).
+- Queued on the PC: 002 run_fixed_compare_2023.bat (C5 vs C0, corrected sim; started 20:xx) and 003 run_electronics_2023.bat (guessed improvement factors).
+- Randolph: tell John he has a Pearson 31-2, deep keel (not wing keel). In update 2.
+
 ## 2026-11-11, 18:30: first Rev C5 run (via the run queue)
 
 - Run queue worked: request picked up 15:32, run finished 18:15 (`collab/queue_log_2026-11-11.txt`).

@@ -1,0 +1,19 @@
+{
+ "name": "Ocean City, ~10 km off the inlet (near-coast launch), to south-west Ireland, bulk real weather, electronics study (potting, conformal coat, RockBLOCK Plus)",
+ "provider": "bulk",
+ "start": {
+  "lat": 38.32,
+  "lon": -74.97
+ },
+ "failure_rate_set": "planning",
+ "failures": {
+  "electronics": {
+   "per_day": 0.0015,
+   "note": "STUDY (12 Nov 2026): planning 0.0025 x0.6 GUESS for conformal coat on all boards, potted sensors/power boards/connectors"
+  },
+  "comms_silent": {
+   "per_day": 0.0006,
+   "note": "STUDY: planning 0.0011 x0.5 GUESS for an encapsulated RockBLOCK Plus outside the box"
+  }
+ }
+}

@@ -1,0 +1,18 @@
+
+old stall rule: C4 -> C5 speed change, study grid -21.9%  John's grid -20.0%  downwind -10.4%
+  wind m/s     50    60    75    90   110   135   150   165
+        3     -28   -26   -23   -21   -18   -15   -12    -7
+        7     -33   -26   -24   -21   -19   -15   -11    -5
+       11     -29   -31   -26   -24   -20   -15   -11    -6
+       15     -40   -31   -32   -27   -19   -13   -10    -5
+  C4 speed kn at 7 m/s: 0.57 0.71 0.88 1.02 1.14 1.16 1.09 0.98
+
+new stall rule: C4 -> C5 speed change, study grid -2.0%  John's grid -2.0%  downwind -0.8%
+  wind m/s     50    60    75    90   110   135   150   165
+        3      -4    -4    -3    -3    -2    -2    -1    -2
+        7      -3    -3    -2    -2    -1    -1    -0    -1
+       11      -4    -3    -2    -2    -1    -1    -0    -1
+       15      -4    -4    -4    -2    -1    -1    -0    -1
+  C4 speed kn at 7 m/s: 0.57 0.71 0.88 1.02 1.14 1.15 1.09 0.98
+C4: old -> new rule, mean change over study grid -0.0%
+C5: old -> new rule, mean change over study grid +26.7%

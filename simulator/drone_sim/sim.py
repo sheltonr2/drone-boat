@@ -50,7 +50,7 @@ def prepare_design(design, cache_dir="cache", log=print):
     boat = geometry.Boat(design)
     stab = boat.stability_summary()
     vp = vppmod.VPP(boat, stab)
-    p = os.path.join(cache_dir, "polars", f"{h}.npz")
+    p = os.path.join(cache_dir, "polars", f"{h}_v{vppmod.MODEL_VERSION}.npz")
     if os.path.exists(p):
         z = np.load(p, allow_pickle=True); pol = {k: z[k] for k in z.files if k != "grid"}
         pol["grid"] = z["grid"].item()
@@ -155,7 +155,7 @@ class Voyage:
             # ---- physics step
             if mode6 and not st["box_dead"]:
                 twa_s = wrap180(twd - st["heading"])
-                pr = self.polar(tws, abs(twa_s), e["hs"], st["df"], ("alpha",))
+                pr = self.polar(tws, math.radians(abs(twa_s)), e["hs"], st["df"], ("alpha",))   # the polar's angle axis is radians
                 decision["alpha_deg"] = math.degrees(pr["alpha"])
                 st["thruster_on"] = bool(decision.get("thruster")) and not st["brownout"]
                 if st["thruster_on"]: st["thrust_h_today"] += dt/3600
@@ -273,7 +273,9 @@ class Voyage:
             return dict(u=math.hypot(dw, cw), v=0.0, heel=180.0 if st["inverted"] else 0.0, alpha=0.0, delta=0.0,
                         ground_included=False)
         keys = ("u_f", "v_f", "phi_f", "delta_f") if feather else ("u", "v", "phi", "delta", "alpha")
-        r = P(envd["tws"], abs(twa_s), envd["hs"], df, keys)
+        # The polar's wind-angle axis is RADIANS. Until 12 Nov 2026 this passed degrees, which the polar clipped to 180 deg:
+        # every heading sailed at the dead-downwind speed (docs/Simulator_Angle_Bug.md).
+        r = P(envd["tws"], math.radians(abs(twa_s)), envd["hs"], df, keys)
         if feather:
             u, v, phi, dl, al = r["u_f"], r["v_f"], r["phi_f"], r["delta_f"], 0.0
         else:

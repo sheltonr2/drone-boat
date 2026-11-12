@@ -21,10 +21,12 @@ base = None
 for span, chord in SHAPES:
     d = D.default_design(); d = copy.deepcopy(d)
     d["wing"].update(span=span, chord=chord, pivot_from_le=round(0.22 * chord, 4))
-    prep = prepare_design(d, cache_dir="/tmp/wingcache", log=lambda m: None)
+    prep = prepare_design(d, cache_dir="/tmp/wingcache_v2", log=lambda m: None)
     pol, boat = prep["polar"], prep["boat"]; st = boat.stability_summary()
-    sp = [np.mean([float(pol(t, a, 0.2 * t, 1.0, ("u",))["u"]) for a in TWA]) * 1.944 for t in TWS]
-    vmg = max(float(pol(7.0, a, 1.4, 1.0, ("u",))["u"]) * np.cos(np.radians(a)) for a in range(40, 80, 5)) * 1.944
+    # wind angles in RADIANS: the polar's angle axis is radians. Before 12 Nov 2026 this passed degrees, which the polar
+    # clipped to 180 deg, so every point was dead downwind (the -4% in the first version of this study came from that).
+    sp = [np.mean([float(pol(t, np.radians(a), 0.2 * t, 1.0, ("u",))["u"]) for a in TWA]) * 1.944 for t in TWS]
+    vmg = max(float(pol(7.0, np.radians(a), 1.4, 1.0, ("u",))["u"]) * np.cos(np.radians(a)) for a in range(40, 80, 5)) * 1.944
     P3, S3 = S.with_options(); S.set_wing(span, chord, P3)
     pk = []
     for b in range(10):

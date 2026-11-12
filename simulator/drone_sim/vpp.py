@@ -14,11 +14,28 @@ RHO_W, RHO_A, G, NU = 1025.0, 1.225, 9.81, 1.19e-6
 
 
 # ----------------------------------------------------------------- foil model
-def foil_coeffs(alpha, ar, cd0=0.009, e=0.85, stall_deg=None):
-    """Lift/drag coefficients over the full +-180 deg range (finite wing, smooth stall)."""
+# Speed-model version: part of the polar cache key, so cached speed tables are rebuilt when the model changes.
+MODEL_VERSION = "2"     # 2 (12 Nov 2026): the wing stalls where its straight-line lift reaches WING_CL_STALL
+WING_CL_STALL = 1.03    # NACA 0015 at the wing's Reynolds number (about 1-2 x 10^5); same value as boat-sim PR #325
+
+
+def foil_coeffs(alpha, ar, cd0=0.009, e=0.85, stall_deg=None, cl_stall=None):
+    """Lift/drag coefficients over the full +-180 deg range (finite wing, smooth stall).
+
+    Stall angle: if cl_stall is given (> 0), the foil stalls where its straight-line lift reaches cl_stall, so a
+    stubbier foil (lower lift slope) stalls at a higher angle, as real low-aspect-ratio wings do. Used for the wing.
+    Otherwise the older rule 10 + 4*min(ar, 6)/6 degrees, kept for the keel and rudders (water, higher Reynolds number).
+    The older rule made a stubbier foil stall sooner, which is backwards (found by John's team, boat-sim #326)."""
     a = np.arctan2(np.sin(alpha), np.cos(alpha))
     slope = 2*np.pi*ar / (2 + np.sqrt(ar**2 + 4))
-    s = np.radians(stall_deg) if stall_deg else np.radians(10 + 4*np.minimum(ar, 6)/6)
+    old = np.radians(10 + 4*np.minimum(ar, 6)/6)
+    if stall_deg:
+        s = np.radians(stall_deg)
+    elif cl_stall is not None:
+        cs = np.asarray(cl_stall, dtype=float)
+        s = np.where(cs > 0, cs/np.maximum(slope, 1e-6), old)
+    else:
+        s = old
     cdmax = 1.11 + 0.018*np.minimum(ar, 20)
     cl_lin = slope*a; cd_lin = cd0 + cl_lin**2/(np.pi*e*ar)
     cl_fp = 0.5*cdmax*np.sin(2*a); cd_fp = cd0 + cdmax*np.sin(a)**2
@@ -118,7 +135,7 @@ class VPP:
         ayh = ay*cphi
         V = np.sqrt(ax**2 + ayh**2) + 1e-9
         ex, ey = ax/V, ayh/V
-        cl, cd = foil_coeffs(alpha, self.ar_wing, cd0=0.012)
+        cl, cd = foil_coeffs(alpha, self.ar_wing, cd0=0.012, cl_stall=WING_CL_STALL)
         q = 0.5*RHO_A*V**2*self.a_wing
         # lift perpendicular to flow, side chosen to drive forward
         p1x, p1y = ey, -ex
@@ -245,6 +262,9 @@ class Polar:
         return i, f
 
     def __call__(self, tws, twa, hs, df, keys=("u", "v", "phi", "delta", "alpha")):
+        """twa in RADIANS (0 to pi). A value above about 3.2 is almost certainly degrees passed by mistake."""
+        if abs(twa) > 3.2:
+            raise ValueError(f"Polar: wind angle {twa!r} looks like degrees; pass radians")
         idx = [self._idx(a, x) for a, x in zip(self.axes, (tws, abs(twa), hs, df))]
         out = {}
         for k in keys:
