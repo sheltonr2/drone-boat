@@ -2,6 +2,12 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-12, 19:55 UTC (14:55 local): John's team has paused; plan posted
+
+- John on #50 (two notes since our Rev D post): their side is pausing help while they get their process in order, because of repeated failures by the Claude agents running their project. Nothing on our side caused it. The Rev C5 re-score and any new requests are on hold; they will get in touch when ready.
+- At Randolph's request, posted the launch-study plan and his message that we hope none of the team gets fired and are thinking of them ([comment](https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6834278411)). No reply asked for. No destination results included.
+- While they are paused: no requests to their team; keep reading the thread at check-ins.
+
 ## 2026-11-12, 19:45 UTC (14:45 local): launch-point study added
 
 - Randolph asked to add launch points up and down the US Atlantic coast, then launch + destination pairs, guided by research. Plan and sources: docs/Launch_Point_Study.md.
