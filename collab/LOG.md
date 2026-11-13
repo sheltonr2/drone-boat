@@ -2,6 +2,13 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-13, 11:25 UTC (06:25 local): commitments to Maya's team done
+
+- Correction: our 05:55 post offered to take the hurricane hazard half and asked for their ERA5 wind correction. Both were already done (our docs/Hurricane_Risk.md of 9 Nov; their #117 ratios, already in storms.ERA5_RATIO). Corrected in the follow-up post. Lesson: check the repo before promising work from a summary.
+- Hurricane update on the 12 launch-study tracks (docs/Hurricane_Risk.md, docs/data/launch_storms.py): exposure ~3x the 9 Nov synthetic estimate (Ocean City May launch 15% within 200 km), because real-weather crossings are slow. Storms cost 0.7-1.5 points per launch point with the grade-D loss model; ranking unchanged; launch date matters more.
+- Bluewater first look (title page, picker, their randolph_rev_c.yaml, 3D source): labels clear; their C5 yaml matches ours; 3D model has the C5 wing but a Rev B bulb (D68) and spar (25 mm); Rev D not in the picker; zero-size-canvas WebGL warnings with our pane hidden; sound flips on at first click. Visual pass of the sailing screen still to do (needs the browser pane on screen).
+- Posted: https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6850834723
+
 ## 2026-11-13, 10:55 UTC (05:55 local): full update to John's team (Maya)
 
 - Their team is back: Maya now leads it and is the main contact; their project is now Bluewater, a browser sailing simulator with our C5, Rev B and the Pearson in it (labelled as their model). They asked for a sync: our two or three current projects, and what we'd want from them. The C5 re-score is still on their list.
