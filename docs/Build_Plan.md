@@ -17,7 +17,7 @@ The plan is a 1.5 m sealed, self-righting sailboat. It sails west to east across
 | Average power draw | Under 1.5 W while sailing |
 | Comms | Iridium SBD, two-way, a report every 1–6 h |
 | Endurance goal | 6+ months, no maintenance |
-| Route | Mid-Atlantic coast (Maryland, Virginia or New Jersey) to Europe, aiming for south-west Ireland; launch in May |
+| Route | Off Hatteras, North Carolina, to Europe, aiming for Cornwall and the Isles of Scilly; launch in May (changed 13 Nov 2026; docs/Launch_Plan.md) |
 
 The launch date is open, so the plan is built around testing gates, not deadlines. A realistic first ocean attempt is May 2028, after a full year of lake and coastal trials. May 2027 is possible only if every trial passes on the first try.
 
@@ -179,7 +179,7 @@ The first Monte Carlo on real weather (250 voyages, 2023) showed what actually e
 
 **Changed: launch from the Mid-Atlantic (Nov 8, 2026)**
 
-The boat now launches about 25 km off the Mid-Atlantic coast (Ocean City, Maryland by default) and aims for south-west Ireland; any landfall in Europe counts. The route rides the Gulf Stream and the North Atlantic Current and passes south of the Grand Banks at 42°N, 48°W. It is about 5,400 km instead of 3,000, and a May launch keeps most of it ahead of peak hurricane season.
+**Plan changed 13 Nov 2026:** the boat launches off Hatteras, North Carolina, and aims for Cornwall and the Isles of Scilly (docs/Launch_Point_Study.md, docs/Launch_Plan.md). The rest of this section describes the earlier Ocean City route and its invented-weather timings, kept for the record. Earlier text: the boat launches about 25 km off the Mid-Atlantic coast (Ocean City, Maryland by default) and aims for south-west Ireland; any landfall in Europe counts. The route rides the Gulf Stream and the North Atlantic Current and passes south of the Grand Banks at 42°N, 48°W. It is about 5,400 km instead of 3,000, and a May launch keeps most of it ahead of peak hurricane season.
 
 | From Ocean City, MD to | Crossing time, no failures (May and June starts) |
 | --- | --- |

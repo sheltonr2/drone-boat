@@ -2,6 +2,14 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-13, 21:25 UTC (16:25 local): plan changed to Hatteras -> Cornwall; Diamond Shoals found; naval review
+
+- Randolph approved the plan change. docs/Launch_Plan.md rewritten; Executive Summary, Build Plan, README, Launch_Point_Study updated. designs/boat-sim files left at the Ocean City drop.
+- While rewriting: the 10 km Hatteras Inlet drop sends ~52% of stage C tracks within 2 km of Diamond Shoals (not in the simulator's coastline); the 45 km charter point 0% within 10 km (docs/data/diamond_shoals_check.py). Drop point made provisional at the 45 km point. Lesson: check the chart at both ends, not only the simulator's map.
+- Simulator: scenario key watch_lines (closest approach reported, voyage unchanged); design study key performance.speed_factor (inert at 1.0). Copied to the PC after checking its files matched the repo.
+- docs/Naval_Review.md: what is covered, ten gaps ranked. Hull stress judged low value (girder factor 13).
+- PC queue: 013 run_plan_baseline.bat started 16:02 (Rev E Hatteras Inlet -> Cornwall, then speed x0.9 and x0.8; 500 voyages each, 2023+2024). 014 run_launch_shoals.bat after it (Rev E -> Cornwall from the 45 km point, a 70 km point east of the shoals, and the inlet with a dog-leg). Both about 1 h 36 min; check at 19:20 local.
+
 ## 2026-11-13, 21:00 UTC (16:00 local): stage C and Rev E results
 
 - Stage C (Rev D, 500 voyages per pair, 2023+2024, same seeds), 13:56–15:30: Hatteras Inlet -> Cornwall 68.4%, Hatteras Inlet -> SW Ireland 64.6%, Ocean City -> SW Ireland 59.2%. Best pair vs current plan +9.2 (+3.8 to +14.8), +9.2 in each year. Launch alone +5.4 (-0.2 to +10.8), destination alone +3.8 (-0.2 to +7.8). Recommendation written in docs/Launch_Point_Study.md for Randolph to decide; other docs unchanged.

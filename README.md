@@ -1,6 +1,6 @@
 # Drone Boat: Solar-Sail Autonomous Ocean Drone
 
-This is a 1.5 m self-righting sailboat with a rigid wing sail, solar power and two-way Iridium satellite commanding. It is designed to cross the North Atlantic from the US Mid-Atlantic coast to Europe (default: off Ocean City, Maryland, aiming for south-west Ireland; any European landfall counts) and then keep roaming, for about $2,300 in hardware plus about $630 for an independent backup tracker. The current design is **Rev C** (10 Nov 2026; [Design_RevC.md](docs/Design_RevC.md)).
+This is a 1.5 m self-righting sailboat with a rigid wing sail, solar power and two-way Iridium satellite commanding. It is designed to cross the North Atlantic from the US Mid-Atlantic coast to Europe (plan since 13 Nov 2026: launched off Hatteras, North Carolina, aiming for Cornwall and the Isles of Scilly; any European landfall counts. See [Launch_Plan.md](docs/Launch_Plan.md)) and then keep roaming, for about $2,300 in hardware plus about $630 for an independent backup tracker. The current design is **Rev C** (10 Nov 2026; [Design_RevC.md](docs/Design_RevC.md)).
 
 ## What's here
 

@@ -195,7 +195,9 @@ Results: `results/2026-11-13_launch_2023_<launch>__<destination>.json`. Logs: `c
 | Launch only: Hatteras Inlet vs Ocean City, both to SW Ireland | +5.4 (−0.2 to +10.8) | +2.8 (−4.8 to +10.0) | +8.0 (+0.4 to +15.6) |
 | Destination only: Cornwall vs SW Ireland, both from Hatteras Inlet | +3.8 (−0.2 to +7.8) | +6.4 (+0.4 to +12.4) | +1.2 (−4.4 to +7.2) |
 
-## Recommendation (13 Nov 2026, for Randolph to decide)
+## Recommendation (13 Nov 2026; adopted by Randolph the same day, with one correction)
+
+**Correction, 13 Nov, after adoption:** the 10 km drop off Hatteras Inlet sends about half the simulated tracks across Diamond Shoals, which the simulator's coastline doesn't hold ([Naval_Review.md](Naval_Review.md)). The provisional drop point is the 45 km charter point ("Hatteras 45 km" in stages A and B), which tied with the inlet on success and stays clear of the shoals. Runs to confirm it on Rev E are queued. The destination half of the recommendation (Cornwall) is unaffected. The text below is as written before the correction.
 
 **Launch 10 km off Hatteras Inlet and aim for Cornwall** (Isles of Scilly / Land's End), instead of 10 km off Ocean City to SW Ireland.
 
@@ -212,7 +214,7 @@ Results: `results/2026-11-13_launch_2023_<launch>__<destination>.json`. Logs: `c
   - A test-season result from the real boat showing it can't hold its course in the Stream's eddies.
   - Real data on fishing-boat pick-ups, which the model only guesses. The Hatteras route crosses fewer grounds, so better data is more likely to strengthen this than reverse it.
   - Cornwall's approaches have heavy shipping; if a ship-strike model is added, rerun the destination half.
-- **Not changed yet:** the plan elsewhere (Executive Summary, Build Plan, Field Test F, boat-sim scenario files) still says Ocean City → SW Ireland until Randolph decides.
+- **Changed 13 Nov:** [Launch_Plan.md](Launch_Plan.md) rewritten for Hatteras → Cornwall; Executive Summary, Build Plan and README updated. The boat-sim files for John's team (`designs/boat-sim/`) still carry the Ocean City drop so the boats there are compared alike.
 
 ## Sources
 

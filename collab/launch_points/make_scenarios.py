@@ -17,6 +17,10 @@ LAUNCH = {
     "virginia_beach":   ("Virginia Beach: 10 km off, south of the Chesapeake Bay mouth", 36.83, -75.85, 10, []),
     "hatteras":         ("Hatteras Inlet, NC: 10 km off", 35.10, -75.72, 10, [[35.0, -74.9]]),
     "hatteras_stream":  ("Hatteras, NC: 45 km off, in the Gulf Stream's inshore edge", 34.95, -75.35, 45, [[35.0, -74.9]]),
+    # 13 Nov: about half the "hatteras" tracks crossed Diamond Shoals, which the coastline file does not hold
+    # (docs/Naval_Review.md). Two ways round: a dog-leg south-east first, or a drop point further out and east.
+    "hatteras_dogleg":  ("Hatteras Inlet, NC: 10 km off, south-east dog-leg round Diamond Shoals", 35.10, -75.72, 10, [[34.80, -75.45], [35.0, -74.9]]),
+    "hatteras_east":    ("Hatteras, NC: 70 km off, in the Gulf Stream east of Diamond Shoals", 35.00, -75.05, 70, []),
     "charleston":       ("Charleston, SC: 10 km off", 32.68, -79.77, 10, STREAM[1:]),
     "canaveral":        ("Cape Canaveral, FL: 10 km off", 28.41, -80.48, 10, STREAM),
     # 13 Nov: the first leg from "canaveral" crossed the cape (8 of 150 aground within a day, nothing broken).
@@ -31,15 +35,22 @@ DEST = {
     "brittany":   ("Brittany (Pointe du Raz)", 48.04, -4.85, []),     # destination study (collab/destinations)
 }
 
+# Diamond Shoals: Cape Point to the end of the Outer Diamond Shoal (approximate; check chart 11555). The simulator
+# reports each voyage's closest approach to this line; it does not change the voyage.
+WATCH = {"diamond_shoals": [[35.22, -75.53], [35.15, -75.41]]}
+
 def scenario(launch, dest):
     ll, la, lo, km, pre = LAUNCH[launch]; dl, dla, dlo, post = DEST[dest]
     return {"name": f"Launch study: {ll} to {dl}", "provider": "bulk", "start": {"lat": la, "lon": lo},
             "failure_rate_set": "planning", "target": {"lat": dla, "lon": dlo},
             "waypoints": [list(w) for w in pre] + [MID] + [list(w) for w in post], "waypoint_rule": "abeam",
-            "atlantic_islands_count": "no_azores", "africa_landfall_counts": True}
+            "atlantic_islands_count": "no_azores", "africa_landfall_counts": True,
+            **({"watch_lines": WATCH} if launch.startswith("hatteras") else {})}
 
 if __name__ == "__main__":
-    for l in LAUNCH:
+    import sys
+    only = sys.argv[1:]                    # optional: launch names to (re)write; default all
+    for l in (only or LAUNCH):
         for d in DEST:
             p = os.path.join(HERE, f"{l}__{d}.json")
             json.dump(scenario(l, d), open(p, "w"), indent=1)

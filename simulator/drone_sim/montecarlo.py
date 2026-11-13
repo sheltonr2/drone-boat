@@ -32,7 +32,8 @@ def _one(args):
                 last_report_day=r.get("last_report_day"), last_fix_day=r.get("last_fix_day"),
                 position_known_at_end=r.get("position_known_at_end"), box_dead=r.get("box_dead"),
                 tracker_ok=r.get("tracker_ok"), tracker_fixes=r.get("tracker_fixes"),
-                knockdowns_by_hs_m=r.get("knockdowns_by_hs_m"))
+                knockdowns_by_hs_m=r.get("knockdowns_by_hs_m"),
+                **({"watch_min_km": r["watch_min_km"]} if r.get("watch_min_km") else {}))
 
 
 def start_times(window, n, rng):

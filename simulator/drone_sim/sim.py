@@ -84,6 +84,10 @@ class Voyage:
         self.struct = load_tables(design)     # structural failures in knockdowns (None = off)
         self.fail_on = sc.get("failures_enabled", True)
         self.cmds = sorted(sc.get("commands", []), key=lambda c: c["t_hours"])
+        # Watch lines (scenario key "watch_lines": {name: [[lat, lon], ...]}): hazards the coastline file does not hold,
+        # such as shoals. The voyage is not changed; the result reports the closest approach to each line in km.
+        self.watch = {k: [tuple(q) for q in v] for k, v in (sc.get("watch_lines") or {}).items()}
+        self.watch_min = {k: 1e9 for k in self.watch}
 
     def event(self, t, kind, msg):
         self.events.append(dict(t=float(t), day=round((t - self.t0)/86400, 3), kind=kind, msg=msg))
@@ -190,6 +194,14 @@ class Voyage:
                 nlat, nlon = st["lat"], st["lon"]
             st.update(stw=res["u"], sog=sog, heel=res["heel"])
             st["distance_km"] += dist/1000
+            for wk, wl in self.watch.items():
+                if abs(nlat - wl[0][0]) < 1.0 and abs(nlon - wl[0][1]) < 1.5:
+                    kx = 111.2*math.cos(math.radians(nlat)); px, py = nlon*kx, nlat*111.2
+                    for (a0, o0), (a1, o1) in zip(wl[:-1], wl[1:]):
+                        x0, y0, x1, y1 = o0*kx, a0*111.2, o1*kx, a1*111.2
+                        tt = max(0.0, min(1.0, ((px - x0)*(x1 - x0) + (py - y0)*(y1 - y0))/max((x1 - x0)**2 + (y1 - y0)**2, 1e-9)))
+                        dd = math.hypot(px - x0 - tt*(x1 - x0), py - y0 - tt*(y1 - y0))
+                        if dd < self.watch_min[wk]: self.watch_min[wk] = dd
             # land / arrival
             if self.land.is_land(nlat, nlon):
                 isle = self.land.atlantic_island(nlat, nlon)
@@ -255,7 +267,8 @@ class Voyage:
             failures=[ev for ev in self.events if ev["kind"] == "failure"],
             events=self.events, series=series, wall_s=round(time.time() - wall0, 1),
             mode=sc["mode"], scenario=sc, design_name=d.get("name"),
-            stats=self._stats(series))
+            stats=self._stats(series),
+            **({"watch_min_km": {k: (round(v, 2) if v < 1e8 else None) for k, v in self.watch_min.items()}} if self.watch else {}))
 
     # -------------------------------------------------------------- hybrid physics
     def hybrid_step(self, st, e, envd, dec, dt, t):
@@ -288,6 +301,9 @@ class Voyage:
             u, v, phi, dl, al = r["u_f"], r["v_f"], r["phi_f"], r["delta_f"], 0.0
         else:
             u, v, phi, dl, al = r["u"], r["v"], r["phi"], r["delta"], r["alpha"]
+        pf = (self.d.get("performance") or {}).get("speed_factor", 1.0)   # study key: the whole polar faster or slower (the VPP is unvalidated until Field Test A)
+        if pf != 1.0:
+            u *= pf
         if st["limp_on"] and not feather:
             u *= (self.d.get("limp_home") or {}).get("speed_factor", 0.85)   # limp-home: fixed wing angle, simple steering
         if st["tail"] == "stuck" and wing_ok:

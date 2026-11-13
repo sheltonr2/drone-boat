@@ -4,7 +4,7 @@ Nov 8, 2026 (updated Nov 10 for Rev C) · @Randolph
 
 ## Bottom line
 
-The plan is a 1.5 m, self-righting autonomous sailboat with a rigid wing sail (design Rev C, 10 Nov 2026: foam-filled hull, twin rudders, 30 mm spar). It reports by Iridium satellite and takes commands from shore, and it is meant to cross the North Atlantic from the Mid-Atlantic coast (Maryland, Virginia or New Jersey) to Europe, aiming for south-west Ireland, then keep roaming.
+The plan is a 1.5 m, self-righting autonomous sailboat with a rigid wing sail (design Rev C, 10 Nov 2026: foam-filled hull, twin rudders, 30 mm spar). It reports by Iridium satellite and takes commands from shore, and it is meant to cross the North Atlantic from off Hatteras, North Carolina, to Europe, aiming for Cornwall and the Isles of Scilly, then keep roaming (plan changed 13 Nov 2026 from Ocean City → south-west Ireland; [Launch_Point_Study.md](Launch_Point_Study.md)).
 
 - **Hardware cost:** about $2,550 for Rev C, or about $2,290 after the trims in the budget section, plus about $630 for the backup tracker (YB3). Rev C adds about $260 over Rev B; there is no thruster. Satellite airtime adds $40–$60 a month, plus the tracker's own airtime.
 - **Build time:** 9–13 months through five test gates. The realistic first ocean launch is May 2028; 2027 is possible only if every gate passes first time.
@@ -160,7 +160,7 @@ There are five phases, and each ends at a gate. Don't move on until the boat pas
    - *Gate:* self-rights from 180° every time, and stays dry inside after 24 h fully submerged.
 4. **Coastal trial (1–2 months).** Spend weeks offshore within recovery range, then recover and inspect it.
    - *Gate:* 3 weeks at sea unattended, with every fail-safe triggered and recovered.
-5. **Ocean launch (May).** Launch it about 10 km (5.5 nm) off Ocean City Inlet, Maryland, from a small boat, on a forecast with at least three days of offshore (westerly) wind. Escort it for the first few hours and recover it if it fails in the first week. After landfall it switches to roaming mode.
+5. **Ocean launch (May).** Launch it off Hatteras, North Carolina, from a Gulf Stream charter boat, about 45 km out on the Stream's inshore edge and clear of Diamond Shoals (drop point provisional; [Launch_Plan.md](Launch_Plan.md)), on a settled forecast with no strong northerly against the Stream. Escort it for the first hour. After landfall it switches to roaming mode.
 
 ## Things to watch out for
 
@@ -178,7 +178,7 @@ The top three entries in this table account for most lost ocean robots. That's w
 | **Software hang** | Rev D: a separate potted limp-home controller steers if the main box stops. Use a hardware watchdog and boot into safe mode. The autopilot should keep sailing even if the ESP32 dies. |
 | **Supplier parts not matching the drawings** | Measure servo tab spacing, the AS5600 board, the antenna footprint and the enclosure before printing the mounts. |
 | **Lead casting** | Cast outdoors with a face shield and gloves, and keep the mould bone-dry: steam in a damp mould can make molten lead explode. Never pour lead into a 3D print. |
-| **Legal liability** | An uncrewed roaming vessel is your responsibility. Check US Coast Guard rules for the launch and the rules wherever it lands (Ireland, the UK or France), talk to a marine insurer, and publish the boat's live position. |
+| **Legal liability** | An uncrewed roaming vessel is your responsibility. Check US Coast Guard rules for the launch and the rules wherever it lands (the UK first: anything recovered there must be reported to the Receiver of Wreck within 28 days; then Ireland or France), talk to a marine insurer, and publish the boat's live position. |
 
 **Design numbers not yet verified by testing:** self-righting from 180°, the waterline at about 28.5 kg (z 106 mm, Rev E), the sealed servos' life (Test P), the pump (Test O), the tail detent (Test Q), the limp-home switchover (Test N) and its speed at sea, the wave-strike loads (breaker test L), the keel fin and its joint (proof test K), the 3 L free-flood volume, the wing's balance on the spar, and real-world solar output on a 40 cm deck.
 
@@ -208,8 +208,8 @@ A first attempt has roughly a 10–20% chance of reaching Europe still sailing a
 - [x] Thruster in version 1, or sail-only? Decided 10 Nov 2026 (Rev C): sail-only, no thruster provision.
 - [ ] Accept going over budget (Rev C about $2,550 plus the YB3), or take the trims to get to about $2,290 plus the YB3?
 - [ ] Lower the battery onto a hull-bonded cooling plate below the waterline? (Recommended.)
-- [ ] Launch site: Ocean City, Maryland (the default), Virginia Beach or Cape May. In the simulator they came out within about two weeks of each other, so choose on access, ship traffic and distance to the Gulf Stream. Decided 10 Nov 2026: launch near the coast (about 10 km off the inlet) to keep the boat trip short, and manage the risk of an early failure drifting ashore with an offshore-wind launch rule, an escort and early recovery ([Launch_Plan.md](Launch_Plan.md)).
-- [ ] Target: south-west Ireland (the default; any European landfall also counts). Brittany or Cornwall take about as long but sit beside the busiest shipping lanes in Europe. Galicia or Portugal take 3–6 weeks longer. Decide too whether a landfall in the Azores counts.
+- [x] Launch site, decided 13 Nov 2026: off Hatteras, North Carolina (+5 points over Ocean City in the launch study; the exact drop point is being settled, see [Naval_Review.md](Naval_Review.md)). Earlier text: Ocean City, Maryland (the default), Virginia Beach or Cape May. In the simulator they came out within about two weeks of each other, so choose on access, ship traffic and distance to the Gulf Stream. Decided 10 Nov 2026: launch near the coast (about 10 km off the inlet) to keep the boat trip short, and manage the risk of an early failure drifting ashore with an offshore-wind launch rule, an escort and early recovery ([Launch_Plan.md](Launch_Plan.md)).
+- [x] Target, decided 13 Nov 2026: Cornwall and the Isles of Scilly (any European landfall also counts). It sits beside busy shipping lanes, which the simulator doesn't model. Earlier text: south-west Ireland (the default). Brittany or Cornwall take about as long but sit beside the busiest shipping lanes in Europe. Galicia or Portugal take 3–6 weeks longer. Decide too whether a landfall in the Azores counts.
 - [ ] Who recovers the boat after the coastal trial, and how?
 
 ## Related documents and sources

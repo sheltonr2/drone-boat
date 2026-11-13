@@ -1,0 +1,3 @@
+2023+2024_hatteras__cornwall 500 voyages; closest approach to the shoal line under 2 km: 52%, under 5 km: 64%, under 10 km: 81%
+2023+2024_hatteras__ireland_sw 500 voyages; closest approach to the shoal line under 2 km: 52%, under 5 km: 65%, under 10 km: 81%
+2023_hatteras_stream__cornwall 150 voyages; closest approach to the shoal line under 2 km: 0%, under 5 km: 0%, under 10 km: 0%
