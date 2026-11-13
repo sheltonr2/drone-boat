@@ -98,7 +98,50 @@ These are expectations, not results.
 
 **Destinations for stage B** (from the finished destination study, 12 Nov): **SW Ireland, Cornwall and Brittany.** SW Ireland and Cornwall tied at 44.7%; West of Ireland (42.0%) and Brittany (41.3%) are tied within noise. Brittany is taken over West of Ireland because it is the furthest-south target still in the leading group, which is the better test of whether a southern launch favours a southern aim. Details: [Destination_Study.md](Destination_Study.md#results-12-nov-2026-final-for-this-screen).
 
-Stage A started on the PC at 6:02 pm on 12 Nov; due about 2:00 am on 13 Nov. Stage B about 8:30 am, stage C by the evening of 13 Nov, if the PC keeps running.
+### Stage A: 12 launch points to south-west Ireland (finished 13 Nov, 4:04 am)
+
+Rev C5, 150 voyages per launch point, 2023 weather, launches 1 May–15 June, the same launch dates and seeds everywhere, so the paired column is the fair comparison. A single share is good to about ±8 points; paired differences to about ±10 here.
+
+| # | Launch | Success (95% range) | vs Ocean City, paired | Median days | Lost | Aground | At sea | Lost or aground in 3 weeks | Aground on the home side | Days to get 200 km out | Days on the northern fishing grounds | Success if those grounds add 2% / 5% a day |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | Hatteras, 45 km off (charter, in the stream) | 54.0% (46–62) | +7.3 (-3.3 to +17.3) | 110 | 9.3% | 6.7% | 21.3% | 0.7% | 6.0% | 2.1 | 5.6 | 53.5% / 52.8% |
+| 2 | Ocean City, 100 km off (charter, shelf edge) | 50.0% (42–58) | +3.3 (-6.7 to +12.7) | 115 | 10.7% | 7.3% | 23.3% | 0.0% | 6.7% | 4.7 | 6.5 | 49.0% / 47.8% |
+| 3 | Hatteras Inlet, 10 km | 49.3% (41–57) | +2.7 (-7.3 to +12.7) | 107 | 11.3% | 6.0% | 22.7% | 4.7% | 6.0% | 2.6 | 4.2 | 48.5% / 47.5% |
+| 4 | Virginia Beach, 10 km | 48.7% (41–57) | +2.0 (-8.7 to +12.7) | 116 | 16.7% | 5.3% | 24.0% | 7.3% | 5.3% | 6.3 | 3.6 | 48.0% / 47.1% |
+| 5 | **Ocean City, 10 km (current plan)** | 46.7% (39–55) | — | 121 | 14.0% | 12.0% | 21.3% | 8.7% | 11.3% | 6.8 | 7.3 | 45.5% / 44.0% |
+| 6 | Cape Cod, 10 km | 46.6% (39–55) | +0.0 (-9.3 to +10.0) | 118 | 18.0% | 7.3% | 23.3% | 1.3% | 7.3% | 5.5 | 13.0 | 40.9% / 34.1% |
+| 7 | Montauk / Block Island, 10 km | 46.0% (38–54) | -0.7 (-12.0 to +10.0) | 126 | 18.0% | 12.0% | 20.7% | 6.7% | 11.3% | 7.3 | 10.2 | 42.0% / 37.3% |
+| 8 | Maine, 10 km | 44.0% (36–52) | -2.7 (-12.0 to +6.7) | 115 | 22.7% | 11.3% | 18.0% | 10.7% | 11.3% | 4.5 | 23.7 | 30.3% / 18.4% |
+| 9 | Charleston, 10 km | 43.3% (36–51) | -3.3 (-14.0 to +7.3) | 120 | 22.7% | 4.0% | 22.7% | 11.3% | 4.0% | 6.2 | 5.9 | 42.4% / 41.1% |
+| 10 | Palm Beach, 10 km | 42.7% (35–51) | -4.0 (-13.3 to +5.3) | 127 | 18.0% | 9.3% | 26.0% | 9.3% | 9.3% | 2.5 | 6.9 | 41.7% / 40.4% |
+| 11 | New Jersey (Barnegat), 10 km | 34.7% (28–43) | -12.0 (-21.3 to -2.7) | 131 | 20.7% | 20.0% | 22.0% | 10.7% | 17.3% | 6.5 | 10.3 | 32.4% / 29.7% |
+| 12 | Cape Canaveral, 10 km (route flaw, see below) | 31.3% (24–39) | -15.3 (-25.3 to -5.3) | 126 | 21.3% | 15.3% | 24.7% | 18.7% | 14.0% | 4.5 | 7.0 | 29.5% / 27.2% |
+
+"Success" = arrived still reporting or tracked by the YB3. "Aground on the home side" counts groundings west of 50°W, which includes Nova Scotia and Newfoundland as well as the launch coast. "Days on the northern fishing grounds" is time spent over the Gulf of Maine, Georges Bank, the Scotian Shelf and the Grand Banks; the last column marks successes down for it at two guessed extra pick-up rates (see "What the simulator can and cannot tell us").
+
+**Checks before trusting the table.** No errors; every launch point has arrivals. Day-0 groundings are 0–1 everywhere except Hatteras Inlet (3, two of them on the beach at Hatteras village) and **Cape Canaveral (8 aground on the cape itself within a day, nothing broken)**. That one is my mistake: the launch point is south of the cape and the first leg to the north-north-east crosses it. A real launch would head east first. Canaveral's 31% is therefore about 5 points too low; a rerun with a first waypoint due east is queued at the end of stage B. Even corrected it stays in the bottom group, so it does not affect the stage B choice.
+
+**What the waypoint rule changed.** Ocean City with the new "abeam" rule scored 46.7% against 44.7% for the same 150 launches with the old rule (destination study). 137 voyages came out identical; 3 that failed under the old rule arrived under the new one, and none went the other way. Paired: +2.0 (−0.2 to +4.2). So the rule helps a little and changes nothing else; launch points can be compared with it.
+
+### What stage A shows
+
+- **Going offshore beats moving along the coast.** The two charter launches top the table: 45 km off Hatteras, into the stream's inshore edge, 54.0% (+7.3 over Ocean City, range −3 to +17), and 100 km off Ocean City at the shelf edge, 50.0% (+3.3). Both nearly eliminate the near-coast losses: lost or aground in the first three weeks falls from 8.7% at Ocean City to 0.7% and 0%. And they cut fishing pick-ups (from 15 boats to 7 and 9).
+- **Hatteras is the best beach launch**, as the research suggested: 49.3% from 10 km off, the shortest median crossing of all (107 days, against 121 from Ocean City), because the boat is 200 km out in under three days. Virginia Beach is about as good (48.7%).
+- **None of these gains is certain on 150 voyages.** Every paired range for the top five crosses zero. The pattern (the closer the launch is to the stream, the better) is consistent, and it is what the research predicted, but the size of the gain needs stage C's larger runs.
+- **New England gains nothing, and the fishing grounds make it worse.** Cape Cod (46.6%) and Montauk (46.0%) tie Ocean City in the model, but their boats spend 10–13 days on the New England and Scotian fishing grounds, against 4–7 from further south. With the guessed fishing mark-down they fall to 34–42%. Maine is worst affected: 24 days on the grounds, 22 boats picked up, and 18–30% after the mark-down. The Microtransat record from Cape Cod points the same way.
+- **Florida doesn't pay.** Palm Beach is in the Florida Current from the first hour, but the route is 1,200 km longer and the boats take longer (127 days median). 42.7%, about the same as Charleston (43.3%).
+- **New Jersey is clearly worse** (34.7%, −12, range −21 to −3): boats are carried north-east onto southern New England, Nova Scotia and Newfoundland, and 20% end aground (17% on the home side).
+
+### Stage B: launch and destination pairs
+
+Queued on the PC on 13 Nov as `simulator/run_launch_pairs_2023.bat` (request 010). It starts when the reliability runs now going finish (about 8:05 am) and takes about 5.5 hours, so results about 1:40 pm.
+
+- **Launch points:** the top three, Hatteras 45 km (charter), Ocean City 100 km (charter) and Hatteras Inlet 10 km, plus Ocean City 10 km as the baseline. Virginia Beach is tied with Hatteras Inlet and is the alternative if Hatteras proves awkward.
+- **Destinations:** SW Ireland (already run), Cornwall and Brittany, from the destination study.
+- 8 new pairs, plus the Canaveral rerun. Same design (Rev C5), weather (2023) and launch dates.
+- Then stage C: the best two pairs and the current plan on Rev D, 250 voyages, 2023 and 2024 weather.
+
+Results: `results/2026-11-13_launch_2023_<launch>__ireland_sw.json`. Log: `collab/run_log_launch_points_2023_2026-11-13.txt`. Note: the first attempt at stage A, started at 6:02 pm on 12 Nov, was killed when the laptop was unplugged; the batch was restarted at 8:49 pm and ran cleanly.
 
 ## Sources
 

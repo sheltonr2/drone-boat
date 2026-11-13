@@ -1,0 +1,26 @@
+{
+ "name": "Launch study: Maine: 10 km south of the outer islands off Mount Desert to Cornwall and the Isles of Scilly",
+ "provider": "bulk",
+ "start": {
+  "lat": 44.05,
+  "lon": -68.17
+ },
+ "failure_rate_set": "planning",
+ "target": {
+  "lat": 49.95,
+  "lon": -6.3
+ },
+ "waypoints": [
+  [
+   42.3,
+   -66.0
+  ],
+  [
+   42.0,
+   -48.0
+  ]
+ ],
+ "waypoint_rule": "abeam",
+ "atlantic_islands_count": "no_azores",
+ "africa_landfall_counts": true
+}

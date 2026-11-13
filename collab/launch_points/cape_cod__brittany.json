@@ -1,0 +1,26 @@
+{
+ "name": "Launch study: Cape Cod: 10 km east of Chatham / Nauset to Brittany (Pointe du Raz)",
+ "provider": "bulk",
+ "start": {
+  "lat": 41.7,
+  "lon": -69.8
+ },
+ "failure_rate_set": "planning",
+ "target": {
+  "lat": 48.04,
+  "lon": -4.85
+ },
+ "waypoints": [
+  [
+   40.0,
+   -67.5
+  ],
+  [
+   42.0,
+   -48.0
+  ]
+ ],
+ "waypoint_rule": "abeam",
+ "atlantic_islands_count": "no_azores",
+ "africa_landfall_counts": true
+}

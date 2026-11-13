@@ -1,0 +1,34 @@
+{
+ "name": "Launch study: Cape Canaveral, FL: 10 km off, heading east first to Brittany (Pointe du Raz)",
+ "provider": "bulk",
+ "start": {
+  "lat": 28.41,
+  "lon": -80.48
+ },
+ "failure_rate_set": "planning",
+ "target": {
+  "lat": 48.04,
+  "lon": -4.85
+ },
+ "waypoints": [
+  [
+   28.42,
+   -79.95
+  ],
+  [
+   32.0,
+   -78.6
+  ],
+  [
+   35.0,
+   -74.5
+  ],
+  [
+   42.0,
+   -48.0
+  ]
+ ],
+ "waypoint_rule": "abeam",
+ "atlantic_islands_count": "no_azores",
+ "africa_landfall_counts": true
+}

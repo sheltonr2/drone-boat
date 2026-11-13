@@ -19,11 +19,16 @@ LAUNCH = {
     "hatteras_stream":  ("Hatteras, NC: 45 km off, in the Gulf Stream's inshore edge", 34.95, -75.35, 45, [[35.0, -74.9]]),
     "charleston":       ("Charleston, SC: 10 km off", 32.68, -79.77, 10, STREAM[1:]),
     "canaveral":        ("Cape Canaveral, FL: 10 km off", 28.41, -80.48, 10, STREAM),
+    # 13 Nov: the first leg from "canaveral" crossed the cape (8 of 150 aground within a day, nothing broken).
+    # Rerun with a first waypoint due east, into the Florida Current, as a real launch would steer.
+    "canaveral_east":   ("Cape Canaveral, FL: 10 km off, heading east first", 28.41, -80.48, 10, [[28.42, -79.95]] + STREAM[1:]),
     "palm_beach":       ("Palm Beach, FL: 10 km off, in the Florida Current", 26.77, -79.93, 10, STREAM),
 }
 # name: (label, lat, lon, waypoints after the mid-ocean one); filled in for stage B from the destination study
 DEST = {
     "ireland_sw": ("South-west Ireland (Mizen Head)", 51.35, -9.7, []),
+    "cornwall":   ("Cornwall and the Isles of Scilly", 49.95, -6.3, []),       # stage B: same target and route as the
+    "brittany":   ("Brittany (Pointe du Raz)", 48.04, -4.85, []),     # destination study (collab/destinations)
 }
 
 def scenario(launch, dest):

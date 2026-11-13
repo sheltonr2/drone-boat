@@ -1,0 +1,30 @@
+{
+ "name": "Launch study: Charleston, SC: 10 km off to Cornwall and the Isles of Scilly",
+ "provider": "bulk",
+ "start": {
+  "lat": 32.68,
+  "lon": -79.77
+ },
+ "failure_rate_set": "planning",
+ "target": {
+  "lat": 49.95,
+  "lon": -6.3
+ },
+ "waypoints": [
+  [
+   32.0,
+   -78.6
+  ],
+  [
+   35.0,
+   -74.5
+  ],
+  [
+   42.0,
+   -48.0
+  ]
+ ],
+ "waypoint_rule": "abeam",
+ "atlantic_islands_count": "no_azores",
+ "africa_landfall_counts": true
+}

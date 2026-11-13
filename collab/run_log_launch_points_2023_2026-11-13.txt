@@ -1,0 +1,2866 @@
+Launch-point study, stage A: 12 launch points, all aimed at south-west Ireland, started Thu 11/12/2026 18:02:02.64 
+==== RUN: ocean_city__ireland_sw ==== 
+Launch-point study, stage A: 12 launch points, all aimed at south-west Ireland, started Thu 11/12/2026 20:49:25.81 
+==== RUN: ocean_city__ireland_sw ==== 
+[20:49:28] Monte Carlo: 150 voyages, Launch study: Ocean City, MD: 10 km off (current plan) to South-west I; 8 processes
+Building the speed polar for this design (about 10-30 s) ...
+[20:55:37] 10/150 voyages done, 4 arrived
+[20:58:09] 20/150 voyages done, 10 arrived
+[21:01:05] 30/150 voyages done, 13 arrived
+[21:03:03] 40/150 voyages done, 16 arrived
+[21:05:48] 50/150 voyages done, 21 arrived
+[21:07:45] 60/150 voyages done, 26 arrived
+[21:09:50] 70/150 voyages done, 33 arrived
+[21:12:39] 80/150 voyages done, 38 arrived
+[21:15:13] 90/150 voyages done, 44 arrived
+[21:16:37] 100/150 voyages done, 46 arrived
+[21:19:10] 110/150 voyages done, 51 arrived
+[21:21:44] 120/150 voyages done, 55 arrived
+[21:24:51] 130/150 voyages done, 60 arrived
+[21:26:45] 140/150 voyages done, 65 arrived
+[21:29:03] 150/150 voyages done, 70 arrived
+{
+ "runs": 150,
+ "errors": 0,
+ "counts": {
+  "arrived_reporting": 49,
+  "arrived_tracked": 21,
+  "arrived_silent": 2,
+  "arrived_adrift": 7,
+  "at_sea_timeout": 32,
+  "aground": 18,
+  "lost": 21
+ },
+ "percent": {
+  "arrived_reporting": 32.7,
+  "arrived_tracked": 14.0,
+  "arrived_silent": 1.3,
+  "arrived_adrift": 4.7,
+  "at_sea_timeout": 21.3,
+  "aground": 12.0,
+  "lost": 14.0
+ },
+ "success_percent": 46.7,
+ "success_ci95": [
+  38.9,
+  54.7
+ ],
+ "by_launch_month": {
+  "05": {
+   "runs": 100,
+   "arrived": 49,
+   "success_percent": 49.0,
+   "success_ci95": [
+    39.4,
+    58.7
+   ]
+  },
+  "06": {
+   "runs": 50,
+   "arrived": 21,
+   "success_percent": 42.0,
+   "success_ci95": [
+    29.4,
+    55.8
+   ]
+  }
+ },
+ "success_definition": "arrived_reporting + arrived_tracked",
+ "reporting_percent": 32.7,
+ "any_arrival_percent": 52.7,
+ "position_known_at_end_percent": 83.3,
+ "arrival_days": {
+  "median": 122.0,
+  "p10": 97.878,
+  "p90": 176.524,
+  "all": [
+   126.87,
+   180.72,
+   119.08,
+   130.96,
+   89.64,
+   118.43,
+   119.72,
+   180.88,
+   122.94,
+   118.41,
+   96.07,
+   174.36,
+   106.95,
+   132.51,
+   176.94,
+   89.21,
+   121.6,
+   115.55,
+   182.84,
+   109.84,
+   110.53,
+   105.18,
+   86.67,
+   91.19,
+   90.38,
+   126.09,
+   193.25,
+   119.06,
+   122.34,
+   100.84,
+   98.33,
+   189.88,
+   116.8,
+   159.88,
+   119.34,
+   118.16,
+   123.56,
+   127.21,
+   107.5,
+   168.17,
+   135.49,
+   106.94,
+   158.28,
+   138.27,
+   119.63,
+   102.77,
+   121.47,
+   176.42,
+   111.71,
+   129.62,
+   135.67,
+   123.99,
+   145.82,
+   170.3,
+   136.01,
+   121.56,
+   129.24,
+   116.27,
+   145.45,
+   195.08,
+   104.22,
+   197.7,
+   135.4,
+   135.09,
+   129.02,
+   140.57,
+   111.55,
+   151.5,
+   135.9,
+   106.52,
+   114.77,
+   130.51,
+   90.16,
+   118.6,
+   112.98,
+   103.73,
+   123.58,
+   122.0,
+   89.66
+  ]
+ },
+ "failure_causes": {
+  "Electronics failure": 22,
+  "Picked up by a fishing boat or passer-by": 15,
+  "Leak started": 10,
+  "Fouled by weed or fishing line": 9,
+  "Struck by a vessel": 4,
+  "Satellite modem or antenna failed": 3,
+  "Companion computer hung": 3,
+  "Rudder servo failed limp": 2,
+  "One rudder servo jammed": 2,
+  "Wing damaged in a knockdown": 2,
+  "Keel fin or its joint broke in a knockdown": 1,
+  "One rudder servo failed limp": 1,
+  "One rudder servo stripped by a wave strike": 1,
+  "Rudder servo stripped by a wave strike": 1,
+  "Rudder servo jammed": 1,
+  "Tail servo jammed": 1
+ },
+ "mean_airtime_usd": 130.27,
+ "mean_knockdowns": 676.5
+}
+Saved ..\results\launch_2023_ocean_city__ireland_sw.json
+{
+ "runs": 150,
+ "errors": 0,
+ "success_percent": 46.7,
+ "success_ci95": [
+  38.9,
+  54.7
+ ],
+ "reporting_percent": 32.7,
+ "any_arrival_percent": 52.7,
+ "position_known_at_end_percent": 83.3,
+ "percent": {
+  "arrived_reporting": 32.7,
+  "arrived_tracked": 14.0,
+  "arrived_silent": 1.3,
+  "arrived_adrift": 4.7,
+  "at_sea_timeout": 21.3,
+  "aground": 12.0,
+  "lost": 14.0
+ },
+ "arrival_days": {
+  "median": 122.0,
+  "p10": 97.878,
+  "p90": 176.524
+ },
+ "failure_causes": {
+  "Electronics failure": 22,
+  "Picked up by a fishing boat or passer-by": 15,
+  "Leak started": 10,
+  "Fouled by weed or fishing line": 9,
+  "Struck by a vessel": 4,
+  "Satellite modem or antenna failed": 3,
+  "Companion computer hung": 3,
+  "Rudder servo failed limp": 2,
+  "One rudder servo jammed": 2,
+  "Wing damaged in a knockdown": 2,
+  "Keel fin or its joint broke in a knockdown": 1,
+  "One rudder servo failed limp": 1,
+  "One rudder servo stripped by a wave strike": 1,
+  "Rudder servo stripped by a wave strike": 1,
+  "Rudder servo jammed": 1,
+  "Tail servo jammed": 1
+ },
+ "by_launch_month": {
+  "05": {
+   "runs": 100,
+   "arrived": 49,
+   "success_percent": 49.0,
+   "success_ci95": [
+    39.4,
+    58.7
+   ]
+  },
+  "06": {
+   "runs": 50,
+   "arrived": 21,
+   "success_percent": 42.0,
+   "success_ci95": [
+    29.4,
+    55.8
+   ]
+  }
+ },
+ "mean_airtime_usd": 130.27,
+ "mean_knockdowns": 676.5
+}
+==== RUN: hatteras_stream__ireland_sw ==== 
+[21:29:05] Monte Carlo: 150 voyages, Launch study: Hatteras, NC: 45 km off, in the Gulf Stream's inshore ed; 8 processes
+[21:32:37] 10/150 voyages done, 8 arrived
+[21:35:00] 20/150 voyages done, 15 arrived
+[21:36:36] 30/150 voyages done, 18 arrived
+[21:39:27] 40/150 voyages done, 24 arrived
+[21:41:29] 50/150 voyages done, 28 arrived
+[21:43:38] 60/150 voyages done, 33 arrived
+[21:45:49] 70/150 voyages done, 39 arrived
+[21:48:08] 80/150 voyages done, 41 arrived
+[21:51:02] 90/150 voyages done, 50 arrived
+[21:53:23] 100/150 voyages done, 55 arrived
+[21:55:23] 110/150 voyages done, 61 arrived
+[21:57:30] 120/150 voyages done, 68 arrived
+[22:00:07] 130/150 voyages done, 74 arrived
+[22:02:49] 140/150 voyages done, 77 arrived
+[22:05:18] 150/150 voyages done, 81 arrived
+{
+ "runs": 150,
+ "errors": 0,
+ "counts": {
+  "arrived_reporting": 65,
+  "arrived_tracked": 16,
+  "arrived_silent": 0,
+  "arrived_adrift": 13,
+  "at_sea_timeout": 32,
+  "aground": 10,
+  "lost": 14
+ },
+ "percent": {
+  "arrived_reporting": 43.3,
+  "arrived_tracked": 10.7,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 8.7,
+  "at_sea_timeout": 21.3,
+  "aground": 6.7,
+  "lost": 9.3
+ },
+ "success_percent": 54.0,
+ "success_ci95": [
+  46.0,
+  61.8
+ ],
+ "by_launch_month": {
+  "05": {
+   "runs": 100,
+   "arrived": 58,
+   "success_percent": 58.0,
+   "success_ci95": [
+    48.2,
+    67.2
+   ]
+  },
+  "06": {
+   "runs": 50,
+   "arrived": 23,
+   "success_percent": 46.0,
+   "success_ci95": [
+    33.0,
+    59.6
+   ]
+  }
+ },
+ "success_definition": "arrived_reporting + arrived_tracked",
+ "reporting_percent": 43.3,
+ "any_arrival_percent": 62.7,
+ "position_known_at_end_percent": 89.3,
+ "arrival_days": {
+  "median": 113.60499999999999,
+  "p10": 96.558,
+  "p90": 158.256,
+  "all": [
+   110.16,
+   162.09,
+   96.48,
+   146.05,
+   126.64,
+   158.85,
+   96.82,
+   107.39,
+   113.16,
+   97.37,
+   124.73,
+   99.19,
+   129.91,
+   90.92,
+   112.83,
+   114.8,
+   98.7,
+   155.44,
+   170.49,
+   114.27,
+   95.17,
+   122.15,
+   176.7,
+   118.62,
+   100.84,
+   114.05,
+   118.99,
+   106.93,
+   154.95,
+   119.49,
+   176.37,
+   148.62,
+   159.36,
+   102.64,
+   156.87,
+   97.46,
+   104.1,
+   108.67,
+   98.93,
+   96.74,
+   121.22,
+   119.45,
+   114.06,
+   100.5,
+   110.28,
+   107.86,
+   148.15,
+   115.98,
+   95.76,
+   117.97,
+   119.28,
+   110.22,
+   103.36,
+   95.76,
+   106.86,
+   96.48,
+   94.74,
+   142.33,
+   119.12,
+   109.0,
+   119.12,
+   95.34,
+   116.3,
+   116.25,
+   180.76,
+   150.79,
+   111.38,
+   108.91,
+   140.85,
+   109.87,
+   98.86,
+   107.26,
+   138.17,
+   99.02,
+   104.08,
+   145.17,
+   116.08,
+   103.23,
+   180.39,
+   92.08,
+   93.69,
+   129.72,
+   102.8,
+   98.01,
+   124.3,
+   176.17,
+   99.37,
+   98.44,
+   177.06,
+   99.07,
+   128.54,
+   152.34,
+   106.86,
+   125.9
+  ]
+ },
+ "failure_causes": {
+  "Electronics failure": 21,
+  "Fouled by weed or fishing line": 13,
+  "Leak started": 8,
+  "Picked up by a fishing boat or passer-by": 7,
+  "One rudder servo failed limp": 4,
+  "Struck by a vessel": 3,
+  "Keel fin or its joint broke in a knockdown": 3,
+  "Backup tracker failed": 3,
+  "Wing damaged in a knockdown": 3,
+  "Rudder servo jammed": 2,
+  "Tail servo jammed": 1,
+  "One rudder servo stripped by a wave strike": 1
+ },
+ "mean_airtime_usd": 132.02,
+ "mean_knockdowns": 683.6
+}
+Saved ..\results\launch_2023_hatteras_stream__ireland_sw.json
+{
+ "runs": 150,
+ "errors": 0,
+ "success_percent": 54.0,
+ "success_ci95": [
+  46.0,
+  61.8
+ ],
+ "reporting_percent": 43.3,
+ "any_arrival_percent": 62.7,
+ "position_known_at_end_percent": 89.3,
+ "percent": {
+  "arrived_reporting": 43.3,
+  "arrived_tracked": 10.7,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 8.7,
+  "at_sea_timeout": 21.3,
+  "aground": 6.7,
+  "lost": 9.3
+ },
+ "arrival_days": {
+  "median": 113.60499999999999,
+  "p10": 96.558,
+  "p90": 158.256
+ },
+ "failure_causes": {
+  "Electronics failure": 21,
+  "Fouled by weed or fishing line": 13,
+  "Leak started": 8,
+  "Picked up by a fishing boat or passer-by": 7,
+  "One rudder servo failed limp": 4,
+  "Struck by a vessel": 3,
+  "Keel fin or its joint broke in a knockdown": 3,
+  "Backup tracker failed": 3,
+  "Wing damaged in a knockdown": 3,
+  "Rudder servo jammed": 2,
+  "Tail servo jammed": 1,
+  "One rudder servo stripped by a wave strike": 1
+ },
+ "by_launch_month": {
+  "05": {
+   "runs": 100,
+   "arrived": 58,
+   "success_percent": 58.0,
+   "success_ci95": [
+    48.2,
+    67.2
+   ]
+  },
+  "06": {
+   "runs": 50,
+   "arrived": 23,
+   "success_percent": 46.0,
+   "success_ci95": [
+    33.0,
+    59.6
+   ]
+  }
+ },
+ "mean_airtime_usd": 132.02,
+ "mean_knockdowns": 683.6
+}
+==== RUN: hatteras__ireland_sw ==== 
+[22:05:20] Monte Carlo: 150 voyages, Launch study: Hatteras Inlet, NC: 10 km off to South-west Ireland (Miz; 8 processes
+[22:08:45] 10/150 voyages done, 4 arrived
+[22:11:13] 20/150 voyages done, 11 arrived
+[22:13:02] 30/150 voyages done, 16 arrived
+[22:15:30] 40/150 voyages done, 22 arrived
+[22:17:32] 50/150 voyages done, 27 arrived
+[22:19:41] 60/150 voyages done, 33 arrived
+[22:21:35] 70/150 voyages done, 38 arrived
+[22:23:49] 80/150 voyages done, 42 arrived
+[22:26:48] 90/150 voyages done, 47 arrived
+[22:28:53] 100/150 voyages done, 51 arrived
+[22:31:23] 110/150 voyages done, 55 arrived
+[22:33:42] 120/150 voyages done, 61 arrived
+[22:36:16] 130/150 voyages done, 65 arrived
+[22:38:52] 140/150 voyages done, 70 arrived
+[22:41:05] 150/150 voyages done, 74 arrived
+{
+ "runs": 150,
+ "errors": 0,
+ "counts": {
+  "arrived_reporting": 57,
+  "arrived_tracked": 17,
+  "arrived_silent": 3,
+  "arrived_adrift": 13,
+  "at_sea_timeout": 34,
+  "aground": 9,
+  "lost": 17
+ },
+ "percent": {
+  "arrived_reporting": 38.0,
+  "arrived_tracked": 11.3,
+  "arrived_silent": 2.0,
+  "arrived_adrift": 8.7,
+  "at_sea_timeout": 22.7,
+  "aground": 6.0,
+  "lost": 11.3
+ },
+ "success_percent": 49.3,
+ "success_ci95": [
+  41.4,
+  57.2
+ ],
+ "by_launch_month": {
+  "05": {
+   "runs": 100,
+   "arrived": 48,
+   "success_percent": 48.0,
+   "success_ci95": [
+    38.5,
+    57.7
+   ]
+  },
+  "06": {
+   "runs": 50,
+   "arrived": 26,
+   "success_percent": 52.0,
+   "success_ci95": [
+    38.5,
+    65.2
+   ]
+  }
+ },
+ "success_definition": "arrived_reporting + arrived_tracked",
+ "reporting_percent": 38.0,
+ "any_arrival_percent": 60.0,
+ "position_known_at_end_percent": 84.7,
+ "arrival_days": {
+  "median": 110.32,
+  "p10": 96.562,
+  "p90": 156.018,
+  "all": [
+   177.93,
+   156.0,
+   101.51,
+   103.04,
+   125.18,
+   106.56,
+   126.55,
+   125.26,
+   98.08,
+   120.51,
+   112.81,
+   131.46,
+   91.92,
+   155.57,
+   128.37,
+   112.09,
+   107.25,
+   107.58,
+   101.68,
+   93.69,
+   96.19,
+   107.28,
+   118.83,
+   109.95,
+   137.03,
+   96.49,
+   112.78,
+   99.34,
+   165.61,
+   168.41,
+   162.29,
+   96.49,
+   100.48,
+   99.66,
+   140.53,
+   97.08,
+   107.83,
+   108.69,
+   115.18,
+   134.77,
+   118.6,
+   107.1,
+   117.65,
+   102.68,
+   156.18,
+   104.85,
+   128.42,
+   129.35,
+   103.54,
+   109.91,
+   159.47,
+   100.59,
+   132.86,
+   106.79,
+   133.08,
+   150.62,
+   146.83,
+   101.55,
+   91.36,
+   132.66,
+   108.15,
+   110.61,
+   130.88,
+   144.77,
+   107.41,
+   99.3,
+   96.57,
+   129.91,
+   97.52,
+   93.94,
+   94.16,
+   104.67,
+   117.35,
+   172.2,
+   97.26,
+   105.55,
+   129.61,
+   114.86,
+   110.73,
+   116.33,
+   114.9,
+   97.39,
+   98.9,
+   102.22,
+   165.16,
+   110.03,
+   186.45,
+   95.86,
+   150.34,
+   101.66
+  ]
+ },
+ "failure_causes": {
+  "Electronics failure": 20,
+  "Fouled by weed or fishing line": 11,
+  "Picked up by a fishing boat or passer-by": 9,
+  "Struck by a vessel": 6,
+  "Leak started": 6,
+  "One rudder servo stripped by a wave strike": 3,
+  "aground": 3,
+  "Backup tracker failed": 2,
+  "Wing damaged in a knockdown": 2,
+  "Keel fin or its joint broke in a knockdown": 2,
+  "One rudder servo jammed": 2,
+  "Companion computer hung": 2,
+  "Satellite modem or antenna failed": 1,
+  "Tail servo failed": 1,
+  "Rudder servo stripped by a wave strike": 1,
+  "Tail servo jammed": 1,
+  "Rudder servo jammed": 1
+ },
+ "mean_airtime_usd": 130.6,
+ "mean_knockdowns": 663.5
+}
+Saved ..\results\launch_2023_hatteras__ireland_sw.json
+{
+ "runs": 150,
+ "errors": 0,
+ "success_percent": 49.3,
+ "success_ci95": [
+  41.4,
+  57.2
+ ],
+ "reporting_percent": 38.0,
+ "any_arrival_percent": 60.0,
+ "position_known_at_end_percent": 84.7,
+ "percent": {
+  "arrived_reporting": 38.0,
+  "arrived_tracked": 11.3,
+  "arrived_silent": 2.0,
+  "arrived_adrift": 8.7,
+  "at_sea_timeout": 22.7,
+  "aground": 6.0,
+  "lost": 11.3
+ },
+ "arrival_days": {
+  "median": 110.32,
+  "p10": 96.562,
+  "p90": 156.018
+ },
+ "failure_causes": {
+  "Electronics failure": 20,
+  "Fouled by weed or fishing line": 11,
+  "Picked up by a fishing boat or passer-by": 9,
+  "Struck by a vessel": 6,
+  "Leak started": 6,
+  "One rudder servo stripped by a wave strike": 3,
+  "aground": 3,
+  "Backup tracker failed": 2,
+  "Wing damaged in a knockdown": 2,
+  "Keel fin or its joint broke in a knockdown": 2,
+  "One rudder servo jammed": 2,
+  "Companion computer hung": 2,
+  "Satellite modem or antenna failed": 1,
+  "Tail servo failed": 1,
+  "Rudder servo stripped by a wave strike": 1,
+  "Tail servo jammed": 1,
+  "Rudder servo jammed": 1
+ },
+ "by_launch_month": {
+  "05": {
+   "runs": 100,
+   "arrived": 48,
+   "success_percent": 48.0,
+   "success_ci95": [
+    38.5,
+    57.7
+   ]
+  },
+  "06": {
+   "runs": 50,
+   "arrived": 26,
+   "success_percent": 52.0,
+   "success_ci95": [
+    38.5,
+    65.2
+   ]
+  }
+ },
+ "mean_airtime_usd": 130.6,
+ "mean_knockdowns": 663.5
+}
+==== RUN: ocean_city_canyon__ireland_sw ==== 
+[22:41:07] Monte Carlo: 150 voyages, Launch study: Ocean City, MD: 100 km off, at the shelf edge (Baltimore; 8 processes
+[22:44:52] 10/150 voyages done, 3 arrived
+[22:47:18] 20/150 voyages done, 9 arrived
+[22:49:52] 30/150 voyages done, 13 arrived
+[22:52:20] 40/150 voyages done, 14 arrived
+[22:54:57] 50/150 voyages done, 19 arrived
+[22:57:16] 60/150 voyages done, 23 arrived
+[22:59:33] 70/150 voyages done, 30 arrived
+[23:02:04] 80/150 voyages done, 34 arrived
+[23:05:07] 90/150 voyages done, 39 arrived
+[23:07:09] 100/150 voyages done, 48 arrived
+[23:09:35] 110/150 voyages done, 54 arrived
+[23:12:38] 120/150 voyages done, 59 arrived
+[23:15:04] 130/150 voyages done, 64 arrived
+[23:17:48] 140/150 voyages done, 70 arrived
+[23:19:51] 150/150 voyages done, 75 arrived
+{
+ "runs": 150,
+ "errors": 0,
+ "counts": {
+  "arrived_reporting": 54,
+  "arrived_tracked": 21,
+  "arrived_silent": 2,
+  "arrived_adrift": 11,
+  "at_sea_timeout": 35,
+  "aground": 11,
+  "lost": 16
+ },
+ "percent": {
+  "arrived_reporting": 36.0,
+  "arrived_tracked": 14.0,
+  "arrived_silent": 1.3,
+  "arrived_adrift": 7.3,
+  "at_sea_timeout": 23.3,
+  "aground": 7.3,
+  "lost": 10.7
+ },
+ "success_percent": 50.0,
+ "success_ci95": [
+  42.1,
+  57.9
+ ],
+ "by_launch_month": {
+  "05": {
+   "runs": 100,
+   "arrived": 58,
+   "success_percent": 58.0,
+   "success_ci95": [
+    48.2,
+    67.2
+   ]
+  },
+  "06": {
+   "runs": 50,
+   "arrived": 17,
+   "success_percent": 34.0,
+   "success_ci95": [
+    22.4,
+    47.8
+   ]
+  }
+ },
+ "success_definition": "arrived_reporting + arrived_tracked",
+ "reporting_percent": 36.0,
+ "any_arrival_percent": 58.6,
+ "position_known_at_end_percent": 86.7,
+ "arrival_days": {
+  "median": 118.035,
+  "p10": 97.09,
+  "p90": 169.13400000000001,
+  "all": [
+   114.75,
+   133.09,
+   146.84,
+   123.0,
+   108.86,
+   121.35,
+   148.18,
+   192.2,
+   103.51,
+   96.15,
+   108.4,
+   111.07,
+   91.41,
+   126.32,
+   179.93,
+   169.4,
+   138.82,
+   112.96,
+   167.7,
+   106.26,
+   125.47,
+   167.15,
+   125.52,
+   126.18,
+   127.88,
+   111.69,
+   188.92,
+   117.96,
+   128.75,
+   95.35,
+   103.92,
+   107.28,
+   113.4,
+   98.6,
+   100.55,
+   103.38,
+   151.98,
+   113.27,
+   114.97,
+   113.11,
+   121.82,
+   82.39,
+   130.53,
+   105.48,
+   108.3,
+   114.86,
+   132.66,
+   116.69,
+   149.26,
+   132.32,
+   101.34,
+   96.18,
+   130.8,
+   92.0,
+   122.95,
+   125.82,
+   168.4,
+   142.6,
+   90.75,
+   182.7,
+   110.81,
+   123.12,
+   120.21,
+   96.34,
+   190.33,
+   100.35,
+   97.34,
+   169.02,
+   145.48,
+   170.82,
+   102.0,
+   123.94,
+   147.23,
+   173.73,
+   118.96,
+   173.99,
+   117.78,
+   105.73,
+   118.11,
+   115.62,
+   107.35,
+   127.72,
+   107.32,
+   145.77,
+   104.67,
+   97.27,
+   107.62,
+   96.67
+  ]
+ },
+ "failure_causes": {
+  "Electronics failure": 16,
+  "Fouled by weed or fishing line": 13,
+  "Picked up by a fishing boat or passer-by": 9,
+  "Satellite modem or antenna failed": 5,
+  "One rudder servo stripped by a wave strike": 5,
+  "Struck by a vessel": 4,
+  "Rudder servo stripped by a wave strike": 4,
+  "Leak started": 3,
+  "Keel fin or its joint broke in a knockdown": 3,
+  "Rudder servo failed limp": 2,
+  "Backup tracker failed": 2,
+  "One rudder servo jammed": 2,
+  "Tail servo failed": 2,
+  "One rudder servo failed limp": 1,
+  "Tail servo jammed": 1,
+  "Wing damaged in a knockdown": 1
+ },
+ "mean_airtime_usd": 139.38,
+ "mean_knockdowns": 700.0
+}
+Saved ..\results\launch_2023_ocean_city_canyon__ireland_sw.json
+{
+ "runs": 150,
+ "errors": 0,
+ "success_percent": 50.0,
+ "success_ci95": [
+  42.1,
+  57.9
+ ],
+ "reporting_percent": 36.0,
+ "any_arrival_percent": 58.6,
+ "position_known_at_end_percent": 86.7,
+ "percent": {
+  "arrived_reporting": 36.0,
+  "arrived_tracked": 14.0,
+  "arrived_silent": 1.3,
+  "arrived_adrift": 7.3,
+  "at_sea_timeout": 23.3,
+  "aground": 7.3,
+  "lost": 10.7
+ },
+ "arrival_days": {
+  "median": 118.035,
+  "p10": 97.09,
+  "p90": 169.13400000000001
+ },
+ "failure_causes": {
+  "Electronics failure": 16,
+  "Fouled by weed or fishing line": 13,
+  "Picked up by a fishing boat or passer-by": 9,
+  "Satellite modem or antenna failed": 5,
+  "One rudder servo stripped by a wave strike": 5,
+  "Struck by a vessel": 4,
+  "Rudder servo stripped by a wave strike": 4,
+  "Leak started": 3,
+  "Keel fin or its joint broke in a knockdown": 3,
+  "Rudder servo failed limp": 2,
+  "Backup tracker failed": 2,
+  "One rudder servo jammed": 2,
+  "Tail servo failed": 2,
+  "One rudder servo failed limp": 1,
+  "Tail servo jammed": 1,
+  "Wing damaged in a knockdown": 1
+ },
+ "by_launch_month": {
+  "05": {
+   "runs": 100,
+   "arrived": 58,
+   "success_percent": 58.0,
+   "success_ci95": [
+    48.2,
+    67.2
+   ]
+  },
+  "06": {
+   "runs": 50,
+   "arrived": 17,
+   "success_percent": 34.0,
+   "success_ci95": [
+    22.4,
+    47.8
+   ]
+  }
+ },
+ "mean_airtime_usd": 139.38,
+ "mean_knockdowns": 700.0
+}
+==== RUN: virginia_beach__ireland_sw ==== 
+[23:19:53] Monte Carlo: 150 voyages, Launch study: Virginia Beach: 10 km off, south of the Chesapeake Bay m; 8 processes
+[23:23:46] 10/150 voyages done, 5 arrived
+[23:26:21] 20/150 voyages done, 10 arrived
+[23:28:32] 30/150 voyages done, 17 arrived
+[23:31:27] 40/150 voyages done, 18 arrived
+[23:34:06] 50/150 voyages done, 21 arrived
+[23:36:03] 60/150 voyages done, 26 arrived
+[23:37:54] 70/150 voyages done, 33 arrived
+[23:40:39] 80/150 voyages done, 40 arrived
+[23:43:00] 90/150 voyages done, 45 arrived
+[23:44:48] 100/150 voyages done, 48 arrived
+[23:47:54] 110/150 voyages done, 52 arrived
+[23:49:40] 120/150 voyages done, 58 arrived
+[23:52:12] 130/150 voyages done, 64 arrived
+[23:54:41] 140/150 voyages done, 68 arrived
+[23:56:46] 150/150 voyages done, 73 arrived
+{
+ "runs": 150,
+ "errors": 0,
+ "counts": {
+  "arrived_reporting": 63,
+  "arrived_tracked": 10,
+  "arrived_silent": 0,
+  "arrived_adrift": 8,
+  "at_sea_timeout": 36,
+  "aground": 8,
+  "lost": 25
+ },
+ "percent": {
+  "arrived_reporting": 42.0,
+  "arrived_tracked": 6.7,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 5.3,
+  "at_sea_timeout": 24.0,
+  "aground": 5.3,
+  "lost": 16.7
+ },
+ "success_percent": 48.7,
+ "success_ci95": [
+  40.8,
+  56.6
+ ],
+ "by_launch_month": {
+  "05": {
+   "runs": 100,
+   "arrived": 49,
+   "success_percent": 49.0,
+   "success_ci95": [
+    39.4,
+    58.7
+   ]
+  },
+  "06": {
+   "runs": 50,
+   "arrived": 24,
+   "success_percent": 48.0,
+   "success_ci95": [
+    34.8,
+    61.5
+   ]
+  }
+ },
+ "success_definition": "arrived_reporting + arrived_tracked",
+ "reporting_percent": 42.0,
+ "any_arrival_percent": 54.0,
+ "position_known_at_end_percent": 81.3,
+ "arrival_days": {
+  "median": 116.93,
+  "p10": 104.06,
+  "p90": 164.68,
+  "all": [
+   116.12,
+   106.85,
+   119.61,
+   113.57,
+   117.1,
+   116.9,
+   125.27,
+   131.5,
+   117.26,
+   91.97,
+   104.12,
+   174.72,
+   127.87,
+   153.19,
+   104.26,
+   116.93,
+   117.97,
+   187.36,
+   114.6,
+   187.9,
+   125.62,
+   121.81,
+   169.26,
+   116.04,
+   138.57,
+   113.85,
+   105.39,
+   105.86,
+   120.67,
+   112.68,
+   124.98,
+   120.77,
+   164.29,
+   104.28,
+   160.16,
+   122.66,
+   97.93,
+   113.44,
+   111.18,
+   114.77,
+   164.68,
+   176.74,
+   111.94,
+   112.36,
+   118.11,
+   159.31,
+   113.22,
+   98.61,
+   112.96,
+   119.05,
+   91.06,
+   169.33,
+   107.9,
+   121.56,
+   121.27,
+   130.15,
+   178.16,
+   115.35,
+   120.91,
+   101.56,
+   123.33,
+   114.14,
+   144.75,
+   169.12,
+   113.39,
+   91.12,
+   107.14,
+   120.08,
+   105.13,
+   144.47,
+   101.14,
+   116.76,
+   120.78,
+   113.14,
+   111.28,
+   104.06,
+   124.55,
+   103.99,
+   123.11,
+   114.55,
+   104.3
+  ]
+ },
+ "failure_causes": {
+  "Electronics failure": 19,
+  "Picked up by a fishing boat or passer-by": 13,
+  "Leak started": 12,
+  "Keel fin or its joint broke in a knockdown": 8,
+  "Fouled by weed or fishing line": 6,
+  "One rudder servo stripped by a wave strike": 4,
+  "Backup tracker failed": 3,
+  "Tail servo failed": 2,
+  "Struck by a vessel": 2,
+  "One rudder servo jammed": 1,
+  "Companion computer hung": 1,
+  "Rudder servo failed limp": 1,
+  "Collision damage": 1,
+  "Tail servo jammed": 1,
+  "Satellite modem or antenna failed": 1,
+  "Wing damaged in a knockdown": 1,
+  "Rudder servo jammed": 1
+ },
+ "mean_airtime_usd": 135.27,
+ "mean_knockdowns": 706.3
+}
+Saved ..\results\launch_2023_virginia_beach__ireland_sw.json
+{
+ "runs": 150,
+ "errors": 0,
+ "success_percent": 48.7,
+ "success_ci95": [
+  40.8,
+  56.6
+ ],
+ "reporting_percent": 42.0,
+ "any_arrival_percent": 54.0,
+ "position_known_at_end_percent": 81.3,
+ "percent": {
+  "arrived_reporting": 42.0,
+  "arrived_tracked": 6.7,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 5.3,
+  "at_sea_timeout": 24.0,
+  "aground": 5.3,
+  "lost": 16.7
+ },
+ "arrival_days": {
+  "median": 116.93,
+  "p10": 104.06,
+  "p90": 164.68
+ },
+ "failure_causes": {
+  "Electronics failure": 19,
+  "Picked up by a fishing boat or passer-by": 13,
+  "Leak started": 12,
+  "Keel fin or its joint broke in a knockdown": 8,
+  "Fouled by weed or fishing line": 6,
+  "One rudder servo stripped by a wave strike": 4,
+  "Backup tracker failed": 3,
+  "Tail servo failed": 2,
+  "Struck by a vessel": 2,
+  "One rudder servo jammed": 1,
+  "Companion computer hung": 1,
+  "Rudder servo failed limp": 1,
+  "Collision damage": 1,
+  "Tail servo jammed": 1,
+  "Satellite modem or antenna failed": 1,
+  "Wing damaged in a knockdown": 1,
+  "Rudder servo jammed": 1
+ },
+ "by_launch_month": {
+  "05": {
+   "runs": 100,
+   "arrived": 49,
+   "success_percent": 49.0,
+   "success_ci95": [
+    39.4,
+    58.7
+   ]
+  },
+  "06": {
+   "runs": 50,
+   "arrived": 24,
+   "success_percent": 48.0,
+   "success_ci95": [
+    34.8,
+    61.5
+   ]
+  }
+ },
+ "mean_airtime_usd": 135.27,
+ "mean_knockdowns": 706.3
+}
+==== RUN: cape_cod__ireland_sw ==== 
+[23:56:48] Monte Carlo: 150 voyages, Launch study: Cape Cod: 10 km east of Chatham / Nauset to South-west I; 8 processes
+[00:00:53] 10/150 voyages done, 3 arrived
+[00:03:01] 20/150 voyages done, 10 arrived
+[00:05:58] 30/150 voyages done, 14 arrived
+[00:08:24] 40/150 voyages done, 19 arrived
+[00:10:35] 50/150 voyages done, 22 arrived
+[00:12:51] 60/150 voyages done, 24 arrived
+[00:15:14] 70/150 voyages done, 28 arrived
+[00:17:15] 80/150 voyages done, 32 arrived
+[00:20:39] 90/150 voyages done, 39 arrived
+[00:22:54] 100/150 voyages done, 43 arrived
+[00:25:40] 110/150 voyages done, 47 arrived
+[00:28:40] 120/150 voyages done, 53 arrived
+[00:30:58] 130/150 voyages done, 59 arrived
+[00:33:33] 140/150 voyages done, 65 arrived
+[00:35:38] 150/150 voyages done, 70 arrived
+{
+ "runs": 150,
+ "errors": 0,
+ "counts": {
+  "arrived_reporting": 50,
+  "arrived_tracked": 20,
+  "arrived_silent": 0,
+  "arrived_adrift": 7,
+  "at_sea_timeout": 35,
+  "aground": 11,
+  "lost": 27
+ },
+ "percent": {
+  "arrived_reporting": 33.3,
+  "arrived_tracked": 13.3,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 4.7,
+  "at_sea_timeout": 23.3,
+  "aground": 7.3,
+  "lost": 18.0
+ },
+ "success_percent": 46.6,
+ "success_ci95": [
+  38.8,
+  54.6
+ ],
+ "by_launch_month": {
+  "05": {
+   "runs": 100,
+   "arrived": 47,
+   "success_percent": 47.0,
+   "success_ci95": [
+    37.5,
+    56.7
+   ]
+  },
+  "06": {
+   "runs": 50,
+   "arrived": 23,
+   "success_percent": 46.0,
+   "success_ci95": [
+    33.0,
+    59.6
+   ]
+  }
+ },
+ "success_definition": "arrived_reporting + arrived_tracked",
+ "reporting_percent": 33.3,
+ "any_arrival_percent": 51.3,
+ "position_known_at_end_percent": 81.3,
+ "arrival_days": {
+  "median": 120.9,
+  "p10": 105.378,
+  "p90": 175.98000000000002,
+  "all": [
+   105.47,
+   114.56,
+   116.13,
+   115.5,
+   121.59,
+   101.68,
+   145.61,
+   133.94,
+   200.86,
+   121.87,
+   116.39,
+   101.61,
+   117.48,
+   115.48,
+   204.85,
+   128.47,
+   114.78,
+   130.84,
+   113.04,
+   117.93,
+   124.38,
+   126.73,
+   116.13,
+   103.0,
+   178.11,
+   117.16,
+   124.99,
+   196.69,
+   117.69,
+   109.36,
+   101.51,
+   168.23,
+   119.55,
+   112.8,
+   120.9,
+   114.44,
+   174.56,
+   131.57,
+   123.19,
+   118.33,
+   121.58,
+   103.7,
+   127.11,
+   173.43,
+   153.75,
+   108.86,
+   117.05,
+   113.59,
+   121.7,
+   166.19,
+   111.95,
+   110.78,
+   191.56,
+   130.22,
+   112.49,
+   117.97,
+   166.83,
+   179.28,
+   132.24,
+   119.76,
+   161.0,
+   196.44,
+   129.36,
+   127.73,
+   126.92,
+   99.76,
+   100.51,
+   181.05,
+   123.58,
+   118.59,
+   118.4,
+   109.16,
+   132.3,
+   105.24,
+   127.22,
+   115.08,
+   126.56
+  ]
+ },
+ "failure_causes": {
+  "Electronics failure": 25,
+  "Struck by a vessel": 9,
+  "Fouled by weed or fishing line": 8,
+  "Picked up by a fishing boat or passer-by": 7,
+  "Keel fin or its joint broke in a knockdown": 7,
+  "Leak started": 6,
+  "Companion computer hung": 4,
+  "Wing damaged in a knockdown": 2,
+  "Tail servo jammed": 2,
+  "One rudder servo failed limp": 2,
+  "One rudder servo stripped by a wave strike": 2,
+  "Tail servo failed": 2,
+  "One rudder servo jammed": 2,
+  "Rudder servo jammed": 1,
+  "Rudder servo stripped by a wave strike": 1
+ },
+ "mean_airtime_usd": 136.93,
+ "mean_knockdowns": 740.7
+}
+Saved ..\results\launch_2023_cape_cod__ireland_sw.json
+{
+ "runs": 150,
+ "errors": 0,
+ "success_percent": 46.6,
+ "success_ci95": [
+  38.8,
+  54.6
+ ],
+ "reporting_percent": 33.3,
+ "any_arrival_percent": 51.3,
+ "position_known_at_end_percent": 81.3,
+ "percent": {
+  "arrived_reporting": 33.3,
+  "arrived_tracked": 13.3,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 4.7,
+  "at_sea_timeout": 23.3,
+  "aground": 7.3,
+  "lost": 18.0
+ },
+ "arrival_days": {
+  "median": 120.9,
+  "p10": 105.378,
+  "p90": 175.98000000000002
+ },
+ "failure_causes": {
+  "Electronics failure": 25,
+  "Struck by a vessel": 9,
+  "Fouled by weed or fishing line": 8,
+  "Picked up by a fishing boat or passer-by": 7,
+  "Keel fin or its joint broke in a knockdown": 7,
+  "Leak started": 6,
+  "Companion computer hung": 4,
+  "Wing damaged in a knockdown": 2,
+  "Tail servo jammed": 2,
+  "One rudder servo failed limp": 2,
+  "One rudder servo stripped by a wave strike": 2,
+  "Tail servo failed": 2,
+  "One rudder servo jammed": 2,
+  "Rudder servo jammed": 1,
+  "Rudder servo stripped by a wave strike": 1
+ },
+ "by_launch_month": {
+  "05": {
+   "runs": 100,
+   "arrived": 47,
+   "success_percent": 47.0,
+   "success_ci95": [
+    37.5,
+    56.7
+   ]
+  },
+  "06": {
+   "runs": 50,
+   "arrived": 23,
+   "success_percent": 46.0,
+   "success_ci95": [
+    33.0,
+    59.6
+   ]
+  }
+ },
+ "mean_airtime_usd": 136.93,
+ "mean_knockdowns": 740.7
+}
+==== RUN: charleston__ireland_sw ==== 
+[00:35:41] Monte Carlo: 150 voyages, Launch study: Charleston, SC: 10 km off to South-west Ireland (Mizen H; 8 processes
+[00:38:34] 10/150 voyages done, 5 arrived
+[00:41:29] 20/150 voyages done, 10 arrived
+[00:43:28] 30/150 voyages done, 14 arrived
+[00:45:51] 40/150 voyages done, 20 arrived
+[00:47:42] 50/150 voyages done, 22 arrived
+[00:49:25] 60/150 voyages done, 24 arrived
+[00:52:12] 70/150 voyages done, 31 arrived
+[00:54:24] 80/150 voyages done, 32 arrived
+[00:56:32] 90/150 voyages done, 37 arrived
+[00:58:38] 100/150 voyages done, 42 arrived
+[01:00:35] 110/150 voyages done, 47 arrived
+[01:03:13] 120/150 voyages done, 55 arrived
+[01:05:53] 130/150 voyages done, 59 arrived
+[01:07:47] 140/150 voyages done, 60 arrived
+[01:10:10] 150/150 voyages done, 65 arrived
+{
+ "runs": 150,
+ "errors": 0,
+ "counts": {
+  "arrived_reporting": 50,
+  "arrived_tracked": 15,
+  "arrived_silent": 2,
+  "arrived_adrift": 9,
+  "at_sea_timeout": 34,
+  "aground": 6,
+  "lost": 34
+ },
+ "percent": {
+  "arrived_reporting": 33.3,
+  "arrived_tracked": 10.0,
+  "arrived_silent": 1.3,
+  "arrived_adrift": 6.0,
+  "at_sea_timeout": 22.7,
+  "aground": 4.0,
+  "lost": 22.7
+ },
+ "success_percent": 43.3,
+ "success_ci95": [
+  35.6,
+  51.3
+ ],
+ "by_launch_month": {
+  "05": {
+   "runs": 100,
+   "arrived": 45,
+   "success_percent": 45.0,
+   "success_ci95": [
+    35.6,
+    54.8
+   ]
+  },
+  "06": {
+   "runs": 50,
+   "arrived": 20,
+   "success_percent": 40.0,
+   "success_ci95": [
+    27.6,
+    53.8
+   ]
+  }
+ },
+ "success_definition": "arrived_reporting + arrived_tracked",
+ "reporting_percent": 33.3,
+ "any_arrival_percent": 50.6,
+ "position_known_at_end_percent": 74.0,
+ "arrival_days": {
+  "median": 121.88,
+  "p10": 108.22,
+  "p90": 169.905,
+  "all": [
+   107.35,
+   107.39,
+   119.56,
+   128.72,
+   121.29,
+   118.54,
+   116.22,
+   117.39,
+   175.62,
+   104.02,
+   122.09,
+   155.37,
+   141.73,
+   111.53,
+   105.86,
+   113.39,
+   122.01,
+   122.42,
+   114.99,
+   121.5,
+   110.29,
+   109.55,
+   113.34,
+   175.31,
+   130.96,
+   130.04,
+   127.61,
+   125.16,
+   116.02,
+   135.11,
+   141.67,
+   117.65,
+   127.78,
+   138.4,
+   123.83,
+   120.1,
+   113.39,
+   140.6,
+   113.35,
+   176.93,
+   115.39,
+   100.93,
+   127.66,
+   174.7,
+   118.36,
+   180.53,
+   109.72,
+   121.75,
+   135.44,
+   115.98,
+   112.2,
+   170.93,
+   112.61,
+   132.8,
+   109.11,
+   106.34,
+   138.89,
+   107.84,
+   123.41,
+   115.05,
+   149.11,
+   120.24,
+   138.15,
+   172.99,
+   123.72,
+   181.86,
+   168.88,
+   102.98,
+   122.23,
+   145.46,
+   111.41,
+   125.55,
+   151.44,
+   115.4,
+   128.44,
+   108.6
+  ]
+ },
+ "failure_causes": {
+  "Picked up by a fishing boat or passer-by": 19,
+  "Electronics failure": 17,
+  "Struck by a vessel": 9,
+  "Fouled by weed or fishing line": 9,
+  "Leak started": 5,
+  "Keel fin or its joint broke in a knockdown": 4,
+  "Satellite modem or antenna failed": 3,
+  "Rudder servo stripped by a wave strike": 3,
+  "Companion computer hung": 2,
+  "One rudder servo stripped by a wave strike": 2,
+  "Tail servo failed": 2,
+  "Backup tracker failed": 2,
+  "Rudder servo jammed": 2,
+  "One rudder servo failed limp": 1,
+  "One rudder servo jammed": 1,
+  "Wing damaged in a knockdown": 1,
+  "Tail servo jammed": 1
+ },
+ "mean_airtime_usd": 127.86,
+ "mean_knockdowns": 719.1
+}
+Saved ..\results\launch_2023_charleston__ireland_sw.json
+{
+ "runs": 150,
+ "errors": 0,
+ "success_percent": 43.3,
+ "success_ci95": [
+  35.6,
+  51.3
+ ],
+ "reporting_percent": 33.3,
+ "any_arrival_percent": 50.6,
+ "position_known_at_end_percent": 74.0,
+ "percent": {
+  "arrived_reporting": 33.3,
+  "arrived_tracked": 10.0,
+  "arrived_silent": 1.3,
+  "arrived_adrift": 6.0,
+  "at_sea_timeout": 22.7,
+  "aground": 4.0,
+  "lost": 22.7
+ },
+ "arrival_days": {
+  "median": 121.88,
+  "p10": 108.22,
+  "p90": 169.905
+ },
+ "failure_causes": {
+  "Picked up by a fishing boat or passer-by": 19,
+  "Electronics failure": 17,
+  "Struck by a vessel": 9,
+  "Fouled by weed or fishing line": 9,
+  "Leak started": 5,
+  "Keel fin or its joint broke in a knockdown": 4,
+  "Satellite modem or antenna failed": 3,
+  "Rudder servo stripped by a wave strike": 3,
+  "Companion computer hung": 2,
+  "One rudder servo stripped by a wave strike": 2,
+  "Tail servo failed": 2,
+  "Backup tracker failed": 2,
+  "Rudder servo jammed": 2,
+  "One rudder servo failed limp": 1,
+  "One rudder servo jammed": 1,
+  "Wing damaged in a knockdown": 1,
+  "Tail servo jammed": 1
+ },
+ "by_launch_month": {
+  "05": {
+   "runs": 100,
+   "arrived": 45,
+   "success_percent": 45.0,
+   "success_ci95": [
+    35.6,
+    54.8
+   ]
+  },
+  "06": {
+   "runs": 50,
+   "arrived": 20,
+   "success_percent": 40.0,
+   "success_ci95": [
+    27.6,
+    53.8
+   ]
+  }
+ },
+ "mean_airtime_usd": 127.86,
+ "mean_knockdowns": 719.1
+}
+==== RUN: palm_beach__ireland_sw ==== 
+[01:10:12] Monte Carlo: 150 voyages, Launch study: Palm Beach, FL: 10 km off, in the Florida Current to Sou; 8 processes
+[01:14:11] 10/150 voyages done, 7 arrived
+[01:17:02] 20/150 voyages done, 11 arrived
+[01:18:31] 30/150 voyages done, 14 arrived
+[01:20:37] 40/150 voyages done, 18 arrived
+[01:23:31] 50/150 voyages done, 20 arrived
+[01:25:17] 60/150 voyages done, 25 arrived
+[01:27:38] 70/150 voyages done, 30 arrived
+[01:30:10] 80/150 voyages done, 35 arrived
+[01:32:17] 90/150 voyages done, 40 arrived
+[01:35:21] 100/150 voyages done, 44 arrived
+[01:37:46] 110/150 voyages done, 50 arrived
+[01:39:41] 120/150 voyages done, 53 arrived
+[01:42:26] 130/150 voyages done, 57 arrived
+[01:45:16] 140/150 voyages done, 60 arrived
+[01:47:43] 150/150 voyages done, 64 arrived
+{
+ "runs": 150,
+ "errors": 0,
+ "counts": {
+  "arrived_reporting": 49,
+  "arrived_tracked": 15,
+  "arrived_silent": 0,
+  "arrived_adrift": 6,
+  "at_sea_timeout": 39,
+  "aground": 14,
+  "lost": 27
+ },
+ "percent": {
+  "arrived_reporting": 32.7,
+  "arrived_tracked": 10.0,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 4.0,
+  "at_sea_timeout": 26.0,
+  "aground": 9.3,
+  "lost": 18.0
+ },
+ "success_percent": 42.7,
+ "success_ci95": [
+  35.1,
+  50.7
+ ],
+ "by_launch_month": {
+  "05": {
+   "runs": 100,
+   "arrived": 44,
+   "success_percent": 44.0,
+   "success_ci95": [
+    34.7,
+    53.8
+   ]
+  },
+  "06": {
+   "runs": 50,
+   "arrived": 20,
+   "success_percent": 40.0,
+   "success_ci95": [
+    27.6,
+    53.8
+   ]
+  }
+ },
+ "success_definition": "arrived_reporting + arrived_tracked",
+ "reporting_percent": 32.7,
+ "any_arrival_percent": 46.7,
+ "position_known_at_end_percent": 79.3,
+ "arrival_days": {
+  "median": 129.66500000000002,
+  "p10": 113.21,
+  "p90": 172.823,
+  "all": [
+   164.26,
+   127.07,
+   163.09,
+   121.95,
+   119.21,
+   116.66,
+   124.64,
+   164.32,
+   181.44,
+   116.15,
+   121.5,
+   130.57,
+   146.31,
+   162.34,
+   137.24,
+   126.41,
+   115.64,
+   140.41,
+   113.22,
+   116.27,
+   96.07,
+   130.11,
+   161.63,
+   118.87,
+   179.85,
+   114.76,
+   166.22,
+   116.02,
+   126.24,
+   113.12,
+   127.69,
+   140.13,
+   153.2,
+   137.43,
+   140.06,
+   112.54,
+   138.06,
+   158.34,
+   123.79,
+   109.77,
+   142.34,
+   117.08,
+   139.55,
+   107.18,
+   114.47,
+   126.45,
+   133.16,
+   180.59,
+   186.9,
+   180.03,
+   122.18,
+   124.86,
+   126.25,
+   154.58,
+   111.22,
+   139.56,
+   138.54,
+   177.09,
+   116.21,
+   113.03,
+   172.57,
+   175.1,
+   151.08,
+   119.69,
+   125.97,
+   119.38,
+   133.87,
+   171.36,
+   129.22,
+   141.15
+  ]
+ },
+ "failure_causes": {
+  "Electronics failure": 23,
+  "Picked up by a fishing boat or passer-by": 12,
+  "Struck by a vessel": 10,
+  "Fouled by weed or fishing line": 9,
+  "Leak started": 7,
+  "One rudder servo stripped by a wave strike": 4,
+  "Tail servo failed": 4,
+  "Satellite modem or antenna failed": 3,
+  "Backup tracker failed": 3,
+  "Rudder servo stripped by a wave strike": 2,
+  "Rudder servo failed limp": 2,
+  "Tail servo jammed": 1,
+  "Rudder servo jammed": 1,
+  "Wing damaged in a knockdown": 1,
+  "Companion computer hung": 1,
+  "Keel fin or its joint broke in a knockdown": 1,
+  "aground": 1,
+  "One rudder servo failed limp": 1
+ },
+ "mean_airtime_usd": 138.53,
+ "mean_knockdowns": 780.5
+}
+Saved ..\results\launch_2023_palm_beach__ireland_sw.json
+{
+ "runs": 150,
+ "errors": 0,
+ "success_percent": 42.7,
+ "success_ci95": [
+  35.1,
+  50.7
+ ],
+ "reporting_percent": 32.7,
+ "any_arrival_percent": 46.7,
+ "position_known_at_end_percent": 79.3,
+ "percent": {
+  "arrived_reporting": 32.7,
+  "arrived_tracked": 10.0,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 4.0,
+  "at_sea_timeout": 26.0,
+  "aground": 9.3,
+  "lost": 18.0
+ },
+ "arrival_days": {
+  "median": 129.66500000000002,
+  "p10": 113.21,
+  "p90": 172.823
+ },
+ "failure_causes": {
+  "Electronics failure": 23,
+  "Picked up by a fishing boat or passer-by": 12,
+  "Struck by a vessel": 10,
+  "Fouled by weed or fishing line": 9,
+  "Leak started": 7,
+  "One rudder servo stripped by a wave strike": 4,
+  "Tail servo failed": 4,
+  "Satellite modem or antenna failed": 3,
+  "Backup tracker failed": 3,
+  "Rudder servo stripped by a wave strike": 2,
+  "Rudder servo failed limp": 2,
+  "Tail servo jammed": 1,
+  "Rudder servo jammed": 1,
+  "Wing damaged in a knockdown": 1,
+  "Companion computer hung": 1,
+  "Keel fin or its joint broke in a knockdown": 1,
+  "aground": 1,
+  "One rudder servo failed limp": 1
+ },
+ "by_launch_month": {
+  "05": {
+   "runs": 100,
+   "arrived": 44,
+   "success_percent": 44.0,
+   "success_ci95": [
+    34.7,
+    53.8
+   ]
+  },
+  "06": {
+   "runs": 50,
+   "arrived": 20,
+   "success_percent": 40.0,
+   "success_ci95": [
+    27.6,
+    53.8
+   ]
+  }
+ },
+ "mean_airtime_usd": 138.53,
+ "mean_knockdowns": 780.5
+}
+==== RUN: barnegat__ireland_sw ==== 
+[01:47:45] Monte Carlo: 150 voyages, Launch study: New Jersey: 10 km east of Barnegat Inlet to South-west I; 8 processes
+[01:50:40] 10/150 voyages done, 2 arrived
+[01:52:40] 20/150 voyages done, 7 arrived
+[01:54:51] 30/150 voyages done, 9 arrived
+[01:57:37] 40/150 voyages done, 11 arrived
+[02:00:21] 50/150 voyages done, 15 arrived
+[02:01:56] 60/150 voyages done, 16 arrived
+[02:03:47] 70/150 voyages done, 20 arrived
+[02:05:56] 80/150 voyages done, 22 arrived
+[02:08:11] 90/150 voyages done, 26 arrived
+[02:09:33] 100/150 voyages done, 30 arrived
+[02:12:03] 110/150 voyages done, 34 arrived
+[02:14:38] 120/150 voyages done, 39 arrived
+[02:18:06] 130/150 voyages done, 41 arrived
+[02:20:04] 140/150 voyages done, 44 arrived
+[02:22:07] 150/150 voyages done, 52 arrived
+{
+ "runs": 150,
+ "errors": 0,
+ "counts": {
+  "arrived_reporting": 42,
+  "arrived_tracked": 10,
+  "arrived_silent": 0,
+  "arrived_adrift": 4,
+  "at_sea_timeout": 33,
+  "aground": 30,
+  "lost": 31
+ },
+ "percent": {
+  "arrived_reporting": 28.0,
+  "arrived_tracked": 6.7,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 2.7,
+  "at_sea_timeout": 22.0,
+  "aground": 20.0,
+  "lost": 20.7
+ },
+ "success_percent": 34.7,
+ "success_ci95": [
+  27.6,
+  42.6
+ ],
+ "by_launch_month": {
+  "05": {
+   "runs": 100,
+   "arrived": 37,
+   "success_percent": 37.0,
+   "success_ci95": [
+    28.2,
+    46.8
+   ]
+  },
+  "06": {
+   "runs": 50,
+   "arrived": 15,
+   "success_percent": 30.0,
+   "success_ci95": [
+    19.1,
+    43.8
+   ]
+  }
+ },
+ "success_definition": "arrived_reporting + arrived_tracked",
+ "reporting_percent": 28.0,
+ "any_arrival_percent": 37.4,
+ "position_known_at_end_percent": 77.3,
+ "arrival_days": {
+  "median": 131.485,
+  "p10": 116.295,
+  "p90": 155.76999999999998,
+  "all": [
+   105.45,
+   136.26,
+   176.71,
+   170.78,
+   124.51,
+   136.0,
+   109.17,
+   121.06,
+   124.04,
+   153.65,
+   123.89,
+   129.87,
+   130.23,
+   133.5,
+   153.88,
+   138.66,
+   157.66,
+   120.47,
+   135.48,
+   144.02,
+   119.32,
+   127.09,
+   135.2,
+   114.74,
+   116.17,
+   122.33,
+   131.88,
+   147.3,
+   115.84,
+   136.61,
+   127.44,
+   152.29,
+   121.86,
+   142.91,
+   139.53,
+   116.5,
+   139.44,
+   113.94,
+   123.76,
+   120.32,
+   116.75,
+   153.14,
+   148.04,
+   133.92,
+   116.42,
+   132.89,
+   169.39,
+   119.68,
+   129.75,
+   183.35,
+   178.12,
+   131.09,
+   126.86,
+   121.9,
+   132.46,
+   138.65
+  ]
+ },
+ "failure_causes": {
+  "Electronics failure": 29,
+  "Picked up by a fishing boat or passer-by": 18,
+  "Leak started": 15,
+  "Fouled by weed or fishing line": 10,
+  "Struck by a vessel": 5,
+  "Keel fin or its joint broke in a knockdown": 5,
+  "Tail servo jammed": 3,
+  "Rudder servo stripped by a wave strike": 2,
+  "Tail servo failed": 2,
+  "Rudder servo jammed": 2,
+  "aground": 1,
+  "One rudder servo stripped by a wave strike": 1,
+  "Rudder servo failed limp": 1,
+  "One rudder servo failed limp": 1,
+  "Companion computer hung": 1,
+  "Satellite modem or antenna failed": 1,
+  "Backup tracker failed": 1
+ },
+ "mean_airtime_usd": 127.89,
+ "mean_knockdowns": 624.6
+}
+Saved ..\results\launch_2023_barnegat__ireland_sw.json
+{
+ "runs": 150,
+ "errors": 0,
+ "success_percent": 34.7,
+ "success_ci95": [
+  27.6,
+  42.6
+ ],
+ "reporting_percent": 28.0,
+ "any_arrival_percent": 37.4,
+ "position_known_at_end_percent": 77.3,
+ "percent": {
+  "arrived_reporting": 28.0,
+  "arrived_tracked": 6.7,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 2.7,
+  "at_sea_timeout": 22.0,
+  "aground": 20.0,
+  "lost": 20.7
+ },
+ "arrival_days": {
+  "median": 131.485,
+  "p10": 116.295,
+  "p90": 155.76999999999998
+ },
+ "failure_causes": {
+  "Electronics failure": 29,
+  "Picked up by a fishing boat or passer-by": 18,
+  "Leak started": 15,
+  "Fouled by weed or fishing line": 10,
+  "Struck by a vessel": 5,
+  "Keel fin or its joint broke in a knockdown": 5,
+  "Tail servo jammed": 3,
+  "Rudder servo stripped by a wave strike": 2,
+  "Tail servo failed": 2,
+  "Rudder servo jammed": 2,
+  "aground": 1,
+  "One rudder servo stripped by a wave strike": 1,
+  "Rudder servo failed limp": 1,
+  "One rudder servo failed limp": 1,
+  "Companion computer hung": 1,
+  "Satellite modem or antenna failed": 1,
+  "Backup tracker failed": 1
+ },
+ "by_launch_month": {
+  "05": {
+   "runs": 100,
+   "arrived": 37,
+   "success_percent": 37.0,
+   "success_ci95": [
+    28.2,
+    46.8
+   ]
+  },
+  "06": {
+   "runs": 50,
+   "arrived": 15,
+   "success_percent": 30.0,
+   "success_ci95": [
+    19.1,
+    43.8
+   ]
+  }
+ },
+ "mean_airtime_usd": 127.89,
+ "mean_knockdowns": 624.6
+}
+==== RUN: montauk__ireland_sw ==== 
+[02:22:09] Monte Carlo: 150 voyages, Launch study: Montauk Point / Block Island: 10 km south-east to South-; 8 processes
+[02:26:23] 10/150 voyages done, 2 arrived
+[02:28:28] 20/150 voyages done, 7 arrived
+[02:30:34] 30/150 voyages done, 11 arrived
+[02:32:48] 40/150 voyages done, 16 arrived
+[02:35:22] 50/150 voyages done, 21 arrived
+[02:37:36] 60/150 voyages done, 27 arrived
+[02:39:36] 70/150 voyages done, 32 arrived
+[02:41:52] 80/150 voyages done, 36 arrived
+[02:44:14] 90/150 voyages done, 41 arrived
+[02:46:19] 100/150 voyages done, 45 arrived
+[02:49:02] 110/150 voyages done, 50 arrived
+[02:51:42] 120/150 voyages done, 56 arrived
+[02:53:59] 130/150 voyages done, 58 arrived
+[02:56:15] 140/150 voyages done, 64 arrived
+[02:58:10] 150/150 voyages done, 69 arrived
+{
+ "runs": 150,
+ "errors": 0,
+ "counts": {
+  "arrived_reporting": 53,
+  "arrived_tracked": 16,
+  "arrived_silent": 0,
+  "arrived_adrift": 5,
+  "at_sea_timeout": 31,
+  "aground": 18,
+  "lost": 27
+ },
+ "percent": {
+  "arrived_reporting": 35.3,
+  "arrived_tracked": 10.7,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 3.3,
+  "at_sea_timeout": 20.7,
+  "aground": 12.0,
+  "lost": 18.0
+ },
+ "success_percent": 46.0,
+ "success_ci95": [
+  38.2,
+  54.0
+ ],
+ "by_launch_month": {
+  "05": {
+   "runs": 100,
+   "arrived": 50,
+   "success_percent": 50.0,
+   "success_ci95": [
+    40.4,
+    59.6
+   ]
+  },
+  "06": {
+   "runs": 50,
+   "arrived": 19,
+   "success_percent": 38.0,
+   "success_ci95": [
+    25.9,
+    51.8
+   ]
+  }
+ },
+ "success_definition": "arrived_reporting + arrived_tracked",
+ "reporting_percent": 35.3,
+ "any_arrival_percent": 49.3,
+ "position_known_at_end_percent": 80.0,
+ "arrival_days": {
+  "median": 126.53999999999999,
+  "p10": 115.808,
+  "p90": 173.571,
+  "all": [
+   127.19,
+   115.02,
+   117.0,
+   119.85,
+   156.43,
+   175.26,
+   129.58,
+   127.33,
+   178.65,
+   180.75,
+   121.57,
+   180.52,
+   110.65,
+   120.96,
+   121.48,
+   115.4,
+   152.28,
+   129.2,
+   190.58,
+   120.82,
+   123.2,
+   169.12,
+   125.26,
+   155.23,
+   124.6,
+   119.06,
+   102.59,
+   175.45,
+   134.14,
+   161.33,
+   125.88,
+   128.18,
+   132.49,
+   120.63,
+   114.4,
+   128.39,
+   115.25,
+   117.01,
+   185.27,
+   124.06,
+   116.85,
+   117.36,
+   133.15,
+   135.38,
+   146.85,
+   121.83,
+   168.01,
+   122.94,
+   149.74,
+   134.48,
+   125.24,
+   169.63,
+   116.76,
+   111.64,
+   103.82,
+   122.16,
+   122.16,
+   127.74,
+   131.57,
+   129.77,
+   120.98,
+   133.23,
+   158.63,
+   179.61,
+   138.62,
+   123.74,
+   120.69,
+   131.25,
+   118.6,
+   153.41,
+   129.96,
+   121.88,
+   125.89,
+   125.86
+  ]
+ },
+ "failure_causes": {
+  "Electronics failure": 19,
+  "Picked up by a fishing boat or passer-by": 17,
+  "Fouled by weed or fishing line": 9,
+  "Leak started": 9,
+  "Struck by a vessel": 6,
+  "Rudder servo jammed": 4,
+  "Satellite modem or antenna failed": 3,
+  "Backup tracker failed": 3,
+  "One rudder servo failed limp": 3,
+  "Keel fin or its joint broke in a knockdown": 3,
+  "Rudder servo stripped by a wave strike": 2,
+  "Wing damaged in a knockdown": 1,
+  "One rudder servo stripped by a wave strike": 1,
+  "One rudder servo jammed": 1
+ },
+ "mean_airtime_usd": 136.43,
+ "mean_knockdowns": 643.6
+}
+Saved ..\results\launch_2023_montauk__ireland_sw.json
+{
+ "runs": 150,
+ "errors": 0,
+ "success_percent": 46.0,
+ "success_ci95": [
+  38.2,
+  54.0
+ ],
+ "reporting_percent": 35.3,
+ "any_arrival_percent": 49.3,
+ "position_known_at_end_percent": 80.0,
+ "percent": {
+  "arrived_reporting": 35.3,
+  "arrived_tracked": 10.7,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 3.3,
+  "at_sea_timeout": 20.7,
+  "aground": 12.0,
+  "lost": 18.0
+ },
+ "arrival_days": {
+  "median": 126.53999999999999,
+  "p10": 115.808,
+  "p90": 173.571
+ },
+ "failure_causes": {
+  "Electronics failure": 19,
+  "Picked up by a fishing boat or passer-by": 17,
+  "Fouled by weed or fishing line": 9,
+  "Leak started": 9,
+  "Struck by a vessel": 6,
+  "Rudder servo jammed": 4,
+  "Satellite modem or antenna failed": 3,
+  "Backup tracker failed": 3,
+  "One rudder servo failed limp": 3,
+  "Keel fin or its joint broke in a knockdown": 3,
+  "Rudder servo stripped by a wave strike": 2,
+  "Wing damaged in a knockdown": 1,
+  "One rudder servo stripped by a wave strike": 1,
+  "One rudder servo jammed": 1
+ },
+ "by_launch_month": {
+  "05": {
+   "runs": 100,
+   "arrived": 50,
+   "success_percent": 50.0,
+   "success_ci95": [
+    40.4,
+    59.6
+   ]
+  },
+  "06": {
+   "runs": 50,
+   "arrived": 19,
+   "success_percent": 38.0,
+   "success_ci95": [
+    25.9,
+    51.8
+   ]
+  }
+ },
+ "mean_airtime_usd": 136.43,
+ "mean_knockdowns": 643.6
+}
+==== RUN: canaveral__ireland_sw ==== 
+[02:58:12] Monte Carlo: 150 voyages, Launch study: Cape Canaveral, FL: 10 km off to South-west Ireland (Miz; 8 processes
+[03:01:37] 10/150 voyages done, 5 arrived
+[03:03:59] 20/150 voyages done, 8 arrived
+[03:05:40] 30/150 voyages done, 10 arrived
+[03:07:33] 40/150 voyages done, 13 arrived
+[03:10:24] 50/150 voyages done, 15 arrived
+[03:12:44] 60/150 voyages done, 17 arrived
+[03:15:07] 70/150 voyages done, 20 arrived
+[03:17:00] 80/150 voyages done, 23 arrived
+[03:18:42] 90/150 voyages done, 27 arrived
+[03:20:34] 100/150 voyages done, 30 arrived
+[03:23:00] 110/150 voyages done, 36 arrived
+[03:25:17] 120/150 voyages done, 40 arrived
+[03:28:02] 130/150 voyages done, 45 arrived
+[03:29:46] 140/150 voyages done, 46 arrived
+[03:31:48] 150/150 voyages done, 47 arrived
+{
+ "runs": 150,
+ "errors": 0,
+ "counts": {
+  "arrived_reporting": 39,
+  "arrived_tracked": 8,
+  "arrived_silent": 0,
+  "arrived_adrift": 11,
+  "at_sea_timeout": 37,
+  "aground": 23,
+  "lost": 32
+ },
+ "percent": {
+  "arrived_reporting": 26.0,
+  "arrived_tracked": 5.3,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 7.3,
+  "at_sea_timeout": 24.7,
+  "aground": 15.3,
+  "lost": 21.3
+ },
+ "success_percent": 31.3,
+ "success_ci95": [
+  24.4,
+  39.1
+ ],
+ "by_launch_month": {
+  "05": {
+   "runs": 100,
+   "arrived": 35,
+   "success_percent": 35.0,
+   "success_ci95": [
+    26.4,
+    44.7
+   ]
+  },
+  "06": {
+   "runs": 50,
+   "arrived": 12,
+   "success_percent": 24.0,
+   "success_ci95": [
+    14.3,
+    37.4
+   ]
+  }
+ },
+ "success_definition": "arrived_reporting + arrived_tracked",
+ "reporting_percent": 26.0,
+ "any_arrival_percent": 38.6,
+ "position_known_at_end_percent": 78.0,
+ "arrival_days": {
+  "median": 129.285,
+  "p10": 115.652,
+  "p90": 179.90800000000002,
+  "all": [
+   128.8,
+   121.06,
+   115.94,
+   131.03,
+   124.82,
+   206.95,
+   125.89,
+   119.71,
+   136.3,
+   136.55,
+   169.8,
+   113.35,
+   126.22,
+   136.98,
+   114.98,
+   138.15,
+   190.72,
+   125.06,
+   128.82,
+   182.0,
+   120.81,
+   157.99,
+   113.32,
+   193.74,
+   137.6,
+   108.21,
+   130.84,
+   117.5,
+   117.05,
+   121.7,
+   155.78,
+   119.7,
+   145.77,
+   173.09,
+   119.12,
+   177.8,
+   108.04,
+   135.73,
+   123.15,
+   119.92,
+   118.5,
+   123.73,
+   139.0,
+   139.41,
+   144.35,
+   120.23,
+   179.59,
+   116.07,
+   120.17,
+   113.9,
+   129.75,
+   131.69,
+   145.12,
+   190.62,
+   123.75,
+   169.84,
+   180.65,
+   133.82
+  ]
+ },
+ "failure_causes": {
+  "Electronics failure": 25,
+  "Picked up by a fishing boat or passer-by": 19,
+  "Fouled by weed or fishing line": 10,
+  "aground": 8,
+  "Keel fin or its joint broke in a knockdown": 7,
+  "Leak started": 7,
+  "Rudder servo stripped by a wave strike": 5,
+  "Struck by a vessel": 4,
+  "Satellite modem or antenna failed": 4,
+  "Tail servo failed": 3,
+  "Wing damaged in a knockdown": 2,
+  "Collision damage": 2,
+  "One rudder servo stripped by a wave strike": 2,
+  "One rudder servo jammed": 2,
+  "Backup tracker failed": 1,
+  "Rudder servo failed limp": 1,
+  "Rudder servo jammed": 1
+ },
+ "mean_airtime_usd": 126.17,
+ "mean_knockdowns": 719.6
+}
+Saved ..\results\launch_2023_canaveral__ireland_sw.json
+{
+ "runs": 150,
+ "errors": 0,
+ "success_percent": 31.3,
+ "success_ci95": [
+  24.4,
+  39.1
+ ],
+ "reporting_percent": 26.0,
+ "any_arrival_percent": 38.6,
+ "position_known_at_end_percent": 78.0,
+ "percent": {
+  "arrived_reporting": 26.0,
+  "arrived_tracked": 5.3,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 7.3,
+  "at_sea_timeout": 24.7,
+  "aground": 15.3,
+  "lost": 21.3
+ },
+ "arrival_days": {
+  "median": 129.285,
+  "p10": 115.652,
+  "p90": 179.90800000000002
+ },
+ "failure_causes": {
+  "Electronics failure": 25,
+  "Picked up by a fishing boat or passer-by": 19,
+  "Fouled by weed or fishing line": 10,
+  "aground": 8,
+  "Keel fin or its joint broke in a knockdown": 7,
+  "Leak started": 7,
+  "Rudder servo stripped by a wave strike": 5,
+  "Struck by a vessel": 4,
+  "Satellite modem or antenna failed": 4,
+  "Tail servo failed": 3,
+  "Wing damaged in a knockdown": 2,
+  "Collision damage": 2,
+  "One rudder servo stripped by a wave strike": 2,
+  "One rudder servo jammed": 2,
+  "Backup tracker failed": 1,
+  "Rudder servo failed limp": 1,
+  "Rudder servo jammed": 1
+ },
+ "by_launch_month": {
+  "05": {
+   "runs": 100,
+   "arrived": 35,
+   "success_percent": 35.0,
+   "success_ci95": [
+    26.4,
+    44.7
+   ]
+  },
+  "06": {
+   "runs": 50,
+   "arrived": 12,
+   "success_percent": 24.0,
+   "success_ci95": [
+    14.3,
+    37.4
+   ]
+  }
+ },
+ "mean_airtime_usd": 126.17,
+ "mean_knockdowns": 719.6
+}
+==== RUN: maine__ireland_sw ==== 
+[03:31:50] Monte Carlo: 150 voyages, Launch study: Maine: 10 km south of the outer islands off Mount Desert; 8 processes
+[03:34:49] 10/150 voyages done, 3 arrived
+[03:37:27] 20/150 voyages done, 8 arrived
+[03:38:42] 30/150 voyages done, 11 arrived
+[03:40:43] 40/150 voyages done, 15 arrived
+[03:43:38] 50/150 voyages done, 19 arrived
+[03:44:56] 60/150 voyages done, 24 arrived
+[03:47:11] 70/150 voyages done, 31 arrived
+[03:49:09] 80/150 voyages done, 34 arrived
+[03:51:19] 90/150 voyages done, 39 arrived
+[03:53:13] 100/150 voyages done, 45 arrived
+[03:55:28] 110/150 voyages done, 50 arrived
+[03:57:31] 120/150 voyages done, 54 arrived
+[04:00:03] 130/150 voyages done, 59 arrived
+[04:02:30] 140/150 voyages done, 62 arrived
+[04:04:18] 150/150 voyages done, 66 arrived
+{
+ "runs": 150,
+ "errors": 0,
+ "counts": {
+  "arrived_reporting": 49,
+  "arrived_tracked": 17,
+  "arrived_silent": 0,
+  "arrived_adrift": 6,
+  "at_sea_timeout": 27,
+  "aground": 17,
+  "lost": 34
+ },
+ "percent": {
+  "arrived_reporting": 32.7,
+  "arrived_tracked": 11.3,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 4.0,
+  "at_sea_timeout": 18.0,
+  "aground": 11.3,
+  "lost": 22.7
+ },
+ "success_percent": 44.0,
+ "success_ci95": [
+  36.3,
+  52.0
+ ],
+ "by_launch_month": {
+  "05": {
+   "runs": 100,
+   "arrived": 48,
+   "success_percent": 48.0,
+   "success_ci95": [
+    38.5,
+    57.7
+   ]
+  },
+  "06": {
+   "runs": 50,
+   "arrived": 18,
+   "success_percent": 36.0,
+   "success_ci95": [
+    24.1,
+    49.9
+   ]
+  }
+ },
+ "success_definition": "arrived_reporting + arrived_tracked",
+ "reporting_percent": 32.7,
+ "any_arrival_percent": 48.0,
+ "position_known_at_end_percent": 75.3,
+ "arrival_days": {
+  "median": 118.28,
+  "p10": 104.268,
+  "p90": 164.87,
+  "all": [
+   200.58,
+   116.11,
+   103.22,
+   142.53,
+   122.06,
+   97.1,
+   106.02,
+   185.2,
+   161.44,
+   105.42,
+   118.34,
+   154.95,
+   107.11,
+   106.57,
+   125.1,
+   104.25,
+   106.67,
+   118.5,
+   165.25,
+   107.94,
+   113.95,
+   105.83,
+   109.02,
+   114.6,
+   161.45,
+   112.6,
+   119.36,
+   178.95,
+   101.86,
+   104.43,
+   99.66,
+   110.2,
+   113.26,
+   119.08,
+   174.73,
+   121.85,
+   112.91,
+   111.9,
+   110.24,
+   105.56,
+   131.57,
+   146.46,
+   133.01,
+   122.22,
+   121.13,
+   121.51,
+   105.78,
+   124.99,
+   139.57,
+   110.51,
+   186.05,
+   120.26,
+   110.84,
+   122.42,
+   153.17,
+   119.11,
+   109.36,
+   196.24,
+   102.93,
+   96.27,
+   116.53,
+   129.98,
+   112.37,
+   140.35,
+   177.8,
+   123.62,
+   112.58,
+   130.17,
+   118.22,
+   102.02,
+   113.21,
+   126.77
+  ]
+ },
+ "failure_causes": {
+  "Picked up by a fishing boat or passer-by": 22,
+  "Electronics failure": 14,
+  "Fouled by weed or fishing line": 10,
+  "Struck by a vessel": 9,
+  "Leak started": 8,
+  "Backup tracker failed": 4,
+  "Rudder servo failed limp": 3,
+  "Companion computer hung": 2,
+  "Wing damaged in a knockdown": 2,
+  "Rudder servo stripped by a wave strike": 2,
+  "One rudder servo stripped by a wave strike": 2,
+  "One rudder servo failed limp": 1,
+  "Tail servo jammed": 1,
+  "Satellite modem or antenna failed": 1,
+  "Tail servo failed": 1,
+  "Collision damage": 1,
+  "Keel fin or its joint broke in a knockdown": 1
+ },
+ "mean_airtime_usd": 121.11,
+ "mean_knockdowns": 597.2
+}
+Saved ..\results\launch_2023_maine__ireland_sw.json
+{
+ "runs": 150,
+ "errors": 0,
+ "success_percent": 44.0,
+ "success_ci95": [
+  36.3,
+  52.0
+ ],
+ "reporting_percent": 32.7,
+ "any_arrival_percent": 48.0,
+ "position_known_at_end_percent": 75.3,
+ "percent": {
+  "arrived_reporting": 32.7,
+  "arrived_tracked": 11.3,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 4.0,
+  "at_sea_timeout": 18.0,
+  "aground": 11.3,
+  "lost": 22.7
+ },
+ "arrival_days": {
+  "median": 118.28,
+  "p10": 104.268,
+  "p90": 164.87
+ },
+ "failure_causes": {
+  "Picked up by a fishing boat or passer-by": 22,
+  "Electronics failure": 14,
+  "Fouled by weed or fishing line": 10,
+  "Struck by a vessel": 9,
+  "Leak started": 8,
+  "Backup tracker failed": 4,
+  "Rudder servo failed limp": 3,
+  "Companion computer hung": 2,
+  "Wing damaged in a knockdown": 2,
+  "Rudder servo stripped by a wave strike": 2,
+  "One rudder servo stripped by a wave strike": 2,
+  "One rudder servo failed limp": 1,
+  "Tail servo jammed": 1,
+  "Satellite modem or antenna failed": 1,
+  "Tail servo failed": 1,
+  "Collision damage": 1,
+  "Keel fin or its joint broke in a knockdown": 1
+ },
+ "by_launch_month": {
+  "05": {
+   "runs": 100,
+   "arrived": 48,
+   "success_percent": 48.0,
+   "success_ci95": [
+    38.5,
+    57.7
+   ]
+  },
+  "06": {
+   "runs": 50,
+   "arrived": 18,
+   "success_percent": 36.0,
+   "success_ci95": [
+    24.1,
+    49.9
+   ]
+  }
+ },
+ "mean_airtime_usd": 121.11,
+ "mean_knockdowns": 597.2
+}
+=== DONE Fri 11/13/2026  4:04:20.11 

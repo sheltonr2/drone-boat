@@ -2,6 +2,12 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-13, 09:55 UTC (04:55 local): launch study stage A results; stage B queued
+
+- Stage A finished 04:04 (restarted batch ran cleanly). Rev C5, 150 paired voyages, all to SW Ireland: Hatteras 45 km (charter) 54.0, Ocean City 100 km (charter) 50.0, Hatteras Inlet 49.3, Virginia Beach 48.7, Ocean City 46.7, Cape Cod 46.6, Montauk 46.0, Maine 44.0, Charleston 43.3, Palm Beach 42.7, Barnegat 34.7, Canaveral 31.3 (route crossed the cape: 8 aground on day 0; rerun queued). With the fishing-ground mark-down, Maine and Cape Cod fall well behind.
+- Waypoint rule check: abeam vs old rule at Ocean City +2.0 (-0.2 to +4.2), 137/150 identical.
+- Reliability study (020) started at 04:05 before stage B could be queued; stage B (run_launch_pairs_2023.bat, request 010: HS/OCC/Hatteras/OC x Cornwall/Brittany + canaveral_east) follows, ~8:05 am to ~1:40 pm.
+
 ## 2026-11-13, 02:10 UTC (21:10 local, 12 Nov): runs survive unplugging
 
 - Randolph confirmed he had unplugged the laptop. Added simulator/fix_run_queue_battery.bat (sets the task's AllowStartIfOnBatteries and DontStopIfGoingOnBatteries); setup_run_queue.bat now applies the same. cli.py now asks Windows not to sleep during every run (it only did with --wait-for-limits). Copied to the PC; the running stage-A run is unaffected (Python had already loaded cli.py), runs 2-12 pick it up.
