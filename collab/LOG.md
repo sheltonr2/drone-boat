@@ -2,6 +2,13 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-13, 13:30 UTC (08:30 local): simulator speed-up, pending a check on the PC
+
+- Randolph asked whether his GPU could help; it can't usefully (the time is Python overhead in sequential steps). Agreed instead: faster CPU code that must give bit-for-bit identical results.
+- Rewrote the polar lookup and the land test (docs/Simulator_Speedup.md). Identical on 100k polar inputs, 49k land points on the Natural Earth coastline, and 84 full voyages incl. groundings; land test 10-13x faster, voyages ~6x faster on synthetic weather. DRONE_SIM_REFERENCE=1 keeps the old code.
+- PC: full new package in simulator\speedup\drone_sim; run_speed_check.bat (request 010a, after stage B, before stage C) runs 80 real-weather voyages old vs new and installs vpp.py/env.py only if identical. The repo already has the new code; the PC uses it only after a PASS.
+- The 13:50 check now also reports the speed check.
+
 ## 2026-11-13, 11:25 UTC (06:25 local): commitments to Maya's team done
 
 - Correction: our 05:55 post offered to take the hurricane hazard half and asked for their ERA5 wind correction. Both were already done (our docs/Hurricane_Risk.md of 9 Nov; their #117 ratios, already in storms.ERA5_RATIO). Corrected in the follow-up post. Lesson: check the repo before promising work from a summary.
