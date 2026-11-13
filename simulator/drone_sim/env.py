@@ -411,6 +411,60 @@ class LandMask:
         if len(ring) < 3: return
         self.polys.append((ring[:, 0].min(), ring[:, 0].max(), ring[:, 1].min(), ring[:, 1].max(), ring))
 
+    # ---- speed-up of 13 Nov 2026 -------------------------------------------------------------------------
+    # The same ray-casting test, but only over polygons whose box covers the point (a 1-degree grid of boxes)
+    # and only over the edges that can cross the point's latitude (edges binned into 0.25-degree bands).
+    # Every edge the original test counts is in the subset and is computed with the same arithmetic, so the
+    # answer is identical. DRONE_SIM_REFERENCE=1 runs the original.
+    _BAND = 0.25
+
+    @staticmethod
+    def _build_index(polys):
+        cells = {}; parts = []
+        for k, (x0, x1, y0, y1, r) in enumerate(polys):
+            for i in range(int(math.floor(y0)), int(math.floor(y1)) + 1):
+                for j in range(int(math.floor(x0)), int(math.floor(x1)) + 1):
+                    cells.setdefault((i, j), []).append(k)
+            x, y = r[:, 0], r[:, 1]
+            xn, yn = np.roll(x, -1), np.roll(y, -1)
+            lo, hi = np.minimum(y, yn), np.maximum(y, yn)
+            b0 = np.floor(lo/LandMask._BAND).astype(np.int64); b1 = np.floor(hi/LandMask._BAND).astype(np.int64)
+            bands = {}
+            for e in range(len(x)):
+                for b in range(int(b0[e]), int(b1[e]) + 1):
+                    bands.setdefault(b, []).append(e)
+            bands = {b: np.array(v, dtype=np.int64) for b, v in bands.items()}
+            parts.append((x, y, yn, xn - x, yn - y, bands))
+        return cells, parts
+
+    def _index_for(self, polys):
+        cache = self.__dict__.setdefault("_land_index", {})
+        key = id(polys)
+        got = cache.get(key)
+        if got is None or got[0] is not polys or got[1] != len(polys):     # rebuilt if the list changes
+            got = cache[key] = (polys, len(polys), self._build_index(polys))
+        return got[2]
+
+    def _inside_fast(self, polys, lat, lon):
+        cells, parts = self._index_for(polys)
+        cand = cells.get((int(math.floor(lat)), int(math.floor(lon))))
+        if not cand: return False
+        band = int(math.floor(lat/LandMask._BAND))
+        for k in cand:
+            x0, x1, y0, y1, r = polys[k]
+            if not (x0 <= lon <= x1 and y0 <= lat <= y1): continue
+            x, y, yn, dx, dy, bands = parts[k]
+            e = bands.get(band)
+            if e is None: continue
+            ye = y[e]
+            cond = ((ye > lat) != (yn[e] > lat))
+            if not cond.any(): continue
+            ec = e[cond]
+            xi = x[ec] + (lat - y[ec])*dx[ec]/dy[ec]
+            if np.count_nonzero(xi > lon) % 2 == 1:
+                return True
+        return False
+
     @staticmethod
     def _inside(polys, lat, lon):
         for x0, x1, y0, y1, r in polys:
@@ -449,10 +503,11 @@ class LandMask:
         if self.atlantic_island(lat, lon):
             return bool(islands)
         if self.europe:
-            if self._inside(self.europe, lat, lon): return True
+            inside = self._inside if _REFERENCE else self._inside_fast
+            if inside(self.europe, lat, lon): return True
             for b in range(0, 360, 45):          # the boat stops at the coast; allow ~5 km of slack
                 la, lo = destination(lat, lon, b, 5000)
-                if self._inside(self.europe, la, lo): return True
+                if inside(self.europe, la, lo): return True
             return False
         # coarse fallback: the European side of the North Atlantic, minus Greenland and North Africa
         if lon < -32 or lon > 45 or lat < 34: return False
@@ -461,6 +516,8 @@ class LandMask:
         return True
 
     def is_land(self, lat, lon):
+        if not _REFERENCE:
+            return self._inside_fast(self.polys, lat, lon)
         for x0, x1, y0, y1, r in self.polys:
             if not (x0 <= lon <= x1 and y0 <= lat <= y1): continue
             x, y = r[:, 0], r[:, 1]
@@ -485,6 +542,9 @@ class LandMask:
                 la, lo = destination(lat, lon, b, d*1000)
                 if self.is_land(la, lo): return float(d)
         return float(max_km)
+
+
+_REFERENCE = os.environ.get("DRONE_SIM_REFERENCE", "") == "1"   # 1: the original (slower) land test, for checking
 
 
 # ---------------------------------------------------------------- geodesy

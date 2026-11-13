@@ -8,6 +8,9 @@ Boat frame: x forward, y to port, z up, origin at the CG. Wind arrives from star
 (true wind angle twa in 0..pi). Results are tabulated into a polar the simulator interpolates.
 """
 import math
+import bisect
+import os
+
 import numpy as np
 
 RHO_W, RHO_A, G, NU = 1025.0, 1.225, 9.81, 1.19e-6
@@ -249,11 +252,34 @@ def build_polar(vpp):
     return pol
 
 
+REFERENCE = os.environ.get("DRONE_SIM_REFERENCE", "") == "1"   # 1: the original (slower) lookups, for checking
+
+
 class Polar:
-    """Fast multilinear interpolation into the tabulated polar."""
+    """Fast multilinear interpolation into the tabulated polar.
+
+    Speed-up of 13 Nov 2026: the same 16-corner sum in the same order, on plain Python floats taken from
+    the same float64 tables, so results are bit-for-bit identical (DRONE_SIM_REFERENCE=1 runs the original)."""
     def __init__(self, pol):
         self.p = pol; g = pol["grid"]
         self.axes = [g["tws"], g["twa"], g["hs"], g["df"]]
+        self._ax = [[float(v) for v in a] for a in self.axes]
+        shp = [len(a) for a in self.axes]
+        self._strides = (shp[1]*shp[2]*shp[3], shp[2]*shp[3], shp[3], 1)
+        self._flat = {}
+
+    def _flat_table(self, k):
+        t = self._flat.get(k)
+        if t is None:
+            t = self._flat[k] = np.asarray(self.p[k], dtype=float).ravel().tolist()
+        return t
+
+    @staticmethod
+    def _idx_fast(ax, x):
+        x = min(max(x, ax[0]), ax[-1])
+        i = bisect.bisect_left(ax, x) - 1; i = min(max(i, 0), len(ax) - 2)
+        f = (x - ax[i])/(ax[i + 1] - ax[i])
+        return i, f
 
     def _idx(self, ax, x):
         x = min(max(x, ax[0]), ax[-1])
@@ -265,6 +291,26 @@ class Polar:
         """twa in RADIANS (0 to pi). A value above about 3.2 is almost certainly degrees passed by mistake."""
         if abs(twa) > 3.2:
             raise ValueError(f"Polar: wind angle {twa!r} looks like degrees; pass radians")
+        if not REFERENCE:
+            idx = [self._idx_fast(a, x) for a, x in zip(self._ax, (tws, abs(twa), hs, df))]
+            st = self._strides
+            corners = []
+            for c in range(16):                         # same weights, same order, same zero-skip as below
+                w = 1.0; flat = 0
+                for dim in range(4):
+                    bit = (c >> dim) & 1
+                    i, f = idx[dim]
+                    w *= f if bit else (1 - f)
+                    flat += (i + bit)*st[dim]
+                if w:
+                    corners.append((w, flat))
+            out = {}
+            for k in keys:
+                t = self._flat_table(k); acc = 0.0
+                for w, flat in corners:
+                    acc += w*t[flat]
+                out[k] = float(acc)
+            return out
         idx = [self._idx(a, x) for a, x in zip(self.axes, (tws, abs(twa), hs, df))]
         out = {}
         for k in keys:
