@@ -2,6 +2,12 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-13, 01:55 UTC (20:55 local, 12 Nov): stage A restarted in a visible window
+
+- The first stage-A run (009, started 18:02 by the scheduled task, hidden) died without writing anything: no Python processes left, stale running.lock. Likely cause: the laptop's scheduled task stops on battery power by default. Not confirmed.
+- Randolph opened the new simulator/run_queue_window.bat. Queued unlock.run + 009b_launch_points_2023.run; stage A restarted in his window at 20:49, CPU 99%, 7/150 voyages after 5 min. The mc log now gets a progress line every 10 voyages.
+- 020 (reliability study, 3 x 250) waits behind it.
+
 ## 2026-11-13, 01:15 UTC (20:15 local, 12 Nov): reliability review (servos, weed, leaks)
 
 - Randolph asked for mitigations for the rudder and tail servos, weed (more sweep, no protruding bulb nose) and leaks (pressurised hull?), then suggested a bilge pump.
