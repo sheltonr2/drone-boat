@@ -2,6 +2,13 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-13, 10:55 UTC (05:55 local): full update to John's team (Maya)
+
+- Their team is back: Maya now leads it and is the main contact; their project is now Bluewater, a browser sailing simulator with our C5, Rev B and the Pearson in it (labelled as their model). They asked for a sync: our two or three current projects, and what we'd want from them. The C5 re-score is still on their list.
+- At Randolph's request, posted a full update ([comment](https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6850642299)): Rev D and its first run (62.0%), the 13-destination study, launch-point stage A, the reliability review, the schedule, and answers.
+- Asked them for: regional fishing and traffic density (their #62); their ERA5-vs-IBTrACS wind correction. Told them we'd take the hurricane hazard half (their earlier unanswered question). Re-score: C5 still the right boat for it.
+- Said we'd look at Bluewater and report anything that looks wrong.
+
 ## 2026-11-13, 09:55 UTC (04:55 local): launch study stage A results; stage B queued
 
 - Stage A finished 04:04 (restarted batch ran cleanly). Rev C5, 150 paired voyages, all to SW Ireland: Hatteras 45 km (charter) 54.0, Ocean City 100 km (charter) 50.0, Hatteras Inlet 49.3, Virginia Beach 48.7, Ocean City 46.7, Cape Cod 46.6, Montauk 46.0, Maine 44.0, Charleston 43.3, Palm Beach 42.7, Barnegat 34.7, Canaveral 31.3 (route crossed the cape: 8 aground on day 0; rerun queued). With the fishing-ground mark-down, Maine and Cape Cod fall well behind.
