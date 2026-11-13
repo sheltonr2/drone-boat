@@ -11,6 +11,14 @@ if not exist queue\rejected mkdir queue\rejected
 if exist queue\unlock.run del queue\running.lock 2>nul
 if exist queue\unlock.run del queue\unlock.run
 if exist queue\running.lock exit /b 0
+REM If run_queue_window.bat is open (it touches queue\window.lock every minute), leave the work to it so the run shows in
+REM its window; the scheduled task runs hidden on some PCs. A stale window.lock (over 3 minutes old) is ignored.
+if "%~1"=="window" goto :pick
+if exist queue\window.lock (
+  powershell -NoProfile -Command "exit [int](((Get-Date)-(Get-Item 'queue\window.lock').LastWriteTime).TotalMinutes -lt 3)" >nul 2>&1
+  if errorlevel 1 exit /b 0
+)
+:pick
 set "REQ="
 for %%F in (queue\*.run) do if not defined REQ set "REQ=%%~nxF"
 if not defined REQ exit /b 0

@@ -7,3 +7,7 @@ Only names of the form run_<letters, digits, _ or ->.bat are accepted; anything 
 One run at a time: running.lock exists while a run is going. If the PC was switched off mid-run and the lock is
 stale, put a file called unlock.run here to clear it.
 queue_log.txt records every start, finish and rejection.
+
+Window: on some PCs the scheduled task runs hidden (no console window). Double-click run_queue_window.bat
+and leave it open: it runs the queue in that window, with the banner and progress, and the scheduled task
+stands aside while the window is open. Close it and the scheduled task takes over again.

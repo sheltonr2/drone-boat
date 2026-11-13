@@ -145,9 +145,12 @@ def _main():
         say(f"Monte Carlo: {design.get('name', 'design')}, {a.runs} voyages, {sc.get('name', '')[:70]}")
         say("Building the speed model first (10-30 s) ...")
         pg, ok = Progress("Voyages", a.runs), [0, 0]
+        print(f"[{time.strftime('%H:%M:%S')}] Monte Carlo: {a.runs} voyages, {sc.get('name', '')[:70]}; {procs or 'auto'} processes", flush=True)
         def _prog(frac, res):
             ok[0] += 1; ok[1] += res.get("outcome") in ("arrived_reporting", "arrived_tracked")
             pg.update(ok[0], f"arrived so far: {ok[1]}")
+            if ok[0] % 10 == 0 or ok[0] == a.runs:          # a line in the log too, so progress can be read remotely
+                print(f"[{time.strftime('%H:%M:%S')}] {ok[0]}/{a.runs} voyages done, {ok[1]} arrived", flush=True)
         r = run_montecarlo(design, sc, n_runs=a.runs, window=win, processes=procs, cache_dir=CACHE, progress=_prog)
         s_ = r["summary"]; say(f"Done: {s_.get('success_percent')}% verified arrivals. Full results are in the log and the results file.")
         print(json.dumps(jsonable(r["summary"]), indent=1))
