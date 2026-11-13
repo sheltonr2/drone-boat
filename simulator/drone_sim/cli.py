@@ -18,12 +18,12 @@ def main():
     wait = "--wait-for-limits" in sys.argv
     if wait:
         sys.argv.remove("--wait-for-limits")
-        if os.name == "nt":      # ask Windows not to sleep while this runs (no admin rights needed)
-            try:
-                import ctypes
-                ctypes.windll.kernel32.SetThreadExecutionState(0x80000000 | 0x00000001)
-            except Exception:
-                pass
+    if os.name == "nt":          # ask Windows not to sleep while any run is going, on mains or battery (no admin
+        try:                     # rights needed; cleared automatically when this process ends). Closing the lid
+            import ctypes        # still sleeps the laptop unless its lid setting is "Do nothing".
+            ctypes.windll.kernel32.SetThreadExecutionState(0x80000000 | 0x00000001)
+        except Exception:
+            pass
     while True:
         try:
             _main(); return

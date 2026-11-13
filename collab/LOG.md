@@ -2,6 +2,10 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-13, 02:10 UTC (21:10 local, 12 Nov): runs survive unplugging
+
+- Randolph confirmed he had unplugged the laptop. Added simulator/fix_run_queue_battery.bat (sets the task's AllowStartIfOnBatteries and DontStopIfGoingOnBatteries); setup_run_queue.bat now applies the same. cli.py now asks Windows not to sleep during every run (it only did with --wait-for-limits). Copied to the PC; the running stage-A run is unaffected (Python had already loaded cli.py), runs 2-12 pick it up.
+
 ## 2026-11-13, 01:55 UTC (20:55 local, 12 Nov): stage A restarted in a visible window
 
 - The first stage-A run (009, started 18:02 by the scheduled task, hidden) died without writing anything: no Python processes left, stale running.lock. Likely cause: the laptop's scheduled task stops on battery power by default. Not confirmed.

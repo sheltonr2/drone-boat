@@ -18,14 +18,16 @@ pause
 if not exist queue mkdir queue
 schtasks /create /tn "DroneBoatRunQueue" /sc minute /mo 5 /tr "\"%~dp0run_queue.bat\"" /f
 if errorlevel 1 goto :failed
+REM Windows makes new tasks stop when a laptop goes onto battery and refuse to start on battery. Turn both off.
+powershell -NoProfile -Command "$s = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -ExecutionTimeLimit (New-TimeSpan -Days 3); Set-ScheduledTask -TaskName 'DroneBoatRunQueue' -Settings $s | Out-Null"
+if errorlevel 1 echo NOTE: could not change the battery settings. Run fix_run_queue_battery.bat, or tell Claude.
 echo.
 echo Set up. Starting the queue once now...
 schtasks /run /tn "DroneBoatRunQueue"
 echo.
 echo Done. If a run was waiting in the queue, its window opens in a few seconds.
 echo Notes: the PC must be on and awake, and you must be signed in (locked is fine).
-echo        On a laptop, Windows only starts the task on mains power unless you change that
-echo        in Task Scheduler (task "DroneBoatRunQueue", Conditions tab).
+echo        The task keeps running on battery. For runs you can watch, use run_queue_window.bat.
 pause
 exit /b 0
 :failed

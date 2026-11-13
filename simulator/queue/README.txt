@@ -11,3 +11,8 @@ queue_log.txt records every start, finish and rejection.
 Window: on some PCs the scheduled task runs hidden (no console window). Double-click run_queue_window.bat
 and leave it open: it runs the queue in that window, with the banner and progress, and the scheduled task
 stands aside while the window is open. Close it and the scheduled task takes over again.
+
+Battery (13 Nov 2026): Windows' default made the scheduled task stop when the laptop was unplugged, which killed a
+run on 12 Nov and left running.lock behind. fix_run_queue_battery.bat (once) turns that off; setup_run_queue.bat
+now does it on creation. Every simulator run also asks Windows not to sleep while it is going. A closed lid still
+sleeps the laptop unless the lid setting is "Do nothing"; a run paused by sleep resumes on wake.
