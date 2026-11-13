@@ -251,7 +251,7 @@ class Voyage:
             tracker_ok=st["trk_ok"], tracker_fixes=st["trk_fixes"],
             knockdowns=st["knockdowns"], capsizes=st["capsizes"], knockdowns_by_hs_m=st["kd_hs"],
             energy_in_wh=round(st["energy_in_wh"], 1), energy_out_wh=round(st["energy_out_wh"], 1),
-            final_soc=round(st["soc"], 3), final_drag_factor=round(st["df"], 2),
+            final_soc=round(st["soc"], 3), final_drag_factor=round(st["df"], 2), pumped_kg=round(st.get("pumped_kg", 0.0), 2),
             failures=[ev for ev in self.events if ev["kind"] == "failure"],
             events=self.events, series=series, wall_s=round(time.time() - wall0, 1),
             mode=sc["mode"], scenario=sc, design_name=d.get("name"),
@@ -341,6 +341,8 @@ class Voyage:
                 load += P["servo_j_per_deg"]*(150 + 120*e["hs"])/3600           # rudder corrections (deg per hour)
             load += P["servo_j_per_deg"]*(30 + 30*e["hs"])/3600                  # tail
             if st.get("thruster_on"): load += P["thruster_w"]
+        if st.get("pump_wh", 0.0) > 0:                                             # bilge pump energy since the last step
+            load += st["pump_wh"]*3600/dt; st["pump_wh"] = 0.0
         dE = (sun - load)*dt/3600
         st["energy_in_wh"] += sun*dt/3600; st["energy_out_wh"] += load*dt/3600
         st["soc"] = min(1.0, max(0.0, st["soc"] + dE/cap))
@@ -434,8 +436,29 @@ class Voyage:
             lim = self.d["hull"].get("flood_limit_kg")          # Rev C: foam-filled hull, only the free space can flood
             if lim is not None:
                 st["water_kg"] = min(st["water_kg"], lim)
+            pump = self.d.get("bilge_pump") or {}
+            if pump.get("fitted") and not st.get("pump_dead"):
+                if rnd() < p_event(pump.get("fail_per_day", 0.0)*el, dt):
+                    st["pump_dead"] = True; self.event(t, "failure", "Bilge pump failed")
+                elif st["water_kg"] > 0.02:                    # pumps the sump down to the pickup level
+                    out = min(st["water_kg"] - 0.02, pump["kg_per_day"]*dt/86400)
+                    if not st.get("pumped_kg"):
+                        self.event(t, "alarm", "Leak: bilge pump running, sailing on")
+                    st["water_kg"] -= out; st["pumped_kg"] = st.get("pumped_kg", 0.0) + out
+                    st["pump_wh"] = st.get("pump_wh", 0.0) + pump.get("power_w", 4.0)*(out/pump["kg_per_day"]*24)
+            policy = self.d["autopilot"].get("leak_policy", "safe")
             if st["water_kg"] > 0.1 and not st["leak_alarm"]:
-                st["leak_alarm"] = True; self.ap.mode = "safe"; self.event(t, "alarm", "Leak sensor wet -> SAFE mode")
+                st["leak_alarm"] = True
+                if policy == "safe":                            # Rev B-D: stop and wait (the boat never leaves SAFE)
+                    self.ap.mode = "safe"; self.event(t, "alarm", "Leak sensor wet -> SAFE mode")
+                else:
+                    self.event(t, "alarm", "Leak sensor wet: pumping, sailing on")
+            if policy != "safe":                                # pump_and_sail: stop only if the pump is losing
+                thr = self.d["autopilot"].get("leak_safe_kg", 1.5)
+                if st["water_kg"] > thr and not st.get("flooding"):
+                    st["flooding"] = True; self.ap.mode = "safe"; self.event(t, "alarm", f"Water over {thr:.1f} kg -> SAFE mode")
+                elif st.get("flooding") and st["water_kg"] < 0.5*thr:
+                    st["flooding"] = False; self.event(t, "recovery", "Water pumped down: sailing on")
             if st["water_kg"] > 0.35*self.boat.mass:
                 st["alive"] = False; self.event(t, "failure", "Swamped by leaking water: boat lost"); return
         # backup tracker (independent box)
@@ -469,30 +492,39 @@ class Voyage:
             st["comms_dead"] = True; self.event(t, "failure", "Satellite modem or antenna failed: boat sails on but is silent")
         # steering
         # steering. Each rudder has its own servo (Rev C has two): the boat keeps steering until the last one fails.
+        # Design-level factors (docs/Reliability_Review.md): servo_rate_factor scales the scenario's servo rates for a
+        # better actuator (GUESS until a bench life test); tail_fail_free_share is the share of tail failures that
+        # leave the tail free (wing feathers, boat drifts) rather than jammed at an angle (0.5 as drawn).
+        rsf = self.d["rudder"].get("servo_rate_factor", 1.0); tsf = self.d["wing"].get("tail_servo_rate_factor", 1.0)
+        free_share = self.d["wing"].get("tail_fail_free_share", 0.5)
         if active and st["rudder"] == "ok" and st["rudders_ok"] > 1:
-            if rnd() < p_event(self.rate("rudder_servo")*el*(1 + hs/4)*st["rudders_ok"], dt):
+            if rnd() < p_event(self.rate("rudder_servo")*rsf*el*(1 + hs/4)*st["rudders_ok"], dt):
                 st["rudders_ok"] -= 1
                 how = "jammed" if rnd() < 0.6 else "failed limp"
                 self.event(t, "failure", f"One rudder servo {how}: the other rudder still steers")
-        elif active and st["rudder"] == "ok" and rnd() < p_event(self.rate("rudder_servo")*el*(1 + hs/4), dt):
+        elif active and st["rudder"] == "ok" and rnd() < p_event(self.rate("rudder_servo")*rsf*el*(1 + hs/4), dt):
             if rnd() < 0.6:
                 st["rudder"] = "stuck"; st["rudder_stuck"] = rnd()*2 - 1
                 self.event(t, "failure", f"Rudder servo jammed at {st['rudder_stuck']*self.d['rudder']['max_angle_deg']:.0f} deg")
             else:
                 st["rudder"] = "limp"; self.event(t, "failure", "Rudder servo failed limp: no steering")
-        if active and st["tail"] == "ok" and rnd() < p_event(self.rate("tail_servo")*el*(1 + hs/4), dt):
-            if rnd() < 0.5:
+        if active and st["tail"] == "ok" and rnd() < p_event(self.rate("tail_servo")*tsf*el*(1 + hs/4), dt):
+            if rnd() < 1.0 - free_share:              # same draw as before when free_share is 0.5
                 st["tail"] = "stuck"; st["tail_stuck_alpha"] = math.radians(rnd()*15)
                 self.event(t, "failure", "Tail servo jammed: wing stuck at a fixed angle of attack")
             else:
                 st["tail"] = "feathered"; self.event(t, "failure", "Tail servo failed: wing feathers, boat drifts")
         # entanglement
+        # Geometry factors (docs/Reliability_Review.md): weed_catch_factor scales the catch rate, weed_clear_per_day
+        # is how fast a fouled boat sheds it (0.15 as drawn, which assumes a vertical fin with a protruding bulb nose
+        # clears in a week: a GUESS, probably kind).
+        wk = self.d["keel"].get("weed_catch_factor", 1.0); wc = self.d["keel"].get("weed_clear_per_day", 0.15)
         if not st["entangled"]:
             m = 3 if near(100) else 1
             if 20 <= st["lat"] <= 35 and -70 <= st["lon"] <= -40: m *= 2
-            if rnd() < p_event(self.rate("entanglement")*m, dt):
+            if rnd() < p_event(self.rate("entanglement")*wk*m, dt):
                 st["entangled"] = True; self.event(t, "failure", "Fouled by weed or fishing line (drag x4)")
-        elif rnd() < p_event(0.15, dt):
+        elif rnd() < p_event(wc, dt):
             st["entangled"] = False; self.event(t, "recovery", "Fouling cleared")
         # collision / capture
         if rnd() < p_event(self.rate("collision")*(8 if near(100) else 1), dt):

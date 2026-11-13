@@ -95,7 +95,8 @@ class Autopilot:
         if s["soc"] < self.ap["safe_soc"] and self.mode != "safe":
             self.event(t, "mode", f"Battery {s['soc']*100:.0f}% -> SAFE mode (heave-to, 12 h reports)")
             self.prev_mode = self.mode; self.mode = "safe"
-        if self.mode == "safe" and s["soc"] > self.ap["safe_soc"] + 0.2 and not s.get("leak_alarm"):
+        leak_hold = s.get("leak_alarm") if self.ap.get("leak_policy", "safe") == "safe" else s.get("flooding")
+        if self.mode == "safe" and s["soc"] > self.ap["safe_soc"] + 0.2 and not leak_hold:
             self.mode = getattr(self, "prev_mode", "sail"); self.event(t, "mode", f"Battery recovered -> {self.mode}")
         if self.mode in ("safe", "drift"):
             out.update(alpha_mode="feather", steering=False, heading=s["heading"])

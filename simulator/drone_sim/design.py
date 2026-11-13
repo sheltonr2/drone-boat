@@ -107,6 +107,9 @@ DEFAULT = {
     # compass and power feed that takes over the starboard rudder and the tail when the main box dies.
     # speed_factor and rate_factor are GUESSES until Field Test N and the on-water takeover trial.
     "limp_home": {"fitted": True, "speed_factor": 0.85, "rate_factor": 0.5},
+    # Bilge pump in the sump (proposed, docs/Reliability_Review.md): a small brushless diaphragm pump on the leak probe's
+    # float. kg_per_day is its capacity (a 0.5 L/min pump is 720), fail_per_day a GUESS. Off until a design turns it on.
+    "bilge_pump": {"fitted": False, "kg_per_day": 500.0, "power_w": 4.0, "fail_per_day": 0.0005},
     # Rev D: multipliers on the scenario's failure rates for coating and potting (docs/Potting_Spec.md). GUESSES:
     # electronics x0.6 (all boards coated, sensors/power/joints potted), comms_silent x0.5 (encapsulated RockBLOCK Plus).
     "electronics_protection": {"electronics": 0.6, "comms_silent": 0.5},
@@ -121,6 +124,10 @@ DEFAULT = {
     "autopilot": {
         "heel_limit_deg": 25.0, "storm_tws_ms": 20.0, "reef_tws_ms": 13.0,
         "tack_hysteresis_deg": 20.0, "decision_interval_min": 10.0,
+        # What to do when the leak sensor gets wet. "safe": feather and stop for good (Rev B-D as drawn: this cost
+        # about a third of the Rev D losses, docs/Reliability_Review.md). "pump_and_sail": keep sailing with the
+        # bilge pump running; SAFE only while the water is over leak_safe_kg, and back to sailing once pumped down.
+        "leak_policy": "safe", "leak_safe_kg": 1.5,
         "min_upwind_twa_deg": 50.0, "min_downwind_twa_deg": 165.0,
         "land_clearance_km": 15.0,
         "thruster_policy": {"enabled": False, "min_soc": 0.70, "max_speed_ms": 0.25, "max_hours_per_day": 2.0},

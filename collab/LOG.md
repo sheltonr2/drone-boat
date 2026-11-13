@@ -2,6 +2,14 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-13, 01:15 UTC (20:15 local, 12 Nov): reliability review (servos, weed, leaks)
+
+- Randolph asked for mitigations for the rudder and tail servos, weed (more sweep, no protruding bulb nose) and leaks (pressurised hull?), then suggested a bilge pump.
+- Finding from the Rev D event logs: no boat was swamped; leak losses (41 of 95) come from the safe-mode response, which never releases. A tail servo that fails free was a certain loss (15 of 15). Both rudders lost in 32 voyages.
+- docs/Reliability_Review.md: bilge pump + pump-and-sail response; pressure-decay test, membrane vents and a humidity sensor instead of a pressurised hull; sealed magnetic-encoder servos (Blue Trail SER-2000 kit + DFRobot), tail magnetic detent, deadband steering; weed: fin-bulb fairing, flush nose with the fin 90 mm forward (check in sim), raked rudders, shedding manoeuvre.
+- Simulator: new design keys (leak_policy, bilge_pump, servo rate factors, tail_fail_free_share, weed catch/clear). Rev D as drawn is bitwise unchanged. Three 250-voyage runs queued on the PC as 020 (run_reliability_2023.bat, ~4 h) behind the launch study: pump only, full package, weed downside.
+- Nothing posted to John.
+
 ## 2026-11-13, 00:45 UTC (19:45 local, 12 Nov): destination study final; Rev D as drawn
 
 - 007 finished 16:57, 008 (Rev D) 17:59, 009 (launch study stage A) started 18:02 local.
