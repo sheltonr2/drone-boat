@@ -2,6 +2,12 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-13, 14:40 UTC (09:40 local): daily check-in, thread not read
+
+- Could not read issue #50: the browser link to Randolph's PC was disconnected, the GitHub API is not enabled for boat-sim in this session, and a plain web fetch needed an approval nobody was around for. Nothing posted.
+- Open items brought up to date in the next check-in (14 Nov, 08:47): stormcheck on real-weather tracks and the limp-home and destination decisions are done; still open are knockdown damage scaling, the storm loss model, Rev D1, the launch recommendation (stage C), the Bluewater visual pass, and the #117 wind correction in the voyage loop.
+- Pending today: 13:50 check (stage B, reliability, speed check, queue stage C).
+
 ## 2026-11-13, 13:30 UTC (08:30 local): simulator speed-up, pending a check on the PC
 
 - Randolph asked whether his GPU could help; it can't usefully (the time is Python overhead in sequential steps). Agreed instead: faster CPU code that must give bit-for-bit identical results.
