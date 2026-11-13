@@ -1,0 +1,20 @@
+Rev E as drawn: 76.4%  (250 voyages)
+Outcomes: {'aground': '0.4', 'arrived_reporting': '53.6', 'arrived_silent': '1.2', 'arrived_tracked': '22.8', 'at_sea_timeout': '5.6', 'lost': '16.4'}
+vs Rev D as drawn (62.0%): +14.4 (+7.6 to +21.2), gained 58, lost 22
+vs Reliability package study (80.8%): -4.4 (-9.6 to +0.8), gained 19, lost 30
+Losses by first failure: Rev D / package / Rev E
+  Picked up by a fishing boat or passer-by       13  13  14
+  Leak started                                   18   2   5
+  Tail servo jammed                               8   9  11
+  Tail servo failed                              15   1   1
+  Rudder servo failed limp                       12   3   1
+  Rudder servo jammed                             8   4   3
+  Electronics failure                             2   3   8
+  Fouled by weed or fishing line                  6   3   3
+  Struck by a vessel                              4   4   4
+  Companion computer hung                         3   2   2
+  Backup tracker failed                           2   2   2
+  Wing damaged in a knockdown                     0   0   3
+  Collision damage                                3   0   0
+  Satellite modem or antenna failed               1   1   2
+  Keel fin or its joint broke in a knockdown      0   1   0

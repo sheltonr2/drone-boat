@@ -1,0 +1,19 @@
+500 voyages per pair, years {'2023': 250, '2024': 250}
+  hatteras__ireland_sw        64.6%   2023:  65.6%   2024:  63.6%   aground 2.4, arrived_reporting 43.4, arrived_silent 3.2, arrived_tracked 21.2, at_sea_timeout 21.6, lost 8.2
+  hatteras__cornwall          68.4%   2023:  72.0%   2024:  64.8%   aground 3.4, arrived_adrift 0.2, arrived_reporting 48.2, arrived_silent 2.4, arrived_tracked 20.2, at_sea_timeout 18.8, lost 6.8
+  ocean_city__ireland_sw      59.2%   2023:  62.8%   2024:  55.6%   aground 3.0, arrived_reporting 39.4, arrived_silent 3.2, arrived_tracked 19.8, at_sea_timeout 19.4, lost 15.2
+Launch: Hatteras Inlet vs Ocean City (to SW Ireland)
+   all   +5.4 (-0.2 to +10.8)
+   2023  +2.8 (-4.8 to +10.0)
+   2024  +8.0 (+0.4 to +15.6)
+Destination: Cornwall vs SW Ireland (from Hatteras Inlet)
+   all   +3.8 (-0.2 to +7.8)
+   2023  +6.4 (+0.4 to +12.4)
+   2024  +1.2 (-4.4 to +7.2)
+Best pair vs current plan: Hatteras Inlet -> Cornwall vs Ocean City -> SW Ireland
+   all   +9.2 (+3.8 to +14.8)
+   2023  +9.2 (+1.2 to +17.2)
+   2024  +9.2 (+1.6 to +16.8)
+  storms hatteras__ireland_sw       TS+ within 200 km  13.8%   success after storm loss  63.5%
+  storms hatteras__cornwall         TS+ within 200 km  13.2%   success after storm loss  67.2%
+  storms ocean_city__ireland_sw     TS+ within 200 km  16.3%   success after storm loss  57.8%

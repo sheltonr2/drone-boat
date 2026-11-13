@@ -2,6 +2,12 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-13, 21:00 UTC (16:00 local): stage C and Rev E results
+
+- Stage C (Rev D, 500 voyages per pair, 2023+2024, same seeds), 13:56–15:30: Hatteras Inlet -> Cornwall 68.4%, Hatteras Inlet -> SW Ireland 64.6%, Ocean City -> SW Ireland 59.2%. Best pair vs current plan +9.2 (+3.8 to +14.8), +9.2 in each year. Launch alone +5.4 (-0.2 to +10.8), destination alone +3.8 (-0.2 to +7.8). Recommendation written in docs/Launch_Point_Study.md for Randolph to decide; other docs unchanged.
+- Rev E first run, 15:31–15:45: 76.4%, +14.4 (+7.6 to +21.2) over Rev D; 4 points under the package study (two weed measures, +0.7 kg, chance). docs/Design_RevE.md.
+- Queue empty; PC idle.
+
 ## 2026-11-13, 19:20 UTC (14:20 local): Rev E drawn (reliability package approved)
 
 - Randolph approved the reliability recommendations. Drawn as Rev E, not "D1": the pump is a new system and the humidity sensor a new sensor (docs/Revisions.md). docs/Design_RevE.md.

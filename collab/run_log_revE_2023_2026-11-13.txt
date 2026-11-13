@@ -1,0 +1,363 @@
+Rev E as drawn (250 voyages), started Fri 11/13/2026 15:31:07.21 
+==== Rev E as drawn (250 voyages) ==== 
+[15:31:08] Monte Carlo: 250 voyages, Ocean City, ~10 km off the inlet (near-coast launch), to south-west Ir; 8 processes
+Building the speed polar for this design (about 10-30 s) ...
+[15:32:21] 10/250 voyages done, 10 arrived
+[15:32:57] 20/250 voyages done, 16 arrived
+[15:33:23] 30/250 voyages done, 23 arrived
+[15:34:06] 40/250 voyages done, 31 arrived
+[15:34:48] 50/250 voyages done, 37 arrived
+[15:35:14] 60/250 voyages done, 44 arrived
+[15:35:49] 70/250 voyages done, 52 arrived
+[15:36:23] 80/250 voyages done, 58 arrived
+[15:36:51] 90/250 voyages done, 66 arrived
+[15:37:18] 100/250 voyages done, 75 arrived
+[15:37:43] 110/250 voyages done, 81 arrived
+[15:38:10] 120/250 voyages done, 89 arrived
+[15:38:51] 130/250 voyages done, 96 arrived
+[15:39:18] 140/250 voyages done, 103 arrived
+[15:39:59] 150/250 voyages done, 111 arrived
+[15:40:27] 160/250 voyages done, 118 arrived
+[15:40:53] 170/250 voyages done, 127 arrived
+[15:41:22] 180/250 voyages done, 135 arrived
+[15:41:57] 190/250 voyages done, 143 arrived
+[15:42:29] 200/250 voyages done, 151 arrived
+[15:43:02] 210/250 voyages done, 159 arrived
+[15:43:28] 220/250 voyages done, 165 arrived
+[15:43:57] 230/250 voyages done, 173 arrived
+[15:44:27] 240/250 voyages done, 181 arrived
+[15:44:59] 250/250 voyages done, 191 arrived
+{
+ "runs": 250,
+ "errors": 0,
+ "counts": {
+  "arrived_reporting": 134,
+  "arrived_tracked": 57,
+  "arrived_silent": 3,
+  "arrived_adrift": 0,
+  "at_sea_timeout": 14,
+  "aground": 1,
+  "lost": 41
+ },
+ "percent": {
+  "arrived_reporting": 53.6,
+  "arrived_tracked": 22.8,
+  "arrived_silent": 1.2,
+  "arrived_adrift": 0.0,
+  "at_sea_timeout": 5.6,
+  "aground": 0.4,
+  "lost": 16.4
+ },
+ "success_percent": 76.4,
+ "success_ci95": [
+  70.8,
+  81.2
+ ],
+ "by_launch_month": {
+  "05": {
+   "runs": 170,
+   "arrived": 131,
+   "success_percent": 77.1,
+   "success_ci95": [
+    70.2,
+    82.8
+   ]
+  },
+  "06": {
+   "runs": 80,
+   "arrived": 60,
+   "success_percent": 75.0,
+   "success_ci95": [
+    64.5,
+    83.2
+   ]
+  }
+ },
+ "success_definition": "arrived_reporting + arrived_tracked",
+ "reporting_percent": 53.6,
+ "any_arrival_percent": 77.6,
+ "position_known_at_end_percent": 81.2,
+ "arrival_days": {
+  "median": 119.64500000000001,
+  "p10": 97.309,
+  "p90": 139.383,
+  "all": [
+   97.47,
+   131.28,
+   109.19,
+   131.5,
+   119.13,
+   124.18,
+   114.95,
+   114.73,
+   108.64,
+   119.75,
+   90.11,
+   136.64,
+   110.55,
+   122.48,
+   127.46,
+   95.57,
+   97.75,
+   152.24,
+   124.41,
+   123.72,
+   122.6,
+   122.63,
+   110.66,
+   110.01,
+   121.45,
+   107.36,
+   123.63,
+   144.17,
+   97.24,
+   112.7,
+   130.49,
+   126.82,
+   87.25,
+   162.76,
+   91.11,
+   141.73,
+   121.4,
+   119.9,
+   120.16,
+   133.16,
+   107.66,
+   126.35,
+   116.8,
+   109.55,
+   122.71,
+   115.47,
+   112.87,
+   118.33,
+   103.08,
+   102.35,
+   120.27,
+   140.32,
+   142.48,
+   92.42,
+   103.88,
+   120.03,
+   117.5,
+   115.17,
+   98.68,
+   137.51,
+   113.13,
+   114.92,
+   111.59,
+   115.06,
+   110.49,
+   122.51,
+   118.86,
+   120.9,
+   125.16,
+   123.01,
+   104.76,
+   136.42,
+   100.17,
+   123.61,
+   122.98,
+   105.28,
+   120.73,
+   139.11,
+   113.33,
+   116.88,
+   100.93,
+   95.65,
+   109.36,
+   118.76,
+   127.68,
+   132.86,
+   127.52,
+   103.16,
+   88.95,
+   117.32,
+   125.28,
+   126.8,
+   135.02,
+   194.39,
+   122.32,
+   120.07,
+   108.15,
+   121.25,
+   122.17,
+   129.07,
+   119.31,
+   95.88,
+   116.69,
+   118.2,
+   127.31,
+   90.21,
+   105.93,
+   102.29,
+   91.1,
+   130.79,
+   90.35,
+   149.62,
+   184.43,
+   117.58,
+   104.01,
+   100.52,
+   170.67,
+   115.39,
+   120.91,
+   139.5,
+   130.54,
+   105.23,
+   118.62,
+   90.68,
+   136.17,
+   117.27,
+   119.41,
+   112.99,
+   116.64,
+   123.28,
+   117.09,
+   115.25,
+   122.9,
+   91.99,
+   122.22,
+   94.61,
+   114.09,
+   112.2,
+   145.63,
+   106.81,
+   127.16,
+   155.8,
+   158.14,
+   86.78,
+   126.68,
+   85.02,
+   138.52,
+   123.16,
+   108.34,
+   120.65,
+   117.07,
+   98.7,
+   127.32,
+   162.15,
+   120.2,
+   129.62,
+   86.94,
+   117.1,
+   123.19,
+   85.77,
+   97.9,
+   138.16,
+   122.22,
+   129.74,
+   141.66,
+   159.29,
+   93.61,
+   194.65,
+   123.36,
+   118.65,
+   126.47,
+   108.75,
+   167.82,
+   127.1,
+   114.84,
+   104.07,
+   128.35,
+   134.72,
+   116.36,
+   139.65,
+   134.88,
+   118.85,
+   123.24,
+   132.22,
+   108.58,
+   132.8,
+   104.06,
+   119.54,
+   131.56,
+   133.11,
+   101.21,
+   106.53,
+   123.42,
+   124.17
+  ]
+ },
+ "failure_causes": {
+  "Picked up by a fishing boat or passer-by": 24,
+  "Struck by a vessel": 10,
+  "Keel fin or its joint broke in a knockdown": 7,
+  "One rudder servo stripped by a wave strike": 3,
+  "Capsized by a breaking wave": 2,
+  "Leak started": 2,
+  "Tail servo jammed": 2,
+  "Fouled by weed or fishing line": 1,
+  "Companion computer hung": 1,
+  "Rudder servo failed limp": 1,
+  "Electronics failure": 1,
+  "One rudder servo failed limp": 1,
+  "Backup tracker failed": 1
+ },
+ "mean_airtime_usd": 132.82,
+ "mean_knockdowns": 527.1
+}
+Saved ..\results\bulk_mc_2023_revE_10km.json
+{
+ "runs": 250,
+ "errors": 0,
+ "success_percent": 76.4,
+ "success_ci95": [
+  70.8,
+  81.2
+ ],
+ "reporting_percent": 53.6,
+ "any_arrival_percent": 77.6,
+ "position_known_at_end_percent": 81.2,
+ "percent": {
+  "arrived_reporting": 53.6,
+  "arrived_tracked": 22.8,
+  "arrived_silent": 1.2,
+  "arrived_adrift": 0.0,
+  "at_sea_timeout": 5.6,
+  "aground": 0.4,
+  "lost": 16.4
+ },
+ "arrival_days": {
+  "median": 119.64500000000001,
+  "p10": 97.309,
+  "p90": 139.383
+ },
+ "failure_causes": {
+  "Picked up by a fishing boat or passer-by": 24,
+  "Struck by a vessel": 10,
+  "Keel fin or its joint broke in a knockdown": 7,
+  "One rudder servo stripped by a wave strike": 3,
+  "Capsized by a breaking wave": 2,
+  "Leak started": 2,
+  "Tail servo jammed": 2,
+  "Fouled by weed or fishing line": 1,
+  "Companion computer hung": 1,
+  "Rudder servo failed limp": 1,
+  "Electronics failure": 1,
+  "One rudder servo failed limp": 1,
+  "Backup tracker failed": 1
+ },
+ "by_launch_month": {
+  "05": {
+   "runs": 170,
+   "arrived": 131,
+   "success_percent": 77.1,
+   "success_ci95": [
+    70.2,
+    82.8
+   ]
+  },
+  "06": {
+   "runs": 80,
+   "arrived": 60,
+   "success_percent": 75.0,
+   "success_ci95": [
+    64.5,
+    83.2
+   ]
+  }
+ },
+ "mean_airtime_usd": 132.82,
+ "mean_knockdowns": 527.1
+}
+=== DONE Fri 11/13/2026 15:45:00.39 

@@ -167,7 +167,7 @@ With the guessed fishing-ground mark-down (2% / 5% a day) every cell drops by 0.
 - **A beach launch at Hatteras Inlet is as good as the charter 45 km out** (+0.0, −7.8 to +8.0). Following the rule we set (prefer a beach launch over a charter launch when they're within noise), Hatteras Inlet is the launch to carry forward, though its early-grounding rate (4.7%) is higher than the charter's (0.7%).
 - **SW Ireland and Cornwall are tied; Brittany is about 2 points worse.** Same as the destination study.
 
-### Stage C: final check (started 13 Nov, 1:56 pm)
+### Stage C: final check (13 Nov, 1:56–3:30 pm)
 
 The best two pairs, both from Hatteras Inlet so that one comparison isolates the destination and the other the launch, and the current plan:
 
@@ -175,9 +175,44 @@ The best two pairs, both from Hatteras Inlet so that one comparison isolates the
 2. Hatteras Inlet 10 km → Cornwall
 3. Ocean City 10 km → SW Ireland (current plan)
 
-On **Rev D as drawn**, **500 voyages each** (alternating 2023 and 2024 weather, so 250 in each year), the same seeds in all three runs. That is twice the 250 first planned: the faster simulator (installed 13 Nov after the bit-for-bit check) makes it cost about 1 h 36 min instead of 8 hours, and it narrows the paired ranges by about a third. `simulator/run_launch_final.bat` (request 011). Results: `results/launch_2023+2024_<pair>.json`.
+On **Rev D as drawn**, **500 voyages each** (alternating 2023 and 2024 weather, so 250 in each year), the same seeds in all three runs. That is twice the 250 first planned: the faster simulator (installed 13 Nov after the bit-for-bit check) makes it cost about 1 h 36 min instead of 8 hours, and it narrows the paired ranges by about a third. `simulator/run_launch_final.bat` (request 011). Results: `results/2026-11-13_launch_2023+2024_<pair>.json`; log `collab/run_log_launch_final_2026-11-13.txt`; analysis `docs/data/launch_final_analysis.py` (output beside it).
 
 Results: `results/2026-11-13_launch_2023_<launch>__<destination>.json`. Logs: `collab/run_log_launch_points_2023_2026-11-13.txt` (stage A), `collab/run_log_launch_pairs_2023_2026-11-13.txt` (stage B). Note: the first attempt at stage A, started at 6:02 pm on 12 Nov, was killed when the laptop was unplugged; the batch was restarted at 8:49 pm and ran cleanly.
+
+**Results.** 500 voyages per pair, 250 in each weather year, the same seeds in all three. Ran in 1 h 34 min, no errors.
+
+| Pair | Success (95% range) | 2023 | 2024 | Lost | Aground | Lost or aground in 3 weeks | Storm: TS within 200 km | After the storm-loss model | Fishing mark-down 2% / 5% |
+|---|---|---|---|---|---|---|---|---|---|
+| **Hatteras Inlet → Cornwall** | **68.4% (64–72)** | 72.0% | 64.8% | 6.8% | 3.4% | 2.8% | 13.2% | 67.2% | 67.9 / 67.2% |
+| Hatteras Inlet → SW Ireland | 64.6% (60–69) | 65.6% | 63.6% | 8.2% | 2.4% | 2.8% | 13.8% | 63.5% | 64.0 / 63.3% |
+| Ocean City 10 km → SW Ireland (current plan) | 59.2% (55–63) | 62.8% | 55.6% | 15.2% | 3.0% | 7.4% | 16.3% | 57.8% | 58.3 / 57.4% |
+
+**Paired differences (95% range):**
+
+| Comparison | Both years | 2023 | 2024 |
+|---|---|---|---|
+| **Hatteras Inlet → Cornwall vs current plan** | **+9.2 (+3.8 to +14.8)** | +9.2 (+1.2 to +17.2) | +9.2 (+1.6 to +16.8) |
+| Launch only: Hatteras Inlet vs Ocean City, both to SW Ireland | +5.4 (−0.2 to +10.8) | +2.8 (−4.8 to +10.0) | +8.0 (+0.4 to +15.6) |
+| Destination only: Cornwall vs SW Ireland, both from Hatteras Inlet | +3.8 (−0.2 to +7.8) | +6.4 (+0.4 to +12.4) | +1.2 (−4.4 to +7.2) |
+
+## Recommendation (13 Nov 2026, for Randolph to decide)
+
+**Launch 10 km off Hatteras Inlet and aim for Cornwall** (Isles of Scilly / Land's End), instead of 10 km off Ocean City to SW Ireland.
+
+- **How sure:** +9.2 points (+3.8 to +14.8) over the current plan on Rev D, the same in both weather years. That is the first launch result in this study whose range clears zero by a clear margin. Each half of it alone is borderline: the launch is worth about 5 points and the destination about 4.
+- **Why it works:**
+  - Off Hatteras the Gulf Stream is close. The boat is 200 km out in under 3 days (Ocean City: 7), so it spends less time near the coast, the fishing grounds and the shipping lanes. Losses fall from 15.2% to 6.8%, and the first-three-weeks losses from 7.4% to 2.8%.
+  - It also sees slightly fewer tropical storms: within 200 km on 13% of voyages against 16%.
+  - Cornwall is a slightly easier target than SW Ireland on the same tracks.
+- **What it costs in practice:**
+  - **Distance:** Hatteras is about 5 hours' drive south of Ocean City, plus a boat out of Hatteras Inlet. The inlet shoals and breaks in any swell, so go out on a calm morning with a local skipper, not a borrowed skiff.
+  - **The charter alternative:** the 45 km charter from Hatteras did as well as the Inlet in stage B (tied), so if the Inlet is unworkable on the day, go with the Hatteras charter.
+  - **Recovery:** Cornwall and the Scillies have good harbours and an active sea-rescue and fishing community for recovery. Recovery planning and contacts move from Ireland to south-west England.
+- **What would change it:**
+  - A test-season result from the real boat showing it can't hold its course in the Stream's eddies.
+  - Real data on fishing-boat pick-ups, which the model only guesses. The Hatteras route crosses fewer grounds, so better data is more likely to strengthen this than reverse it.
+  - Cornwall's approaches have heavy shipping; if a ship-strike model is added, rerun the destination half.
+- **Not changed yet:** the plan elsewhere (Executive Summary, Build Plan, Field Test F, boat-sim scenario files) still says Ocean City → SW Ireland until Randolph decides.
 
 ## Sources
 

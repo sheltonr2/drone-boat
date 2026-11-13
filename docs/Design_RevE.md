@@ -46,7 +46,28 @@
 
 The servo and weed numbers are **guesses** until the bench life test and the tow test. The default design is still Rev D, so older result files keep their meaning.
 
-**First run:** `simulator/run_revE_2023.bat`, queued on Randolph's PC after the launch study (request 012): 250 voyages, 2023 weather, same seeds as Rev D. Expect a little under the package study's 80.8%.
+## First run of Rev E as drawn (13 Nov 2026)
+
+`simulator/run_revE_2023.bat` on Randolph's PC: 250 voyages, 2023 weather, launched 10 km off Ocean City, 1 May–15 June, the same seeds as the Rev D run, so the differences are paired. Analysis: `docs/data/revE_first_run_output.txt`.
+
+| | Rev D as drawn | Reliability package study | **Rev E as drawn** |
+|---|---|---|---|
+| Verified arrivals | 62.0% | 80.8% | **76.4%** |
+| Paired vs Rev D | — | +18.8 (+13.2 to +24.4) | **+14.4 (+7.6 to +21.2)** |
+| Lost | 11.2% | | 16.4% |
+| Aground | 7.2% | | 0.4% |
+| Still at sea at season's end | 18.4% | | 5.6% |
+
+- **Rev E is about 4 points below the package study** (−4.4, −9.6 to +0.8). The study credited four weed measures and no extra mass; Rev E has two of the weed measures and 0.7 kg more. The rest is chance: electronics failures were 8 here against 3.
+- **Losses by first failure, Rev D → Rev E:**
+  - leak 18 → 5;
+  - tail servo failing free 15 → 1;
+  - rudder servo failing limp 12 → 1;
+  - rudder servo jammed 8 → 3;
+  - weed 6 → 3.
+- **More boats are lost (16.4% against 11.2%) because fewer are left drifting.** Boats that Rev D left at sea in safe mode at the season's end now keep sailing. Most of them arrive, but some meet a fishing boat, a ship or a later failure on the way.
+- **Largest remaining causes:** fishing-boat pick-ups (14) and a jammed tail servo (11). A jammed tail can still sail, but badly.
+- **Guesses:** the servo and weed figures are guesses until Tests P and A; the pump figures rest on physics.
 
 ## Tests added ([Field_Tests.md](Field_Tests.md))
 
