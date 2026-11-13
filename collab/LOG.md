@@ -2,7 +2,7 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
-## 2026-11-13, 21:25 UTC (16:25 local): plan changed to Hatteras -> Cornwall; Diamond Shoals found; naval review
+## 2026-11-13, 21:06 UTC (16:06 local): plan changed to Hatteras -> Cornwall; Diamond Shoals found; naval review
 
 - Randolph approved the plan change. docs/Launch_Plan.md rewritten; Executive Summary, Build Plan, README, Launch_Point_Study updated. designs/boat-sim files left at the Ocean City drop.
 - While rewriting: the 10 km Hatteras Inlet drop sends ~52% of stage C tracks within 2 km of Diamond Shoals (not in the simulator's coastline); the 45 km charter point 0% within 10 km (docs/data/diamond_shoals_check.py). Drop point made provisional at the 45 km point. Lesson: check the chart at both ends, not only the simulator's map.
