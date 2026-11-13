@@ -68,27 +68,44 @@ These are expectations from general North Atlantic oceanography, not results. Th
 
 For each destination: share of voyages reaching any far-side coast with a verified position, where they landed, median crossing time, and the main causes of loss. Then a recommendation, with the confirmation run for the best candidates.
 
-## Interim results: batch 1 (12 Nov 2026, 14:20)
+## Results (12 Nov 2026, final for this screen)
 
-**Interim.** Batch 2 (seven more aim points) is still running; no recommendation until it is in. Rev C5 on the corrected simulator, 150 voyages per aim point, 2023 weather, launched 10 km off Ocean City, 1 May–15 June. Every aim point used the same launch dates and seeds, so the paired column is the fairer comparison. A 150-voyage share is good to about ±8 points.
+Rev C5 on the corrected simulator, 150 voyages per aim point, 2023 weather, launched 10 km off Ocean City, 1 May–15 June. Every aim point used the same launch dates and seeds, so the paired column is the fairer comparison. A single share is good to about ±8 points; paired differences are tighter.
 
-| Aim point | Success (95% range) | vs SW Ireland, paired | Any landfall | Median days | Lost | Aground | At sea | Where successes landed |
-|---|---|---|---|---|---|---|---|---|
-| SW Ireland (Mizen Head) | 44.7% (37–53) | — | 51.3% | 121 | 14.7% | 12.0% | 22.0% | Ireland 58, France 4, Great Britain 4, Portugal 1 |
-| Cornwall | 44.7% (37–53) | +0.0 (-7.3 to +8.0) | 50.7% | 127 | 16.0% | 12.7% | 20.7% | Great Britain 57, France 9, Portugal 1 |
-| Brittany | 41.3% (34–49) | -3.3 (-10.7 to +4.0) | 48.6% | 132 | 13.3% | 12.7% | 25.3% | France 58, Ireland 3, Great Britain 1 |
-| Galicia | 38.0% (31–46) | -6.7 (-15.3 to +2.0) | 43.4% | 140 | 20.7% | 5.3% | 30.7% | Spain 51, Portugal 5, France 1 |
-| Portugal (Lisbon) | 33.4% (26–41) | -11.3 (-21.3 to -1.3) | 36.1% | 148 | 16.7% | 12.7% | 34.7% | Portugal 50 |
-| Canaries | 10.7% (7–17) | -34.0 (-42.7 to -25.3) | 13.4% | 170 | 19.3% | 6.0% | 61.3% | Canaries 15, Madeira 1 |
+| Rank | Aim point | Success (95% range) | vs SW Ireland, paired | Any landfall | Median days | Lost | Aground | At sea | Where successes landed |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | SW Ireland (Mizen Head) | 44.7% (37–53) | — | 51.3% | 121 | 14.7% | 12.0% | 22.0% | Ireland 58, France 4, Great Britain 4, Portugal 1 |
+| 2 | Cornwall | 44.7% (37–53) | +0.0 (-7.3 to +8.0) | 50.7% | 127 | 16.0% | 12.7% | 20.7% | Great Britain 57, France 9, Portugal 1 |
+| 3 | West of Ireland | 42.0% (34–50) | -2.7 (-10.0 to +4.7) | 48.0% | 118 | 15.3% | 12.0% | 24.7% | Ireland 60, Great Britain 3 |
+| 4 | Brittany | 41.3% (34–49) | -3.3 (-10.7 to +4.0) | 48.6% | 132 | 13.3% | 12.7% | 25.3% | France 58, Ireland 3, Great Britain 1 |
+| 5 | Bay of Biscay | 38.7% (31–47) | -6.0 (-14.0 to +1.3) | 46.1% | 143 | 14.0% | 11.3% | 28.7% | France 52, Spain 2, Portugal 2, Ireland 1, Great Britain 1 |
+| 6 | Galicia | 38.0% (31–46) | -6.7 (-15.3 to +2.0) | 43.4% | 140 | 20.7% | 5.3% | 30.7% | Spain 51, Portugal 5, France 1 |
+| 7 | Outer Hebrides | 38.0% (31–46) | -6.7 (-15.3 to +1.3) | 46.0% | 124 | 15.3% | 12.0% | 26.7% | Great Britain 53, Ireland 3, France 1 |
+| 8 | Gulf of Cádiz | 36.7% (29–45) | -8.0 (-18.0 to +2.7) | 40.7% | 150 | 18.0% | 12.0% | 29.3% | Spain 27, Portugal 26, Africa 2 |
+| 9 | Portugal (Lisbon) | 33.4% (26–41) | -11.3 (-21.3 to -1.3) | 36.1% | 148 | 16.7% | 12.7% | 34.7% | Portugal 50 |
+| 10 | Canaries, northern arc | 22.0% (16–29) | -22.7 (-31.3 to -14.7) | 27.3% | 158 | 19.3% | 14.7% | 38.7% | Canaries 31, Madeira 1, Portugal 1 |
+| 11 | Morocco | 18.0% (13–25) | -26.7 (-36.0 to -17.3) | 19.3% | 163 | 24.7% | 11.3% | 44.7% | Africa 25, Spain 1, Madeira 1 |
+| 12 | Canaries | 10.7% (7–17) | -34.0 (-42.7 to -25.3) | 13.4% | 170 | 19.3% | 6.0% | 61.3% | Canaries 15, Madeira 1 |
 
 Success = arrived still reporting or tracked by the YB3. "Any landfall" also counts silent and adrift arrivals. Boats that reach the 40 km arrival circle but are still offshore count for the aim point's country. Lost, aground and at sea are shares of all 150.
 
-What it shows so far:
+**The Azores, reported separately** (they count only if Randolph accepts them as "across"):
 
-- **SW Ireland and Cornwall are tied** (44.7% each, paired difference 0, range −7 to +8). Brittany is within noise (−3).
-- **The further south, the worse.** Galicia −7 (not yet certain), Portugal −11 (range −21 to −1), the Canaries −34. The southern routes are slower (median 140–170 days against 121), so more boats are still at sea at the end of the season (31–61% against 22%) and every per-day failure has longer to strike. That matches the physics note above: the Azores High costs more than the rougher north.
-- **Groundings** are about the same everywhere (5–13%) except Galicia, where boats that overshoot the coast keep sailing south instead of hitting land.
-- **First failures** are the same mix on every route (rudder servos, electronics, fouling, leaks); no route avoids them. Rev D (backup steering and protected electronics) addresses electronics on every route.
-- Caveats as before: collision and pick-up risk don't vary by region, so busy approaches (Channel, Ushant, Finisterre) are flattered; one weather year.
+| Rank | Aim point | Success (95% range) | vs SW Ireland, paired | Any landfall | Median days | Lost | Aground | At sea | Where successes landed |
+|---|---|---|---|---|---|---|---|---|---|
+| — | Azores (not "across") | 52.7% (45–60) | +8.0 (-1.3 to +17.3) | 54.7% | 90 | 16.0% | 2.0% | 27.3% | Azores 79 |
 
-Script: `docs/data/dest_analysis.py`. Results: `results/2026-11-12_dest_2023_<name>.json`. Log: `collab/run_log_destinations_2023_2026-11-12.txt`.
+### What it shows
+
+- **No target beats south-west Ireland.** Cornwall ties it exactly (44.7% each). West of Ireland (−2.7) and Brittany (−3.3) are within noise. Ireland stays the target; Cornwall is an equal alternative.
+- **Further north does not help.** The Outer Hebrides are about as far as SW Ireland but score −6.7. This run doesn't show why.
+- **Further south is clearly worse.** Biscay −6, Galicia −7, Cádiz −8, Portugal −11 (range −21 to −1), the Canaries by either route −23 to −34, Morocco −27. Every southern route crosses the light winds of the Azores High: medians of 140–170 days against 121, and 29–61% still at sea at the season's end. The northern arc to the Canaries (22%) beats the direct route (11%), but only by avoiding the High for longer.
+- **The Azores score best (52.7%, +8, range −1 to +17) because they are close**: 90 days median. If they counted, they would be the easiest target, but they are about two-thirds of the way across.
+- **The causes of loss are the same on every route** (rudder servos, fouling, electronics, leaks). The destination changes how long the boat is exposed to them, not what they are.
+- Caveats as before: collision and pick-up risks don't vary by region, so busy approaches (the Channel, Ushant, Finisterre) are flattered; one weather year; Rev C5, not Rev D.
+
+### Going forward
+
+The launch-point study ([Launch_Point_Study.md](Launch_Point_Study.md)) carries three destinations into its stage B: **SW Ireland, Cornwall and Brittany**. West of Ireland scored a fraction higher than Brittany, but the two are tied within noise and the west-of-Ireland aim point is only 230 km from the SW Ireland one. Brittany is the furthest-south target still in the leading group, so it is the better test of whether a southern launch favours a southern aim. No separate destination confirmation run: the best pairs are confirmed on Rev D, on 2023 and 2024 weather, in stage C of the launch study.
+
+Script: `docs/data/dest_analysis.py`. Results: `results/2026-11-12_dest_2023_<name>.json`. Logs: `collab/run_log_destinations_2023_2026-11-12.txt`, `collab/run_log_destinations2_2023_2026-11-12.txt`.

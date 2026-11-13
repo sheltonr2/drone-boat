@@ -96,7 +96,9 @@ These are expectations, not results.
 
 ## Results
 
-To follow: stage A about 2:30 am on 13 Nov, stage B about 8:30 am, stage C by the evening of 13 Nov, if the PC keeps running.
+**Destinations for stage B** (from the finished destination study, 12 Nov): **SW Ireland, Cornwall and Brittany.** SW Ireland and Cornwall tied at 44.7%; West of Ireland (42.0%) and Brittany (41.3%) are tied within noise. Brittany is taken over West of Ireland because it is the furthest-south target still in the leading group, which is the better test of whether a southern launch favours a southern aim. Details: [Destination_Study.md](Destination_Study.md#results-12-nov-2026-final-for-this-screen).
+
+Stage A started on the PC at 6:02 pm on 12 Nov; due about 2:00 am on 13 Nov. Stage B about 8:30 am, stage C by the evening of 13 Nov, if the PC keeps running.
 
 ## Sources
 

@@ -2,6 +2,13 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-13, 00:45 UTC (19:45 local, 12 Nov): destination study final; Rev D as drawn
+
+- 007 finished 16:57, 008 (Rev D) 17:59, 009 (launch study stage A) started 18:02 local.
+- Destinations (Rev C5, 150 paired voyages): SW Ireland 44.7, Cornwall 44.7, West of Ireland 42.0, Brittany 41.3, Biscay 38.7, Galicia 38.0, Hebrides 38.0, Cádiz 36.7, Portugal 33.4, Canaries northern arc 22.0, Morocco 18.0, Canaries 10.7. Azores (separate) 52.7, 90-day median. Stage B destinations: SW Ireland, Cornwall, Brittany.
+- Rev D as drawn: 62.0% (55.8-67.8), +14.0 over C5 paired (+6.5 to +21.5); matches the 61.2% study. 47 backup takeovers, 30 sailed in. Top first failures now rudder servos, tail servo, fouling, leaks.
+- Not posted to John (their team is paused; destination results not approved for posting).
+
 ## 2026-11-12, 19:55 UTC (14:55 local): John's team has paused; plan posted
 
 - John on #50 (two notes since our Rev D post): their side is pausing help while they get their process in order, because of repeated failures by the Claude agents running their project. Nothing on our side caused it. The Rev C5 re-score and any new requests are on hold; they will get in touch when ready.
