@@ -2,6 +2,14 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-13, 18:57 UTC (13:57 local): stage B, reliability and speed check results; stage C running
+
+- PC queue ran cleanly: reliability 04:05–07:06, stage B 07:06–12:52, speed check 12:53–13:20 local. No errors.
+- Stage B (docs/Launch_Point_Study.md): 4 launches x 3 destinations, Rev C5, 150 each. Pooled over destinations, Hatteras 45 km, Ocean City 100 km and Hatteras Inlet 10 km are each ~+4 over Ocean City 10 km (ranges cross zero) and tied with each other; SW Ireland = Cornwall, Brittany -2. Canaveral rerun 34.0% (flawed run 31.3%), still worst. Stage C pairs: Hatteras Inlet -> SW Ireland, Hatteras Inlet -> Cornwall, plus Ocean City -> SW Ireland.
+- Reliability (docs/Reliability_Review.md): bilge pump + pump-and-sail 70.0% (+8.0, +4.8 to +11.6, 20 gained / 0 lost); full package 80.8% (+18.8, guesses flagged); weed pessimistic 61.2% (-0.8). Rev D1 recommendation written, awaiting Randolph; not drawn.
+- Speed check PASS: identical on 80 real-weather voyages, 4.3-4.4x faster; faster code installed on the PC. make_batch.py time estimate updated (9 min per 150 voyages).
+- Stage C queued as 011_launch_final.run (started 13:56 local): Rev D, 500 voyages per pair (250 per year, 2023 and 2024), ~1 h 36 min. Final check scheduled 15:50 local.
+
 ## 2026-11-13, 14:40 UTC (09:40 local): daily check-in, thread not read
 
 - Could not read issue #50: the browser link to Randolph's PC was disconnected, the GitHub API is not enabled for boat-sim in this session, and a plain web fetch needed an approval nobody was around for. Nothing posted.

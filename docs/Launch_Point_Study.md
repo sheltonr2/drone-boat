@@ -62,7 +62,7 @@ Routes: the southern launches follow the stream's axis past Hatteras (30°N 79.8
 |---|---|---|---|
 | A | All 12 launch points aimed at SW Ireland. Rev C5, 150 voyages each, 2023 weather, same launch dates and seeds as the destination study | 12 | about 8 hours |
 | B | The best three launch points × the best three destinations from the destination study (pairs not already run) | up to 8 | about 5.5 hours |
-| C | Confirmation of the best two pairs and the current plan: **Rev D**, 250 voyages, 2023 and 2024 weather | 3 | about 8 hours |
+| C | Confirmation of the best two pairs and the current plan: **Rev D**, 500 voyages (250 in each of 2023 and 2024), on the faster simulator | 3 | about 1 h 36 min |
 
 - Stage A uses Rev C5 so that its numbers line up with the 13 destination runs. The boat we will build is Rev D, so the final answer (stage C) is run on Rev D.
 - Stage B is a 3 × 3 grid because launch and destination might interact: a southern launch arrives in mid-ocean further south and later in the season, which could favour a different aim point.
@@ -132,16 +132,52 @@ Rev C5, 150 voyages per launch point, 2023 weather, launches 1 May–15 June, th
 - **Florida doesn't pay.** Palm Beach is in the Florida Current from the first hour, but the route is 1,200 km longer and the boats take longer (127 days median). 42.7%, about the same as Charleston (43.3%).
 - **New Jersey is clearly worse** (34.7%, −12, range −21 to −3): boats are carried north-east onto southern New England, Nova Scotia and Newfoundland, and 20% end aground (17% on the home side).
 
-### Stage B: launch and destination pairs
+### Stage B: launch and destination pairs (finished 13 Nov, 12:52 pm)
 
-Queued on the PC on 13 Nov as `simulator/run_launch_pairs_2023.bat` (request 010). It starts when the reliability runs now going finish (about 8:05 am) and takes about 5.5 hours, so results about 1:40 pm.
+Ran on the PC as `simulator/run_launch_pairs_2023.bat` (request 010), 7:06 am to 12:52 pm, no errors. Rev C5, 150 voyages per pair, 2023 weather, the same launch dates and seeds as stage A, so every cell is paired with Ocean City 10 km → SW Ireland (46.7%).
 
-- **Launch points:** the top three, Hatteras 45 km (charter), Ocean City 100 km (charter) and Hatteras Inlet 10 km, plus Ocean City 10 km as the baseline. Virginia Beach is tied with Hatteras Inlet and is the alternative if Hatteras proves awkward.
-- **Destinations:** SW Ireland (already run), Cornwall and Brittany, from the destination study.
-- 8 new pairs, plus the Canaveral rerun. Same design (Rev C5), weather (2023) and launch dates.
-- Then stage C: the best two pairs and the current plan on Rev D, 250 voyages, 2023 and 2024 weather.
+**Success, and paired difference against Ocean City 10 km → SW Ireland (95% range)**
 
-Results: `results/2026-11-13_launch_2023_<launch>__ireland_sw.json`. Log: `collab/run_log_launch_points_2023_2026-11-13.txt`. Note: the first attempt at stage A, started at 6:02 pm on 12 Nov, was killed when the laptop was unplugged; the batch was restarted at 8:49 pm and ran cleanly.
+| Launch | → SW Ireland | → Cornwall | → Brittany | Mean of the three |
+|---|---|---|---|---|
+| Hatteras 45 km (charter) | **54.0%** +7.3 (−3.3 to +17.3) | 46.7% +0.0 (−10.0 to +9.3) | 50.7% +4.0 (−6.0 to +13.3) | 50.4% |
+| Ocean City 100 km (charter) | 50.0% +3.3 (−6.7 to +12.7) | **53.3%** +6.7 (−2.7 to +16.7) | 45.3% −1.3 (−11.3 to +8.7) | 49.6% |
+| Hatteras Inlet 10 km | 49.3% +2.7 (−7.3 to +12.7) | 51.3% +4.7 (−6.0 to +15.3) | 50.7% +4.0 (−6.7 to +14.7) | 50.4% |
+| Ocean City 10 km (current plan) | 46.7% (baseline) | 46.7% +0.0 (−7.3 to +7.3) | 44.7% −2.0 (−9.3 to +5.3) | 46.0% |
+
+**Pooled** (`docs/data/launch_pairs_analysis.py`; each launch compared with Ocean City 10 km to the same destination, and each destination with SW Ireland from the same launch, resampling seeds):
+
+| | Paired difference (95% range) |
+|---|---|
+| Hatteras 45 km vs Ocean City 10 km | +4.4 (−4.0 to +12.2) |
+| Ocean City 100 km vs Ocean City 10 km | +3.6 (−3.8 to +11.3) |
+| Hatteras Inlet 10 km vs Ocean City 10 km | +4.4 (−3.8 to +12.9) |
+| Hatteras Inlet 10 km vs Hatteras 45 km | +0.0 (−7.8 to +8.0) |
+| Cornwall vs SW Ireland | −0.5 (−4.2 to +3.7) |
+| Brittany vs SW Ireland | −2.2 (−6.3 to +2.2) |
+
+With the guessed fishing-ground mark-down (2% / 5% a day) every cell drops by 0.3 to 3 points and the order does not change. Storm encounters (`docs/data/launch_pairs_storms.json`, grade-D loss model) are 16.5–18.2% of voyages within 200 km of a tropical storm for every pair, costing 0.7–1.1 points: they do not separate the pairs.
+
+**Canaveral rerun.** With the waypoint moved east of the cape, Canaveral → SW Ireland is 34.0% (−12.7 against Ocean City, range −22.0 to −2.7), against 31.3% for the flawed run. Grounding in the first three weeks fell from 18.7% to 14.0%, but it is still the worst launch tested, so the stage A conclusion stands: Florida doesn't pay.
+
+### What stage B shows
+
+- **The single cells are noise.** The best cell, Hatteras 45 km → SW Ireland (54.0%), and the next, Ocean City 100 km → Cornwall (53.3%), each come with a poor cell from the same launch (46.7%, 45.3%). The same launch dates and nearly the same first 3,000 km can't plausibly differ by 7 points on the aim point alone; that spread is what 150 voyages give.
+- **Pooled, the three alternative launches are all about 4 points better than Ocean City 10 km, and tied with each other.** None of the ranges excludes zero, but all three point the same way, and they share the reason stage A found: they get the boat off the shelf and away from the coast faster (lost or aground in three weeks: 0–5% against 8.7%).
+- **A beach launch at Hatteras Inlet is as good as the charter 45 km out** (+0.0, −7.8 to +8.0). Following the rule we set (prefer a beach launch over a charter launch when they're within noise), Hatteras Inlet is the launch to carry forward, though its early-grounding rate (4.7%) is higher than the charter's (0.7%).
+- **SW Ireland and Cornwall are tied; Brittany is about 2 points worse.** Same as the destination study.
+
+### Stage C: final check (started 13 Nov, 1:56 pm)
+
+The best two pairs, both from Hatteras Inlet so that one comparison isolates the destination and the other the launch, and the current plan:
+
+1. Hatteras Inlet 10 km → SW Ireland
+2. Hatteras Inlet 10 km → Cornwall
+3. Ocean City 10 km → SW Ireland (current plan)
+
+On **Rev D as drawn**, **500 voyages each** (alternating 2023 and 2024 weather, so 250 in each year), the same seeds in all three runs. That is twice the 250 first planned: the faster simulator (installed 13 Nov after the bit-for-bit check) makes it cost about 1 h 36 min instead of 8 hours, and it narrows the paired ranges by about a third. `simulator/run_launch_final.bat` (request 011). Results: `results/launch_2023+2024_<pair>.json`.
+
+Results: `results/2026-11-13_launch_2023_<launch>__<destination>.json`. Logs: `collab/run_log_launch_points_2023_2026-11-13.txt` (stage A), `collab/run_log_launch_pairs_2023_2026-11-13.txt` (stage B). Note: the first attempt at stage A, started at 6:02 pm on 12 Nov, was killed when the laptop was unplugged; the batch was restarted at 8:49 pm and ran cleanly.
 
 ## Sources
 

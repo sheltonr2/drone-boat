@@ -4,8 +4,12 @@ python collab/launch_points/make_batch.py <batch name> <title> <design file> <ye
 A finished pair is skipped on a rerun, so a batch stopped by a reboot picks up where it left off."""
 import sys
 
+# Minutes per 150 voyages on Randolph's PC. Was 40 on the old code; the faster code (installed 13 Nov after the
+# bit-for-bit check, docs/Simulator_Speedup.md) ran 4.4x faster on real weather, so about 9.
+MIN_PER_150 = 9
+
 def main(name, title, design, years, runs, pairs):
-    tag = years.replace(",", "+"); log = f"..\\collab\\run_log_{name}.txt"; mins = 40*len(pairs)*len(years.split(","))*int(runs)//150
+    tag = years.replace(",", "+"); log = f"..\\collab\\run_log_{name}.txt"; mins = MIN_PER_150*len(pairs)*int(runs)//150 + 2*len(pairs)
     L = ["@echo off",
          f"REM {title} (docs/Launch_Point_Study.md). Written by collab/launch_points/make_batch.py.",
          f"REM {len(pairs)} runs of {runs} voyages, weather {years}, design {design}. About {mins//60} h {mins%60:02d} min.",

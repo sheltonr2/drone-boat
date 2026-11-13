@@ -1,0 +1,96 @@
+
+== Bilge pump, pump-and-sail: 70.0% vs Rev D 62.0%, paired +8.0 (+4.8 to +11.6); gained 20, lost 0
+  Rev D              voyages with a leak  59, of which arrived  14 (24%); outcomes {'at_sea_timeout': 27, 'arrived_reporting': 8, 'aground': 15, 'arrived_tracked': 6, 'lost': 3}
+  Bilge pump, pump-and-sail voyages with a leak  59, of which arrived  34 (58%); outcomes {'arrived_reporting': 24, 'at_sea_timeout': 17, 'aground': 6, 'arrived_tracked': 10, 'arrived_silent': 1, 'lost': 1}
+  Losses by first failure (Rev D -> this run):
+    Tail servo failed                              15 ->  15
+    Picked up by a fishing boat or passer-by       13 ->  13
+    Rudder servo failed limp                       12 ->  12
+    Leak started                                   18 ->   5
+    Tail servo jammed                               8 ->   7
+    Rudder servo jammed                             8 ->   6
+    Fouled by weed or fishing line                  6 ->   5
+    Struck by a vessel                              4 ->   4
+    Companion computer hung                         3 ->   3
+    Electronics failure                             2 ->   2
+    Backup tracker failed                           2 ->   2
+    Collision damage                                3 ->   0
+    Satellite modem or antenna failed               1 ->   1
+  Voyages with each failure at any point (Rev D -> this run):
+    Rudder servo jammed                            73 ->  73
+    Fouled by weed or fishing line                 65 ->  68
+    Leak started                                   54 ->  54
+    Rudder servo failed limp                       51 ->  57
+    Electronics failure                            47 ->  46
+    Tail servo jammed                              35 ->  39
+    Tail servo failed                              24 ->  25
+    Backup tracker failed                          25 ->  23
+    Companion computer hung                        21 ->  22
+    Satellite modem or antenna failed              20 ->  22
+    Picked up by a fishing boat or passer-by       18 ->  17
+    Wing damaged in a knockdown                    10 ->   8
+  Pump failures: 1 voyage(s), outcomes ['at_sea_timeout']
+  Leak rates 0.05-2.54 kg/day against a 500 kg/day pump: worst duty 0.51%, so at most 0.49 Wh/day of pumping
+
+== Full reliability package: 80.8% vs Rev D 62.0%, paired +18.8 (+13.2 to +24.4); gained 54, lost 7
+  Rev D              voyages with a leak  59, of which arrived  14 (24%); outcomes {'at_sea_timeout': 27, 'arrived_reporting': 8, 'aground': 15, 'arrived_tracked': 6, 'lost': 3}
+  Full reliability package voyages with a leak  51, of which arrived  44 (86%); outcomes {'arrived_reporting': 32, 'lost': 1, 'arrived_tracked': 12, 'at_sea_timeout': 5, 'aground': 1}
+  Losses by first failure (Rev D -> this run):
+    Picked up by a fishing boat or passer-by       13 ->  13
+    Leak started                                   18 ->   2
+    Tail servo jammed                               8 ->   9
+    Tail servo failed                              15 ->   1
+    Rudder servo failed limp                       12 ->   3
+    Rudder servo jammed                             8 ->   4
+    Fouled by weed or fishing line                  6 ->   3
+    Struck by a vessel                              4 ->   4
+    Companion computer hung                         3 ->   2
+    Electronics failure                             2 ->   3
+    Backup tracker failed                           2 ->   2
+    Collision damage                                3 ->   0
+    Satellite modem or antenna failed               1 ->   1
+    Keel fin or its joint broke in a knockdown      0 ->   1
+  Voyages with each failure at any point (Rev D -> this run):
+    Rudder servo jammed                            73 ->  41
+    Fouled by weed or fishing line                 65 ->  38
+    Leak started                                   54 ->  46
+    Electronics failure                            47 ->  43
+    Rudder servo failed limp                       51 ->  26
+    Tail servo jammed                              35 ->  34
+    Backup tracker failed                          25 ->  25
+    Companion computer hung                        21 ->  20
+    Picked up by a fishing boat or passer-by       18 ->  18
+    Satellite modem or antenna failed              20 ->  14
+    Tail servo failed                              24 ->   1
+    Wing damaged in a knockdown                    10 ->   6
+
+== Weed pessimistic (clears ~0.03/day): 61.2% vs Rev D 62.0%, paired -0.8 (-3.2 to +1.2); gained 3, lost 5
+  Rev D              voyages with a leak  59, of which arrived  14 (24%); outcomes {'at_sea_timeout': 27, 'arrived_reporting': 8, 'aground': 15, 'arrived_tracked': 6, 'lost': 3}
+  Weed pessimistic (clears ~0.03/day) voyages with a leak  63, of which arrived  18 (29%); outcomes {'at_sea_timeout': 27, 'arrived_reporting': 9, 'aground': 15, 'arrived_tracked': 9, 'lost': 3}
+  Losses by first failure (Rev D -> this run):
+    Leak started                                   18 ->  18
+    Tail servo failed                              15 ->  15
+    Picked up by a fishing boat or passer-by       13 ->  13
+    Rudder servo failed limp                       12 ->  13
+    Tail servo jammed                               8 ->   8
+    Rudder servo jammed                             8 ->   7
+    Fouled by weed or fishing line                  6 ->   8
+    Struck by a vessel                              4 ->   4
+    Collision damage                                3 ->   3
+    Companion computer hung                         3 ->   3
+    Electronics failure                             2 ->   2
+    Backup tracker failed                           2 ->   2
+    Satellite modem or antenna failed               1 ->   1
+  Voyages with each failure at any point (Rev D -> this run):
+    Rudder servo jammed                            73 ->  77
+    Fouled by weed or fishing line                 65 ->  65
+    Leak started                                   54 ->  59
+    Rudder servo failed limp                       51 ->  52
+    Electronics failure                            47 ->  43
+    Tail servo jammed                              35 ->  34
+    Backup tracker failed                          25 ->  29
+    Tail servo failed                              24 ->  26
+    Companion computer hung                        21 ->  22
+    Satellite modem or antenna failed              20 ->  19
+    Picked up by a fishing boat or passer-by       18 ->  18
+    Wing damaged in a knockdown                    10 ->  12

@@ -28,8 +28,8 @@ Randolph asked whether his GPU could speed up the runs. It can't usefully: a voy
 | Europe test, same points | 0 mismatches; 10× faster |
 | 36 full voyages (Rev D, the reliability package and C5; six launch points), synthetic weather, real coastline | identical in every field apart from run time; about 6× faster |
 | 48 voyages with heavy failures so boats drift ashore (4 grounded) | identical apart from run time |
-| **On Randolph's PC:** 80 voyages, real 2023 weather, Canaveral (land-heavy) and Ocean City → Cornwall, old code vs new | queued (`run_speed_check.bat`); installs the new code only if identical |
+| **On Randolph's PC (13 Nov):** 80 voyages, real 2023 weather, Canaveral (land-heavy) and Ocean City → Cornwall, old code vs new | **PASS**: identical in every field apart from run time. 40 voyages: Canaveral 10 min 31 s → 2 min 25 s (4.3×), Ocean City → Cornwall 11 min 48 s → 2 min 39 s (4.4×). New code installed at 1:20 pm (`collab/run_log_speed_check_2026-11-13.txt`) |
 
-On real weather the weather lookup becomes the largest remaining cost, so the PC speed-up will be less than 6×. The check reports the timings.
+On real weather the weather lookup becomes the largest remaining cost, which is why the PC gains 4.4× rather than 6×. A 150-voyage run now takes about 9 minutes instead of 40 (`collab/launch_points/make_batch.py` uses the new figure).
 
 `simulator/tools/compare_results.py` compares two result files field by field, ignoring only run time.

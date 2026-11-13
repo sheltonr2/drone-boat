@@ -110,7 +110,7 @@ In the Rev D run, fouling appeared in 65 voyages and those boats still arrived 6
 
 ## The runs
 
-Queued on the PC behind the launch-point study (`simulator/run_reliability_2023.bat`, about four hours). 250 voyages each, 2023 weather, the same launch dates and seeds as the Rev D run, so each is a paired comparison with Rev D as drawn (62.0%).
+Ran on the PC 4:05–7:06 am, 13 Nov (`simulator/run_reliability_2023.bat`); results below. 250 voyages each, 2023 weather, the same launch dates and seeds as the Rev D run, so each is a paired comparison with Rev D as drawn (62.0%).
 
 | Run | Design file | What it tests |
 |---|---|---|
@@ -120,16 +120,59 @@ Queued on the PC behind the launch-point study (`simulator/run_reliability_2023.
 
 New design keys: `autopilot.leak_policy` ("safe" or "pump_and_sail"), `autopilot.leak_safe_kg`, `bilge_pump`, `rudder.servo_rate_factor`, `wing.tail_servo_rate_factor`, `wing.tail_fail_free_share`, `keel.weed_catch_factor`, `keel.weed_clear_per_day`. Rev D as drawn keeps every old value, so earlier results stand.
 
-## Recommendation so far
+## Results (13 Nov 2026)
 
-In order of confidence:
+The three runs finished at 7:06 am on 13 Nov (`collab/run_log_reliability_2023_2026-11-13.txt`). Results: `results/2026-11-13_bulk_mc_2023_revD_{pump,reliability,weed_pessimistic}_10km.json`. Analysis: `docs/data/reliability_analysis.py` (output beside it). Every voyage is paired by seed with Rev D as drawn (62.0%).
 
-1. **Bilge pump and the pump-and-sail response.** Certain to help, cheap, and the model's leak losses are mostly self-inflicted. Adopt for Rev D1 whatever the run says about the size of the gain.
-2. **Pressure-decay test, membrane vents, humidity sensor.** Cheap, and they catch leaks before launch. Adopt.
-3. **Sealed magnetic-encoder rudder servos (S2), a potted tail servo with a magnetic detent, deadband steering.** The biggest remaining cause of loss. Adopt S2 and the detent; buy S1 if the budget allows. Run the bench life test either way.
-4. **Weed: the fairing (W1), raked rudders (W3) and the shedding manoeuvre (W4).** Cheap insurance against a risk the model may understate. Check the flush nose (W2) in the simulator before deciding.
+| Run | Success | vs Rev D, paired (95% range) | Voyages gained / lost |
+|---|---|---|---|
+| Rev D as drawn | 62.0% | — | — |
+| 1. Bilge pump + pump-and-sail | **70.0%** | **+8.0 (+4.8 to +11.6)** | 20 / 0 |
+| 2. Full package (pump, servo rates ×0.5, tail detent, weed measures) | **80.8%** | **+18.8 (+13.2 to +24.4)** | 54 / 7 |
+| 3. Weed pessimistic (fouling clears ~0.03/day) | 61.2% | −0.8 (−3.2 to +1.2) | 3 / 5 |
 
-Costs, if all adopted with S2: about $600 and 0.4 kg over Rev D.
+**Guesses, flagged.** The pump's capacity, power and failure rate are from the data sheet class of a small 12 V bilge pump, not a test. The servo factor (×0.5), the tail detent (fails free 10% of the time instead of 50%) and the weed factors (catch ×0.5, clearing 0.5/day) are **guesses** at what the hardware changes would achieve. Run 2 shows what those changes are worth *if* they work as guessed; run 1 rests only on the physics of a pump against a 0.05–2.5 kg/day leak, so it is the most trustworthy number here.
+
+### 1. Bilge pump and pump-and-sail
+
+- **Every gain, no loss**: 20 voyages saved, none made worse.
+- **Leak voyages that kept sailing:** 59 voyages had a leak (54 ordinary leaks, 5 from collisions). With Rev D's safe-mode response 14 of them arrived (24%); with the pump, 34 (58%). Losses whose first failure was a leak fell from 18 to 5, and collision losses from 3 to 0.
+- **The pump kept up every time it was working.** The worst leak was 2.54 kg/day against a 500 kg/day pump (0.5% duty), so no voyage went to the 1.5 kg safe-mode limit while the pump ran.
+- **Pump failures:** 1 voyage in 250; that boat was still at sea at the end of the season.
+- **Energy:** at most 0.5 Wh a day of pumping, against a budget of tens of Wh: negligible.
+- The 5 leak losses left are voyages where a second failure (usually a servo) ended the voyage after the leak, not the leak itself.
+
+### 2. The full package: which causes fell
+
+| First failure in a lost voyage | Rev D | Package |
+|---|---|---|
+| Leak | 18 | 2 |
+| Tail servo failed free | 15 | **1** |
+| Rudder servo failed limp | 12 | 3 |
+| Rudder servo jammed | 8 | 4 |
+| Fouled by weed or line | 6 | 3 |
+| Collision damage | 3 | 0 |
+| Tail servo jammed | 8 | 9 |
+| Picked up by a fishing boat | 13 | 13 |
+| Struck by a vessel | 4 | 4 |
+
+The detent (tail fails jammed, not free) all but removes the single worst failure; halving servo wear halves the rudder losses. What is left is mostly what no hardware change touches: **fishing-boat pick-ups (13) and ship strikes (4)** are now the largest cause of loss. The 7 voyages lost against Rev D are chance: a different failure sequence once the first failure changed.
+
+### 3. Weed, if the fin holds it for a month
+
+Fouling that clears at 0.03 a day (a month, on average) instead of 0.15 costs **0.8 points (−3.2 to +1.2)**: 2 more losses with weed as the first failure. In the model a fouled boat is slowed, not stopped, so weed costs little even when it stays. The real risk is a line wrapped hard enough to stop the boat, which the model does not represent. The cheap measures are still worth having, but the simulator gives no reason to spend much on weed.
+
+## Recommendation for Rev D1 (awaiting Randolph's decision; not drawn)
+
+Proposed as **Rev D1**: these are part changes inside the Rev D systems, not new systems, so a numbered sub-rev under our convention (`docs/Revisions.md`). In order of confidence:
+
+1. **Bilge pump and the pump-and-sail response.** +8.0 points (+4.8 to +11.6), no voyages made worse, negligible energy. Adopt.
+2. **Pressure-decay test, membrane vents, humidity sensor.** Cheap, and they catch leaks before launch. Adopt (the simulator does not model them).
+3. **Sealed magnetic-encoder rudder servos (S2) and a potted tail servo with a magnetic detent, plus deadband steering.** Worth about another 10 points in the model if they halve servo wear and make the tail fail jammed (both guesses). The detent matters most: it turns the one certain-loss failure into a survivable one. Adopt, and run the bench life test to check the guess.
+4. **Weed: keep the cheap measures, defer the expensive one.** The fairing (W1, $20), raked rudders (W3, a template change) and the shedding manoeuvre (W4, software) cost almost nothing, so keep them. Defer the flush nose (W2): it moves the fin and changes helm balance, and the pessimistic run says weed is worth about a point in the model.
+5. **Next biggest loss is fishing-boat pick-ups**, which no hardware fixes. A clear "scientific instrument, please leave at sea" placard and a contact number are the cheap response; the launch study's fishing-ground results point the same way.
+
+Costs, with S2: about $600 and 0.4 kg over Rev D, as estimated before the runs (dropping W2 saves no parts cost). To be firmed up when drawn.
 
 ## Sources
 

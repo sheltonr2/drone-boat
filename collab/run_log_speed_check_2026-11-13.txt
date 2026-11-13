@@ -1,0 +1,422 @@
+Speed-up check, started Fri 11/13/2026 12:53:07.11 
+==== canaveral__ireland_sw: current code, started 12:53:07.12 ==== 
+[12:53:07] Monte Carlo: 40 voyages, Launch study: Cape Canaveral, FL: 10 km off to South-west Ireland (Miz; 8 processes
+Building the speed polar for this design (about 10-30 s) ...
+[12:57:01] 10/40 voyages done, 7 arrived
+[12:59:50] 20/40 voyages done, 11 arrived
+[13:01:58] 30/40 voyages done, 13 arrived
+[13:03:37] 40/40 voyages done, 19 arrived
+{
+ "runs": 40,
+ "errors": 0,
+ "counts": {
+  "arrived_reporting": 9,
+  "arrived_tracked": 10,
+  "arrived_silent": 1,
+  "arrived_adrift": 0,
+  "at_sea_timeout": 8,
+  "aground": 6,
+  "lost": 6
+ },
+ "percent": {
+  "arrived_reporting": 22.5,
+  "arrived_tracked": 25.0,
+  "arrived_silent": 2.5,
+  "arrived_adrift": 0.0,
+  "at_sea_timeout": 20.0,
+  "aground": 15.0,
+  "lost": 15.0
+ },
+ "success_percent": 47.5,
+ "success_ci95": [
+  32.9,
+  62.5
+ ],
+ "by_launch_month": {
+  "05": {
+   "runs": 28,
+   "arrived": 13,
+   "success_percent": 46.4,
+   "success_ci95": [
+    29.5,
+    64.2
+   ]
+  },
+  "06": {
+   "runs": 12,
+   "arrived": 6,
+   "success_percent": 50.0,
+   "success_ci95": [
+    25.4,
+    74.6
+   ]
+  }
+ },
+ "success_definition": "arrived_reporting + arrived_tracked",
+ "reporting_percent": 22.5,
+ "any_arrival_percent": 50.0,
+ "position_known_at_end_percent": 82.5,
+ "arrival_days": {
+  "median": 133.01999999999998,
+  "p10": 118.756,
+  "p90": 158.656,
+  "all": [
+   142.25,
+   147.74,
+   110.53,
+   119.67,
+   177.11,
+   122.83,
+   142.47,
+   151.27,
+   125.65,
+   141.25,
+   134.34,
+   122.15,
+   106.06,
+   125.93,
+   139.25,
+   158.04,
+   120.7,
+   164.2,
+   131.7,
+   131.49
+  ]
+ },
+ "failure_causes": {
+  "Leak started": 5,
+  "Picked up by a fishing boat or passer-by": 3,
+  "aground": 2,
+  "Keel fin or its joint broke in a knockdown": 2,
+  "Fouled by weed or fishing line": 2,
+  "Tail servo failed": 1,
+  "One rudder servo failed limp": 1,
+  "Wing damaged in a knockdown": 1,
+  "Struck by a vessel": 1,
+  "Rudder servo failed limp": 1,
+  "Collision damage": 1
+ },
+ "mean_airtime_usd": 135.12,
+ "mean_knockdowns": 718.6
+}
+Saved ..\results\speedcheck_old_canaveral__ireland_sw.json
+==== canaveral__ireland_sw: faster code, started 13:03:38.28 ==== 
+[13:03:38] Monte Carlo: 40 voyages, Launch study: Cape Canaveral, FL: 10 km off to South-west Ireland (Miz; 8 processes
+[13:04:41] 10/40 voyages done, 7 arrived
+[13:05:15] 20/40 voyages done, 12 arrived
+[13:05:41] 30/40 voyages done, 13 arrived
+[13:06:03] 40/40 voyages done, 19 arrived
+{
+ "runs": 40,
+ "errors": 0,
+ "counts": {
+  "arrived_reporting": 9,
+  "arrived_tracked": 10,
+  "arrived_silent": 1,
+  "arrived_adrift": 0,
+  "at_sea_timeout": 8,
+  "aground": 6,
+  "lost": 6
+ },
+ "percent": {
+  "arrived_reporting": 22.5,
+  "arrived_tracked": 25.0,
+  "arrived_silent": 2.5,
+  "arrived_adrift": 0.0,
+  "at_sea_timeout": 20.0,
+  "aground": 15.0,
+  "lost": 15.0
+ },
+ "success_percent": 47.5,
+ "success_ci95": [
+  32.9,
+  62.5
+ ],
+ "by_launch_month": {
+  "05": {
+   "runs": 28,
+   "arrived": 13,
+   "success_percent": 46.4,
+   "success_ci95": [
+    29.5,
+    64.2
+   ]
+  },
+  "06": {
+   "runs": 12,
+   "arrived": 6,
+   "success_percent": 50.0,
+   "success_ci95": [
+    25.4,
+    74.6
+   ]
+  }
+ },
+ "success_definition": "arrived_reporting + arrived_tracked",
+ "reporting_percent": 22.5,
+ "any_arrival_percent": 50.0,
+ "position_known_at_end_percent": 82.5,
+ "arrival_days": {
+  "median": 133.01999999999998,
+  "p10": 118.756,
+  "p90": 158.656,
+  "all": [
+   142.25,
+   147.74,
+   110.53,
+   119.67,
+   177.11,
+   122.83,
+   142.47,
+   151.27,
+   125.65,
+   141.25,
+   134.34,
+   122.15,
+   106.06,
+   125.93,
+   139.25,
+   158.04,
+   120.7,
+   164.2,
+   131.7,
+   131.49
+  ]
+ },
+ "failure_causes": {
+  "Leak started": 5,
+  "Picked up by a fishing boat or passer-by": 3,
+  "aground": 2,
+  "Keel fin or its joint broke in a knockdown": 2,
+  "Fouled by weed or fishing line": 2,
+  "Tail servo failed": 1,
+  "One rudder servo failed limp": 1,
+  "Wing damaged in a knockdown": 1,
+  "Struck by a vessel": 1,
+  "Rudder servo failed limp": 1,
+  "Collision damage": 1
+ },
+ "mean_airtime_usd": 135.12,
+ "mean_knockdowns": 718.6
+}
+Saved ..\..\results\speedcheck_new_canaveral__ireland_sw.json
+==== canaveral__ireland_sw: finished 13:06:03.75 ==== 
+IDENTICAL: 40 voyages, every field the same apart from run time
+==== ocean_city__cornwall: current code, started 13:06:03.88 ==== 
+[13:06:04] Monte Carlo: 40 voyages, Launch study: Ocean City, MD: 10 km off (current plan) to Cornwall and; 8 processes
+[13:10:03] 10/40 voyages done, 7 arrived
+[13:13:05] 20/40 voyages done, 13 arrived
+[13:15:57] 30/40 voyages done, 19 arrived
+[13:17:51] 40/40 voyages done, 27 arrived
+{
+ "runs": 40,
+ "errors": 0,
+ "counts": {
+  "arrived_reporting": 16,
+  "arrived_tracked": 11,
+  "arrived_silent": 1,
+  "arrived_adrift": 0,
+  "at_sea_timeout": 8,
+  "aground": 2,
+  "lost": 2
+ },
+ "percent": {
+  "arrived_reporting": 40.0,
+  "arrived_tracked": 27.5,
+  "arrived_silent": 2.5,
+  "arrived_adrift": 0.0,
+  "at_sea_timeout": 20.0,
+  "aground": 5.0,
+  "lost": 5.0
+ },
+ "success_percent": 67.5,
+ "success_ci95": [
+  52.0,
+  79.9
+ ],
+ "by_launch_month": {
+  "05": {
+   "runs": 28,
+   "arrived": 19,
+   "success_percent": 67.9,
+   "success_ci95": [
+    49.4,
+    82.1
+   ]
+  },
+  "06": {
+   "runs": 12,
+   "arrived": 8,
+   "success_percent": 66.7,
+   "success_ci95": [
+    39.1,
+    86.2
+   ]
+  }
+ },
+ "success_definition": "arrived_reporting + arrived_tracked",
+ "reporting_percent": 40.0,
+ "any_arrival_percent": 70.0,
+ "position_known_at_end_percent": 90.0,
+ "arrival_days": {
+  "median": 132.29500000000002,
+  "p10": 107.849,
+  "p90": 159.343,
+  "all": [
+   109.08,
+   151.03,
+   147.71,
+   152.15,
+   124.79,
+   155.83,
+   186.67,
+   94.25,
+   120.76,
+   137.38,
+   121.44,
+   139.73,
+   141.6,
+   107.1,
+   168.68,
+   128.06,
+   118.44,
+   144.38,
+   108.17,
+   117.09,
+   158.35,
+   159.63,
+   124.82,
+   136.37,
+   159.22,
+   128.06,
+   128.22,
+   98.08
+  ]
+ },
+ "failure_causes": {
+  "Leak started": 2,
+  "Struck by a vessel": 2,
+  "Tail servo failed": 1,
+  "One rudder servo jammed": 1,
+  "Collision damage": 1,
+  "One rudder servo failed limp": 1,
+  "Electronics failure": 1,
+  "Rudder servo jammed": 1,
+  "Rudder servo failed limp": 1,
+  "Tail servo jammed": 1
+ },
+ "mean_airtime_usd": 156.45,
+ "mean_knockdowns": 688.7
+}
+Saved ..\results\speedcheck_old_ocean_city__cornwall.json
+==== ocean_city__cornwall: faster code, started 13:17:51.81 ==== 
+[13:17:52] Monte Carlo: 40 voyages, Launch study: Ocean City, MD: 10 km off (current plan) to Cornwall and; 8 processes
+[13:18:56] 10/40 voyages done, 7 arrived
+[13:19:29] 20/40 voyages done, 13 arrived
+[13:20:04] 30/40 voyages done, 19 arrived
+[13:20:30] 40/40 voyages done, 27 arrived
+{
+ "runs": 40,
+ "errors": 0,
+ "counts": {
+  "arrived_reporting": 16,
+  "arrived_tracked": 11,
+  "arrived_silent": 1,
+  "arrived_adrift": 0,
+  "at_sea_timeout": 8,
+  "aground": 2,
+  "lost": 2
+ },
+ "percent": {
+  "arrived_reporting": 40.0,
+  "arrived_tracked": 27.5,
+  "arrived_silent": 2.5,
+  "arrived_adrift": 0.0,
+  "at_sea_timeout": 20.0,
+  "aground": 5.0,
+  "lost": 5.0
+ },
+ "success_percent": 67.5,
+ "success_ci95": [
+  52.0,
+  79.9
+ ],
+ "by_launch_month": {
+  "05": {
+   "runs": 28,
+   "arrived": 19,
+   "success_percent": 67.9,
+   "success_ci95": [
+    49.4,
+    82.1
+   ]
+  },
+  "06": {
+   "runs": 12,
+   "arrived": 8,
+   "success_percent": 66.7,
+   "success_ci95": [
+    39.1,
+    86.2
+   ]
+  }
+ },
+ "success_definition": "arrived_reporting + arrived_tracked",
+ "reporting_percent": 40.0,
+ "any_arrival_percent": 70.0,
+ "position_known_at_end_percent": 90.0,
+ "arrival_days": {
+  "median": 132.29500000000002,
+  "p10": 107.849,
+  "p90": 159.343,
+  "all": [
+   109.08,
+   151.03,
+   147.71,
+   152.15,
+   124.79,
+   155.83,
+   186.67,
+   94.25,
+   120.76,
+   137.38,
+   121.44,
+   139.73,
+   141.6,
+   107.1,
+   168.68,
+   128.06,
+   118.44,
+   144.38,
+   108.17,
+   117.09,
+   158.35,
+   159.63,
+   124.82,
+   136.37,
+   159.22,
+   128.06,
+   128.22,
+   98.08
+  ]
+ },
+ "failure_causes": {
+  "Leak started": 2,
+  "Struck by a vessel": 2,
+  "Tail servo failed": 1,
+  "One rudder servo jammed": 1,
+  "Collision damage": 1,
+  "One rudder servo failed limp": 1,
+  "Electronics failure": 1,
+  "Rudder servo jammed": 1,
+  "Rudder servo failed limp": 1,
+  "Tail servo jammed": 1
+ },
+ "mean_airtime_usd": 156.45,
+ "mean_knockdowns": 688.7
+}
+Saved ..\..\results\speedcheck_new_ocean_city__cornwall.json
+==== ocean_city__cornwall: finished 13:20:31.06 ==== 
+IDENTICAL: 40 voyages, every field the same apart from run time
+RESULT: PASS. Faster code installed for future runs, Fri 11/13/2026 13:20:31.20 
+=== DONE Fri 11/13/2026 13:20:31.21 

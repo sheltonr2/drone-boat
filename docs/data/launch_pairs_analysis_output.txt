@@ -1,0 +1,24 @@
+Pooled over destinations: launch minus Ocean City 10 km (same destination, same seeds)
+  hatteras_stream    mean success  50.4%   paired  +4.4 (-4.0 to +12.2)
+  ocean_city_canyon  mean success  49.6%   paired  +3.6 (-3.8 to +11.3)
+  hatteras           mean success  50.4%   paired  +4.4 (-3.8 to +12.9)
+  ocean_city         mean success  46.0%   paired  +0.0 (+0.0 to +0.0)
+Pooled over launches: destination minus SW Ireland (same launch, same seeds)
+  ireland_sw   mean success  50.0%   paired  +0.0 (+0.0 to +0.0)
+  cornwall     mean success  49.5%   paired  -0.5 (-4.2 to +3.7)
+  brittany     mean success  47.8%   paired  -2.2 (-6.3 to +2.2)
+Hatteras Inlet (10 km) minus Hatteras 45 km, pooled over destinations
+  +0.0 (-7.8 to +8.0)
+Storm encounters (fraction of voyages within 200 km of a tropical storm or stronger; success after the grade-D loss model)
+  hatteras_stream__ireland_sw      TS+ within 200 km  17.6%   success  54.0 ->  52.9
+  hatteras_stream__cornwall        TS+ within 200 km  17.1%   success  46.7 ->  45.8
+  hatteras_stream__brittany        TS+ within 200 km  17.2%   success  50.7 ->  49.7
+  ocean_city_canyon__ireland_sw    TS+ within 200 km  18.0%   success  50.0 ->  49.1
+  ocean_city_canyon__cornwall      TS+ within 200 km  18.0%   success  53.3 ->  52.5
+  ocean_city_canyon__brittany      TS+ within 200 km  17.5%   success  45.3 ->  44.6
+  hatteras__ireland_sw             TS+ within 200 km  17.2%   success  49.3 ->  48.4
+  hatteras__cornwall               TS+ within 200 km  16.5%   success  51.3 ->  50.4
+  hatteras__brittany               TS+ within 200 km  16.9%   success  50.7 ->  49.7
+  ocean_city__ireland_sw           TS+ within 200 km  18.2%   success  46.7 ->  45.8
+  ocean_city__cornwall             TS+ within 200 km  17.6%   success  46.7 ->  46.0
+  ocean_city__brittany             TS+ within 200 km  17.3%   success  44.7 ->  43.9
