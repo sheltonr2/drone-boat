@@ -118,3 +118,15 @@ Any failure resets the 14-day count after the fix. Record the start date and the
 - **Takeover at sea, in Test F:** stop the heartbeat from shore for 2 hours in moderate wind. Compare the speed toward the waypoint on the YB3 and main tracks with the main autopilot's on the same leg. That ratio replaces the simulator's 0.85 guess (`limp_home.speed_factor`).
 - **RockBLOCK Plus (Rev D):** with the lid fitted and the wing rotating overhead, send 50 reports over a day. At least 45 should get through first time. Then pour a cupful of water over the lid: it must run off, with none standing over the puck.
 - **Test B (Rev D):** the model now expects about 27.8 kg and GM 0.18 m, trimmed about 0.3° more bow-down than C5.
+
+## Additions for Rev E (13 Nov 2026)
+
+- **Test G (Rev E): pressure-decay before every launch.** Pump the dry bay to 0.1 bar through the Schrader valve in the hatch lid, with the membrane vent taped over. There must be no measurable drop in 30 minutes on a U-tube or digital manometer. Remove the tape after. Do the electronics box the same way through a temporary fitting. The 72-hour submersion stays as the acceptance test.
+- **Test O, bilge pump:**
+  1. 72 hours of on/off cycling (1 minute in 10) in salt water, drawing through the strainer.
+  2. With the outlet hose 30 cm under water and the pump off, nothing may come back past the check valve in an hour.
+  3. On the boat, pour 2.5 kg of water into the sump. The pump must clear it to the probe in under 10 minutes, with the boat heeled 20° each way.
+- **Test P, sealed servo life:** two SER-2000 rudder servos on the bench, each driving a spring-loaded arm at the rudder's working torque, ±10° every 3 seconds, in a salt-fog box (a tote with an ultrasonic fogger and salt water) for 1 million movements, about 5 weeks. Log position error, current and any water inside every 100,000 movements. Rev E assumes these fail half as often as the Savöx; this test is how that guess becomes a number.
+- **Test Q, tail detent:** with the tail servo unpowered, turn the fin by hand. It must snap to +8° or −8° and stay there. On the lake in about 2 kn of apparent wind, cut the tail servo's power: the wing must keep driving at a steady angle, not feather. Powered, the servo must move the fin through the detents without stalling or overheating.
+- **Test A (Rev E):** in the tow test, drag a bundle of kelp or polypropylene line onto the fin with and without the fairing. Note whether it slides off and how long it takes. That measures the weed numbers the model guesses.
+- **Test B (Rev E):** the model now expects about 28.5 kg and GM 0.18 m.

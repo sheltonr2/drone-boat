@@ -54,7 +54,10 @@ Everything below is needed for one boat. Prices are approximate US prices from N
 | [Genasun GV-5-Li-14.2V MPPT charge controller](https://reach.dog/shop/build-the-power/products/genasun-gv-5-lithium-14-2-volt-mppt) | 1 | — | 104 |
 | [Bioenno BLF-1215A LiFePO4 battery](https://www.bioennopower.com/collections/all/ebike-batteries?page=1), 12 V 15 Ah | 1 | about 180 × 77 × 167 mm | 150 |
 | ETFE semi-flexible solar panels, \~20 W | 2 | about 420 × 280 mm | 80 |
-| [Savöx SW-1210SG waterproof servo](https://hillsborohobbyshop.com/products/savox-sw-1210sg) | 3 | 40.6 × 20.7 × 42 mm | 279 |
+| Rudder servos (Rev E): [Blue Trail SER-2000](https://www.bluetrailengineering.com/product-page/underwater-servo-ser-200x) sealed kit with a DFRobot 25 kg magnetic-encoder servo inside (was the Savöx SW-1210SG) | 2 | about 66 × 34 × 72 mm (estimate), 240 g | 474 |
+| Tail servo (Rev E): DFRobot 25 kg magnetic-encoder servo, potted, with detent magnets | 1 | standard size | 32 |
+| Bilge pump (Rev E): 12 V diaphragm pump, strainer, hose, check valve, deck fitting | 1 set | D28 motor | 50 |
+| Leak checks (Rev E): 2 membrane vents, BME280, Schrader valve | 1 set | — | 40 |
 | All-round white LED navigation light (12 V, about 0.3 W, 30 mm puck) | 1 | 30 mm | 25 |
 | 6-wire capsule slip ring | 1 | 12.5 mm diameter | 15 |
 
@@ -117,7 +120,7 @@ Hot-wire foam cutter, oscillating or jig saw, random-orbit sander, drill and bit
 
 ## Budget and running costs
 
-Itemised in full, Rev D comes to about $2,920, plus about $630 for the YB3 backup tracker. Rev C was about $2,550; Rev D adds about $370 for the limp-home controller, the encapsulated RockBLOCK Plus and potting, which the simulator rates as the biggest single gain since Rev C. That is well over the $2,000 target. The trims below the table bring the boat to about $2,665 (about $3,295 with the tracker). Tools you don't already own are extra.
+Itemised in full, Rev E comes to about $3,280, plus about $630 for the YB3 backup tracker. Rev C was about $2,550; Rev D added about $370 for the limp-home controller, the encapsulated RockBLOCK Plus and potting; Rev E adds about $360 for the bilge pump, sealed rudder servos, the tail detent and the leak checks ([Design_RevE.md](Design_RevE.md)). Those two steps are the biggest gains in the simulator since Rev C. That is well over the $2,000 target. The trims below the table, written for Rev D, take about $255 off. Tools you don't already own are extra.
 
 | Category | Approx. USD |
 | --- | --- |
@@ -125,7 +128,8 @@ Itemised in full, Rev D comes to about $2,920, plus about $630 for the YB3 backu
 | Hardware and fittings (Rev C: twin rudder bushings and stocks, 6806 bearings, 30 mm spar, 2 more WetLinks, trunk seals) | 550 |
 | Build materials (Rev C: XPS hull fill, battery box, 1 kg more lead) | 642 |
 | Lake-test prototype (foam, scrap glass) | 100 |
-| **Total, Rev D** | **\~2,920** (Rev C: \~2,550) |
+| Rev E: bilge pump and plumbing, vents, sensor, test valve; sealed rudder servos less the Savöx pair; DFRobot tail servo; detent, fairing, spring links | +360 |
+| **Total, Rev E** | **\~3,280** (Rev D: \~2,920; Rev C: \~2,550) |
 | YB3 backup tracker (decided 9 Nov; hardware, check current price) | +630 |
 
 **Getting to about $2,290 (saves about $255)**
@@ -176,7 +180,7 @@ The top three entries in this table account for most lost ocean robots. That's w
 | **Lead casting** | Cast outdoors with a face shield and gloves, and keep the mould bone-dry: steam in a damp mould can make molten lead explode. Never pour lead into a 3D print. |
 | **Legal liability** | An uncrewed roaming vessel is your responsibility. Check US Coast Guard rules for the launch and the rules wherever it lands (Ireland, the UK or France), talk to a marine insurer, and publish the boat's live position. |
 
-**Design numbers not yet verified by testing:** self-righting from 180°, the waterline at about 27.8 kg (z 104 mm, Rev D), the limp-home switchover (Test N) and its speed at sea, the wave-strike loads (breaker test L), the keel fin and its joint (proof test K), the 3 L free-flood volume, the wing's balance on the spar, and real-world solar output on a 40 cm deck.
+**Design numbers not yet verified by testing:** self-righting from 180°, the waterline at about 28.5 kg (z 106 mm, Rev E), the sealed servos' life (Test P), the pump (Test O), the tail detent (Test Q), the limp-home switchover (Test N) and its speed at sea, the wave-strike loads (breaker test L), the keel fin and its joint (proof test K), the 3 L free-flood volume, the wing's balance on the spar, and real-world solar output on a 40 cm deck.
 
 ## Odds of success
 

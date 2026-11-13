@@ -129,8 +129,10 @@ Every part below runs on 12.8 V or 5 V and works with stock ArduPilot. The picks
 | Backup tracker | YB3 (Yellowbrick), own battery, GPS and Iridium modem, on platform P19 on the stern post | Keeps reporting if the main box dies (docs/Backup_Tracker.md). Replaces the backup D-cell in Rev C | \~630 (check current) |
 | Solar | Two \~20 W ETFE semi-flexible panels, about 42 × 28 cm each, wired in parallel | Must fit the deck: a [Renogy 50 W flexible](https://offgridstores.com/products/renogy-50-watt-12-volt-flexible-monocrystalline-solar-panel) is 67 × 51 cm, wider than the hull. ETFE resists salt and UV better than PET | \~80 |
 | Thruster | Removed in Rev C | Sail-only | 0 |
-| Rudder actuators | 2 × [Savöx SW-1210SG](https://hillsborohobbyshop.com/products/savox-sw-1210sg) waterproof servo (Rev C: one per rudder) | 20 kg·cm at 6 V, steel gears, IP67, 12-bit resolution | \~186 |
-| Wing-tail actuator | Second Savöx SW-1210SG | Same part as the rudder, so one spare covers both | \~93 |
+| Rudder actuators | Rev E: 2 × [Blue Trail SER-2000](https://www.bluetrailengineering.com/product-page/underwater-servo-ser-200x) sealed servo kit ($215, 200 m, titanium 6 mm D-shaft, takes a standard-size servo with a 25T spline) with a DFRobot 25 kg magnetic-encoder servo inside (about $22) and a WetLink penetrator. Was 2 × Savöx SW-1210SG | Sealed, no potentiometer; cradles P12, arms P26, spring links in the pushrods | \~474 |
+| Wing-tail actuator | Rev E: DFRobot 25 kg magnetic-encoder servo, potted in P09, with detent P25 (two 6 × 3 N52 magnets, a 6 × 1 steel disc). Was a Savöx SW-1210SG | Fails at ±8° rather than free | \~32 |
+| Bilge pump (Rev E) | 12 V self-priming diaphragm pump, D28 motor, about 0.5 L/min; strainer, 6 mm hose, inline check valve, 1/4 in. through-deck fitting | Spacer P24 on the mast tube; docs/Design_RevE.md | \~50 |
+| Leak checks (Rev E) | 2 × immersion-rated membrane vents (Gore PolyVent class, M12), BME280 humidity and pressure board, Schrader valve with cap | Hatch lid, box lid, bulkhead x 300 | \~40 |
 | Rudder bearings | 4 × [igus iglide](https://www.igus.com/info/industries-marine) J or T500 flanged bushings on two 316 stainless stocks, plus a lip seal and boot on each trunk top | Self-lubricating, saltwater-proof, no grease to wash out; the trunk tops go under in a knockdown | \~55 |
 | Cable penetrations | [Blue Robotics WetLink Penetrator LC (M10)](https://www.robotshop.com/products/bluerobotics-wetlink-penetrator-lc-1-pack-m10-65-mm) × 6 | Rated to 95 m; no glue or potting; solar, antenna/sensors, slip ring, light, and two in the aft bulkhead for the rudder servos | 78 |
 | Electronics box | Hammond 1554-series IP68 polycarbonate enclosure | NEMA 6P rated; UV-stabilized; screw-down gasket lid | \~40 |
@@ -194,6 +196,7 @@ Rev C (10 Nov 2026) parts total about $2,270, plus about $630 for the YB3 backup
 
 | Configuration | Hardware total (USD) |
 | --- | --- |
+| Rev E as listed (pump, sealed servos, detent, leak checks: about +$360 on Rev D) | \~2,995 |
 | Rev D as listed (limp-home, RockBLOCK Plus, potting: about +$365) | \~2,635 |
 | Rev C as listed | \~2,270 |
 | Rev C + YB3 backup tracker | \~2,900 |
@@ -221,7 +224,7 @@ The boat is most likely to be lost to water getting in, steering failure, or fou
 | Risk | Likelihood | Mitigation |
 | --- | --- | --- |
 | Water ingress through seals or the enclosure | High | Rev C: foam-filled hull behind two bulkheads (3 L or less can flood), sealed battery box; one bolted, O-ringed hatch; WetLink cable glands; leak sensors trigger safe mode; pressure and submersion tests |
-| Rudder or wing-tail actuator failure | High | Rev C: twin rudders with separate servos; oversized bushings; wing designed to weathervane safely if the tail fails (a tail-servo backup is a candidate for Rev D) |
+| Rudder or wing-tail actuator failure | High | Rev C: twin rudders with separate servos; oversized bushings. Rev E: sealed magnetic-encoder rudder servos, deadband steering, and a tail detent so a failed tail holds ±8° instead of feathering |
 | Fouling by weed, fishing line or barnacles | High | Swept-back leading edges; antifouling paint; no propeller |
 | Knockdown or rollover in a gale | Medium | Self-righting from 180°; rigid wing with no sheets; everything strapped down |
 | Hurricane, or a gale against the Gulf Stream | Medium | Launch in May; follow the National Hurricane Center outlook and send a new route away from forecast tracks; self-righting with no sheets |

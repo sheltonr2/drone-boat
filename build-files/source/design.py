@@ -7,8 +7,8 @@ BMAX = 200.0          # max half-beam (400 mm beam)
 X_BMAX = 0.55         # fraction of L where beam is max
 B_TRANSOM = 150.0     # transom half-beam
 DECK_Z = 230.0
-DWL = 104.0           # Rev D design waterline at about 27.8 kg all-up (C3-C5: 102 at 26.9; C2: 101 at 26.4; C/C1: 98 at 25.3; Rev B: 90 at about 21 kg)
-MASS_KG = 27.8        # Rev D all-up mass, from the simulator mass model (C3-C5: 26.9)
+DWL = 106.0           # Rev E design waterline at about 28.5 kg all-up (Rev D: 104 at 27.8; C3-C5: 102 at 26.9; C2: 101 at 26.4; C/C1: 98 at 25.3; Rev B: 90 at about 21 kg)
+MASS_KG = 28.5        # Rev E all-up mass, from the simulator mass model (Rev D: 27.8; C3-C5: 26.9)
 SECTION_N = 2.2       # superellipse exponent of the sections (round bilge)
 
 def half_beam(x):
@@ -107,6 +107,17 @@ LHC = dict(x0=302, x1=332, w=96, z0=150, z1=216)      # P21 on the aft face of b
 MUXPOD = dict(x0=1236, x1=1258, y=-60, w=50, z0=150, z1=190)   # P22 on the forward face of bulkhead x 1260, starboard
 RBPLUS = dict(x=430.0, dia=137, h=40, bowl_od=146, flange_od=166, depth=38)   # P23 in the hatch lid; puck top 2 proud of the flange
 LIMP_RUDDER_Y = -100.0                               # the starboard rudder (y to port) is the one the limp-home controller can drive
+# Rev E (13 Nov 2026): leaks, servos and weed (docs/Design_RevE.md, docs/Reliability_Review.md)
+PUMP = dict(x=600, y=52, d=28, z0=30, z1=100, kg=0.1)    # diaphragm pump upright on spacer P24 against the port side of the mast tube, above the sump; self-priming
+PUMP_PICKUP = (750.0, 40.0, 16.0)                    # strainer at the sump's low point, port side of the keel box (the centreline there is the keel box)
+PUMP_OUTLET = dict(x=548.0, y=-75.0, loop_z=226)     # hose loops up under the deck, check valve, through-deck fitting aft of the hatch, starboard
+VENTS = ((355.0, 85.0), (1100.0, 0.0))               # membrane vents: hatch lid (x, y; a lid corner, clear of the P23 flange) and electronics-box lid
+TEST_VALVE = (505.0, -85.0)                          # Schrader valve in the hatch lid for the pressure-decay test (opposite corner)
+BME = (360.0, 60.0, 200.0)                           # humidity/pressure sensor on the aft face of bulkhead x 300, port
+SER = dict(l=66.0, w=34.0, h=72.0, kg=0.24)          # Blue Trail SER-2000 envelope: ESTIMATE, confirm on the unit before printing P12
+SERVO_POCKET = dict(x0=1280, x1=1380, half_w=28)     # aft-foam pocket per rudder (was 1290-1370 x 44)
+DETENT = dict(angle_deg=8.0, magnet_d=6.0, magnet_t=3.0)   # tail detent: magnets in P25 on P09, steel striker in the P10 root
+FAIRING = dict(fin_le_z=-250.0, nose_x=595.0, nose_z=-418.0)   # W1: ramp from the fin leading edge at z -250 to the top of the bulb nose
 
 def hull_z_at(x, y):
     """Height of the outside hull surface at station x, distance y off the centreline (bottom half)."""

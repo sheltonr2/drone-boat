@@ -1,24 +1,26 @@
-SOLAR-SAIL OCEAN DRONE 1.5 m  -  BUILD FILES (Rev D, 2026-11-12)
+SOLAR-SAIL OCEAN DRONE 1.5 m  -  BUILD FILES (Rev E, 2026-11-13)
 
-Drawings.pdf                 22 tabloid sheets (11 x 17 in): general arrangement, hull lines + offsets,
+Drawings.pdf                 23 tabloid sheets (11 x 17 in): general arrangement, hull lines + offsets,
                              interior, keel + bulb, twin rudders, wing + tail, mast/stub, hatch,
                              subdivision + foam fill + labels (D09), and one sheet per pair of printed parts.
 Templates_1to1_Letter.pdf    Full-size cutting templates tiled on US Letter. Print at 100% / Actual size
                              and check the 100 mm bar on each page. Overlap 12 mm; align red dashed lines.
                              T01-T09 hull frames, T10 transom, T11 stem, T12/T13 fin root/tip,
                              T14 rudder (make 2), T15 wing rib/hot-wire template, T16 hatch,
-                             T17 bulkhead x 300, T18 bulkhead x 1260, T19/T20 keel-box floors.
+                             T17 bulkhead x 300, T18 bulkhead x 1260, T19/T20 keel-box floors,
+                             T21 weed fairing (Rev E).
 dxf/                         The same templates as DXF (R12, millimetres) for CNC, laser or a vinyl cutter,
                              plus body_plan_all_stations.dxf.
-stl/                         26 STL files for the 23 printed parts (P01-P23), already in print orientation.
-                             Files ending _x4 are needed four times; print P11, P12 and P13a/b twice (two rudders).
+stl/                         29 STL files for the 26 printed parts (P01-P26), already in print orientation.
+                             Files ending _x4 are needed four times; print P11, P12, P13a/b and P26 twice (two rudders).
 source/                      Python that generates everything (design.py holds every master dimension).
                              Change a number there and rerun build_stl.py, drawings.py, templates.py.
 
 Print settings: 0.4 mm nozzle, 0.2 mm layers, 4+ walls. ASA for parts outside in the sun, PETG below deck.
 Bulb pattern P14 is a pattern for a plaster/sand mould: never pour lead into a print.
 
-Check before printing: servo tab spacing (slots cover 47.5-51.5 mm), AS5600 board size (26 mm recess),
+Check before printing: the SER-2000 enclosure size for cradle P12 (66 x 34 x 72 is an ESTIMATE: measure,
+set SER in source/design.py, rebuild P12), the tail servo's tab spacing (slots cover 47.5-51.5 mm), AS5600 board size (26 mm recess),
 patch antenna footprint, and enclosure inside size for the tray P15.
 
 Rev B (2026-11-08)
@@ -93,3 +95,14 @@ Rev D (2026-11-12)   [drafted as C6; a new letter because it adds a system: see 
 
 Revision convention (docs/Revisions.md): a new letter when a system is added or removed, the way parts connect
 changes, or a set is frozen for building; numbered sub-revisions (D1, D2...) for part fixes within a letter.
+
+Rev E (2026-11-13)  docs/Design_RevE.md
+  After the reliability runs (docs/Reliability_Review.md). A new letter: it adds a system (bilge pump) and a sensor.
+  Leaks: bilge pump upright on spacer P24 against the mast tube, strainer port of the keel box, outlet loop to a
+  check valve and a deck fitting aft of the hatch; the autopilot keeps sailing and pumps. Membrane vents in the hatch
+  lid and the electronics-box lid, a capped Schrader valve in the lid for the pressure-decay test, a humidity and
+  pressure sensor on bulkhead x 300. Servos: sealed Blue Trail SER-2000 rudder servos in cradles P12 (replaces the
+  servo mount) with arms P26 for the 6 mm D-shaft and spring overload links in the pushrods; tail servo is a potted
+  magnetic-encoder servo with detent P25 so it fails at +/-8 deg, not free. Weed: fairing fin-to-bulb (T21).
+  Not adopted: flush bulb nose (W2) and raked rudders (W3). 28.5 kg, DWL z 106.
+  Sheets changed: D00, D03, D04, D05, D06, D08, parts sheets. New: P24, P25, P26, T21. Changed: P09 (notes), P12.

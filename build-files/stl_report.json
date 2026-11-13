@@ -139,20 +139,6 @@
   "res": 0.35,
   "sec": 15.5
  },
- "P12_rudder_servo_mount": {
-  "pid": "P12",
-  "tris": 9054,
-  "watertight": true,
-  "bad_edges": 0,
-  "extent": [
-   100.0,
-   54.0,
-   48.0
-  ],
-  "volume_cm3": 64.6,
-  "res": 0.35,
-  "sec": 49.0
- },
  "P13a_rudder_core_upper": {
   "pid": "P13",
   "tris": 8462,
@@ -362,5 +348,61 @@
   "volume_cm3": 160.6,
   "res": 0.45,
   "sec": 70.5
+ },
+ "P12_rudder_servo_cradle": {
+  "pid": "P12",
+  "tris": 9454,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   110.0,
+   64.0,
+   40.0
+  ],
+  "volume_cm3": 60.2,
+  "res": 0.35,
+  "sec": 62.8
+ },
+ "P25_tail_detent": {
+  "pid": "P25",
+  "tris": 4142,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   20.5,
+   18.3,
+   5.0
+  ],
+  "volume_cm3": 1.2,
+  "res": 0.25,
+  "sec": 8.6
+ },
+ "P26_rudder_servo_arm": {
+  "pid": "P26",
+  "tris": 12598,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   54.0,
+   20.0,
+   12.0
+  ],
+  "volume_cm3": 5.6,
+  "res": 0.25,
+  "sec": 30.6
+ },
+ "P24_bilge_pump_spacer": {
+  "pid": "P24",
+  "tris": 14498,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   32.0,
+   24.0,
+   50.0
+  ],
+  "volume_cm3": 18.7,
+  "res": 0.25,
+  "sec": 49.9
  }
 }

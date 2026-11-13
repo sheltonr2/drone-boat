@@ -180,7 +180,9 @@ def servo_cradle(x0, base_z=0):
 
 @part("P09", "Tail servo housing (boom end)", 1, "ASA or PETG",
       ["Slides on the aft end of the 12 mm boom; pin with M4 (D4.3 hole).",
-       "Holds a Savox SW-1210SG output-up; the tail fin P10 bonds to the servo horn.",
+       "Rev E: holds a DFRobot magnetic-encoder servo (25 kg) output-up, potted:",
+       "urethane over the case seams and cable entry, silicone round the output.",
+       "The tail fin P10 bonds to the servo horn; detent P25 bonds on top, aft.",
        "Tab screw slots allow 47.5-51.5 mm tab spacing: check your servo before printing.",
        "Pocket has a D4 drain hole; cable exits through the slot toward the boom."],
       {"Overall": "92 x 30 x 48", "Servo pocket": "41.2 x 21.2 x 42", "Boom socket": "D12.2 x 28"})
@@ -224,16 +226,38 @@ def p11():
             hole_y(1.6, -14, 14, 0, 11)] + [cyl(1.1, -1, 7, c1=r, c2=0) for r in (35, 45, 55)]
     return diff(solid, *cuts), ((-25, 66), (-14, 14), (0, 16))
 
-@part("P12", "Rudder servo mount", 2, "PETG or ASA",
-      ["Rev C: one per rudder, each with its own servo. Bonds to a glass-reinforced pad beside its rudder trunk, in a pocket in the aft foam.",
-       "Holds a Savox SW-1210SG output-up, level with the tiller arm.",
-       "Tab screw slots allow 47.5-51.5 mm tab spacing: check your servo before printing."],
-      {"Base": "100 x 54 x 5", "Cradle": "60 x 30 x 48"})
+@part("P12", "Rudder servo cradle (Blue Trail SER-2000)", 2, "PETG or ASA, 5 walls",
+      ["Rev E: one per rudder. Holds a Blue Trail SER-2000 sealed enclosure (with a",
+       "DFRobot magnetic-encoder servo inside) output-up, level with the tiller arm.",
+       "Two 316 hose clamps or 20 mm straps through the slots hold the enclosure;",
+       "no fixed hole pattern, so it fits whatever the unit measures.",
+       "The envelope (66 x 34 x 72) is an ESTIMATE: measure your unit, set SER in",
+       "design.py and rebuild before printing. Base bonds to the pocket pad."],
+      {"Base": "110 x 64 x 5", "Cradle": "inside 34.8 wide x 67 long, walls 4, 40 high", "Strap slots": "2 x 22 x 3"})
 def p12():
-    base = box(-20, 80, -27, 27, 0, 5)
-    blk, cuts = servo_cradle(0, base_z=0)
-    holes = [cyl(2.15, -1, 6, c1=x, c2=y) for x in (-12, 72) for y in (-19, 19)]
-    return diff(union(base, blk), *cuts, *holes), ((-21, 81), (-28, 28), (0, 48))
+    S = D.SER; w = S['w'] + 0.8; l = S['l'] + 1.0
+    base = box(-55, 55, -32, 32, 0, 5)
+    walls = diff(box(-l/2 - 4, l/2 + 4, -w/2 - 4, w/2 + 4, 0, 40), box(-l/2, l/2, -w/2, w/2, 5, 41))
+    slots = [box(xs - 1.5, xs + 1.5, -11, 11, -1, 41) for xs in (-l/2 - 2, l/2 + 2)]
+    drain = cyl(2, -1, 6)
+    cable = box(-l/2 - 5, -l/2 + 1, -6, 6, 5, 18)
+    holes = [cyl(2.15, -1, 6, c1=x, c2=y) for x in (-48, 48) for y in (-25, 25)]
+    return diff(union(base, walls), *slots, drain, cable, *holes), ((-56, 56), (-33, 33), (0, 40))
+
+@part("P26", "Rudder servo arm for the 6 mm D-shaft", 2, "PETG, 100% infill",
+      ["Rev E: the SER-2000 output is a 6 mm titanium D-shaft, not a 25T spline,",
+       "so the C3 spline servo-saver is replaced by a spring overload link in the",
+       "pushrod (D05). Clamp with an M3 316 bolt across the slit.",
+       "Pushrod holes D2.2 at 20, 25 and 30 mm to match the tiller's throw."],
+      {"Hub": "D20 x 12", "Bore": "D6.1 with flat at 5.5", "Arm": "36 x 10 x 5"})
+def p26():
+    hub = cyl(10, 0, 12)
+    arm = box(0, 36, -5, 5, 0, 5)
+    ears = box(-18, -7, -6, 6, 0, 12)
+    solid = union(hub, arm, ears)
+    bore = diff(cyl(3.05, -1, 13), box(2.5, 4, -4, 4, -2, 14))
+    cuts = [bore, box(-19, -2.5, -0.75, 0.75, -1, 13), hole_y(1.65, -7, 7, -13, 6)] + [cyl(1.1, -1, 6, c1=r, c2=0) for r in (20, 25, 30)]
+    return diff(solid, *cuts), ((-19, 37), (-11, 11), (0, 12))
 
 @part("P13", "Rudder blade core, upper and lower halves", 2, "PETG, 15% gyroid",
       ["Rev C: two blades (print two of each half). NACA 0012, 120 mm chord; each half 115 mm, printed standing up.",
@@ -425,15 +449,48 @@ def p23():
         slots.append(prism(R, -1, 6))
     return diff(solid, gland, *slots), ((-84, 84), (-84, 84), (0, 43))
 
+# ---------------------------------------------------------------- Rev E leaks, servos, weed
+@part("P24", "Bilge pump spacer (mast tube)", 1, "PETG, 5 walls, 40% infill",
+      ["Rev E: holds the 12 V diaphragm pump (D28 motor) upright against the port",
+       "side of the 2 in. PVC mast tube, above the sump. Bond with thickened epoxy",
+       "(scuff the PVC), then a 316 band clamp round tube, spacer and pump at the",
+       "top and bottom of the spacer (grooves). Pump head down, inlet at the bottom.",
+       "Pick-up hose to a strainer at the sump's low point (x 600, centreline);",
+       "outlet up to a loop under the deck, check valve, deck fitting (D03, D08).",
+       "Print standing on end as modelled: no supports."],
+      {"Faces": "R30.4 (tube OD 60.3) and R14.3 (pump D28)", "Size": "32 x 26 x 50", "Clamp grooves": "2 x 13 wide x 1.5 deep"})
+def p24():
+    body = box(-16, 16, 24, 50, 0, 50)
+    tube = cyl(30.4, -1, 51)
+    pump = cyl(14.3, -1, 51, c1=0, c2=52)
+    grooves = [diff(box(-17, 17, 23, 51, zg, zg + 13), box(-14.5, 14.5, 22, 52, zg - 1, zg + 14)) for zg in (4, 33)]
+    return diff(body, tube, pump, *grooves), ((-17, 17), (23, 51), (0, 50))
+
+@part("P25", "Tail detent magnet carrier", 1, "PETG, 100% infill",
+      ["Rev E: a tail servo that fails free kills the boat; this makes it fail at",
+       "+/-8 deg. Bond on top of P09, aft of the servo output, centred on it.",
+       "Two 6 x 3 N52 magnets (epoxied, same pole up) in the pockets at r 30, +/-8 deg.",
+       "A 6 x 1 steel disc in the underside of the fin P10, at r 30 on the fin's",
+       "chord line, is pulled to the nearer magnet when the servo lets go.",
+       "Check a 1.5 mm gap to the fin; the powered servo overcomes the pull easily."],
+      {"Sector": "r 18-38, +/-14 deg, 5 thick", "Magnet pockets": "2 x D6.2 x 3.2 at r 30, +/-8 deg"})
+def p25():
+    a = np.radians(np.linspace(-14, 14, 29))
+    P = np.r_[np.c_[18 * np.cos(a), 18 * np.sin(a)], np.c_[38 * np.cos(a[::-1]), 38 * np.sin(a[::-1])]]
+    solid = prism(P, 0, 5)
+    pk = [cyl(3.1, 1.8, 6, c1=30 * np.cos(np.radians(t)), c2=30 * np.sin(np.radians(t))) for t in (-8, 8)]
+    return diff(solid, *pk), ((17, 39), (-10, 10), (0, 5))
+
 # build list: (file stem, part id, builder kwargs)
 BUILD = [("P01_vane_housing", "P01", {}), ("P02_vane_arm", "P02", {}), ("P03_sensor_cap", "P03", {}),
          ("P04_magnet_holder", "P04", {}), ("P05_antenna_platform", "P05", {}), ("P06_transom_bracket", "P06", {}),
          ("P07_mast_bearing_housing", "P07", {}), ("P08_spar_clamp_two_sockets", "P08", {}),
          ("P09_tail_servo_housing", "P09", {}), ("P10a_tail_fin_lower", "P10", {"half": "lower"}),
          ("P10b_tail_fin_upper", "P10", {"half": "upper"}), ("P11_tiller_arm", "P11", {}),
-         ("P12_rudder_servo_mount", "P12", {}), ("P13a_rudder_core_upper", "P13", {"half": "upper"}),
+         ("P12_rudder_servo_cradle", "P12", {}), ("P13a_rudder_core_upper", "P13", {"half": "upper"}),
          ("P13b_rudder_core_lower", "P13", {"half": "lower"}), ("P14a_bulb_pattern_fwd", "P14", {"half": "fwd"}),
          ("P14b_bulb_pattern_aft", "P14", {"half": "aft"}), ("P15_electronics_tray", "P15", {}),
          ("P16_battery_strap_anchor_x4", "P16", {}), ("P17_penetrator_pad_x4", "P17", {}), ("P18_counterweight_pod", "P18", {}),
          ("P19_yb3_platform", "P19", {}), ("P20_nav_light_clamp", "P20", {}),
-         ("P21_limp_home_case", "P21", {}), ("P22_switchover_pod", "P22", {}), ("P23_rockblock_plus_bowl", "P23", {})]
+         ("P21_limp_home_case", "P21", {}), ("P22_switchover_pod", "P22", {}), ("P23_rockblock_plus_bowl", "P23", {}),
+         ("P24_bilge_pump_spacer", "P24", {}), ("P25_tail_detent", "P25", {}), ("P26_rudder_servo_arm", "P26", {})]

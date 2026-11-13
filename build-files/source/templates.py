@@ -130,6 +130,17 @@ def floor_template(n, x, top):
              (-90, top + 6, 3.5, "9 mm marine ply + 2 x 6 oz each side. Cut on the solid line; trim to fit the hull." + (" Limber holes D15." if circles else ""), "TEXT")]
     return dict(name=f"T{n}_keel_floor_x{x:.0f}", polys=polys, circles=circles, texts=texts, desc=f"Keel-box floor at x {x:.0f}")
 
+def fairing_template():
+    """Rev E W1: side profile of the weed fairing between the fin leading edge and the bulb nose (x, z in boat coordinates)."""
+    FR, F, B = D.FAIRING, D.FIN, D.BULB
+    lez = lambda z: F['root_le_x'] + (F['tip_le_x'] - F['root_le_x']) * z / F['tip_z']
+    xb = np.linspace(FR['nose_x'], lez(-400), 16); zt = B['axis_z'] + D.bulb_radius(xb - B['nose_x'])
+    zf = np.linspace(FR['fin_le_z'], -400, 8); xf = np.array([lez(z) for z in zf])
+    P = np.r_[[[lez(FR['fin_le_z']), FR['fin_le_z']]], np.c_[xb, zt], np.c_[xf[::-1], zf[::-1]]]
+    texts = [(FR['nose_x'] - 40, FR['fin_le_z'] + 20, 6, "T21  WEED FAIRING side profile (Rev E)", "TEXT"),
+             (FR['nose_x'] - 40, FR['fin_le_z'] + 10, 3.5, "XPS, 22 wide at the fin, tapered to 8 at the nose. Fit to the real fin and bulb; 2 x 6 oz over.", "TEXT")]
+    return dict(name="T21_weed_fairing", polys=[(P, "FRAME_CUT", True)], circles=[], texts=texts, desc="Weed fairing, fin to bulb nose (Rev E)")
+
 def all_templates():
     T = []
     for i, x in enumerate(np.arange(0, 1501, 150)):
@@ -146,6 +157,7 @@ def all_templates():
         T.append(bulkhead_template(17 + k, xb))
     for k, (xf, zf) in enumerate(D.FLOORS):
         T.append(floor_template(19 + k, xf, zf))
+    T.append(fairing_template())
     return T
 
 # ------------------------------------------------------------------ tiled PDF

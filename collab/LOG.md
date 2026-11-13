@@ -2,6 +2,15 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-13, 19:20 UTC (14:20 local): Rev E drawn (reliability package approved)
+
+- Randolph approved the reliability recommendations. Drawn as Rev E, not "D1": the pump is a new system and the humidity sensor a new sensor (docs/Revisions.md). docs/Design_RevE.md.
+- Leaks: bilge pump on spacer P24 against the mast tube, strainer port of the keel box, outlet loop + check valve + deck fitting; keep-sailing response; vents, Schrader test valve, BME280. Servos: SER-2000 sealed rudder servos in cradles P12 (envelope an estimate, measure first), arms P26, spring pushrod links; potted tail servo with detent P25; deadband steering. Weed: fairing W1 (T21) and shedding manoeuvre W4.
+- Correction: raked rudders (W3) are not a template change (tip would sit 160 mm aft, past the transom and off the stock); deferred with W2.
+- 28.5 kg, DWL z 106, GM 0.180. About +$360 (total about $3,280). Sheets D00, D03-D06, D08; Field Tests O, P, Q added.
+- Simulator: designs/revE_design.json; design.load() accepts revision "E" (copied to the PC; Rev D still the default). Rev E run queued as 012 after stage C (250 voyages, same seeds as Rev D).
+- Stage C at 360/500 of its first run at 14:20, on time.
+
 ## 2026-11-13, 18:57 UTC (13:57 local): stage B, reliability and speed check results; stage C running
 
 - PC queue ran cleanly: reliability 04:05–07:06, stage B 07:06–12:52, speed check 12:53–13:20 local. No errors.

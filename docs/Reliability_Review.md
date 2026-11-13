@@ -1,6 +1,6 @@
 # Reliability review: steering servos, weed and leaks
 
-12 November 2026. Randolph asked, after the first Rev D run, for fixes to the three things that now end most voyages: the rudder and tail servos, weed fouling, and leaks. He suggested more sweep on the keel and rudders, a bulb that does not stick out ahead of the fin, a pressurised hull, and a small bilge pump. This note works through each, says what the run data shows, and sets up three simulator runs to price the fixes. Nothing here is drawn yet; what gets adopted becomes Rev D1 (parts changes) once the runs are in.
+12 November 2026. Randolph asked, after the first Rev D run, for fixes to the three things that now end most voyages: the rudder and tail servos, weed fouling, and leaks. He suggested more sweep on the keel and rudders, a bulb that does not stick out ahead of the fin, a pressurised hull, and a small bilge pump. This note works through each, says what the run data shows, and sets up three simulator runs to price the fixes. What was adopted is drawn as Rev E (13 Nov; [Design_RevE.md](Design_RevE.md)).
 
 ## What ends voyages in the Rev D run
 
@@ -162,14 +162,14 @@ The detent (tail fails jammed, not free) all but removes the single worst failur
 
 Fouling that clears at 0.03 a day (a month, on average) instead of 0.15 costs **0.8 points (−3.2 to +1.2)**: 2 more losses with weed as the first failure. In the model a fouled boat is slowed, not stopped, so weed costs little even when it stays. The real risk is a line wrapped hard enough to stop the boat, which the model does not represent. The cheap measures are still worth having, but the simulator gives no reason to spend much on weed.
 
-## Recommendation for Rev D1 (awaiting Randolph's decision; not drawn)
+## Recommendation (adopted 13 Nov as Rev E)
 
-Proposed as **Rev D1**: these are part changes inside the Rev D systems, not new systems, so a numbered sub-rev under our convention (`docs/Revisions.md`). In order of confidence:
+Randolph approved this on 13 Nov; it is drawn as **Rev E** ([Design_RevE.md](Design_RevE.md)). Proposed here as "D1", but the pump is a new system and the humidity sensor a new sensor, so under our convention (`docs/Revisions.md`) it takes a new letter. In order of confidence:
 
 1. **Bilge pump and the pump-and-sail response.** +8.0 points (+4.8 to +11.6), no voyages made worse, negligible energy. Adopt.
 2. **Pressure-decay test, membrane vents, humidity sensor.** Cheap, and they catch leaks before launch. Adopt (the simulator does not model them).
 3. **Sealed magnetic-encoder rudder servos (S2) and a potted tail servo with a magnetic detent, plus deadband steering.** Worth about another 10 points in the model if they halve servo wear and make the tail fail jammed (both guesses). The detent matters most: it turns the one certain-loss failure into a survivable one. Adopt, and run the bench life test to check the guess.
-4. **Weed: keep the cheap measures, defer the expensive one.** The fairing (W1, $20), raked rudders (W3, a template change) and the shedding manoeuvre (W4, software) cost almost nothing, so keep them. Defer the flush nose (W2): it moves the fin and changes helm balance, and the pessimistic run says weed is worth about a point in the model.
+4. **Weed: keep the cheap measures, defer the expensive one.** The fairing (W1, $20) and the shedding manoeuvre (W4, software) cost almost nothing, so keep them. (Correction while drawing Rev E: the raked rudders, W3, are not a template change. A 35° rake puts the tip 160 mm aft, past the transom and off the stock, so W3 is deferred too.) Defer the flush nose (W2): it moves the fin and changes helm balance, and the pessimistic run says weed is worth about a point in the model.
 5. **Next biggest loss is fishing-boat pick-ups**, which no hardware fixes. A clear "scientific instrument, please leave at sea" placard and a contact number are the cheap response; the launch study's fishing-ground results point the same way.
 
 Costs, with S2: about $600 and 0.4 kg over Rev D, as estimated before the runs (dropping W2 saves no parts cost). To be firmed up when drawn.
