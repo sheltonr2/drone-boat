@@ -1,0 +1,61 @@
+{
+ "name": "East-west study: Lisbon (Cascais), Portugal, 45 km W to Barbados (east coast)",
+ "provider": "bulk",
+ "start": {
+  "lat": 38.55,
+  "lon": -9.95
+ },
+ "target": {
+  "lat": 13.17,
+  "lon": -59.4
+ },
+ "waypoints": [
+  [
+   28.5,
+   -20.0
+  ]
+ ],
+ "waypoint_rule": "abeam",
+ "failure_rate_set": "planning",
+ "far_side": "americas",
+ "atlantic_islands_count": false,
+ "africa_landfall_counts": false,
+ "weed_zones": [
+  {
+   "lat": [
+    20.0,
+    35.0
+   ],
+   "lon": [
+    -70.0,
+    -40.0
+   ],
+   "factor": 2.0
+  },
+  {
+   "lat": [
+    3.0,
+    22.0
+   ],
+   "lon": [
+    -65.0,
+    -15.0
+   ],
+   "factor_by_month": {
+    "12": 2,
+    "1": 2,
+    "2": 2,
+    "3": 3,
+    "4": 3,
+    "5": 4,
+    "6": 5,
+    "7": 5,
+    "8": 4,
+    "9": 3,
+    "10": 3,
+    "11": 2
+   }
+  }
+ ],
+ "note": "mainland Portugal"
+}

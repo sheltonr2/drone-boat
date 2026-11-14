@@ -1,0 +1,56 @@
+{
+ "name": "East-west study: Gran Canaria (Las Palmas), 45 km SW of Maspalomas to Barbados (east coast) (weed in the belt x2)",
+ "provider": "bulk",
+ "start": {
+  "lat": 27.45,
+  "lon": -15.95
+ },
+ "target": {
+  "lat": 13.17,
+  "lon": -59.4
+ },
+ "waypoints": [],
+ "waypoint_rule": "abeam",
+ "failure_rate_set": "planning",
+ "far_side": "americas",
+ "atlantic_islands_count": false,
+ "africa_landfall_counts": false,
+ "weed_zones": [
+  {
+   "lat": [
+    20.0,
+    35.0
+   ],
+   "lon": [
+    -70.0,
+    -40.0
+   ],
+   "factor": 2.0
+  },
+  {
+   "lat": [
+    3.0,
+    22.0
+   ],
+   "lon": [
+    -65.0,
+    -15.0
+   ],
+   "factor_by_month": {
+    "12": 4,
+    "1": 4,
+    "2": 4,
+    "3": 6,
+    "4": 6,
+    "5": 8,
+    "6": 10,
+    "7": 10,
+    "8": 8,
+    "9": 6,
+    "10": 6,
+    "11": 4
+   }
+  }
+ ],
+ "note": "weed rate in the belt doubled"
+}

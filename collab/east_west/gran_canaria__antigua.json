@@ -1,0 +1,56 @@
+{
+ "name": "East-west study: Gran Canaria (Las Palmas), 45 km SW of Maspalomas to Antigua (windward coast)",
+ "provider": "bulk",
+ "start": {
+  "lat": 27.45,
+  "lon": -15.95
+ },
+ "target": {
+  "lat": 17.05,
+  "lon": -61.65
+ },
+ "waypoints": [],
+ "waypoint_rule": "abeam",
+ "failure_rate_set": "planning",
+ "far_side": "americas",
+ "atlantic_islands_count": false,
+ "africa_landfall_counts": false,
+ "weed_zones": [
+  {
+   "lat": [
+    20.0,
+    35.0
+   ],
+   "lon": [
+    -70.0,
+    -40.0
+   ],
+   "factor": 2.0
+  },
+  {
+   "lat": [
+    3.0,
+    22.0
+   ],
+   "lon": [
+    -65.0,
+    -15.0
+   ],
+   "factor_by_month": {
+    "12": 2,
+    "1": 2,
+    "2": 2,
+    "3": 3,
+    "4": 3,
+    "5": 4,
+    "6": 5,
+    "7": 5,
+    "8": 4,
+    "9": 3,
+    "10": 3,
+    "11": 2
+   }
+  }
+ ],
+ "note": "north end of the island chain"
+}

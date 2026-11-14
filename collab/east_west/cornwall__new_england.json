@@ -1,0 +1,24 @@
+{
+ "name": "East-west study: Cornwall (Falmouth), 45 km SW of the Isles of Scilly to Nantucket Shoals, US",
+ "provider": "bulk",
+ "start": {
+  "lat": 49.65,
+  "lon": -6.85
+ },
+ "target": {
+  "lat": 41.0,
+  "lon": -69.5
+ },
+ "waypoints": [
+  [
+   45.0,
+   -35.0
+  ]
+ ],
+ "waypoint_rule": "abeam",
+ "failure_rate_set": "planning",
+ "far_side": "americas",
+ "atlantic_islands_count": false,
+ "africa_landfall_counts": false,
+ "note": "northern route against the westerlies"
+}

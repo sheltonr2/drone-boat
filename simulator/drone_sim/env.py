@@ -488,8 +488,22 @@ class LandMask:
         for the destination study. Rough box: the weather data stops at 26 N."""
         return 15.0 <= lat <= 36.0 and -18.0 <= lon <= -1.0 and not self.atlantic_island(lat, lon)
 
-    def far_side(self, lat, lon, islands=False, africa=False):
-        """Landfall across the Atlantic: Europe (always), the Atlantic islands if islands=True, North-west Africa if africa=True."""
+    BERMUDA = (32.0, 32.6, -65.0, -64.5)
+
+    def in_americas(self, lat, lon, islands=False):
+        """Westbound crossings (docs/East_West_Study.md): a landfall in the Americas. The Caribbean islands, North,
+        Central and South America count. Bermuda counts only when islands=True (it is about 1,000 km short of the
+        mainland, like the Azores on the eastbound route). The Canaries, Madeira, Cape Verde and Africa never count."""
+        a, b, c, d = self.BERMUDA
+        if a <= lat <= b and c <= lon <= d:
+            return bool(islands)
+        return lon <= -50.0 or (lat <= 10.0 and lon <= -34.0)
+
+    def far_side(self, lat, lon, islands=False, africa=False, side="europe"):
+        """Landfall across the Atlantic: Europe (always), the Atlantic islands if islands=True, North-west Africa if africa=True.
+        side="americas" (westbound): a landfall in the Americas instead (in_americas)."""
+        if side == "americas":
+            return self.in_americas(lat, lon, islands not in (False, "no_azores"))
         if islands == "no_azores":
             if self.atlantic_island(lat, lon) == "Azores": return False
             islands = True

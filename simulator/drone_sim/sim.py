@@ -205,7 +205,8 @@ class Voyage:
             # land / arrival
             if self.land.is_land(nlat, nlon):
                 isle = self.land.atlantic_island(nlat, nlon)
-                if self.land.far_side(nlat, nlon, sc.get("atlantic_islands_count", False), sc.get("africa_landfall_counts", False)) \
+                if self.land.far_side(nlat, nlon, sc.get("atlantic_islands_count", False), sc.get("africa_landfall_counts", False),
+                                      sc.get("far_side", "europe")) \
                         and sc.get("europe_landfall_counts", True):
                     st["lat"], st["lon"] = nlat, nlon
                     outcome = self._arrival_outcome(st)
@@ -537,7 +538,16 @@ class Voyage:
         wk = self.d["keel"].get("weed_catch_factor", 1.0); wc = self.d["keel"].get("weed_clear_per_day", 0.15)
         if not st["entangled"]:
             m = 3 if near(100) else 1
-            if 20 <= st["lat"] <= 35 and -70 <= st["lon"] <= -40: m *= 2
+            zones = self.sc.get("weed_zones")
+            if zones is None:                                   # default: the Sargasso Sea doubles the rate
+                if 20 <= st["lat"] <= 35 and -70 <= st["lon"] <= -40: m *= 2
+            else:                                               # scenario zones (east-west study: the Sargassum belt)
+                for z in zones:
+                    if z["lat"][0] <= st["lat"] <= z["lat"][1] and z["lon"][0] <= st["lon"] <= z["lon"][1]:
+                        f = z.get("factor", 1.0)
+                        if "factor_by_month" in z:
+                            f = z["factor_by_month"].get(str(from_epoch(t).month), f)
+                        m *= f
             if rnd() < p_event(self.rate("entanglement")*wk*m, dt):
                 st["entangled"] = True; self.event(t, "failure", "Fouled by weed or fishing line (drag x4)")
         elif rnd() < p_event(wc, dt):

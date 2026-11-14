@@ -43,6 +43,9 @@ def _main():
     ap.add_argument("--months", default="", help="for download: e.g. 2023-05..2023-10,2024-05..2024-10")
     ap.add_argument("--stride", type=int, default=1, help="for download: keep every Nth ocean grid point (1 = full 1/12 deg)")
     ap.add_argument("--sources", default="era5,smoc,wav"); ap.add_argument("--keep-raw", action="store_true")
+    ap.add_argument("--box", default="", help="for download: lat0,lat1,lon0,lon1 (default 26,60,-82,0). Use a separate "
+                    "DRONE_SIM_HOME for a different box, e.g. the east-west study's tropical box 5,40,-75,-5")
+    ap.add_argument("--storm-csv", default="", help="for stormcheck: HURDAT2 subset CSV (default: the 20-62N one)")
     ap.add_argument("--mc", help="for stormcheck: a Monte Carlo result file"); ap.add_argument("--radius", type=float, default=200.0)
     ap.add_argument("--scenario"); ap.add_argument("--design"); ap.add_argument("--out")
     ap.add_argument("--runs", type=int, default=100); ap.add_argument("--from", dest="frm"); ap.add_argument("--to")
@@ -55,7 +58,11 @@ def _main():
         from .bulk import download, month_list
         if not a.months:
             print("Give the months, e.g. --months 2023-05..2023-10,2024-05..2024-10"); return
-        errs = download(month_list(a.months), CACHE, sources=tuple(x for x in a.sources.split(",") if x),
+        box = None
+        if a.box:
+            la0, la1, lo0, lo1 = (float(x) for x in a.box.split(","))
+            box = dict(lat=(la0, la1), lon=(lo0, lo1))
+        errs = download(month_list(a.months), CACHE, box=box, sources=tuple(x for x in a.sources.split(",") if x),
                         stride=a.stride, keep_raw=a.keep_raw, log=lambda m: print(m, flush=True))
         if errs:
             print("Some months failed:"); [print("  " + e[:300]) for e in errs]
@@ -63,7 +70,7 @@ def _main():
     if a.cmd == "stormcheck":
         from .storms import StormClimatology, mc_storm_table
         mc = json.load(open(a.mc))["result"]
-        tab = mc_storm_table(mc, StormClimatology(), radius_km=a.radius)
+        tab = mc_storm_table(mc, StormClimatology(a.storm_csv) if a.storm_csv else StormClimatology(), radius_km=a.radius)
         print(f"Tropical-cyclone encounters within {a.radius:.0f} km (HURDAT2 1991-2025 analog seasons), {a.mc}")
         print(f"{'launch':7s} {'voyages':>7s} {'any TS+':>8s} {'95% CI':>13s} {'TS':>6s} {'Cat1-2':>7s} {'Cat3-5':>7s}")
         for k, v in tab.items():
@@ -78,8 +85,16 @@ def _main():
         from .bulk import available_months
         have = set(available_months(CACHE))
         # launch months plus five more, so voyages are not cut short by the end of the data
-        need = {int(f"{y}{m:02d}") for y in (a.years.split(",") if a.years else [a.frm[:4]])
-                for m in range(int(a.frm[5:7]), min(12, int(a.to[5:7]) + 5) + 1)}
+        y0, m0 = int(a.frm[:4]), int(a.frm[5:7])
+        y1, m1 = int((a.to or a.frm)[:4]), int((a.to or a.frm)[5:7])
+        need = set()
+        for y in ([int(v) for v in a.years.split(",") if v.strip()] or [y0]):
+            if y1 == y0:          # same-year window (all runs before the east-west study): unchanged, stops at December
+                need |= {y*100 + m for m in range(m0, min(12, m1 + 5) + 1)}
+            else:                 # window across New Year (east-west study): launch months plus five, into next year
+                for k in range((y1 - y0)*12 + (m1 - m0) + 6):
+                    mm = m0 - 1 + k
+                    need.add((y + mm//12)*100 + mm % 12 + 1)
         if not need <= have:
             print(f"STOPPED: bulk data is missing for months {sorted(need - have)} "
                   f"(downloaded, all three sources: {sorted(have) or 'none'}). Finish the download first.")

@@ -45,9 +45,11 @@ def start_times(window, n, rng):
     for k in range(n):
         t = t0 + rng.random()*(max(t1 - t0, 0))
         if years:
-            d = from_epoch(t); y = years[k % len(years)]
-            try: d = d.replace(year=int(y))
-            except ValueError: d = d.replace(year=int(y), day=28)
+            # "years" names the year of the window's start; a window that runs across New Year (east-west study)
+            # keeps its January dates in the following year. Same-year windows: identical to before.
+            d = from_epoch(t); y = int(years[k % len(years)]) + (from_epoch(t).year - from_epoch(t0).year)
+            try: d = d.replace(year=y)
+            except ValueError: d = d.replace(year=y, day=28)
             t = d.timestamp()
         out.append(from_epoch(t).strftime("%Y-%m-%dT%H:%M:%S"))
     return out

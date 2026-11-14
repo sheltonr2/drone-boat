@@ -2,6 +2,13 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-14, 03:40 UTC (13 Nov, 22:40 local): east-to-west plan; results posting approved
+
+- Randolph approved posting the 017/019 results to #50 when they are in (13 Nov, 22:02 local). The 13:20 UTC check now does that (one post, via the browser).
+- Randolph asked for an east-to-west plan: [docs/East_West_Study.md](../docs/East_West_Study.md). The trade-wind route Canaries -> Lesser Antilles (Oshen PC13's route), launch about 20 Nov-31 Jan, 90-125 days from the Canaries; first pair Gran Canaria -> Barbados; northern route not a candidate. Three questions for Randolph at the end.
+- Simulator: westbound support (far_side "americas", launch windows across New Year, download --box, weed_zones by month, stormcheck --storm-csv; docs/data/make_hurdat_subset.py). Default behaviour checked identical byte for byte. PC copies of the four changed files matched HEAD before the update.
+- Queue after 019: 020 northern route (existing data), 021 tropical-box download Nov 2024-Jul 2025 (own cache simulator\workspace_ew), 022 screen (12 runs x 300), 023 second winter + summer months. 024 written after 022.
+
 ## 2026-11-14, 02:57 UTC (13 Nov, 21:57 local): Rev E1; new runs queued; update to Maya's team
 
 - Randolph decided: drop 45 km off Hatteras, leak SAFE limit 1.0 kg, 16 x 14 tail boom. Drawn as Rev E1 (part/firmware fixes): P08 and P09 sockets D16.2, boom axis z 278, D00/D06 notes, Revisions.md, Design_RevE.md. Simulator revE1_design.json; design.load accepts "E1". Counterweight +24 g (model), boom +12 g; earlier "30 g + 60 g" corrected.
