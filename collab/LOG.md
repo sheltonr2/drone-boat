@@ -8,7 +8,7 @@ Newest first. Each check of boat-sim records what was new and what we did.
 - Fix: bulk.py treats CDS "The job has failed" as a server-side failure: retry twice after 10 min, then skip to the next month instead of stopping the lane. Other 4xx still stop it. Copied to the PC (matched HEAD first); 018b_download_retry queued before 019 to pick up anything still missing.
 - 015c -> docs/data/fatigue_voyage.py: per crossing, fin root/stern post/cw arm use about 0.2% of fatigue life; the old 12x10 tail boom 130% (so Rev E1's 16x14 is necessary); servo moves 2.85 M per crossing with the filter, 3.6 M on a p90 voyage. Field Test P raised to 4 million movements.
 - 017 -> docs/data/revE1_analysis.py: Rev E1 88.4% vs Rev E 87.6%, +0.8 (-1.4 to +3.0), same seeds. Cornwall-end watch lines can't show the final approach: the simulator stops 40 km from the target at Scilly. Arrival behaviour added to Launch_Plan open questions.
-- Randolph asked (08:43 local) to update him and John's team now: status post on #50.
+- Randolph asked (08:43 local) to update him and John's team now. Thread read first: no new comments from their side since our 02:57 UTC post. Posted the status update ([comment](https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6878179574), text collab/post_2026-11-14_status.md); API shows exactly one new comment. The 019 launch-window results post (approved 13 Nov) is still to come.
 - ETAs: 018 about Sun 15 Nov mid-morning; 019a-c Sun about noon; then 020-023 (East_West_Study.md).
 
 ## 2026-11-14, 03:40 UTC (13 Nov, 22:40 local): east-to-west plan; results posting approved
