@@ -2,12 +2,13 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
-## 2026-11-14, 03:40 UTC (13 Nov, 22:40 local): Rev E1; new runs queued; update to Maya's team
+## 2026-11-14, 02:57 UTC (13 Nov, 21:57 local): Rev E1; new runs queued; update to Maya's team
 
 - Randolph decided: drop 45 km off Hatteras, leak SAFE limit 1.0 kg, 16 x 14 tail boom. Drawn as Rev E1 (part/firmware fixes): P08 and P09 sockets D16.2, boom axis z 278, D00/D06 notes, Revisions.md, Design_RevE.md. Simulator revE1_design.json; design.load accepts "E1". Counterweight +24 g (model), boom +12 g; earlier "30 g + 60 g" corrected.
 - Download 016: Copernicus wave forecast archive starts Nov 2022, so 2021-22 wave months failed. bulk.py now uses WAVERYS (cmems_mod_glo_wav_my/myint 0.2deg) for months before 2022-11; re-download queued (018).
 - Queue: 015c sea states (now on the Rev E 45 km tracks), 017 E1 baseline 2023-24, 018 waves, 019a-c launch windows on 2021-24. Watch lines added at the Cornwall end (Seven Stones, Scilly; approximate).
 - Thread #50 read first: no replies since 13 Nov 10:56 UTC; their team made our C5 and Rev B sailable in Bluewater (#520, #523).
+- At Randolph's request, posted a full update with plan and ETAs ([comment](https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6870584552)): new route and the Diamond Shoals finding, Rev E and E1 results, naval checks, the WAVERYS heads-up, queue and ETAs, offers (Rev E1 yaml, C5 re-score). Text: collab/post_2026-11-14_update.md.
 
 ## 2026-11-14, 00:55 UTC (13 Nov, 19:55 local): naval review items 1-9 run
 
