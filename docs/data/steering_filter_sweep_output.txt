@@ -1,0 +1,16 @@
+Hs 1.5 waves 150 rules (0, 0, 0, 3.0)     u 0.69 m/s  hdg err   2.1  moves/h   1296  travel    3938 deg/h
+Hs 1.5 waves 150 rules (0, 0, 0, 6.0)     u 0.69 m/s  hdg err   2.3  moves/h   1068  travel    2275 deg/h
+Hs 1.5 waves 150 rules (0, 0, 0, 12.0)    u 0.69 m/s  hdg err   2.3  moves/h    864  travel    1178 deg/h
+Hs 1.5 waves 150 rules (0, 0, 1.0, 6.0)   u 0.69 m/s  hdg err   2.6  moves/h    804  travel    1498 deg/h
+Hs 2.5 waves 150 rules (0, 0, 0, 3.0)     u 0.81 m/s  hdg err   3.0  moves/h   1176  travel    5136 deg/h
+Hs 2.5 waves 150 rules (0, 0, 0, 6.0)     u 0.81 m/s  hdg err   3.9  moves/h   1032  travel    3332 deg/h
+Hs 2.5 waves 150 rules (0, 0, 0, 12.0)    u 0.81 m/s  hdg err   4.2  moves/h    864  travel    1855 deg/h
+Hs 2.5 waves 150 rules (0, 0, 1.0, 6.0)   u 0.80 m/s  hdg err   4.3  moves/h    792  travel    2843 deg/h
+Hs 2.5 waves  90 rules (0, 0, 0, 3.0)     u 0.84 m/s  hdg err   9.9  moves/h   1116  travel   13907 deg/h
+Hs 2.5 waves  90 rules (0, 0, 0, 6.0)     u 0.78 m/s  hdg err  14.7  moves/h    912  travel    9640 deg/h
+Hs 2.5 waves  90 rules (0, 0, 0, 12.0)    u 0.63 m/s  hdg err  54.4  moves/h    624  travel    8231 deg/h
+Hs 2.5 waves  90 rules (0, 0, 1.0, 6.0)   u 0.72 m/s  hdg err  33.4  moves/h    708  travel    8776 deg/h
+Hs 3.5 waves 150 rules (0, 0, 0, 3.0)     u 0.80 m/s  hdg err  40.9  moves/h   1128  travel    9793 deg/h
+Hs 3.5 waves 150 rules (0, 0, 0, 6.0)     u 0.89 m/s  hdg err   7.7  moves/h    948  travel    4598 deg/h
+Hs 3.5 waves 150 rules (0, 0, 0, 12.0)    u 0.89 m/s  hdg err   9.3  moves/h    732  travel    2862 deg/h
+Hs 3.5 waves 150 rules (0, 0, 1.0, 6.0)   u 0.88 m/s  hdg err   7.9  moves/h    756  travel    4236 deg/h

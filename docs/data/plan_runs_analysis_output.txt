@@ -1,0 +1,22 @@
+500 paired voyages
+
+run                 success  median days   at sea   lost  aground  shoals <2/<5/<10 km
+revD_hatteras         68.4%          114    18.8%   6.8%     3.4%  not recorded
+hatteras              83.4%          112     6.0%   6.4%     0.8%  not recorded
+slow10_hatteras       82.8%          122     5.4%   8.0%     0.8%  22% / 49% / 74%
+slow20_hatteras       78.4%          132    11.4%   5.4%     2.0%  27% / 53% / 77%
+hatteras_stream       87.6%          111     6.0%   4.2%     0.2%  0% / 0% / 0%
+hatteras_east         86.8%          111     4.8%   5.2%     0.4%  0% / 0% / 0%
+hatteras_dogleg       84.8%          111     6.4%   6.4%     0.2%  7% / 12% / 36%
+
+Paired differences (95% range):
+  Rev E vs Rev D, Hatteras Inlet -> Cornwall    +15.0 (+10.2 to +19.4)
+  Every sailing speed x0.9 vs as predicted       -0.6 (-4.6 to +3.4)
+  Every sailing speed x0.8 vs as predicted       -5.0 (-9.0 to -0.8)
+  45 km Stream-edge drop vs inlet                +4.2 (+0.0 to +8.4)
+  70 km drop east of the shoals vs inlet         +3.4 (-0.4 to +7.4)
+  Inlet with a south-east dog-leg vs inlet       +1.4 (-2.6 to +5.6)
+  70 km vs 45 km                                 -0.8 (-4.6 to +3.0)
+
+Inlet drop (x0.9 run): 110 of 500 voyages passed within 2 km of the shoal line; 83% of them 'arrived' in the simulator, which has no shoals.
+If each of those had been lost on the shoals, that run's success would fall from 82.8% to 64.6%.

@@ -159,6 +159,10 @@ class SixDOF:
         self.kappa = (a_t*At*lt)/(a_w*Aw*e + a_t*At*lt)                   # alpha = -kappa * tail angle
         self.tmax = math.radians(t["max_angle_deg"]); self.dmax = math.radians(d["rudder"]["max_angle_deg"])
         self.drate = math.radians(d["rudder"]["rate_deg_s"])
+        self.r_db = math.radians(d["rudder"].get("deadband_deg", 0.0)); self.r_upd = float(d["rudder"].get("update_s", 0.0))
+        self.r_cdb = math.radians(d["rudder"].get("cmd_deadband_deg", 0.0))
+        self.r_tf = float(d["rudder"].get("wave_filter_s", 0.0)); self._ef = 0.0; self._rf = 0.0
+        self._next_upd = -1.0; self._held = 0.0; self._held_c = 0.0
 
     # ---------------------------------------------------------------- geometry
     def _build_strips(self):
@@ -406,7 +410,24 @@ class SixDOF:
                 err = math.radians(((hdg_cmd - hdg_now + 180) % 360) - 180)
                 if abs(err) < 0.5:
                     self.hint = max(-0.3, min(0.3, getattr(self, "hint", 0.0) + 0.02*err*self.dt))
-                want = max(-self.dmax, min(self.dmax, 1.2*err + 1.5*s["w"][2] + self.hint if hasattr(self, "hint") else 1.2*err + 1.5*s["w"][2]))
+                if self.r_tf > 0:      # wave filter: steer on the low-passed heading error and yaw rate, not each wave's yaw
+                    a_ = self.dt/(self.r_tf + self.dt)
+                    self._ef += a_*(err - self._ef); self._rf += a_*(s["w"][2] - self._rf)
+                    want = max(-self.dmax, min(self.dmax, 1.2*self._ef + 1.5*self._rf + getattr(self, "hint", 0.0)))
+                else:
+                    want = max(-self.dmax, min(self.dmax, 1.2*err + 1.5*s["w"][2] + self.hint if hasattr(self, "hint") else 1.2*err + 1.5*s["w"][2]))
+                # Rev E steering rules (docs/Design_RevE.md), off unless the design sets them: hold the rudder while the
+                # heading error is inside the deadband, and move it at most once every update_s seconds.
+                if self.r_db > 0 and abs(err) < self.r_db:
+                    want = s["rud"]
+                if self.r_upd > 0:
+                    if t >= self._next_upd:
+                        self._held = want; self._next_upd = t + self.r_upd
+                    want = self._held
+                # servo-level deadband: leave the rudder where it is unless the new command differs by more than this
+                if self.r_cdb > 0:
+                    if abs(want - self._held_c) > self.r_cdb: self._held_c = want
+                    want = self._held_c
             elif st["rudder"] == "stuck":
                 want = st["rudder_stuck"]*self.dmax
             else:

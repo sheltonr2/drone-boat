@@ -224,7 +224,7 @@ The boat is most likely to be lost to water getting in, steering failure, or fou
 | Risk | Likelihood | Mitigation |
 | --- | --- | --- |
 | Water ingress through seals or the enclosure | High | Rev C: foam-filled hull behind two bulkheads (3 L or less can flood), sealed battery box; one bolted, O-ringed hatch; WetLink cable glands; leak sensors trigger safe mode; pressure and submersion tests |
-| Rudder or wing-tail actuator failure | High | Rev C: twin rudders with separate servos; oversized bushings. Rev E: sealed magnetic-encoder rudder servos, deadband steering, and a tail detent so a failed tail holds ±8° instead of feathering |
+| Rudder or wing-tail actuator failure | High | Rev C: twin rudders with separate servos; oversized bushings. Rev E: sealed magnetic-encoder rudder servos, wave-filtered steering, and a tail detent so a failed tail holds ±8° instead of feathering |
 | Fouling by weed, fishing line or barnacles | High | Swept-back leading edges; antifouling paint; no propeller |
 | Knockdown or rollover in a gale | Medium | Self-righting from 180°; rigid wing with no sheets; everything strapped down |
 | Hurricane, or a gale against the Gulf Stream | Medium | Launch in May; follow the National Hurricane Center outlook and send a new route away from forecast tracks; self-righting with no sheets |

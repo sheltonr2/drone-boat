@@ -1,0 +1,20 @@
+Hs 1.5 waves 150 rules False            u 0.70 m/s  hdg err   0.8  moves/h   1608  travel    6217 deg/h
+Hs 1.5 waves 150 rules (2.0, 10.0, 0.0) u 0.23 m/s  hdg err  83.3  moves/h    228  travel   14754 deg/h
+Hs 1.5 waves 150 rules (2.0, 0.0, 0.0)  u 0.69 m/s  hdg err   1.7  moves/h   1716  travel   10859 deg/h
+Hs 1.5 waves 150 rules (0.0, 2.0, 0.0)  u 0.45 m/s  hdg err  10.3  moves/h   1788  travel  105890 deg/h
+Hs 1.5 waves 150 rules (0.0, 0.0, 0.5)  u 0.70 m/s  hdg err   0.8  moves/h   3576  travel    7486 deg/h
+Hs 1.5 waves 150 rules (0.0, 0.0, 1.0)  u 0.70 m/s  hdg err   0.8  moves/h   6600  travel   12195 deg/h
+Hs 1.5 waves 150 rules (0.0, 0.0, 2.0)  u 0.70 m/s  hdg err   0.8  moves/h   9900  travel   26041 deg/h
+Hs 2.5 waves 150 rules False            u 0.82 m/s  hdg err   1.4  moves/h   4836  travel   15157 deg/h
+Hs 2.5 waves 150 rules (2.0, 10.0, 0.0) u 0.32 m/s  hdg err  78.4  moves/h    348  travel   23201 deg/h
+Hs 2.5 waves 150 rules (2.0, 0.0, 0.0)  u 0.82 m/s  hdg err   2.1  moves/h   4560  travel   16619 deg/h
+Hs 2.5 waves 150 rules (0.0, 2.0, 0.0)  u 0.53 m/s  hdg err  14.1  moves/h   1704  travel  110480 deg/h
+Hs 2.5 waves 150 rules (0.0, 0.0, 0.5)  u 0.82 m/s  hdg err   1.4  moves/h  17832  travel   28060 deg/h
+Hs 2.5 waves 150 rules (0.0, 0.0, 1.0)  u 0.82 m/s  hdg err   1.4  moves/h  20052  travel   38674 deg/h
+Hs 2.5 waves 150 rules (0.0, 0.0, 2.0)  u 0.82 m/s  hdg err   1.4  moves/h  22728  travel   61430 deg/h
+Hs 2.5 waves  90 rules False            u 0.95 m/s  hdg err   3.6  moves/h  26724  travel   74251 deg/h
+Hs 2.5 waves  90 rules (2.0, 10.0, 0.0) u 0.28 m/s  hdg err  97.0  moves/h    288  travel   17429 deg/h
+Hs 2.5 waves  90 rules (2.0, 0.0, 0.0)  u 0.94 m/s  hdg err   4.1  moves/h  15768  travel   49910 deg/h
+Hs 2.5 waves  90 rules (0.0, 2.0, 0.0)  u 0.43 m/s  hdg err  52.7  moves/h   1428  travel   79173 deg/h
+Hs 2.5 waves  90 rules (0.0, 0.0, 0.5)  u 0.95 m/s  hdg err   3.6  moves/h  36972  travel   88351 deg/h
+Hs 2.5 waves  90 rules (0.0, 0.0, 1.0)  u 0.95 m/s  hdg err   3.6  moves/h  37164  travel   95300 deg/h

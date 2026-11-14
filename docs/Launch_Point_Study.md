@@ -197,6 +197,8 @@ Results: `results/2026-11-13_launch_2023_<launch>__<destination>.json`. Logs: `c
 
 ## Recommendation (13 Nov 2026; adopted by Randolph the same day, with one correction)
 
+**Update, 13 Nov evening:** Rev E from the 45 km point to Cornwall: **87.6%** (500 voyages, 2023 and 2024), +4.2 (+0.0 to +8.4) over the inlet, clear of the shoals; the 45 km point is the recommended drop ([Launch_Plan.md](Launch_Plan.md), [Naval_Review.md](Naval_Review.md)).
+
 **Correction, 13 Nov, after adoption:** the 10 km drop off Hatteras Inlet sends about half the simulated tracks across Diamond Shoals, which the simulator's coastline doesn't hold ([Naval_Review.md](Naval_Review.md)). The provisional drop point is the 45 km charter point ("Hatteras 45 km" in stages A and B), which tied with the inlet on success and stays clear of the shoals. Runs to confirm it on Rev E are queued. The destination half of the recommendation (Cornwall) is unaffected. The text below is as written before the correction.
 
 **Launch 10 km off Hatteras Inlet and aim for Cornwall** (Isles of Scilly / Land's End), instead of 10 km off Ocean City to SW Ireland.

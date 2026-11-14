@@ -2,6 +2,16 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-14, 00:55 UTC (13 Nov, 19:55 local): naval review items 1-9 run
+
+- Randolph approved items 1-5 of the naval-review follow-ups (fatigue/creep, flooded stability, steering workload, drift from the new drop, more weather years).
+- PC runs finished: 013 (Rev E baseline and slow-boat), 014 (drop points), 015 (drift). Rev E Hatteras Inlet -> Cornwall 83.4% (+15.0 over Rev D); 45 km drop 87.6% (+4.2 over inlet, clear of the shoals); 70 km 86.8%; dog-leg doesn't clear the shoals. Speed x0.9: -0.6; x0.8: -5.0. Drift: inlet 14-17/32 aground in 30 days, 45 km 2-8/32, 70 km 0-3/32. Launch_Plan: 45 km recommended, 70 km alternative, for Randolph to confirm; onshore-wind launch rule added.
+- 015b (sea states along tracks) failed at a voyage that ran into December 2024 (no data); fixed to skip and count those hours; re-queued as 015c, runs after the download.
+- 016 download of April 2021-2024 and May-Nov 2021-2022 started 19:33 (245 GB free).
+- Flooded stability (docs/Flooded_Stability.md): self-righting holds with 3 kg free water; GM -11%. Sump holds only 1.2 L, below Rev E's 1.5 kg SAFE limit: recommend 1.0 kg (asked).
+- Fatigue/steering/motions (docs/Fatigue_Review.md): no fatigue concern except the tail boom in 5 m beam seas (recommend 16x14 tube, asked). The Rev E steering rule as written (2 deg deadband, one command per 10 s) loses the course in the 6-DOF model; replaced in the docs and D05 by a wave filter (~4 s). A crossing is ~2.7 million servo movements; Test P raised to 3 million.
+- sixdof.py: optional rudder keys deadband_deg, update_s, cmd_deadband_deg, wave_filter_s (off by default; default run checked identical to the previous code).
+
 ## 2026-11-13, 21:06 UTC (16:06 local): plan changed to Hatteras -> Cornwall; Diamond Shoals found; naval review
 
 - Randolph approved the plan change. docs/Launch_Plan.md rewritten; Executive Summary, Build Plan, README, Launch_Point_Study updated. designs/boat-sim files left at the Ocean City drop.

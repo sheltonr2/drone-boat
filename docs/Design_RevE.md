@@ -14,7 +14,7 @@
   - Each sits in cradle **P12**, which replaces the servo mount, held by two 316 clamps. The cradle has no fixed hole pattern, because we don't have the enclosure's drawing. Its 66 × 34 × 72 mm envelope is an **estimate**: measure the unit and rebuild P12 before printing.
   - The D-shaft takes arm **P26**. The C3 spline servo-saver doesn't fit a D-shaft, so a spring overload link in each pushrod replaces it. The G10 stops at ±40° stay.
   - The aft-foam pockets grow to 100 × 56 mm.
-- **Steering:** a 2° deadband, at most one correction every 10 seconds outside a gybe, and servo power off between corrections.
+- **Steering:** a wave filter. The autopilot steers on its heading error and yaw rate low-passed with a time constant of about 4 s (tuned on the lake in Test I), so it follows the mean course instead of every wave. The servos stay powered. *Corrected 13 Nov evening: the rule first drawn here, a 2° deadband with at most one correction every 10 s and the servos off between, lost the course in the 6-DOF model (heading error about 80° RMS in a quartering sea). The filter cuts servo movements to about 1,000 an hour and holds the course ([Fatigue_Review.md](Fatigue_Review.md)).*
 - **Tail:** a DFRobot magnetic-encoder servo, potted in P09, with magnetic detent **P25**: two magnets at ±8° and a steel disc in the fin root. If the servo lets go, the tail snaps to ±8° and the wing keeps driving instead of feathering. In Rev D, a tail that failed free was the one certain-loss failure (15 voyages in 250).
 
 **Weed**
@@ -68,6 +68,10 @@ The servo and weed numbers are **guesses** until the bench life test and the tow
 - **More boats are lost (16.4% against 11.2%) because fewer are left drifting.** Boats that Rev D left at sea in safe mode at the season's end now keep sailing. Most of them arrive, but some meet a fishing boat, a ship or a later failure on the way.
 - **Largest remaining causes:** fishing-boat pick-ups (14) and a jammed tail servo (11). A jammed tail can still sail, but badly.
 - **Guesses:** the servo and weed figures are guesses until Tests P and A; the pump figures rest on physics.
+
+## Rev E on the new route (13 Nov 2026)
+
+Hatteras → Cornwall, 500 voyages, 2023 and 2024 weather, the same seeds as the launch study's stage C (Rev D): from the 10 km inlet point Rev E arrives on **83.4%** of voyages against 68.4% for Rev D (+15.0, +10.2 to +19.4); from the recommended 45 km drop, **87.6%**. A boat 10% slower than the speed prediction loses nothing measurable (−0.6, −4.6 to +3.4); 20% slower loses 5 points (−5.0, −9.0 to −0.8) and takes three weeks longer. `docs/data/plan_runs_analysis.py`.
 
 ## Tests added ([Field_Tests.md](Field_Tests.md))
 

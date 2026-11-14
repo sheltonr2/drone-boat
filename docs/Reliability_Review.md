@@ -82,7 +82,7 @@ In the model this turns the "failed free" share of tail failures from 50% to per
 
 ### Work the servos less
 
-- A **deadband and a rate limit** in the steering loop: no correction under 2°, no more than one every 10 seconds except in a gybe. This alone could cut rudder movements five-fold, and wear is cycles.
+- A **deadband and a rate limit** in the steering loop: no correction under 2°, no more than one every 10 seconds except in a gybe. *(13 Nov: the 6-DOF model shows this loses the course; replaced in Rev E by a wave filter on the steering inputs, [Fatigue_Review.md](Fatigue_Review.md).)* This alone could cut rudder movements five-fold, and wear is cycles.
 - **Cut servo power between corrections** (already in the build plan). A balanced rudder needs almost no holding force.
 - **Trunks packed with grease and the servos above the trunk tops** (as drawn). The servos must never sit in standing water: another reason for the pump.
 

@@ -160,7 +160,7 @@ There are five phases, and each ends at a gate. Don't move on until the boat pas
    - *Gate:* self-rights from 180° every time, and stays dry inside after 24 h fully submerged.
 4. **Coastal trial (1–2 months).** Spend weeks offshore within recovery range, then recover and inspect it.
    - *Gate:* 3 weeks at sea unattended, with every fail-safe triggered and recovered.
-5. **Ocean launch (May).** Launch it off Hatteras, North Carolina, from a Gulf Stream charter boat, about 45 km out on the Stream's inshore edge and clear of Diamond Shoals (drop point provisional; [Launch_Plan.md](Launch_Plan.md)), on a settled forecast with no strong northerly against the Stream. Escort it for the first hour. After landfall it switches to roaming mode.
+5. **Ocean launch (May).** Launch it off Hatteras, North Carolina, from a Gulf Stream charter boat, about 45 km out on the Stream's inshore edge and clear of Diamond Shoals ([Launch_Plan.md](Launch_Plan.md); 87.6% verified arrivals for Rev E in the simulator), on a settled forecast with no strong northerly against the Stream. Escort it for the first hour. After landfall it switches to roaming mode.
 
 ## Things to watch out for
 

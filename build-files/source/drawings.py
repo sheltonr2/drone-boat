@@ -596,8 +596,8 @@ def sheet_rudder(pdf):
         "   other to compensate; if one goes limp it trails.",
         "10. Stop each rudder at +/-35 deg with the servo end",
         "   points. Check both blades clear the bulb's wake.",
-        "E: steering deadband 2 deg and at most one correction",
-        "   per 10 s outside a gybe; servo power off between.",
+        "E: steer on heading error and yaw rate low-passed",
+        "   at about 4 s (tune in Test I); servos stay powered.",
         "E: raked rudders (W3) NOT adopted: a 35 deg rake puts",
         "   the tip 160 mm aft, past the transom and off the stock."], fs=5.8, lh=3.5)
     pdf.savefig(fig); plt.close(fig)

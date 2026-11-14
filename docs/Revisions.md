@@ -20,4 +20,4 @@ Adopted 12 Nov 2026.
 | C4 | 11 Nov | Acetal mast bearings; build notes |
 | C5 | 11 Nov | Shorter, wider wing (0.80 × 0.375 m) |
 | D | 12 Nov | Limp-home controller, potting, RockBLOCK Plus in the hatch lid, main GPS to the stern post ([Design_RevD.md](Design_RevD.md)). Drafted as "C6" |
-| **E** | 13 Nov | Bilge pump and keep-sailing leak response, vents and a pressure-test valve, humidity sensor; sealed rudder servos, potted tail servo with a detent, deadband steering; weed fairing ([Design_RevE.md](Design_RevE.md)). Proposed as "D1": a new letter because it adds a system (the pump) and a sensor |
+| **E** | 13 Nov | Bilge pump and keep-sailing leak response, vents and a pressure-test valve, humidity sensor; sealed rudder servos, potted tail servo with a detent, wave-filtered steering (was "deadband steering", corrected the same day); weed fairing ([Design_RevE.md](Design_RevE.md)). Proposed as "D1": a new letter because it adds a system (the pump) and a sensor |
