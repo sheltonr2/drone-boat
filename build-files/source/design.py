@@ -8,7 +8,7 @@ X_BMAX = 0.55         # fraction of L where beam is max
 B_TRANSOM = 150.0     # transom half-beam
 DECK_Z = 230.0
 DWL = 106.0           # Rev E design waterline at about 28.5 kg all-up (Rev D: 104 at 27.8; C3-C5: 102 at 26.9; C2: 101 at 26.4; C/C1: 98 at 25.3; Rev B: 90 at about 21 kg)
-MASS_KG = 28.5        # Rev E all-up mass, from the simulator mass model (Rev D: 27.8; C3-C5: 26.9)
+MASS_KG = 28.5        # Rev E/E1 all-up mass, from the simulator mass model (E1 adds about 36 g: boom 12, lead 24; Rev D: 27.8; C3-C5: 26.9)
 SECTION_N = 2.2       # superellipse exponent of the sections (round bilge)
 
 def half_beam(x):
@@ -75,7 +75,7 @@ MAST_TUBE = dict(od=60.3, id=52.5, top_z=250)          # 2 in. sch 40 PVC, bonde
 BEARING = dict(id=30, od=42, w=7, name="6806 acetal (Delrin-type) ball bearing, glass balls")   # Rev C4: was 6806-2RS stainless; corrosion-proof, floats on an O-ring, with catcher lands in P07 for wave loads
 CATCHER = dict(bore=30.6, length=20)   # Rev C4: plain lands in P07 beside each bearing; the spar touches them only above about 150 N
 BEARING_OLD = dict(id=30, od=42, w=7, name="6806-2RS stainless")   # Rev C (was 6805, 25 x 37 x 7)
-BOOM = dict(od=12.0, z=276, length=600)                # spar axis to tail pivot
+BOOM = dict(od=16.0, z=278, length=600)                # spar axis to tail pivot. Rev E1 (14 Nov 2026): 16 x 14 carbon tube, was 12 x 10 at z 276 (docs/Fatigue_Review.md); axis 2 mm higher in the bigger sockets
 TAIL = dict(chord=120, span=200, pivot_from_le=24, bot_z=300, t=0.12, pivot_d=6)
 # Rev B: counterweight pod on a 12 mm carbon arm, pod axis 300 forward of the spar axis, at boom height
 CWARM = dict(reach=300, tube_len=244, od=12.0, z=276, pod_od=64, pod_h=74, pod_bot_z=264, lead_kg=0.8)   # unchanged in Rev C: the heavier spar sits on the pivot axis

@@ -80,7 +80,7 @@ Everything below is needed for one boat. Prices are approximate US prices from N
 | G10 keel backing plate | 1 | 122 × 60 × 10 mm | 20 |
 | 2 in. sch 40 PVC pipe (mast tube) | 1 | 60.3 OD × \~250 mm | 8 |
 | Carbon tube: wing spar (Rev C5) | 1 | 30 × 22 mm × 995 mm | 85 |
-| Carbon tube: tail boom | 1 | 12 mm OD × 600 mm | 10 |
+| Carbon tube: tail boom (Rev E1: 16 × 14, was 12 mm) | 1 | 16 mm OD × 600 mm | 15 |
 | Solid pultruded fibreglass rod: counterweight arm (Rev C3) | 1 | 12 mm × 246 mm | 8 |
 | Spring servo-savers for the rudder servos (Rev C3) | 2 | 25T spline, 1/8-scale RC car type | 20 |
 | Carbon rods: tail pivot and alignment | 1 each | 6 mm and 3 mm | 10 |

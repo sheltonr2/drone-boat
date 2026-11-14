@@ -81,6 +81,24 @@ Four of the 45 km groundings come within two days, back on Hatteras Island. A de
   - A crossing is about 2.7 million servo movements, so Test P becomes 3 million.
 - **More weather years** (item 9): downloading on the PC since 13 Nov 19:33 (April 2021–2024 and May–November 2021–2022, 245 GB free).
 
+## Decisions and next runs (14 Nov 2026)
+
+Randolph decided on 14 Nov: **drop 45 km off Hatteras**, **leak SAFE limit 1.0 kg**, **16 × 14 tail boom**. Drawn as Rev E1 ([Design_RevE.md](Design_RevE.md)).
+
+**Found while planning:** the Copernicus wave forecast archive starts in November 2022, so 2021 and 2022 waves failed in the download. The downloader now takes months before November 2022 from the WAVERYS reanalysis (same variables, 0.2° grid instead of 1/12°).
+
+PC queue, in order. Times are estimates. The weather download's ERA5 lane has run between 20 minutes and 2 hours per month, so it holds everything behind it.
+
+| # | What | Why | Expected |
+|---|---|---|---|
+| 016 | Weather download: April 2021–24, May–Nov 2021–22 (running since 13 Nov 19:33) | More years and April launches | ERA5 done Saturday afternoon to Sunday morning |
+| 015c | Sea states along the Rev E 45 km tracks | Hours per voyage by wave height: turns the fatigue bounds into voyage totals | +15 min |
+| 017 | Rev E1 from 45 km to Cornwall, 2023–24, 500 voyages, same seeds | New baseline, and the first record of approaches to the Seven Stones and Scilly | +30 min |
+| 018 | Download 2021–22 waves from WAVERYS | Waves for the older years | +about 1 h |
+| 019a–c | Rev E1 from 45 km, 2021–24 weather, 500 voyages each: launches 1–20 May, April, 21 May–15 June | Four weather years, and the launch window | +1.5 h |
+
+All results: Saturday evening to Sunday midday.
+
 ## The gaps, in the order I would close them
 
 | # | Analysis | Why it matters | Cost | State |

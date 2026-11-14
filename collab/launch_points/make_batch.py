@@ -10,8 +10,11 @@ MIN_PER_150 = 9
 
 def main(name, title, design, years, runs, pairs):
     prefix = "launch"                      # result files are results\<prefix>_<years>_<label>.json
-    if pairs and pairs[0].startswith("--prefix="):
-        prefix = pairs[0].split("=", 1)[1]; pairs = pairs[1:]
+    window = ("05-01", "06-15")            # launch window, month-day, every year
+    while pairs and pairs[0].startswith("--"):
+        k, v = pairs[0][2:].split("=", 1); pairs = pairs[1:]
+        if k == "prefix": prefix = v
+        elif k == "window": window = tuple(v.split(".."))
     tag = years.replace(",", "+"); log = f"..\\collab\\run_log_{name}.txt"; mins = MIN_PER_150*len(pairs)*int(runs)//150 + 2*len(pairs)
     L = ["@echo off",
          f"REM {title} (docs/Launch_Point_Study.md). Written by collab/launch_points/make_batch.py.",
@@ -38,7 +41,7 @@ def main(name, title, design, years, runs, pairs):
               f'  echo ==== RUN: {lab} already finished, skipped ==== >> "%LOG%"',
               ") else (",
               f'  echo ==== RUN: {lab} ==== >> "%LOG%"',
-              f'  .venv\\Scripts\\python.exe -m drone_sim.cli mc --design ..\\designs\\{dsg} --scenario ..\\collab\\launch_points\\{p}.json --runs {runs} --from 2023-05-01 --to 2023-06-15 --years {years} --out {out} >> "%LOG%" 2>&1',
+              f'  .venv\\Scripts\\python.exe -m drone_sim.cli mc --design ..\\designs\\{dsg} --scenario ..\\collab\\launch_points\\{p}.json --runs {runs} --from 2023-{window[0]} --to 2023-{window[1]} --years {years} --out {out} >> "%LOG%" 2>&1',
               f'  if exist {out} .venv\\Scripts\\python.exe ..\\collab\\summarize_mc.py {out} >> "%LOG%" 2>&1',
               f"  if exist {out} (echo   finished !time!) else (echo   FAILED: see {log})",
               ")"]

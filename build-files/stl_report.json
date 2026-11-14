@@ -71,7 +71,7 @@
  },
  "P08_spar_clamp_two_sockets": {
   "pid": "P08",
-  "tris": 11750,
+  "tris": 12060,
   "watertight": true,
   "bad_edges": 0,
   "extent": [
@@ -79,13 +79,13 @@
    62.0,
    40.0
   ],
-  "volume_cm3": 81.3,
+  "volume_cm3": 85.9,
   "res": 0.35,
-  "sec": 112.1
+  "sec": 56.9
  },
  "P09_tail_servo_housing": {
   "pid": "P09",
-  "tris": 7028,
+  "tris": 8466,
   "watertight": true,
   "bad_edges": 0,
   "extent": [
@@ -93,9 +93,9 @@
    30.0,
    48.0
   ],
-  "volume_cm3": 61.6,
+  "volume_cm3": 65.7,
   "res": 0.35,
-  "sec": 80.8
+  "sec": 46.1
  },
  "P10a_tail_fin_lower": {
   "pid": "P10",

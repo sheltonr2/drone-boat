@@ -38,6 +38,11 @@ DEST = {
 # Diamond Shoals: Cape Point to the end of the Outer Diamond Shoal (approximate; check chart 11555). The simulator
 # reports each voyage's closest approach to this line; it does not change the voyage.
 WATCH = {"diamond_shoals": [[35.22, -75.53], [35.15, -75.41]]}
+# The Cornwall end (14 Nov 2026), approximate: the Seven Stones reef (lightvessel 50.060 N 6.072 W, reef to its west)
+# and a ring round the Isles of Scilly through Bishop Rock (49.873 N 6.446 W) and the Western Rocks.
+WATCH_CORNWALL = {"seven_stones": [[50.060, -6.072], [50.055, -6.130]],
+                  "scilly": [[49.873, -6.446], [49.965, -6.400], [49.980, -6.320], [49.965, -6.255],
+                             [49.900, -6.270], [49.880, -6.350], [49.873, -6.446]]}
 
 def scenario(launch, dest):
     ll, la, lo, km, pre = LAUNCH[launch]; dl, dla, dlo, post = DEST[dest]
@@ -45,7 +50,9 @@ def scenario(launch, dest):
             "failure_rate_set": "planning", "target": {"lat": dla, "lon": dlo},
             "waypoints": [list(w) for w in pre] + [MID] + [list(w) for w in post], "waypoint_rule": "abeam",
             "atlantic_islands_count": "no_azores", "africa_landfall_counts": True,
-            **({"watch_lines": WATCH} if launch.startswith("hatteras") else {})}
+            **({"watch_lines": {**(WATCH if launch.startswith("hatteras") else {}),
+                                **(WATCH_CORNWALL if dest == "cornwall" else {})}}
+               if launch.startswith("hatteras") or dest == "cornwall" else {})}
 
 if __name__ == "__main__":
     import sys

@@ -192,7 +192,7 @@ def load(path):
     "revision" key: they are Rev B designs, so they merge onto Rev B, not Rev C."""
     with open(path, "r", encoding="utf-8") as fh:
         d = json.load(fh)
-    base = DEFAULT if d.get("revision", "B") in ("C", "D", "E") else _rev_b()   # Rev C and E files merge onto Rev D; Rev C files then lose the D-only items below, Rev E files carry their own E items
+    base = DEFAULT if str(d.get("revision", "B"))[:1] in ("C", "D", "E") else _rev_b()   # Rev C and E (E1...) files merge onto Rev D; Rev C files then lose the D-only items below, Rev E files carry their own E items
     eq = d.get("equipment")
     if eq is not None:                # a full equipment list replaces the base list (no newer items sneak in)
         base = copy.deepcopy(base); base["equipment"] = {}

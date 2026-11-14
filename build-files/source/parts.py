@@ -146,23 +146,24 @@ def p07():
 
 @part("P08", "Spar clamp with tail-boom and counterweight-arm sockets", 1, "ASA or PETG, 100% infill",
       ["Rev C: clamps the 30 mm spar just below the wing root (2 x M5 bolts through the side ears). Rev B was 25 mm.",
-       "Aft socket (+x): 12 mm carbon tail boom, 40 deep. Forward socket (-x): counterweight arm, 40 deep (Rev C3: 12 mm solid fibreglass rod).",
-       "Pin each tube with an M4 bolt through the D4.3 vertical holes. Both tube axes are 11 mm above the bottom face.",
+       "Aft socket (+x): Rev E1 16 mm carbon tail boom (16 x 14, was 12 x 10), 37 deep, axis 13 above the bottom face.",
+       "Forward socket (-x): counterweight arm, 37 deep (Rev C3: 12 mm solid fibreglass rod), axis 11 above the bottom face.",
+       "Pin each tube with an M4 bolt through the D4.3 vertical holes.",
        "Line the forward socket up with the wing chord: the arm must point straight at the wing's leading edge."],
-      {"Collar": "OD46, ID30.2 x 40", "Boom socket (aft)": "D12.2 x 37", "Arm socket (fwd)": "D12.2 x 37",
+      {"Collar": "OD46, ID30.2 x 40", "Boom socket (aft)": "D16.2 x 37 (E1)", "Arm socket (fwd)": "D12.2 x 37",
        "Ears (side)": "24 x 22", "Overall": "126 x 62 x 40"})
 def p08():
     collar = cyl(23, 0, 40)
-    boss = box(16, 63, -11, 11, 0, 22)
+    boss = box(16, 63, -13, 13, 0, 26)      # Rev E1: wider and taller for the 16 mm boom
     fboss = box(-63, -16, -11, 11, 0, 22)
     ears = box(-12, 12, 16, 39, 0, 40)
     solid = union(collar, boss, fboss, ears)
     bore = cyl(15.1, -1, 41)
-    boom = hole_x(6.1, 26, 64, 0, 11)
+    boom = hole_x(8.1, 26, 64, 0, 13)
     arm = hole_x(6.1, -64, -26, 0, 11)
     slit = box(-1, 1, 12, 40, -1, 41)
     b1 = hole_x(2.75, -13, 13, 30, 10); b2 = hole_x(2.75, -13, 13, 30, 30)
-    pin = cyl(2.15, -1, 23, c1=50, c2=0)
+    pin = cyl(2.15, -1, 27, c1=50, c2=0)
     fpin = cyl(2.15, -1, 23, c1=-50, c2=0)
     return diff(solid, bore, boom, arm, slit, b1, b2, pin, fpin), ((-64, 64), (-24, 40), (0, 40))
 
@@ -179,19 +180,19 @@ def servo_cradle(x0, base_z=0):
     return blk, [pocket, ledge, drain, cable] + slots
 
 @part("P09", "Tail servo housing (boom end)", 1, "ASA or PETG",
-      ["Slides on the aft end of the 12 mm boom; pin with M4 (D4.3 hole).",
+      ["Slides on the aft end of the 16 mm boom (Rev E1; was 12 mm); pin with M4 (D4.3 hole).",
        "Rev E: holds a DFRobot magnetic-encoder servo (25 kg) output-up, potted:",
        "urethane over the case seams and cable entry, silicone round the output.",
        "The tail fin P10 bonds to the servo horn; detent P25 bonds on top, aft.",
        "Tab screw slots allow 47.5-51.5 mm tab spacing: check your servo before printing.",
        "Pocket has a D4 drain hole; cable exits through the slot toward the boom."],
-      {"Overall": "92 x 30 x 48", "Servo pocket": "41.2 x 21.2 x 42", "Boom socket": "D12.2 x 28"})
+      {"Overall": "92 x 30 x 48", "Servo pocket": "41.2 x 21.2 x 42", "Boom socket": "D16.2 x 28 (E1)"})
 def p09():
-    sock = box(0, 34, -12, 12, 0, 24)
+    sock = box(0, 34, -14, 14, 0, 28)       # Rev E1: 16 mm boom
     blk, cuts = servo_cradle(32)
     solid = union(sock, blk)
-    boom = hole_x(6.1, -1, 28, 0, 12)
-    pin = cyl(2.15, -1, 25, c1=14, c2=0)
+    boom = hole_x(8.1, -1, 28, 0, 14)
+    pin = cyl(2.15, -1, 29, c1=14, c2=0)
     return diff(solid, boom, pin, *cuts), ((-1, 93), (-16, 16), (0, 48))
 
 def foil_prism(chord, t, z0, z1, n=70):

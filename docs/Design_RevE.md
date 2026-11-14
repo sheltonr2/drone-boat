@@ -69,6 +69,18 @@ The servo and weed numbers are **guesses** until the bench life test and the tow
 - **Largest remaining causes:** fishing-boat pick-ups (14) and a jammed tail servo (11). A jammed tail can still sail, but badly.
 - **Guesses:** the servo and weed figures are guesses until Tests P and A; the pump figures rest on physics.
 
+## Rev E1 (14 Nov 2026)
+
+Part and firmware fixes after the naval-review analyses, decided by Randolph on 14 Nov. A numbered sub-rev under our convention: no system added or removed.
+
+- **Tail boom 16 × 14 carbon** (was 12 × 10), 600 long. In 5 m beam seas the tail dips as the boat rolls and the old tube saw load cycles near its strength ([Fatigue_Review.md](Fatigue_Review.md)). Spar clamp P08's aft socket and tail housing P09's socket grow to D16.2; the boom axis sits 2 mm higher (z 278). About 12 g in the tube and 24 g more lead in the pod.
+- **Leak SAFE limit 1.0 kg** (was 1.5): the sump holds only about 1.2 L ([Flooded_Stability.md](Flooded_Stability.md)). Firmware setting.
+- **Steering wave filter**, about 4 s, tuned in Test I (the correction already made to Rev E's text on 13 Nov).
+- **Test P** runs 3 million movements.
+- **Launch 45 km off Hatteras** on the Gulf Stream's edge ([Launch_Plan.md](Launch_Plan.md)).
+
+Simulator: `designs/revE1_design.json` (revision "E1"). Mass 28.52 kg, GM 0.18 m. Drawings: D00, D06 and parts P08, P09 (rev E1, 14 Nov).
+
 ## Rev E on the new route (13 Nov 2026)
 
 Hatteras → Cornwall, 500 voyages, 2023 and 2024 weather, the same seeds as the launch study's stage C (Rev D): from the 10 km inlet point Rev E arrives on **83.4%** of voyages against 68.4% for Rev D (+15.0, +10.2 to +19.4); from the recommended 45 km drop, **87.6%**. A boat 10% slower than the speed prediction loses nothing measurable (−0.6, −4.6 to +3.4); 20% slower loses 5 points (−5.0, −9.0 to −0.8) and takes three weeks longer. `docs/data/plan_runs_analysis.py`.

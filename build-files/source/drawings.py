@@ -94,7 +94,9 @@ def sheet_cover(pdf, index):
         "   (D01, D03, D07, D08; docs/Limp_Home_Spec.md, docs/Potting_Spec.md). 27.8 kg, DWL z 104.",
         "Rev E (2026-11-13; a new letter: it adds a system and a sensor), after docs/Reliability_Review.md: bilge pump P24 with keep-sailing leak response,",
         "   membrane vents, Schrader test valve, humidity sensor; sealed rudder servos (SER-2000) in cradles P12 with arms P26 and spring pushrod links; tail servo potted,",
-        f"   detent P25; weed fairing fin-to-bulb (D03, D04, D05, D06, D08, T21; docs/Design_RevE.md). {D.MASS_KG:.1f} kg, DWL z {D.DWL:.0f}."], fs=5.4, lh=3.05)
+        "   detent P25; weed fairing fin-to-bulb (D03, D04, D05, D06, D08, T21; docs/Design_RevE.md). 28.5 kg, DWL z 106.",
+        "Rev E1 (2026-11-14; part fixes, docs/Design_RevE.md): tail boom 16 x 14 carbon (was 12 x 10) with sockets in P08 and P09 to suit, about 25 g more lead",
+        f"   in P18; steering wave filter; leak SAFE limit 1.0 kg (the sump holds 1.2 L). Launch 45 km off Hatteras. {D.MASS_KG:.1f} kg, DWL z {D.DWL:.0f}."], fs=5.4, lh=3.05)
     pdf.savefig(fig); plt.close(fig)
 
 # ------------------------------------------------------------------ D01 general arrangement
@@ -660,7 +662,9 @@ def sheet_wing(pdf):
         "Expect about 0.85 kg (C5). The pod sweeps a 332 mm radius at z 264-338, about 15 mm over the hatch bolts: keep anything on deck in that circle below z 255.",
         "Tail angle sets the wing's angle of attack: about +/-8 deg tail gives the working range; 0 deg = wing feathered.",
         "E: tail servo is a DFRobot magnetic-encoder servo potted in P09. Detent P25 on P09 (two 6 x 3 magnets at r 30, +/-8 deg) and a steel disc",
-        "in the underside of P10: if the servo lets go, the tail snaps to +/-8 deg and the wing keeps driving instead of feathering (the one certain-loss failure)."], fs=5.9, lh=3.5)
+        "in the underside of P10: if the servo lets go, the tail snaps to +/-8 deg and the wing keeps driving instead of feathering (the one certain-loss failure).",
+        "E1: tail boom 16 x 14 carbon, 600 long (was 12 x 10): in 5 m beam seas the tail dips and the old tube saw cycles near its strength (docs/Fatigue_Review.md).",
+        "Re-balance in Field Test D: expect about 25 g more lead in the pod (about 0.91 kg)."], fs=5.9, lh=3.5)
     pdf.savefig(fig); plt.close(fig)
 
 # ------------------------------------------------------------------ D07 mast, stub

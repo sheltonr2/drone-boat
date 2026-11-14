@@ -48,7 +48,11 @@ MARINE = {
     "smoc": dict(dataset="cmems_mod_glo_phy_anfc_merged-uv_PT1H-i",
                  vars={"utotal": "cur_u", "vtotal": "cur_v"}),
     "wav": dict(dataset="cmems_mod_glo_wav_anfc_0.083deg_PT3H-i",
-                vars={"VHM0": "hs", "VTM10": "tp_m10", "VTPK": "tp_pk", "VMDR": "wave_dir", "VHM0_SW1": "swell_hs"}),
+                vars={"VHM0": "hs", "VTM10": "tp_m10", "VTPK": "tp_pk", "VMDR": "wave_dir", "VHM0_SW1": "swell_hs"},
+                # The 1/12 deg forecast archive starts in November 2022 (found 14 Nov 2026). Earlier months come from
+                # the WAVERYS reanalysis (GLOBAL_MULTIYEAR_WAV_001_032): same variables, 0.2 deg grid, 3-hourly,
+                # from 1980; its interim dataset carries it towards the present. Each month stores its own grid.
+                older=("cmems_mod_glo_wav_my_0.2deg_PT3H-i", "cmems_mod_glo_wav_myint_0.2deg_PT3H-i"), older_before=202211),
 }
 SOURCES = ("era5", "smoc", "wav")
 FIELD_SOURCE = {"wind_u": "era5", "wind_v": "era5", "gust": "era5", "sw_rad": "era5", "cloud": "era5",
@@ -235,7 +239,22 @@ def _download_marine(name, ym, box, raw, log):
     start, end = _month_bounds(ym)
     fn = f"{name}_{ym}.nc"
     if os.path.exists(os.path.join(raw, fn)): os.remove(os.path.join(raw, fn))
-    kw = dict(dataset_id=spec["dataset"], variables=list(spec["vars"]),
+    datasets = [spec["dataset"]]
+    if spec.get("older") and int(ym) < spec["older_before"]:
+        datasets = list(spec["older"])
+    last = None
+    for ds in datasets:
+        try:
+            return _subset_marine(ds, spec, ym, box, raw, fn, start, end)
+        except Exception as e:  # noqa: BLE001 - out of this dataset's range: try the next one
+            last = e
+            if len(datasets) > 1: log(f"[Marine] {name} {ym}: {ds} failed ({type(e).__name__}); trying the next dataset")
+    raise last
+
+
+def _subset_marine(ds, spec, ym, box, raw, fn, start, end):
+    import copernicusmarine, inspect
+    kw = dict(dataset_id=ds, variables=list(spec["vars"]),
               minimum_longitude=box["lon"][0], maximum_longitude=box["lon"][1],
               minimum_latitude=box["lat"][0], maximum_latitude=box["lat"][1],
               start_datetime=start.strftime("%Y-%m-%dT%H:%M:%S"), end_datetime=end.strftime("%Y-%m-%dT%H:%M:%S"),

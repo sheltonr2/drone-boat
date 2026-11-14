@@ -38,7 +38,7 @@ The righting arm (GZ) curve from 0° to 180° is computed with the boat's trim f
 
 ## Recommendation
 
-- **Lower Rev E's SAFE limit from 1.5 kg to 1.0 kg**, inside the sump's 1.2 L. This is a firmware setting (`autopilot.leak_safe_kg`). The pump keeps up with every simulated leak (worst 2.5 kg/day against 500 kg/day), so the boat should reach 1.0 kg only if the pump has failed. The change should cost the simulator nothing measurable; a run will confirm it if adopted.
+- **Adopted 14 Nov (Rev E1): lower Rev E's SAFE limit from 1.5 kg to 1.0 kg**, inside the sump's 1.2 L. This is a firmware setting (`autopilot.leak_safe_kg`). The pump keeps up with every simulated leak (worst 2.5 kg/day against 500 kg/day), so the boat should reach 1.0 kg only if the pump has failed. The change should cost the simulator nothing measurable; a run will confirm it if adopted.
 - **Or deepen the sump** to hold 3 L (z 45 → about 95 mm over the same footprint). That is a mould and foam-block change, not worth it on these numbers.
 - **Change the simulator's flood limit** to the volume the boat really leaves (`hull.flood_limit_kg`: 1.2 if the blocks seal, more if they don't). Measure it on the real boat: fill the sump from a jug until the probe sees water above the rim, at the same time as the 3 L check in Test G.
 
