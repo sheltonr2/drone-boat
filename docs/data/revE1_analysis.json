@@ -1,0 +1,670 @@
+{
+ "paired_voyages": 500,
+ "Rev E": {
+  "success": 87.6,
+  "ci95": [
+   84.8,
+   90.4
+  ],
+  "median_days": 110.845,
+  "p10_days": 94.24,
+  "p90_days": 134.24,
+  "outcomes": {
+   "arrived_reporting": 317,
+   "lost": 21,
+   "arrived_tracked": 121,
+   "at_sea_timeout": 30,
+   "arrived_silent": 10,
+   "aground": 1
+  },
+  "knockdowns_mean": 327.058
+ },
+ "Rev E1": {
+  "success": 88.4,
+  "ci95": [
+   85.6,
+   91.0
+  ],
+  "median_days": 112.08500000000001,
+  "p10_days": 95.24,
+  "p90_days": 135.91,
+  "outcomes": {
+   "arrived_reporting": 326,
+   "arrived_tracked": 116,
+   "at_sea_timeout": 30,
+   "lost": 21,
+   "arrived_silent": 7
+  },
+  "knockdowns_mean": 337.884
+ },
+ "E1_minus_E": [
+  0.8,
+  -1.4,
+  3.0
+ ],
+ "failures": {
+  "Leak started (2.04 kg/day of water)": [
+   1,
+   0
+  ],
+  "Leak started (1.65 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (0.43 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (0.89 kg/day of water)": [
+   1,
+   1
+  ],
+  "Bilge pump failed": [
+   7,
+   9
+  ],
+  "Leak started (0.19 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (2.33 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (1.90 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (1.34 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (0.53 kg/day of water)": [
+   1,
+   1
+  ],
+  "Rudder servo jammed at -2 deg": [
+   0,
+   1
+  ],
+  "Rudder servo jammed at 29 deg": [
+   1,
+   1
+  ],
+  "Leak started (1.21 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (1.42 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (1.06 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (0.08 kg/day of water)": [
+   3,
+   3
+  ],
+  "Leak started (0.63 kg/day of water)": [
+   1,
+   1
+  ],
+  "Keel fin or its joint broke in a knockdown (Hs 8.2 m): capsized, boat lost": [
+   0,
+   1
+  ],
+  "Rudder servo jammed at -21 deg": [
+   1,
+   0
+  ],
+  "Leak started (2.22 kg/day of water)": [
+   0,
+   1
+  ],
+  "Leak started (1.98 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (0.52 kg/day of water)": [
+   0,
+   1
+  ],
+  "Leak started (0.70 kg/day of water)": [
+   2,
+   2
+  ],
+  "Leak started (0.71 kg/day of water)": [
+   0,
+   1
+  ],
+  "Rudder servo jammed at 13 deg": [
+   1,
+   0
+  ],
+  "Tail servo failed: wing feathers, boat drifts": [
+   9,
+   10
+  ],
+  "Leak started (1.76 kg/day of water)": [
+   0,
+   1
+  ],
+  "Leak started (2.11 kg/day of water)": [
+   1,
+   1
+  ],
+  "Companion computer hung: no reports (autopilot keeps sailing)": [
+   51,
+   42
+  ],
+  "Leak started (2.15 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (1.94 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (2.24 kg/day of water)": [
+   0,
+   1
+  ],
+  "Leak started (1.73 kg/day of water)": [
+   0,
+   1
+  ],
+  "Leak started (2.07 kg/day of water)": [
+   0,
+   1
+  ],
+  "Leak started (0.60 kg/day of water)": [
+   1,
+   2
+  ],
+  "Leak started (0.16 kg/day of water)": [
+   1,
+   2
+  ],
+  "Leak started (0.88 kg/day of water)": [
+   1,
+   2
+  ],
+  "Leak started (0.83 kg/day of water)": [
+   1,
+   0
+  ],
+  "Leak started (0.42 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (2.51 kg/day of water)": [
+   1,
+   0
+  ],
+  "Picked up by a fishing boat or passer-by": [
+   8,
+   7
+  ],
+  "Leak started (2.13 kg/day of water)": [
+   2,
+   1
+  ],
+  "Rudder servo jammed at 24 deg": [
+   1,
+   1
+  ],
+  "Leak started (2.05 kg/day of water)": [
+   0,
+   1
+  ],
+  "Leak started (1.58 kg/day of water)": [
+   0,
+   1
+  ],
+  "Leak started (0.75 kg/day of water)": [
+   0,
+   1
+  ],
+  "One rudder servo jammed: the other rudder still steers": [
+   75,
+   73
+  ],
+  "Leak started (0.73 kg/day of water)": [
+   1,
+   0
+  ],
+  "Leak started (0.14 kg/day of water)": [
+   1,
+   2
+  ],
+  "Wing damaged in a knockdown: drifting": [
+   8,
+   10
+  ],
+  "Leak started (0.26 kg/day of water)": [
+   0,
+   1
+  ],
+  "Leak started (1.75 kg/day of water)": [
+   0,
+   1
+  ],
+  "Electronics failure (corrosion/humidity): main box dead; limp-home controller sailing on, silent": [
+   2,
+   2
+  ],
+  "Leak started (0.57 kg/day of water)": [
+   1,
+   0
+  ],
+  "Leak started (1.35 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (2.54 kg/day of water)": [
+   0,
+   1
+  ],
+  "Leak started (1.10 kg/day of water)": [
+   0,
+   1
+  ],
+  "Leak started (0.11 kg/day of water)": [
+   2,
+   1
+  ],
+  "Leak started (0.21 kg/day of water)": [
+   1,
+   0
+  ],
+  "Leak started (0.25 kg/day of water)": [
+   1,
+   0
+  ],
+  "Leak started (2.48 kg/day of water)": [
+   0,
+   1
+  ],
+  "Leak started (0.15 kg/day of water)": [
+   3,
+   2
+  ],
+  "Rudder servo jammed at -22 deg": [
+   1,
+   1
+  ],
+  "Rudder servo jammed at -5 deg": [
+   1,
+   0
+  ],
+  "Electronics failure (corrosion/humidity): main box dead; limp-home controller sailing on; backup tracker reporting": [
+   71,
+   74
+  ],
+  "One rudder servo stripped by a wave strike: the other rudder still steers": [
+   5,
+   6
+  ],
+  "Leak started (0.49 kg/day of water)": [
+   2,
+   0
+  ],
+  "Leak started (2.08 kg/day of water)": [
+   0,
+   1
+  ],
+  "Backup tracker failed": [
+   41,
+   37
+  ],
+  "Leak started (0.37 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (0.61 kg/day of water)": [
+   0,
+   1
+  ],
+  "Leak started (1.77 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (1.07 kg/day of water)": [
+   1,
+   1
+  ],
+  "Satellite modem or antenna failed: boat sails on but is silent": [
+   34,
+   31
+  ],
+  "Leak started (0.94 kg/day of water)": [
+   1,
+   2
+  ],
+  "Leak started (0.27 kg/day of water)": [
+   1,
+   0
+  ],
+  "Leak started (0.30 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (0.05 kg/day of water)": [
+   7,
+   9
+  ],
+  "Leak started (1.33 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (0.76 kg/day of water)": [
+   1,
+   0
+  ],
+  "Rudder servo failed limp: no steering": [
+   5,
+   3
+  ],
+  "Leak started (1.92 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (0.09 kg/day of water)": [
+   2,
+   2
+  ],
+  "Rudder servo jammed at 5 deg": [
+   0,
+   1
+  ],
+  "Leak started (0.81 kg/day of water)": [
+   1,
+   0
+  ],
+  "Leak started (1.37 kg/day of water)": [
+   0,
+   1
+  ],
+  "Collision damage: hull leaking": [
+   7,
+   7
+  ],
+  "Leak started (0.35 kg/day of water)": [
+   1,
+   1
+  ],
+  "Rudder servo stripped by a wave strike: no steering": [
+   1,
+   0
+  ],
+  "Leak started (1.99 kg/day of water)": [
+   1,
+   0
+  ],
+  "Leak started (0.47 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (0.20 kg/day of water)": [
+   2,
+   0
+  ],
+  "Keel fin or its joint broke in a knockdown (Hs 10.5 m): capsized, boat lost": [
+   1,
+   0
+  ],
+  "Leak started (2.30 kg/day of water)": [
+   0,
+   1
+  ],
+  "Leak started (1.93 kg/day of water)": [
+   1,
+   0
+  ],
+  "Leak started (2.21 kg/day of water)": [
+   0,
+   1
+  ],
+  "Leak started (0.12 kg/day of water)": [
+   1,
+   2
+  ],
+  "Leak started (2.14 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (1.30 kg/day of water)": [
+   1,
+   0
+  ],
+  "Leak started (1.16 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (1.96 kg/day of water)": [
+   1,
+   0
+  ],
+  "Fouled by weed or fishing line (drag x4)": [
+   142,
+   143
+  ],
+  "Capsized by a breaking wave (Hs 4.2 m): boat inverted": [
+   1,
+   0
+  ],
+  "Leak started (0.07 kg/day of water)": [
+   2,
+   1
+  ],
+  "Leak started (0.65 kg/day of water)": [
+   1,
+   0
+  ],
+  "Leak started (0.45 kg/day of water)": [
+   1,
+   0
+  ],
+  "Leak started (0.92 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (0.06 kg/day of water)": [
+   4,
+   4
+  ],
+  "Leak started (0.68 kg/day of water)": [
+   1,
+   0
+  ],
+  "Capsized by a breaking wave (Hs 4.5 m): boat inverted": [
+   1,
+   0
+  ],
+  "Leak started (1.19 kg/day of water)": [
+   0,
+   1
+  ],
+  "Leak started (1.97 kg/day of water)": [
+   0,
+   1
+  ],
+  "Leak started (0.36 kg/day of water)": [
+   0,
+   1
+  ],
+  "Limp-home controller failed: boat drifting": [
+   1,
+   1
+  ],
+  "Leak started (1.03 kg/day of water)": [
+   0,
+   1
+  ],
+  "Leak started (0.48 kg/day of water)": [
+   0,
+   1
+  ],
+  "Leak started (0.50 kg/day of water)": [
+   0,
+   1
+  ],
+  "Leak started (0.23 kg/day of water)": [
+   1,
+   1
+  ],
+  "Struck by a vessel: boat lost": [
+   11,
+   13
+  ],
+  "Leak started (1.56 kg/day of water)": [
+   3,
+   2
+  ],
+  "Leak started (2.41 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (0.91 kg/day of water)": [
+   4,
+   1
+  ],
+  "Leak started (0.66 kg/day of water)": [
+   1,
+   2
+  ],
+  "Keel fin or its joint broke in a knockdown (Hs 8.3 m): capsized, boat lost": [
+   1,
+   0
+  ],
+  "Leak started (1.11 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (0.10 kg/day of water)": [
+   0,
+   1
+  ],
+  "Capsized by a breaking wave (Hs 7.0 m): boat inverted": [
+   0,
+   1
+  ],
+  "One rudder servo failed limp: the other rudder still steers": [
+   59,
+   54
+  ],
+  "Leak started (1.00 kg/day of water)": [
+   1,
+   0
+  ],
+  "Leak started (0.90 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (0.46 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (1.08 kg/day of water)": [
+   0,
+   1
+  ],
+  "Leak started (0.13 kg/day of water)": [
+   0,
+   1
+  ],
+  "Leak started (0.22 kg/day of water)": [
+   0,
+   1
+  ],
+  "Leak started (0.31 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (0.33 kg/day of water)": [
+   1,
+   0
+  ],
+  "Rudder servo jammed at 18 deg": [
+   0,
+   1
+  ],
+  "Tail servo jammed: wing stuck at a fixed angle of attack": [
+   63,
+   58
+  ],
+  "Leak started (2.06 kg/day of water)": [
+   0,
+   1
+  ],
+  "Leak started (1.51 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (2.53 kg/day of water)": [
+   1,
+   1
+  ],
+  "Leak started (1.46 kg/day of water)": [
+   1,
+   0
+  ],
+  "Leak started (1.45 kg/day of water)": [
+   0,
+   1
+  ]
+ },
+ "watch": {
+  "seven_stones": {
+   "all": {
+    "2": 0.0,
+    "5": 0.0,
+    "10": 0.0
+   },
+   "arrivals": {
+    "2": 0.0,
+    "5": 0.0,
+    "10": 0.0
+   },
+   "n": 451,
+   "median_km": 55.86
+  },
+  "scilly": {
+   "all": {
+    "2": 0.0,
+    "5": 0.0,
+    "10": 0.0
+   },
+   "arrivals": {
+    "2": 0.0,
+    "5": 0.0,
+    "10": 0.0
+   },
+   "n": 451,
+   "median_km": 27.61
+  },
+  "diamond_shoals": {
+   "all": {
+    "2": 0.0,
+    "5": 0.0,
+    "10": 0.0
+   },
+   "arrivals": {
+    "2": 0.0,
+    "5": 0.0,
+    "10": 0.0
+   },
+   "n": 500,
+   "median_km": 21.35
+  }
+ },
+ "arrival_areas": {
+  "off Cornwall/Scilly (target area)": 435,
+  "elsewhere": 4,
+  "Ireland": 1,
+  "Brittany": 1,
+  "Cornwall/Devon": 1
+ }
+}

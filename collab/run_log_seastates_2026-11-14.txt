@@ -1,0 +1,11 @@
+0/500 voyages, 764 samples
+50/500 voyages, 48360 samples
+100/500 voyages, 94221 samples
+150/500 voyages, 140609 samples
+200/500 voyages, 186253 samples
+250/500 voyages, 233231 samples
+300/500 voyages, 281107 samples
+350/500 voyages, 330997 samples
+400/500 voyages, 378810 samples
+450/500 voyages, 424116 samples
+Saved ..\results\seastates_hatteras__cornwall.json

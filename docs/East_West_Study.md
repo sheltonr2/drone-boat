@@ -97,14 +97,14 @@ The simulator was written for eastbound runs. These changes make westbound runs 
 
 ## 6. Run plan and ETAs
 
-These are queued on Randolph's PC after the eastbound items (015c–019). The ETAs assume the current download (016) finishes on Saturday or Sunday as expected.
+These are queued on Randolph's PC after the eastbound items (018–019). ETAs revised 14 Nov: the ERA5 service is taking about 2 hours per month, so every ERA5 download is slower than first thought.
 
 | Queue | What | Size | Expected finish |
 |---|---|---|---|
-| 020 `run_ew_northern` | Northern route, Cornwall → New England, launches 15 May–30 Jun, 2023+2024 weather (already downloaded), 300 voyages | ~20 min | Sun 15 Nov |
-| 021 `run_ew_download_2024_25` | Tropical box (5–40N, 80–5W), Nov 2024–Jul 2025, plus the tropical storm tracks | ~22 GB, 6–15 h | Mon 16 Nov |
-| 022 `run_ew_screen` | 12 runs × 300 voyages, launches 20 Nov–10 Feb on the 2024–25 season: 6 launch points to Barbados, 5 destinations from Gran Canaria, the southern route, and the doubled weed rate | ~4 h | Mon 16 Nov |
-| 023 `run_ew_download_more` | Nov 2023–Oct 2024 and Aug–Oct 2025 (a second winter, and the summers a May launch needs) | ~33 GB, 12–24 h | Tue–Wed 17–18 Nov |
+| 020 `run_ew_northern` | Northern route, Cornwall → New England, launches 15 May–30 Jun, 2023+2024 weather (already downloaded), 300 voyages | ~20 min | Sun 15 Nov, midday |
+| 021 `run_ew_download_2024_25` | Tropical box (5–40N, 80–5W), Nov 2024–Jul 2025, plus the tropical storm tracks | ~22 GB, about 18 h | Mon 16 Nov, morning |
+| 022 `run_ew_screen` | 12 runs × 300 voyages, launches 20 Nov–10 Feb on the 2024–25 season: 6 launch points to Barbados, 5 destinations from Gran Canaria, the southern route, and the doubled weed rate | ~4 h | Mon 16 Nov, midday |
+| 023 `run_ew_download_more` | Nov 2023–Oct 2024 and Aug–Oct 2025 (a second winter, and the summers a May launch needs) | ~33 GB, about 30 h | Tue 17 Nov, evening |
 | 024 (written after 022) | The best 3–4 pairs on both winters, 500 voyages each; launch month by month (Nov/Dec/Jan/Feb); a May launch for comparison with Oshen | ~5 h | Wed–Thu 18–19 Nov |
 
 **Analysis for each result.** These come from the same scripts as the eastbound study:

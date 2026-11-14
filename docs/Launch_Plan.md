@@ -72,6 +72,7 @@ None of these are permits for a vessel this size, as far as I can tell. They are
 - **AIS:** a class B transponder needs a ship station licence and MMSI, and an AIS-SART is for distress only, so it can't be used as a tracking beacon. Skip AIS unless the power budget and licensing work out **(confirm with the FCC if wanted)**.
 
 ## Open questions
+- **Arrival behaviour (from run 017, 14 Nov 2026):** Rev E1's crossings all end 25–60 km off Scilly, because the simulator stops at 40 km. The real boat needs an arrival rule: for example, go to a waiting point east of Scilly, clear of the Seven Stones and the traffic lanes, and hold station there for pickup. A short run with that rule (arrival radius about 5 km at the waiting point) would show how close boats come to the rocks. Not queued yet; Randolph's call.
 
 - **The drop point:** decided, 45 km (14 Nov). Ask a Hatteras skipper what the run costs and whether 70 km is a small extra.
 - North Carolina: the boat has had no motor since Rev C, so state numbering should not apply **(confirm)**.

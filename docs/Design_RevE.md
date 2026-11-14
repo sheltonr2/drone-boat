@@ -81,6 +81,15 @@ Part and firmware fixes after the naval-review analyses, decided by Randolph on 
 
 Simulator: `designs/revE1_design.json` (revision "E1"). Mass 28.52 kg, GM 0.18 m. Drawings: D00, D06 and parts P08, P09 (rev E1, 14 Nov).
 
+
+### Rev E1 on the planned route (14 Nov 2026, run 017)
+
+500 voyages, 45 km off Hatteras to Cornwall, 2023+2024 weather, the same seeds as Rev E ([`revE1_analysis.py`](data/revE1_analysis.py)).
+
+- **Success 88.4%** (95% range 85.6–91.0) against Rev E's 87.6%: **+0.8 points (−1.4 to +3.0)**. The heavier tail boom and the smaller leak limit cost nothing measurable. Median crossing 112 days (p10 95, p90 136).
+- Losses: 30 still at sea when the weather data ends, 21 lost, 7 arrived silent; none aground.
+- **Cornwall end:** every voyage stopped 25–60 km from the Seven Stones and Scilly, because the simulator ends a voyage 40 km from the target (which is at Scilly itself). So the runs can't show the final approach. That depends on what the boat is told to do on arrival (see [Launch_Plan.md](Launch_Plan.md), open questions).
+
 ## Rev E on the new route (13 Nov 2026)
 
 Hatteras → Cornwall, 500 voyages, 2023 and 2024 weather, the same seeds as the launch study's stage C (Rev D): from the 10 km inlet point Rev E arrives on **83.4%** of voyages against 68.4% for Rev D (+15.0, +10.2 to +19.4); from the recommended 45 km drop, **87.6%**. A boat 10% slower than the speed prediction loses nothing measurable (−0.6, −4.6 to +3.4); 20% slower loses 5 points (−5.0, −9.0 to −0.8) and takes three weeks longer. `docs/data/plan_runs_analysis.py`.

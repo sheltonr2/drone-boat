@@ -105,3 +105,13 @@ The rudders chase every wave. Rev E's reliability credit (servo failure rate ×0
 - **Roll:** 1–3° RMS up to Hs 2.5 m on the quarter. On the beam it rises to 6° at 2.5 m, 10° at 3.5 m and 14° at 5 m.
 - **Course-keeping in big quartering seas:** at Hs 3.5–5 m with the waves on the quarter the model yaws hard (heading error about 40° RMS with continuous steering). This is the classic small-boat problem running before big seas. The 6 s wave filter did better there (7.7°), which suggests some of it is the autopilot fighting the waves. Whether the real boat broaches is for the lake tests and Test F.
 - **Accelerations at the CG:** under 1 m/s² RMS up to Hs 2.5 m. The electronics and battery mounts (factor 20 at 60 g) are nowhere near their limits in normal sailing.
+
+
+## Over a whole crossing (14 Nov 2026)
+
+The per-hour loads above were combined with the sea states actually met along the 500 simulated Rev E tracks (45 km off Hatteras to Cornwall, 2023+2024 weather; `results/2026-11-14_seastates_hatteras__cornwall.json`). [`fatigue_voyage.py`](data/fatigue_voyage.py) mixes quartering and beam seas 70/30 and interpolates in wave height.
+
+- **Sea states per average voyage (117 days):** most of the time is in Hs 1–2.5 m. Hs is 3 m or more 11% of the time (about 300 hours) and 5 m or more 1.3% (about 37 hours).
+- **Fatigue life used per crossing:** fin root 0.2%, stern post 0.2%, counterweight arm 0.2%, spar and rudder stocks negligible. All of these are hundreds of crossings from their fatigue limit.
+- **Tail boom:** the old 12 × 10 tube would use **130% of its life on an average crossing**, almost all of it in the hours with 5 m+ beam seas. Rev E1's 16 × 14 tube takes the worst load from 78% to 41% of strength, and on the carbon S-N rule that is about 250 million cycles instead of about 1,400. **Rev E1's change is confirmed as necessary**, not just a margin.
+- **Rudder servo movements per crossing:** 2.85 million with the 6 s wave filter (3.6 million on a long, p90 voyage); 25.6 million unfiltered. **Field Test P should run to 4 million movements**, not 3 million, so that it covers a long voyage.

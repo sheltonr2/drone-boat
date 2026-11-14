@@ -351,6 +351,15 @@ def download(months, cache_dir, box=None, sources=SOURCES, stride=1, keep_raw=Fa
                     break
                 except Exception as e:  # noqa: BLE001 - report and retry, then move on
                     code, detail = _http_detail(e)
+                    if code == 400 and "job has failed" in str(detail).lower():
+                        # CDS accepted the request but its job failed on their side (seen for era5 202109 on 14 Nov,
+                        # while the months either side were fine). That is not an invalid request: wait, retry, and if
+                        # it keeps failing skip to the next month instead of stopping every remaining ERA5 month.
+                        log(f"[{label}] {s} {ym}: the CDS job failed on the server"
+                            + ("; retrying in 10 min" if attempt < 2 else "; skipping this month, run the download again later"))
+                        if attempt < 2: time.sleep(600)
+                        else: errors.append(f"{s} {ym}: HTTP 400: {detail}")
+                        continue
                     if code and 400 <= code < 500:
                         # The service rejected the request itself. Retrying identical requests does not help,
                         # and CDS may disable accounts that keep sending invalid ones, so stop this lane.

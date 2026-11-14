@@ -2,6 +2,15 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-14, 13:50 UTC (08:50 local): scheduled check; 015c and 017 analysed; download fix
+
+- Queue: 016 finished 07:16 local but stored only 5 of 18 ERA5 months: CDS failed the job for era5 202109 (HTTP 400 "The job has failed") and our downloader stopped the whole ERA5 lane on any 4xx. 015c finished 07:29, 017 at 08:00. 018 started 08:01: the 2021-22 waves now come from WAVERYS (0.2 deg, about 3 min a month; all stored up to 202207 so far) and it is retrying the 13 missing ERA5 months (about 2 h each at CDS today).
+- Fix: bulk.py treats CDS "The job has failed" as a server-side failure: retry twice after 10 min, then skip to the next month instead of stopping the lane. Other 4xx still stop it. Copied to the PC (matched HEAD first); 018b_download_retry queued before 019 to pick up anything still missing.
+- 015c -> docs/data/fatigue_voyage.py: per crossing, fin root/stern post/cw arm use about 0.2% of fatigue life; the old 12x10 tail boom 130% (so Rev E1's 16x14 is necessary); servo moves 2.85 M per crossing with the filter, 3.6 M on a p90 voyage. Field Test P raised to 4 million movements.
+- 017 -> docs/data/revE1_analysis.py: Rev E1 88.4% vs Rev E 87.6%, +0.8 (-1.4 to +3.0), same seeds. Cornwall-end watch lines can't show the final approach: the simulator stops 40 km from the target at Scilly. Arrival behaviour added to Launch_Plan open questions.
+- Randolph asked (08:43 local) to update him and John's team now: status post on #50.
+- ETAs: 018 about Sun 15 Nov mid-morning; 019a-c Sun about noon; then 020-023 (East_West_Study.md).
+
 ## 2026-11-14, 03:40 UTC (13 Nov, 22:40 local): east-to-west plan; results posting approved
 
 - Randolph approved posting the 017/019 results to #50 when they are in (13 Nov, 22:02 local). The 13:20 UTC check now does that (one post, via the browser).
