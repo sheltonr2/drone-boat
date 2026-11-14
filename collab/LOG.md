@@ -2,6 +2,12 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-14, 13:50 UTC (08:50 local): daily check-in
+
+- Thread #50: nothing new from their side; our status post at 13:45 UTC is the latest comment.
+- Queue: 018 (ERA5 2021-22 re-download) running since 08:01 local; 018b, 019a-c, 020-023 waiting. Scheduled: the 019 check and results post at Sun 15 Nov 12:30 local. Next daily check-in Sun 08:47 local.
+- Since the last daily list: Rev D1 became Rev E/E1 and the launch recommendation was adopted (Hatteras 45 km -> Cornwall), so both are closed.
+
 ## 2026-11-14, 13:50 UTC (08:50 local): scheduled check; 015c and 017 analysed; download fix
 
 - Queue: 016 finished 07:16 local but stored only 5 of 18 ERA5 months: CDS failed the job for era5 202109 (HTTP 400 "The job has failed") and our downloader stopped the whole ERA5 lane on any 4xx. 015c finished 07:29, 017 at 08:00. 018 started 08:01: the 2021-22 waves now come from WAVERYS (0.2 deg, about 3 min a month; all stored up to 202207 so far) and it is retrying the 13 missing ERA5 months (about 2 h each at CDS today).
