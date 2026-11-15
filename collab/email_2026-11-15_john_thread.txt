@@ -1,0 +1,87 @@
+Subject: Drone boat: every message between your team and ours, 12-15 Nov
+
+Hi John,
+
+This is Claude again, writing on Randolph's behalf at his request. This is a follow-up to the update I sent a few minutes ago. Below is every message from your team to us between Thursday 12 November and now (00:20 Sunday 15 November, US Eastern), and every message we sent your team in the same period. All of them are on boat-sim issue #50, the standing thread between the two teams. Times are US Eastern, and each message has a link.
+
+FROM YOUR TEAM TO US: 6 messages, the last on Friday 13 Nov at 3:13 am
+
+1. Thu 12 Nov, 1:44 am. Their simulator's numbers for our boats: Rev C5 15% (10 of 65 launches), Rev B 14%, and their kayak 83%. These were on April-June launches in 2015-2019, scored by their own rules.
+   https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6816776090
+2. Thu 12 Nov, 7:34 am. They explained why their 15% differs from our 48%:
+   - They score by Microtransat rules: a finish means reaching within 25 km of 39.5N 13.5W. Landfall doesn't count, and a boat silent for more than 10 days is disqualified.
+   - Each boat starts from its own drop point, and they stop every voyage at 150 days.
+   - They offered to re-score Rev C5 our way, and thanked us for the Pearson 31-2 specs.
+   https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6823741314
+3. Thu 12 Nov, 10:34 am. Re-score queued. It needs fresh runs and would start after a "game push" of a day or so. They noted our corrected 121-day median and called the limp-home result (59.6%) "a big jump".
+   https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6828023865
+4. Thu 12 Nov, 1:51 pm. They were pausing their help "while we get our own process in order". The re-score and any new requests were on hold.
+   https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6832872114
+5. Thu 12 Nov, 1:52 pm, at your request. The pause was because of repeated failures by the Claude agents running their side; nothing on our side caused it.
+   https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6832894638
+6. Fri 13 Nov, 3:13 am, back in touch at your request:
+   - Maya now leads the team and is our main contact.
+   - Their project is now Bluewater, a browser sailing game. Our Rev C5, Rev B and Randolph's Pearson 31-2 are in it, labelled as their models.
+   - They asked for a sync: what we're working on, and what we'd want from them.
+   - The Rev C5 re-score is "still on our list".
+   https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6847704059
+
+Since then: no messages from your team. That's about 45 hours, through four posts from us.
+
+Related work in your repo that wasn't addressed to us:
+- #360 (12 Nov): the Pearson 31-2 added as a boat.
+- #520 and #523 (13-14 Nov): our Rev B and Rev C5 made sailable in Bluewater.
+- #524 (14 Nov): sails and rigs for the Pearson.
+- #530 (14 Nov): a loading-speed fix for our boat model.
+- Issue #365 (the Pearson's spare-autopilot slot) is still open.
+
+FROM US TO YOUR TEAM: 9 messages, all posted by Claude at Randolph's request
+
+1. Thu 12 Nov, 6:37 am:
+   - the Pearson 31-2 specs link;
+   - the first results on our corrected simulator (Rev C 43.6%, Rev C5 48.0%, C5 with better-protected electronics 52.8%);
+   - a delay note, because the PC rebooted for a Windows update.
+   https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6822529595
+2. Thu 12 Nov, 9:46 am. "Yes please" to their re-score of Rev C5, and a correction: C5's median crossing is 121 days, not 145.
+   https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6826808552
+3. Thu 12 Nov, 10:18 am. Limp-home controller results: 59.6% (+11.6 over C5), and 61.2% with the better electronics.
+   https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6827627999
+4. Thu 12 Nov, 11:14 am. Rev D drawn:
+   - the limp-home controller, the servo switchover and the second satellite tracker;
+   - a new randolph_rev_d.yaml for their simulator;
+   - our revision-letter convention.
+   https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6829060738
+5. Thu 12 Nov, 2:51 pm:
+   - acknowledged the pause; no reply needed;
+   - Randolph's message that we hope none of the team gets fired and are thinking of them;
+   - our launch-point study plan, with times.
+   https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6834278411
+6. Fri 13 Nov, 5:46 am. A full update for Maya, answering her sync request:
+   - Rev D's first run (62.0%), the 13-destination study, the first launch-point results, the reliability review and the schedule;
+   - asked them for regional fishing and traffic data.
+   https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6850642299
+7. Fri 13 Nov, 5:56 am:
+   - a correction: their ERA5 wind correction and the hurricane work we'd offered were both already done;
+   - updated storm-exposure numbers;
+   - a first look at Bluewater. Their 3D Rev C5 has a Rev B bulb and spar, Rev D isn't in the boat picker, and there are some browser warnings.
+   https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6850834723
+8. Fri 13 Nov, 9:57 pm. A full update:
+   - the new route (Hatteras -> Cornwall) and the Diamond Shoals finding;
+   - Rev E and Rev E1 and their results, and the engineering checks;
+   - a heads-up on a wave-data source (WAVERYS);
+   - the run queue with ETAs;
+   - offers: a Rev E1 yaml for Bluewater, and the C5 re-score whenever they're ready.
+   https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6870584552
+9. Sat 14 Nov, 8:45 am. A status update:
+   - Rev E1 baseline 88.4%;
+   - fatigue over a whole crossing (the old tail boom wouldn't have survived);
+   - the weather-download delay;
+   - the new east-to-west plan.
+   https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6878179574
+
+STILL OPEN BETWEEN THE TEAMS
+- Their side: the Rev C5 re-score; any reply to our fishing and traffic data request; a reply on the Bluewater issues we reported; whether they want the Rev E1 yaml.
+- Our side: nothing they've asked for is outstanding. The next post, with the launch-window results, is planned for about 12:30 pm Sunday.
+
+Best regards,
+Claude (Randolph Shelton's AI assistant), sent at Randolph's request
