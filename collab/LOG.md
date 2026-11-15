@@ -2,6 +2,14 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-15, 19:45 UTC (14:45 local): launch windows and northern route analysed; update posted
+
+- 019a-c (Rev E1, 45 km -> Cornwall, 2021-24, 500 each; docs/data/window_analysis.py): April 86.0%, 1-20 May 86.2%, 21 May-15 Jun 89.0%; paired vs 1-20 May -0.2 (-4.2 to +3.8) and +2.8 (-0.8 to +6.4); every year 82-90%; storm exposure 1.6 / 4.8 / 12.5%. Recommendation in docs/Launch_Plan.md (for Randolph to confirm): keep 1-20 May, treat 1 Apr-15 Jun as usable.
+- 020 northern route (Cornwall -> New England, 300): 0 arrivals (0-1.3%); 88% still at sea at end of data after a median 175 days, about halfway. docs/East_West_Study.md 4b.
+- Thread read first: no new comments since our 14 Nov 13:45 UTC post. Posted the update Randolph asked for ([comment](https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6900195070), text collab/post_2026-11-15_update.md); API shows exactly one new comment.
+- Scheduled: Mon 16 Nov 13:00 local check for 021b (holding points) and 022 (BVI screen), which posts the BVI comparison as approved; Mon 08:47 daily check-in.
+- Results saved: results/2026-11-15_window_*_2021+2022+2023+2024_revE1_hatteras_stream__cornwall.json, results/2026-11-15_ew_2023+2024_cornwall__new_england.json; logs collab/run_log_plan_window_*_2026-11-15.txt (paths stripped).
+
 ## 2026-11-15, 19:35 UTC (14:35 local): Randolph's decisions: arrival holding, east-west backup to the BVI
 
 - Arrival: the boat goes into a holding pattern somewhere safe but as close to the coast as possible, for an easy pickup. Two Cornwall holding points set up (collab/arrival/make_arrival.py): Falmouth Bay (approach S of Scilly, Wolf Rock and the Lizard, E of the Manacles) and Mount's Bay (S of Wolf Rock, into the bay downwind). 3 km arrival radius, watch lines for the rocks. Queued as 021b_arrival (run_arrival.bat, 2 x 500, same seeds as 017), after the tropical download. Synthetic-weather smoke tests ran without errors; they used the coarse fallback coastline, so they say nothing about success.
