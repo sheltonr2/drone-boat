@@ -31,9 +31,15 @@ WEST_OF_CANARIES = [28.5, -20.0]     # mainland and Madeira starts: pass west of
 SOUTH_ROUTE = [20.0, -28.0]          # the sailors' route: south "till the butter melts", then west in steadier trades
 
 
+BVI_WATCH = {"anegada_reef": [[18.760, -64.420], [18.700, -64.300], [18.650, -64.250], [18.620, -64.300]],
+             "virgin_gorda_south": [[18.420, -64.460], [18.385, -64.440], [18.395, -64.420]],
+             "tortola_peter_norman": [[18.360, -64.640], [18.330, -64.620], [18.320, -64.580], [18.340, -64.540],
+                                      [18.380, -64.520], [18.420, -64.560], [18.440, -64.650]]}
+
+
 def scenario(launch, dest, waypoints=(), weed=BELT, tag=None):
     L, D = LAUNCH[launch], DEST[dest]
-    wp = [list(w) for w in waypoints]
+    wp = [list(w) for w in waypoints] + [list(w) for w in D.get("approach", [])]
     name = f"East-west study: {L['name']} to {D['name']}" + (f" ({tag})" if tag else "")
     sc = {"name": name, "provider": "bulk", "start": {"lat": L["drop"][0], "lon": L["drop"][1]},
           "target": {"lat": D["target"][0], "lon": D["target"][1]}, "waypoints": wp, "waypoint_rule": "abeam",
@@ -41,23 +47,25 @@ def scenario(launch, dest, waypoints=(), weed=BELT, tag=None):
           "africa_landfall_counts": False}
     if weed is not None:
         sc["weed_zones"] = [SARGASSO, weed]
+    if "arrival_radius_km" in D:
+        sc["arrival_radius_km"] = D["arrival_radius_km"]
+    if dest == "bvi":
+        sc["watch_lines"] = BVI_WATCH
     return sc
 
 
 # label -> (launch, dest, waypoints, weed, note)
 RUNS = {
-    "gran_canaria__barbados":       ("gran_canaria", "barbados", [], BELT, "the reference pair (Oshen PC13's route)"),
-    "gran_canaria_south__barbados": ("gran_canaria", "barbados", [SOUTH_ROUTE], BELT, "south to 20N 28W first"),
-    "gran_canaria__st_lucia":       ("gran_canaria", "st_lucia", [], BELT, "the ARC finish"),
-    "gran_canaria__martinique":     ("gran_canaria", "martinique", [], BELT, "France: an EU landfall"),
-    "gran_canaria__antigua":        ("gran_canaria", "antigua", [], BELT, "north end of the island chain"),
-    "gran_canaria__puerto_rico":    ("gran_canaria", "puerto_rico", [], BELT, "a US landfall"),
-    "el_hierro__barbados":          ("el_hierro", "barbados", [], BELT, "westernmost Canary, 230 km shorter"),
-    "mindelo__barbados":            ("mindelo", "barbados", [], BELT, "Cape Verde, 1,100 km shorter"),
-    "madeira__barbados":            ("madeira", "barbados", [WEST_OF_CANARIES], BELT, "Portuguese island, EU"),
-    "cadiz__barbados":              ("cadiz", "barbados", [WEST_OF_CANARIES], BELT, "mainland Spain"),
-    "lisbon__barbados":             ("lisbon", "barbados", [WEST_OF_CANARIES], BELT, "mainland Portugal"),
-    "gran_canaria__barbados_weedx2": ("gran_canaria", "barbados", [], BELT_PESS, "weed rate in the belt doubled"),
+    # Randolph, 15 Nov 2026: east-west is a backup option; recovery in the BVI; a March arrival preferred.
+    "gran_canaria__bvi":            ("gran_canaria", "bvi", [], BELT, "reference pair for the BVI"),
+    "gran_canaria_south__bvi":      ("gran_canaria", "bvi", [SOUTH_ROUTE], BELT, "south to 20N 28W first"),
+    "el_hierro__bvi":               ("el_hierro", "bvi", [], BELT, "westernmost Canary"),
+    "mindelo__bvi":                 ("mindelo", "bvi", [], BELT, "Cape Verde, shortest"),
+    "madeira__bvi":                 ("madeira", "bvi", [WEST_OF_CANARIES], BELT, "Portuguese island, EU"),
+    "cadiz__bvi":                   ("cadiz", "bvi", [WEST_OF_CANARIES], BELT, "mainland Spain"),
+    "lisbon__bvi":                  ("lisbon", "bvi", [WEST_OF_CANARIES], BELT, "mainland Portugal"),
+    "gran_canaria__bvi_weedx2":     ("gran_canaria", "bvi", [], BELT_PESS, "weed rate in the belt doubled"),
+    "gran_canaria__barbados":       ("gran_canaria", "barbados", [], BELT, "Oshen PC13's route, for comparison"),
     "cornwall__new_england":        ("cornwall", "new_england", [[45.0, -35.0]], None, "northern route against the westerlies"),
 }
 
@@ -157,8 +165,10 @@ def main():
                  "roughly 6-15 hours")
     # 022: screen launch points and destinations on that season
     screen = [k for k in RUNS if k not in ("cornwall__new_england",)]
-    bat("ew_screen", "East-west screen: 6 launch points, 6 destinations, launches 20 Nov to 10 Feb, 2024-25 weather",
-        screen, "revE1_design.json", ("2024-11-20", "2025-02-10"), "2024", 300)
+    # Launches 1 Nov to 15 Jan so the arrival months cover March from every launch point (Randolph prefers a March
+    # arrival in the BVI); the analysis reports success by launch week and arrival month.
+    bat("ew_screen", "East-west screen: 6 launch points to the BVI, launches 1 Nov to 15 Jan, 2024-25 weather",
+        screen, "revE1_design.json", ("2024-11-01", "2025-01-15"), "2024", 300)
     # 023: the second winter season, plus the summer months a May launch (Oshen's timing) needs
     download_bat("ew_download_more", "East-west weather: Nov 2023 to Oct 2024 and Aug-Oct 2025, tropical box",
                  "2023-11..2024-10,2025-08..2025-10", 33, "roughly 12-24 hours")

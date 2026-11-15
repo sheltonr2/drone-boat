@@ -72,7 +72,11 @@ None of these are permits for a vessel this size, as far as I can tell. They are
 - **AIS:** a class B transponder needs a ship station licence and MMSI, and an AIS-SART is for distress only, so it can't be used as a tracking beacon. Skip AIS unless the power budget and licensing work out **(confirm with the FCC if wanted)**.
 
 ## Open questions
-- **Arrival behaviour (from run 017, 14 Nov 2026):** Rev E1's crossings all end 25–60 km off Scilly, because the simulator stops at 40 km. The real boat needs an arrival rule: for example, go to a waiting point east of Scilly, clear of the Seven Stones and the traffic lanes, and hold station there for pickup. A short run with that rule (arrival radius about 5 km at the waiting point) would show how close boats come to the rocks. Not queued yet; Randolph's call.
+- **Arrival behaviour: decided by Randolph on 15 Nov 2026.** On arrival the boat goes into a holding pattern somewhere safe, but as close to the coast as possible, for an easy pickup. Two candidate holding points are being simulated (run 021b, `collab/arrival/make_arrival.py`; 500 voyages each, same seeds as run 017):
+  - **Falmouth Bay:** about 5 km SE of Pendennis Point, 20–30 m deep, sheltered from the prevailing W–SW. The approach keeps 7 km off Bishop Rock, 13 km south of Wolf Rock, 12 km south of the Lizard and 10 km east of the Manacles. Pickup from Falmouth.
+  - **Mount's Bay:** about 6 km SE of Penzance, 30–40 m deep, downwind of Scilly in westerlies. The approach keeps 9 km south of Wolf Rock and the Runnelstone. Pickup from Newlyn or Penzance; it is open to S–SW gales.
+  - The runs report how many boats reach each point, how many land on the way, and how close they come to the Seven Stones, Scilly, Wolf Rock, the Runnelstone, the Lizard and the Manacles.
+  - Once there, the autopilot's station mode keeps the boat within about 1 km by sailing a slow box. The shore team chooses Falmouth or Mount's Bay from the forecast during the last week. Shore team: send a Securité notice on VHF and notify Falmouth Coastguard of the holding position.
 
 - **The drop point:** decided, 45 km (14 Nov). Ask a Hatteras skipper what the run costs and whether 70 km is a small extra.
 - North Carolina: the boat has had no motor since Rev C, so state numbering should not apply **(confirm)**.

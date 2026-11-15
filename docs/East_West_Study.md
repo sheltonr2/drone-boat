@@ -103,7 +103,8 @@ These are queued on Randolph's PC after the eastbound items (018–019). ETAs re
 |---|---|---|---|
 | 020 `run_ew_northern` | Northern route, Cornwall → New England, launches 15 May–30 Jun, 2023+2024 weather (already downloaded), 300 voyages | ~20 min | Sun 15 Nov, midday |
 | 021 `run_ew_download_2024_25` | Tropical box (5–40N, 80–5W), Nov 2024–Jul 2025, plus the tropical storm tracks | ~22 GB, about 18 h | Mon 16 Nov, morning |
-| 022 `run_ew_screen` | 12 runs × 300 voyages, launches 20 Nov–10 Feb on the 2024–25 season: 6 launch points to Barbados, 5 destinations from Gran Canaria, the southern route, and the doubled weed rate | ~4 h | Mon 16 Nov, midday |
+| 021b `run_arrival` | Eastbound arrival: Hatteras → holding points in Falmouth Bay and Mount's Bay, 2 × 500 | ~80 min | Mon 16 Nov, morning |
+| 022 `run_ew_screen` | 9 runs × 300 voyages, launches 1 Nov–15 Jan on the 2024–25 season: 6 launch points to the BVI, the southern route, the doubled weed rate, Gran Canaria → Barbados for comparison (re-aimed 15 Nov) | ~3 h | Mon 16 Nov, midday |
 | 023 `run_ew_download_more` | Nov 2023–Oct 2024 and Aug–Oct 2025 (a second winter, and the summers a May launch needs) | ~33 GB, about 30 h | Tue 17 Nov, evening |
 | 024 (written after 022) | The best 3–4 pairs on both winters, 500 voyages each; launch month by month (Nov/Dec/Jan/Feb); a May launch for comparison with Oshen | ~5 h | Wed–Thu 18–19 Nov |
 
@@ -118,7 +119,29 @@ These are queued on Randolph's PC after the eastbound items (018–019). ETAs re
 
 After 022, write run 024 from the best pairs.
 
-## 7. Questions for Randolph
+## 7. Randolph's decisions (15 Nov 2026)
+
+1. **East-west is a backup option.** Eastbound (Hatteras → Cornwall) stays the plan.
+2. **Recovery in the British Virgin Islands.**
+   - **Holding point:** open water about 4 km south of Norman and Peter Islands, on the lee side of the chain, about 15 km from Road Town.
+   - **Approach:** from the east along 18.25N, well south of Anegada's Horseshoe Reef and of the rocks off Virgin Gorda's south end.
+   - **Arrival behaviour:** the same rule as eastbound, a holding pattern somewhere safe but as close to the coast as possible.
+   - Watch lines: Anegada reef, Virgin Gorda south, and a ring round Tortola, Peter and Norman Islands. The simulator's coastline may not hold the smaller islands.
+3. **A March arrival is preferred.** March is after the Christmas trades and before Sargassum starts reaching the beaches in earnest, and well clear of hurricane season. Launch dates for a March arrival (estimates at 1.0–1.3 kn):
+
+| Launch point | To the BVI holding point (great circle) | Days, est. | Launch for a March arrival |
+|---|---|---|---|
+| Gran Canaria | 5,060 km | 99–129 | about 25 Oct–25 Nov |
+| El Hierro | 4,830 km | 95–123 | about 1 Nov–1 Dec |
+| Mindelo, Cape Verde | 4,160 km | 82–106 | about 20 Nov–20 Dec |
+| Madeira | 5,170 km | 102–132 | about 20 Oct–20 Nov |
+| Cádiz / Lisbon | 6,120–6,180 km | 120–158 | October |
+
+   A Canaries launch for March means leaving in November, in the last weeks of the hurricane season. Storms that late are rare near the Canaries, but the storm check will count them. A Cape Verde launch in late November or December avoids that.
+4. **The screen (run 022) now aims at the BVI.** It covers the six launch points to the BVI, the southern route, the doubled weed rate, and Gran Canaria → Barbados for comparison. Launches run 1 November–15 January on the 2024–25 weather. The analysis reports success by launch week and arrival month.
+5. Still open: a December 2027 or January 2028 date, now read as **launch about November 2027 for a March 2028 arrival** if the backup is used.
+
+## 8. Earlier questions (14 Nov)
 
 1. **Is westbound a second option or a candidate for the first attempt?** The answer decides how much of the build plan's test schedule should cover downwind sailing and weed.
 2. **Where would recovery be easiest for you?** Barbados or St Lucia (independent, good flights), Martinique or Guadeloupe (France), or Puerto Rico (US territory). The simulator will show where boats actually land, but the paperwork and travel are your call.

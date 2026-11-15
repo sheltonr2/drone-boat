@@ -2,6 +2,13 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-15, 19:35 UTC (14:35 local): Randolph's decisions: arrival holding, east-west backup to the BVI
+
+- Arrival: the boat goes into a holding pattern somewhere safe but as close to the coast as possible, for an easy pickup. Two Cornwall holding points set up (collab/arrival/make_arrival.py): Falmouth Bay (approach S of Scilly, Wolf Rock and the Lizard, E of the Manacles) and Mount's Bay (S of Wolf Rock, into the bay downwind). 3 km arrival radius, watch lines for the rocks. Queued as 021b_arrival (run_arrival.bat, 2 x 500, same seeds as 017), after the tropical download. Synthetic-weather smoke tests ran without errors; they used the coarse fallback coastline, so they say nothing about success.
+- East-west: a backup option. Recovery in the British Virgin Islands (holding point ~4 km S of Norman/Peter Islands, approach along 18.25 N clear of Anegada's reef); March arrival preferred. 022 screen re-aimed: 6 launch points -> BVI, southern route, weed x2, Gran Canaria -> Barbados for comparison; launches 1 Nov-15 Jan. docs/East_West_Study.md section 7.
+- Randolph asked for an update to John's team at the 14:40 check; that check's instructions now include these decisions.
+- Copied to the PC: arrival and BVI scenarios, run_arrival.bat, run_ew_screen.bat, docs.
+
 ## 2026-11-15, 19:05 UTC (14:05 local): daily check-in
 
 - Thread #50: nothing new from their side; our 14 Nov 13:45 UTC status post is still the latest comment (no reply from them since 13 Nov 08:13 UTC).
