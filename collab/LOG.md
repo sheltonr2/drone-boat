@@ -2,6 +2,15 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-15, 19:05 UTC (14:05 local): daily check-in
+
+- Thread #50: nothing new from their side; our 14 Nov 13:45 UTC status post is still the latest comment (no reply from them since 13 Nov 08:13 UTC).
+- Queue: 018 finished 11:41 (all ERA5 months for 2021-24 now stored; the CDS failed-job fix wasn't needed this time), 018b 11:42 (nothing left to fetch), 019a 12:16, 019b 12:53, 019c 13:25, 020 northern route 13:49; 021 tropical download started 13:50 (9 months x era5/smoc/wav into workspace_ew; 211 GB free). 022 and 023 waiting.
+- 020's mc result is fine, but its storm check failed: docs/data/hurdat2_atlantic_1981-2025_box.csv was never on the PC. Copied it there; the 14:40 check can rerun the storm check here in the repo.
+- 021 built docs/data/hurdat2_atlantic_1981-2025_tropics.csv on the PC (NHC hurdat2-1851-2025-092326.txt, 17,564 points); copied into the repo.
+- Scheduled: 019/020 analysis and the approved results post at 14:40 local today; next daily check-in Mon 08:47. 022 should finish Monday mid-morning; the Monday check-in will schedule its analysis if needed.
+- Still open: knockdown damage scaling, storm loss model, Bluewater visual pass, #117 wind correction in the loop, Scilly arrival behaviour, Randolph's three east-west questions.
+
 ## 2026-11-15, 05:12 UTC (00:12 local): full update emailed to John
 
 - Randolph said John's team hasn't been updating him and asked for a full 72-hour update with plans and ETAs by email. Sent from Randolph's Gmail (built-in browser) at 00:12 local, one recipient, text in collab/email_2026-11-15_john.txt; confirmed in Sent.
