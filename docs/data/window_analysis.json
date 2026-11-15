@@ -1,0 +1,115 @@
+{
+ "april": {
+  "label": "April (1-30 Apr)",
+  "n": 500,
+  "success": 86,
+  "ci95": [
+   82.8,
+   89.0
+  ],
+  "median_days": 113.34,
+  "p90_days": 141.98,
+  "by_year": {
+   "2021": 84.8,
+   "2022": 82.39999999999999,
+   "2023": 88.0,
+   "2024": 88.8
+  },
+  "n_by_year": {
+   "2021": 125,
+   "2022": 125,
+   "2023": 125,
+   "2024": 125
+  },
+  "outcomes": {
+   "arrived_reporting": 298,
+   "arrived_tracked": 132,
+   "at_sea_timeout": 32,
+   "lost": 26,
+   "arrived_silent": 11,
+   "arrived_adrift": 1
+  },
+  "storm200": 1.5942857142857143,
+  "storm_adjusted": 85.92057142857144
+ },
+ "may_early": {
+  "label": "1-20 May (plan)",
+  "n": 500,
+  "success": 86.2,
+  "ci95": [
+   83.2,
+   89.0
+  ],
+  "median_days": 113.49,
+  "p90_days": 141.89,
+  "by_year": {
+   "2021": 82.39999999999999,
+   "2022": 87.2,
+   "2023": 87.2,
+   "2024": 88.0
+  },
+  "n_by_year": {
+   "2021": 125,
+   "2022": 125,
+   "2023": 125,
+   "2024": 125
+  },
+  "outcomes": {
+   "arrived_tracked": 128,
+   "arrived_reporting": 303,
+   "lost": 26,
+   "at_sea_timeout": 26,
+   "arrived_silent": 12,
+   "arrived_adrift": 3,
+   "aground": 2
+  },
+  "storm200": 4.822857142857143,
+  "storm_adjusted": 85.65885714285714
+ },
+ "may_late": {
+  "label": "21 May-15 Jun",
+  "n": 500,
+  "success": 89,
+  "ci95": [
+   86.2,
+   91.6
+  ],
+  "median_days": 112.23,
+  "p90_days": 131.75,
+  "by_year": {
+   "2021": 88.8,
+   "2022": 89.60000000000001,
+   "2023": 88.8,
+   "2024": 88.8
+  },
+  "n_by_year": {
+   "2021": 125,
+   "2022": 125,
+   "2023": 125,
+   "2024": 125
+  },
+  "outcomes": {
+   "arrived_tracked": 125,
+   "arrived_reporting": 320,
+   "lost": 20,
+   "at_sea_timeout": 19,
+   "arrived_silent": 10,
+   "arrived_adrift": 5,
+   "aground": 1
+  },
+  "storm200": 12.485714285714286,
+  "storm_adjusted": 87.0097142857143
+ },
+ "paired": {
+  "april": [
+   -0.2,
+   -4.2,
+   3.8
+  ],
+  "may_late": [
+   2.8,
+   -0.8,
+   6.4
+  ]
+ }
+}

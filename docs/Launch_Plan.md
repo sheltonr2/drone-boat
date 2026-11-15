@@ -9,7 +9,7 @@
 | Launch area | **Off Hatteras, North Carolina** | Rev D, 500 voyages per pair, 2023 and 2024 weather: Hatteras → Cornwall 68.4% against 59.2% for Ocean City → SW Ireland, +9.2 points (+3.8 to +14.8), the same in both years. The Gulf Stream is close, so the boat is 200 km out in under 3 days instead of 7 and losses roughly halve |
 | Drop point | **About 45 km out, 34.95°N 75.35°W, on the Gulf Stream's inshore edge, by offshore charter** (decided by Randolph 14 Nov; the fallback is 70 km out, 35.00°N 75.05°W). Not the 10 km point off the inlet | **Diamond Shoals** run 13–22 km south-east from Cape Hatteras with as little as 1 m over them, and the simulator's coastline doesn't hold them. Rev E, 500 voyages each, 2023 and 2024 ([Naval_Review.md](Naval_Review.md)): from the inlet, 22% of voyages passed within 2 km of the shoals and 49% within 5 km; from 45 km and 70 km, none within 10 km. A dog-leg from the inlet didn't clear them (7% within 2 km). Success: 45 km 87.6%, 70 km 86.8%, inlet 83.4% (before any shoal losses), so 45 km is +4.2 (+0.0 to +8.4) over the inlet and tied with 70 km. A dead boat dropped at 45 km grounded in 2–8 of 32 drifts within 30 days, against 0–3 at 70 km and 14–17 at the inlet; the early ones were driven back onto Hatteras Island, which needs an onshore wind; the weather rule below targets them. 70 km is the safer choice for a boat that dies on day one, at the cost of a 40 nm run out instead of 25 |
 | Destination | **Cornwall and the Isles of Scilly** (aim point 49.95°N 6.3°W); any European landfall counts | Tied with SW Ireland in the destination study and stage B, +3.8 (−0.2 to +7.8) in stage C |
-| Launch window | **1–20 May**, earliest suitable weather day | Storm exposure rises through June ([Hurricane_Risk.md](Hurricane_Risk.md)). Not yet re-run for this route: April is untested because that weather isn't downloaded |
+| Launch window | **1–20 May**, earliest suitable weather day | Storm exposure rises through June ([Hurricane_Risk.md](Hurricane_Risk.md)). Checked on four years of weather on 15 Nov 2026 (below): April, 1–20 May and 21 May–15 June all score 86–89% |
 | Before launch | **3-week coastal trial passed** (Field Test F) and **second tracker fitted** | These two items are worth the most odds per dollar ([Failure_Rates.md](Failure_Rates.md) §5) |
 
 ## Timeline
@@ -70,6 +70,22 @@ None of these are permits for a vessel this size, as far as I can tell. They are
 - **Colour:** fluorescent orange deck and wing panels (Microtransat suggests bright panels and warning labels).
 - **Light:** the collision rules expect a sailing vessel under 7 m to show sidelights and a sternlight where practicable, or a white light. An all-round white LED at a few hundred milliwatts, switched on at night by the controller, is cheap power-wise. Add it to the power budget.
 - **AIS:** a class B transponder needs a ship station licence and MMSI, and an AIS-SART is for distress only, so it can't be used as a tracking beacon. Skip AIS unless the power budget and licensing work out **(confirm with the FCC if wanted)**.
+
+## Launch window on four years of weather (15 Nov 2026, runs 019a–c)
+
+Rev E1, 45 km off Hatteras → Cornwall, 500 voyages per window on 2021–2024 weather. The same seeds were used in each window, so the differences are paired. Analysis: [`window_analysis.py`](data/window_analysis.py).
+
+| Window | Success (95% range) | Paired vs 1–20 May | By year 2021 / 22 / 23 / 24 | Median days (p90) | Tropical storm within 200 km | After the storm loss model |
+|---|---|---|---|---|---|---|
+| April | 86.0% (82.8–89.0) | −0.2 (−4.2 to +3.8) | 85 / 82 / 88 / 89 | 113 (142) | 1.6% | 85.9% |
+| **1–20 May (plan)** | **86.2% (83.2–89.0)** | — | 82 / 87 / 87 / 88 | 113 (142) | 4.8% | 85.7% |
+| 21 May–15 June | 89.0% (86.2–91.6) | +2.8 (−0.8 to +6.4) | 89 / 90 / 89 / 89 | 112 (132) | 12.5% | 87.0% |
+
+**Recommendation (for Randolph to confirm):**
+- Keep 1–20 May as the target.
+- Treat the whole span from 1 April to 15 June as usable. There's no measurable difference between windows, and every weather year scores 82–90%, so the launch date can wait for good weather at Hatteras instead of being forced.
+- If the boat isn't ready by 20 May, launching up to 15 June costs nothing in these runs. The model scores late May–June slightly better (fewer boats still at sea when the weather data ends), but storm exposure is 2.6 times higher. The storm loss model is grade D, so that gain shouldn't be counted on.
+- April is just as good at sea. It's colder for the launch crew, and the April weather at the launch site itself wasn't modelled.
 
 ## Open questions
 - **Arrival behaviour: decided by Randolph on 15 Nov 2026.** On arrival the boat goes into a holding pattern somewhere safe, but as close to the coast as possible, for an easy pickup. Two candidate holding points are being simulated (run 021b, `collab/arrival/make_arrival.py`; 500 voyages each, same seeds as run 017):

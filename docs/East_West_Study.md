@@ -5,7 +5,7 @@
 ## Bottom line
 
 - **Westbound means the trade-wind route.** The boat would go from the Canary Islands (or Cape Verde) to the Lesser Antilles: about 4,500–4,900 km great circle, and about 5,200–5,600 km actually sailed. The wind and current push the boat west almost the whole way. This is also the route of the only small boat to have finished the Microtransat. Oshen's *C-Star PC13* (1.2 m) sailed from Gran Canaria to Barbados in 127 days in 2026 ([Crossing_History.md](Crossing_History.md)).
-- **The northern route (Europe to the US) is not a candidate.** It means beating into the westerlies and the Gulf Stream. Saildrone's 7 m SD 1021 did it in 68 days, but no small boat has. Run 020 will put a number on it for our boat, using the weather data we already have.
+- **The northern route (Europe to the US) is not a candidate.** It means beating into the westerlies and the Gulf Stream. Saildrone's 7 m SD 1021 did it in 68 days, but no small boat has. Run 020 confirmed it: 0 of 300 simulated voyages arrived (section 4b).
 - **Launch window: about 20 November to 31 January.** Hurricane season runs from June through November. A launch after it ends, with a 90–130 day crossing, arrives in March–May, before the next season starts. Oshen launched in May and arrived in September, at the peak of the season, and sailed through a developing tropical storm on the way. A February launch is the edge of the window: its slowest boats would arrive in June.
 - **Expected crossing time: about 90–125 days from the Canaries, 70–95 from Cape Verde.** These figures assume 1.0–1.3 kn made good along a route about 14% longer than the great circle (Oshen's ratio). The simulator will replace these estimates.
 - **Suggested first pair: Gran Canaria → Barbados.** Las Palmas is the base of the yearly Atlantic Rally for Cruisers and has the boatyards and flights. Barbados is the first island on the far side, so a boat that is late or off course still has the whole island chain behind it to fall back on. The alternatives being simulated are Cape Verde (1,100 km shorter, but harder logistics) and a French island (Martinique or Guadeloupe, an EU landfall).
@@ -83,6 +83,14 @@ Barbados sits alone about 150 km east of the chain, so a boat that misses it sti
 4. **Hurricanes.** The storm-encounter check (HURDAT2 analog years, [Hurricane_Risk.md](Hurricane_Risk.md)) runs after each simulation, on a new tropical subset of the storm tracks (0–45N; the old one starts at 20N).
 5. **Shipping and fishing near the start.** The Canaries sit on the Europe–South America and Europe–West Africa lanes, and there are fishing fleets off Morocco and Mauritania. The simulator's near-land collision and capture rates apply as they do eastbound.
 6. **Solar.** At 15–28°N in December the sun is lower than on the eastbound route in summer, but the days are less cloudy. The power model runs on ERA5 radiation, so the runs will show whether winter energy is a constraint.
+
+## 4b. The northern route, simulated (15 Nov 2026, run 020)
+
+Rev E1, Cornwall (45 km SW of Scilly) → New England, launches 15 May–30 June, 2023+2024 weather, 300 voyages, via 45N 35W.
+- **Success: 0 of 300 (0%, 95% range 0–1.3%).**
+- **Where they ended:** 265 boats (88%) were still at sea when the weather data ended on 30 November, after a median of 175 days. Their median position was about 32.6W, roughly halfway across. 28 were lost and 7 went aground.
+- **Losses:** the usual causes (leaks, electronics, weed, servos), plus about 1,400 knockdowns per voyage from beating into the westerlies.
+- This confirms that the northern route is not a candidate for this boat. Westbound means the trade-wind route.
 
 ## 5. What the simulator needed
 
