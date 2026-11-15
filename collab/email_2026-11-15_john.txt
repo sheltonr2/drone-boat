@@ -1,0 +1,75 @@
+Subject: Drone boat: full update for the last 72 hours, plans and ETAs
+
+Hi John,
+
+This is Claude, writing on Randolph's behalf at his request. Randolph mentioned you may not have been getting updates from your team, so here is everything from the last 72 hours (Thursday 12 to Sunday 15 November) in one place. It also covers the current plan and when to expect results. Everything is in the repo (github.com/sheltonr2/drone-boat), and our posts to your team are on boat-sim issue #50.
+
+SUMMARY
+- The boat went through three revisions this week: Rev D, then Rev E, now Rev E1.
+- Simulated success went from 48% (Rev C5) to 88% (Rev E1 on the new route).
+- The route changed: launch 45 km off Cape Hatteras, North Carolina, aiming for Cornwall and the Isles of Scilly, in a 1-20 May window. Any European landfall still counts.
+- Randolph also asked for a plan for an east-to-west crossing (Canary Islands to the Caribbean). It's planned and its simulations are queued.
+
+1. THE BOAT
+- Rev D (Thursday): added an independent "limp-home" backup controller and its own satellite tracker, and potted the electronics. 62.0% success, +14 points over Rev C5 on the same weather.
+- Rev E (Friday): a reliability package.
+  - A bilge pump that keeps the boat sailing. In the Rev D runs, leaks killed boats through the safe-mode response, not through flooding.
+  - Membrane vents, a pressure-test valve and a humidity sensor.
+  - Sealed magnetic-encoder rudder servos, and a detent on the tail servo.
+  - A fairing between the fin and the bulb, plus a weed-shedding manoeuvre.
+  - Result: 28.5 kg, about $3,280 in parts, and 76.4% on the old route (+14 over Rev D).
+- Rev E1 (Saturday), from Randolph's decisions:
+  - 16 x 14 mm carbon tail boom.
+  - Leak "safe" limit cut to 1.0 kg, because the sump only holds 1.2 litres.
+  - 45 km drop point.
+  - Result: 88.4% on the new route, against Rev E's 87.6% on the same 500 voyages. The changes cost nothing measurable.
+
+2. THE ROUTE
+- Destinations: we compared 13 aim points across Europe and Africa. SW Ireland and Cornwall came out on top; the Canaries and Morocco did worst.
+- Launch points: we compared 12 points from Maine to Palm Beach, then the best launch/destination pairs over 2023 and 2024 weather:
+  - Hatteras -> Cornwall: 68.4%
+  - The old plan, Ocean City -> SW Ireland: 59.2%
+  - Off Hatteras the Gulf Stream is close, so the boat is 200 km out in under 3 days instead of 7.
+- Randolph changed the plan to Hatteras -> Cornwall on Friday.
+- A catch: Diamond Shoals isn't in the simulator's coastline. From a drop just off Hatteras Inlet, about half the simulated boats passed within 2 km of the shoals. We moved the drop to 45 km out on the Gulf Stream's inshore edge (0% within 10 km).
+- A dead boat drifting from there runs aground within 30 days in 2-8 of 32 tests, against 14-17 from the inlet.
+
+3. ENGINEERING CHECKS (a "naval architect's review")
+- Flooded stability: the boat still self-rights with 3 kg of free water inside (stability -11%).
+- Fatigue over a whole crossing, using the sea states along the simulated tracks: the fin root, stern post and counterweight arm each use about 0.2% of their fatigue life per crossing. The old tail boom would have used about 130% (it would likely fail), so the Rev E1 tube was necessary.
+- Steering: the autopilot rule as first written lost its course in heavy seas. It's replaced by a ~4-6 second wave filter. The rudder servos make about 2.9 million movements per crossing (3.6 million on a long one), so the bench life test is now 4 million movements.
+- Speed sensitivity: a boat 10% slower than modelled loses about 0.6 points; 20% slower loses about 5.
+- Simulator: 4.4x faster, with results checked identical. It also gained hazard "watch lines" and support for westbound crossings.
+
+4. EAST-TO-WEST PLAN (new, Saturday)
+- Route: the trade-wind route, Gran Canaria -> Barbados as the first pair. This is the route of the only small boat to finish the Microtransat: Oshen's 1.2 m C-Star, 127 days, September 2026.
+- Launch window: about 20 November to 31 January, so the 90-125 day crossing arrives before hurricane season.
+- Hazards: Sargassum weed (record years in 2025 and 2026), strong winter trades near the Caribbean, mostly downwind sailing, and recovery off reef coasts.
+- Being simulated: six launch points (Canaries, Cape Verde, Madeira, Cadiz, Lisbon) and five Caribbean destinations, plus the northern route (Europe to the US) as a comparison.
+- Plan: docs/East_West_Study.md.
+
+5. YOUR TEAM
+- Your team paused its help on Thursday. Maya has since led the restart, and the project is now Bluewater, which already sails our C5 and Rev B designs.
+- We've posted full updates on #50 on 13 Nov (05:55 and 06:25 UTC) and 14 Nov (02:57 and 13:45 UTC). There have been no replies from the team since 13 Nov.
+- Still open with your team: the Rev C5 re-score, an offer of a Rev E1 yaml for Bluewater, and a comparison on Sargassum and trade-wind routes.
+
+6. WHAT'S RUNNING NOW, AND ETAs (US Eastern)
+The runs are on Randolph's PC. The slow part this weekend is the ERA5 wind data: Copernicus is taking about 2 hours per month of data. One failed server request also stalled the downloader overnight on Friday; that's fixed.
+- 2021-22 weather re-download: about 7 am Sunday.
+- Launch-window runs (April vs 1-20 May vs late May-June, on four years of weather, 2021-24): about 9 am Sunday. Results posted to #50 around 12:30 pm Sunday.
+- Northern-route check: Sunday morning.
+- Tropical weather download for the east-west study: about 5 am Monday.
+- East-west screen (12 routes x 300 voyages): about 9 am Monday.
+- Second winter of tropical weather: about 3 pm Tuesday.
+- East-west confirmation runs (best pairs, both winters, plus a May launch for comparison with Oshen): Tuesday evening to Wednesday.
+
+7. DECISIONS WAITING ON RANDOLPH
+- What the boat does on arrival at Scilly. For example, holding station at a waiting point east of the islands, clear of the Seven Stones rocks and the shipping lanes. A short run would show how close boats come to the rocks.
+- Whether east-west is a backup or a candidate for the first attempt.
+- Where the Caribbean recovery would be easiest.
+- Whether to consider a December 2027 or January 2028 westbound launch, about four months before the eastbound May 2028 slot.
+
+Reply to this email, or on #50, if you would like more detail on any of it.
+
+Best regards,
+Claude (Randolph Shelton's AI assistant), sent at Randolph's request

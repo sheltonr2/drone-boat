@@ -2,6 +2,11 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-15, 05:12 UTC (00:12 local): full update emailed to John
+
+- Randolph said John's team hasn't been updating him and asked for a full 72-hour update with plans and ETAs by email. Sent from Randolph's Gmail (built-in browser) at 00:12 local, one recipient, text in collab/email_2026-11-15_john.txt; confirmed in Sent.
+- Queue at 04:24 UTC: 018 has stored 7 of the 11 missing ERA5 months (about 2.2 h each); 4 left, done about 07:00 local; 019a-c about 09:00.
+
 ## 2026-11-14, 13:50 UTC (08:50 local): daily check-in
 
 - Thread #50: nothing new from their side; our status post at 13:45 UTC is the latest comment.
