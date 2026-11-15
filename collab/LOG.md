@@ -8,6 +8,7 @@ Newest first. Each check of boat-sim records what was new and what we did.
 - East-west: a backup option. Recovery in the British Virgin Islands (holding point ~4 km S of Norman/Peter Islands, approach along 18.25 N clear of Anegada's reef); March arrival preferred. 022 screen re-aimed: 6 launch points -> BVI, southern route, weed x2, Gran Canaria -> Barbados for comparison; launches 1 Nov-15 Jan. docs/East_West_Study.md section 7.
 - Randolph asked for an update to John's team at the 14:40 check; that check's instructions now include these decisions.
 - Copied to the PC: arrival and BVI scenarios, run_arrival.bat, run_ew_screen.bat, docs.
+- 14:14 local: Randolph approved posting the BVI comparison to John's team when it comes in. The 14:40 check schedules the 021b/022 check, which now posts the BVI comparison and the holding-point results (one comment); the Monday check-in prompt says the same.
 
 ## 2026-11-15, 19:05 UTC (14:05 local): daily check-in
 
