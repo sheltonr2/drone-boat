@@ -2,6 +2,12 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-16, 13:58 UTC (08:58 local): daily check-in
+
+- Thread #50: nothing new from their side; our 15 Nov 19:43 UTC update is the latest comment (no reply since 13 Nov 08:13 UTC).
+- Queue: 021 tropical download still running. SMOC and waves all stored; ERA5 has 202411-202506 and is on 202507, the last month. CDS is now taking about 3 h a month (110-190 min). Expected done about 11:30 local, then 021b holding points (~80 min) and 022 BVI screen (~3 h), so about 16:00 local. 023 (15 more months) at this rate runs to about Wed 18 Nov midday.
+- Moved the 021b/022 analysis + BVI post check from 13:00 to 16:30 local. Next daily check-in Tue 08:47.
+
 ## 2026-11-15, 19:45 UTC (14:45 local): launch windows and northern route analysed; update posted
 
 - 019a-c (Rev E1, 45 km -> Cornwall, 2021-24, 500 each; docs/data/window_analysis.py): April 86.0%, 1-20 May 86.2%, 21 May-15 Jun 89.0%; paired vs 1-20 May -0.2 (-4.2 to +3.8) and +2.8 (-0.8 to +6.4); every year 82-90%; storm exposure 1.6 / 4.8 / 12.5%. Recommendation in docs/Launch_Plan.md (for Randolph to confirm): keep 1-20 May, treat 1 Apr-15 Jun as usable.
