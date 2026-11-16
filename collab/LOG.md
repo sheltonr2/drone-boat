@@ -2,6 +2,15 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-16, 21:40 UTC (16:40 local): holding points and BVI screen analysed; BVI comparison posted
+
+- Queue: 021 finished 10:55, 021b 12:01, 022 15:21; 023 (second winter download) started 15:21, ERA5 ~3 h a month, about Wed 18 Nov midday.
+- 021b (docs/data/arrival_analysis.py): reached the holding point Falmouth Bay 64.8%, Mount's Bay 51.2%; success vs stopping 40 km off Scilly -6.2 / -5.4 points; within 1 km of the Manacles 18% / Lizard 14% (Falmouth), Wolf Rock 9% / Runnelstone 8% (Mount's Bay). Recommendation pending: hold 10-15 km offshore. Queued 023b (run_arrival_offing.bat: Lizard offing and mouth of Mount's Bay).
+- 022 (docs/data/ew_screen_analysis.py, one winter): Mindelo 89.7% (85 d, 42% March arrivals), Gran Canaria via 20N 28W 85.7% (111 d, 49% March), Gran Canaria direct 75.3% (142 d, arrives May), Lisbon 53.3% (65 aground). Weed x2 -1.0; storms 0-2%. For March: Mindelo early Dec-early Jan, Gran Canaria (south) ~10 Nov-10 Dec. New southern BVI approach (bvi_s) after ~10% passed within 1 km of Virgin Gorda's south rocks.
+- 024a/b/c written and queued after 023b: Mindelo, Gran Canaria south and El Hierro south to the BVI on both winters, 500 each; Gran Canaria south May launches 2024/2025.
+- Thread read first (nothing new from their side). Posted the BVI comparison and holding-point results as approved ([comment](https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6930093866), text collab/post_2026-11-16_bvi.md); API shows exactly one new comment.
+- Scheduled: Tue 08:47 daily check-in; Wed 18 Nov 16:45 local check for 023b/024 (posts the follow-up promised in today's comment).
+
 ## 2026-11-16, 13:58 UTC (08:58 local): daily check-in
 
 - Thread #50: nothing new from their side; our 15 Nov 19:43 UTC update is the latest comment (no reply since 13 Nov 08:13 UTC).
