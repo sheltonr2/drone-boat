@@ -22,5 +22,9 @@ DEST = {
     # well south of Anegada's Horseshoe Reef and of the rocks off Virgin Gorda's south end.
     "bvi":         dict(name="British Virgin Islands (holding point S of Norman/Peter Is.)", target=(18.300, -64.580),
                         port="Road Town, Tortola", approach=[[18.250, -63.900], [18.250, -64.350]], arrival_radius_km=3.0),
+    # Run 024 (16 Nov): same holding point, approach kept further south: in run 022 about 10% of voyages passed within
+    # 1 km of the rocks off Virgin Gorda's south end on the approach along 18.25 N.
+    "bvi_s":       dict(name="British Virgin Islands (holding point S of Norman/Peter Is.), southern approach", target=(18.300, -64.580),
+                        port="Road Town, Tortola", approach=[[18.200, -63.900], [18.180, -64.450]], arrival_radius_km=3.0),
     "new_england": dict(name="Nantucket Shoals, US", target=(41.0, -69.5), port="Newport, RI"),
 }

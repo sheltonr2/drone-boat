@@ -71,6 +71,27 @@ None of these are permits for a vessel this size, as far as I can tell. They are
 - **Light:** the collision rules expect a sailing vessel under 7 m to show sidelights and a sternlight where practicable, or a white light. An all-round white LED at a few hundred milliwatts, switched on at night by the controller, is cheap power-wise. Add it to the power budget.
 - **AIS:** a class B transponder needs a ship station licence and MMSI, and an AIS-SART is for distress only, so it can't be used as a tracking beacon. Skip AIS unless the power budget and licensing work out **(confirm with the FCC if wanted)**.
 
+## Arrival and holding: first results (16 Nov 2026, run 021b)
+
+Rev E1, 45 km off Hatteras, 500 voyages per holding point, 2023+2024 weather, the same seeds as run 017. Run 017 stopped each voyage 40 km off Scilly; these runs carry on to the holding point. Analysis: [`arrival_analysis.py`](data/arrival_analysis.py).
+
+| | Falmouth Bay hold | Mount's Bay hold |
+|---|---|---|
+| Reached the holding point | **64.8%** (60.6–69.0) | 51.2% (47.0–55.6) |
+| Success as scored (any European landfall counts) | 82.2% | 83.0% |
+| vs stopping 40 km off Scilly (paired) | −6.2 (−9.2 to −3.2) | −5.4 (−8.4 to −2.4) |
+| Of run 017's 442 arrivals: reached the hold / landed on the way / lost | 313 / 82 / 26 | 244 / 155 / 20 |
+| Extra days for the last leg (median) | 3.3 | 3.4 |
+| Passed within 1 km of | the Manacles 18%, the Lizard 14%, Scilly 13% | Scilly 14%, Wolf Rock 9%, the Runnelstone 8% |
+
+**What this says:**
+- The final 40–80 km inshore is the riskiest part of the voyage. About 6% of boats that would have arrived offshore are lost or end up on the coast on the way in. In Falmouth Bay most of those land on the Lizard; in Mount's Bay they end on the shore inside the bay.
+- Both approaches bring a lot of boats close to rocks. A boat that reaches the coast counts as an "arrival" in the simulator, but on the Lizard or in Mount's Bay that is a wreck.
+- **Recommendation (pending run 023b; Randolph's call):** hold in open water 10–15 km off, not inshore. A pickup boat can make that run out in under an hour. Run 023b tests two such points:
+  - the Lizard offing, 12 km south of the Lizard and 30 km from Falmouth;
+  - the mouth of Mount's Bay, 13 km south of Cudden Point and 17 km from Newlyn.
+- **Limits of the model:** the simulator's coastline (Natural Earth 1:50m) is coarse around the Lizard, and holding station after arrival isn't modelled.
+
 ## Launch window on four years of weather (15 Nov 2026, runs 019a–c)
 
 Rev E1, 45 km off Hatteras → Cornwall, 500 voyages per window on 2021–2024 weather. The same seeds were used in each window, so the differences are paired. Analysis: [`window_analysis.py`](data/window_analysis.py).

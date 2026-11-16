@@ -1,0 +1,168 @@
+{
+ "falmouth_hold": {
+  "name": "Falmouth Bay",
+  "success": 82.2,
+  "ci95": [
+   78.8,
+   85.6
+  ],
+  "vs_017": [
+   -6.2,
+   -9.2,
+   -3.2
+  ],
+  "reached_holding": 64.8,
+  "reached_ci95": [
+   60.6,
+   69.0
+  ],
+  "of_017_arrivals": {
+   "reached holding point": 313,
+   "landfall elsewhere (counts as arrival)": 82,
+   "arrived_silent": 5,
+   "lost": 26,
+   "arrived_adrift": 3,
+   "at_sea_timeout": 13
+  },
+  "n_017_arrivals": 442,
+  "other_landfalls": {
+   "Cornwall (Land's End-Falmouth)": 66,
+   "Cornwall north coast/Bristol Channel": 10,
+   "Cornwall/Devon east of Falmouth": 4,
+   "elsewhere / offshore": 3,
+   "Brittany": 3,
+   "Ireland": 1
+  },
+  "lost_or_aground_near_cornwall": 15,
+  "extra_days_median": 3.25,
+  "outcomes": {
+   "arrived_reporting": 303,
+   "arrived_tracked": 108,
+   "at_sea_timeout": 33,
+   "arrived_silent": 9,
+   "lost": 43,
+   "aground": 1,
+   "arrived_adrift": 3
+  },
+  "watch": {
+   "seven_stones": {
+    "1": 1.8,
+    "2": 2.8,
+    "5": 3.2
+   },
+   "scilly": {
+    "1": 12.6,
+    "2": 13.6,
+    "5": 23.0
+   },
+   "wolf_rock": {
+    "1": 2.6,
+    "2": 4.8,
+    "5": 12.4
+   },
+   "runnelstone": {
+    "1": 2.4,
+    "2": 4.0,
+    "5": 8.4
+   },
+   "lizard_point": {
+    "1": 14.2,
+    "2": 23.0,
+    "5": 48.0
+   },
+   "manacles": {
+    "1": 18.2,
+    "2": 35.6,
+    "5": 66.2
+   },
+   "low_lee_mountamopus": {
+    "1": 1.2,
+    "2": 1.4,
+    "5": 2.0
+   }
+  }
+ },
+ "mounts_bay_hold": {
+  "name": "Mount's Bay",
+  "success": 83,
+  "ci95": [
+   79.6,
+   86.2
+  ],
+  "vs_017": [
+   -5.4,
+   -8.4,
+   -2.4
+  ],
+  "reached_holding": 51.2,
+  "reached_ci95": [
+   47.0,
+   55.6
+  ],
+  "of_017_arrivals": {
+   "reached holding point": 244,
+   "landfall elsewhere (counts as arrival)": 155,
+   "arrived_silent": 8,
+   "at_sea_timeout": 13,
+   "lost": 20,
+   "arrived_adrift": 2
+  },
+  "n_017_arrivals": 442,
+  "other_landfalls": {
+   "Cornwall (Land's End-Falmouth)": 149,
+   "Cornwall north coast/Bristol Channel": 3,
+   "Brittany": 3,
+   "elsewhere / offshore": 2,
+   "Cornwall/Devon east of Falmouth": 1,
+   "Ireland": 1
+  },
+  "lost_or_aground_near_cornwall": 11,
+  "extra_days_median": 3.3899999999999864,
+  "outcomes": {
+   "arrived_reporting": 306,
+   "arrived_tracked": 109,
+   "at_sea_timeout": 34,
+   "arrived_silent": 11,
+   "lost": 37,
+   "aground": 1,
+   "arrived_adrift": 2
+  },
+  "watch": {
+   "seven_stones": {
+    "1": 1.8,
+    "2": 2.8,
+    "5": 4.8
+   },
+   "scilly": {
+    "1": 14.4,
+    "2": 15.4,
+    "5": 27.6
+   },
+   "wolf_rock": {
+    "1": 9.4,
+    "2": 16.8,
+    "5": 34.0
+   },
+   "runnelstone": {
+    "1": 7.6,
+    "2": 13.6,
+    "5": 33.6
+   },
+   "lizard_point": {
+    "1": 1.8,
+    "2": 8.2,
+    "5": 22.4
+   },
+   "manacles": {
+    "1": 1.0,
+    "2": 3.8,
+    "5": 9.0
+   },
+   "low_lee_mountamopus": {
+    "1": 0.4,
+    "2": 0.4,
+    "5": 10.8
+   }
+  }
+ }
+}

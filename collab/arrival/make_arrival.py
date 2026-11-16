@@ -28,21 +28,29 @@ APPROACH_MB = [[49.820, -6.600],   # 7 km SW of Bishop Rock
 WATCH["low_lee_mountamopus"] = [[50.090, -5.520], [50.085, -5.470]]
 SCEN = {"falmouth_hold": ("Falmouth Bay", HOLD, APPROACH),
         "mounts_bay_hold": ("Mount's Bay", MOUNTS, APPROACH_MB)}
+# Run 023b (16 Nov), after 021b showed the last 10-40 km inshore cost about 6 points: holding points in open water,
+# 10-15 km off, still a short run out for the pickup boat.
+LIZARD_OFF = (49.850, -5.200)   # 12 km S of the Lizard; 30 km from Falmouth
+MOUNTS_OFF = (49.970, -5.450)   # mouth of Mount's Bay, 13 km S of Cudden Point, 17 km from Newlyn
+OFFING = {"lizard_offing_hold": ("the Lizard offing", LIZARD_OFF, APPROACH[:2]),
+          "mounts_bay_offing_hold": ("the mouth of Mount's Bay", MOUNTS_OFF, APPROACH_MB)}
 runs = []
+import sys
+if "--offing" in sys.argv: SCEN = OFFING
 for tag, (nm, pt, app) in SCEN.items():
     sc = dict(base, name=f"Arrival study: Hatteras 45 km -> holding point in {nm} (Rev E1)",
               target={"lat": pt[0], "lon": pt[1]}, arrival_radius_km=3.0,
               waypoints=base["waypoints"] + app, watch_lines=WATCH)
     json.dump(sc, open(os.path.join(HERE, f"hatteras_stream__{tag}.json"), "w"), indent=1)
     runs.append(tag)
-log = r"..\collab\run_log_arrival.txt"
+log = r"..\collab\run_log_arrival.txt" if SCEN is not OFFING else r"..\collab\run_log_arrival_offing.txt"
 L = ["@echo off",
      "REM Arrival study (docs/Launch_Plan.md \"Arrival and holding\"): Rev E1, 45 km off Hatteras -> a holding point,",
      "REM Falmouth Bay and Mount's Bay, 500 voyages each, 2023+2024, the same launch dates and seeds as run 017.",
      "REM About 80 min. A run whose result exists is skipped. Written by collab/arrival/make_arrival.py.",
      'cd /d "%~dp0"', "set PYTHONIOENCODING=utf-8", "set PYTHONUNBUFFERED=1", f"set LOG={log}",
      "echo ============================================================",
-     "echo  Arrival study: Hatteras to holding points in Falmouth Bay and Mount's Bay",
+     "echo  Arrival study: Hatteras to holding points " + ("in Falmouth Bay and Mount's Bay" if SCEN is not OFFING else "offshore: the Lizard offing and the mouth of Mount's Bay"),
      "echo  2 runs x 500 voyages, about 80 minutes. Started %date% %time%",
      "echo ============================================================",
      'echo Arrival study, started %date% %time% >> "%LOG%"']
@@ -54,5 +62,5 @@ for k, tag in enumerate(runs, 1):
           rf'  if exist {out} .venv\Scripts\python.exe ..\collab\summarize_mc.py {out} >> "%LOG%" 2>&1',
           f"  if exist {out} (echo   finished %time%) else (echo   FAILED: see {log})", ")"]
 L += ['echo === DONE %date% %time% >> "%LOG%"', "echo  ALL DONE %date% %time%"]
-open(os.path.join(ROOT, "simulator", "run_arrival.bat"), "w", newline="\r\n").write("\n".join(L) + "\n")
+open(os.path.join(ROOT, "simulator", "run_arrival.bat" if SCEN is not OFFING else "run_arrival_offing.bat"), "w", newline="\r\n").write("\n".join(L) + "\n")
 print("ok", runs)

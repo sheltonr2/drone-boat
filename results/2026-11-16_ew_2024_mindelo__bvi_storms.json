@@ -1,0 +1,57 @@
+{
+ "radius_km": 200.0,
+ "table": {
+  "01": {
+   "voyages": 53,
+   "seasons": 35,
+   "p_any": 0.0,
+   "p_TS": 0.0,
+   "p_C1-2": 0.0,
+   "p_C3-5": 0.0,
+   "ci95_any": [
+    0.0,
+    0.0
+   ],
+   "seasons_with_any": 0
+  },
+  "11": {
+   "voyages": 125,
+   "seasons": 35,
+   "p_any": 0.0002,
+   "p_TS": 0.0,
+   "p_C1-2": 0.0,
+   "p_C3-5": 0.0002,
+   "ci95_any": [
+    0.0,
+    0.0007
+   ],
+   "seasons_with_any": 1
+  },
+  "12": {
+   "voyages": 122,
+   "seasons": 35,
+   "p_any": 0.0005,
+   "p_TS": 0.0002,
+   "p_C1-2": 0.0002,
+   "p_C3-5": 0.0,
+   "ci95_any": [
+    0.0,
+    0.0012
+   ],
+   "seasons_with_any": 2
+  },
+  "all": {
+   "voyages": 300,
+   "seasons": 35,
+   "p_any": 0.0003,
+   "p_TS": 0.0001,
+   "p_C1-2": 0.0001,
+   "p_C3-5": 0.0001,
+   "ci95_any": [
+    0.0,
+    0.0008
+   ],
+   "seasons_with_any": 2
+  }
+ }
+}

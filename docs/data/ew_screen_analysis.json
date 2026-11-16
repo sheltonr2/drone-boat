@@ -1,0 +1,760 @@
+{
+ "gran_canaria__bvi": {
+  "name": "Gran Canaria -> BVI",
+  "success": 75.33333333333333,
+  "ci95": [
+   70.33333333333333,
+   80.0
+  ],
+  "vs_gc": [
+   0,
+   0.0,
+   0.0
+  ],
+  "days_median": 142.04500000000002,
+  "days_p10": 124.41,
+  "days_p90": 183.1,
+  "arrivals": 226,
+  "arrive_by_month": {
+   "May": 149,
+   "Apr": 58,
+   "Jun": 14,
+   "Mar": 2,
+   "Jul": 3
+  },
+  "march_share_of_voyages": 0.6666666666666666,
+  "by_launch_halfmonth": {
+   "2024-11 1-15": [
+    63,
+    69.8
+   ],
+   "2024-11 16-end": [
+    62,
+    71.0
+   ],
+   "2024-12 1-15": [
+    52,
+    65.4
+   ],
+   "2024-12 16-end": [
+    4,
+    75.0
+   ],
+   "2025-01 1-15": [
+    53,
+    84.9
+   ]
+  },
+  "outcomes": {
+   "at_sea_timeout": 38,
+   "arrived_tracked": 82,
+   "arrived_reporting": 144,
+   "lost": 20,
+   "arrived_silent": 6,
+   "arrived_adrift": 1,
+   "aground": 9
+  },
+  "weed_events_per_voyage": 0.6366666666666667,
+  "storm_any_200km": 1.53,
+  "storm_hurricane": 0.17,
+  "landfall_areas": {
+   "BVI holding point": 153,
+   "BVI (other)": 62,
+   "Puerto Rico / US Virgin Is.": 6,
+   "Hispaniola and west": 3,
+   "South America": 2
+  },
+  "reached_holding": 51.0,
+  "watch": {
+   "anegada_reef": {
+    "n": 236,
+    "within1": 17.333333333333332,
+    "within2": 18.333333333333332,
+    "within5": 21.333333333333332
+   },
+   "virgin_gorda_south": {
+    "n": 234,
+    "within1": 17.333333333333332,
+    "within2": 19.0,
+    "within5": 26.333333333333332
+   },
+   "tortola_peter_norman": {
+    "n": 234,
+    "within1": 30.0,
+    "within2": 38.333333333333336,
+    "within5": 68.0
+   }
+  }
+ },
+ "gran_canaria_south__bvi": {
+  "name": "Gran Canaria via 20N 28W -> BVI",
+  "success": 85.66666666666667,
+  "ci95": [
+   81.66666666666667,
+   89.33333333333333
+  ],
+  "vs_gc": [
+   10.333333333333334,
+   4.666666666666667,
+   16.333333333333332
+  ],
+  "days_median": 110.65,
+  "days_p10": 102.29,
+  "days_p90": 129.39,
+  "arrivals": 257,
+  "arrive_by_month": {
+   "Mar": 147,
+   "May": 16,
+   "Apr": 92,
+   "Jun": 2
+  },
+  "march_share_of_voyages": 49.0,
+  "by_launch_halfmonth": {
+   "2024-11 1-15": [
+    63,
+    74.6
+   ],
+   "2024-11 16-end": [
+    62,
+    85.5
+   ],
+   "2024-12 1-15": [
+    52,
+    88.5
+   ],
+   "2024-12 16-end": [
+    4,
+    100
+   ],
+   "2025-01 1-15": [
+    53,
+    86.8
+   ]
+  },
+  "outcomes": {
+   "arrived_tracked": 75,
+   "arrived_reporting": 182,
+   "at_sea_timeout": 15,
+   "lost": 23,
+   "arrived_silent": 4,
+   "arrived_adrift": 1
+  },
+  "weed_events_per_voyage": 0.6166666666666667,
+  "storm_any_200km": 0.13,
+  "storm_hurricane": 0.01,
+  "landfall_areas": {
+   "BVI holding point": 225,
+   "Puerto Rico / US Virgin Is.": 11,
+   "BVI (other)": 10,
+   "Anguilla-Antigua": 6,
+   "South America": 2,
+   "Hispaniola and west": 2,
+   "Guadeloupe-Martinique": 1
+  },
+  "reached_holding": 75.0,
+  "watch": {
+   "anegada_reef": {
+    "n": 267,
+    "within1": 2.3333333333333335,
+    "within2": 2.3333333333333335,
+    "within5": 3.0
+   },
+   "virgin_gorda_south": {
+    "n": 266,
+    "within1": 9.333333333333334,
+    "within2": 15.0,
+    "within5": 29.666666666666668
+   },
+   "tortola_peter_norman": {
+    "n": 262,
+    "within1": 23.666666666666668,
+    "within2": 33.666666666666664,
+    "within5": 71.33333333333333
+   }
+  }
+ },
+ "el_hierro__bvi": {
+  "name": "El Hierro -> BVI",
+  "success": 79,
+  "ci95": [
+   74.33333333333333,
+   83.66666666666667
+  ],
+  "vs_gc": [
+   3.6666666666666665,
+   -2.3333333333333335,
+   9.666666666666666
+  ],
+  "days_median": 142.81,
+  "days_p10": 122.26,
+  "days_p90": 171.26,
+  "arrivals": 237,
+  "arrive_by_month": {
+   "Apr": 69,
+   "May": 137,
+   "Jun": 15,
+   "Jul": 3,
+   "Mar": 13
+  },
+  "march_share_of_voyages": 4.333333333333333,
+  "by_launch_halfmonth": {
+   "2024-11 1-15": [
+    63,
+    81.0
+   ],
+   "2024-11 16-end": [
+    62,
+    75.8
+   ],
+   "2024-12 1-15": [
+    52,
+    73.1
+   ],
+   "2024-12 16-end": [
+    4,
+    75.0
+   ],
+   "2025-01 1-15": [
+    53,
+    86.8
+   ]
+  },
+  "outcomes": {
+   "arrived_tracked": 87,
+   "arrived_reporting": 150,
+   "at_sea_timeout": 33,
+   "lost": 23,
+   "arrived_silent": 7
+  },
+  "weed_events_per_voyage": 0.7333333333333333,
+  "storm_any_200km": 1.97,
+  "storm_hurricane": 0.16999999999999998,
+  "landfall_areas": {
+   "BVI holding point": 165,
+   "BVI (other)": 63,
+   "Puerto Rico / US Virgin Is.": 6,
+   "Hispaniola and west": 2,
+   "elsewhere": 1
+  },
+  "reached_holding": 55.0,
+  "watch": {
+   "anegada_reef": {
+    "n": 257,
+    "within1": 12.666666666666666,
+    "within2": 13.666666666666666,
+    "within5": 18.0
+   },
+   "virgin_gorda_south": {
+    "n": 256,
+    "within1": 20.0,
+    "within2": 24.666666666666668,
+    "within5": 32.333333333333336
+   },
+   "tortola_peter_norman": {
+    "n": 256,
+    "within1": 28.666666666666668,
+    "within2": 36.333333333333336,
+    "within5": 68.0
+   }
+  }
+ },
+ "mindelo__bvi": {
+  "name": "Mindelo (Cape Verde) -> BVI",
+  "success": 89.66666666666667,
+  "ci95": [
+   86.0,
+   93.0
+  ],
+  "vs_gc": [
+   14.333333333333334,
+   9.0,
+   19.666666666666668
+  ],
+  "days_median": 85.25,
+  "days_p10": 74.19,
+  "days_p90": 95.58,
+  "arrivals": 269,
+  "arrive_by_month": {
+   "Mar": 125,
+   "Feb": 126,
+   "Apr": 8,
+   "May": 5,
+   "Jan": 5
+  },
+  "march_share_of_voyages": 41.666666666666664,
+  "by_launch_halfmonth": {
+   "2024-11 1-15": [
+    63,
+    90.5
+   ],
+   "2024-11 16-end": [
+    62,
+    96.8
+   ],
+   "2024-12 1-15": [
+    52,
+    80.8
+   ],
+   "2024-12 16-end": [
+    4,
+    100
+   ],
+   "2025-01 1-15": [
+    53,
+    86.8
+   ]
+  },
+  "outcomes": {
+   "arrived_reporting": 212,
+   "arrived_tracked": 57,
+   "lost": 23,
+   "at_sea_timeout": 6,
+   "arrived_adrift": 1,
+   "arrived_silent": 1
+  },
+  "weed_events_per_voyage": 0.43333333333333335,
+  "storm_any_200km": 0.03,
+  "storm_hurricane": 0.02,
+  "landfall_areas": {
+   "BVI holding point": 222,
+   "BVI (other)": 26,
+   "Anguilla-Antigua": 11,
+   "Puerto Rico / US Virgin Is.": 6,
+   "Hispaniola and west": 4
+  },
+  "reached_holding": 74.0,
+  "watch": {
+   "anegada_reef": {
+    "n": 283,
+    "within1": 2.6666666666666665,
+    "within2": 2.6666666666666665,
+    "within5": 6.666666666666667
+   },
+   "virgin_gorda_south": {
+    "n": 281,
+    "within1": 11.0,
+    "within2": 12.333333333333334,
+    "within5": 27.0
+   },
+   "tortola_peter_norman": {
+    "n": 268,
+    "within1": 17.666666666666668,
+    "within2": 29.666666666666668,
+    "within5": 81.0
+   }
+  }
+ },
+ "madeira__bvi": {
+  "name": "Madeira -> BVI",
+  "success": 75.33333333333333,
+  "ci95": [
+   70.66666666666667,
+   80.33333333333333
+  ],
+  "vs_gc": [
+   0,
+   -6.0,
+   5.666666666666667
+  ],
+  "days_median": 163.01999999999998,
+  "days_p10": 134.18,
+  "days_p90": 186.79,
+  "arrivals": 226,
+  "arrive_by_month": {
+   "May": 198,
+   "Jun": 23,
+   "Jul": 4,
+   "Apr": 1
+  },
+  "march_share_of_voyages": 0.0,
+  "by_launch_halfmonth": {
+   "2024-11 1-15": [
+    63,
+    63.5
+   ],
+   "2024-11 16-end": [
+    62,
+    77.4
+   ],
+   "2024-12 1-15": [
+    52,
+    78.8
+   ],
+   "2024-12 16-end": [
+    4,
+    75.0
+   ],
+   "2025-01 1-15": [
+    53,
+    77.4
+   ]
+  },
+  "outcomes": {
+   "arrived_reporting": 131,
+   "arrived_tracked": 95,
+   "lost": 24,
+   "at_sea_timeout": 40,
+   "arrived_adrift": 1,
+   "arrived_silent": 9
+  },
+  "weed_events_per_voyage": 0.7766666666666666,
+  "storm_any_200km": 1.81,
+  "storm_hurricane": 0.5800000000000001,
+  "landfall_areas": {
+   "BVI holding point": 118,
+   "BVI (other)": 93,
+   "Puerto Rico / US Virgin Is.": 12,
+   "elsewhere": 1,
+   "Windward Is. / Barbados": 1,
+   "Guadeloupe-Martinique": 1
+  },
+  "reached_holding": 39.333333333333336,
+  "watch": {
+   "anegada_reef": {
+    "n": 242,
+    "within1": 23.0,
+    "within2": 26.333333333333332,
+    "within5": 29.333333333333332
+   },
+   "virgin_gorda_south": {
+    "n": 242,
+    "within1": 17.666666666666668,
+    "within2": 19.0,
+    "within5": 22.666666666666668
+   },
+   "tortola_peter_norman": {
+    "n": 242,
+    "within1": 29.0,
+    "within2": 37.0,
+    "within5": 61.333333333333336
+   }
+  }
+ },
+ "cadiz__bvi": {
+  "name": "Cadiz -> BVI",
+  "success": 66.66666666666667,
+  "ci95": [
+   61.333333333333336,
+   72.0
+  ],
+  "vs_gc": [
+   -8.666666666666666,
+   -15.333333333333334,
+   -2.3333333333333335
+  ],
+  "days_median": 172.335,
+  "days_p10": 160.45,
+  "days_p90": 194.76,
+  "arrivals": 200,
+  "arrive_by_month": {
+   "May": 115,
+   "Jul": 22,
+   "Jun": 63
+  },
+  "march_share_of_voyages": 0.0,
+  "by_launch_halfmonth": {
+   "2024-11 1-15": [
+    63,
+    52.4
+   ],
+   "2024-11 16-end": [
+    62,
+    72.6
+   ],
+   "2024-12 1-15": [
+    52,
+    71.2
+   ],
+   "2024-12 16-end": [
+    4,
+    100
+   ],
+   "2025-01 1-15": [
+    53,
+    56.6
+   ]
+  },
+  "outcomes": {
+   "lost": 41,
+   "at_sea_timeout": 45,
+   "arrived_reporting": 126,
+   "arrived_tracked": 74,
+   "arrived_silent": 7,
+   "aground": 6,
+   "arrived_adrift": 1
+  },
+  "weed_events_per_voyage": 0.7633333333333333,
+  "storm_any_200km": 0.7799999999999999,
+  "storm_hurricane": 0.43,
+  "landfall_areas": {
+   "BVI holding point": 132,
+   "BVI (other)": 58,
+   "Puerto Rico / US Virgin Is.": 4,
+   "Anguilla-Antigua": 4,
+   "Guadeloupe-Martinique": 1,
+   "South America": 1
+  },
+  "reached_holding": 44.0,
+  "watch": {
+   "anegada_reef": {
+    "n": 213,
+    "within1": 9.0,
+    "within2": 11.333333333333334,
+    "within5": 17.0
+   },
+   "virgin_gorda_south": {
+    "n": 212,
+    "within1": 13.666666666666666,
+    "within2": 16.0,
+    "within5": 20.666666666666668
+   },
+   "tortola_peter_norman": {
+    "n": 208,
+    "within1": 24.333333333333332,
+    "within2": 33.333333333333336,
+    "within5": 54.0
+   }
+  }
+ },
+ "lisbon__bvi": {
+  "name": "Lisbon -> BVI",
+  "success": 53.333333333333336,
+  "ci95": [
+   47.666666666666664,
+   58.666666666666664
+  ],
+  "vs_gc": [
+   -22,
+   -28.666666666666668,
+   -15.666666666666666
+  ],
+  "days_median": 169.17000000000002,
+  "days_p10": 159.36,
+  "days_p90": 202.1,
+  "arrivals": 160,
+  "arrive_by_month": {
+   "Jun": 78,
+   "May": 69,
+   "Jul": 13
+  },
+  "march_share_of_voyages": 0.0,
+  "by_launch_halfmonth": {
+   "2024-11 1-15": [
+    63,
+    41.3
+   ],
+   "2024-11 16-end": [
+    62,
+    41.9
+   ],
+   "2024-12 1-15": [
+    52,
+    46.2
+   ],
+   "2024-12 16-end": [
+    4,
+    75.0
+   ],
+   "2025-01 1-15": [
+    53,
+    64.2
+   ]
+  },
+  "outcomes": {
+   "aground": 65,
+   "arrived_reporting": 101,
+   "lost": 39,
+   "at_sea_timeout": 23,
+   "arrived_tracked": 59,
+   "arrived_silent": 12,
+   "arrived_adrift": 1
+  },
+  "weed_events_per_voyage": 0.57,
+  "storm_any_200km": 0.44999999999999996,
+  "storm_hurricane": 0.31,
+  "landfall_areas": {
+   "BVI holding point": 103,
+   "BVI (other)": 46,
+   "Anguilla-Antigua": 6,
+   "South America": 3,
+   "Guadeloupe-Martinique": 1,
+   "Hispaniola and west": 1
+  },
+  "reached_holding": 34.333333333333336,
+  "watch": {
+   "anegada_reef": {
+    "n": 174,
+    "within1": 8.333333333333334,
+    "within2": 8.666666666666666,
+    "within5": 12.333333333333334
+   },
+   "virgin_gorda_south": {
+    "n": 174,
+    "within1": 9.333333333333334,
+    "within2": 10.333333333333334,
+    "within5": 12.666666666666666
+   },
+   "tortola_peter_norman": {
+    "n": 168,
+    "within1": 13.333333333333334,
+    "within2": 21.333333333333332,
+    "within5": 46.0
+   }
+  }
+ },
+ "gran_canaria__bvi_weedx2": {
+  "name": "Gran Canaria -> BVI, weed x2",
+  "success": 74.33333333333333,
+  "ci95": [
+   69.33333333333333,
+   79.0
+  ],
+  "vs_gc": [
+   -1,
+   -2.6666666666666665,
+   0.3333333333333333
+  ],
+  "days_median": 142.05,
+  "days_p10": 124.74,
+  "days_p90": 182.16,
+  "arrivals": 223,
+  "arrive_by_month": {
+   "May": 149,
+   "Apr": 57,
+   "Jun": 13,
+   "Mar": 1,
+   "Jul": 3
+  },
+  "march_share_of_voyages": 0.3333333333333333,
+  "by_launch_halfmonth": {
+   "2024-11 1-15": [
+    63,
+    68.3
+   ],
+   "2024-11 16-end": [
+    62,
+    71.0
+   ],
+   "2024-12 1-15": [
+    52,
+    63.5
+   ],
+   "2024-12 16-end": [
+    4,
+    75.0
+   ],
+   "2025-01 1-15": [
+    53,
+    83.0
+   ]
+  },
+  "outcomes": {
+   "at_sea_timeout": 37,
+   "arrived_tracked": 81,
+   "arrived_reporting": 142,
+   "lost": 23,
+   "arrived_silent": 6,
+   "arrived_adrift": 2,
+   "aground": 9
+  },
+  "weed_events_per_voyage": 0.9533333333333334,
+  "storm_any_200km": 1.52,
+  "storm_hurricane": 0.16,
+  "landfall_areas": {
+   "BVI holding point": 149,
+   "BVI (other)": 62,
+   "Puerto Rico / US Virgin Is.": 7,
+   "Hispaniola and west": 3,
+   "South America": 2
+  },
+  "reached_holding": 49.666666666666664,
+  "watch": {
+   "anegada_reef": {
+    "n": 236,
+    "within1": 16.333333333333332,
+    "within2": 17.333333333333332,
+    "within5": 21.0
+   },
+   "virgin_gorda_south": {
+    "n": 233,
+    "within1": 16.666666666666668,
+    "within2": 18.333333333333332,
+    "within5": 25.666666666666668
+   },
+   "tortola_peter_norman": {
+    "n": 233,
+    "within1": 29.666666666666668,
+    "within2": 36.666666666666664,
+    "within5": 65.33333333333333
+   }
+  }
+ },
+ "gran_canaria__barbados": {
+  "name": "Gran Canaria -> Barbados",
+  "success": 73.33333333333333,
+  "ci95": [
+   68.33333333333333,
+   78.33333333333333
+  ],
+  "vs_gc": [
+   -2,
+   -9.0,
+   4.333333333333333
+  ],
+  "days_median": 103.205,
+  "days_p10": 93.85,
+  "days_p90": 123.64,
+  "arrivals": 220,
+  "arrive_by_month": {
+   "Mar": 105,
+   "Apr": 106,
+   "May": 5,
+   "Jul": 2,
+   "Jun": 2
+  },
+  "march_share_of_voyages": 35.0,
+  "by_launch_halfmonth": {
+   "2024-11 1-15": [
+    63,
+    73.0
+   ],
+   "2024-11 16-end": [
+    62,
+    54.8
+   ],
+   "2024-12 1-15": [
+    52,
+    76.9
+   ],
+   "2024-12 16-end": [
+    4,
+    100
+   ],
+   "2025-01 1-15": [
+    53,
+    84.9
+   ]
+  },
+  "outcomes": {
+   "arrived_reporting": 172,
+   "lost": 31,
+   "arrived_tracked": 48,
+   "at_sea_timeout": 38,
+   "aground": 3,
+   "arrived_silent": 8
+  },
+  "weed_events_per_voyage": 0.49333333333333335,
+  "storm_any_200km": 2.1,
+  "storm_hurricane": 0.42000000000000004,
+  "landfall_areas": {
+   "elsewhere": 127,
+   "Windward Is. / Barbados": 80,
+   "Guadeloupe-Martinique": 6,
+   "Hispaniola and west": 4,
+   "South America": 2,
+   "Anguilla-Antigua": 1
+  },
+  "reached_holding": 0.0,
+  "watch": {}
+ }
+}

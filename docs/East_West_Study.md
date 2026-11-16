@@ -111,10 +111,11 @@ These are queued on Randolph's PC after the eastbound items (018–019). ETAs re
 |---|---|---|---|
 | 020 `run_ew_northern` | Northern route, Cornwall → New England, launches 15 May–30 Jun, 2023+2024 weather (already downloaded), 300 voyages | ~20 min | Sun 15 Nov, midday |
 | 021 `run_ew_download_2024_25` | Tropical box (5–40N, 80–5W), Nov 2024–Jul 2025, plus the tropical storm tracks | ~22 GB, about 18 h | Mon 16 Nov, morning |
-| 021b `run_arrival` | Eastbound arrival: Hatteras → holding points in Falmouth Bay and Mount's Bay, 2 × 500 | ~80 min | Mon 16 Nov, morning |
-| 022 `run_ew_screen` | 9 runs × 300 voyages, launches 1 Nov–15 Jan on the 2024–25 season: 6 launch points to the BVI, the southern route, the doubled weed rate, Gran Canaria → Barbados for comparison (re-aimed 15 Nov) | ~3 h | Mon 16 Nov, midday |
-| 023 `run_ew_download_more` | Nov 2023–Oct 2024 and Aug–Oct 2025 (a second winter, and the summers a May launch needs) | ~33 GB, about 30 h | Tue 17 Nov, evening |
-| 024 (written after 022) | The best 3–4 pairs on both winters, 500 voyages each; launch month by month (Nov/Dec/Jan/Feb); a May launch for comparison with Oshen | ~5 h | Wed–Thu 18–19 Nov |
+| 021b `run_arrival` | Eastbound arrival: Hatteras → holding points in Falmouth Bay and Mount's Bay, 2 × 500 | ~65 min | done Mon 16 Nov 12:01 |
+| 022 `run_ew_screen` | 9 runs × 300 voyages, launches 1 Nov–15 Jan on the 2024–25 season: 6 launch points to the BVI, the southern route, the doubled weed rate, Gran Canaria → Barbados for comparison (re-aimed 15 Nov) | ~3 h | done Mon 16 Nov 15:21 (section 9) |
+| 023 `run_ew_download_more` | Nov 2023–Oct 2024 and Aug–Oct 2025 (a second winter, and the summers a May launch needs) | ~33 GB, ERA5 ~3 h/month | about Wed 18 Nov midday |
+| 023b `run_arrival_offing` | Eastbound: holding points 10–15 km offshore (Lizard offing, mouth of Mount's Bay), 2 × 500 | ~65 min | Wed 18 Nov |
+| 024a/b/c `run_ew_024*` | Cape Verde, and Gran Canaria and El Hierro via 20N 28W, to the BVI on both winters (500 each, southern BVI approach); Gran Canaria via 20N 28W May launches (2024, 2025) | ~2.5 h | Wed 18 Nov, afternoon |
 
 **Analysis for each result.** These come from the same scripts as the eastbound study:
 - success, with a bootstrap CI, paired against Gran Canaria → Barbados on the same seeds;
@@ -148,6 +149,37 @@ After 022, write run 024 from the best pairs.
    A Canaries launch for March means leaving in November, in the last weeks of the hurricane season. Storms that late are rare near the Canaries, but the storm check will count them. A Cape Verde launch in late November or December avoids that.
 4. **The screen (run 022) now aims at the BVI.** It covers the six launch points to the BVI, the southern route, the doubled weed rate, and Gran Canaria → Barbados for comparison. Launches run 1 November–15 January on the 2024–25 weather. The analysis reports success by launch week and arrival month.
 5. Still open: a December 2027 or January 2028 date, now read as **launch about November 2027 for a March 2028 arrival** if the backup is used.
+
+## 9. The BVI screen (16 Nov 2026, run 022)
+
+Rev E1, 300 voyages per pair, launches 1 Nov 2024–15 Jan 2025 on the 2024–25 weather, the same seeds in every pair. Arrival means reaching the BVI holding point or any landfall in the Americas. Analysis: [`ew_screen_analysis.py`](data/ew_screen_analysis.py). **This is one winter only;** run 024 repeats the best pairs on two winters.
+
+| Launch → BVI | Success (95% range) | vs Gran Canaria direct (paired) | Median days (p10–p90) | Arrivals in March | Reached the BVI hold | Storm within 200 km |
+|---|---|---|---|---|---|---|
+| **Mindelo, Cape Verde** | **89.7%** (86.0–93.0) | **+14.3** (+9.0 to +19.7) | 85 (74–96) | 42% of voyages (the rest mostly Feb) | 74% | 0.0% |
+| **Gran Canaria via 20N 28W** | **85.7%** (81.7–89.3) | **+10.3** (+4.7 to +16.3) | 111 (102–129) | 49% | 75% | 0.1% |
+| El Hierro direct | 79.0% (74.3–83.7) | +3.7 (−2.3 to +9.7) | 143 (122–171) | 4% | 55% | 2.0% |
+| Gran Canaria direct | 75.3% (70.3–80.0) | — | 142 (124–183) | 1% | 51% | 1.5% |
+| Madeira | 75.3% (70.7–80.3) | +0.0 (−6.0 to +5.7) | 163 (134–187) | 0% | 39% | 1.8% |
+| Cádiz | 66.7% (61.3–72.0) | −8.7 (−15.3 to −2.3) | 172 (160–195) | 0% | 44% | 0.8% |
+| Lisbon | 53.3% (47.7–58.7) | −22.0 (−28.7 to −15.7) | 169 (159–202) | 0% | 34% | 0.4% |
+| Gran Canaria direct, weed ×2 | 74.3% | −1.0 (−2.7 to +0.3) | 142 | 0% | 50% | 1.5% |
+| Gran Canaria → Barbados (for comparison) | 73.3% | −2.0 (−9.0 to +4.3) | 103 (94–124) | 35% | — | 2.1% |
+
+**What it shows:**
+- **Go south first.** Boats that sail straight from the Canaries towards the BVI sit in the light winds north of the trades. They take about 140 days and arrive in May, and 1 in 8 are still at sea when the weather data ends. The sailors' route, south to 20N 28W first, is 10 points better, a month faster and puts half the arrivals in March. Starting from Cape Verde, already in the trades, is better still: 85 days and 90%.
+- **Mainland starts are poor.** Lisbon loses 65 of 300 boats aground, on the Iberian and Moroccan coasts. Cádiz and Lisbon also arrive in May–July.
+- **Weed matters little at these rates:** doubling the Sargassum-belt multiplier costs 1 point, and Cape Verde boats see the fewest fouling events (0.43 per voyage).
+- **Storms are negligible in this window:** a 0–2% chance of passing within 200 km of a tropical storm.
+- **The BVI approach:** direct routes arrive from the north-east, and 13–23% pass within 1 km of Anegada's reef. The southern route and Cape Verde boats come in from the south-east (2–3%). About 10% of all voyages passed within 1 km of the rocks off Virgin Gorda's south end, so run 024 uses an approach further south. The near-passes on the Tortola–Peter–Norman ring mostly come from the holding point being close to it.
+- **For a March arrival:**
+  - **Cape Verde (Mindelo):** launch about 5 December–5 January (85 days). This is the best result.
+  - **Gran Canaria via 20N 28W:** launch about 10 November–10 December (111 days). Logistics are easier. The early-November launches were the weakest of these (75%).
+- **Run 024** (queued after the second winter's weather comes in):
+  - Cape Verde → BVI: launches 15 Nov–10 Jan.
+  - Gran Canaria and El Hierro via 20N 28W → BVI: launches 1 Nov–20 Dec.
+  - All with the southern BVI approach, 500 voyages each, on both winters (2023–24 and 2024–25).
+  - Plus Gran Canaria via 20N 28W with May launches in 2024 and 2025, for comparison with Oshen's timing.
 
 ## 8. Earlier questions (14 Nov)
 

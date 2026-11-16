@@ -49,7 +49,7 @@ def scenario(launch, dest, waypoints=(), weed=BELT, tag=None):
         sc["weed_zones"] = [SARGASSO, weed]
     if "arrival_radius_km" in D:
         sc["arrival_radius_km"] = D["arrival_radius_km"]
-    if dest == "bvi":
+    if dest in ("bvi", "bvi_s"):
         sc["watch_lines"] = BVI_WATCH
     return sc
 
@@ -67,6 +67,10 @@ RUNS = {
     "gran_canaria__bvi_weedx2":     ("gran_canaria", "bvi", [], BELT_PESS, "weed rate in the belt doubled"),
     "gran_canaria__barbados":       ("gran_canaria", "barbados", [], BELT, "Oshen PC13's route, for comparison"),
     "cornwall__new_england":        ("cornwall", "new_england", [[45.0, -35.0]], None, "northern route against the westerlies"),
+    # Run 024 (written 16 Nov after the screen): the best pairs on both winters, southern BVI approach
+    "mindelo__bvi_s":               ("mindelo", "bvi_s", [], BELT, "run 024: Cape Verde, best in the screen"),
+    "gran_canaria_south__bvi_s":    ("gran_canaria", "bvi_s", [SOUTH_ROUTE], BELT, "run 024: Canaries via 20N 28W"),
+    "el_hierro_south__bvi_s":       ("el_hierro", "bvi_s", [SOUTH_ROUTE], BELT, "run 024: El Hierro via 20N 28W"),
 }
 
 
@@ -164,11 +168,19 @@ def main():
     download_bat("ew_download_2024_25", "East-west weather: Nov 2024 to Jul 2025, tropical box", "2024-11..2025-07", 22,
                  "roughly 6-15 hours")
     # 022: screen launch points and destinations on that season
-    screen = [k for k in RUNS if k not in ("cornwall__new_england",)]
+    screen = [k for k in RUNS if k not in ("cornwall__new_england",) and not k.endswith("__bvi_s")]
     # Launches 1 Nov to 15 Jan so the arrival months cover March from every launch point (Randolph prefers a March
     # arrival in the BVI); the analysis reports success by launch week and arrival month.
     bat("ew_screen", "East-west screen: 6 launch points to the BVI, launches 1 Nov to 15 Jan, 2024-25 weather",
         screen, "revE1_design.json", ("2024-11-01", "2025-01-15"), "2024", 300)
+    # 024 (after 023): the best pairs from the screen on both winters (2023-24 and 2024-25), 500 voyages each,
+    # launch windows aimed at a March arrival, plus a May launch from Gran Canaria for comparison with Oshen PC13.
+    bat("ew_024a", "East-west run 024a: Cape Verde -> BVI, launches 15 Nov-10 Jan, two winters",
+        ["mindelo__bvi_s"], "revE1_design.json", ("2023-11-15", "2024-01-10"), "2023,2024", 500, prefix="ew024")
+    bat("ew_024b", "East-west run 024b: Gran Canaria and El Hierro via 20N 28W -> BVI, launches 1 Nov-20 Dec, two winters",
+        ["gran_canaria_south__bvi_s", "el_hierro_south__bvi_s"], "revE1_design.json", ("2023-11-01", "2023-12-20"), "2023,2024", 500, prefix="ew024")
+    bat("ew_024c", "East-west run 024c: Gran Canaria via 20N 28W -> BVI, May launches (Oshen's timing), 2024 and 2025",
+        ["gran_canaria_south__bvi_s"], "revE1_design.json", ("2024-05-01", "2024-05-31"), "2024,2025", 500, prefix="ew024may")
     # 023: the second winter season, plus the summer months a May launch (Oshen's timing) needs
     download_bat("ew_download_more", "East-west weather: Nov 2023 to Oct 2024 and Aug-Oct 2025, tropical box",
                  "2023-11..2024-10,2025-08..2025-10", 33, "roughly 12-24 hours")
