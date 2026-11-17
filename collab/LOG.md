@@ -2,6 +2,12 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-17, 13:50 UTC (08:50 local): daily check-in
+
+- Thread #50: nothing new from their side; our 16 Nov 21:35 UTC BVI post is the latest comment (no reply since 13 Nov 08:13 UTC).
+- Queue: 023 second-winter download running since Mon 15:21. SMOC and waves all stored (30 source-months); ERA5 6 of 15 (202311-202404), now taking 150-245 min a month; on 202405 since 11:48 UTC. 9 months left, so done about Wed 18 Nov 13:30 local, then 023b (~65 min) and 024a/b/c (~2.5 h), about 17:00.
+- Moved the 023b/024 check (analysis + approved follow-up post) from Wed 16:45 to 17:30 local. Next daily check-in Wed 08:47.
+
 ## 2026-11-16, 21:40 UTC (16:40 local): holding points and BVI screen analysed; BVI comparison posted
 
 - Queue: 021 finished 10:55, 021b 12:01, 022 15:21; 023 (second winter download) started 15:21, ERA5 ~3 h a month, about Wed 18 Nov midday.
