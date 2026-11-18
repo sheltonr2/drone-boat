@@ -2,6 +2,12 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-18, 13:50 UTC (08:50 local): daily check-in
+
+- Thread #50: nothing new from their side; our 16 Nov 21:35 UTC BVI post is still the latest comment (no reply since 13 Nov 08:13 UTC).
+- Queue: 023 still downloading. ERA5 13 of 15 months stored (2023-11..2024-10, 2025-08); CDS slowed to 160-270 min a month; 202509 requested 12:49 UTC, then 202510. Expected done about 15:30-16:30 local, then 023b and 024a/b/c (~3.5 h), about 19:00.
+- Moved the 023b/024 check (analysis + approved follow-up post) from 17:30 to 19:30 local. Next daily check-in Thu 08:47.
+
 ## 2026-11-17, 13:50 UTC (08:50 local): daily check-in
 
 - Thread #50: nothing new from their side; our 16 Nov 21:35 UTC BVI post is the latest comment (no reply since 13 Nov 08:13 UTC).
