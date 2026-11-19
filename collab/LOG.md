@@ -2,6 +2,11 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-19, 05:40 UTC (00:40 local): Scilly approach fix (run 025) analysed
+
+- 025 ran 23:12-00:13 local, no errors. Lizard offing with the new approach (via 49.60N 7.20W, 49.70N 6.40W): reached the hold 76.4% (+2.8, -1.0 to +6.8 vs 023b), within 1 km of Scilly 3.0% (was 12.0%); Seven Stones 1.2%, Wolf Rock 1.4%, the Lizard 1.2%, the Manacles 0.2%. Mount's Bay mouth: 71.8%, Scilly 3.0% (was 15.4%), Wolf Rock 5.6%.
+- docs/Launch_Plan.md: the two-waypoint approach is now the plan's approach; Lizard offing remains first choice. docs/data/arrival_analysis.py extended. Docs copied to the PC. Not posted to John's team (not approved).
+
 ## 2026-11-19, 04:15 UTC (18 Nov 23:15 local): Randolph's decisions
 
 - Launch window: 1-20 May target, 1 April-15 June usable (adopted).

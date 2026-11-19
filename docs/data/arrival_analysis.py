@@ -11,11 +11,14 @@ def boot(x, n=4000):
 def L(p): return {r['seed']: r for r in json.load(open(p))['result']['runs']}
 base = L('results/2026-11-14_plan_2023+2024_revE1_hatteras_stream__cornwall.json')
 HOLD = {"falmouth_hold": (50.100, -4.990), "mounts_bay_hold": (50.050, -5.480),
-        "lizard_offing_hold": (49.850, -5.200), "mounts_bay_offing_hold": (49.970, -5.450)}
+        "lizard_offing_hold": (49.850, -5.200), "mounts_bay_offing_hold": (49.970, -5.450),
+        "lizard_offing_hold_v2": (49.850, -5.200), "mounts_bay_offing_hold_v2": (49.970, -5.450)}
 NAME = {"falmouth_hold": "Falmouth Bay", "mounts_bay_hold": "Mount's Bay",
-        "lizard_offing_hold": "Lizard offing (12 km S)", "mounts_bay_offing_hold": "Mouth of Mount's Bay"}
+        "lizard_offing_hold": "Lizard offing (12 km S)", "mounts_bay_offing_hold": "Mouth of Mount's Bay",
+        "lizard_offing_hold_v2": "Lizard offing, Scilly kept off", "mounts_bay_offing_hold_v2": "Mouth of Mount's Bay, Scilly kept off"}
 DATE = {"falmouth_hold": "2026-11-16", "mounts_bay_hold": "2026-11-16",
-        "lizard_offing_hold": "2026-11-18", "mounts_bay_offing_hold": "2026-11-18"}   # 021b and 023b
+        "lizard_offing_hold": "2026-11-18", "mounts_bay_offing_hold": "2026-11-18",
+        "lizard_offing_hold_v2": "2026-11-19", "mounts_bay_offing_hold_v2": "2026-11-19"}   # 021b, 023b and 025
 def area(e):
     la, lo = e['lat'], e['lon']
     if 49.8 <= la <= 50.05 and -6.5 <= lo <= -6.15: return "Isles of Scilly"
@@ -60,7 +63,8 @@ for tag in HOLD:
 A = {t: L(f'results/{DATE[t]}_arrival_2023+2024_revE1_hatteras_stream__{t}.json') for t in HOLD}
 reach = lambda t, r: ok(r) and km((r['end']['lat'], r['end']['lon']), HOLD[t]) <= 3.5
 print()
-for a, b in (("lizard_offing_hold", "falmouth_hold"), ("mounts_bay_offing_hold", "mounts_bay_hold"), ("lizard_offing_hold", "mounts_bay_offing_hold")):
+for a, b in (("lizard_offing_hold", "falmouth_hold"), ("mounts_bay_offing_hold", "mounts_bay_hold"), ("lizard_offing_hold", "mounts_bay_offing_hold"),
+             ("lizard_offing_hold_v2", "lizard_offing_hold"), ("mounts_bay_offing_hold_v2", "mounts_bay_offing_hold")):
     seeds = sorted(set(A[a]) & set(A[b]))
     d1 = [100*(ok(A[a][s]) - ok(A[b][s])) for s in seeds]; d2 = [100*(reach(a, A[a][s]) - reach(b, A[b][s])) for s in seeds]
     l1, h1 = boot(d1); l2, h2 = boot(d2)
