@@ -34,16 +34,24 @@ LIZARD_OFF = (49.850, -5.200)   # 12 km S of the Lizard; 30 km from Falmouth
 MOUNTS_OFF = (49.970, -5.450)   # mouth of Mount's Bay, 13 km S of Cudden Point, 17 km from Newlyn
 OFFING = {"lizard_offing_hold": ("the Lizard offing", LIZARD_OFF, APPROACH[:2]),
           "mounts_bay_offing_hold": ("the mouth of Mount's Bay", MOUNTS_OFF, APPROACH_MB)}
+# Run 025 (18 Nov, approved by Randolph): 12-15% of boats passed within 1 km of Scilly in 023b, because a boat that
+# comes in north of the first waypoint counts it as passed when abeam and then heads straight past the islands.
+# Two waypoints now bring every boat in from the south-west: 30 km SW of Bishop Rock, then 19 km due south of it.
+SCILLY_SAFE = [[49.600, -7.200], [49.700, -6.400]]
+V2 = {"lizard_offing_hold_v2": ("the Lizard offing (Scilly kept 19 km off)", LIZARD_OFF, SCILLY_SAFE + [APPROACH[1]]),
+      "mounts_bay_offing_hold_v2": ("the mouth of Mount's Bay (Scilly kept 19 km off)", MOUNTS_OFF, SCILLY_SAFE + [APPROACH_MB[1]])}
 runs = []
 import sys
 if "--offing" in sys.argv: SCEN = OFFING
+if "--v2" in sys.argv: SCEN = OFFING = V2
 for tag, (nm, pt, app) in SCEN.items():
     sc = dict(base, name=f"Arrival study: Hatteras 45 km -> holding point in {nm} (Rev E1)",
               target={"lat": pt[0], "lon": pt[1]}, arrival_radius_km=3.0,
               waypoints=base["waypoints"] + app, watch_lines=WATCH)
     json.dump(sc, open(os.path.join(HERE, f"hatteras_stream__{tag}.json"), "w"), indent=1)
     runs.append(tag)
-log = r"..\collab\run_log_arrival.txt" if SCEN is not OFFING else r"..\collab\run_log_arrival_offing.txt"
+log = (r"..\collab\run_log_arrival.txt" if SCEN is not OFFING else
+       r"..\collab\run_log_arrival_v2.txt" if "--v2" in sys.argv else r"..\collab\run_log_arrival_offing.txt")
 L = ["@echo off",
      "REM Arrival study (docs/Launch_Plan.md \"Arrival and holding\"): Rev E1, 45 km off Hatteras -> a holding point,",
      "REM Falmouth Bay and Mount's Bay, 500 voyages each, 2023+2024, the same launch dates and seeds as run 017.",
@@ -62,5 +70,6 @@ for k, tag in enumerate(runs, 1):
           rf'  if exist {out} .venv\Scripts\python.exe ..\collab\summarize_mc.py {out} >> "%LOG%" 2>&1',
           f"  if exist {out} (echo   finished %time%) else (echo   FAILED: see {log})", ")"]
 L += ['echo === DONE %date% %time% >> "%LOG%"', "echo  ALL DONE %date% %time%"]
-open(os.path.join(ROOT, "simulator", "run_arrival.bat" if SCEN is not OFFING else "run_arrival_offing.bat"), "w", newline="\r\n").write("\n".join(L) + "\n")
+open(os.path.join(ROOT, "simulator", "run_arrival.bat" if SCEN is not OFFING else
+                  "run_arrival_v2.bat" if "--v2" in sys.argv else "run_arrival_offing.bat"), "w", newline="\r\n").write("\n".join(L) + "\n")
 print("ok", runs)

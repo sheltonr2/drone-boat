@@ -2,6 +2,14 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-19, 04:15 UTC (18 Nov 23:15 local): Randolph's decisions
+
+- Launch window: 1-20 May target, 1 April-15 June usable (adopted).
+- Holding point: the Lizard offing (49.85N 5.20W), with the mouth of Mount's Bay (49.97N 5.45W) as the alternative (adopted).
+- East-west backup: Mindelo, Cape Verde, launch about 25 Nov-5 Jan for a March BVI arrival; fallback El Hierro or Gran Canaria via 20N 28W (adopted).
+- Scilly approach fix approved: run 025 (run_arrival_v2.bat) brings boats in via 49.60N 7.20W and 49.70N 6.40W; both offshore holding points, 500 each. Queued on the PC; analysis check scheduled in about 80 minutes.
+- docs/Launch_Plan.md and docs/East_West_Study.md updated with the decisions and copied to the PC.
+
 ## 2026-11-19, 00:35 UTC (18 Nov 19:35 local): offshore holding and BVI two-winter runs analysed; follow-up posted
 
 - Queue finished and empty: 023 download 15:35 local (all 15 ERA5 months), 023b 16:38, 024a 17:01, 024b 18:14, 024c 18:39. No errors.

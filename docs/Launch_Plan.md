@@ -9,7 +9,8 @@
 | Launch area | **Off Hatteras, North Carolina** | Rev D, 500 voyages per pair, 2023 and 2024 weather: Hatteras → Cornwall 68.4% against 59.2% for Ocean City → SW Ireland, +9.2 points (+3.8 to +14.8), the same in both years. The Gulf Stream is close, so the boat is 200 km out in under 3 days instead of 7 and losses roughly halve |
 | Drop point | **About 45 km out, 34.95°N 75.35°W, on the Gulf Stream's inshore edge, by offshore charter** (decided by Randolph 14 Nov; the fallback is 70 km out, 35.00°N 75.05°W). Not the 10 km point off the inlet | **Diamond Shoals** run 13–22 km south-east from Cape Hatteras with as little as 1 m over them, and the simulator's coastline doesn't hold them. Rev E, 500 voyages each, 2023 and 2024 ([Naval_Review.md](Naval_Review.md)): from the inlet, 22% of voyages passed within 2 km of the shoals and 49% within 5 km; from 45 km and 70 km, none within 10 km. A dog-leg from the inlet didn't clear them (7% within 2 km). Success: 45 km 87.6%, 70 km 86.8%, inlet 83.4% (before any shoal losses), so 45 km is +4.2 (+0.0 to +8.4) over the inlet and tied with 70 km. A dead boat dropped at 45 km grounded in 2–8 of 32 drifts within 30 days, against 0–3 at 70 km and 14–17 at the inlet; the early ones were driven back onto Hatteras Island, which needs an onshore wind; the weather rule below targets them. 70 km is the safer choice for a boat that dies on day one, at the cost of a 40 nm run out instead of 25 |
 | Destination | **Cornwall and the Isles of Scilly** (aim point 49.95°N 6.3°W); any European landfall counts | Tied with SW Ireland in the destination study and stage B, +3.8 (−0.2 to +7.8) in stage C |
-| Launch window | **1–20 May**, earliest suitable weather day | Storm exposure rises through June ([Hurricane_Risk.md](Hurricane_Risk.md)). Checked on four years of weather on 15 Nov 2026 (below): April, 1–20 May and 21 May–15 June all score 86–89% |
+| Launch window | **1–20 May target; 1 April–15 June usable** (decided by Randolph on 18 Nov 2026), on the earliest suitable weather day | Checked on four years of weather on 15 Nov 2026 (below): April, 1–20 May and 21 May–15 June all score 86–89%. Storm exposure rises through June ([Hurricane_Risk.md](Hurricane_Risk.md)) |
+| Arrival and holding | **Holding pattern 12 km south of the Lizard (49.85°N 5.20°W)**, the mouth of Mount's Bay (49.97°N 5.45°W) as the alternative (decided by Randolph 18 Nov 2026). The approach passes south of Scilly via 49.60°N 7.20°W and 49.70°N 6.40°W (run 025 checking) | Runs 021b and 023b (below): 74% of boats reach the Lizard offing against 65% for Falmouth Bay, with almost no close passes to the Manacles or the Lizard. Pickup by boat from Falmouth, 30 km |
 | Before launch | **3-week coastal trial passed** (Field Test F) and **second tracker fitted** | These two items are worth the most odds per dollar ([Failure_Rates.md](Failure_Rates.md) §5) |
 
 ## Timeline
@@ -105,10 +106,10 @@ These are the same runs as 021b, with the holding point in open water instead of
 - Both offshore points still cost 4–6 points of success against stopping 40 km off Scilly. That's the cost of approaching the coast at all in the model: the simulator raises collision and capture rates within 100 km of land, and some boats still end ashore on the way in.
 - About 12–15% of boats pass within 1 km of the Isles of Scilly on the way in. The first approach waypoint (7 km SW of Bishop Rock) is too tight.
 
-**Recommendation (Randolph's call):**
-- Make the **Lizard offing the holding point.** It has the fewest close passes to rocks, and it's a 30 km run out from Falmouth.
+**Decided by Randolph on 18 Nov 2026:**
+- The **Lizard offing is the holding point.** It has the fewest close passes to rocks, and it's a 30 km run out from Falmouth.
 - Keep the mouth of Mount's Bay as the alternative when the forecast favours it (17 km from Newlyn).
-- **Next:** move the first approach waypoint to about 15 km SW of Bishop Rock and rerun it (about 35 minutes). That run isn't queued yet.
+- **Scilly approach fix (approved and queued as run 025, `run_arrival_v2.bat`):** in 023b, a boat coming in north of the first waypoint counted it as passed once abeam, then headed straight past the islands. Two waypoints now bring every boat in from the south-west: 30 km SW of Bishop Rock (49.60N 7.20W), then 19 km due south of it (49.70N 6.40W). Both offshore holding points are being rerun, 500 voyages each.
 
 ## Launch window on four years of weather (15 Nov 2026, runs 019a–c)
 
@@ -120,7 +121,7 @@ Rev E1, 45 km off Hatteras → Cornwall, 500 voyages per window on 2021–2024 w
 | **1–20 May (plan)** | **86.2% (83.2–89.0)** | — | 82 / 87 / 87 / 88 | 113 (142) | 4.8% | 85.7% |
 | 21 May–15 June | 89.0% (86.2–91.6) | +2.8 (−0.8 to +6.4) | 89 / 90 / 89 / 89 | 112 (132) | 12.5% | 87.0% |
 
-**Recommendation (for Randolph to confirm):**
+**Decided by Randolph on 18 Nov 2026:**
 - Keep 1–20 May as the target.
 - Treat the whole span from 1 April to 15 June as usable. There's no measurable difference between windows, and every weather year scores 82–90%, so the launch date can wait for good weather at Hatteras instead of being forced.
 - If the boat isn't ready by 20 May, launching up to 15 June costs nothing in these runs. The model scores late May–June slightly better (fewer boats still at sea when the weather data ends), but storm exposure is 2.6 times higher. The storm loss model is grade D, so that gain shouldn't be counted on.
@@ -131,7 +132,7 @@ Rev E1, 45 km off Hatteras → Cornwall, 500 voyages per window on 2021–2024 w
   - **Falmouth Bay:** about 5 km SE of Pendennis Point, 20–30 m deep, sheltered from the prevailing W–SW. The approach keeps 7 km off Bishop Rock, 13 km south of Wolf Rock, 12 km south of the Lizard and 10 km east of the Manacles. Pickup from Falmouth.
   - **Mount's Bay:** about 6 km SE of Penzance, 30–40 m deep, downwind of Scilly in westerlies. The approach keeps 9 km south of Wolf Rock and the Runnelstone. Pickup from Newlyn or Penzance; it is open to S–SW gales.
   - The runs report how many boats reach each point, how many land on the way, and how close they come to the Seven Stones, Scilly, Wolf Rock, the Runnelstone, the Lizard and the Manacles.
-  - Once there, the autopilot's station mode keeps the boat within about 1 km by sailing a slow box. The shore team chooses Falmouth or Mount's Bay from the forecast during the last week. Shore team: send a Securité notice on VHF and notify Falmouth Coastguard of the holding position.
+  - Once there, the autopilot's station mode keeps the boat within about 1 km by sailing a slow box. The shore team chooses Falmouth or Mount's Bay from the forecast during the last week (superseded 18 Nov: the holding points are now offshore, see the table at the top). Shore team: send a Securité notice on VHF and notify Falmouth Coastguard of the holding position.
 
 - **The drop point:** decided, 45 km (14 Nov). Ask a Hatteras skipper what the run costs and whether 70 km is a small extra.
 - North Carolina: the boat has had no motor since Rev C, so state numbering should not apply **(confirm)**.

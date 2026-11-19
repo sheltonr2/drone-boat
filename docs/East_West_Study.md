@@ -4,6 +4,8 @@
 
 ## Bottom line
 
+- **Decided (18 Nov 2026):** east-west is the backup option. Launch from Mindelo, Cape Verde, between about 25 November and 5 January (mid-December is the target), via the southern approach to a holding point south of Norman and Peter Islands in the BVI, for a March arrival. The fallback is El Hierro or Gran Canaria routed via 20N 28W, launching mid-November to mid-December (section 10).
+
 - **Westbound means the trade-wind route.** The boat would go from the Canary Islands (or Cape Verde) to the Lesser Antilles: about 4,500–4,900 km great circle, and about 5,200–5,600 km actually sailed. The wind and current push the boat west almost the whole way. This is also the route of the only small boat to have finished the Microtransat. Oshen's *C-Star PC13* (1.2 m) sailed from Gran Canaria to Barbados in 127 days in 2026 ([Crossing_History.md](Crossing_History.md)).
 - **The northern route (Europe to the US) is not a candidate.** It means beating into the westerlies and the Gulf Stream. Saildrone's 7 m SD 1021 did it in 68 days, but no small boat has. Run 020 confirmed it: 0 of 300 simulated voyages arrived (section 4b).
 - **Launch window: about 20 November to 31 January.** Hurricane season runs from June through November. A launch after it ends, with a 90–130 day crossing, arrives in March–May, before the next season starts. Oshen launched in May and arrived in September, at the peak of the season, and sailed through a developing tropical storm on the way. A February launch is the edge of the window: its slowest boats would arrive in June.
@@ -201,7 +203,7 @@ Paired on the same seeds: Mindelo − Gran Canaria +8.0 points (+3.6 to +12.4); 
 - **The southern BVI approach works:** close passes (within 1 km) to the Virgin Gorda rocks fell from about 10% to 3%, and to Anegada's reef to about 4%. About two thirds of all boats reach the holding point itself; most of the rest land elsewhere in the BVI or the US Virgin Islands.
 - Weed fouling is about 0.5 events per voyage from Cape Verde and 0.8 from the Canaries. Neither changes the ranking.
 
-**Recommendation for a March BVI arrival (Randolph's call):**
+**Decided by Randolph on 18 Nov 2026 (for a March BVI arrival):**
 - Launch from **Mindelo, Cape Verde, between about 25 November and 5 January,** aiming for mid-December.
 - Fallback: **El Hierro or Gran Canaria, routed via 20N 28W, launching mid-November to mid-December.**
 - Not from the mainland, not on the direct Canaries route, and not in May.
