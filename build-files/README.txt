@@ -18,6 +18,10 @@ dxf/                         The same templates as DXF (R12, millimetres) for CN
 stl/                         34 STL files: parts P01-P27, the P02A/B split option and fit coupons P00a/b,
                              already in print orientation.
                              Files ending _x4 are needed four times; print P11, P12, P13a/b and P26 twice (two rudders).
+viewer/                      Interactive 3D model for a web browser (three.js): the whole boat with sea, cut-away,
+                             X-ray, explode and moving wing/tail/rudders/vane, plus every STL on a print bed with
+                             its print settings. index.html + model.json (built by source/viewer3d.py). Serve the
+                             folder (e.g. python -m http.server) and open it; opening the file directly will not load.
 source/                      Python that generates everything (design.py holds every master dimension).
                              Change a number there and rerun build_stl.py, drawings.py, templates.py.
 
