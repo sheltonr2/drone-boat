@@ -2,6 +2,13 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-19, 13:50 UTC (08:50 local): daily check-in
+
+- Thread #50: nothing new from their side; our 19 Nov 00:33 UTC follow-up is the latest comment (no reply since 13 Nov 08:13 UTC).
+- PC queue empty since 025 (00:13 local); no study checks pending. The decisions the check-in listed as open were made on 18 Nov (launch window, Lizard offing, Mindelo).
+- Candidates for next runs (not queued; Randolph's call): a third and fourth tropical winter (2021-22, 2022-23) for the BVI backup; sea states and fatigue along the westbound tracks (downwind, Christmas trades); station-keeping and dead-boat drift at the Lizard offing; the open model items (knockdown severity, storm losses, #117 wind correction).
+- Next daily check-in Fri 08:47.
+
 ## 2026-11-19, 05:40 UTC (00:40 local): Scilly approach fix (run 025) analysed
 
 - 025 ran 23:12-00:13 local, no errors. Lizard offing with the new approach (via 49.60N 7.20W, 49.70N 6.40W): reached the hold 76.4% (+2.8, -1.0 to +6.8 vs 023b), within 1 km of Scilly 3.0% (was 12.0%); Seven Stones 1.2%, Wolf Rock 1.4%, the Lizard 1.2%, the Manacles 0.2%. Mount's Bay mouth: 71.8%, Scilly 3.0% (was 15.4%), Wolf Rock 5.6%.
