@@ -37,25 +37,27 @@ def part(pid, name, qty, mat, notes, dims):
 
 # --------------------------------------------------------------- wind vane
 @part("P01", "Wind-vane sensor housing", 1, "ASA or PETG, 100% walls 4",
-      ["Two S608-2RS stainless bearings (8x22x7) press in from the top.",
+      ["Two S608-2RS stainless bearings (8x22x7) press in from the top: lower bearing, spacer P27, upper bearing.",
+       "E2 (DFM): one continuous D22.1 bore. Before E2 the lower seat was closed in and the bearing could not be fitted.",
        "AS5600 board sits on cap P03 inside the cavity; magnet on shaft end faces it.",
        "Bottom cavity is closed by cap P03, bonded with thickened epoxy."],
-      {"OD": 40, "Height": 60, "Bearing seats": "2 x D22.1 x 7", "Cavity": "D32 x 34"})
+      {"OD": 40, "Height": 60, "Bearing bore": "D22.1 x 24 from top", "Shoulder": "z 36 (D12 hole)", "Cavity": "D32 x 34"})
 def p01():
     body = cyl(20, 0, 60)
     cav = cyl(16, -1, 34)
     shaft = cyl(6, 33, 61)
-    seat1 = cyl(11.05, 36, 43)
-    seat2 = cyl(11.05, 53, 61)
-    return diff(body, cav, shaft, seat1, seat2), ((-21, 21), (-21, 21), (0, 60))
+    bore = cyl(11.05, 36, 61)        # E2: lower bearing 36-43, spacer P27 43-53, upper bearing 53-60
+    return diff(body, cav, shaft, bore), ((-21, 21), (-21, 21), (0, 60))
 
 @part("P02", "Wind-vane arm with fin and counterweight pocket", 1, "ASA or PETG",
       ["Printed upside-down: z=0 face is the top of the hub in service.",
        "Skirt (D41 inside) overlaps the housing top as a rain labyrinth.",
        "Fill the pocket with lead shot + epoxy until the arm balances on the shaft.",
-       "M3 set screw (tap the D2.5 radial hole) locks the hub on the 8 mm shaft."],
+       "M3 set screw (tap the D2.5 radial hole) locks the hub on the 8 mm shaft.",
+       "One piece is 275 long: it needs a 230 x 230 bed (printed diagonally) or larger. E2: for a smaller bed print P02A + P02B,",
+       "slide the arm into the sleeve with thickened epoxy and pin with an M3 316 bolt and nyloc nut (D3.3 hole, 60 from the shaft)."],
       {"Arm length": "190 + 75", "Fin": "80 x 80 x 3", "Hub": "D46 x 22", "Shaft bore": "D8.1 x 9 blind"})
-def p02():
+def p02(split=None):
     hub = cyl(23, 0, 22)
     skirt_cut = cyl(20.5, 10, 23)
     bore = cyl(4.05, 1, 11)
@@ -64,6 +66,16 @@ def p02():
     cw = box(-75, 0, -9, 9, 0, 12)
     pocket = box(-70, -48, -6, 6, 2, 13)
     setscrew = hole_y(1.25, -24, 0, 0, 5)
+    if split == "A":      # E2 (DFM): hub, counterweight and a 50 mm sleeve, for beds under 230 mm
+        sleeve = box(26, 75, -7, 7, 0, 12)
+        solid = union(hub, box(0, 40, -4, 4, 0, 8), cw, sleeve)
+        slot = box(35, 76, -4.2, 4.2, -1, 8.3)
+        pin = cyl(1.65, -1, 13, c1=60, c2=0)
+        return diff(solid, skirt_cut, bore, pocket, setscrew, slot, pin), ((-76, 76), (-24, 24), (0, 22))
+    if split == "B":      # E2 (DFM): arm and fin; the first 40 mm goes into the P02A sleeve
+        solid = union(box(35.5, 190, -4, 4, 0, 8), fin)
+        pin = cyl(1.65, -1, 9, c1=60, c2=0)
+        return diff(solid, pin), ((35, 201), (-5, 5), (0, 80))
     solid = union(hub, arm, fin, cw)
     return diff(solid, skirt_cut, bore, pocket, setscrew), ((-76, 201), (-24, 24), (0, 80))
 
@@ -71,13 +83,14 @@ def p02():
       ["Spigot (D31.6) slides into the P01 cavity; bond and seal with epoxy.",
        "Recess on top takes the AS5600 board (glue down); cable runs down the D8 hole into the 20 mm stub tube.",
        "Socket fits the 20 mm stub tube; M4 set screw (D3.3 tap hole).",
-       "Printed socket-down as modelled."],
+       "Printed socket-down as modelled. E2 (DFM): 45 deg chamfer under the flange, so it prints without supports."],
       {"Spigot": "D31.6 x 22", "Flange": "D40 x 4", "Socket": "OD28, ID20.4 x 30"})
 def p03():
     socket = cyl(14, 0, 30)
     flange = cyl(20, 30, 34)
     spigot = cyl(15.8, 34, 56)
-    solid = union(socket, flange, spigot)
+    cone = revolve(lambda t: 14 + t, 24, 30, axis="z")   # E2: r 14 at z 24 to r 20 at z 30
+    solid = union(socket, flange, spigot, cone)
     tube = cyl(10.2, -1, 29)
     cable = cyl(4, 28, 57)
     recess = box(-13, 13, -13, 13, 54.5, 57)
@@ -134,12 +147,14 @@ def p06():
        "Rev C4: two 6806 acetal ball bearings with glass balls (30x42x7), 130 mm apart. They cannot rust or seize, but carry only about 170 N each.",
        "Each bearing floats 0.3 mm in its seat on a 42 x 1.5 O-ring (groove in the seat). Beside each is a plain land, D30.6 x 20:",
        "above about 150 N the spar moves 0.3 mm and bears on the lands, which take wave loads of several kN. Wax or grease the lands.",
-       "If you can bore Delrin, open the lands to D36 and bond in Delrin sleeves 36 x 30.6 x 20 (lower friction than the print)."],
+       "If you can bore Delrin, open the lands to D36 and bond in Delrin sleeves 36 x 30.6 x 20 (lower friction than the print).",
+       "E2 (DFM): above the bottom seat, a 2.5 mm flat shoulder for the outer race, then a 45 deg cone to the land, so it prints with no supports. Lower land now z 10.5-30.5."],
       {"OD": 52.3, "Flange": "D66 x 5", "Length": 137, "Bearing seats": "2 x D42.6 x 7, O-ring groove D45.4 x 2.6", "Catcher lands": "2 x D30.6 x 20", "Clearance bore": "D34"})
 def p07():
     solid = union(cyl(33, 0, 5), cyl(26.15, 5, 137))
     cut = [cyl(15.3, -1, 138),                 # catcher land bore D30.6 right through
-           cyl(17.0, 27, 110),                 # clearance between the lands
+           revolve(lambda t: 18.8 - t, 7, 10.5, axis="z"),   # E2: shoulder r 21.3-18.8 flat, then 45 deg cone to the land
+           cyl(17.0, 30.5, 110),               # clearance between the lands (E2: from z 30.5, was 27)
            cyl(21.3, -1, 7), cyl(21.3, 130, 138),          # floating bearing seats D42.6
            cyl(22.7, 2.2, 4.8), cyl(22.7, 132.2, 134.8)]   # O-ring grooves D45.4
     return diff(solid, *cut), ((-33, 33), (-33, 33), (0, 137))
@@ -203,13 +218,15 @@ def foil_prism(chord, t, z0, z1, n=70):
       ["NACA 0012, 120 mm chord, 200 mm span in two 100 mm halves printed standing up.",
        "D6.2 bore at 24 mm from the leading edge takes a 6 mm carbon pivot rod through both halves.",
        "D3.2 bore at 60 mm takes a 3 mm carbon rod to align and stiffen the joint.",
-       "Lower half: 32 x 8 x 4 recess on the bottom face to bond an aluminium 25T servo horn."],
+       "Lower half: 32 x 8 x 4 recess on the bottom face to bond an aluminium 25T servo horn.",
+       "E2 (DFM): lower half also has a D6.2 x 1.2 pocket on the bottom face, 54 from the LE, for the detent's 6 x 1 steel disc."],
       {"Chord": 120, "Span": "2 x 100", "Thickness": 14.4, "Pivot": "D6.2 at 24 from LE"})
 def p10(half="lower"):
     solid = foil_prism(120, 0.12, 0, 100)
     cuts = [cyl(3.1, -1, 101, c1=24, c2=0), cyl(1.6, -1, 101, c1=60, c2=0)]
     if half == "lower":
         cuts.append(box(24 - 10, 24 + 22, -4, 4, -1, 4))
+        cuts.append(cyl(3.1, -1, 1.2, c1=54, c2=0))   # E2: 6 x 1 steel disc for detent P25, r 30 aft of the pivot
     return diff(solid, *cuts), ((0, 120), (-8, 8), (0, 100))
 
 # ---------------------------------------------------------------- rudder
@@ -233,17 +250,18 @@ def p11():
        "Two 316 hose clamps or 20 mm straps through the slots hold the enclosure;",
        "no fixed hole pattern, so it fits whatever the unit measures.",
        "The envelope (66 x 34 x 72) is an ESTIMATE: measure your unit, set SER in",
-       "design.py and rebuild before printing. Base bonds to the pocket pad."],
-      {"Base": "110 x 64 x 5", "Cradle": "inside 34.8 wide x 67 long, walls 4, 40 high", "Strap slots": "2 x 22 x 3"})
+       "design.py and rebuild before printing. Base bonds to the pocket pad.",
+       "E2 (DFM): base cut to 96 x 52 so it fits the 100 x 56 pocket in the aft foam (it was 110 x 64)."],
+      {"Base": "96 x 52 x 5 (E2)", "Cradle": "inside 34.8 wide x 67 long, walls 4, 40 high", "Strap slots": "2 x 22 x 3"})
 def p12():
     S = D.SER; w = S['w'] + 0.8; l = S['l'] + 1.0
-    base = box(-55, 55, -32, 32, 0, 5)
+    base = box(-48, 48, -26, 26, 0, 5)     # E2 (DFM): was 110 x 64, larger than the 100 x 56 foam pocket
     walls = diff(box(-l/2 - 4, l/2 + 4, -w/2 - 4, w/2 + 4, 0, 40), box(-l/2, l/2, -w/2, w/2, 5, 41))
     slots = [box(xs - 1.5, xs + 1.5, -11, 11, -1, 41) for xs in (-l/2 - 2, l/2 + 2)]
     drain = cyl(2, -1, 6)
     cable = box(-l/2 - 5, -l/2 + 1, -6, 6, 5, 18)
-    holes = [cyl(2.15, -1, 6, c1=x, c2=y) for x in (-48, 48) for y in (-25, 25)]
-    return diff(union(base, walls), *slots, drain, cable, *holes), ((-56, 56), (-33, 33), (0, 40))
+    holes = [cyl(2.15, -1, 6, c1=x, c2=y) for x in (-43, 43) for y in (-20, 20)]
+    return diff(union(base, walls), *slots, drain, cable, *holes), ((-49, 49), (-27, 27), (0, 40))
 
 @part("P26", "Rudder servo arm for the 6 mm D-shaft", 2, "PETG, 100% infill",
       ["Rev E: the SER-2000 output is a 6 mm titanium D-shaft, not a 25T spline,",
@@ -482,8 +500,43 @@ def p25():
     pk = [cyl(3.1, 1.8, 6, c1=30 * np.cos(np.radians(t)), c2=30 * np.sin(np.radians(t))) for t in (-8, 8)]
     return diff(solid, *pk), ((17, 39), (-10, 10), (0, 5))
 
+@part("P27", "Vane bearing spacer", 1, "PETG, 100% infill",
+      ["E2 (DFM): sits between the two S608 bearings in P01's D22.1 bore and touches only their outer races.",
+       "Order in the bore, from the top: push the lower bearing down onto the shoulder, drop in the spacer, press in the upper bearing.",
+       "Print flat."],
+      {"OD": 21.6, "ID": 16.0, "Length": 10})
+def p27():
+    return diff(cyl(10.8, 0, 10), cyl(8.0, -1, 11)), ((-11, 11), (-11, 11), (0, 10))
+
+FIT_BORES = [3.3, 4.3, 6.2, 8.05, 8.1, 10.5, 12.1, 12.2, 16.2]          # row 1, left to right
+FIT_BORES2 = [20.3, 22.1, 30.2, 30.6, 42.6]                             # row 2, left to right
+FIT_SOCKETS = [12.2, 16.2, 20.4]                                        # horizontal teardrops, left to right
+
+@part("P00", "Fit-test coupons (print these first)", 1, "Same filament and settings as the real parts",
+      ["E2 (DFM): print before anything else and try the real tubes, rods, bearings and bolts in the holes.",
+       "P00a has the vertical bores, P00b the horizontal (teardrop) sockets; hole sizes and order are on sheet D33.",
+       "Too tight: scale XY up 0.5% or set the slicer's hole compensation. Too loose: the reverse. Then print the parts."],
+      {"P00a": "190 x 80 x 4, 14 bores D3.3-D42.6", "P00b": "100 x 20 x 30, 3 teardrop sockets"})
+def p00(kind="bores"):
+    if kind == "bores":
+        plate = box(-95, 95, -40, 40, 0, 4)
+        cuts = [box(-96, -88, 32, 41, -1, 5)]                        # corner notch marks the top-left
+        x = -88.0
+        for d in FIT_BORES:
+            x += d / 2; cuts.append(cyl(d / 2, -1, 5, c1=x, c2=22)); x += d / 2 + 6
+        x = -90.0
+        for d in FIT_BORES2:
+            x += d / 2; cuts.append(cyl(d / 2, -1, 5, c1=x, c2=-15)); x += d / 2 + 6
+        return diff(plate, *cuts), ((-96, 96), (-41, 41), (0, 4))
+    blk = box(-50, 50, 0, 20, 0, 30)
+    cuts = [hole_y(d / 2, -1, 21, x, 13) for d, x in zip(FIT_SOCKETS, (-30, -2, 30))]
+    return diff(blk, *cuts), ((-51, 51), (-1, 21), (0, 30))
+
 # build list: (file stem, part id, builder kwargs)
-BUILD = [("P01_vane_housing", "P01", {}), ("P02_vane_arm", "P02", {}), ("P03_sensor_cap", "P03", {}),
+BUILD = [("P00a_fit_test_bores", "P00", {"kind": "bores"}), ("P00b_fit_test_sockets", "P00", {"kind": "sockets"}),
+         ("P01_vane_housing", "P01", {}), ("P02_vane_arm", "P02", {}),
+         ("P02A_vane_arm_hub_split", "P02", {"split": "A"}), ("P02B_vane_arm_fin_split", "P02", {"split": "B"}),
+         ("P03_sensor_cap", "P03", {}),
          ("P04_magnet_holder", "P04", {}), ("P05_antenna_platform", "P05", {}), ("P06_transom_bracket", "P06", {}),
          ("P07_mast_bearing_housing", "P07", {}), ("P08_spar_clamp_two_sockets", "P08", {}),
          ("P09_tail_servo_housing", "P09", {}), ("P10a_tail_fin_lower", "P10", {"half": "lower"}),
@@ -494,4 +547,5 @@ BUILD = [("P01_vane_housing", "P01", {}), ("P02_vane_arm", "P02", {}), ("P03_sen
          ("P16_battery_strap_anchor_x4", "P16", {}), ("P17_penetrator_pad_x4", "P17", {}), ("P18_counterweight_pod", "P18", {}),
          ("P19_yb3_platform", "P19", {}), ("P20_nav_light_clamp", "P20", {}),
          ("P21_limp_home_case", "P21", {}), ("P22_switchover_pod", "P22", {}), ("P23_rockblock_plus_bowl", "P23", {}),
-         ("P24_bilge_pump_spacer", "P24", {}), ("P25_tail_detent", "P25", {}), ("P26_rudder_servo_arm", "P26", {})]
+         ("P24_bilge_pump_spacer", "P24", {}), ("P25_tail_detent", "P25", {}), ("P26_rudder_servo_arm", "P26", {}),
+         ("P27_vane_bearing_spacer", "P27", {})]

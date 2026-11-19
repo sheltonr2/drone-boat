@@ -192,6 +192,8 @@ These come from the simulator on invented weather, without hurricanes. Virginia 
 
 ## Budget
 
+**Full bill of materials (Rev E2, 19 Nov 2026):** `build-files/BOM.csv` lists every part, material, fastener and consumable with quantities, prices and purchase links: about $4,870 including the YB3 (docs/DFM_Review.md). The figures below are the earlier itemised estimates, which left out most consumables, fasteners, paint and spares.
+
 Rev C (10 Nov 2026) parts total about $2,270, plus about $630 for the YB3 backup tracker. Rev B sail-only was about $2,010; Rev C adds about $260 (second servo, rudder bushings and seals, bigger spar and bearings, two more WetLinks, hull foam, battery box, light, lead) and drops the $35 backup D-cell. The thruster was already outside the sail-only figure, so removing it saves nothing here. Airtime is a separate running cost of $40–$60 a month, plus the tracker's airtime.
 
 | Configuration | Hardware total (USD) |

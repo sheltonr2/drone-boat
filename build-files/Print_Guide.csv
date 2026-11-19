@@ -1,0 +1,35 @@
+file,part,name,qty,material,walls,infill,orientation,supports,size_mm,min_bed,grams_each,hours_each,notes
+stl/P00a_fit_test_bores.stl,P00,Fit-test coupons (print these first),1,PETG,3,100%,Flat,None,190 x 80 x 4,220 x 220,55,4.9,"Print first, with the filament and settings you will use"
+stl/P00b_fit_test_sockets.stl,P00,Fit-test coupons (print these first),1,PETG,3,100%,As modelled (holes horizontal),None,100 x 20 x 30,220 x 220,59,5.2,Checks the teardrop sockets
+stl/P01_vane_housing.stl,P01,Wind-vane sensor housing,1,ASA,4,100%,As modelled (cavity down),None (32 mm bridge at z 34: bridge settings on),40 x 40 x 60,220 x 220,41,3.7,
+stl/P02_vane_arm.stl,P02,Wind-vane arm with fin and counterweight pocket,1,ASA,4,40%,As modelled (hub top on the bed),None,275 x 46 x 80,230 x 230 (diagonal),46,4.1,275 long: needs a 230 x 230 bed diagonally; brim for the fin
+stl/P02A_vane_arm_hub_split.stl,P02,Wind-vane arm with fin and counterweight pocket,0,ASA,4,40%,As modelled,None,150 x 46 x 22,220 x 220,28,2.6,Use P02A + P02B instead of P02 on a small bed
+stl/P02B_vane_arm_fin_split.stl,P02,Wind-vane arm with fin and counterweight pocket,0,ASA,4,40%,As modelled (fin standing),None,164 x 8 x 80,220 x 220,22,2.1,Brim; fin is 3 mm thick
+stl/P03_sensor_cap.stl,P03,Sensor cap and stub-tube socket,1,ASA,4,100%,As modelled (socket down),None (E2 chamfer),40 x 40 x 56,220 x 220,33,3.0,
+stl/P04_magnet_holder.stl,P04,Magnet holder for vane shaft,1,PETG,4,100%,As modelled,None,14 x 14 x 10,220 x 220,1,0.4,
+stl/P05_antenna_platform.stl,P05,Antenna platform clamp,1,ASA,4,40%,As modelled,Build plate only: the D42 GPS pocket under the plate,120 x 64 x 25,220 x 220,35,3.2,
+stl/P06_transom_bracket.stl,P06,Transom bracket for 20 mm stub tube,1,ASA,6,40%,As modelled,None,60 x 100 x 44,220 x 220,71,6.2,
+stl/P07_mast_bearing_housing.stl,P07,Mast bearing housing with catcher lands,1,PETG,4,100%,Flange down,None (E2 chamfer),66 x 66 x 137,220 x 220,222,18.8,Tallest part (137)
+stl/P08_spar_clamp_two_sockets.stl,P08,Spar clamp with tail-boom and counterweight-arm sockets,1,ASA,4,100%,As modelled,None,126 x 62 x 40,220 x 220,92,8.0,
+stl/P09_tail_servo_housing.stl,P09,Tail servo housing (boom end),1,ASA,4,40%,As modelled,None,92 x 30 x 48,220 x 220,53,4.7,Check servo tab spacing first
+stl/P10a_tail_fin_lower.stl,P10,"Tail fin, lower and upper halves",1,PETG,3,15%,Standing on the root,None,120 x 14 x 100,220 x 220,82,7.2,Brim 5 mm
+stl/P10b_tail_fin_upper.stl,P10,"Tail fin, lower and upper halves",1,PETG,3,15%,Standing,None,120 x 14 x 100,220 x 220,83,7.2,Brim 5 mm
+stl/P11_tiller_arm.stl,P11,Rudder tiller arm,2,PETG,4,100%,Flat,None,89 x 26 x 16,220 x 220,16,1.6,Print 2
+stl/P12_rudder_servo_cradle.stl,P12,Rudder servo cradle (Blue Trail SER-2000),2,PETG,5,40%,Base down,None,96 x 52 x 40,220 x 220,51,4.5,Print 2; rebuild for your SER-2000 size first
+stl/P13a_rudder_core_upper.stl,P13,"Rudder blade core, upper and lower halves",2,PETG,3,15% gyroid,Standing,None,120 x 14 x 115,220 x 220,89,7.7,Print 2; brim
+stl/P13b_rudder_core_lower.stl,P13,"Rudder blade core, upper and lower halves",2,PETG,3,15% gyroid,Standing,None,120 x 14 x 115,220 x 220,89,7.7,Print 2; brim
+stl/P14a_bulb_pattern_fwd.stl,P14,"Keel bulb casting pattern, forward and aft halves",1,PLA,3,15%,Split face down,None,71 x 72 x 160,220 x 220,328,27.6,Pattern only
+stl/P14b_bulb_pattern_aft.stl,P14,"Keel bulb casting pattern, forward and aft halves",1,PLA,3,15%,Split face down,None,69 x 70 x 160,220 x 220,228,19.3,Pattern only
+stl/P15_electronics_tray.stl,P15,Electronics tray,1,PETG,3,30%,Flat,None,200 x 130 x 6,220 x 220,67,5.9,Trim to the box
+stl/P16_battery_strap_anchor_x4.stl,P16,Battery strap anchor,4,PETG,4,40%,Flat,None (28 mm slot bridge),60 x 24 x 11,220 x 220,8,1.0,Print 4
+stl/P17_penetrator_pad_x4.stl,P17,Penetrator boss pad,4,PETG,4,100%,Flat,None,40 x 40 x 10,220 x 220,15,1.5,Print 4 (6 if every WetLink gets one)
+stl/P18_counterweight_pod.stl,P18,Wing counterweight pod,1,ASA,4,40%,As modelled,None,92 x 64 x 74,220 x 220,62,5.5,
+stl/P19_yb3_platform.stl,P19,Backup tracker (YB3) deck cradle,1,ASA,5,40%,Flat,None,170 x 100 x 13,220 x 220,75,6.6,Check YB3 size first
+stl/P20_nav_light_clamp.stl,P20,Navigation light clamp,1,ASA,4,40%,As modelled,None,93 x 36 x 20,220 x 220,17,1.7,
+stl/P21_limp_home_case.stl,P21,Limp-home controller case (potting shell),1,PETG,4,100% back,Back down,None,124 x 66 x 30,220 x 220,53,4.7,
+stl/P22_switchover_pod.stl,P22,Servo switchover pod (potting shell),1,PETG,4,40%,As modelled,None,68 x 40 x 22,220 x 220,14,1.4,
+stl/P23_rockblock_plus_bowl.stl,P23,RockBLOCK Plus bowl (hatch lid),1,ASA,5,40%,Floor down,None (chamfered flange),166 x 166 x 43,220 x 220,137,11.8,
+stl/P24_bilge_pump_spacer.stl,P24,Bilge pump spacer (mast tube),1,PETG,5,40%,Standing on end,None,32 x 24 x 50,220 x 220,19,1.9,
+stl/P25_tail_detent.stl,P25,Tail detent magnet carrier,1,PETG,4,100%,Flat,None,20 x 18 x 5,220 x 220,2,0.4,
+stl/P26_rudder_servo_arm.stl,P26,Rudder servo arm for the 6 mm D-shaft,2,PETG,4,100%,Flat,None,54 x 20 x 12,220 x 220,7,0.9,Print 2
+stl/P27_vane_bearing_spacer.stl,P27,Vane bearing spacer,1,PETG,4,100%,Flat,None,22 x 22 x 10,220 x 220,2,0.5,E2: new part

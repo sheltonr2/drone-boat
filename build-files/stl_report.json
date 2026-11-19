@@ -1,7 +1,7 @@
 {
  "P03_sensor_cap": {
   "pid": "P03",
-  "tris": 20200,
+  "tris": 22264,
   "watertight": true,
   "bad_edges": 0,
   "extent": [
@@ -9,9 +9,9 @@
    40.0,
    56.0
   ],
-  "volume_cm3": 29.0,
+  "volume_cm3": 30.8,
   "res": 0.25,
-  "sec": 62.0
+  "sec": 65.0
  },
  "P04_magnet_holder": {
   "pid": "P04",
@@ -57,7 +57,7 @@
  },
  "P07_mast_bearing_housing": {
   "pid": "P07",
-  "tris": 18508,
+  "tris": 18074,
   "watertight": true,
   "bad_edges": 0,
   "extent": [
@@ -67,7 +67,7 @@
   ],
   "volume_cm3": 174.9,
   "res": 0.45,
-  "sec": 53.0
+  "sec": 44.4
  },
  "P08_spar_clamp_two_sockets": {
   "pid": "P08",
@@ -99,7 +99,7 @@
  },
  "P10a_tail_fin_lower": {
   "pid": "P10",
-  "tris": 6762,
+  "tris": 7188,
   "watertight": true,
   "bad_edges": 0,
   "extent": [
@@ -107,9 +107,9 @@
    14.4,
    100.0
   ],
-  "volume_cm3": 112.9,
+  "volume_cm3": 112.8,
   "res": 0.35,
-  "sec": 100.6
+  "sec": 48.7
  },
  "P10b_tail_fin_upper": {
   "pid": "P10",
@@ -123,7 +123,7 @@
   ],
   "volume_cm3": 113.8,
   "res": 0.35,
-  "sec": 61.8
+  "sec": 44.4
  },
  "P11_tiller_arm": {
   "pid": "P11",
@@ -281,7 +281,7 @@
  },
  "P01_vane_housing": {
   "pid": "P01",
-  "tris": 29026,
+  "tris": 26554,
   "watertight": true,
   "bad_edges": 0,
   "extent": [
@@ -289,9 +289,9 @@
    40.0,
    60.0
   ],
-  "volume_cm3": 41.3,
+  "volume_cm3": 38.6,
   "res": 0.25,
-  "sec": 116.0
+  "sec": 99.7
  },
  "P02_vane_arm": {
   "pid": "P02",
@@ -305,7 +305,7 @@
   ],
   "volume_cm3": 57.0,
   "res": 0.45,
-  "sec": 46.6
+  "sec": 37.1
  },
  "P21_limp_home_case": {
   "pid": "P21",
@@ -351,17 +351,17 @@
  },
  "P12_rudder_servo_cradle": {
   "pid": "P12",
-  "tris": 9454,
+  "tris": 9510,
   "watertight": true,
   "bad_edges": 0,
   "extent": [
-   110.0,
-   64.0,
+   96.0,
+   52.0,
    40.0
   ],
-  "volume_cm3": 60.2,
+  "volume_cm3": 49.9,
   "res": 0.35,
-  "sec": 62.8
+  "sec": 51.2
  },
  "P25_tail_detent": {
   "pid": "P25",
@@ -404,5 +404,75 @@
   "volume_cm3": 18.7,
   "res": 0.25,
   "sec": 49.9
+ },
+ "P00a_fit_test_bores": {
+  "pid": "P00",
+  "tris": 17638,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   190.0,
+   80.0,
+   4.0
+  ],
+  "volume_cm3": 43.4,
+  "res": 0.45,
+  "sec": 44.8
+ },
+ "P00b_fit_test_sockets": {
+  "pid": "P00",
+  "tris": 3382,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   100.0,
+   20.0,
+   30.0
+  ],
+  "volume_cm3": 46.1,
+  "res": 0.35,
+  "sec": 21.4
+ },
+ "P02A_vane_arm_hub_split": {
+  "pid": "P02",
+  "tris": 8352,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   150.0,
+   46.0,
+   22.0
+  ],
+  "volume_cm3": 34.5,
+  "res": 0.45,
+  "sec": 19.7
+ },
+ "P02B_vane_arm_fin_split": {
+  "pid": "P02",
+  "tris": 2398,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   164.5,
+   8.0,
+   80.0
+  ],
+  "volume_cm3": 27.3,
+  "res": 0.45,
+  "sec": 15.5
+ },
+ "P27_vane_bearing_spacer": {
+  "pid": "P27",
+  "tris": 5920,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   21.6,
+   21.6,
+   10.0
+  ],
+  "volume_cm3": 1.7,
+  "res": 0.25,
+  "sec": 10.7
  }
 }

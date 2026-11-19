@@ -54,10 +54,10 @@ def sheet_cover(pdf, index):
     fig, bg = new_sheet("D00", "Cover, index and general notes")
     bg.text(20, 262, "Solar-sail ocean drone, 1.5 m", fontsize=20, weight="bold")
     bg.text(20, 252, "Drawing set for the custom-built parts, with 3D-print files and full-size templates", fontsize=10, color=BLUE)
-    y = table(bg, 20, 240, ["Sheet", "Title"], index, [18, 120], fs=6.3, rh=4.4)
+    y = table(bg, 20, 240, ["Sheet", "Title"], index, [18, 120], fs=5.8, rh=3.55)
     rows = [[p['id'], p['name'], p['qty'], p['mat']] for p in sorted(Pm.PARTS.values(), key=lambda p: p['id'])]
-    table(bg, 170, 240, ["Part", "3D-printed part", "Qty", "Material / settings"], rows, [12, 95, 9, 62], fs=5.6, rh=4.1)
-    notes(bg, 20, y - 6, "General notes", [
+    yp = table(bg, 170, 240, ["Part", "3D-printed part", "Qty", "Material / settings"], rows, [12, 95, 9, 62], fs=5.6, rh=3.7)
+    NOTES = [
         "1. All dimensions in millimetres. Model origin: x aft from the bow, z up from the hull bottom at midships, y to port.",
         f"2. Design waterline (DWL) z = {D.DWL:.0f} at about {D.MASS_KG:.1f} kg all-up mass (Rev B: z 90 at about 21 kg).",
         "3. Printed parts: 0.4 mm nozzle, 0.2 mm layers, 4+ walls. Use ASA outdoors in UV; PETG is fine below deck.",
@@ -96,7 +96,14 @@ def sheet_cover(pdf, index):
         "   membrane vents, Schrader test valve, humidity sensor; sealed rudder servos (SER-2000) in cradles P12 with arms P26 and spring pushrod links; tail servo potted,",
         "   detent P25; weed fairing fin-to-bulb (D03, D04, D05, D06, D08, T21; docs/Design_RevE.md). 28.5 kg, DWL z 106.",
         "Rev E1 (2026-11-14; part fixes, docs/Design_RevE.md): tail boom 16 x 14 carbon (was 12 x 10) with sockets in P08 and P09 to suit, about 25 g more lead",
-        f"   in P18; steering wave filter; leak SAFE limit 1.0 kg (the sump holds 1.2 L). Launch 45 km off Hatteras. {D.MASS_KG:.1f} kg, DWL z {D.DWL:.0f}."], fs=5.4, lh=3.05)
+        f"   in P18; steering wave filter; leak SAFE limit 1.0 kg (the sump holds 1.2 L). Launch 45 km off Hatteras. {D.MASS_KG:.1f} kg, DWL z {D.DWL:.0f}.",
+        "Rev E2 (2026-11-19; design for manufacture, docs/DFM_Review.md; no change to shape, mass or performance): P01 bore opened so the",
+        "   lower bearing can be fitted, new spacer P27; P03 and P07 print without supports; P10a disc pocket; P12 base fits its pocket;",
+        "   P02A/B split for 220 beds; fit coupons P00a/b. New sheets D30 wiring, D31 laminates and build sequence, D32 hardware and",
+        "   linkage, D33 print guide. Full bill of materials: BOM.csv; print settings: Print_Guide.csv."]
+    k = next(i for i, ln in enumerate(NOTES) if ln.startswith("Rev C4"))
+    notes(bg, 20, y - 5, "General notes", NOTES[:k], fs=5.2, lh=2.95)
+    notes(bg, 170, yp - 5, "Revision history (continued)", NOTES[k:], fs=5.2, lh=2.95)
     pdf.savefig(fig); plt.close(fig)
 
 # ------------------------------------------------------------------ D01 general arrangement
@@ -297,8 +304,8 @@ def sheet_interior(pdf):
     ax.add_patch(Rectangle((E['x0'], E['z0']), E['x1'] - E['x0'], E['h'], fc="#d9e8d4", ec=INK, lw=MED))
     ax.plot([E['x0'] - 8, E['x1'] + 8], [E['z0'] - 3] * 2, color=INK, lw=1.2)
     ax.plot([D.SUMP['x0'], D.SUMP['x1']], [D.SUMP['top_z']] * 2, color=WATER, lw=0.6, ls="--")
-    leader(ax, (D.SUMP['x0'] + 30, 30), (640, 318), "Sump: the only open space (3 L max), water line dashed", color=BLUE, ha="right")
-    leader(ax, (E['x0'] + 40, E['z0'] - 3), (1010, 288), "C1: box on a glassed foam shelf, bottom z 118,\n70 mm above the sump; glands on top", ha="right")
+    leader(ax, (D.SUMP['x0'] + 30, 30), (20, 520), "Sump: the only open space (3 L max), water line dashed", color=BLUE, ha="left")
+    leader(ax, (E['x0'] + 40, E['z0'] - 3), (700, 440), "C1: box on a glassed foam shelf, bottom z 118, 70 mm above the sump; glands on top", ha="left")
     zt = D.hull_z_at(R['stock_x'], D.RUDDER_Y[1])
     ax.add_patch(Rectangle((R['stock_x'] - 9, zt), 18, R['trunk_top_z'] - zt, fill=False, lw=MED))
     ax.plot([R['stock_x']] * 2, [R['bot_z'] + 8, 196], color=INK, lw=0.8)
@@ -310,7 +317,7 @@ def sheet_interior(pdf):
     ax.add_patch(Rectangle((MX['x0'], MX['z0']), MX['x1'] - MX['x0'], MX['z1'] - MX['z0'], fc="#f2d7d0", ec=INK, lw=MED))
     ax.add_patch(Rectangle((RB['x'] - RB['bowl_od']/2, 238 - RB['depth']), RB['bowl_od'], RB['depth'], fill=False, lw=THIN))
     ax.add_patch(Rectangle((RB['x'] - RB['dia']/2, 238 - RB['depth'] + 2), RB['dia'], RB['h'], fc="#cfd8e3", ec=INK, lw=MED))
-    leader(ax, (LH['x0'] + 15, LH['z0']), (20, 122), "D: limp-home controller P21\n(own GPS, compass, fused feed)", ha="left")
+    leader(ax, (LH['x0'] + 15, LH['z0']), (20, 480), "D: limp-home controller P21 (own GPS, compass, fused feed)", ha="left")
     # Rev E: bilge pump, hoses, vents, humidity sensor
     PU, PK, PO = D.PUMP, D.PUMP_PICKUP, D.PUMP_OUTLET
     ax.add_patch(Rectangle((PU['x'] - PU['d']/2, PU['z0']), PU['d'], PU['z1'] - PU['z0'], fc="#d6e6f5", ec=INK, lw=MED, ls="--"))
@@ -323,27 +330,27 @@ def sheet_interior(pdf):
         zv = 238 if vx < 600 else E['z0'] + E['h']
         ax.add_patch(Rectangle((vx - 8, zv - 1), 16, 4, fc="#7aa7d6", ec=INK, lw=THIN))
     ax.add_patch(Rectangle((D.BME[0] - 6, D.BME[2] - 4), 12, 8, fc="#f2d7d0", ec=INK, lw=THIN))
-    leader(ax, (PU['x'] + PU['d']/2, 90), (700, 372), "E: bilge pump on P24, port of the mast tube (dashed)", color=BLUE, ha="left")
-    leader(ax, (PK[0], PK[2]), (870, -25), "E: pump strainer", color=BLUE, ha="right")
-    leader(ax, (PO['x'], 204), (380, 400), "E: outlet loop to z 226, check valve, deck fitting aft of the hatch (stbd)", color=BLUE, ha="left")
-    leader(ax, (D.VENTS[1][0], E['z0'] + E['h'] + 2), (1290, 400), "E: membrane vents (hatch lid, box lid)", color=BLUE, ha="left")
-    leader(ax, (D.BME[0], D.BME[2] + 4), (20, 372), "E: humidity and pressure sensor", ha="left")
-    leader(ax, (RB['x'] - 40, 236), (60, 336), "D: RockBLOCK Plus in bowl P23 in the hatch lid", ha="left")
-    leader(ax, (MX['x0'] + 10, MX['z1']), (1290, 300), "D: switchover pod P22", ha="left")
+    leader(ax, (PU['x'] + PU['d']/2, 90), (700, 640), "E: bilge pump on P24, port of the mast tube (dashed)", color=BLUE, ha="left")
+    leader(ax, (PK[0], PK[2]), (600, 320), "E: pump strainer", color=BLUE, ha="left")
+    leader(ax, (PO['x'], 204), (700, 600), "E: outlet loop to z 226, check valve, deck fitting aft of the hatch (stbd)", color=BLUE, ha="left")
+    leader(ax, (D.VENTS[1][0], E['z0'] + E['h'] + 2), (700, 560), "E: membrane vents (hatch lid, box lid)", color=BLUE, ha="left")
+    leader(ax, (D.BME[0], D.BME[2] + 4), (20, 640), "E: humidity and pressure sensor", ha="left")
+    leader(ax, (RB['x'] - 40, 236), (20, 600), "D: RockBLOCK Plus in bowl P23 in the hatch lid", ha="left")
+    leader(ax, (MX['x0'] + 10, MX['z1']), (1150, 560), "D: switchover pod P22", ha="left")
     for xp in (560, 1000, 1330):
         zp = float(D.keel_z(xp)) + 14 if xp < b1 else 116
         ax.add_patch(Circle((xp, zp), 5, fc=BLUE, ec=BLUE))
-    leader(ax, (D.MAST_X + 27, 200), (330, 140), "Mast tube 2 in. sch 40 PVC,\nglassed to hull + deck")
-    leader(ax, (D.MAST_X, 135), (200, 70), "6-wire capsule slip ring\n(tail servo power + signal)")
-    leader(ax, (700, 20), (600, -25), "C2: keel box takes the fin tenon (60 deep), 2 x M10 rods,\nG10 plate on top; ply floors at x 650 and x 800 (D04)", ha="right")
-    leader(ax, (870, 210), (830, 258), "Sealed battery box (O-ring lid, removable), strapped down on P16")
-    leader(ax, (1100, 190), (1060, 318), "IP68 box: Pixhawk, ESP32, GV-5 MPPT (tray P15); D: boards coated")
-    leader(ax, (R['stock_x'], 120), (1500, 30), "Twin rudder trunks (x2,\n100 off centre), top z 175")
-    leader(ax, (1330, 168), (1180, 40), "E: sealed servos (SER-2000) in cradles P12,\narms P26, tillers P11 (x2), aft-foam pockets")
-    leader(ax, (150, 120), (20, 258), "Foam-filled, sealed (no fittings)", ha="left")
-    leader(ax, (b0, 60), (250, -25), "Bulkhead x 300 (T17)", ha="right")
-    leader(ax, (b1, 60), (1150, -25), "Bulkhead x 1260 (T18)", ha="right")
-    leader(ax, (560, float(D.keel_z(560)) + 14), (60, 288), "Leak probes (SOS) at the low points of each dry space", color=BLUE)
+    leader(ax, (D.MAST_X + 27, 200), (20, 440), "Mast tube 2 in. sch 40 PVC, glassed to hull + deck", ha="left")
+    leader(ax, (D.MAST_X, 135), (20, 400), "6-wire capsule slip ring (tail servo power + signal)", ha="left")
+    leader(ax, (700, 20), (20, 360), "C2: keel box takes the fin tenon (60 deep), 2 x M10 rods, G10 plate on top; ply floors at x 650 and x 800 (D04)", ha="left")
+    leader(ax, (870, 210), (700, 520), "Sealed battery box (O-ring lid, removable), strapped down on P16", ha="left")
+    leader(ax, (1100, 190), (700, 480), "IP68 box: Pixhawk, ESP32, GV-5 MPPT (tray P15); D: boards coated", ha="left")
+    leader(ax, (R['stock_x'], 120), (1100, 360), "Twin rudder trunks (x2, 100 off centre), top z 175", ha="left")
+    leader(ax, (1330, 168), (700, 400), "E: sealed servos (SER-2000) in cradles P12, arms P26, tillers P11 (x2), aft-foam pockets", ha="left")
+    leader(ax, (150, 120), (20, 320), "Foam-filled, sealed (no fittings)", ha="left")
+    leader(ax, (b0, 60), (350, 320), "Bulkhead x 300 (T17)", ha="left")
+    leader(ax, (b1, 60), (800, 320), "Bulkhead x 1260 (T18)", ha="left")
+    leader(ax, (560, float(D.keel_z(560)) + 14), (20, 560), "Leak probes (SOS) at the low points of each dry space", color=BLUE)
     ax.plot([0, 1500], [D.DWL, D.DWL], color=WATER, lw=0.5)
     ax2 = view(fig, 15, 70, (-20, 1560), (-220, 220), s, "INTERIOR PLAN (below deck, at z 120)")
     poly(ax2, hull_plan(), lw=MED, ec=GREY)
@@ -992,7 +999,8 @@ def sheet_parts(pdf, blocks, num):
 
 def main():
     printed = [(stem, pid) for stem, pid, kw in Pm.BUILD if not stem.endswith("b_tail_fin_upper") and stem not in
-               ("P13b_rudder_core_lower", "P14b_bulb_pattern_aft")]
+               ("P13b_rudder_core_lower", "P14b_bulb_pattern_aft", "P02A_vane_arm_hub_split", "P02B_vane_arm_fin_split",
+                "P00a_fit_test_bores", "P00b_fit_test_sockets")]
     pairs = [printed[i:i+2] for i in range(0, len(printed), 2)]
     index = [["D00", "Cover, index and general notes"], ["D01", "General arrangement"], ["D02", "Hull lines and table of offsets"],
              ["D03", "Interior arrangement and systems"], ["D04", "Keel fin and lead bulb"], ["D05", "Twin rudders, stocks and steering"],
@@ -1000,12 +1008,16 @@ def main():
              ["D09", "Watertight subdivision, foam fill, battery box, labels"]]
     for k, pr in enumerate(pairs):
         index.append([f"D{10 + k:02d}", "Printed parts " + ", ".join(p for _, p in pr)])
+    index += [["D30", "Electrical wiring diagram, fuses, penetrations (E2)"], ["D31", "Laminate schedule, strongback, build sequence (E2)"],
+              ["D32", "Hardware schedule, steering linkage, spring link (E2)"], ["D33", "3D-printing guide and fit coupons (E2)"]]
     with PdfPages(f"{OUT}/Drawings.pdf") as pdf:
         sheet_cover(pdf, index)
         sheet_ga(pdf); sheet_lines(pdf); sheet_interior(pdf); sheet_keel(pdf)
         sheet_rudder(pdf); sheet_wing(pdf); sheet_mast(pdf); sheet_deck(pdf); sheet_subdivision(pdf)
         for k, pr in enumerate(pairs):
             sheet_parts(pdf, pr, f"D{10 + k:02d}")
+        import drawings_dfm as DF
+        DF.sheet_wiring(pdf); DF.sheet_composites(pdf); DF.sheet_hardware(pdf); DF.sheet_printing(pdf)
     print("ok", len(index), "sheets")
 
 if __name__ == "__main__":

@@ -1,8 +1,12 @@
-SOLAR-SAIL OCEAN DRONE 1.5 m  -  BUILD FILES (Rev E, 2026-11-13)
+SOLAR-SAIL OCEAN DRONE 1.5 m  -  BUILD FILES (Rev E2, 2026-11-19)
 
-Drawings.pdf                 23 tabloid sheets (11 x 17 in): general arrangement, hull lines + offsets,
+Drawings.pdf                 28 tabloid sheets (11 x 17 in): general arrangement, hull lines + offsets,
                              interior, keel + bulb, twin rudders, wing + tail, mast/stub, hatch,
-                             subdivision + foam fill + labels (D09), and one sheet per pair of printed parts.
+                             subdivision + foam fill + labels (D09), one sheet per pair of printed parts (D10-D23),
+                             wiring (D30), laminates + build sequence (D31), hardware + linkage (D32), print guide (D33).
+BOM.csv                      Full bill of materials: every part, material, fastener and consumable, with quantities,
+                             prices (web = seen on the linked page in Nov 2026, est = estimate) and purchase links.
+Print_Guide.csv              Every STL: quantity, material, walls/infill, orientation, supports, grams, hours.
 Templates_1to1_Letter.pdf    Full-size cutting templates tiled on US Letter. Print at 100% / Actual size
                              and check the 100 mm bar on each page. Overlap 12 mm; align red dashed lines.
                              T01-T09 hull frames, T10 transom, T11 stem, T12/T13 fin root/tip,
@@ -11,12 +15,14 @@ Templates_1to1_Letter.pdf    Full-size cutting templates tiled on US Letter. Pri
                              T21 weed fairing (Rev E).
 dxf/                         The same templates as DXF (R12, millimetres) for CNC, laser or a vinyl cutter,
                              plus body_plan_all_stations.dxf.
-stl/                         29 STL files for the 26 printed parts (P01-P26), already in print orientation.
+stl/                         34 STL files: parts P01-P27, the P02A/B split option and fit coupons P00a/b,
+                             already in print orientation.
                              Files ending _x4 are needed four times; print P11, P12, P13a/b and P26 twice (two rudders).
 source/                      Python that generates everything (design.py holds every master dimension).
                              Change a number there and rerun build_stl.py, drawings.py, templates.py.
 
 Print settings: 0.4 mm nozzle, 0.2 mm layers, 4+ walls. ASA for parts outside in the sun, PETG below deck.
+Print the fit coupons P00a and P00b FIRST and try the real tubes, rods, bearings and bolts in them (D33).
 Bulb pattern P14 is a pattern for a plaster/sand mould: never pour lead into a print.
 
 Check before printing: the SER-2000 enclosure size for cradle P12 (66 x 34 x 72 is an ESTIMATE: measure,
@@ -106,3 +112,24 @@ Rev E (2026-11-13)  docs/Design_RevE.md
   magnetic-encoder servo with detent P25 so it fails at +/-8 deg, not free. Weed: fairing fin-to-bulb (T21).
   Not adopted: flush bulb nose (W2) and raked rudders (W3). 28.5 kg, DWL z 106.
   Sheets changed: D00, D03, D04, D05, D06, D08, parts sheets. New: P24, P25, P26, T21. Changed: P09 (notes), P12.
+
+Rev E1 (2026-11-14)  docs/Design_RevE.md, docs/Fatigue_Review.md
+  Tail boom 16 x 14 carbon, 600 long (was 12 x 10): in 5 m beam seas the old tube saw stress cycles near its strength.
+  P08 aft socket D16.2 x 37 (wider, taller boss) and P09 socket D16.2: REPRINT both. About 25 g more lead in P18
+  (about 0.91 kg). Steering wave filter; leak SAFE limit 1.0 kg. Sheets: D00, D06, P08 and P09 sheets.
+
+Rev E2 (2026-11-19)  docs/DFM_Review.md  -  design for manufacture; no change to shape, mass or performance
+  Printed parts:
+  1. P01: the lower vane bearing seat was closed in, so the bearing could not be fitted. Now one D22.1 bore from
+     the top: lower bearing, new spacer P27, upper bearing. REPRINT P01; print P27.
+  2. P03: 45 deg chamfer under the flange; P07: shoulder + 45 deg cone above the bottom bearing seat (lower land
+     now z 10.5-30.5). Both print without supports. REPRINT if not printed yet.
+  3. P10a: D6.2 x 1.2 pocket for the detent's steel disc. P12: base cut to 96 x 52 so it fits the 100 x 56 foam pocket.
+  4. P02 is 275 long: print it diagonally on a 230 x 230 bed, or print P02A + P02B and join them.
+  5. New fit coupons P00a (vertical bores) and P00b (horizontal teardrop sockets).
+  Drawings: new D30-D33; D03 labels rearranged; all title blocks E2.
+  Gaps filled: 5 V logic supplies for both ESP32s, a Pixhawk power switch, battery-box lid closure and its two
+  cable exits (W7, W8: 8 WetLinks, not 6), wire gauges and fuse ratings, linkage geometry, laminate quantities.
+  Open items for the builder (DFM_Review section 4): solar panels to fit the deck bays, the 30 x 22 spar, metric
+  12 mm rod and bar in the US, the SER-2000 size, the GV-5 sealing.
+
