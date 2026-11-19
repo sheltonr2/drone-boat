@@ -2,6 +2,14 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-19, 00:35 UTC (18 Nov 19:35 local): offshore holding and BVI two-winter runs analysed; follow-up posted
+
+- Queue finished and empty: 023 download 15:35 local (all 15 ERA5 months), 023b 16:38, 024a 17:01, 024b 18:14, 024c 18:39. No errors.
+- 023b (docs/data/arrival_analysis.py): reached the hold, Lizard offing 73.6% (+8.8 vs Falmouth Bay), mouth of Mount's Bay 71.0% (+19.8 vs inside the bay); Manacles/Lizard close passes almost gone; still -4 to -6 points vs stopping 40 km out; 12-15% within 1 km of Scilly on the approach. Recommendation (Randolph's call): Lizard offing, Mount's Bay mouth as alternative; move the Bishop Rock waypoint out (not queued).
+- 024 (docs/data/ew_024_analysis.py, two winters): Mindelo 86.0% (84.8/87.2), 93 d, 51% March arrivals, March arrivals launched 23 Nov-4 Jan (median 14 Dec); El Hierro south 81.0%; Gran Canaria south 78.0%; Mindelo +8.0 vs Gran Canaria, +5.0 vs El Hierro (paired). May launches 82.6% but 19.6% TS+ / 10.5% hurricane within 200 km. Southern BVI approach: Virgin Gorda <1 km 3%. Recommendation (Randolph's call): Mindelo, launch ~25 Nov-5 Jan.
+- Fixed a half-month bucketing bug (day 31 counted separately) in ew_screen_analysis.py and ew_024_analysis.py; 022 doc numbers unaffected except the late-December bucket.
+- Thread read first (nothing new from their side). Posted the follow-up promised on 16 Nov ([comment](https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-6995886553), text collab/post_2026-11-18_bvi2.md); API shows exactly one new comment.
+
 ## 2026-11-18, 13:50 UTC (08:50 local): daily check-in
 
 - Thread #50: nothing new from their side; our 16 Nov 21:35 UTC BVI post is still the latest comment (no reply since 13 Nov 08:13 UTC).

@@ -1,0 +1,332 @@
+{
+ "mindelo": {
+  "name": "Mindelo (Cape Verde), launches 15 Nov-10 Jan",
+  "n": 500,
+  "success": 86,
+  "ci95": [
+   83.0,
+   89.0
+  ],
+  "by_season": {
+   "2023-24": [
+    250,
+    84.8
+   ],
+   "2024-25": [
+    250,
+    87.2
+   ]
+  },
+  "days_median": 92.74,
+  "days_p10": 75.24,
+  "days_p90": 106.09,
+  "arrivals_by_month": {
+   "Aug": 1,
+   "Feb": 88,
+   "Mar": 257,
+   "Apr": 80,
+   "May": 4
+  },
+  "march_share": 51.4,
+  "march_launch_p10_p50_p90": [
+   "23 Nov",
+   "14 Dec",
+   "04 Jan"
+  ],
+  "by_half_month": {
+   "Nov 1-15": [
+    4,
+    100
+   ],
+   "Nov 16-end": [
+    138,
+    90.57971014492753
+   ],
+   "Dec 1-15": [
+    142,
+    78.87323943661971
+   ],
+   "Dec 16-end": [
+    138,
+    87.68115942028986
+   ],
+   "Jan 1-15": [
+    78,
+    87.17948717948718
+   ]
+  },
+  "reached_hold": 67.4,
+  "weed_per_voyage": 0.53,
+  "outcomes": {
+   "arrived_tracked": 108,
+   "arrived_reporting": 322,
+   "lost": 48,
+   "arrived_adrift": 3,
+   "at_sea_timeout": 12,
+   "arrived_silent": 7
+  },
+  "storm_any": 0.4,
+  "storm_hurricane": 0.17,
+  "storm_major": 0.06999999999999999,
+  "watch": {
+   "anegada_reef": [
+    3.8,
+    4.4
+   ],
+   "virgin_gorda_south": [
+    3.2,
+    4.4
+   ],
+   "tortola_peter_norman": [
+    8.0,
+    13.2
+   ]
+  }
+ },
+ "gran_canaria_south": {
+  "name": "Gran Canaria via 20N 28W, launches 1 Nov-20 Dec",
+  "n": 500,
+  "success": 78,
+  "ci95": [
+   74.2,
+   81.6
+  ],
+  "by_season": {
+   "2023-24": [
+    250,
+    74.0
+   ],
+   "2024-25": [
+    250,
+    82.0
+   ]
+  },
+  "days_median": 136.245,
+  "days_p10": 105.52,
+  "days_p90": 159.39,
+  "arrivals_by_month": {
+   "Jul": 1,
+   "Mar": 183,
+   "Apr": 146,
+   "May": 60
+  },
+  "march_share": 36.6,
+  "march_launch_p10_p50_p90": [
+   "05 Nov",
+   "23 Nov",
+   "13 Dec"
+  ],
+  "by_half_month": {
+   "Nov 1-15": [
+    158,
+    75.9493670886076
+   ],
+   "Nov 16-end": [
+    148,
+    76.35135135135135
+   ],
+   "Dec 1-15": [
+    148,
+    80.4054054054054
+   ],
+   "Dec 16-end": [
+    46,
+    82.6086956521739
+   ]
+  },
+  "reached_hold": 68.8,
+  "weed_per_voyage": 0.786,
+  "outcomes": {
+   "arrived_reporting": 251,
+   "arrived_tracked": 139,
+   "arrived_silent": 17,
+   "lost": 59,
+   "at_sea_timeout": 34
+  },
+  "storm_any": 0.29,
+  "storm_hurricane": 0.039999999999999994,
+  "storm_major": 0.01,
+  "watch": {
+   "anegada_reef": [
+    4.0,
+    4.2
+   ],
+   "virgin_gorda_south": [
+    3.4,
+    3.8
+   ],
+   "tortola_peter_norman": [
+    5.4,
+    10.8
+   ]
+  }
+ },
+ "el_hierro_south": {
+  "name": "El Hierro via 20N 28W, launches 1 Nov-20 Dec",
+  "n": 500,
+  "success": 81,
+  "ci95": [
+   77.4,
+   84.2
+  ],
+  "by_season": {
+   "2023-24": [
+    250,
+    78.0
+   ],
+   "2024-25": [
+    250,
+    84.0
+   ]
+  },
+  "days_median": 133.73,
+  "days_p10": 105.31,
+  "days_p90": 156.95,
+  "arrivals_by_month": {
+   "Jul": 1,
+   "Mar": 192,
+   "Apr": 169,
+   "May": 41,
+   "Jun": 2
+  },
+  "march_share": 38.4,
+  "march_launch_p10_p50_p90": [
+   "05 Nov",
+   "23 Nov",
+   "12 Dec"
+  ],
+  "by_half_month": {
+   "Nov 1-15": [
+    158,
+    80.37974683544303
+   ],
+   "Nov 16-end": [
+    148,
+    79.05405405405406
+   ],
+   "Dec 1-15": [
+    148,
+    83.1081081081081
+   ],
+   "Dec 16-end": [
+    46,
+    82.6086956521739
+   ]
+  },
+  "reached_hold": 67.6,
+  "weed_per_voyage": 0.836,
+  "outcomes": {
+   "arrived_silent": 19,
+   "arrived_reporting": 284,
+   "arrived_tracked": 121,
+   "at_sea_timeout": 44,
+   "lost": 32
+  },
+  "storm_any": 0.43,
+  "storm_hurricane": 0.05,
+  "storm_major": 0.02,
+  "watch": {
+   "anegada_reef": [
+    3.8,
+    4.0
+   ],
+   "virgin_gorda_south": [
+    3.4,
+    4.2
+   ],
+   "tortola_peter_norman": [
+    5.6,
+    11.4
+   ]
+  }
+ },
+ "gran_canaria_south_may": {
+  "name": "Gran Canaria via 20N 28W, May launches",
+  "n": 500,
+  "success": 82.6,
+  "ci95": [
+   79.2,
+   86.0
+  ],
+  "by_season": {
+   "2024": [
+    250,
+    81.6
+   ],
+   "2025": [
+    250,
+    83.6
+   ]
+  },
+  "days_median": 105.06,
+  "days_p10": 92.74,
+  "days_p90": 113.37,
+  "arrivals_by_month": {
+   "Aug": 268,
+   "Sep": 132,
+   "Oct": 7,
+   "Nov": 3,
+   "Jan": 3
+  },
+  "march_share": 0.0,
+  "march_launch_p10_p50_p90": null,
+  "by_half_month": {
+   "May 1-15": [
+    252,
+    82.14285714285714
+   ],
+   "May 16-end": [
+    248,
+    83.06451612903226
+   ]
+  },
+  "reached_hold": 73.8,
+  "weed_per_voyage": 1.132,
+  "outcomes": {
+   "arrived_tracked": 117,
+   "arrived_reporting": 296,
+   "lost": 49,
+   "at_sea_timeout": 19,
+   "arrived_silent": 16,
+   "aground": 1,
+   "arrived_adrift": 2
+  },
+  "storm_any": 19.62,
+  "storm_hurricane": 10.54,
+  "storm_major": 6.859999999999999,
+  "watch": {
+   "anegada_reef": [
+    1.4,
+    1.4
+   ],
+   "virgin_gorda_south": [
+    0.2,
+    0.4
+   ],
+   "tortola_peter_norman": [
+    12.2,
+    22.2
+   ]
+  }
+ },
+ "mindelo_vs_gran_canaria_south": [
+  8,
+  3.6,
+  12.4
+ ],
+ "mindelo_vs_el_hierro_south": [
+  5,
+  0.6,
+  9.4
+ ],
+ "el_hierro_south_vs_gran_canaria_south": [
+  3,
+  -2.0,
+  7.6
+ ],
+ "gran_canaria_south_may_vs_gran_canaria_south": [
+  4.6,
+  0.0,
+  9.4
+ ]
+}

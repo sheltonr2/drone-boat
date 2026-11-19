@@ -10,8 +10,12 @@ def boot(x, n=4000):
     rnd = random.Random(1); m = len(x); v = sorted(sum(x[rnd.randrange(m)] for _ in range(m))/m for _ in range(n)); return v[int(.025*n)], v[int(.975*n)]
 def L(p): return {r['seed']: r for r in json.load(open(p))['result']['runs']}
 base = L('results/2026-11-14_plan_2023+2024_revE1_hatteras_stream__cornwall.json')
-HOLD = {"falmouth_hold": (50.100, -4.990), "mounts_bay_hold": (50.050, -5.480)}
-NAME = {"falmouth_hold": "Falmouth Bay", "mounts_bay_hold": "Mount's Bay"}
+HOLD = {"falmouth_hold": (50.100, -4.990), "mounts_bay_hold": (50.050, -5.480),
+        "lizard_offing_hold": (49.850, -5.200), "mounts_bay_offing_hold": (49.970, -5.450)}
+NAME = {"falmouth_hold": "Falmouth Bay", "mounts_bay_hold": "Mount's Bay",
+        "lizard_offing_hold": "Lizard offing (12 km S)", "mounts_bay_offing_hold": "Mouth of Mount's Bay"}
+DATE = {"falmouth_hold": "2026-11-16", "mounts_bay_hold": "2026-11-16",
+        "lizard_offing_hold": "2026-11-18", "mounts_bay_offing_hold": "2026-11-18"}   # 021b and 023b
 def area(e):
     la, lo = e['lat'], e['lon']
     if 49.8 <= la <= 50.05 and -6.5 <= lo <= -6.15: return "Isles of Scilly"
@@ -23,7 +27,7 @@ def area(e):
     return "elsewhere / offshore"
 out = {}
 for tag in HOLD:
-    R = L(f'results/2026-11-16_arrival_2023+2024_revE1_hatteras_stream__{tag}.json'); seeds = sorted(set(R) & set(base))
+    R = L(f'results/{DATE[tag]}_arrival_2023+2024_revE1_hatteras_stream__{tag}.json'); seeds = sorted(set(R) & set(base))
     runs = [R[s] for s in seeds]
     reach = [km((r['end']['lat'], r['end']['lon']), HOLD[tag]) <= 3.5 and ok(r) for r in runs]
     succ = [100*ok(r) for r in runs]; lo, hi = boot(succ)
@@ -52,4 +56,14 @@ for tag in HOLD:
     print(f"   other landfalls counted as arrivals: {o['other_landfalls']}; lost/aground near Cornwall: {lost_near}")
     print(f"   outcomes {o['outcomes']}")
     for k, v in W.items(): print(f"   {k:20s} <1 km {v[1]:.1f}%  <2 km {v[2]:.1f}%  <5 km {v[5]:.1f}%")
+# Offshore points against the inshore points on the same seeds (023b vs 021b)
+A = {t: L(f'results/{DATE[t]}_arrival_2023+2024_revE1_hatteras_stream__{t}.json') for t in HOLD}
+reach = lambda t, r: ok(r) and km((r['end']['lat'], r['end']['lon']), HOLD[t]) <= 3.5
+print()
+for a, b in (("lizard_offing_hold", "falmouth_hold"), ("mounts_bay_offing_hold", "mounts_bay_hold"), ("lizard_offing_hold", "mounts_bay_offing_hold")):
+    seeds = sorted(set(A[a]) & set(A[b]))
+    d1 = [100*(ok(A[a][s]) - ok(A[b][s])) for s in seeds]; d2 = [100*(reach(a, A[a][s]) - reach(b, A[b][s])) for s in seeds]
+    l1, h1 = boot(d1); l2, h2 = boot(d2)
+    out[f"{a}_vs_{b}"] = dict(success=[st.mean(d1), l1, h1], reached=[st.mean(d2), l2, h2])
+    print(f"{NAME[a]} vs {NAME[b]}: success {st.mean(d1):+.1f} ({l1:+.1f} to {h1:+.1f}); reached hold {st.mean(d2):+.1f} ({l2:+.1f} to {h2:+.1f})")
 json.dump(out, open('docs/data/arrival_analysis.json', 'w'), indent=1)

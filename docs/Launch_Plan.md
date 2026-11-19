@@ -92,6 +92,24 @@ Rev E1, 45 km off Hatteras, 500 voyages per holding point, 2023+2024 weather, th
   - the mouth of Mount's Bay, 13 km south of Cudden Point and 17 km from Newlyn.
 - **Limits of the model:** the simulator's coastline (Natural Earth 1:50m) is coarse around the Lizard, and holding station after arrival isn't modelled.
 
+## Arrival and holding: offshore holding points (18 Nov 2026, run 023b)
+
+These are the same runs as 021b, with the holding point in open water instead of inshore. Rev E1, 500 voyages each, the same seeds. Analysis: [`arrival_analysis.py`](data/arrival_analysis.py).
+
+| Holding point | Reached it | vs the inshore point (paired) | Success as scored | Passed within 1 km of |
+|---|---|---|---|---|
+| **Lizard offing**, 12 km S of the Lizard (49.85N 5.20W) | **73.6%** (69.6–77.4) | +8.8 vs Falmouth Bay (+5.4 to +12.4) | 82.2% | Scilly 12%, Wolf Rock 3%, the Lizard 3%, the Manacles 0% |
+| **Mouth of Mount's Bay**, 13 km S of Cudden Point (49.97N 5.45W) | 71.0% (67.0–74.8) | +19.8 vs Mount's Bay (+15.6 to +23.8) | 84.0% | Scilly 15%, Wolf Rock 6%, the Runnelstone 5% |
+
+- Holding offshore gets far more boats to the pickup point, and almost none pass close to the Manacles or the Lizard. The last leg takes about 2.5 days instead of 3.3.
+- Both offshore points still cost 4–6 points of success against stopping 40 km off Scilly. That's the cost of approaching the coast at all in the model: the simulator raises collision and capture rates within 100 km of land, and some boats still end ashore on the way in.
+- About 12–15% of boats pass within 1 km of the Isles of Scilly on the way in. The first approach waypoint (7 km SW of Bishop Rock) is too tight.
+
+**Recommendation (Randolph's call):**
+- Make the **Lizard offing the holding point.** It has the fewest close passes to rocks, and it's a 30 km run out from Falmouth.
+- Keep the mouth of Mount's Bay as the alternative when the forecast favours it (17 km from Newlyn).
+- **Next:** move the first approach waypoint to about 15 km SW of Bishop Rock and rerun it (about 35 minutes). That run isn't queued yet.
+
 ## Launch window on four years of weather (15 Nov 2026, runs 019a–c)
 
 Rev E1, 45 km off Hatteras → Cornwall, 500 voyages per window on 2021–2024 weather. The same seeds were used in each window, so the differences are paired. Analysis: [`window_analysis.py`](data/window_analysis.py).

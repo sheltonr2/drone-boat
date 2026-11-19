@@ -181,6 +181,31 @@ Rev E1, 300 voyages per pair, launches 1 Nov 2024–15 Jan 2025 on the 2024–25
   - All with the southern BVI approach, 500 voyages each, on both winters (2023–24 and 2024–25).
   - Plus Gran Canaria via 20N 28W with May launches in 2024 and 2025, for comparison with Oshen's timing.
 
+## 10. Two winters (18 Nov 2026, run 024)
+
+The best pairs from the screen were run on both winters (2023–24 and 2024–25): Rev E1, 500 voyages each (250 per winter), with the southern BVI approach and the same seeds in every run. Analysis: [`ew_024_analysis.py`](data/ew_024_analysis.py).
+
+| Launch → BVI | Launches | Success (95% range) | 2023–24 / 2024–25 | Median days (p10–p90) | Arrive in March | Reach the BVI hold | Storm within 200 km / hurricane |
+|---|---|---|---|---|---|---|---|
+| **Mindelo, Cape Verde** | 15 Nov–10 Jan | **86.0%** (83.0–89.0) | 84.8 / 87.2 | 93 (75–106) | **51%** (most of the rest Feb or Apr) | 67% | 0.4% / 0.2% |
+| El Hierro via 20N 28W | 1 Nov–20 Dec | 81.0% (77.4–84.2) | 78.0 / 84.0 | 134 (105–157) | 38% | 68% | 0.4% / 0.1% |
+| Gran Canaria via 20N 28W | 1 Nov–20 Dec | 78.0% (74.2–81.6) | 74.0 / 82.0 | 136 (106–159) | 37% | 69% | 0.3% / 0.0% |
+| Gran Canaria via 20N 28W, **May** launches (Oshen's timing) | May 2024, May 2025 | 82.6% (79.2–86.0) | 81.6 / 83.6 | 105 (93–113) | 0% (arrive Aug–Sep) | 74% | **19.6% / 10.5%** (major 6.9%) |
+
+Paired on the same seeds: Mindelo − Gran Canaria +8.0 points (+3.6 to +12.4); Mindelo − El Hierro +5.0 (+0.6 to +9.4); El Hierro − Gran Canaria +3.0 (−2.0 to +7.6).
+
+**What it shows:**
+- **Cape Verde holds up across both winters:** 85–87% in each, 3 months at sea, and half the boats arrive in March. The boats that arrived in March launched between 23 Nov and 4 Jan (median 14 Dec).
+- **The Canaries are 5–8 points worse,** and slower on two winters than the one-winter screen showed (about 135 days). The 2023–24 winter was harder. A March arrival from the Canaries means launching about 5 Nov–13 Dec (median 23 Nov). That's still inside the tail of hurricane season, although the storm check found almost nothing.
+- **May launches (Oshen's timing) score about the same before storms are counted,** but 1 in 5 passes within 200 km of a tropical storm and 1 in 10 near a hurricane. With our storm loss model that drops to about 74%. They also arrive in August–September, the peak of the season. Not recommended.
+- **The southern BVI approach works:** close passes (within 1 km) to the Virgin Gorda rocks fell from about 10% to 3%, and to Anegada's reef to about 4%. About two thirds of all boats reach the holding point itself; most of the rest land elsewhere in the BVI or the US Virgin Islands.
+- Weed fouling is about 0.5 events per voyage from Cape Verde and 0.8 from the Canaries. Neither changes the ranking.
+
+**Recommendation for a March BVI arrival (Randolph's call):**
+- Launch from **Mindelo, Cape Verde, between about 25 November and 5 January,** aiming for mid-December.
+- Fallback: **El Hierro or Gran Canaria, routed via 20N 28W, launching mid-November to mid-December.**
+- Not from the mainland, not on the direct Canaries route, and not in May.
+
 ## 8. Earlier questions (14 Nov)
 
 1. **Is westbound a second option or a candidate for the first attempt?** The answer decides how much of the build plan's test schedule should cover downwind sailing and weed.

@@ -44,7 +44,7 @@ for l in LAB:
     by_launch = defaultdict(list)
     for r in runs:
         t = dt.datetime.fromisoformat(r['start_time']); key = f"{t.strftime('%b')} {1 + (t.day - 1)//15 * 15:02d}"
-        by_launch[(t.year, t.month, (t.day - 1)//15)].append(ok(r))
+        by_launch[(t.year, t.month, 0 if t.day <= 15 else 1)].append(ok(r))
     weed = sum(1 for r in runs for f in (r.get('failures') or []) if 'weed' in (f if isinstance(f, str) else f.get('msg', '')).lower())
     areas = Counter(area(r['end']) for r in runs if ok(r))
     hold = sum(1 for r in runs if ok(r) and km((r['end']['lat'], r['end']['lon']), HOLD) <= 3.5)

@@ -1,0 +1,244 @@
+East-west weather: Nov 2023 to Oct 2024 and Aug-Oct 2025, tropical box, started Mon 11/16/2026 15:21:35.79 
+Free space before: 188 GB
+Bulk data in <repo>\simulator\workspace_ew\cache\bulk
+  era5: 0 of 15 months already stored, 15 to fetch
+  smoc: 0 of 15 months already stored, 15 to fetch
+  wav: 0 of 15 months already stored, 15 to fetch
+[CDS] requesting era5 202311 ...
+[Marine] requesting smoc 202311 ...
+INFO - 2026-11-16T20:21:46Z - Selected dataset version: "202211"
+INFO - 2026-11-16T20:21:46Z - Selected dataset part: "default"
+    stored era5 202311: 720 times x 141 x 301 (0.43 GB)
+[CDS] era5 202311 done in 19.3 min
+[CDS] requesting era5 202312 ...
+INFO - 2026-11-16T20:45:01Z - Total size of the download: 2.04 GB.
+    stored smoc 202311: 720 times x 421 x 901 (1.09 GB)
+[Marine] smoc 202311 done in 23.5 min
+[Marine] requesting wav 202311 ...
+INFO - 2026-11-16T20:45:10Z - Selected dataset version: "202411"
+INFO - 2026-11-16T20:45:10Z - Selected dataset part: "default"
+INFO - 2026-11-16T20:54:24Z - Total size of the download: 868.70 MB.
+    stored wav 202311: 240 times x 421 x 901 (0.91 GB)
+[Marine] wav 202311 done in 9.4 min
+[Marine] requesting smoc 202312 ...
+INFO - 2026-11-16T20:54:34Z - Selected dataset version: "202211"
+INFO - 2026-11-16T20:54:34Z - Selected dataset part: "default"
+INFO - 2026-11-16T21:16:45Z - Total size of the download: 2.10 GB.
+    stored smoc 202312: 744 times x 421 x 901 (1.13 GB)
+[Marine] smoc 202312 done in 22.3 min
+[Marine] requesting wav 202312 ...
+INFO - 2026-11-16T21:16:53Z - Selected dataset version: "202411"
+INFO - 2026-11-16T21:16:53Z - Selected dataset part: "default"
+INFO - 2026-11-16T21:26:07Z - Total size of the download: 897.65 MB.
+    stored wav 202312: 248 times x 421 x 901 (0.94 GB)
+[Marine] wav 202312 done in 9.4 min
+[Marine] requesting smoc 202401 ...
+INFO - 2026-11-16T21:26:17Z - Selected dataset version: "202211"
+INFO - 2026-11-16T21:26:17Z - Selected dataset part: "default"
+INFO - 2026-11-16T21:50:10Z - Total size of the download: 2.10 GB.
+    stored smoc 202401: 744 times x 421 x 901 (1.13 GB)
+[Marine] smoc 202401 done in 24.0 min
+[Marine] requesting wav 202401 ...
+INFO - 2026-11-16T21:50:20Z - Selected dataset version: "202411"
+INFO - 2026-11-16T21:50:20Z - Selected dataset part: "default"
+INFO - 2026-11-16T22:04:39Z - Total size of the download: 897.65 MB.
+    stored wav 202401: 248 times x 421 x 901 (0.94 GB)
+[Marine] wav 202401 done in 14.5 min
+[Marine] requesting smoc 202402 ...
+INFO - 2026-11-16T22:04:50Z - Selected dataset version: "202211"
+INFO - 2026-11-16T22:04:50Z - Selected dataset part: "default"
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/df43dbec-c551-4c77-83d3-1d6d3ff62005?log=True&request=True (Caused by ConnectTimeoutError(<HTTPSConnection(host='cds.climate.copernicus.eu', port=443) at 0x1eef9f3b890>, 'Connection to cds.climate.copernicus.eu timed out. (connect timeout=60)'))], attempt 1 of 500
+Retrying in 120 seconds
+INFO - 2026-11-16T22:27:09Z - Total size of the download: 1.97 GB.
+    stored smoc 202402: 696 times x 421 x 901 (1.06 GB)
+[Marine] smoc 202402 done in 22.5 min
+[Marine] requesting wav 202402 ...
+INFO - 2026-11-16T22:27:17Z - Selected dataset version: "202411"
+INFO - 2026-11-16T22:27:17Z - Selected dataset part: "default"
+INFO - 2026-11-16T22:36:32Z - Total size of the download: 839.74 MB.
+    stored wav 202402: 232 times x 421 x 901 (0.88 GB)
+[Marine] wav 202402 done in 9.4 min
+[Marine] requesting smoc 202403 ...
+INFO - 2026-11-16T22:36:44Z - Selected dataset version: "202211"
+INFO - 2026-11-16T22:36:44Z - Selected dataset part: "default"
+INFO - 2026-11-16T23:00:59Z - Total size of the download: 2.10 GB.
+    stored smoc 202403: 744 times x 421 x 901 (1.13 GB)
+[Marine] smoc 202403 done in 24.4 min
+[Marine] requesting wav 202403 ...
+INFO - 2026-11-16T23:01:08Z - Selected dataset version: "202411"
+INFO - 2026-11-16T23:01:08Z - Selected dataset part: "default"
+INFO - 2026-11-16T23:11:07Z - Total size of the download: 897.65 MB.
+    stored wav 202403: 248 times x 421 x 901 (0.94 GB)
+[Marine] wav 202403 done in 10.2 min
+[Marine] requesting smoc 202404 ...
+INFO - 2026-11-16T23:11:22Z - Selected dataset version: "202211"
+INFO - 2026-11-16T23:11:22Z - Selected dataset part: "default"
+    stored era5 202312: 744 times x 141 x 301 (0.44 GB)
+[CDS] era5 202312 done in 154.6 min
+[CDS] requesting era5 202401 ...
+INFO - 2026-11-16T23:34:15Z - Total size of the download: 2.04 GB.
+    stored smoc 202404: 720 times x 421 x 901 (1.09 GB)
+[Marine] smoc 202404 done in 23.1 min
+[Marine] requesting wav 202404 ...
+INFO - 2026-11-16T23:34:25Z - Selected dataset version: "202411"
+INFO - 2026-11-16T23:34:25Z - Selected dataset part: "default"
+INFO - 2026-11-16T23:43:48Z - Total size of the download: 868.70 MB.
+    stored wav 202404: 240 times x 421 x 901 (0.91 GB)
+[Marine] wav 202404 done in 9.6 min
+[Marine] requesting smoc 202405 ...
+INFO - 2026-11-16T23:44:00Z - Selected dataset version: "202211"
+INFO - 2026-11-16T23:44:00Z - Selected dataset part: "default"
+INFO - 2026-11-17T00:08:25Z - Total size of the download: 2.10 GB.
+    stored smoc 202405: 744 times x 421 x 901 (1.13 GB)
+[Marine] smoc 202405 done in 24.6 min
+[Marine] requesting wav 202405 ...
+INFO - 2026-11-17T00:08:35Z - Selected dataset version: "202411"
+INFO - 2026-11-17T00:08:35Z - Selected dataset part: "default"
+INFO - 2026-11-17T00:18:02Z - Total size of the download: 897.65 MB.
+    stored wav 202405: 248 times x 421 x 901 (0.94 GB)
+[Marine] wav 202405 done in 9.7 min
+[Marine] requesting smoc 202406 ...
+INFO - 2026-11-17T00:18:14Z - Selected dataset version: "202211"
+INFO - 2026-11-17T00:18:14Z - Selected dataset part: "default"
+INFO - 2026-11-17T00:41:52Z - Total size of the download: 2.04 GB.
+    stored smoc 202406: 720 times x 421 x 901 (1.09 GB)
+[Marine] smoc 202406 done in 23.8 min
+[Marine] requesting wav 202406 ...
+INFO - 2026-11-17T00:42:01Z - Selected dataset version: "202411"
+INFO - 2026-11-17T00:42:01Z - Selected dataset part: "default"
+INFO - 2026-11-17T00:56:15Z - Total size of the download: 868.70 MB.
+    stored wav 202406: 240 times x 421 x 901 (0.91 GB)
+[Marine] wav 202406 done in 14.4 min
+[Marine] requesting smoc 202407 ...
+INFO - 2026-11-17T00:56:27Z - Selected dataset version: "202211"
+INFO - 2026-11-17T00:56:27Z - Selected dataset part: "default"
+INFO - 2026-11-17T01:20:17Z - Total size of the download: 2.10 GB.
+    stored smoc 202407: 744 times x 421 x 901 (1.13 GB)
+[Marine] smoc 202407 done in 24.0 min
+[Marine] requesting wav 202407 ...
+INFO - 2026-11-17T01:20:26Z - Selected dataset version: "202411"
+INFO - 2026-11-17T01:20:26Z - Selected dataset part: "default"
+INFO - 2026-11-17T01:30:19Z - Total size of the download: 897.65 MB.
+    stored wav 202407: 248 times x 421 x 901 (0.94 GB)
+[Marine] wav 202407 done in 10.1 min
+[Marine] requesting smoc 202408 ...
+INFO - 2026-11-17T01:30:32Z - Selected dataset version: "202211"
+INFO - 2026-11-17T01:30:32Z - Selected dataset part: "default"
+    stored era5 202401: 744 times x 141 x 301 (0.44 GB)
+[CDS] era5 202401 done in 135.0 min
+[CDS] requesting era5 202402 ...
+INFO - 2026-11-17T01:52:55Z - Total size of the download: 2.10 GB.
+    stored smoc 202408: 744 times x 421 x 901 (1.13 GB)
+[Marine] smoc 202408 done in 22.5 min
+[Marine] requesting wav 202408 ...
+INFO - 2026-11-17T01:53:04Z - Selected dataset version: "202411"
+INFO - 2026-11-17T01:53:04Z - Selected dataset part: "default"
+INFO - 2026-11-17T02:02:10Z - Total size of the download: 897.65 MB.
+    stored wav 202408: 248 times x 421 x 901 (0.94 GB)
+[Marine] wav 202408 done in 9.3 min
+[Marine] requesting smoc 202409 ...
+INFO - 2026-11-17T02:02:22Z - Selected dataset version: "202211"
+INFO - 2026-11-17T02:02:22Z - Selected dataset part: "default"
+INFO - 2026-11-17T02:24:45Z - Total size of the download: 2.04 GB.
+    stored smoc 202409: 720 times x 421 x 901 (1.09 GB)
+[Marine] smoc 202409 done in 22.5 min
+[Marine] requesting wav 202409 ...
+INFO - 2026-11-17T02:24:55Z - Selected dataset version: "202411"
+INFO - 2026-11-17T02:24:55Z - Selected dataset part: "default"
+INFO - 2026-11-17T02:34:01Z - Total size of the download: 868.70 MB.
+    stored wav 202409: 240 times x 421 x 901 (0.91 GB)
+[Marine] wav 202409 done in 9.3 min
+[Marine] requesting smoc 202410 ...
+INFO - 2026-11-17T02:34:13Z - Selected dataset version: "202211"
+INFO - 2026-11-17T02:34:13Z - Selected dataset part: "default"
+INFO - 2026-11-17T02:58:27Z - Total size of the download: 2.10 GB.
+    stored smoc 202410: 744 times x 421 x 901 (1.13 GB)
+[Marine] smoc 202410 done in 24.4 min
+[Marine] requesting wav 202410 ...
+INFO - 2026-11-17T02:58:36Z - Selected dataset version: "202411"
+INFO - 2026-11-17T02:58:36Z - Selected dataset part: "default"
+INFO - 2026-11-17T03:07:44Z - Total size of the download: 897.65 MB.
+    stored wav 202410: 248 times x 421 x 901 (0.94 GB)
+[Marine] wav 202410 done in 9.3 min
+[Marine] requesting smoc 202508 ...
+INFO - 2026-11-17T03:07:56Z - Selected dataset version: "202211"
+INFO - 2026-11-17T03:07:56Z - Selected dataset part: "default"
+INFO - 2026-11-17T03:30:45Z - Total size of the download: 2.10 GB.
+    stored smoc 202508: 744 times x 421 x 901 (1.13 GB)
+[Marine] smoc 202508 done in 23.0 min
+[Marine] requesting wav 202508 ...
+INFO - 2026-11-17T03:30:55Z - Selected dataset version: "202411"
+INFO - 2026-11-17T03:30:55Z - Selected dataset part: "default"
+INFO - 2026-11-17T03:39:48Z - Total size of the download: 897.65 MB.
+    stored wav 202508: 248 times x 421 x 901 (0.94 GB)
+[Marine] wav 202508 done in 9.1 min
+[Marine] requesting smoc 202509 ...
+INFO - 2026-11-17T03:40:00Z - Selected dataset version: "202211"
+INFO - 2026-11-17T03:40:00Z - Selected dataset part: "default"
+    stored era5 202402: 696 times x 141 x 301 (0.41 GB)
+[CDS] era5 202402 done in 149.9 min
+[CDS] requesting era5 202403 ...
+INFO - 2026-11-17T04:02:18Z - Total size of the download: 2.04 GB.
+    stored smoc 202509: 720 times x 421 x 901 (1.09 GB)
+[Marine] smoc 202509 done in 22.5 min
+[Marine] requesting wav 202509 ...
+INFO - 2026-11-17T04:02:28Z - Selected dataset version: "202411"
+INFO - 2026-11-17T04:02:28Z - Selected dataset part: "default"
+INFO - 2026-11-17T04:16:28Z - Total size of the download: 868.70 MB.
+    stored wav 202509: 240 times x 421 x 901 (0.91 GB)
+[Marine] wav 202509 done in 14.2 min
+[Marine] requesting smoc 202510 ...
+INFO - 2026-11-17T04:16:40Z - Selected dataset version: "202211"
+INFO - 2026-11-17T04:16:40Z - Selected dataset part: "default"
+INFO - 2026-11-17T04:39:31Z - Total size of the download: 2.10 GB.
+    stored smoc 202510: 744 times x 421 x 901 (1.13 GB)
+[Marine] smoc 202510 done in 23.0 min
+[Marine] requesting wav 202510 ...
+INFO - 2026-11-17T04:39:40Z - Selected dataset version: "202411"
+INFO - 2026-11-17T04:39:40Z - Selected dataset part: "default"
+INFO - 2026-11-17T04:48:51Z - Total size of the download: 897.65 MB.
+    stored wav 202510: 248 times x 421 x 901 (0.94 GB)
+[Marine] wav 202510 done in 9.4 min
+    stored era5 202403: 744 times x 141 x 301 (0.44 GB)
+[CDS] era5 202403 done in 163.7 min
+[CDS] requesting era5 202404 ...
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/7d5b4f09-59ed-4dfc-b461-22bd678a1370?log=True&request=True (Caused by ConnectTimeoutError(<HTTPSConnection(host='cds.climate.copernicus.eu', port=443) at 0x1eef7bc82d0>, 'Connection to cds.climate.copernicus.eu timed out. (connect timeout=60)'))], attempt 1 of 500
+Retrying in 120 seconds
+    stored era5 202404: 720 times x 141 x 301 (0.43 GB)
+[CDS] era5 202404 done in 244.0 min
+[CDS] requesting era5 202405 ...
+Recovering from connection error [('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))], attempt 1 of 500
+Retrying in 120 seconds
+    stored era5 202405: 744 times x 141 x 301 (0.44 GB)
+[CDS] era5 202405 done in 264.9 min
+[CDS] requesting era5 202406 ...
+    stored era5 202406: 720 times x 141 x 301 (0.43 GB)
+[CDS] era5 202406 done in 288.9 min
+[CDS] requesting era5 202407 ...
+    stored era5 202407: 744 times x 141 x 301 (0.44 GB)
+[CDS] era5 202407 done in 173.1 min
+[CDS] requesting era5 202408 ...
+    stored era5 202408: 744 times x 141 x 301 (0.44 GB)
+[CDS] era5 202408 done in 161.3 min
+[CDS] requesting era5 202409 ...
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/03c2004f-eeaf-4c72-83a8-4f1293329ec4?log=True&request=True (Caused by ConnectTimeoutError(<HTTPSConnection(host='cds.climate.copernicus.eu', port=443) at 0x1eef58cb9d0>, 'Connection to cds.climate.copernicus.eu timed out. (connect timeout=60)'))], attempt 1 of 500
+Retrying in 120 seconds
+    stored era5 202409: 720 times x 141 x 301 (0.43 GB)
+[CDS] era5 202409 done in 188.4 min
+[CDS] requesting era5 202410 ...
+    stored era5 202410: 744 times x 141 x 301 (0.44 GB)
+[CDS] era5 202410 done in 217.8 min
+[CDS] requesting era5 202508 ...
+Recovering from connection error [('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))], attempt 1 of 500
+Retrying in 120 seconds
+    stored era5 202508: 744 times x 141 x 301 (0.44 GB)
+[CDS] era5 202508 done in 267.3 min
+[CDS] requesting era5 202509 ...
+    stored era5 202509: 720 times x 141 x 301 (0.43 GB)
+[CDS] era5 202509 done in 251.9 min
+[CDS] requesting era5 202510 ...
+    stored era5 202510: 744 times x 141 x 301 (0.44 GB)
+[CDS] era5 202510 done in 213.7 min
+Bulk download finished: 0 source-months still missing.
+Free space after: 156 GB
+=== DONE Wed 11/18/2026 15:35:19.51 
