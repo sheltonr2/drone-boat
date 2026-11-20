@@ -2,6 +2,14 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-20, 13:50 UTC (08:50 local): daily check-in
+
+- Thread #50: nothing new from their side; our 19 Nov 00:33 UTC follow-up is still the latest comment (no reply since 13 Nov 08:13 UTC). Nothing to draft.
+- PC queue: empty; queue_log.txt unchanged since 025 (19 Nov 00:13 local), nothing waiting. No runs started.
+- Our side since the last check-in: the DFM pass (Rev E2 drawings, 34 STLs, BOM with links) and a browser 3D viewer of the boat and every printed part (build-files/viewer/). Not posted to their team (not asked).
+- Still open: knockdown severity, the storm loss model, the visual pass of Bluewater's sailing screen, the #117 wind correction in the voyage loop.
+- Next daily check-in Sat 08:47.
+
 ## 2026-11-19, 13:50 UTC (08:50 local): daily check-in
 
 - Thread #50: nothing new from their side; our 19 Nov 00:33 UTC follow-up is the latest comment (no reply since 13 Nov 08:13 UTC).
