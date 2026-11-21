@@ -2,6 +2,24 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-21, 22:40 UTC (17:40 local): runs 026-033 queued (Randolph: "let's do all 7")
+
+- Simulator options added, all off by default. Synthetic-weather voyages (Rev E1 and C5, three seeds) reproduce bit-for-bit with them off.
+  - `storm_wind_correction`: near the year's HURDAT2 storms, ERA5 winds are scaled by 1/ratio (boat-sim #117), fully within 60 km and tapering to none at 250 km, capped at the best-track wind; waves by the square root. Grade D.
+  - `knockdown_severity`: wing damage per knockdown x (Hs/3)^2 / 2.5. 2.5 is the mean (Hs/3)^2 at a knockdown on the planned route: 2.63 in run 025, 2.31 in 019a; westbound it's about 1.0.
+  - `structure.spar`: the C2 spar table on a C3 boat, for the stock 30 x 26 tube.
+  - Scenario `station` (start holding at a point) and `start_times` (one launch a day).
+- Queue, in order (estimates from run 025's 30 min per 500 eastbound voyages):
+  - 026 final plan on 2021-24, 1000 voyages, 1-20 May (~1 h);
+  - 027 solar 30 W, solar 20 W and the 30 x 26 spar, paired with 025 (~1.5 h);
+  - 028 holding at both points: 14 days station-keeping and 30 days dead drift, 15 Aug-15 Oct, 2021-24 (~35 min);
+  - 029 Rev C5 on boat-sim's 46 daily launches, their straight route and ours (~12 min);
+  - 030 model fixes on 026's seeds: both 1000, storms-only 500, severity-only 500 (~2 h);
+  - 031 westbound sea states (~15 min);
+  - 032 tropical-box weather for winters 2021-22 and 2022-23 (16 months, 1-3 days at CDS);
+  - 033 Mindelo, Gran Canaria S and El Hierro S on those winters (~1.5 h).
+- Generator: collab/runs_026/make_runs.py. Code 885f63e, copied to the PC.
+
 ## 2026-11-21, 22:15 UTC (17:15 local): check-in at Randolph's request; reply posted
 
 - Thread #50: three comments from their team this morning (08:03, 08:04, 08:51 UTC), the first since 13 Nov.
