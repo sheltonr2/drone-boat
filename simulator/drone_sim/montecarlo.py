@@ -33,7 +33,8 @@ def _one(args):
                 position_known_at_end=r.get("position_known_at_end"), box_dead=r.get("box_dead"),
                 tracker_ok=r.get("tracker_ok"), tracker_fixes=r.get("tracker_fixes"),
                 knockdowns_by_hs_m=r.get("knockdowns_by_hs_m"),
-                **({"watch_min_km": r["watch_min_km"]} if r.get("watch_min_km") else {}))
+                **({"watch_min_km": r["watch_min_km"]} if r.get("watch_min_km") else {}),
+                **({"storm_hours": r["storm_hours"], "storm_max_factor": r["storm_max_factor"]} if "storm_hours" in r else {}))
 
 
 def start_times(window, n, rng):
@@ -71,7 +72,9 @@ def run_montecarlo(design, scenario, n_runs=50, window=None, processes=None, cac
     rng = np.random.default_rng(sc0.get("seed", 1))
     prepare_design(design, cache_dir, log)                       # build polar once (disk cache)
     LandMask(cache_dir, allow_download=sc0["provider"] != "synthetic", log=log)
-    starts = start_times(window, n_runs, rng)
+    # Scenario key "start_times": an explicit list of launch times (one per voyage) instead of random times in the
+    # window, e.g. one launch a day as boat-sim scores it (21 Nov 2026). Off by default.
+    starts = list(sc0["start_times"])[:n_runs] if sc0.get("start_times") else start_times(window, n_runs, rng)
     scs = []
     for i in range(n_runs):
         sc = copy.deepcopy(sc0); sc["seed"] = int(sc0.get("seed", 1)*1000 + i)

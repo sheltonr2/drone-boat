@@ -22,13 +22,15 @@ class Autopilot:
         # has passed it, so a boat swept by in the Gulf Stream does not turn back against the current (launch study).
         self.wp_rule = scenario.get("waypoint_rule", "radius")
         self.mode = scenario.get("initial_mode", "sail")
+        # Scenario key "station": [lat, lon] starts the boat holding there (holding study, 21 Nov 2026). Off by default.
+        st0 = scenario.get("station")
         self.tack = None                 # +1 = wind over starboard side, -1 = port
         self.heading = None
         self.alpha_mode = "best"         # best | feather
         self.report_h = design["comms"]["report_interval_h"]
         tp = dict(ap["thruster_policy"]); self.thruster = tp
         self.geofences = []              # (lat, lon, radius_km)
-        self.station = None
+        self.station = tuple(st0) if st0 else None
         self.last_decision = -1e18
         self._vmg_cache = {}
         self.diag_requested = False

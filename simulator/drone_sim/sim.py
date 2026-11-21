@@ -83,6 +83,19 @@ class Voyage:
         from .structure import load_tables
         self.struct = load_tables(design)     # structural failures in knockdowns (None = off)
         self.fail_on = sc.get("failures_enabled", True)
+        # Model options added 21 Nov 2026 (both off unless the scenario asks; off reproduces earlier results exactly):
+        # "storm_wind_correction": true, or a HURDAT2 subset CSV path: boost ERA5 winds and waves near the year's real
+        #   tropical cyclones (storms.StormWindCorrector, boat-sim #117).
+        # "knockdown_severity": a number N: the wing's knockdown damage chance becomes rate x (Hs/3)^2 / N, so a
+        #   knockdown in big seas is likelier to break the wing than one in small seas. N is the mean (Hs/3)^2 at a
+        #   knockdown on the planned route, which keeps the calibrated mean there (2.5: runs 019b and 025).
+        swc = sc.get("storm_wind_correction")
+        if swc:
+            from .storms import corrector
+            self.storm_fix = corrector(swc if isinstance(swc, str) else None)
+        else:
+            self.storm_fix = None
+        self.kd_sev = sc.get("knockdown_severity")
         self.cmds = sorted(sc.get("commands", []), key=lambda c: c["t_hours"])
         # Watch lines (scenario key "watch_lines": {name: [[lat, lon], ...]}): hazards the coastline file does not hold,
         # such as shoals. The voyage is not changed; the result reports the closest approach to each line in km.
@@ -147,6 +160,15 @@ class Voyage:
                 if k == 1: raise
                 outcome = "at_sea_timeout"; self.event(t, "end", f"Weather data ends here: {ex}")
                 break
+            if self.storm_fix is not None:
+                gw, gh, cap = self.storm_fix.factor(st["lat"], st["lon"], t)
+                if gw > 1.0:
+                    sp = math.hypot(e["wind_u"], e["wind_v"])
+                    gw = min(gw, max(cap/sp, 1.0)) if sp > 0 else 1.0      # never above the storm's own best-track wind
+                    e = dict(e); e["wind_u"] *= gw; e["wind_v"] *= gw; e["hs"] *= gh
+                    if "gust" in e: e["gust"] *= gw
+                    st["storm_hours"] = st.get("storm_hours", 0.0) + dt/3600
+                    st["storm_max_factor"] = max(st.get("storm_max_factor", 1.0), gw)
             # water-relative wind
             wu, wv = e["wind_u"] - e["cur_u"], e["wind_v"] - e["cur_v"]
             tws = math.hypot(wu, wv); twd = (math.degrees(math.atan2(-wu, -wv))) % 360   # FROM direction
@@ -269,7 +291,9 @@ class Voyage:
             events=self.events, series=series, wall_s=round(time.time() - wall0, 1),
             mode=sc["mode"], scenario=sc, design_name=d.get("name"),
             stats=self._stats(series),
-            **({"watch_min_km": {k: (round(v, 2) if v < 1e8 else None) for k, v in self.watch_min.items()}} if self.watch else {}))
+            **({"watch_min_km": {k: (round(v, 2) if v < 1e8 else None) for k, v in self.watch_min.items()}} if self.watch else {}),
+            **({"storm_hours": round(st.get("storm_hours", 0.0), 1), "storm_max_factor": round(st.get("storm_max_factor", 1.0), 2)}
+               if self.storm_fix is not None else {}))
 
     # -------------------------------------------------------------- hybrid physics
     def hybrid_step(self, st, e, envd, dec, dt, t):
@@ -610,7 +634,8 @@ class Voyage:
                     self.event(t, "failure", f"Capsized by a breaking wave (Hs {hs:.1f} m): boat inverted")
                 else:
                     self.event(t, "knockdown", f"Knocked down by a breaking wave (Hs {hs:.1f} m); self-righted")
-                if rnd() < self.rate("knockdown_damage")*(S["wing_factor"][kb] if S else 1.0):
+                sev = 1.0 if self.kd_sev is None else min((hs/3.0)**2/float(self.kd_sev), 1.0/max(self.rate("knockdown_damage"), 1e-9))
+                if rnd() < self.rate("knockdown_damage")*(S["wing_factor"][kb] if S else 1.0)*sev:
                     st["wing_lost"] = True; self.event(t, "failure", "Wing damaged in a knockdown: drifting")
         elif st["inverted"] and (self.backend is None or st["box_dead"]):
             lam = breaking_knockdown_rate(hs, e["tp"], envd["tws"], L, B)*max(self.rate("wave_capsize"), 1) + 0.2

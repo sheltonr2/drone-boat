@@ -132,3 +132,53 @@ def mc_storm_table(mc, clim, radius_km=200.0, min_wind_kt=34.0, boot=2000, seed=
                         ci95_any=[round(float(np.percentile(bs, 2.5)), 4), round(float(np.percentile(bs, 97.5)), 4)],
                         seasons_with_any=int((per["any"] > 0).sum()))
     return out
+
+
+# ----------------------------------------------------------------------------- in-loop wind correction (21 Nov 2026)
+# Real-weather voyages sail through ERA5, which carries the year's real tropical cyclones but smooths their cores:
+# its peak wind near the centre is about 0.70 of the best-track wind for a tropical storm and 0.42 for a Category 4
+# (boat-sim #117, ERA5_RATIO above). With the scenario key "storm_wind_correction" on, a voyage scales the ERA5 wind
+# near a HURDAT2 storm of the same hour up by 1/ratio: in full within CORE_KM of the centre, tapering linearly to no
+# change at OUTER_KM. Waves (MFWAM / WAVERYS, driven by finer ECMWF winds) are scaled by the square root of the
+# same factor. Both distances and the wave rule are judgement (grade D): HURDAT2 gives no radius of maximum wind.
+CORE_KM, OUTER_KM, WAVE_EXP = 60.0, 250.0, 0.5
+_CORRECTORS = {}
+
+
+class StormWindCorrector:
+    """Per-hour lookup of HURDAT2 tropical systems for one voyage year range; factor(lat, lon, t) -> (wind x, wave x)."""
+
+    def __init__(self, path=DEFAULT_CSV, years=(1981, 2025)):
+        c = StormClimatology(path, years)
+        self.by_hour = {}
+        for k, h in enumerate(c.hour):
+            self.by_hour.setdefault(int(h), []).append(k)
+        self.lat, self.lon, self.w = c.lat, c.lon, c.w
+
+    def factor(self, lat, lon, t):
+        """-> (wind factor, wave factor, wind cap m/s). The cap is the storm's best-track wind as a 10-minute mean
+        (1-minute kt x 0.88), so the scaled ERA5 wind never exceeds the storm's own maximum."""
+        idx = self.by_hour.get(int(round(t/3600)))
+        if not idx:
+            return 1.0, 1.0, 0.0
+        best = 1.0; cap = 0.0
+        for k in idx:
+            w = self.w[k]
+            if w < 34: continue
+            dlat = math.radians(self.lat[k] - lat); dlon = math.radians(self.lon[k] - lon)
+            a = math.sin(dlat/2)**2 + math.cos(math.radians(lat))*math.cos(math.radians(self.lat[k]))*math.sin(dlon/2)**2
+            d = 2*6371*math.asin(math.sqrt(min(max(a, 0.0), 1.0)))
+            if d >= OUTER_KM: continue
+            taper = 1.0 if d <= CORE_KM else (OUTER_KM - d)/(OUTER_KM - CORE_KM)
+            g = 1.0 + (1.0/ERA5_RATIO[saffir_simpson(w)] - 1.0)*taper
+            if g > best:
+                best, cap = g, w*0.88*0.5144
+        return best, best**WAVE_EXP, cap
+
+
+def corrector(path=None):
+    """One corrector per CSV per process (the voyages of a Monte Carlo share it)."""
+    p = os.path.normpath(path) if path else DEFAULT_CSV
+    if p not in _CORRECTORS:
+        _CORRECTORS[p] = StormWindCorrector(p)
+    return _CORRECTORS[p]
