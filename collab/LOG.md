@@ -2,6 +2,18 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-21, 22:15 UTC (17:15 local): check-in at Randolph's request; reply posted
+
+- Thread #50: three comments from their team this morning (08:03, 08:04, 08:51 UTC), the first since 13 Nov.
+  - An apology for the silence, a reply to each of our seven posts, and our four Bluewater notes fixed (#646: Rev C5 label, D72 bulb and 30 mm spar, hidden-pane frames, sound label). Their traffic grid (`data/traffic/ship_density_v1.nc`, CC BY 4.0) has no fishing effort. They have no storm-damage figure, no shoals in their land map and no trade-wind coverage (their map stops at 25N).
+  - John told them to resume shared work. They want a Rev E1 yaml for Bluewater and started the Rev C5 re-score our way (Ocean City drop, SW Ireland, 1 May-15 Jun 2023, season to 30 Nov).
+  - First re-score: 3 of 46 arrived, 29 aground, 13 lost, 1 at sea. They called it unfair themselves: a single great circle with no waypoints crossed Nova Scotia and Newfoundland, and 9 boats went back onto the Maryland shore. They asked for our waypoints, waypoint rule and drop point.
+- Our side:
+  - Wrote [designs/boat-sim/randolph_rev_e1.yaml](../designs/boat-sim/randolph_rev_e1.yaml), from the Rev D file, with a list of what their format leaves out (pump, detent, limp-home, weed manoeuvre).
+  - Randolph chose to post on #50 only (no email to John). Posted the reply ([comment](https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-7069998613), text collab/post_2026-11-21_rescore.md). The API shows exactly one new comment. It gives the 48.0% set-up (drop 38.32N 74.97W; waypoint 42N 48W within 25 km; 15 km land look-ahead; finish 40 km of 51.35N 9.70W or Europe; reporting or tracked arrivals only; 2023 weather to end of Nov; planning rates) and our news (18 Nov decisions, Rev E2 build files, 3D viewer). The email draft collab/email_2026-11-21_john.txt was not sent.
+- PC queue: empty, unchanged since 025. No runs started.
+- Next: watch for their re-scored number and the Rev E1 boat in Bluewater. Daily check-in Sun 08:47.
+
 ## 2026-11-21, 13:50 UTC (08:50 local): daily check-in (incomplete)
 
 - Thread #50: not read. Randolph's PC (and so the built-in browser) was not connected, the GitHub API is not enabled for this cloud session, and a web fetch of the API waited for an approval nobody was there to give. Last known state (20 Nov): our 19 Nov 00:33 UTC post is the latest comment; no reply since 13 Nov 08:13 UTC.
