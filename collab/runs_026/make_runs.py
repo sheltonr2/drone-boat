@@ -138,7 +138,7 @@ EW.download_bat("032_ew_download_2021_23", "Run 032: east-west weather for winte
 p = os.path.join(SIM, "run_032_ew_download_2021_23.bat"); s = open(p).read()
 s = s.replace("Written by collab/east_west/make_ew.py. Approved by Randolph 13 Nov 2026", "Written by collab/runs_026/make_runs.py. Asked for by Randolph 21 Nov 2026")
 s = s.replace('REM ("plan for an east to west crossing").', 'REM ("let\'s do all 7": item 6, a third and fourth winter for the BVI backup).')
-open(p, "w", newline="").write(s)
+open(p, "w", newline="\r\n").write(s)
 TR = EW.TROPICS_CSV
 bat("033_ew_two_more_winters", "Run 033: BVI backup on winters 2021-22 and 2022-23 (Mindelo, Gran Canaria south, El Hierro south)",
     [("mindelo__bvi_s", D, "collab/east_west/mindelo__bvi_s.json", 500, "2021-11-15", "2022-01-10", "2021,2022", "ew033_2021+2022_mindelo__bvi_s", TR),
