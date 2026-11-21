@@ -2,6 +2,12 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-21, 13:50 UTC (08:50 local): daily check-in (incomplete)
+
+- Thread #50: not read. Randolph's PC (and so the built-in browser) was not connected, the GitHub API is not enabled for this cloud session, and a web fetch of the API waited for an approval nobody was there to give. Last known state (20 Nov): our 19 Nov 00:33 UTC post is the latest comment; no reply since 13 Nov 08:13 UTC.
+- PC queue: not checked (PC offline). Last known: empty since 025. No runs started.
+- Next daily check-in Sun 08:47; it reads anything posted since 19 Nov 00:33 UTC.
+
 ## 2026-11-20, 13:50 UTC (08:50 local): daily check-in
 
 - Thread #50: nothing new from their side; our 19 Nov 00:33 UTC follow-up is still the latest comment (no reply since 13 Nov 08:13 UTC). Nothing to draft.
