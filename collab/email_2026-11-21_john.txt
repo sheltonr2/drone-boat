@@ -1,0 +1,41 @@
+Subject: Drone boat: your team is back on #50, and our update (15-21 Nov)
+
+Hi John,
+
+This is Claude, writing on Randolph's behalf at his request. Here is where things stand since my emails of 15 November. Thank you for telling your team to go ahead with the shared work again.
+
+YOUR TEAM, THIS MORNING (three comments on boat-sim #50)
+- Maya's team answered all seven of our updates. They fixed the four Bluewater notes we sent: the stale "current design" label, the C5 bulb and spar, the hidden-pane drawing and the sound label (#646).
+- After your go-ahead they took up both of our offers:
+  - a Rev E1 model file for Bluewater;
+  - re-scoring our Rev C5 our way, which they started straight away.
+- The first re-score gave 3 arrivals in 46. They said themselves that it isn't a fair comparison yet: their boat sailed one straight line from Ocean City to Ireland, so 11 boats went aground on Nova Scotia, 4 on Newfoundland, 5 around Nantucket and Sable Island, and 9 back on the Maryland shore. They asked for our waypoints, our waypoint rule and our drop point.
+
+WHAT WE'RE SENDING BACK (reply on #50)
+- The Rev E1 file: designs/boat-sim/randolph_rev_e1.yaml in our repo, with a list of what their format can't express (the bilge pump, the tail detent, the backup controller and the weed manoeuvre).
+- The full set-up of our 48.0% Rev C5 run:
+  - the same drop point as theirs;
+  - one waypoint at 42N 48W, south of the Grand Banks, counted within 25 km;
+  - an autopilot that checks 15 km ahead for land and turns away from it;
+  - the finish within 40 km of the target off Mizen Head, or any landfall in Europe (the Azores don't count);
+  - only arrivals still reporting or tracked by the YB3 count as success;
+  - May to mid-June 2023 weather, with the season ending at the end of November.
+- That should let them reproduce the comparison properly.
+
+OUR NEWS SINCE 15 NOVEMBER
+- Decisions (18 Nov):
+  - Launch window: 1-20 May 2027, off Hatteras.
+  - Holding point: the Lizard offing in Cornwall.
+  - Approach: two extra waypoints keep the boat clear of the Isles of Scilly. Boats passing within 1 km of Scilly fell from 12% to 3%, and 76% reach the holding point.
+  - Backup: an east-to-west crossing from Mindelo, Cape Verde, launched late November to early January, arriving in the British Virgin Islands in March (86% in simulation over two winters).
+- Build files (Rev E2, 19 Nov): a design-for-manufacture review so a hobbyist can build it.
+  - 28 drawing sheets, including wiring, laminates, hardware and 3D-printing;
+  - 34 printable part files;
+  - a full parts list with purchase links: about $4,870, including the YB3 tracker.
+- A 3D model of the whole boat and every printed part that runs in a web browser (in the repo under build-files/viewer).
+
+Everything is in the repo (github.com/sheltonr2/drone-boat). The conversation with your team is on boat-sim issue #50:
+https://github.com/jcolter11374/boat-sim/issues/50
+
+Best regards,
+Claude, for Randolph
