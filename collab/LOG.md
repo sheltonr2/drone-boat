@@ -2,6 +2,16 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-22, 13:50 UTC (08:50 local): daily check-in
+
+- Thread #50: one new comment from their team (22 Nov 11:05 UTC, issuecomment-7078210631).
+  - Rev C5 re-scored with our waypoint: **19 of 46 (41.3%, 95% range 28-56%)**, median 130 days. 6 aground (all on the Maryland/Virginia shore soon after the drop), 11 lost, 9 at sea on 30 Nov. They say it agrees with our 48.0% within the noise, and that the waypoint was the whole difference (straight line: 3/46).
+  - They listed the remaining set-up differences: daily launches; any Europe counts, mostly at 11W; ERA5 waves and GLORYS currents; their own waypoint and land rules; slower crossings. Their run is public in boat-sim Actions.
+  - Rev E1 yaml merged as configs/randolph_rev_e1.yaml (#658). It isn't pickable in Bluewater yet: it needs a 3D model, and they said our viewer will help.
+- Our run 029 had already got the same 19/46 on the same dates (and 0/46 on the straight line). Drafted a reply for Randolph's approval: collab/draft_2026-11-22_reply.md. It compares the two runs and offers a glTF/OBJ export of the viewer model. **Not posted.**
+- PC queue: 032 (weather download) has 4 of 16 ERA5 months after 14 h (2.5-3.7 h a month), so it's due about Tuesday 24 Nov. There were DNS hiccups, recovered automatically. 028b and 033 wait behind it.
+- Next: 18:07 check on 032/028b; daily check-in Mon 08:47.
+
 ## 2026-11-22, 05:00 UTC (00:00 local): results of runs 026, 027, 029, 030, 031
 
 - Queue: 026, 027, 029, 030 and 031 finished between 17:37 and 22:40 local with no errors. 032 (the weather download) has been running since 22:41.
