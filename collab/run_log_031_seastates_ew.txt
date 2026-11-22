@@ -1,0 +1,11 @@
+0/500 voyages, 986 samples
+50/500 voyages, 37289 samples
+100/500 voyages, 75046 samples
+150/500 voyages, 110727 samples
+200/500 voyages, 149088 samples
+250/500 voyages, 192496 samples
+300/500 voyages, 229179 samples
+350/500 voyages, 269418 samples
+400/500 voyages, 306306 samples
+450/500 voyages, 344225 samples
+Saved ..\results\seastates_ew024_mindelo__bvi_s.json

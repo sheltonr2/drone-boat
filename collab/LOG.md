@@ -2,6 +2,39 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-22, 05:00 UTC (00:00 local): results of runs 026, 027, 029, 030, 031
+
+- Queue: 026, 027, 029, 030 and 031 finished between 17:37 and 22:40 local with no errors. 032 (the weather download) has been running since 22:41.
+- **028 did not run.** The data check asked for December weather for every 2021-24 season, which a 14-30 day voyage doesn't need. Fixed: `cli.py` now scales the months after the window with max_days (unchanged for voyages of 120 days or more), and the synthetic regression is still identical. Queued again as 028b; it runs after 032, before 033.
+- **026 final plan** (1000 voyages, 1-20 May 2021-24, Lizard offing v2):
+  - 81.0% success (78.6-83.4), 76.6% reach the hold.
+  - By year: 78 / 84 / 79 / 83.
+  - Within 1 km: Scilly 5.4%, Manacles 2.2%.
+  - Own-year tropical storm within 100 km: 1.0%. After the 30/70 losses: 80.8%.
+- **027 DFM** (paired with 025):
+  - Solar 30 W and 20 W both +0.0 success. SAFE reached on 9 and 26 of 500 voyages, against 0 at 40 W.
+  - Spar 30x26: -2.2 (-3.6 to -1.0), reached -4.4. Voyages with the wing broken in a knockdown went from 10 to 40.
+- **029 C5 boat-sim's way** (46 daily launches):
+  - Straight line, no waypoint: 0/46 (39 aground: Nova Scotia 13, New England 13, Maryland 10, Newfoundland 3).
+  - Our route on the same dates: 19/46 (41.3%).
+  - Note: collab/runs_026/c5_029_note.md. Not posted.
+- **030 fixes** (paired with 026):
+  - Storm winds alone: -0.4 (-1.2 to +0.4); 7% of voyages met a corrected storm, max factor 1.52.
+  - Knockdown severity alone: +0.6 (0.0 to +1.4).
+  - Both: +0.5 (-0.2 to +1.2).
+  - The options stay off by default.
+- **031 westbound sea states:**
+  - Hs >= 3 m 9% of the time, never 5 m (eastbound: 1.3% at 5 m or more).
+  - Fatigue per crossing about the same as eastbound for the fin, post and arm.
+  - Tail boom: even the old tube would use 7% of its life.
+  - 2.3 M rudder movements.
+- Docs:
+  - Launch_Plan: 026, and 028 pending.
+  - DFM_Review section 6: 027.
+  - Hurricane_Risk 21 Nov update: 030.
+  - Fatigue_Review and East_West_Study section 11: 031.
+  - No decisions changed.
+
 ## 2026-11-21, 22:40 UTC (17:40 local): runs 026-033 queued (Randolph: "let's do all 7")
 
 - Simulator options added, all off by default. Synthetic-weather voyages (Rev E1 and C5, three seeds) reproduce bit-for-bit with them off.

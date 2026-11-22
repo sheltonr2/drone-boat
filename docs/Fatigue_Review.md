@@ -115,3 +115,14 @@ The per-hour loads above were combined with the sea states actually met along th
 - **Fatigue life used per crossing:** fin root 0.2%, stern post 0.2%, counterweight arm 0.2%, spar and rudder stocks negligible. All of these are hundreds of crossings from their fatigue limit.
 - **Tail boom:** the old 12 × 10 tube would use **130% of its life on an average crossing**, almost all of it in the hours with 5 m+ beam seas. Rev E1's 16 × 14 tube takes the worst load from 78% to 41% of strength, and on the carbon S-N rule that is about 250 million cycles instead of about 1,400. **Rev E1's change is confirmed as necessary**, not just a margin.
 - **Rudder servo movements per crossing:** 2.85 million with the 6 s wave filter (3.6 million on a long, p90 voyage); 25.6 million unfiltered. **Field Test P should run to 4 million movements**, not 3 million, so that it covers a long voyage.
+
+## Westbound crossing, Mindelo → BVI (21 Nov 2026, run 031)
+
+The same calculation on the sea states along the 500 Rev E1 tracks from Mindelo, Cape Verde, to the BVI (run 024a, winters 2023–24 and 2024–25; `results/2026-11-21_seastates_ew024_mindelo__bvi_s.json`, `docs/data/fatigue_voyage_ew.json`). The 70/30 quartering/beam mix was kept; trade-wind sailing is mostly downwind, so if anything it overstates beam-sea loads.
+
+- **Sea states per average voyage (95 days sampled):** mostly Hs 1.5–2.5 m. Hs is 3 m or more 9% of the time and **never reaches 5 m** (the highest Hs met on any voyage was about 4 m). Eastbound it's 1.3% of the time at 5 m or more.
+- **Fatigue life used per crossing:** fin root 0.2%, stern post 0.2%, counterweight arm 0.2%, spar and rudder stocks negligible, about the same as eastbound.
+- **Tail boom:** even the old 12 × 10 tube would use only 7% of its life, against 130% eastbound, because there are no 5 m beam seas. Rev E1's 16 × 14 tube has a wide margin.
+- **Rudder servo movements per crossing:** 2.30 million with the wave filter (2.71 million on a long voyage), fewer than eastbound. Field Test P's 4 million covers both directions.
+- **So the westbound backup is the gentler crossing for the structure.** Its risks are elsewhere: weed, and the long time at sea from the Canaries.
+

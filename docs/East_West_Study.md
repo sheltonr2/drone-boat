@@ -208,6 +208,10 @@ Paired on the same seeds: Mindelo − Gran Canaria +8.0 points (+3.6 to +12.4); 
 - Fallback: **El Hierro or Gran Canaria, routed via 20N 28W, launching mid-November to mid-December.**
 - Not from the mainland, not on the direct Canaries route, and not in May.
 
+## 11. Sea states and fatigue westbound (21 Nov 2026, run 031)
+
+Along the 500 Mindelo → BVI tracks the seas are gentler than eastbound: Hs is 3 m or more 9% of the time and never reaches 5 m (eastbound: 1.3% of the time at 5 m or more). Fatigue use per crossing is about the same for the fin root, stern post and counterweight arm (a fraction of a percent each), and the tail boom, the one critical part eastbound, has a wide margin. Rudder servo movements are about 2.3 million per crossing. Details: [Fatigue_Review.md](Fatigue_Review.md). Runs 032–033 (two more winters) are under way.
+
 ## 8. Earlier questions (14 Nov)
 
 1. **Is westbound a second option or a candidate for the first attempt?** The answer decides how much of the build plan's test schedule should cover downwind sailing and weed.

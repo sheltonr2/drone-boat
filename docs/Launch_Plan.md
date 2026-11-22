@@ -122,6 +122,31 @@ These are the same runs as 021b, with the holding point in open water instead of
 
   **The fix works.** Close passes to Scilly fell by three quarters, and the other rocks are down too. Getting to the holding point is about as likely as before (a small gain within the noise), and the last leg takes about 2.9 days. **This two-waypoint approach is now the plan's approach.** The Lizard offing stays first choice: it has fewer close passes than Mount's Bay, where Wolf Rock is still 5.6%.
 
+## The final plan on four years of weather (21 Nov 2026, run 026)
+
+The decided plan run as one piece: Rev E1, 45 km off Hatteras, launches 1–20 May on 2021–2024 weather, the two-waypoint Scilly approach and the holding point in the Lizard offing (run 025's scenario). 1,000 voyages, 250 per year. Analysis: [`collab/runs_026/analyze.py`](../collab/runs_026/analyze.py).
+
+| | Result (95% range) |
+|---|---|
+| **Reached the Lizard holding point** | **76.6%** (74.1–79.1) |
+| Success as scored (any European landfall counts) | 81.0% (78.6–83.4) |
+| By year, success / reached the hold | 2021 78 / 74; 2022 84 / 80; 2023 79 / 74; 2024 83 / 78 |
+| Days at sea for arrivals | median 121, p90 145 |
+| Passed within 1 km of | Scilly 5.4%, the Manacles 2.2%, the Lizard 1.6%, Wolf Rock 1.5% |
+| A tropical storm of that year within 100 km | 1.0% (a hurricane 0.2%) |
+| After the grade-D storm loss model (30% / 70%) | 80.8% |
+
+**What it shows:**
+- **About three boats in four reach the holding point, and four in five reach Europe.** That's the plan's figure. It's a little below run 019a's 86% because that run stopped 40 km off Scilly; the last leg in to the Lizard costs about 5 points.
+- **Every year is close:** 78–84% success and 74–80% at the hold. No year is an outlier.
+- **Storms barely matter in May:** only 1% of voyages met a tropical storm of their own year within 100 km.
+- **Scilly:** 5.4% passed within 1 km, against 3.0% in run 025 (2023+2024, May–June launches). The extra years add a few close passes; the approach still works, but this is the rock to keep an eye on.
+- The commonest problems along the way are weed or fishing line (0.29 per voyage), leaks (0.24, which the pump handles) and electronics faults (0.18).
+
+## Holding at the Lizard offing (run 028, pending)
+
+Run 028 (station-keeping for 14 days and a dead boat drifting for 30 days, at the Lizard offing and the mouth of Mount's Bay) stopped on 21 Nov before it began: the data check asked for December weather that a 14-day voyage doesn't need. The check now scales with voyage length (`simulator/drone_sim/cli.py`), and 028 is queued again behind the weather download (run 032). Its results will be added here.
+
 ## Launch window on four years of weather (15 Nov 2026, runs 019a–c)
 
 Rev E1, 45 km off Hatteras → Cornwall, 500 voyages per window on 2021–2024 weather. The same seeds were used in each window, so the differences are paired. Analysis: [`window_analysis.py`](data/window_analysis.py).

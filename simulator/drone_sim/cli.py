@@ -6,6 +6,7 @@
   python -m drone_sim.cli selftest            # checks Open-Meteo access and unit conversions
   python -m drone_sim.cli gridcheck [--scenario s.json]   # same voyage on a 1.0 and a 0.25 degree weather grid
 """
+import math
 import argparse, json, os, sys, time, datetime as dt
 from . import design as D
 from .sim import run_voyage, DEFAULT_SCENARIO
@@ -88,11 +89,13 @@ def _main():
         y0, m0 = int(a.frm[:4]), int(a.frm[5:7])
         y1, m1 = int((a.to or a.frm)[:4]), int((a.to or a.frm)[5:7])
         need = set()
+        # Short voyages (the holding study, max_days 14-30) need fewer months after the window (21 Nov 2026).
+        extra = 5 if sc.get("max_days", 240) >= 120 else max(1, math.ceil(sc["max_days"]/30.4))
         for y in ([int(v) for v in a.years.split(",") if v.strip()] or [y0]):
             if y1 == y0:          # same-year window (all runs before the east-west study): unchanged, stops at December
-                need |= {y*100 + m for m in range(m0, min(12, m1 + 5) + 1)}
+                need |= {y*100 + m for m in range(m0, min(12, m1 + extra) + 1)}
             else:                 # window across New Year (east-west study): launch months plus five, into next year
-                for k in range((y1 - y0)*12 + (m1 - m0) + 6):
+                for k in range((y1 - y0)*12 + (m1 - m0) + 1 + extra):
                     mm = m0 - 1 + k
                     need.add((y + mm//12)*100 + mm % 12 + 1)
         if not need <= have:

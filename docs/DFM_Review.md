@@ -86,6 +86,22 @@ These need a decision. I did not change the design for them.
 6. **The spring overload link on D32 is a suggested detail.** The design is two 316 springs preloaded to about 55 N in a brass tube. Prove it in Test I before trusting it.
 7. **The battery-box lid on D32 is a proposal.** It copies the hatch. Confirm it.
 
+## 6. Simulated effect of open items 1 and 2 (21 Nov 2026, run 027)
+
+Rev E1 on run 025's set-up (45 km off Hatteras to the Lizard offing, 500 voyages, 1 May–15 June 2023+2024), with the same launches and seeds, so the differences are paired. Run 025 itself: 83.0% success, 76.4% reach the hold.
+
+| Change | Success | Paired change (95% range) | Reached the hold | Boats whose battery reached SAFE (25%) | Voyages with the wing broken in a knockdown |
+|---|---|---|---|---|---|
+| Run 025 (40 W solar, 30 × 22 spar) | 83.0% | — | 76.4% | 0 | 10 |
+| **30 W solar** | 83.0% | +0.0 (-0.6 to +0.6) | 76.2% | 9 | 10 |
+| **20 W solar** | 83.0% | +0.0 (-0.8 to +0.8) | 75.8% | 26 | 9 |
+| **Stock 30 × 26 spar** | 80.8% | **-2.2** (-3.6 to -1.0) | 72.0% (-4.4) | 0 | **40** |
+
+**What it shows:**
+- **Solar (item 1): smaller stock panels are acceptable.** 30 W or even 20 W in total changes nothing measurable in success. The battery margin does shrink: the lowest charge on a typical voyage falls from 88% (40 W) to 87% (30 W) and 85% (20 W). More to the point, with 20 W about 1 boat in 20 (26 of 500) runs the battery down to the 25% SAFE threshold at some point and waits there until the sun brings it back, against none with 40 W. With 30 W it's 9 of 500. **30 W of smaller stock panels is a reasonable choice; 20 W works but leaves little margin** for a cloudy spell, a dirty panel or a weaker battery.
+- **Spar (item 2): the stock 30 × 26 tube costs about 2 points.** Wing breakages in knockdowns go from 10 to 40 voyages in 500, which takes success down 2.2 points and reaching the hold down 4.4. So the 30 × 22 spec, or the bonded 26 × 22 sleeve inside a 30 × 26 (option 2 in item 2), is worth having. This uses the strike model's table for the 30 × 26 tube (the Rev C spar), which depends only on the tube and the wing height; it's the same grade as the rest of the structural model.
+- No decision is changed here; both items stay open for Randolph.
+
 ## 5. What a builder needs
 
 **Printing:**

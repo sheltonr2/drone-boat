@@ -1,0 +1,317 @@
+{
+ "026": {
+  "n": 1000,
+  "success": 81,
+  "ci": [
+   78.6,
+   83.4
+  ],
+  "reached": 76.6,
+  "reached_ci": [
+   74.1,
+   79.1
+  ],
+  "by_year": {
+   "2021": {
+    "success": 78,
+    "reached": 74,
+    "n": 250
+   },
+   "2022": {
+    "success": 84,
+    "reached": 79.6,
+    "n": 250
+   },
+   "2023": {
+    "success": 79.2,
+    "reached": 74.4,
+    "n": 250
+   },
+   "2024": {
+    "success": 82.8,
+    "reached": 78.4,
+    "n": 250
+   }
+  },
+  "outcomes": {
+   "arrived_tracked": 263,
+   "arrived_adrift": 8,
+   "arrived_reporting": 547,
+   "lost": 92,
+   "at_sea_timeout": 62,
+   "arrived_silent": 25,
+   "aground": 3
+  },
+  "within_1km": {
+   "seven_stones": 0.4,
+   "scilly": 5.4,
+   "wolf_rock": 1.5,
+   "runnelstone": 0.4,
+   "lizard_point": 1.6,
+   "manacles": 2.2
+  },
+  "days_median": 120.64,
+  "days_p90": 145.18,
+  "storm_ts_100km": 1.0,
+  "storm_hu_100km": 0.2,
+  "after_storm_losses": 80.82,
+  "knockdowns_mean": 322.48,
+  "failures": {
+   "Fouled by weed or fishing line": 286,
+   "Leak started": 236,
+   "Electronics failure": 181,
+   "One rudder servo jammed": 161,
+   "Tail servo jammed": 129,
+   "Companion computer hung": 106,
+   "One rudder servo failed limp": 104,
+   "Satellite modem or antenna failed": 76
+  }
+ },
+ "027": {
+  "base_025": {
+   "success": 83,
+   "reached": 76.4
+  },
+  "solar30": {
+   "success": 83,
+   "paired": [
+    0,
+    -0.6,
+    0.6
+   ],
+   "reached": 76.2,
+   "reached_paired": [
+    -0.2,
+    -0.6,
+    0.0
+   ],
+   "outcomes": {
+    "arrived_reporting": 306,
+    "lost": 40,
+    "arrived_tracked": 109,
+    "at_sea_timeout": 28,
+    "arrived_silent": 15,
+    "aground": 1,
+    "arrived_adrift": 1
+   },
+   "wing_failures": 10,
+   "wing_failures_025": 10,
+   "min_soc_median": 0.871,
+   "failures": {
+    "Fouled by weed or fishing line": 140,
+    "Leak started": 103,
+    "Electronics failure": 82,
+    "One rudder servo failed limp": 67,
+    "One rudder servo jammed": 66,
+    "Tail servo jammed": 61
+   }
+  },
+  "solar20": {
+   "success": 83,
+   "paired": [
+    0,
+    -0.8,
+    0.8
+   ],
+   "reached": 75.8,
+   "reached_paired": [
+    -0.6,
+    -1.4,
+    0.0
+   ],
+   "outcomes": {
+    "arrived_reporting": 306,
+    "lost": 39,
+    "arrived_tracked": 109,
+    "at_sea_timeout": 29,
+    "arrived_silent": 15,
+    "aground": 1,
+    "arrived_adrift": 1
+   },
+   "wing_failures": 9,
+   "wing_failures_025": 10,
+   "min_soc_median": 0.8465,
+   "failures": {
+    "Fouled by weed or fishing line": 140,
+    "Leak started": 103,
+    "Electronics failure": 83,
+    "One rudder servo failed limp": 67,
+    "One rudder servo jammed": 66,
+    "Tail servo jammed": 61
+   }
+  },
+  "spar3026": {
+   "success": 80.8,
+   "paired": [
+    -2.2,
+    -3.6,
+    -1.0
+   ],
+   "reached": 72,
+   "reached_paired": [
+    -4.4,
+    -6.2,
+    -2.6
+   ],
+   "outcomes": {
+    "arrived_reporting": 298,
+    "lost": 43,
+    "arrived_tracked": 106,
+    "at_sea_timeout": 35,
+    "aground": 2,
+    "arrived_silent": 15,
+    "arrived_adrift": 1
+   },
+   "wing_failures": 40,
+   "wing_failures_025": 10,
+   "min_soc_median": 0.8815,
+   "failures": {
+    "Fouled by weed or fishing line": 146,
+    "Leak started": 108,
+    "Electronics failure": 82,
+    "One rudder servo failed limp": 70,
+    "One rudder servo jammed": 68,
+    "Tail servo jammed": 63
+   }
+  }
+ },
+ "029": {
+  "their_way": {
+   "n": 46,
+   "success": 0.0,
+   "arrived": 0,
+   "outcomes": {
+    "lost": 6,
+    "aground": 39,
+    "at_sea_timeout": 1
+   },
+   "aground_where": {
+    "Nova Scotia": 13,
+    "New England/Long Island": 13,
+    "Newfoundland": 3,
+    "Maryland/Delaware/Virginia": 10
+   },
+   "days_median": 21.98
+  },
+  "ours_46": {
+   "n": 46,
+   "success": 41.30434782608695,
+   "arrived": 19,
+   "outcomes": {
+    "arrived_tracked": 6,
+    "arrived_reporting": 13,
+    "aground": 4,
+    "at_sea_timeout": 12,
+    "lost": 8,
+    "arrived_adrift": 3
+   },
+   "aground_where": {
+    "Nova Scotia": 2,
+    "Maryland/Delaware/Virginia": 1,
+    "New England/Long Island": 1
+   },
+   "days_median": 135.56
+  }
+ },
+ "030": {
+  "both": {
+   "n": 1000,
+   "success": 81.5,
+   "paired": [
+    0.5,
+    -0.2,
+    1.2
+   ],
+   "reached_paired": [
+    0.6,
+    -0.1,
+    1.4
+   ],
+   "storm_hours_voyages": [
+    59,
+    1000
+   ],
+   "storm_hours_mean_when_any": 15.383050847457627,
+   "storm_max_factor": 1.52,
+   "knockdowns": 317.677,
+   "knockdowns_026": 322.48,
+   "wing_failures": 11,
+   "wing_failures_026": 17,
+   "outcomes": {
+    "arrived_tracked": 265,
+    "arrived_adrift": 8,
+    "arrived_reporting": 550,
+    "lost": 95,
+    "at_sea_timeout": 53,
+    "arrived_silent": 25,
+    "aground": 4
+   }
+  },
+  "storm": {
+   "n": 500,
+   "success": 81.8,
+   "paired": [
+    -0.4,
+    -1.2,
+    0.4
+   ],
+   "reached_paired": [
+    -0.6,
+    -1.6,
+    0.2
+   ],
+   "storm_hours_voyages": [
+    35,
+    500
+   ],
+   "storm_hours_mean_when_any": 15.56857142857143,
+   "storm_max_factor": 1.52,
+   "knockdowns": 322.548,
+   "knockdowns_026": 321.524,
+   "wing_failures": 10,
+   "wing_failures_026": 10,
+   "outcomes": {
+    "arrived_tracked": 122,
+    "arrived_adrift": 4,
+    "arrived_reporting": 287,
+    "lost": 37,
+    "at_sea_timeout": 34,
+    "arrived_silent": 15,
+    "aground": 1
+   }
+  },
+  "severity": {
+   "n": 500,
+   "success": 82.8,
+   "paired": [
+    0.6,
+    0.0,
+    1.4
+   ],
+   "reached_paired": [
+    0.6,
+    0.0,
+    1.4
+   ],
+   "storm_hours_voyages": [
+    0,
+    0
+   ],
+   "storm_hours_mean_when_any": 0,
+   "storm_max_factor": 1,
+   "knockdowns": 316.374,
+   "knockdowns_026": 321.524,
+   "wing_failures": 6,
+   "wing_failures_026": 10,
+   "outcomes": {
+    "arrived_tracked": 123,
+    "arrived_adrift": 4,
+    "arrived_reporting": 291,
+    "lost": 36,
+    "at_sea_timeout": 31,
+    "arrived_silent": 14,
+    "aground": 1
+   }
+  }
+ }
+}

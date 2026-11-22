@@ -1,0 +1,313 @@
+Run 029: Rev C5 on boat-sim's re-score set-up (46 daily launches, May-June 2023), started Sat 11/21/2026 20:19:59.71 
+==== RUN: their way: no waypoint, 51.4N 10.0W ==== 
+[20:20:00] Monte Carlo: 46 voyages, Rev C5 scored boat-sim's way: one launch a day 1 May-15 Jun 2023, 10 k; 8 processes
+[20:20:26] 10/46 voyages done, 0 arrived
+[20:20:33] 20/46 voyages done, 0 arrived
+[20:20:41] 30/46 voyages done, 0 arrived
+[20:20:46] 40/46 voyages done, 0 arrived
+[20:21:04] 46/46 voyages done, 0 arrived
+{
+ "runs": 46,
+ "errors": 0,
+ "counts": {
+  "arrived_reporting": 0,
+  "arrived_tracked": 0,
+  "arrived_silent": 0,
+  "arrived_adrift": 0,
+  "at_sea_timeout": 1,
+  "aground": 39,
+  "lost": 6
+ },
+ "percent": {
+  "arrived_reporting": 0.0,
+  "arrived_tracked": 0.0,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 0.0,
+  "at_sea_timeout": 2.2,
+  "aground": 84.8,
+  "lost": 13.0
+ },
+ "success_percent": 0.0,
+ "success_ci95": [
+  0,
+  7.7
+ ],
+ "by_launch_month": {
+  "05": {
+   "runs": 31,
+   "arrived": 0,
+   "success_percent": 0.0,
+   "success_ci95": [
+    0,
+    11.0
+   ]
+  },
+  "06": {
+   "runs": 15,
+   "arrived": 0,
+   "success_percent": 0.0,
+   "success_ci95": [
+    0,
+    20.4
+   ]
+  }
+ },
+ "success_definition": "arrived_reporting + arrived_tracked",
+ "reporting_percent": 0.0,
+ "any_arrival_percent": 0.0,
+ "position_known_at_end_percent": 87.0,
+ "arrival_days": {
+  "median": null,
+  "p10": null,
+  "p90": null,
+  "all": []
+ },
+ "failure_causes": {
+  "aground": 20,
+  "Picked up by a fishing boat or passer-by": 5,
+  "One rudder servo jammed": 4,
+  "Fouled by weed or fishing line": 4,
+  "Electronics failure": 4,
+  "Satellite modem or antenna failed": 2,
+  "One rudder servo failed limp": 1,
+  "Leak started": 1,
+  "Tail servo failed": 1,
+  "Backup tracker failed": 1,
+  "Collision damage": 1,
+  "Companion computer hung": 1,
+  "Struck by a vessel": 1
+ },
+ "mean_airtime_usd": 35.63,
+ "mean_knockdowns": 50.7
+}
+Saved ..\results\c5_029_2023_their_way.json
+{
+ "runs": 46,
+ "errors": 0,
+ "success_percent": 0.0,
+ "success_ci95": [
+  0,
+  7.7
+ ],
+ "reporting_percent": 0.0,
+ "any_arrival_percent": 0.0,
+ "position_known_at_end_percent": 87.0,
+ "percent": {
+  "arrived_reporting": 0.0,
+  "arrived_tracked": 0.0,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 0.0,
+  "at_sea_timeout": 2.2,
+  "aground": 84.8,
+  "lost": 13.0
+ },
+ "arrival_days": {
+  "median": null,
+  "p10": null,
+  "p90": null
+ },
+ "failure_causes": {
+  "aground": 20,
+  "Picked up by a fishing boat or passer-by": 5,
+  "One rudder servo jammed": 4,
+  "Fouled by weed or fishing line": 4,
+  "Electronics failure": 4,
+  "Satellite modem or antenna failed": 2,
+  "One rudder servo failed limp": 1,
+  "Leak started": 1,
+  "Tail servo failed": 1,
+  "Backup tracker failed": 1,
+  "Collision damage": 1,
+  "Companion computer hung": 1,
+  "Struck by a vessel": 1
+ },
+ "by_launch_month": {
+  "05": {
+   "runs": 31,
+   "arrived": 0,
+   "success_percent": 0.0,
+   "success_ci95": [
+    0,
+    11.0
+   ]
+  },
+  "06": {
+   "runs": 15,
+   "arrived": 0,
+   "success_percent": 0.0,
+   "success_ci95": [
+    0,
+    20.4
+   ]
+  }
+ },
+ "mean_airtime_usd": 35.63,
+ "mean_knockdowns": 50.7
+}
+==== RUN: our set-up on their 46 dates ==== 
+[20:21:05] Monte Carlo: 46 voyages, Rev C5, our 48.0% set-up (waypoint 42N 48W, target off Mizen Head) on ; 8 processes
+[20:22:09] 10/46 voyages done, 5 arrived
+[20:22:49] 20/46 voyages done, 9 arrived
+[20:23:23] 30/46 voyages done, 14 arrived
+[20:24:03] 40/46 voyages done, 17 arrived
+[20:24:15] 46/46 voyages done, 19 arrived
+{
+ "runs": 46,
+ "errors": 0,
+ "counts": {
+  "arrived_reporting": 13,
+  "arrived_tracked": 6,
+  "arrived_silent": 0,
+  "arrived_adrift": 3,
+  "at_sea_timeout": 12,
+  "aground": 4,
+  "lost": 8
+ },
+ "percent": {
+  "arrived_reporting": 28.3,
+  "arrived_tracked": 13.0,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 6.5,
+  "at_sea_timeout": 26.1,
+  "aground": 8.7,
+  "lost": 17.4
+ },
+ "success_percent": 41.3,
+ "success_ci95": [
+  28.3,
+  55.7
+ ],
+ "by_launch_month": {
+  "05": {
+   "runs": 31,
+   "arrived": 14,
+   "success_percent": 45.2,
+   "success_ci95": [
+    29.2,
+    62.3
+   ]
+  },
+  "06": {
+   "runs": 15,
+   "arrived": 5,
+   "success_percent": 33.3,
+   "success_ci95": [
+    15.2,
+    58.3
+   ]
+  }
+ },
+ "success_definition": "arrived_reporting + arrived_tracked",
+ "reporting_percent": 28.3,
+ "any_arrival_percent": 47.8,
+ "position_known_at_end_percent": 82.6,
+ "arrival_days": {
+  "median": 131.755,
+  "p10": 111.635,
+  "p90": 166.29700000000003,
+  "all": [
+   111.35,
+   132.52,
+   130.99,
+   111.5,
+   112.85,
+   136.24,
+   123.15,
+   125.18,
+   140.01,
+   135.95,
+   175.11,
+   166.36,
+   165.73,
+   168.56,
+   116.41,
+   133.89,
+   95.04,
+   113.3,
+   116.66,
+   117.17,
+   160.04,
+   135.17
+  ]
+ },
+ "failure_causes": {
+  "Electronics failure": 5,
+  "Struck by a vessel": 4,
+  "Leak started": 3,
+  "One rudder servo stripped by a wave strike": 3,
+  "Keel fin or its joint broke in a knockdown": 3,
+  "Fouled by weed or fishing line": 2,
+  "Rudder servo jammed": 2,
+  "Satellite modem or antenna failed": 1,
+  "Tail servo jammed": 1,
+  "Picked up by a fishing boat or passer-by": 1,
+  "One rudder servo failed limp": 1,
+  "Rudder servo stripped by a wave strike": 1
+ },
+ "mean_airtime_usd": 141.98,
+ "mean_knockdowns": 751.4
+}
+Saved ..\results\c5_029_2023_ours_46.json
+{
+ "runs": 46,
+ "errors": 0,
+ "success_percent": 41.3,
+ "success_ci95": [
+  28.3,
+  55.7
+ ],
+ "reporting_percent": 28.3,
+ "any_arrival_percent": 47.8,
+ "position_known_at_end_percent": 82.6,
+ "percent": {
+  "arrived_reporting": 28.3,
+  "arrived_tracked": 13.0,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 6.5,
+  "at_sea_timeout": 26.1,
+  "aground": 8.7,
+  "lost": 17.4
+ },
+ "arrival_days": {
+  "median": 131.755,
+  "p10": 111.635,
+  "p90": 166.29700000000003
+ },
+ "failure_causes": {
+  "Electronics failure": 5,
+  "Struck by a vessel": 4,
+  "Leak started": 3,
+  "One rudder servo stripped by a wave strike": 3,
+  "Keel fin or its joint broke in a knockdown": 3,
+  "Fouled by weed or fishing line": 2,
+  "Rudder servo jammed": 2,
+  "Satellite modem or antenna failed": 1,
+  "Tail servo jammed": 1,
+  "Picked up by a fishing boat or passer-by": 1,
+  "One rudder servo failed limp": 1,
+  "Rudder servo stripped by a wave strike": 1
+ },
+ "by_launch_month": {
+  "05": {
+   "runs": 31,
+   "arrived": 14,
+   "success_percent": 45.2,
+   "success_ci95": [
+    29.2,
+    62.3
+   ]
+  },
+  "06": {
+   "runs": 15,
+   "arrived": 5,
+   "success_percent": 33.3,
+   "success_ci95": [
+    15.2,
+    58.3
+   ]
+  }
+ },
+ "mean_airtime_usd": 141.98,
+ "mean_knockdowns": 751.4
+}
+=== DONE Sat 11/21/2026 20:24:15.67 

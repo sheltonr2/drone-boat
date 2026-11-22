@@ -7,9 +7,13 @@ Inputs (run from the repo root):
   docs/data/steering_filter_sweep.json   rudder movements per hour with the wave filter
 Damage per hour is interpolated in Hs (held at the end values outside 0.75-5 m) and mixed 70% quartering / 30% beam.
 Miner's sum: 1.0 = the part's fatigue life used up. Grade D (the loads model's own limits apply)."""
-import json, statistics as st
+import json, statistics as st, sys
 import numpy as np
-SS = json.load(open('results/2026-11-14_seastates_hatteras__cornwall.json'))
+# Optional arguments (21 Nov 2026, run 031): sea-states file and output file, e.g. the westbound Mindelo -> BVI tracks:
+#   python docs/data/fatigue_voyage.py results/2026-11-21_seastates_ew024_mindelo__bvi_s.json docs/data/fatigue_voyage_ew.json
+SS_PATH = sys.argv[1] if len(sys.argv) > 1 else 'results/2026-11-14_seastates_hatteras__cornwall.json'
+OUT_PATH = sys.argv[2] if len(sys.argv) > 2 else 'docs/data/fatigue_voyage.json'
+SS = json.load(open(SS_PATH))
 ML = json.load(open('docs/data/motions_loads.json'))
 SW = json.load(open('docs/data/steering_filter_sweep.json'))
 edges = SS['hs_edges']; mids = [(a + b)/2 for a, b in zip(edges[:-1], edges[1:])]
@@ -54,4 +58,5 @@ mf = float(sum(h*filt(m) for h, m in zip(per_voy, mids))); mu = float(sum(h*unf(
 out['servo_moves_per_voyage'] = dict(filter_6s=mf, unfiltered=mu, filter_6s_p90=mf*p90_h/mean_h)
 print(f"\nRudder servo movements per voyage: with the 6 s wave filter {mf/1e6:.2f} million (p90 voyage {mf*p90_h/mean_h/1e6:.2f} M); "
       f"unfiltered {mu/1e6:.1f} million")
-json.dump(out, open('docs/data/fatigue_voyage.json', 'w'), indent=1)
+out['source'] = SS_PATH
+json.dump(out, open(OUT_PATH, 'w'), indent=1)

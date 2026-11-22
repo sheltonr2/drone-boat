@@ -45,6 +45,24 @@ The table above used fast synthetic-weather voyages. The launch-point study ([La
 
 Script: `docs/data/launch_storms.py` (output `docs/data/launch_storms.json`), applying `storms.StormClimatology` to `results/2026-11-13_launch_2023_<launch>__ireland_sw.json`.
 
+## Update, 21 November: storms inside the voyage, and knockdown severity (run 030)
+
+Two model changes, tested on the final plan (run 026: Rev E1, Hatteras → Lizard offing, 1–20 May 2021–2024) with the same launches and seeds:
+- **Storm winds in the loop (boat-sim #117).** ERA5 smooths the cores of tropical cyclones; boat-sim measured its peak wind at about 0.70 of the best-track wind for a tropical storm, falling to 0.31 for a Category 5. With `storm_wind_correction` on, a voyage that passes within 250 km of a HURDAT2 storm of its own year has the ERA5 wind scaled up by the inverse of that ratio (in full within 60 km, tapering to nothing at 250 km, and never above the storm's best-track wind), and the waves by the square root. The boat then meets those winds and seas in the simulation, with knockdowns, breakages and storm tactics, instead of having a flat 30% / 70% taken off afterwards. Grade D: HURDAT2 gives no radius of maximum wind.
+- **Knockdown severity.** The wing's damage chance per knockdown was the same in 2 m and 8 m seas. With `knockdown_severity` it scales with (Hs/3)², normalised to 2.5, the mean of (Hs/3)² at a knockdown on the planned route (2.63 in run 025, 2.31 in run 019a), so the route's average is unchanged.
+
+| Run (same seeds as run 026) | Success | Paired change (95% range) | Voyages that met a corrected storm | Wing broken in a knockdown |
+|---|---|---|---|---|
+| Run 026, no fixes | 81.0% | — | — | 17 of 1000 |
+| Storm winds only (500) | 81.8% | -0.4 (-1.2 to +0.4) | 35 of 500, about 16 h each, wind × up to 1.52 | 10 (026: 10) |
+| Knockdown severity only (500) | 82.8% | +0.6 (+0.0 to +1.4) | — | 6 (026: 10) |
+| **Both (1000)** | **81.5%** | **+0.5** (-0.2 to +1.2) | 59 of 1000 | 11 (026: 17) |
+
+**What it shows:**
+- **For May launches the storm question is small either way.** About 6% of voyages pass within 250 km of a tropical system of their year, mostly tropical storms at the edge of their reach, and the stronger winds they now meet change success by less than half a point. The post-hoc 30% / 70% model takes off 0.2 points on the same tracks. Both methods agree that storms are not what limits a May crossing.
+- **Knockdown severity slightly helps:** big-sea knockdowns break more wings and small-sea ones fewer, and on this route the two nearly cancel (+0.6 points).
+- The fixes stay available as scenario keys and are off by default. Turning them on for later runs is a choice for Randolph; it doesn't change any decision. They matter more for June–November exposure and for the westbound backup's tail of hurricane season, which these runs don't test.
+
 ## Method
 
 - **Analog seasons.** For each simulated voyage (hourly positions), and for each season from 1991 to 2025, we move the voyage onto the same calendar dates in that year. Then we check whether any tropical or subtropical cyclone with ≥34 kt winds passed within the radius at the same hour. Best tracks are interpolated from 6-hourly to hourly. Extratropical stages are excluded because ERA5 handles them well.
