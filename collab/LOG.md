@@ -2,6 +2,9 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-22, 20:05 UTC (15:05 local): 6-hourly check
+- Nothing new on #50 or from John by email. 032 has 5 of 16 ERA5 months (March 2022 took 5.8 h), so it's due about 24-25 Nov. 028b and 033 wait behind it.
+
 ## 2026-11-22, 14:00 UTC (09:00 local): reply posted
 
 - Randolph approved the draft ("Send it"). Posted on #50 ([comment](https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-7080209758), text in collab/post_2026-11-22_rescore_reply.md); the API shows exactly one new comment. It says our run 029 also got 19/46 on their dates (0/46 on the straight line), compares the losses, explains the slower crossings, and offers a glTF/OBJ export of the viewer model for Bluewater's Rev E1 if they say which format.
