@@ -2,6 +2,10 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-22, 14:00 UTC (09:00 local): reply posted
+
+- Randolph approved the draft ("Send it"). Posted on #50 ([comment](https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-7080209758), text in collab/post_2026-11-22_rescore_reply.md); the API shows exactly one new comment. It says our run 029 also got 19/46 on their dates (0/46 on the straight line), compares the losses, explains the slower crossings, and offers a glTF/OBJ export of the viewer model for Bluewater's Rev E1 if they say which format.
+
 ## 2026-11-22, 13:50 UTC (08:50 local): daily check-in
 
 - Thread #50: one new comment from their team (22 Nov 11:05 UTC, issuecomment-7078210631).
