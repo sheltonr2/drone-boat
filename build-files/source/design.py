@@ -83,6 +83,8 @@ CWARM = dict(reach=300, tube_len=244, od=12.0, z=276, pod_od=64, pod_h=74, pod_b
 # ---- deck & stern -------------------------------------------------------
 HATCH = dict(x0=330, x1=530, w=220, lid_margin=30)
 SOLAR = [dict(x0=650, x1=1070, w=280), dict(x0=1080, x1=1480, w=280)]
+# Rev E3: stock 10 W ETFE panel (PV Logic STPVF010, 380 x 250 x 4) centred in each bay; 20 W in all
+SOLAR_PANEL = dict(l=380, w=250, t=4, watts=10, model="PV Logic STPVF010 10 W Flexi")
 STUB = dict(x=1530, od=20.0, bot_z=150, top_z=650)
 # Rev C additions on the stub: YB3 backup tracker platform (P19) and all-round white light (P20)
 YB3 = dict(x=180.0, plate_l=170, plate_w=100, box=(150, 86, 32), kg=0.33, well=(176, 106, 38))   # Rev C3: in a well in the foredeck, centred at x 180, top flush with the deck so the tail boom (underside z 270) swings clear. Was on the stern post at z 480

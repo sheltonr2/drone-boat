@@ -1,4 +1,4 @@
-SOLAR-SAIL OCEAN DRONE 1.5 m  -  BUILD FILES (Rev E2, 2026-11-19)
+SOLAR-SAIL OCEAN DRONE 1.5 m  -  BUILD FILES (Rev E3, 2026-11-23)
 
 Drawings.pdf                 28 tabloid sheets (11 x 17 in): general arrangement, hull lines + offsets,
                              interior, keel + bulb, twin rudders, wing + tail, mast/stub, hatch,
@@ -136,4 +136,15 @@ Rev E2 (2026-11-19)  docs/DFM_Review.md  -  design for manufacture; no change to
   cable exits (W7, W8: 8 WetLinks, not 6), wire gauges and fuse ratings, linkage geometry, laminate quantities.
   Open items for the builder (DFM_Review section 4): solar panels to fit the deck bays, the 30 x 22 spar, metric
   12 mm rod and bar in the US, the SER-2000 size, the GV-5 sealing.
+
+Rev E3 (2026-11-23)  docs/DFM_Review.md sections 4 and 6  -  DFM open items 1 and 2 settled
+  1. Solar: 2 x stock PV Logic / Solar Technology STPVF010 10 W ETFE flexi panels, 380 x 250 x 4, one centred in each
+     deck bay (20 W in all, was about 40 W of custom-size panels). Run 027: no measurable change in success; about
+     1 voyage in 20 dips to SAFE (25%) once and recovers. Custom-size 17-20 W panels stay an optional upgrade.
+  2. Wing spar: 30 x 26 stock carbon tube with an R&G 26 x 22 tube bonded full length inside (sand to a sliding fit,
+     thickened epoxy, cure vertical): the same section as the 30 x 22 spec. A one-piece special-order 30 x 22 is also
+     fine. Run 027: the plain 30 x 26 tube alone would cost about 2 points (4x the wing breakages), so don't skip the sleeve.
+  Sheets: D00 (revision history), D01 (plan, key data), D06 and D07 (spar notes), D30 (solar block); title blocks E3.
+  BOM: solar and spar lines replaced (two spar lines now). Simulator design: designs/revE3_design.json (20 W).
+  Still open (DFM_Review section 4): metric 12 mm rod and bar in the US, the SER-2000 size, the GV-5 sealing.
 

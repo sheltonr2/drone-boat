@@ -15,7 +15,7 @@ A13,"Electronics: autopilot, comms, sensors",Optocouplers,6N137 (DIP-8) high-spe
 A14,"Electronics: autopilot, comms, sensors",Supervisor / external watchdog,3.3 V supervisor with watchdog (e.g. TI TPS3823-33),1,ea,3,3,est,DigiKey / Mouser,,P21,
 B01,Electronics: power,Battery,"Bioenno BLF-1215A, 12.8 V 15 Ah LiFePO4, PVC pack",1,ea,149.99,149.99,web,Bioenno Power,https://www.bioennopower.com/products/12v-15ah-lifepo4-battery-pvc,Battery box (D09),Charger for the bench: Bioenno 4 A LiFePO4 (optional)
 B02,Electronics: power,Solar charge controller,"Genasun GV-5-Li-14.2V MPPT, 5 A",1,ea,85.0,85.0,web,eMarine,https://emarineinc.com/Genasun-MPPT-Solar-Controller-5A-Input-12V-Output,Main box,Pick the Li 14.2 V option. Datasheet says IP40: it lives in the sealed box
-B03,Electronics: power,Solar panels,"2 x ETFE semi-flexible, about 17-20 W, must fit 420 x 280 and 400 x 280 mm deck bays",2,ea,45,90,est,Custom-size order,,Deck (D08),"OPEN ITEM: stock 20 W panels are about 450 x 350, too wide for the bays. See docs/DFM_Review.md"
+B03,Electronics: power,Solar panels,"PV Logic / Solar Technology STPVF010 10 W Flexi, ETFE, 380 x 250 x 4 mm, IP69, one per deck bay (20 W total)",2,ea,64,128,web,Cactus Navigation (UK) or any PV Logic dealer,https://www.cactusnav.com/flexible-solar-panel-p-19876.html,Deck (D08),Rev E3: stock panel that fits the 280 mm bays. Run 027: 20 W costs no measurable success; about 1 boat in 20 dips to SAFE once. Custom-size 17-20 W panels remain an upgrade
 B04,Electronics: power,Servo supply regulators,"Pololu D36V50F6, 6 V 5.5 A step-down (#4092)",2,ea,39.95,79.9,web,Pololu,https://www.pololu.com/product/4092,Main box + P21,"Limp_Home_Spec asks for about 5.8 V; this one is a fixed 6.0 V, fine with ideal diodes"
 B05,Electronics: power,Servo multiplexer,"Pololu 4-channel RC servo multiplexer, assembled (#2806)",1,ea,17.95,17.95,web,Pololu,https://www.pololu.com/product/2806,P22,FAILMODE jumper set so a lost select gives the master (Pixhawk)
 B06,Electronics: power,Ideal diodes,"Pololu power ORing ideal diode pair, 4-60 V 6 A (#5398)",2,ea,7.95,15.9,web,Pololu,https://www.pololu.com/product/5398,P22,"One per muxed servo (starboard rudder, tail)"
@@ -47,33 +47,34 @@ D13,"Electronics: enclosure, cable, penetrations",Urethane potting,"Two-part ure
 D14,"Electronics: enclosure, cable, penetrations",Silicone potting,"Soft two-part silicone potting/RTV, about 200 ml",1,ea,25,25,est,MG Chemicals / DigiKey,,"GPS, BNO085, AS5600",
 E01,Backup tracker and safety,Backup tracker,YB Tracking YB3 handheld tracker (GBP 449 + tax),1,ea,600,600,web,YB Tracking,https://www.ybtracking.com/product-page/yb3-professional,P19 in the foredeck well,Price converted from GBP; airtime extra
 E02,Backup tracker and safety,Radar reflector,Davis Emergency Radar Reflector 151,1,ea,39.99,39.99,web,Davis Instruments,https://davisinstruments.com/product/emergency-radar-reflector/,Stern stub (D07),
-F01,"Rig, steering and mechanical",Wing spar,"Carbon tube 30 OD x 22 ID, 995 long (buy 1 m)",1,ea,70,70,est,Special order,,"D06, D07",OPEN ITEM: 4 mm wall is not a stock size. See DFM_Review for options
-F02,"Rig, steering and mechanical",Tail boom,"Carbon tube 16 x 14, 600 long (buy 1 m), roll-wrapped",1,ea,25,25,est,R&G / Easy Composites,https://www.easycomposites.eu/16mm-woven-finish-carbon-fibre-tube,"P08, P09 (D06)",Rev E1 size
-F03,"Rig, steering and mechanical",Counterweight arm,"Solid pultruded fibreglass rod, 12.0 mm metric, 246 long (buy 0.5-1 m)",1,ea,12,12,est,Metric composite supplier,,"P08, P18 (D06)",US 1/2 in (12.7) rod will NOT fit the 12.2 sockets
-F04,"Rig, steering and mechanical",Stern post,"Pultruded fibreglass tube 20 OD x 16 ID, 500 long",1,ea,15,15,est,Metric composite supplier,,"P05, P06, P20 (D07)",
-F05,"Rig, steering and mechanical",Tail pivot rod,"Carbon rod 6 mm, 200 long",1,ea,6,6,est,Any hobby shop,,P10,
-F06,"Rig, steering and mechanical",Tail joint rod,"Carbon rod 3 mm, 200 long",1,ea,3,3,est,Any hobby shop,,P10,
-F07,"Rig, steering and mechanical",Mast tube,"2 in. schedule 40 PVC pipe, 300 mm",1,ea,8,8,est,Hardware store,,D07,
-F08,"Rig, steering and mechanical",Mast bearings,"6806 acetal (POM) ball bearing, glass balls, 30 x 42 x 7",3,ea,25,75,est,VXB / Bearings Canada,https://bearingscanada.com/products/plastic-bearing-pom-6806-glass-balls-30,P07,Third is a spare
-F09,"Rig, steering and mechanical",Bearing O-rings,"O-ring 42 ID x 1.5 CS, EPDM or NBR",4,ea,1,4,est,Any O-ring supplier,,P07 grooves,
-F10,"Rig, steering and mechanical",Spar seal,V-ring VA-30 (NBR),1,ea,5,5,est,Bearing shop,,Spar above P07 (D07),
-F11,"Rig, steering and mechanical",Thrust collar,"Acetal (Delrin) rod 50 mm dia, 25 mm slice, bored 30 (or print in PETG)",1,ea,10,10,est,Any plastics supplier,,Spar on P07 (D07),
-F12,"Rig, steering and mechanical",Vane bearings,S608-2RS stainless 8 x 22 x 7,3,ea,6.79,20.37,web,Zoro,https://www.zoro.com/tritan-bearings-sealed-8mm-bore-dia-700mm-w-ss608-2rs-fm222/i/G4576419,P01,Third is a spare
-F13,"Rig, steering and mechanical",Vane shaft,"316 stainless round bar 8 mm, 300 long",1,ea,10,10,est,Metals supplier,,P01-P04,Cut to about 80
-F14,"Rig, steering and mechanical",Rudder stocks,"316 stainless round bar 12 mm, 1 m (two at 360)",1,ea,35,35,est,Metals supplier,,D05,Metric: 1/2 in bar will not fit the 12 mm bushings
-F15,"Rig, steering and mechanical",Rudder bushings,"igus iglide J flanged bushing JFM-1214-12 (12 bore, 14 OD)",4,ea,1.5,6.0,est,RS / igus,https://uk.rs-online.com/web/p/plain-bearings/2692785,Trunks (D05),Press into the 14 ID trunk
-F16,"Rig, steering and mechanical",Rudder trunks,"316 stainless tube 16 OD x 1 wall, 400 long (two at about 150)",1,ea,20,20,est,Metals supplier,,D05,Or GRP tube 14 ID
-F17,"Rig, steering and mechanical",Trunk seals,Lip seal 12 x 22 x 5 + rubber boot,2,set,6,12,est,Bearing shop,,Trunk tops (D05),
-F18,"Rig, steering and mechanical",G10 plate,"G10/FR4 sheet 10 mm, 150 x 75 (keel-box plate) + 6 mm, 100 x 100 (stops)",1,set,25,25,est,Plastics supplier,,"D04, D05",
-F19,"Rig, steering and mechanical",Fin rods,"316 (A4) threaded rod M10, 1 m (two at about 580)",1,ea,20,20,est,Fastener supplier,,D04,
-F20,"Rig, steering and mechanical",Pushrods,M2 316 threaded rod 300 mm + 4 stainless M2 clevises + lock nuts,1,set,15,15,est,RC hobby shop,,D32 linkage,
-F21,"Rig, steering and mechanical",Overload springs,"316 compression springs, 6 OD x 0.8 wire x 20 long (see D32)",4,ea,2,8,est,Spring supplier,,D32 spring link,Two spare
-F22,"Rig, steering and mechanical",Spring link tube,"Brass or 316 tube 7 x 0.5, 100 mm",1,ea,4,4,est,Hobby shop (K&S),,D32 spring link,
-F23,"Rig, steering and mechanical",Detent magnets,"NdFeB disc 6 x 3 mm, N52",4,ea,0.5,2.0,est,Any magnet supplier,,P25,Two spare
-F24,"Rig, steering and mechanical",Detent striker,Mild steel disc 6 x 1 mm (or a cut washer),1,ea,0.5,0.5,est,Any,,P10a pocket,
-F25,"Rig, steering and mechanical",Clamps,316 worm-drive hose clamps 20-32 mm,8,ea,2,16,est,Marine store,,"P12 (4), P19 (2), P24 (2)",
-F26,"Rig, steering and mechanical",Battery straps,25 mm polyester webbing 2 m + 2 cam buckles,1,set,15,15,est,Any,,P16,
-F27,"Rig, steering and mechanical",Hatch / battery-box seal,"EPDM O-ring cord 4 mm, 3 m",1,ea,10,10,est,O-ring supplier,,"Hatch (D08), battery box (D09)",
+F01,"Rig, steering and mechanical","Wing spar, outer tube","Carbon tube 30 OD x 26 ID, roll-wrapped, 1000 long (cut to 995)",1,ea,35,35,est,Katana Carbon / Wh-shop (eBay),https://www.ebay.de/itm/294026974744,"D06, D07",Rev E3: stock outer half of the sleeved 30 x 22 spar
+F02,"Rig, steering and mechanical","Wing spar, inner sleeve","R&G CFRP tube wound 3k-PW 26 OD x 22 ID x 1000 (cut to 995), bonded full length inside the outer tube",1,ea,40,40,est,R&G,https://www.r-g.de/en/art/740908SOPO,"D06, D07","Rev E3. Sand to a sliding fit, bond with thickened laminating epoxy, cure vertical. Same section as 30 x 22. A one-piece special-order 30 x 22 is fine instead"
+F03,"Rig, steering and mechanical",Tail boom,"Carbon tube 16 x 14, 600 long (buy 1 m), roll-wrapped",1,ea,25,25,est,R&G / Easy Composites,https://www.easycomposites.eu/16mm-woven-finish-carbon-fibre-tube,"P08, P09 (D06)",Rev E1 size
+F04,"Rig, steering and mechanical",Counterweight arm,"Solid pultruded fibreglass rod, 12.0 mm metric, 246 long (buy 0.5-1 m)",1,ea,12,12,est,Metric composite supplier,,"P08, P18 (D06)",US 1/2 in (12.7) rod will NOT fit the 12.2 sockets
+F05,"Rig, steering and mechanical",Stern post,"Pultruded fibreglass tube 20 OD x 16 ID, 500 long",1,ea,15,15,est,Metric composite supplier,,"P05, P06, P20 (D07)",
+F06,"Rig, steering and mechanical",Tail pivot rod,"Carbon rod 6 mm, 200 long",1,ea,6,6,est,Any hobby shop,,P10,
+F07,"Rig, steering and mechanical",Tail joint rod,"Carbon rod 3 mm, 200 long",1,ea,3,3,est,Any hobby shop,,P10,
+F08,"Rig, steering and mechanical",Mast tube,"2 in. schedule 40 PVC pipe, 300 mm",1,ea,8,8,est,Hardware store,,D07,
+F09,"Rig, steering and mechanical",Mast bearings,"6806 acetal (POM) ball bearing, glass balls, 30 x 42 x 7",3,ea,25,75,est,VXB / Bearings Canada,https://bearingscanada.com/products/plastic-bearing-pom-6806-glass-balls-30,P07,Third is a spare
+F10,"Rig, steering and mechanical",Bearing O-rings,"O-ring 42 ID x 1.5 CS, EPDM or NBR",4,ea,1,4,est,Any O-ring supplier,,P07 grooves,
+F11,"Rig, steering and mechanical",Spar seal,V-ring VA-30 (NBR),1,ea,5,5,est,Bearing shop,,Spar above P07 (D07),
+F12,"Rig, steering and mechanical",Thrust collar,"Acetal (Delrin) rod 50 mm dia, 25 mm slice, bored 30 (or print in PETG)",1,ea,10,10,est,Any plastics supplier,,Spar on P07 (D07),
+F13,"Rig, steering and mechanical",Vane bearings,S608-2RS stainless 8 x 22 x 7,3,ea,6.79,20.37,web,Zoro,https://www.zoro.com/tritan-bearings-sealed-8mm-bore-dia-700mm-w-ss608-2rs-fm222/i/G4576419,P01,Third is a spare
+F14,"Rig, steering and mechanical",Vane shaft,"316 stainless round bar 8 mm, 300 long",1,ea,10,10,est,Metals supplier,,P01-P04,Cut to about 80
+F15,"Rig, steering and mechanical",Rudder stocks,"316 stainless round bar 12 mm, 1 m (two at 360)",1,ea,35,35,est,Metals supplier,,D05,Metric: 1/2 in bar will not fit the 12 mm bushings
+F16,"Rig, steering and mechanical",Rudder bushings,"igus iglide J flanged bushing JFM-1214-12 (12 bore, 14 OD)",4,ea,1.5,6.0,est,RS / igus,https://uk.rs-online.com/web/p/plain-bearings/2692785,Trunks (D05),Press into the 14 ID trunk
+F17,"Rig, steering and mechanical",Rudder trunks,"316 stainless tube 16 OD x 1 wall, 400 long (two at about 150)",1,ea,20,20,est,Metals supplier,,D05,Or GRP tube 14 ID
+F18,"Rig, steering and mechanical",Trunk seals,Lip seal 12 x 22 x 5 + rubber boot,2,set,6,12,est,Bearing shop,,Trunk tops (D05),
+F19,"Rig, steering and mechanical",G10 plate,"G10/FR4 sheet 10 mm, 150 x 75 (keel-box plate) + 6 mm, 100 x 100 (stops)",1,set,25,25,est,Plastics supplier,,"D04, D05",
+F20,"Rig, steering and mechanical",Fin rods,"316 (A4) threaded rod M10, 1 m (two at about 580)",1,ea,20,20,est,Fastener supplier,,D04,
+F21,"Rig, steering and mechanical",Pushrods,M2 316 threaded rod 300 mm + 4 stainless M2 clevises + lock nuts,1,set,15,15,est,RC hobby shop,,D32 linkage,
+F22,"Rig, steering and mechanical",Overload springs,"316 compression springs, 6 OD x 0.8 wire x 20 long (see D32)",4,ea,2,8,est,Spring supplier,,D32 spring link,Two spare
+F23,"Rig, steering and mechanical",Spring link tube,"Brass or 316 tube 7 x 0.5, 100 mm",1,ea,4,4,est,Hobby shop (K&S),,D32 spring link,
+F24,"Rig, steering and mechanical",Detent magnets,"NdFeB disc 6 x 3 mm, N52",4,ea,0.5,2.0,est,Any magnet supplier,,P25,Two spare
+F25,"Rig, steering and mechanical",Detent striker,Mild steel disc 6 x 1 mm (or a cut washer),1,ea,0.5,0.5,est,Any,,P10a pocket,
+F26,"Rig, steering and mechanical",Clamps,316 worm-drive hose clamps 20-32 mm,8,ea,2,16,est,Marine store,,"P12 (4), P19 (2), P24 (2)",
+F27,"Rig, steering and mechanical",Battery straps,25 mm polyester webbing 2 m + 2 cam buckles,1,set,15,15,est,Any,,P16,
+F28,"Rig, steering and mechanical",Hatch / battery-box seal,"EPDM O-ring cord 4 mm, 3 m",1,ea,10,10,est,O-ring supplier,,"Hatch (D08), battery box (D09)",
 G01,Fasteners (all 316 / A4 stainless),Set screw M3 x 4,"Cup point, A4",2,ea,0.3,0.6,est,Fastener supplier,,P02,
 G02,Fasteners (all 316 / A4 stainless),Socket cap M3 x 20 + nyloc,A4,4,ea,0.4,1.6,est,Fastener supplier,,"P26 (2), P02 split (1), spare",
 G03,Fasteners (all 316 / A4 stainless),Set screw M4 x 6,"Cup point, A4",4,ea,0.3,1.2,est,Fastener supplier,,"P03 (1), P06 (2), spare",

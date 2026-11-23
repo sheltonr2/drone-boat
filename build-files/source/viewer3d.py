@@ -390,9 +390,10 @@ def main():
     put("hatch_lid", "Hatch lid", G, "deckpaint", "hatchlid", explode=(0, 0, 160),
         info="Bolted with 12 x M5 into bonded inserts on 4 mm EPDM cord. Carries the RockBLOCK bowl P23, a membrane vent and a Schrader test valve.", ref="D08, T16")
     for k, S in enumerate(D.SOLAR):
-        add_geom(f"solar{k+1}", *draped_box(S['x0'], S['x1'], S['w'] / 2, 0.4, 2.6), 40)
+        SP = D.SOLAR_PANEL; cx = (S['x0'] + S['x1']) / 2          # Rev E3: stock 10 W panel centred in the bay
+        add_geom(f"solar{k+1}", *draped_box(cx - SP['l'] / 2, cx + SP['l'] / 2, SP['w'] / 2, 0.4, 0.4 + SP['t']), 40)
         put(f"solar{k+1}", f"Solar panel {k+1}", "Power and electronics", "solar", f"solar{k+1}", explode=(0, 0, 120),
-            info="ETFE semi-flexible, about 17-20 W, bonded flush to the deck. Open item: stock panels are wider than the 280 mm bays (see the DFM review).", ref="D08, D30")
+            info="Rev E3: PV Logic STPVF010 10 W ETFE flexi panel, 380 x 250 x 4, bonded in its deck bay; 20 W in all (run 027: no measurable cost).", ref="D01, D08, D30")
     # well walls + floor
     W = D.YB3['well']; xw0, xw1 = D.YB3['x'] - W[0] / 2, D.YB3['x'] + W[0] / 2; yw = W[1] / 2
     zt = float(D.deck_z(D.YB3['x'])); zb = zt - W[2]; zwell = zb
@@ -676,7 +677,7 @@ def main():
                          lo=lo.round(4).tolist(), sc=sc.tolist(), hi=hi.round(3).tolist())
     # The artifact host serves text formats only, so the binary buffer travels base64-encoded inside the JSON.
     import base64
-    out = dict(bin=base64.b64encode(bytes(blob)).decode("ascii"), version="E2", date="2026-11-19", dwl=D.DWL, L=D.L, mass=D.MASS_KG, geoms=meta, assembly=ASM, parts=catalogue,
+    out = dict(bin=base64.b64encode(bytes(blob)).decode("ascii"), version="E3", date="2026-11-23", dwl=D.DWL, L=D.L, mass=D.MASS_KG, geoms=meta, assembly=ASM, parts=catalogue,
                deck=dict(z=D.DECK_Z), mast=dict(x=D.MAST_X), rudder=dict(x=D.RUDDER['stock_x'], y=D.RUDDER_Y))
     json.dump(out, open(os.path.join(OUT, "model.json"), "w"), separators=(",", ":"))
     tris = sum(m["nf"] for m in meta.values())

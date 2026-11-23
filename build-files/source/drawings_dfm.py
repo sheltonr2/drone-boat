@@ -35,7 +35,7 @@ def sheet_wiring(pdf):
     bg.text(12, 263.5, "Red = 12.8 V battery   Orange = 6 V servo   Green = 5 V / 3.3 V logic   Blue = signal / data   Purple = isolated (optocoupler)",
             fontsize=5.4, va="top")
     # left column: energy
-    blk(bg, 12, 232, 46, 22, "SOLAR (deck, D08)", ["2 x ETFE semi-flex, about 17-20 W", "wired in parallel at a potted", "junction under the deck", "One cable in through W1"])
+    blk(bg, 12, 232, 46, 22, "SOLAR (deck, D08)", ["2 x PV Logic 10 W ETFE (E3), 20 W", "wired in parallel at a potted", "junction under the deck", "One cable in through W1"])
     blk(bg, 12, 203, 46, 22, "GENASUN GV-5-Li-14.2V", ["MPPT, 5 A, in the main box", "PV in  <-  solar (W1)", "BAT out -> F0 -> battery", "Load out: not used"])
     blk(bg, 12, 150, 58, 46, "BATTERY BOX (sealed, D09)", ["Bioenno BLF-1215A 12.8 V 15 Ah", "F0  7.5 A  charge (GV-5 lead)", "F1  10 A  main feed -> main box", "F2  2 A  limp-home feed -> P21", "Fuses at the terminal, inside the box", "Exits: W7 (main + charge, 14 AWG)", "          W8 (limp-home, 18 AWG)"], fc="#fff4f2")
     # main box

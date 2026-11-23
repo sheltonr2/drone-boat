@@ -65,6 +65,12 @@ Two prices changed when checked:
 
 ## 4. Open items for Randolph
 
+**Update 23 Nov (Rev E3): items 1 and 2 are settled.** Randolph chose the stock options after run 027 (section 6):
+- **Item 1, solar:** two stock PV Logic STPVF010 10 W ETFE panels, 380 × 250 × 4 mm, one centred in each bay: 20 W in all. I'd first suggested 30 W of stock panels, but no stock 15 W panel I could find fits a 280 mm bay (they're 300–350 mm wide), so the stock answer is 2 × 10 W. Run 027's 20 W case gives the same success as 40 W, with about 1 voyage in 20 dipping to SAFE once. Custom-size 17–20 W panels stay an optional upgrade.
+- **Item 2, spar:** a 30 × 26 stock tube with a 26 × 22 R&G tube bonded full length inside, which gives the same section as 30 × 22. A one-piece special-order 30 × 22 is also fine. Don't use the plain 30 × 26: run 027 puts it at about 2 points lower, with 4× the wing breakages.
+
+Items 3–6 below are still open.
+
 These need a decision. I did not change the design for them.
 
 1. **Solar panels do not fit as specified.** The deck bays are 420 × 280 and 400 × 280 mm. Every stock 20 W semi-flexible ETFE panel I found is about 450 × 350, and 450 × 350 × 4 is common. That is too wide by 70 mm. The options:

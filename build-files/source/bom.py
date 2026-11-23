@@ -51,8 +51,8 @@ add(S, "Battery", "Bioenno BLF-1215A, 12.8 V 15 Ah LiFePO4, PVC pack", 1, "ea", 
     "https://www.bioennopower.com/products/12v-15ah-lifepo4-battery-pvc", "Battery box (D09)", "Charger for the bench: Bioenno 4 A LiFePO4 (optional)")
 add(S, "Solar charge controller", "Genasun GV-5-Li-14.2V MPPT, 5 A", 1, "ea", 85.00, "web", "eMarine",
     "https://emarineinc.com/Genasun-MPPT-Solar-Controller-5A-Input-12V-Output", "Main box", "Pick the Li 14.2 V option. Datasheet says IP40: it lives in the sealed box")
-add(S, "Solar panels", "2 x ETFE semi-flexible, about 17-20 W, must fit 420 x 280 and 400 x 280 mm deck bays", 2, "ea", 45, "est", "Custom-size order",
-    "", "Deck (D08)", "OPEN ITEM: stock 20 W panels are about 450 x 350, too wide for the bays. See docs/DFM_Review.md")
+add(S, "Solar panels", "PV Logic / Solar Technology STPVF010 10 W Flexi, ETFE, 380 x 250 x 4 mm, IP69, one per deck bay (20 W total)", 2, "ea", 64, "web", "Cactus Navigation (UK) or any PV Logic dealer",
+    "https://www.cactusnav.com/flexible-solar-panel-p-19876.html", "Deck (D08)", "Rev E3: stock panel that fits the 280 mm bays. Run 027: 20 W costs no measurable success; about 1 boat in 20 dips to SAFE once. Custom-size 17-20 W panels remain an upgrade")
 add(S, "Servo supply regulators", "Pololu D36V50F6, 6 V 5.5 A step-down (#4092)", 2, "ea", 39.95, "web", "Pololu",
     "https://www.pololu.com/product/4092", "Main box + P21", "Limp_Home_Spec asks for about 5.8 V; this one is a fixed 6.0 V, fine with ideal diodes")
 add(S, "Servo multiplexer", "Pololu 4-channel RC servo multiplexer, assembled (#2806)", 1, "ea", 17.95, "web", "Pololu",
@@ -109,8 +109,10 @@ add(S, "Radar reflector", "Davis Emergency Radar Reflector 151", 1, "ea", 39.99,
 
 # ------------------------------------------------------------------ F. rig, steering, mechanical
 S = "F Rig, steering and mechanical"
-add(S, "Wing spar", "Carbon tube 30 OD x 22 ID, 995 long (buy 1 m)", 1, "ea", 70, "est", "Special order",
-    "", "D06, D07", "OPEN ITEM: 4 mm wall is not a stock size. See DFM_Review for options")
+add(S, "Wing spar, outer tube", "Carbon tube 30 OD x 26 ID, roll-wrapped, 1000 long (cut to 995)", 1, "ea", 35, "est", "Katana Carbon / Wh-shop (eBay)",
+    "https://www.ebay.de/itm/294026974744", "D06, D07", "Rev E3: stock outer half of the sleeved 30 x 22 spar")
+add(S, "Wing spar, inner sleeve", "R&G CFRP tube wound 3k-PW 26 OD x 22 ID x 1000 (cut to 995), bonded full length inside the outer tube", 1, "ea", 40, "est", "R&G",
+    "https://www.r-g.de/en/art/740908SOPO", "D06, D07", "Rev E3. Sand to a sliding fit, bond with thickened laminating epoxy, cure vertical. Same section as 30 x 22. A one-piece special-order 30 x 22 is fine instead")
 add(S, "Tail boom", "Carbon tube 16 x 14, 600 long (buy 1 m), roll-wrapped", 1, "ea", 25, "est", "R&G / Easy Composites",
     "https://www.easycomposites.eu/16mm-woven-finish-carbon-fibre-tube", "P08, P09 (D06)", "Rev E1 size")
 add(S, "Counterweight arm", "Solid pultruded fibreglass rod, 12.0 mm metric, 246 long (buy 0.5-1 m)", 1, "ea", 12, "est", "Metric composite supplier",

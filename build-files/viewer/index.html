@@ -151,7 +151,7 @@ input[type=range]::-moz-range-thumb{width:11px;height:11px;border-radius:50%;bac
 <div id="top">
   <div id="brand" class="glass">
     <div class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="#1a0b02" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><path d="M12 4l6 10h-6"/><path d="M3 17h18l-3 4H6z"/></svg></div>
-    <div><h1>Drone boat</h1><small id="sub">1.5 m autonomous wing-sail vessel · Rev E2</small></div>
+    <div><h1>Drone boat</h1><small id="sub">1.5 m autonomous wing-sail vessel · Rev E3</small></div>
   </div>
   <div id="modes" class="glass">
     <button data-mode="assembly" class="on">Assembly</button>
@@ -355,7 +355,7 @@ function solarMaterial(x0, x1, hw) {
     float m = 7.0;
     if (top > 0.5 && p.x > m && p.x < sz.x - m && p.y > m && p.y < sz.y - m) {
       vec2 q = p - m; vec2 inner = sz - 2.0*m;
-      vec2 n = vec2(floor(inner.x/52.0), floor(inner.y/52.0)); vec2 cs = inner / max(n, 1.0);
+      vec2 n = vec2(floor(inner.x/45.0), floor(inner.y/45.0)); vec2 cs = inner / max(n, 1.0);
       vec2 c = mod(q, cs); vec2 d = min(c, cs - c);
       float aa = fwidth(q.x)*1.2;
       float gap = smoothstep(1.2 - aa, 1.2 + aa, min(d.x, d.y));
@@ -491,7 +491,7 @@ const groups = {};
 const MATCOL = {};
 for (const a of J.assembly) {
   let mat = MAT[a.mat];
-  if (a.mat === 'solar') { const s = a.id === 'solar1' ? [650, 1070] : [1080, 1480]; mat = solarMaterial(s[0], s[1], 140); MAT['solar_' + a.id] = mat; }
+  if (a.mat === 'solar') { const s = a.id === 'solar1' ? [670, 1050] : [1090, 1470]; mat = solarMaterial(s[0], s[1], 125); MAT['solar_' + a.id] = mat; }
   if (!mat) mat = MAT.white;
   const mesh = new THREE.Mesh(geom(a.geom), mat);
   mesh.matrixAutoUpdate = false; mesh.castShadow = true; mesh.receiveShadow = true;

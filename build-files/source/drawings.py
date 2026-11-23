@@ -100,7 +100,9 @@ def sheet_cover(pdf, index):
         "Rev E2 (2026-11-19; design for manufacture, docs/DFM_Review.md; no change to shape, mass or performance): P01 bore opened so the",
         "   lower bearing can be fitted, new spacer P27; P03 and P07 print without supports; P10a disc pocket; P12 base fits its pocket;",
         "   P02A/B split for 220 beds; fit coupons P00a/b. New sheets D30 wiring, D31 laminates and build sequence, D32 hardware and",
-        "   linkage, D33 print guide. Full bill of materials: BOM.csv; print settings: Print_Guide.csv."]
+        "   linkage, D33 print guide. Full bill of materials: BOM.csv; print settings: Print_Guide.csv.",
+        "Rev E3 (2026-11-23; DFM open items 1 and 2 settled, runs 026-027): solar 2 x stock PV Logic 10 W ETFE 380 x 250 in the bays (20 W,",
+        "   was ~40 W custom); wing spar 30 x 26 stock tube with a 26 x 22 sleeve bonded full length inside (same 30 x 22 section). D01, D08, D30."]
     k = next(i for i, ln in enumerate(NOTES) if ln.startswith("Rev C4"))
     notes(bg, 20, y - 5, "General notes", NOTES[:k], fs=5.2, lh=2.95)
     notes(bg, 170, yp - 5, "Revision history (continued)", NOTES[k:], fs=5.2, lh=2.95)
@@ -174,9 +176,12 @@ def sheet_ga(pdf):
     ax2.add_patch(Rectangle((H['x0'] - 30, -H['w']/2 - 30), H['x1'] - H['x0'] + 60, H['w'] + 60, fill=False, lw=THIN))
     ax2.text((H['x0'] + H['x1'])/2, -55, "bolted\nhatch", fontsize=5, ha="center", va="center")
     ax2.add_patch(Circle((D.MAST_X, 0), D.MAST_TUBE['od']/2, fill=False, lw=MED))
+    SP = D.SOLAR_PANEL
     for i, P in enumerate(D.SOLAR):
-        ax2.add_patch(Rectangle((P['x0'], -P['w']/2), P['x1'] - P['x0'], P['w'], fc="#cfe0f3", ec=BLUE, lw=THIN))
-        ax2.text((P['x0'] + P['x1'])/2, 0, f"solar panel {i+1}\n~20 W  420 x 280", fontsize=5, ha="center", va="center", color=BLUE)
+        ax2.add_patch(Rectangle((P['x0'], -P['w']/2), P['x1'] - P['x0'], P['w'], fill=False, ec=BLUE, lw=THIN, ls=":"))
+        cx = (P['x0'] + P['x1'])/2
+        ax2.add_patch(Rectangle((cx - SP['l']/2, -SP['w']/2), SP['l'], SP['w'], fc="#cfe0f3", ec=BLUE, lw=THIN))
+        ax2.text(cx, 0, f"solar panel {i+1} (E3)\n{SP['watts']} W  {SP['l']} x {SP['w']}\nin {P['x1'] - P['x0']} x {P['w']} bay", fontsize=5, ha="center", va="center", color=BLUE)
     ax2.add_patch(Circle((D.STUB['x'], 0), 10, fill=False, lw=MED))
     for yr in D.RUDDER_Y:
         le_r = D.RUDDER['stock_x'] - D.RUDDER['stock_from_le']
@@ -203,7 +208,7 @@ def sheet_ga(pdf):
         f"Displacement about {D.MASS_KG:.0f} kg   Ballast {D.bulb_mass()[1]:.1f} kg lead + about 0.8 kg rig counterweight",
         f"Wing {D.WING['span']} x {D.WING['chord']} (0.30 m2; Rev C5), free-rotating on a 30 mm spar",
         "Two rudders, two servos; hull foam-filled, two bulkheads",
-        "Solar about 40 W on deck   Battery 192 Wh LiFePO4 in a sealed box",
+        "Solar 20 W on deck (E3: 2 x 10 W stock)   Battery 192 Wh LiFePO4 in a sealed box",
         "Self-righting from 180 deg (simulator): verify in a tank test (Gate 3)"], fs=6.3)
     pdf.savefig(fig); plt.close(fig)
 
@@ -663,7 +668,7 @@ def sheet_wing(pdf):
     ax4.text(0, -6, "pivot", fontsize=4.5, ha="center", va="top"); ax4.text(28, -14, "magnets +/-8 deg, r 30", fontsize=4.5, ha="center", va="top")
     notes(bg, 200, 140, "Wing build", [
         "Core: two 400 mm XPS blocks hot-wire cut with template T15 (same root and tip), bored 30.4 mm for the spar (Rev C).",
-        "Skin: 2 x 6 oz glass, vacuum bagged if possible. Root and tip: 3 mm ply caps. Spar: 30 x 22 carbon tube, 995 long.",
+        "Skin: 2 x 6 oz glass, vacuum bagged if possible. Root and tip: 3 mm ply caps. Spar: 30 x 22 section, 995 long (E3: 30 x 26 + 26 x 22 bonded sleeve, D07).",
         "Rev C5: wing 800 x 375 (was 1000 x 300), same 0.30 m2, spar 82 from the leading edge: about half the load when a knockdown slaps the wing on the water, 4% slower.",
         "Balance: assemble wing, tail, boom, arm and pod; add lead shot + epoxy to P18 until the rig sits level on the spar at any heading.",
         "Expect about 0.85 kg (C5). The pod sweeps a 332 mm radius at z 264-338, about 15 mm over the hatch bolts: keep anything on deck in that circle below z 255.",
@@ -704,7 +709,7 @@ def sheet_mast(pdf):
     leader(ax, (D.MAST_X + 20, MT['top_z'] + 2), (640, 345), "C4: 6806 acetal ball bearings,\nglass balls (x2), each floating\non a 42 x 1.5 O-ring")
     leader(ax, (D.MAST_X + 17, MT['top_z'] - 14), (640, 262), "C4: catcher land D30.6 x 20\n(spar touches above ~150 N)")
     leader(ax, (D.MAST_X + 22, MT['top_z'] + 8), (640, 395), "C4: V-ring seal VA-30 on the spar")
-    leader(ax, (D.MAST_X + 15, 300), (640, 300), "Spar 30 x 22 carbon (C3)")
+    leader(ax, (D.MAST_X + 15, 300), (640, 300), "Spar 30 x 22 section (C3);\nE3: 30 x 26 + 26 x 22 sleeve")
     leader(ax, (D.MAST_X + 7, D.SPAR_BOT_Z - 15), (640, 80), "Slip ring, 12.5 mm,\n6 wire, in spar end")
     leader(ax, (D.MAST_X + 26, 200), (640, 200), "Bearing housing P07")
     ax.text(D.MAST_X, 405, "wing root z 300 above", fontsize=5, ha="center")
@@ -750,6 +755,9 @@ def sheet_mast(pdf):
         "tail servo; it must turn freely through 360 deg.",
         "Lock the spar against lifting with a 316 collar under",
         "the lower bearing.",
+        "E3 spar from stock: 30 x 26 tube with a 26 x 22 tube",
+        "bonded full length inside (sand to slide, thickened",
+        "epoxy, cure vertical). One-piece 30 x 22 also fine.",
         "",
         "Post (C3): 20 mm OD x 2 wall pultruded fibreglass tube,",
         "500 long (not aluminium or carbon: it must bend, not",
