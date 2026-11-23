@@ -19,7 +19,7 @@ The plan is a 1.5 m sealed, self-righting sailboat. It sails west to east across
 | Endurance goal | 6+ months, no maintenance |
 | Route | Off Hatteras, North Carolina, to Europe, aiming for Cornwall and the Isles of Scilly; launch in May (changed 13 Nov 2026; docs/Launch_Plan.md) |
 
-The launch date is open, so the plan is built around testing gates, not deadlines. A realistic first ocean attempt is May 2028, after a full year of lake and coastal trials. May 2027 is possible only if every trial passes on the first try.
+The plan is built around testing gates, not deadlines. The first ocean launch is planned for **1–20 May 2028** (Randolph, 23 Nov 2026), after a full year of bench, lake and coastal trials; the phase dates are in the [Launch Plan](Launch_Plan.md#timeline).
 
 ## System architecture
 

@@ -9,20 +9,26 @@
 | Launch area | **Off Hatteras, North Carolina** | Rev D, 500 voyages per pair, 2023 and 2024 weather: Hatteras → Cornwall 68.4% against 59.2% for Ocean City → SW Ireland, +9.2 points (+3.8 to +14.8), the same in both years. The Gulf Stream is close, so the boat is 200 km out in under 3 days instead of 7 and losses roughly halve |
 | Drop point | **About 45 km out, 34.95°N 75.35°W, on the Gulf Stream's inshore edge, by offshore charter** (decided by Randolph 14 Nov; the fallback is 70 km out, 35.00°N 75.05°W). Not the 10 km point off the inlet | **Diamond Shoals** run 13–22 km south-east from Cape Hatteras with as little as 1 m over them, and the simulator's coastline doesn't hold them. Rev E, 500 voyages each, 2023 and 2024 ([Naval_Review.md](Naval_Review.md)): from the inlet, 22% of voyages passed within 2 km of the shoals and 49% within 5 km; from 45 km and 70 km, none within 10 km. A dog-leg from the inlet didn't clear them (7% within 2 km). Success: 45 km 87.6%, 70 km 86.8%, inlet 83.4% (before any shoal losses), so 45 km is +4.2 (+0.0 to +8.4) over the inlet and tied with 70 km. A dead boat dropped at 45 km grounded in 2–8 of 32 drifts within 30 days, against 0–3 at 70 km and 14–17 at the inlet; the early ones were driven back onto Hatteras Island, which needs an onshore wind; the weather rule below targets them. 70 km is the safer choice for a boat that dies on day one, at the cost of a 40 nm run out instead of 25 |
 | Destination | **Cornwall and the Isles of Scilly** (aim point 49.95°N 6.3°W); any European landfall counts | Tied with SW Ireland in the destination study and stage B, +3.8 (−0.2 to +7.8) in stage C |
-| Launch window | **1–20 May target; 1 April–15 June usable** (decided by Randolph on 18 Nov 2026), on the earliest suitable weather day | Checked on four years of weather on 15 Nov 2026 (below): April, 1–20 May and 21 May–15 June all score 86–89%. Storm exposure rises through June ([Hurricane_Risk.md](Hurricane_Risk.md)) |
+| Launch window | **1–20 May 2028 target; 1 April–15 June usable** (window decided by Randolph on 18 Nov 2026; year moved from 2027 to 2028 by Randolph on 23 Nov 2026), on the earliest suitable weather day | Checked on four years of weather on 15 Nov 2026 (below): April, 1–20 May and 21 May–15 June all score 86–89%. Storm exposure rises through June ([Hurricane_Risk.md](Hurricane_Risk.md)) |
 | Arrival and holding | **Holding pattern 12 km south of the Lizard (49.85°N 5.20°W)**, the mouth of Mount's Bay (49.97°N 5.45°W) as the alternative (decided by Randolph 18 Nov 2026). The approach passes south of Scilly via 49.60°N 7.20°W and 49.70°N 6.40°W, then 49.83°N 5.80°W (south of Wolf Rock) | Runs 021b, 023b and 025 (below): 76% of boats reach the Lizard offing, against 65% for Falmouth Bay. Close passes (within 1 km) are 3% for Scilly and 1% for Wolf Rock, the Lizard and the Manacles. Pickup by boat from Falmouth, 30 km |
 | Before launch | **3-week coastal trial passed** (Field Test F) and **second tracker fitted** | These two items are worth the most odds per dollar ([Failure_Rates.md](Failure_Rates.md) §5) |
 
 ## Timeline
 
+Launch year 2028 (Randolph, 23 Nov 2026). This follows the Build Plan's five phases: a full year of bench, lake and coastal trials before the ocean boat sails. The order dates are in the procurement schedule, a private Sheet kept by Randolph.
+
 | When | What |
 |---|---|
-| **Now – Jan** | Build per the [Build Plan](Build_Plan.md). Fit and bench-test the backup tracker ([Backup_Tracker.md](Backup_Tracker.md)). Order the labels |
-| **Feb** | Field tests A–E (tow, inclining, self-righting, wing balance, solar day). Spar proof-load test. Start servo life Test P (5 weeks) |
-| **Mar – mid-Apr** | Field Test F, the 3-week coastal trial: 14 days in a row with no unexplained reboot, leak or reporting gap. Freeze the firmware afterwards |
-| **By 1 Apr** | Book the Hatteras charter (below). Send the Coast Guard, fishery and UK notices (drafts below) |
-| **20–30 Apr** | Final prep: charge, desiccant change, pressure-decay test, both trackers reporting, photos and serial numbers on file, last software check |
-| **1–20 May** | Drive to Hatteras and launch on the first day that meets the weather criteria. Allow several days there: the weather picks the day |
+| **Dec 2026 – Mar 2027** | Phase 1, bench: wire the electronics, Bench Tests N and I, servo life Test P (5 weeks). Build the lake prototype and proof-load the spar (Gate 1) |
+| **Apr – Jun 2027** | Phase 2, lake season on the prototype: steering, one-rudder and wave-filter runs (Test I), tail detent (Q), wing slap (M), the autonomous gate course (Gate 2) |
+| **Jun – Sep 2027** | Phase 3: build the ocean boat (Rev E3, or E4 with the lake lessons). Field tests A–E; self-righting is Gate 3. Fit and bench-test the backup tracker ([Backup_Tracker.md](Backup_Tracker.md)). Order the labels |
+| **Oct 2027** | Phase 4: first 3-week coastal trial (Field Test F): 14 days in a row with no unexplained reboot, leak or reporting gap |
+| **Nov 2027** | Westbound backup slot, only if chosen ([East_West_Study.md](East_West_Study.md): launch about November for a March arrival). Not part of this plan |
+| **Winter 2027–28** | Fix what the trial found |
+| **Mar – mid-Apr 2028** | Second coastal trial after the fixes; freeze the firmware afterwards (Gate 4) |
+| **By 1 Apr 2028** | Book the Hatteras charter (below). Send the Coast Guard, fishery and UK notices (drafts below) |
+| **20–30 Apr 2028** | Final prep: charge, desiccant change, pressure-decay test, both trackers reporting, photos and serial numbers on file, last software check |
+| **1–20 May 2028** | Drive to Hatteras and launch on the first day that meets the weather criteria. Allow several days there: the weather picks the day |
 | **During** | Daily check of both trackers. Weekly summary to the Microtransat list, if entered, and to the collaboration thread |
 | **Arrival** | Notify HM Coastguard (Falmouth) when within ~50 nm. Arrange recovery or a finder's contact |
 
@@ -57,13 +63,13 @@ None of these are permits for a vessel this size, as far as I can tell. They are
 
 ### Draft: Coast Guard notice (email)
 
-> **Subject:** Notification: small unmanned research sailboat, departure ~25 nm SE of Hatteras Inlet NC, 1–20 May 2027
+> **Subject:** Notification: small unmanned research sailboat, departure ~25 nm SE of Hatteras Inlet NC, 1–20 May 2028
 >
-> We plan to release a 1.5 m unmanned autonomous sailboat (solar-powered, wing sail, about 29 kg) at approximately 34°57'N 075°21'W, about 25 nm south-east of Hatteras Inlet and south of Diamond Shoals, on one day between 1 and 20 May 2027. It will be escorted for the first hour, then sail and drift north-east with the Gulf Stream at 1–3 kn, bound for south-west England. It carries a radar reflector, high-visibility orange panels, labels and an all-round white light, and it reports its position by Iridium every 3 hours. Live track: [link]. Contact: [name, phone, email], 24/7 during the first week. Please advise whether you would like a Local Notice to Mariners entry or any other information.
+> We plan to release a 1.5 m unmanned autonomous sailboat (solar-powered, wing sail, about 29 kg) at approximately 34°57'N 075°21'W, about 25 nm south-east of Hatteras Inlet and south of Diamond Shoals, on one day between 1 and 20 May 2028. It will be escorted for the first hour, then sail and drift north-east with the Gulf Stream at 1–3 kn, bound for south-west England. It carries a radar reflector, high-visibility orange panels, labels and an all-round white light, and it reports its position by Iridium every 3 hours. Live track: [link]. Contact: [name, phone, email], 24/7 during the first week. Please advise whether you would like a Local Notice to Mariners entry or any other information.
 
 ### Draft: fishery note
 
-> A small unmanned research sailboat (1.5 m, orange, wing sail, radar reflector) will be released on the Gulf Stream's edge south-east of Hatteras Inlet between 1 and 20 May 2027, heading north-east and then across to England. If you see it, please leave it be. It isn't adrift. If it is caught in your gear, please photograph it and contact [phone/email]; we'll arrange recovery and a reward. Live track: [link].
+> A small unmanned research sailboat (1.5 m, orange, wing sail, radar reflector) will be released on the Gulf Stream's edge south-east of Hatteras Inlet between 1 and 20 May 2028, heading north-east and then across to England. If you see it, please leave it be. It isn't adrift. If it is caught in your gear, please photograph it and contact [phone/email]; we'll arrange recovery and a reward. Live track: [link].
 
 ## Labels and marking
 

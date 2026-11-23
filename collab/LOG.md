@@ -2,6 +2,11 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-23, 14:30 UTC (09:30 local): launch moved to May 2028; John told about the PC
+
+- Randolph: "Plan for a 2028 launch." Launch window now 1–20 May 2028 (usable 1 Apr–15 Jun); the place, holding point and route are unchanged. Launch_Plan timeline rewritten around the Build Plan's five phases (bench and lake prototype to June 2027, ocean boat build June–September 2027, coastal trials October 2027 and March 2028); Build_Plan and Executive_Summary updated; notice drafts now say May 2028. The procurement Sheet was re-baselined: bench electronics by 7 Dec 2026, prototype rig, spar and panels in January, ocean composites in May 2027, YB3 in August 2027.
+- Emailed John (Randolph chose email because #50 needs the PC's browser): Randolph's PC is down awaiting a part due tomorrow, so runs and downloads are delayed. The 2028 change wasn't mentioned.
+
 ## 2026-11-23, 14:05 UTC (09:05 local): 6-hourly check
 - No email from John. PC off the bridge, so neither #50 (read through its browser) nor the queue could be checked; the fallback read of #50 needed approval and got no answer.
 

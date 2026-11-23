@@ -7,7 +7,7 @@ Nov 8, 2026 (updated Nov 10 for Rev C) · @Randolph
 The plan is a 1.5 m, self-righting autonomous sailboat with a rigid wing sail (design Rev C, 10 Nov 2026: foam-filled hull, twin rudders, 30 mm spar). It reports by Iridium satellite and takes commands from shore, and it is meant to cross the North Atlantic from off Hatteras, North Carolina, to Europe, aiming for Cornwall and the Isles of Scilly, then keep roaming (plan changed 13 Nov 2026 from Ocean City → south-west Ireland; [Launch_Point_Study.md](Launch_Point_Study.md)).
 
 - **Hardware cost:** about $2,550 for Rev C, or about $2,290 after the trims in the budget section, plus about $630 for the backup tracker (YB3). Rev C adds about $260 over Rev B; there is no thruster. Satellite airtime adds $40–$60 a month, plus the tracker's own airtime.
-- **Build time:** 9–13 months through five test gates. The realistic first ocean launch is May 2028; 2027 is possible only if every gate passes first time.
+- **Build time:** 9–13 months through five test gates. The first ocean launch is planned for 1–20 May 2028 (decided 23 Nov 2026).
 - **Odds:** about 10–20% that the first boat reaches Europe still sailing and reporting. Building a second boat and passing every gate raises that to about 30–40%. These are estimates, not calculations.
 - **Biggest risks:** water getting in, steering failure, and fouling by weed or fishing line. Navigation and weather matter less.
 
