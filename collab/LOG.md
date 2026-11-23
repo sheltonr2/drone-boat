@@ -2,6 +2,9 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-23, 02:05 UTC (21:05 local): 6-hourly check
+- Nothing new on #50 or by email. 032 is on ERA5 month 7 of 16 (May 2022, requested 22:50 UTC).
+
 ## 2026-11-22, 23:10 UTC (18:10 local): old runs check (superseded by the 6-hourly; not rescheduled)
 - 032: 6 of 16 ERA5 months done (April 2022 took 3.7 h). 028b and 033 still queued.
 
