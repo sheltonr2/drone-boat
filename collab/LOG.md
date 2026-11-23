@@ -2,6 +2,9 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-23, 14:05 UTC (09:05 local): 6-hourly check
+- No email from John. PC off the bridge, so neither #50 (read through its browser) nor the queue could be checked; the fallback read of #50 needed approval and got no answer.
+
 ## 2026-11-23, 14:30 UTC (09:30 local): Rev E3 and the procurement schedule
 
 - Randolph: "Go with your suggestion on 3 and let's get things going." DFM items 1-2 settled as Rev E3 (commit 0b999b9): stock solar, 2 x PV Logic STPVF010 10 W (380 x 250 mm) = 20 W, because no stock 15 W panel fits the 280 mm bays and run 027 showed 20 W costs nothing measurable; spar from stock, a 30 x 26 outer tube sleeved with an R&G 26 x 22 tube. BOM $4,914. Drawings, BOM, README, viewer and designs/revE3_design.json updated.
