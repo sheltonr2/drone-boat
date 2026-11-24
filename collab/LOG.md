@@ -2,6 +2,11 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-24, 18:10 UTC (13:10 local): PC back; queue restarted
+- What the outage left: run 032 stopped on 23 Nov at 08:54 local with 8 of 16 ERA5 months stored (all Copernicus Marine months were done earlier); 028b had just started and left a stale running.lock.
+- With Randolph's go-ahead ("how can I get everything restarted"): put unlock.run, 028c_holding_after_outage.run (run_028_holding.bat) and 032b_ew_download_resume.run (run_032, which skips stored months) in the queue; 033 was still queued. Order: 028 holding, then the 032 download, then 033.
+- Copied the Rev E3 files (0b999b9) and the 2028 docs (c59ab90) to the PC.
+
 ## 2026-11-24, 14:05 UTC (09:05 local): 6-hourly check
 - Nothing new on #50 or by email. PC still down (part due today).
 
