@@ -2,6 +2,11 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-24, 19:05 UTC (14:05 local): run 028 analysed; 032 download resumed
+
+- 028 (holding) finished at 13:36 local. Lizard offing: 3.4% aground in 14 days of holding (Mount's Bay mouth 38.2%); dead boats ground from 1.4 days (10th percentile; Mount's Bay 0.5). The model's station mode is a 5 km feather-and-return, so the distances are an upper bound. Section written in docs/Launch_Plan.md; collab/runs_026/hold_analysis.py; results/2026-11-24_hold028_*.
+- 032b resumed at 13:37: 8 of 16 ERA5 months were already stored; Nov 2022 came at once (the CDS job had finished during the outage), and Dec 2022 is requested. 033 waits behind it.
+
 ## 2026-11-24, 18:40 UTC (13:40 local): 3D model and stability data posted on #50; queue running again
 
 - The PC restarted again at about 13:25 local and killed the first 028 retry. Put another unlock.run and 028d_holding_after_restart.run in the queue; Randolph opened the queue window. 028 started at 13:28 and was on its last part (drift_mounts) at 13:34. 032b (download resume) and 033 follow.
