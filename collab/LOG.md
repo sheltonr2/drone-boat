@@ -2,6 +2,9 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-24, 20:05 UTC (15:05 local): 6-hourly check
+- Nothing new on #50 since our two posts (read through the PC browser) and no email. 032: 10 of 16 ERA5 months stored (Dec 2022 done at 14:33 local). A DNS failure at 14:42 local is being retried every 2 min, and the queue window is alive. 034 and 035 haven't been run by hand, so they're queued as 032c/032d.
+
 ## 2026-11-24, 19:20 UTC (14:20 local): runs 034 and 035 queued
 
 - Randolph: "do both". 034 is Rev E3 (20 W) on the final plan, paired with 026 (1000 voyages, about 1 h). 035 is the holding study with a 1 km station deadband (new scenario key station_radius_km, off by default; regression identical), paired with 028's station runs (about 20 min). Both are queued as 032c (035) and 032d (034), so they run after the 032 download and before 033. Randolph can double-click them to run them now, alongside the download.
