@@ -2,6 +2,9 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-24, 02:05 UTC (21:05 local): 6-hourly check
+- Nothing new on #50 or by email. PC still down.
+
 ## 2026-11-23, 20:05 UTC (15:05 local): 6-hourly check
 - Nothing new on #50 (read via the public API; ours of 22 Nov 13:59 is still the latest) or by email. PC still down awaiting a part (due 24 Nov), so the queue wasn't checked.
 
