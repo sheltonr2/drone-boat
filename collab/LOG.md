@@ -2,6 +2,9 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-24, 14:05 UTC (09:05 local): 6-hourly check
+- Nothing new on #50 or by email. PC still down (part due today).
+
 ## 2026-11-24, 08:05 UTC (03:05 local): 6-hourly check
 - Nothing new on #50 or by email. PC still down.
 
