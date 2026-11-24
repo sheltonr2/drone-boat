@@ -1,0 +1,286 @@
+{
+ "station_lizard": {
+  "runs": 500,
+  "outcomes": {
+   "at_sea_timeout": 420,
+   "lost": 63,
+   "aground": 17
+  },
+  "groundings": {
+   "Land's End to Penzance (west of Mount's Bay)": 11,
+   "inside Mount's Bay": 4,
+   "Lizard peninsula": 2
+  },
+  "watch_within_1km": {
+   "seven_stones": 0.0,
+   "scilly": 0.0,
+   "wolf_rock": 3.4,
+   "runnelstone": 0.4,
+   "manacles": 5.0,
+   "lizard_point": 9.8,
+   "low_lee_mountamopus": 0.0
+  },
+  "watch_within_2km": {
+   "seven_stones": 0.0,
+   "scilly": 0.0,
+   "wolf_rock": 3.4,
+   "runnelstone": 1.2,
+   "manacles": 6.6,
+   "lizard_point": 17.0,
+   "low_lee_mountamopus": 0.0
+  },
+  "percent": {
+   "at_sea_timeout": 84.0,
+   "lost": 12.6,
+   "aground": 3.4
+  },
+  "max_distance_km": {
+   "median": 29.8,
+   "p90": 60.9
+  },
+  "end_distance_km": {
+   "median": 12.8,
+   "p90": 40.9
+  },
+  "time_beyond_5km_percent": {
+   "median": 81.5,
+   "p90": 94.6
+  },
+  "time_beyond_10km_percent": {
+   "median": 47.6,
+   "p90": 82.1
+  },
+  "runs_ever_beyond_5km_percent": 100.0,
+  "runs_ever_beyond_10km_percent": 98.4,
+  "days_to_aground": {
+   "p10": 4.9,
+   "median": 7.6,
+   "p90": 13.1
+  },
+  "failure_causes": {
+   "at sea timeout": 335,
+   "Picked up by a fishing boat or passer-by": 55,
+   "Fouled by weed or fishing line": 29,
+   "Collision damage": 12,
+   "Electronics failure": 12,
+   "aground": 12,
+   "Struck by a vessel": 8,
+   "Tail servo jammed": 7,
+   "Backup tracker failed": 7,
+   "Satellite modem or antenna failed": 6,
+   "Leak started": 6,
+   "One rudder servo jammed": 4,
+   "Companion computer hung": 3,
+   "One rudder servo failed limp": 2,
+   "Tail servo failed": 2
+  }
+ },
+ "station_mounts": {
+  "runs": 500,
+  "outcomes": {
+   "at_sea_timeout": 260,
+   "aground": 191,
+   "lost": 49
+  },
+  "groundings": {
+   "inside Mount's Bay": 66,
+   "Land's End to Penzance (west of Mount's Bay)": 51,
+   "Lizard peninsula": 60,
+   "Manacles to Falmouth": 14
+  },
+  "watch_within_1km": {
+   "seven_stones": 0.0,
+   "scilly": 0.0,
+   "wolf_rock": 0.6,
+   "runnelstone": 15.8,
+   "manacles": 9.2,
+   "lizard_point": 25.0,
+   "low_lee_mountamopus": 6.0
+  },
+  "watch_within_2km": {
+   "seven_stones": 0.0,
+   "scilly": 0.0,
+   "wolf_rock": 4.4,
+   "runnelstone": 18.2,
+   "manacles": 12.8,
+   "lizard_point": 35.2,
+   "low_lee_mountamopus": 11.0
+  },
+  "percent": {
+   "at_sea_timeout": 52.0,
+   "aground": 38.2,
+   "lost": 9.8
+  },
+  "max_distance_km": {
+   "median": 24.1,
+   "p90": 75.2
+  },
+  "end_distance_km": {
+   "median": 15.5,
+   "p90": 36.3
+  },
+  "time_beyond_5km_percent": {
+   "median": 79.4,
+   "p90": 94.1
+  },
+  "time_beyond_10km_percent": {
+   "median": 36.3,
+   "p90": 76.6
+  },
+  "runs_ever_beyond_5km_percent": 99.8,
+  "runs_ever_beyond_10km_percent": 98.0,
+  "days_to_aground": {
+   "p10": 4.3,
+   "median": 8.6,
+   "p90": 12.8
+  },
+  "failure_causes": {
+   "at sea timeout": 210,
+   "aground": 155,
+   "Picked up by a fishing boat or passer-by": 42,
+   "Fouled by weed or fishing line": 27,
+   "Collision damage": 10,
+   "Electronics failure": 8,
+   "Backup tracker failed": 8,
+   "One rudder servo jammed": 7,
+   "Struck by a vessel": 7,
+   "Tail servo jammed": 5,
+   "Satellite modem or antenna failed": 5,
+   "One rudder servo failed limp": 5,
+   "Leak started": 5,
+   "Companion computer hung": 4,
+   "Limp-home controller failed": 1,
+   "Tail servo failed": 1
+  }
+ },
+ "drift_lizard": {
+  "runs": 500,
+  "outcomes": {
+   "aground": 415,
+   "at_sea_timeout": 85
+  },
+  "groundings": {
+   "further east / France": 38,
+   "Devon / Dorset": 183,
+   "inside Mount's Bay": 47,
+   "Lizard peninsula": 37,
+   "Manacles to Falmouth": 25,
+   "Falmouth to Plymouth": 58,
+   "Land's End to Penzance (west of Mount's Bay)": 27
+  },
+  "watch_within_1km": {
+   "seven_stones": 3.8,
+   "scilly": 5.2,
+   "wolf_rock": 2.4,
+   "runnelstone": 2.0,
+   "manacles": 2.8,
+   "lizard_point": 4.2,
+   "low_lee_mountamopus": 1.0
+  },
+  "watch_within_2km": {
+   "seven_stones": 4.4,
+   "scilly": 5.6,
+   "wolf_rock": 5.0,
+   "runnelstone": 3.6,
+   "manacles": 6.2,
+   "lizard_point": 9.4,
+   "low_lee_mountamopus": 1.6
+  },
+  "percent": {
+   "aground": 83.0,
+   "at_sea_timeout": 17.0
+  },
+  "max_distance_km": {
+   "median": 154.2,
+   "p90": 346.1
+  },
+  "end_distance_km": {
+   "median": 107.4,
+   "p90": 324.4
+  },
+  "time_beyond_5km_percent": {
+   "median": 98.0,
+   "p90": 99.4
+  },
+  "time_beyond_10km_percent": {
+   "median": 95.5,
+   "p90": 98.8
+  },
+  "runs_ever_beyond_5km_percent": 100.0,
+  "runs_ever_beyond_10km_percent": 100.0,
+  "days_to_aground": {
+   "p10": 1.4,
+   "median": 7.8,
+   "p90": 21.2
+  },
+  "failure_causes": {
+   "aground": 415,
+   "at sea timeout": 85
+  }
+ },
+ "drift_mounts": {
+  "runs": 500,
+  "outcomes": {
+   "aground": 433,
+   "at_sea_timeout": 67
+  },
+  "groundings": {
+   "inside Mount's Bay": 159,
+   "Devon / Dorset": 89,
+   "Land's End to Penzance (west of Mount's Bay)": 36,
+   "Lizard peninsula": 49,
+   "Falmouth to Plymouth": 60,
+   "Manacles to Falmouth": 26,
+   "further east / France": 14
+  },
+  "watch_within_1km": {
+   "seven_stones": 3.2,
+   "scilly": 7.4,
+   "wolf_rock": 2.6,
+   "runnelstone": 2.6,
+   "manacles": 2.4,
+   "lizard_point": 6.2,
+   "low_lee_mountamopus": 4.4
+  },
+  "watch_within_2km": {
+   "seven_stones": 4.0,
+   "scilly": 8.0,
+   "wolf_rock": 5.4,
+   "runnelstone": 6.2,
+   "manacles": 4.8,
+   "lizard_point": 10.4,
+   "low_lee_mountamopus": 7.4
+  },
+  "percent": {
+   "aground": 86.6,
+   "at_sea_timeout": 13.4
+  },
+  "max_distance_km": {
+   "median": 85.9,
+   "p90": 310.4
+  },
+  "end_distance_km": {
+   "median": 51.0,
+   "p90": 272.4
+  },
+  "time_beyond_5km_percent": {
+   "median": 95.5,
+   "p90": 99.4
+  },
+  "time_beyond_10km_percent": {
+   "median": 91.0,
+   "p90": 98.8
+  },
+  "runs_ever_beyond_5km_percent": 100.0,
+  "runs_ever_beyond_10km_percent": 100.0,
+  "days_to_aground": {
+   "p10": 0.5,
+   "median": 3.6,
+   "p90": 19.5
+  },
+  "failure_causes": {
+   "aground": 433,
+   "at sea timeout": 67
+  }
+ }
+}

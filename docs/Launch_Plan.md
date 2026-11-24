@@ -149,9 +149,34 @@ The decided plan run as one piece: Rev E1, 45 km off Hatteras, launches 1–20 M
 - **Scilly:** 5.4% passed within 1 km, against 3.0% in run 025 (2023+2024, May–June launches). The extra years add a few close passes; the approach still works, but this is the rock to keep an eye on.
 - The commonest problems along the way are weed or fishing line (0.29 per voyage), leaks (0.24, which the pump handles) and electronics faults (0.18).
 
-## Holding at the Lizard offing (run 028, pending)
+## Holding at the Lizard offing (run 028, 24 Nov 2026)
 
-Run 028 (station-keeping for 14 days and a dead boat drifting for 30 days, at the Lizard offing and the mouth of Mount's Bay) stopped on 21 Nov before it began: the data check asked for December weather that a 14-day voyage doesn't need. The check now scales with voyage length (`simulator/drone_sim/cli.py`), and 028 is queued again behind the weather download (run 032). Its results will be added here.
+Rev E1 on 2021–2024 weather, 500 voyages per case, starting at the hold between mid-August and mid-October (when May launches arrive). Station-keeping ran for 14 days with failures on (planning rates). The dead boat drifted for 30 days with no further failures. Analysis: [`collab/runs_026/hold_analysis.py`](../collab/runs_026/hold_analysis.py); results in `results/2026-11-24_hold028_*`.
+
+**How the model holds station.** The simulator's station mode is cruder than the firmware plan above. Inside 5 km of the point it feathers the wing and drifts; beyond 5 km it sails back. It does not sail the slow box that would keep the boat within about 1 km. Tidal streams off the Lizard run faster than the boat's mean speed of under 1 kn, so treat the distances below as an upper bound until the firmware is modelled.
+
+| 14 days holding | Lizard offing | Mount's Bay mouth |
+|---|---|---|
+| Aground within 14 days | **3.4%** (Land's End–Penzance 11, inside Mount's Bay 4, the Lizard 2) | **38.2%** (inside the bay 66, the Lizard 60, Land's End–Penzance 51, Manacles–Falmouth 14) |
+| Lost to other causes (pick-up, weed, collision, electronics) | 12.6% | 9.8% |
+| Still holding at day 14 | 84.0% | 52.0% |
+| Furthest from the point (median / 90th percentile) | 30 / 61 km | 24 / 75 km |
+| Share of the time beyond 5 km / 10 km (median) | 82% / 48% | 79% / 36% |
+| Passed within 1 km of | the Lizard 9.8%, the Manacles 5.0%, Wolf Rock 3.4% | the Lizard 25%, the Runnelstone 16%, the Manacles 9.2% |
+| Days to grounding (10th percentile / median) | 4.9 / 7.6 | 4.3 / 8.6 |
+
+| Dead boat, 30 days | From the Lizard offing | From the Mount's Bay mouth |
+|---|---|---|
+| Aground within 30 days | 83% | 87% |
+| Days to grounding (10th percentile / median) | **1.4** / 7.8 | **0.5** / 3.6 |
+| Where | Devon and Dorset 183, Falmouth–Plymouth 58, inside Mount's Bay 47, France or further east 38, the Lizard 37, Land's End–Penzance 27, Manacles–Falmouth 25 | Inside Mount's Bay 159, Devon and Dorset 89, Falmouth–Plymouth 60, the Lizard 49, Land's End–Penzance 36, Manacles–Falmouth 26, France or further east 14 |
+
+What it shows (no decision changed):
+
+- **The Lizard offing is the right holding point.** In the model a boat holding there for two weeks grounds 3% of the time. At the Mount's Bay mouth it grounds 38% of the time, because the bay's shores lie downwind of the prevailing south-westerlies.
+- **Holding is a waiting area, not a parking spot.** Even at the Lizard, the model's boat spends half its time more than 10 km from the point, and 1 in 10 passes within 1 km of the Lizard itself. The recovery boat should go out within the first few days. The earliest groundings come after about 5 days.
+- **A boat that dies at the hold needs collecting within a day.** One in ten dead boats from the Lizard offing is ashore within 1.4 days, and from the Mount's Bay mouth within half a day. Most of the rest come ashore along the south coast as far as Dorset within a month.
+- **Next for the model:** add the firmware's slow-box station-keeping (and a tidal-stream check against Admiralty data) before reading the distances as more than an upper bound.
 
 ## Launch window on four years of weather (15 Nov 2026, runs 019a–c)
 
