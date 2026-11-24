@@ -2,6 +2,16 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-24, 18:40 UTC (13:40 local): 3D model and stability data posted on #50; queue running again
+
+- The PC restarted again at about 13:25 local and killed the first 028 retry. Put another unlock.run and 028d_holding_after_restart.run in the queue; Randolph opened the queue window. 028 started at 13:28 and was on its last part (drift_mounts) at 13:34. 032b (download resume) and 033 follow.
+- Missed on #50: the 20:05 and 02:05 checks read #50 through WebFetch of the API, which showed nothing new, but two comments had come in. **23 Nov 20:49 UTC (7113610456):** they agree the 19/46 re-score is within the noise and call the slow-median question answered. They want the 3D model as one .glb with separate named parts and the bow direction noted, "no hurry", and say nothing else is open. **24 Nov 16:35 UTC (7137912894):** Rev E1 is live in Bluewater (#658, #659), drawn as Rev C5 until our glTF arrives. They asked for a revE1_gz_curve.csv and inertias if we have them. Its Boatyard test sails to Portugal, not Cornwall. Future checks: read #50 through the browser on the PC, not WebFetch.
+- Made and pushed (Randolph: "push an update to #50 ... if we dont [have the files], let's make them"):
+  - build-files/export: Rev E3 as .glb (all parts, and exterior only) and OBJ+MTL; source/export_model.py.
+  - designs/boat-sim/randolph_rev_e3.yaml.
+  - docs/data/revE1_gz_curve.csv and revE3_gz_curve.csv, designs/revE1_geometry.json and revE3_geometry.json (inertia), from docs/data/stability_export.py.
+- Posted on #50: 18:32 UTC (7140778631), the 3D model, Rev E3, the 2028 launch and the runs restarting (collab/post_2026-11-24_update.md); 18:34 UTC (7140821736), the GZ curve and inertia and a note that the Boatyard test goes to Portugal (collab/post_2026-11-24_stability.md). The API shows exactly these two new comments from us.
+
 ## 2026-11-24, 18:10 UTC (13:10 local): PC back; queue restarted
 - What the outage left: run 032 stopped on 23 Nov at 08:54 local with 8 of 16 ERA5 months stored (all Copernicus Marine months were done earlier); 028b had just started and left a stale running.lock.
 - With Randolph's go-ahead ("how can I get everything restarted"): put unlock.run, 028c_holding_after_outage.run (run_028_holding.bat) and 032b_ew_download_resume.run (run_032, which skips stored months) in the queue; 033 was still queued. Order: 028 holding, then the 032 download, then 033.
