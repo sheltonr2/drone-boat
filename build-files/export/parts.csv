@@ -1,0 +1,100 @@
+node,name,group,interior,materials,triangles,drawing_ref,info
+hull,Hull shell,Hull and deck,False,antifoul hull_boot hull_orange,48132,"D01, D02, D31","H80 foam strip-plank, 2 x 6 oz glass outside, 1 x 6 oz inside. Hi-vis topsides, boot stripe, copper antifouling below the waterline."
+transom,Transom,Hull and deck,False,antifoul hull_boot hull_orange,127,"D02, T10",10 mm H80 with 2 + 1 plies; carries the stern-post bracket P06.
+deck,Deck,Hull and deck,False,deck,21560,"D08, D31","10 mm H80, 2 x 6 oz out / 1 in, non-skid. Bonded and taped to the hull."
+hatch_lid,Hatch lid,Hull and deck,False,deckpaint,3840,"D08, T16","Bolted with 12 x M5 into bonded inserts on 4 mm EPDM cord. Carries the RockBLOCK bowl P23, a membrane vent and a Schrader test valve."
+solar1,Solar panel 1,Power and electronics,False,solar,2876,"D01, D08, D30","Rev E3: PV Logic STPVF010 10 W ETFE flexi panel, 380 x 250 x 4, bonded in its deck bay; 20 W in all (run 027: no measurable cost)."
+solar2,Solar panel 2,Power and electronics,False,solar,2876,"D01, D08, D30","Rev E3: PV Logic STPVF010 10 W ETFE flexi panel, 380 x 250 x 4, bonded in its deck bay; 20 W in all (run 027: no measurable cost)."
+yb3_well,YB3 well,Hull and deck,False,deckpaint,60,"D07, D08","Glassed well in the foredeck, 176 x 106 x 38, drains aft."
+yb3_rim,YB3 well rim,Hull and deck,False,deckpaint,48,D08,
+fin,Keel fin,Keel and ballast,False,antifoul,8544,"D04, T12, T13","NACA 0012, 170/150 chord, 430 deep. Hardwood core, carbon strip and 6 x 6 oz each side; 60 mm tenon into the keel box, two M10 rods."
+bulb,Lead bulb,Keel and ballast,False,antifoul,16128,"D04, P14","Cast lead, D72 x 320, about 9.2 kg, from pattern P14 in a plaster mould. Slotted onto the fin tip."
+fairing,Weed fairing,Keel and ballast,False,antifoul,3776,"D04, T21","XPS + glass ramp from the fin leading edge to the bulb nose, so weed and line slide off."
+wing,Wing sail,Wing-sail rig,False,wing,6672,"D06, T15","NACA 0015, 375 chord x 800 span, XPS core with 2 x 6 oz glass and 3 mm ply end caps. Free-pivoting on the spar 82 mm from the leading edge."
+spar,Wing spar,Wing-sail rig,False,carbon,384,"D06, D07","Carbon tube 30 x 22, 995 long, on two 6806 acetal bearings in P07 (open item: special-order size)."
+boom,Tail boom,Wing-sail rig,False,carbon,128,D06,"Carbon tube 16 x 14 (Rev E1), spar axis to tail pivot 600."
+cwarm,Counterweight arm,Wing-sail rig,False,frp,96,D06,"12 mm solid pultruded fibreglass rod, 244 long (Rev C3)."
+cwlead,Counterweight lead,Wing-sail rig,True,lead,160,D06,About 0.91 kg of lead shot in epoxy inside P18.
+tailpivot,Tail pivot rod,Wing-sail rig,False,carbon,80,D06,6 mm carbon rod through both tail halves.
+P07,P07 Mast bearing housing,Wing-sail rig,False,petg,16154,D07,Bonded into the top of the mast tube; two floating 6806 acetal bearings and plain catcher lands.
+P08,P08 Spar clamp,Wing-sail rig,False,asa,8526,D06,Clamps the spar; takes the tail boom aft and the counterweight arm forward.
+P09,P09 Tail servo housing,Wing-sail rig,False,asa,5708,D06,On the aft end of the boom; holds the potted tail servo output-up.
+P10a,"P10 Tail fin, lower",Wing-sail rig,False,wing,4992,D06,"NACA 0012, 120 chord, printed and glassed; bonded to the servo horn."
+P10b,"P10 Tail fin, upper",Wing-sail rig,False,wing,4190,D06,"Upper half, joined with the pivot rod and a 3 mm carbon pin."
+P25,P25 Tail detent,Wing-sail rig,False,petg,2458,D06,Two magnets that hold the tail at +/-8 deg if its servo dies.
+P18,P18 Counterweight pod,Wing-sail rig,False,asa,6540,D06,Holds about 0.91 kg of lead; balances the wing and tail on the spar axis.
+stub,Stern post,Stern post,False,frp,256,D07,"20 x 2 pultruded fibreglass tube, 500 long (Rev C3): bends rather than kinks."
+radar,Radar reflector,Stern post,False,white,96,D07,"Davis Emergency Radar Reflector 151, lashed to the post at z 330-470."
+P06,P06 Transom bracket,Stern post,False,asa,5916,D07,Bolted through the transom with 4 x M5; two M4 set screws grip the post.
+P05,P05 Antenna platform,Stern post,False,asa,7324,D07,Main GPS + compass (Holybro Micro M10) bonded under the plate.
+gps,Main GPS (Micro M10),Stern post,False,black,128,"D07, D30","Holybro Micro M10 GPS + IST8310 compass, potted in soft silicone."
+P20,P20 Nav light clamp,Stern post,False,asa,6390,D07,All-round white light on a 45 mm arm.
+navlight,Navigation light,Stern post,False,lamp,256,"D07, D30",12 V all-round white LED puck.
+P03,P03 Sensor cap,Stern post,False,asa,13486,D07,Caps the post; carries the AS5600 board under the vane magnet.
+P01,P01 Wind-vane housing,Stern post,False,asa,13850,D07,Two S608 stainless bearings and spacer P27 in one D22.1 bore (E2).
+P27,P27 Vane bearing spacer,Stern post,True,petg,3520,D07,Between the two vane bearings (E2).
+s608_0,S608-2RS bearing,Stern post,True,steel,256,D07,Stainless 8 x 22 x 7.
+s608_1,S608-2RS bearing,Stern post,True,steel,256,D07,Stainless 8 x 22 x 7.
+P04,P04 Magnet holder,Stern post,True,petg,2584,D07,"Diametric magnet on the end of the vane shaft, over the AS5600."
+vaneshaft,Vane shaft,Stern post,True,steel,80,D07,8 mm 316 stainless.
+P02,P02 Wind-vane arm,Stern post,False,asa,7154,D07,Vane arm with fin and lead counterweight; hub set-screwed to the shaft.
+P23,P23 RockBLOCK bowl,Deck fittings,False,asa,12586,D08,Bonded into a D146 hole in the hatch lid; holds the RockBLOCK Plus with 4 x M5.
+rockblock,RockBLOCK Plus,Deck fittings,False,darkgrey,512,"D08, D30","Iridium SBD modem, IP67 puck; RS-232 to the main box."
+P19,P19 YB3 platform,Deck fittings,False,asa,4882,D07,In the foredeck well; straps hold the YB3.
+yb3,YB3 tracker,Deck fittings,False,yellow,160,D07,Independent backup tracker with its own battery and Iridium link.
+vent0,Membrane vent,Deck fittings,False,steel,96,D08,Amphenol M12 IP68 vent: pressure equalisation without water.
+schrader,Schrader test valve,Deck fittings,False,black,80,D08,For the pressure-decay leak test; capped at sea.
+deckfitting,Pump outlet fitting,Deck fittings,False,white,192,D03,"1/4 in through-deck fitting, after a check valve and a loop to z 226."
+masttube,Mast tube,Interior structure,False,pvc,384,"D03, D07","2 in. schedule 40 PVC, glassed to hull and deck; P07 bonds into its top."
+P13a_port,"P13 Rudder core, upper (port)",Steering,False,antifoul,5628,D05,"Printed core, 2 x 6 oz glass over it, pinned to the 12 mm stock with two 4 mm pins."
+P13b_port,"P13 Rudder core, lower (port)",Steering,False,antifoul,5628,D05,Lower half of the rudder blade.
+stock_port,Rudder stock (port),Steering,True,steel,96,D05,"12 mm 316 bar, 360 long."
+trunk_port,Rudder trunk (port),Steering,True,steel,192,D05,"316 tube 16 x 1 (or GRP, 14 ID) with two igus JFM-1214 bushings."
+P11_port,P11 Tiller arm (port),Steering,True,petg,4176,"D05, D32",Clamped and pinned to the stock; pushrod holes at 35/45/55.
+P12_port,P12 Servo cradle (port),Steering,True,petg,5948,D05,Holds the sealed SER-2000 servo output-up in the aft-foam pocket (E2 base fits the pocket).
+ser_port,SER-2000 sealed servo (port),Steering,True,alu,240,D05,Blue Trail SER-2000 housing around a DFRobot 25 kg magnetic-encoder servo (size is an estimate).
+P26_port,P26 Servo arm (port),Steering,True,petg,6804,"D05, D32",Clamps the SER-2000's 6 mm D-shaft; holes at 20/25/30.
+pushrod_port,Pushrod + spring link (port),Steering,True,brass,128,D32,M2 316 rod with the spring overload link (D32).
+P13a_stbd,"P13 Rudder core, upper (stbd)",Steering,False,antifoul,5628,D05,"Printed core, 2 x 6 oz glass over it, pinned to the 12 mm stock with two 4 mm pins."
+P13b_stbd,"P13 Rudder core, lower (stbd)",Steering,False,antifoul,5628,D05,Lower half of the rudder blade.
+stock_stbd,Rudder stock (stbd),Steering,True,steel,96,D05,"12 mm 316 bar, 360 long."
+trunk_stbd,Rudder trunk (stbd),Steering,True,steel,192,D05,"316 tube 16 x 1 (or GRP, 14 ID) with two igus JFM-1214 bushings."
+P11_stbd,P11 Tiller arm (stbd),Steering,True,petg,4176,"D05, D32",Clamped and pinned to the stock; pushrod holes at 35/45/55.
+P12_stbd,P12 Servo cradle (stbd),Steering,True,petg,5948,D05,Holds the sealed SER-2000 servo output-up in the aft-foam pocket (E2 base fits the pocket).
+ser_stbd,SER-2000 sealed servo (stbd),Steering,True,alu,240,D05,Blue Trail SER-2000 housing around a DFRobot 25 kg magnetic-encoder servo (size is an estimate).
+P26_stbd,P26 Servo arm (stbd),Steering,True,petg,6804,"D05, D32",Clamps the SER-2000's 6 mm D-shaft; holes at 20/25/30.
+pushrod_stbd,Pushrod + spring link (stbd),Steering,True,brass,128,D32,M2 316 rod with the spring overload link (D32).
+bh300,Bulkhead x 300,Interior structure,True,h80,400,"D03, D09","10 mm H80, glassed in with 50 mm tapes both sides (T17/T18)."
+bh1260,Bulkhead x 1260,Interior structure,True,h80,400,"D03, D09","10 mm H80, glassed in with 50 mm tapes both sides (T17/T18)."
+floor650,Floor x 650,Interior structure,True,ply,400,"D04, T19, T20",9 mm marine ply floor across the hull at the keel box.
+floor800,Floor x 800,Interior structure,True,ply,400,"D04, T19, T20",9 mm marine ply floor across the hull at the keel box.
+keelbox,Keel box,Interior structure,True,glass,48,D04,"Glass socket cast round the waxed fin tenon, 60 deep."
+g10plate,G10 plate + fin rods,Interior structure,True,g10,12,D04,122 x 60 x 10 G10 taking the two M10 rod nuts.
+rod0,M10 fin rod,Interior structure,True,steel,88,D04,M10 316 threaded rod bedded in the fin.
+rod1,M10 fin rod,Interior structure,True,steel,88,D04,M10 316 threaded rod bedded in the fin.
+foam_bow,Bow foam fill,Interior structure,True,xps,6400,D09,"Sealed compartment ahead of bulkhead x 300, filled with XPS blocks."
+foam_stern,Stern foam fill,Interior structure,True,xps,6400,D09,"Sealed compartment aft of bulkhead x 1260, XPS with fitted pockets for the two servos."
+P24,P24 Bilge-pump spacer,Interior structure,True,petg,7362,D03,Holds the diaphragm pump upright against the port side of the mast tube.
+pump,Bilge pump,Interior structure,True,black,192,"D03, D30","12 V R385 diaphragm pump, self-priming, pickup at the sump low point."
+P17_0,P17 Penetrator pad,Interior structure,True,petg,5690,D30,Flat seat for a WetLink penetrator on a curved or thin wall.
+P17_1,P17 Penetrator pad,Interior structure,True,petg,5690,D30,Flat seat for a WetLink penetrator on a curved or thin wall.
+P17_2,P17 Penetrator pad,Interior structure,True,petg,5690,D30,Flat seat for a WetLink penetrator on a curved or thin wall.
+P17_3,P17 Penetrator pad,Interior structure,True,petg,5690,D30,Flat seat for a WetLink penetrator on a curved or thin wall.
+battbox,Battery box,Power and electronics,True,glassbox,160,"D09, D32","Sealed 10 mm H80 box with an O-ring lid, strapped down on P16; lifts out through the hatch."
+battery,Battery 12.8 V 15 Ah,Power and electronics,True,battery,160,"D09, D30","Bioenno BLF-1215A LiFePO4, PVC pack."
+P16_0,P16 Battery strap anchor,Power and electronics,True,petg,4738,D09,Four anchors glassed to the hull floor take the battery-box straps.
+P16_1,P16 Battery strap anchor,Power and electronics,True,petg,4738,D09,Four anchors glassed to the hull floor take the battery-box straps.
+P16_2,P16 Battery strap anchor,Power and electronics,True,petg,4738,D09,Four anchors glassed to the hull floor take the battery-box straps.
+P16_3,P16 Battery strap anchor,Power and electronics,True,petg,4738,D09,Four anchors glassed to the hull floor take the battery-box straps.
+shelf,Electronics shelf,Power and electronics,True,h80,12,D03,"Glassed foam shelf: box bottom at z 118, 70 mm above the sump."
+ebox,Electronics box,Power and electronics,True,hammond,160,"D03, D30","Hammond 1554V2GYCL, IP68 polycarbonate."
+eboxlid,Electronics box lid,Power and electronics,True,clearlid,160,D03,Clear lid with cable glands and a membrane vent.
+P15,P15 Electronics tray,Power and electronics,True,petg,12619,D03,Slotted tray for zip ties and Dual Lock inside the box.
+pixhawk,Pixhawk 6C Mini,Power and electronics,True,alu,160,D30,Inside the sealed main box (D30).
+esp32,Companion ESP32-S3,Power and electronics,True,pcb,160,D30,Inside the sealed main box (D30).
+gv5,Genasun GV-5 MPPT,Power and electronics,True,black,160,D30,Inside the sealed main box (D30).
+pm02,PM02 power module,Power and electronics,True,pcb,160,D30,Inside the sealed main box (D30).
+regs,6 V / 5 V regulators,Power and electronics,True,pcbblue,160,D30,Inside the sealed main box (D30).
+max3232,MAX3232 + INA260s,Power and electronics,True,pcbred,160,D30,Inside the sealed main box (D30).
+P21,P21 Limp-home case,Power and electronics,True,petg,6099,"D03, D30","Potted limp-home controller (own ESP32, GPS, BNO085, fused feed) on bulkhead x 300."
+P22,P22 Switchover pod,Power and electronics,True,petg,3742,"D03, D30","Servo multiplexer and ideal diodes, potted, on bulkhead x 1260."
