@@ -2,6 +2,10 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-24, 19:20 UTC (14:20 local): runs 034 and 035 queued
+
+- Randolph: "do both". 034 is Rev E3 (20 W) on the final plan, paired with 026 (1000 voyages, about 1 h). 035 is the holding study with a 1 km station deadband (new scenario key station_radius_km, off by default; regression identical), paired with 028's station runs (about 20 min). Both are queued as 032c (035) and 032d (034), so they run after the 032 download and before 033. Randolph can double-click them to run them now, alongside the download.
+
 ## 2026-11-24, 19:05 UTC (14:05 local): run 028 analysed; 032 download resumed
 
 - 028 (holding) finished at 13:36 local. Lizard offing: 3.4% aground in 14 days of holding (Mount's Bay mouth 38.2%); dead boats ground from 1.4 days (10th percentile; Mount's Bay 0.5). The model's station mode is a 5 km feather-and-return, so the distances are an upper bound. Section written in docs/Launch_Plan.md; collab/runs_026/hold_analysis.py; results/2026-11-24_hold028_*.
