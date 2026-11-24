@@ -31,6 +31,10 @@ class Autopilot:
         tp = dict(ap["thruster_policy"]); self.thruster = tp
         self.geofences = []              # (lat, lon, radius_km)
         self.station = tuple(st0) if st0 else None
+        # Scenario key "station_radius_km": in station mode the boat feathers and drifts inside this distance of the
+        # point and sails back beyond it. Default 5 km (the original rule). 1 km approximates the firmware's slow box
+        # (holding study 2, 24 Nov 2026).
+        self.station_r = float(scenario.get("station_radius_km", 5.0))
         self.last_decision = -1e18
         self._vmg_cache = {}
         self.diag_requested = False
@@ -112,7 +116,7 @@ class Autopilot:
             else:
                 break
         tgt = self.route[self.wp]
-        if self.mode == "station" and self.station and haversine_km(s["lat"], s["lon"], *self.station) < 5:
+        if self.mode == "station" and self.station and haversine_km(s["lat"], s["lon"], *self.station) < self.station_r:
             out.update(alpha_mode="feather", steering=True); return out
         if tws > self.ap["storm_tws_ms"]:
             # storm: feather and run off at ~140 deg TWA on the more favourable gybe

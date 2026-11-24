@@ -1,0 +1,116 @@
+{
+ "provider": "bulk",
+ "failure_rate_set": "planning",
+ "start": {
+  "lat": 49.97,
+  "lon": -5.45
+ },
+ "target": {
+  "lat": 49.97,
+  "lon": -5.45
+ },
+ "waypoints": [],
+ "arrival_radius_km": 0.0,
+ "europe_landfall_counts": false,
+ "atlantic_islands_count": false,
+ "watch_lines": {
+  "seven_stones": [
+   [
+    50.06,
+    -6.072
+   ],
+   [
+    50.055,
+    -6.13
+   ]
+  ],
+  "scilly": [
+   [
+    49.873,
+    -6.446
+   ],
+   [
+    49.965,
+    -6.4
+   ],
+   [
+    49.98,
+    -6.32
+   ],
+   [
+    49.965,
+    -6.255
+   ],
+   [
+    49.9,
+    -6.27
+   ],
+   [
+    49.88,
+    -6.35
+   ],
+   [
+    49.873,
+    -6.446
+   ]
+  ],
+  "wolf_rock": [
+   [
+    49.945,
+    -5.812
+   ],
+   [
+    49.945,
+    -5.804
+   ]
+  ],
+  "runnelstone": [
+   [
+    50.02,
+    -5.672
+   ],
+   [
+    50.025,
+    -5.665
+   ]
+  ],
+  "manacles": [
+   [
+    50.04,
+    -5.05
+   ],
+   [
+    50.05,
+    -5.035
+   ]
+  ],
+  "lizard_point": [
+   [
+    49.957,
+    -5.215
+   ],
+   [
+    49.955,
+    -5.195
+   ]
+  ],
+  "low_lee_mountamopus": [
+   [
+    50.09,
+    -5.52
+   ],
+   [
+    50.085,
+    -5.47
+   ]
+  ]
+ },
+ "name": "Holding study 2: station-keeping at the mouth of Mount's Bay within 1 km, 14 days (Rev E1)",
+ "initial_mode": "station",
+ "station": [
+  49.97,
+  -5.45
+ ],
+ "max_days": 14,
+ "station_radius_km": 1.0
+}
