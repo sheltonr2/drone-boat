@@ -1,0 +1,42 @@
+{
+ "name": "Rev E1 1.5 m solar-sail drone",
+ "units": "SI (m, kg)",
+ "frame": "x aft from bow, y to port, z up from hull bottom at midships",
+ "mass_kg": 28.52,
+ "cg_m": [
+  0.817,
+  -0.0,
+  -0.023
+ ],
+ "waterline_z_m": 0.106,
+ "inertia_kg_m2": [
+  [
+   2.931,
+   -0.002,
+   -0.431
+  ],
+  [
+   -0.002,
+   5.346,
+   0.001
+  ],
+  [
+   -0.431,
+   0.001,
+   2.465
+  ]
+ ],
+ "inertia_note": "About the CG, in the frame above (x roll axis, y pitch axis, z yaw axis); wing feathered.",
+ "stability": {
+  "gm_m": 0.18,
+  "max_gz_m": 0.354,
+  "angle_max_gz_deg": 105.0,
+  "avs_deg": 180.0,
+  "self_righting": true
+ },
+ "files": {
+  "gz_curve": "docs/data/revE1_gz_curve.csv",
+  "our_simulator": "designs/revE1_design.json",
+  "made_by": "docs/data/stability_export.py"
+ }
+}
