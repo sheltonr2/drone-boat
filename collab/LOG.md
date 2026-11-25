@@ -2,6 +2,9 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-25, 02:05 UTC (21:05 local): 6-hourly check
+- Nothing new on #50 or by email. 032: 11 of 16 ERA5 months (Jan 2023 took 4.5 h), and Feb 2023 is requested; DNS blips are being retried. 032c/032d/033 are still queued.
+
 ## 2026-11-24, 20:05 UTC (15:05 local): 6-hourly check
 - Nothing new on #50 since our two posts (read through the PC browser) and no email. 032: 10 of 16 ERA5 months stored (Dec 2022 done at 14:33 local). A DNS failure at 14:42 local is being retried every 2 min, and the queue window is alive. 034 and 035 haven't been run by hand, so they're queued as 032c/032d.
 
