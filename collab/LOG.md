@@ -2,6 +2,9 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-25, 08:05 UTC (03:05 local): 6-hourly check
+- Nothing new on #50 or by email. 032: 12 of 16 ERA5 months (Feb 2023 took 5.9 h), and Mar 2023 is requested. Four months to go, roughly a day at this rate. The queue is unchanged.
+
 ## 2026-11-25, 02:05 UTC (21:05 local): 6-hourly check
 - Nothing new on #50 or by email. 032: 11 of 16 ERA5 months (Jan 2023 took 4.5 h), and Feb 2023 is requested; DNS blips are being retried. 032c/032d/033 are still queued.
 
