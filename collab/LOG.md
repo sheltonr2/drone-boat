@@ -2,6 +2,12 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-26, 15:15 UTC (10:15 local): depth data and 2025 weather queued
+
+- Randolph: "Add the UK and EMODnet depth data and rerun with the 2025 weather." He will handle the recovery arrangements himself.
+- Queued after 038: **040** `run_040_depth_data.bat` (docs/data/coast/fetch_depth_data.py). It fetches the EMODnet DTM (~115 m) for the three coast boxes and UKHO open data (catalogue and service lists, Wrecks and Obstructions in the boxes, and the footprints of bathymetry surveys there), about minutes. **041** `run_041_weather_2025.bat`: eastbound May-Nov 2025, then east-west Nov 2025-Jun 2026, about 40 GB and 2-4 days.
+- Next: build v2 detail coasts (OSM + ENC + EMODnet shoals + UKHO hazards), then queue five-year re-runs of 036-039 (2021-2025 seasons; BVI holds Feb-Apr 2022-2026) once 041 is done. 036-039 keep the v1 coasts, so the depth data's effect can be compared.
+
 ## 2026-11-26, 14:55 UTC (09:55 local): accurate coastlines; runs 036-039 queued; Thanksgiving update posted
 
 - Coastline: the simulator's Natural Earth 1:50m land mask missed most of the BVI cays and the Cornwall rocks. Added `detail_coast` (off by default, regression identical): OSM coastline plus NOAA ENC shoals, rocks and wrecks for the Virgin Islands and Hatteras, and OSM for Cornwall. Every step is checked every 60 m so the boat can't jump a cay. Data and sources are in docs/data/coast/README.md.
