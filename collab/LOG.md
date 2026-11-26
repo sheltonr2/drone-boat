@@ -2,6 +2,25 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-26, 20:05 UTC (15:05 local): check; runs 036, 037 and 039 analysed
+
+- Nothing new on #50 or by email. boat-sim commits through da48acb.
+- Queue: 036 (finished 11:25), 039 (12:26) and 037 (12:53) are done. 038 started at 12:54 and has finished 2 of its 7 candidates. 040 and 041 are waiting.
+- **036, BVI holding** (14 days station-keeping within 1 km; collab/runs_036/hold_analysis_036_037.py):
+  - The current plan point, 4 km south of Norman Island, goes aground in 84.6% of holds (median 2.9 days), mostly on Norman/Peter and St John. The trades and the westward current set the boat downwind.
+  - Anegada W: 7.2% aground (r90 42 km). St Croix N: 24.2%. Anegada N: 23.6%. Norman offing: 36.0%. Ginger SE: 54.0%. Jost Van Dyke N: 66.4%.
+  - Run 038 so far: Mindelo -> Norman 88.2%, -> Norman offing 88.0%. A pickup 3 days after arrival comes to 48% at Norman and 84% at the Norman offing.
+- **037, Cornwall holding:**
+  - The Lizard offing goes aground in 12.8% of holds on the detailed coast (run 035 on Natural Earth: 3.0%).
+  - 30 km south of the Lizard: 0.4% (r90 29 km). Scilly-Lizard gap: 20.0%. Mount's Bay: 55.0%.
+- **039, the eastbound plan on detailed coasts:** 75.8% (73.0-78.4), against 81.6% for run 034. The difference:
+  - 39 of 1,000 voyages wreck on the Isles of Scilly. The 49.6N 7.2W -> 49.7N 6.4W leg passes about 20 km south of them, and boats set north hit the Western Rocks. Natural Earth had no Scilly.
+  - 11 go aground on Lizard Point during the run in.
+  - 5 hit a *non-dangerous* wreck 10 km from the launch point off Hatteras. Bug: the v1 hazard filter matched "dangerous" inside "non-dangerous" (12 such wrecks off Hatteras, 3 in the VI). Fixed in make_detail_coast.py for v2; the v1 files are left as used.
+- **042 prepared** (collab/runs_042): the same plan with the approach 40-45 km south of Scilly, (A) to the Lizard offing and (B) to a hold 30 km south of the Lizard, paired with 039. The files are on the PC, but adding it to the queue was refused, so it waits for Randolph's OK.
+- Draft map: docs/figures/pickup_map.png (docs/data/pickup_map.py, from collab/runs_036/pickup_analysis.py). It is completed when 038 finishes.
+- No plan decisions changed.
+
 ## 2026-11-26, 15:15 UTC (10:15 local): depth data and 2025 weather queued
 
 - Randolph: "Add the UK and EMODnet depth data and rerun with the 2025 weather." He will handle the recovery arrangements himself.
