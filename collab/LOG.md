@@ -2,6 +2,14 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-26, 14:55 UTC (09:55 local): accurate coastlines; runs 036-039 queued; Thanksgiving update posted
+
+- Coastline: the simulator's Natural Earth 1:50m land mask missed most of the BVI cays and the Cornwall rocks. Added `detail_coast` (off by default, regression identical): OSM coastline plus NOAA ENC shoals, rocks and wrecks for the Virgin Islands and Hatteras, and OSM for Cornwall. Every step is checked every 60 m so the boat can't jump a cay. Data and sources are in docs/data/coast/README.md.
+- Chart sources checked: NOAA ENC covers the USVI at harbour scale but the BVI only to 64.42W. There are no free Cornwall charts; UKHO's ADMIRALTY Marine Data Portal and EMODnet bathymetry are possible additions. GEBCO is too coarse.
+- Queued on the PC (036 started 09:51 local): 036 BVI hold, 7 pickup points (Norman, Norman offing, Ginger SE, Jost Van Dyke N, Anegada W and N, St Croix N); 037 Cornwall hold, 4 points; 039 eastbound plan on the detailed coasts; 038 Mindelo to each BVI point. About 9 h.
+- Posted the update and Thanksgiving wishes on #50 ([post](post_2026-11-26_update.md)).
+- No plan decisions changed.
+
 ## 2026-11-26, 14:10 UTC (09:10 local): 032 download done; runs 033-035 finished and analysed
 
 - Nothing new on #50 or by email.
