@@ -1,0 +1,414 @@
+Run 032: east-west weather for winters 2021-22 and 2022-23, tropical box, started Sat 11/21/2026 22:41:19.77 
+Free space before: 158 GB
+Bulk data in <local path> (3)\drone-boat-main\simulator\workspace_ew\cache\bulk
+  era5: 0 of 16 months already stored, 16 to fetch
+  smoc: 0 of 16 months already stored, 16 to fetch
+  wav: 0 of 16 months already stored, 16 to fetch
+[CDS] requesting era5 202111 ...
+[Marine] requesting smoc 202111 ...
+INFO - 2026-11-22T03:41:29Z - Selected dataset version: "202211"
+INFO - 2026-11-22T03:41:29Z - Selected dataset part: "default"
+INFO - 2026-11-22T03:45:31Z - Total size of the download: 2.04 GB.
+    stored smoc 202111: 720 times x 421 x 901 (1.09 GB)
+[Marine] smoc 202111 done in 4.3 min
+[Marine] requesting wav 202111 ...
+INFO - 2026-11-22T03:45:40Z - Selected dataset version: "202411"
+INFO - 2026-11-22T03:45:40Z - Selected dataset part: "default"
+INFO - 2026-11-22T03:46:39Z - Total size of the download: 151.57 MB.
+    stored wav 202111: 240 times x 176 x 376 (0.16 GB)
+[Marine] wav 202111 done in 1.0 min
+[Marine] requesting smoc 202112 ...
+INFO - 2026-11-22T03:46:43Z - Selected dataset version: "202211"
+INFO - 2026-11-22T03:46:43Z - Selected dataset part: "default"
+INFO - 2026-11-22T03:50:59Z - Total size of the download: 2.10 GB.
+    stored smoc 202112: 744 times x 421 x 901 (1.13 GB)
+[Marine] smoc 202112 done in 4.4 min
+[Marine] requesting wav 202112 ...
+INFO - 2026-11-22T03:51:08Z - Selected dataset version: "202411"
+INFO - 2026-11-22T03:51:08Z - Selected dataset part: "default"
+    stored era5 202111: 720 times x 141 x 301 (0.43 GB)
+[CDS] era5 202111 done in 10.3 min
+[CDS] requesting era5 202112 ...
+INFO - 2026-11-22T03:52:06Z - Total size of the download: 156.62 MB.
+    stored wav 202112: 248 times x 176 x 376 (0.16 GB)
+[Marine] wav 202112 done in 1.0 min
+[Marine] requesting smoc 202201 ...
+INFO - 2026-11-22T03:52:10Z - Selected dataset version: "202211"
+INFO - 2026-11-22T03:52:10Z - Selected dataset part: "default"
+INFO - 2026-11-22T03:56:18Z - Total size of the download: 2.10 GB.
+    stored smoc 202201: 744 times x 421 x 901 (1.13 GB)
+[Marine] smoc 202201 done in 4.3 min
+[Marine] requesting wav 202201 ...
+INFO - 2026-11-22T03:56:26Z - Selected dataset version: "202411"
+INFO - 2026-11-22T03:56:26Z - Selected dataset part: "default"
+INFO - 2026-11-22T03:57:38Z - Total size of the download: 156.62 MB.
+    stored wav 202201: 248 times x 176 x 376 (0.16 GB)
+[Marine] wav 202201 done in 1.3 min
+[Marine] requesting smoc 202202 ...
+INFO - 2026-11-22T03:57:42Z - Selected dataset version: "202211"
+INFO - 2026-11-22T03:57:42Z - Selected dataset part: "default"
+INFO - 2026-11-22T04:01:21Z - Total size of the download: 1.90 GB.
+    stored smoc 202202: 672 times x 421 x 901 (1.02 GB)
+[Marine] smoc 202202 done in 3.8 min
+[Marine] requesting wav 202202 ...
+INFO - 2026-11-22T04:01:30Z - Selected dataset version: "202411"
+INFO - 2026-11-22T04:01:30Z - Selected dataset part: "default"
+INFO - 2026-11-22T04:02:25Z - Total size of the download: 141.46 MB.
+    stored wav 202202: 224 times x 176 x 376 (0.15 GB)
+[Marine] wav 202202 done in 1.0 min
+[Marine] requesting smoc 202203 ...
+INFO - 2026-11-22T04:02:30Z - Selected dataset version: "202211"
+INFO - 2026-11-22T04:02:30Z - Selected dataset part: "default"
+INFO - 2026-11-22T04:06:38Z - Total size of the download: 2.10 GB.
+    stored smoc 202203: 744 times x 421 x 901 (1.13 GB)
+[Marine] smoc 202203 done in 4.3 min
+[Marine] requesting wav 202203 ...
+INFO - 2026-11-22T04:06:47Z - Selected dataset version: "202411"
+INFO - 2026-11-22T04:06:47Z - Selected dataset part: "default"
+INFO - 2026-11-22T04:07:40Z - Total size of the download: 156.62 MB.
+    stored wav 202203: 248 times x 176 x 376 (0.16 GB)
+[Marine] wav 202203 done in 0.9 min
+[Marine] requesting smoc 202204 ...
+INFO - 2026-11-22T04:07:44Z - Selected dataset version: "202211"
+INFO - 2026-11-22T04:07:44Z - Selected dataset part: "default"
+INFO - 2026-11-22T04:11:54Z - Total size of the download: 2.04 GB.
+    stored smoc 202204: 720 times x 421 x 901 (1.09 GB)
+[Marine] smoc 202204 done in 4.3 min
+[Marine] requesting wav 202204 ...
+INFO - 2026-11-22T04:12:03Z - Selected dataset version: "202411"
+INFO - 2026-11-22T04:12:03Z - Selected dataset part: "default"
+INFO - 2026-11-22T04:13:05Z - Total size of the download: 151.57 MB.
+    stored wav 202204: 240 times x 176 x 376 (0.16 GB)
+[Marine] wav 202204 done in 1.1 min
+[Marine] requesting smoc 202205 ...
+INFO - 2026-11-22T04:13:09Z - Selected dataset version: "202211"
+INFO - 2026-11-22T04:13:09Z - Selected dataset part: "default"
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/050e5d15-6569-4b59-873c-f63631d5dbf8?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+INFO - 2026-11-22T04:17:10Z - Total size of the download: 2.10 GB.
+    stored smoc 202205: 744 times x 421 x 901 (1.13 GB)
+[Marine] smoc 202205 done in 4.2 min
+[Marine] requesting wav 202205 ...
+INFO - 2026-11-22T04:17:20Z - Selected dataset version: "202411"
+INFO - 2026-11-22T04:17:20Z - Selected dataset part: "default"
+INFO - 2026-11-22T04:18:22Z - Total size of the download: 156.62 MB.
+    stored wav 202205: 248 times x 176 x 376 (0.16 GB)
+[Marine] wav 202205 done in 1.1 min
+[Marine] requesting smoc 202206 ...
+INFO - 2026-11-22T04:18:26Z - Selected dataset version: "202211"
+INFO - 2026-11-22T04:18:26Z - Selected dataset part: "default"
+INFO - 2026-11-22T04:22:35Z - Total size of the download: 2.04 GB.
+    stored smoc 202206: 720 times x 421 x 901 (1.09 GB)
+[Marine] smoc 202206 done in 4.3 min
+[Marine] requesting wav 202206 ...
+INFO - 2026-11-22T04:22:45Z - Selected dataset version: "202411"
+INFO - 2026-11-22T04:22:45Z - Selected dataset part: "default"
+INFO - 2026-11-22T04:23:49Z - Total size of the download: 151.57 MB.
+    stored wav 202206: 240 times x 176 x 376 (0.16 GB)
+[Marine] wav 202206 done in 1.2 min
+[Marine] requesting smoc 202211 ...
+INFO - 2026-11-22T04:23:53Z - Selected dataset version: "202211"
+INFO - 2026-11-22T04:23:53Z - Selected dataset part: "default"
+INFO - 2026-11-22T04:27:52Z - Total size of the download: 2.04 GB.
+    stored smoc 202211: 720 times x 421 x 901 (1.09 GB)
+[Marine] smoc 202211 done in 4.1 min
+[Marine] requesting wav 202211 ...
+INFO - 2026-11-22T04:28:01Z - Selected dataset version: "202411"
+INFO - 2026-11-22T04:28:01Z - Selected dataset part: "default"
+WARNING - 2026-11-22T04:28:01Z - Some of your subset selection [2022-11-01 00:00:00+00:00, 2022-11-30 23:59:59+00:00] for the time dimension exceed the dataset coordinates [2022-11-01 03:00:00+00:00, 2026-12-01 00:00:00+00:00]
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/050e5d15-6569-4b59-873c-f63631d5dbf8?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+INFO - 2026-11-22T04:30:50Z - Total size of the download: 865.08 MB.
+    stored wav 202211: 239 times x 421 x 901 (0.91 GB)
+[Marine] wav 202211 done in 3.0 min
+[Marine] requesting smoc 202212 ...
+INFO - 2026-11-22T04:31:02Z - Selected dataset version: "202211"
+INFO - 2026-11-22T04:31:02Z - Selected dataset part: "default"
+INFO - 2026-11-22T04:35:20Z - Total size of the download: 2.10 GB.
+    stored smoc 202212: 744 times x 421 x 901 (1.13 GB)
+[Marine] smoc 202212 done in 4.5 min
+[Marine] requesting wav 202212 ...
+INFO - 2026-11-22T04:35:29Z - Selected dataset version: "202411"
+INFO - 2026-11-22T04:35:29Z - Selected dataset part: "default"
+INFO - 2026-11-22T04:38:30Z - Total size of the download: 897.65 MB.
+    stored wav 202212: 248 times x 421 x 901 (0.94 GB)
+[Marine] wav 202212 done in 3.2 min
+[Marine] requesting smoc 202301 ...
+INFO - 2026-11-22T04:38:42Z - Selected dataset version: "202211"
+INFO - 2026-11-22T04:38:42Z - Selected dataset part: "default"
+INFO - 2026-11-22T04:42:52Z - Total size of the download: 2.10 GB.
+    stored smoc 202301: 744 times x 421 x 901 (1.13 GB)
+[Marine] smoc 202301 done in 4.3 min
+[Marine] requesting wav 202301 ...
+INFO - 2026-11-22T04:43:01Z - Selected dataset version: "202411"
+INFO - 2026-11-22T04:43:01Z - Selected dataset part: "default"
+INFO - 2026-11-22T04:45:49Z - Total size of the download: 897.65 MB.
+    stored wav 202301: 248 times x 421 x 901 (0.94 GB)
+[Marine] wav 202301 done in 3.0 min
+[Marine] requesting smoc 202302 ...
+INFO - 2026-11-22T04:46:01Z - Selected dataset version: "202211"
+INFO - 2026-11-22T04:46:01Z - Selected dataset part: "default"
+INFO - 2026-11-22T04:49:41Z - Total size of the download: 1.90 GB.
+    stored smoc 202302: 672 times x 421 x 901 (1.02 GB)
+[Marine] smoc 202302 done in 3.8 min
+[Marine] requesting wav 202302 ...
+INFO - 2026-11-22T04:49:50Z - Selected dataset version: "202411"
+INFO - 2026-11-22T04:49:50Z - Selected dataset part: "default"
+INFO - 2026-11-22T04:52:38Z - Total size of the download: 810.79 MB.
+    stored wav 202302: 224 times x 421 x 901 (0.85 GB)
+[Marine] wav 202302 done in 3.0 min
+[Marine] requesting smoc 202303 ...
+INFO - 2026-11-22T04:52:49Z - Selected dataset version: "202211"
+INFO - 2026-11-22T04:52:49Z - Selected dataset part: "default"
+INFO - 2026-11-22T04:56:48Z - Total size of the download: 2.10 GB.
+    stored smoc 202303: 744 times x 421 x 901 (1.13 GB)
+[Marine] smoc 202303 done in 4.1 min
+[Marine] requesting wav 202303 ...
+INFO - 2026-11-22T04:56:58Z - Selected dataset version: "202411"
+INFO - 2026-11-22T04:56:58Z - Selected dataset part: "default"
+INFO - 2026-11-22T04:59:57Z - Total size of the download: 897.65 MB.
+    stored wav 202303: 248 times x 421 x 901 (0.94 GB)
+[Marine] wav 202303 done in 3.2 min
+[Marine] requesting smoc 202304 ...
+INFO - 2026-11-22T05:00:09Z - Selected dataset version: "202211"
+INFO - 2026-11-22T05:00:09Z - Selected dataset part: "default"
+INFO - 2026-11-22T05:04:27Z - Total size of the download: 2.04 GB.
+    stored smoc 202304: 720 times x 421 x 901 (1.09 GB)
+[Marine] smoc 202304 done in 4.5 min
+[Marine] requesting wav 202304 ...
+INFO - 2026-11-22T05:04:36Z - Selected dataset version: "202411"
+INFO - 2026-11-22T05:04:36Z - Selected dataset part: "default"
+INFO - 2026-11-22T05:07:36Z - Total size of the download: 868.70 MB.
+    stored wav 202304: 240 times x 421 x 901 (0.91 GB)
+[Marine] wav 202304 done in 3.2 min
+[Marine] requesting smoc 202305 ...
+INFO - 2026-11-22T05:07:47Z - Selected dataset version: "202211"
+INFO - 2026-11-22T05:07:47Z - Selected dataset part: "default"
+INFO - 2026-11-22T05:11:58Z - Total size of the download: 2.10 GB.
+    stored smoc 202305: 744 times x 421 x 901 (1.13 GB)
+[Marine] smoc 202305 done in 4.3 min
+[Marine] requesting wav 202305 ...
+INFO - 2026-11-22T05:12:08Z - Selected dataset version: "202411"
+INFO - 2026-11-22T05:12:08Z - Selected dataset part: "default"
+INFO - 2026-11-22T05:14:53Z - Total size of the download: 897.65 MB.
+    stored wav 202305: 248 times x 421 x 901 (0.94 GB)
+[Marine] wav 202305 done in 3.0 min
+[Marine] requesting smoc 202306 ...
+INFO - 2026-11-22T05:15:05Z - Selected dataset version: "202211"
+INFO - 2026-11-22T05:15:05Z - Selected dataset part: "default"
+INFO - 2026-11-22T05:18:59Z - Total size of the download: 2.04 GB.
+    stored smoc 202306: 720 times x 421 x 901 (1.09 GB)
+[Marine] smoc 202306 done in 4.1 min
+[Marine] requesting wav 202306 ...
+INFO - 2026-11-22T05:19:08Z - Selected dataset version: "202411"
+INFO - 2026-11-22T05:19:08Z - Selected dataset part: "default"
+INFO - 2026-11-22T05:21:59Z - Total size of the download: 868.70 MB.
+    stored wav 202306: 240 times x 421 x 901 (0.91 GB)
+[Marine] wav 202306 done in 3.0 min
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/050e5d15-6569-4b59-873c-f63631d5dbf8?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/050e5d15-6569-4b59-873c-f63631d5dbf8?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+    stored era5 202112: 744 times x 141 x 301 (0.44 GB)
+[CDS] era5 202112 done in 163.5 min
+[CDS] requesting era5 202201 ...
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/a114f071-9d7c-4ab4-a411-bd49dbc2b338?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+    stored era5 202201: 744 times x 141 x 301 (0.44 GB)
+[CDS] era5 202201 done in 153.8 min
+[CDS] requesting era5 202202 ...
+    stored era5 202202: 672 times x 141 x 301 (0.40 GB)
+[CDS] era5 202202 done in 224.1 min
+[CDS] requesting era5 202203 ...
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/45fe1758-0a67-44a5-b664-6b89d493ed50?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/45fe1758-0a67-44a5-b664-6b89d493ed50?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/45fe1758-0a67-44a5-b664-6b89d493ed50?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+    stored era5 202203: 744 times x 141 x 301 (0.44 GB)
+[CDS] era5 202203 done in 345.7 min
+[CDS] requesting era5 202204 ...
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/6e6d39bd-7275-497f-b6bf-11cd8d230359?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/6e6d39bd-7275-497f-b6bf-11cd8d230359?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/6e6d39bd-7275-497f-b6bf-11cd8d230359?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/6e6d39bd-7275-497f-b6bf-11cd8d230359?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/6e6d39bd-7275-497f-b6bf-11cd8d230359?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/6e6d39bd-7275-497f-b6bf-11cd8d230359?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+    stored era5 202204: 720 times x 141 x 301 (0.43 GB)
+[CDS] era5 202204 done in 224.7 min
+[CDS] requesting era5 202205 ...
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/99093cab-17b9-46e2-b571-453d0d6d0fb5?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/99093cab-17b9-46e2-b571-453d0d6d0fb5?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/99093cab-17b9-46e2-b571-453d0d6d0fb5?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+    stored era5 202205: 744 times x 141 x 301 (0.44 GB)
+[CDS] era5 202205 done in 268.4 min
+[CDS] requesting era5 202206 ...
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/143050be-506e-4b19-bd44-41e50097760d?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/143050be-506e-4b19-bd44-41e50097760d?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/143050be-506e-4b19-bd44-41e50097760d?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+    stored era5 202206: 720 times x 141 x 301 (0.43 GB)
+[CDS] era5 202206 done in 355.0 min
+[CDS] requesting era5 202211 ...
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/f2c547d4-4c1c-4e08-b6b3-8968f7d0a3be?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/f2c547d4-4c1c-4e08-b6b3-8968f7d0a3be?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/f2c547d4-4c1c-4e08-b6b3-8968f7d0a3be?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/f2c547d4-4c1c-4e08-b6b3-8968f7d0a3be?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/f2c547d4-4c1c-4e08-b6b3-8968f7d0a3be?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/f2c547d4-4c1c-4e08-b6b3-8968f7d0a3be?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/f2c547d4-4c1c-4e08-b6b3-8968f7d0a3be?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 2 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/f2c547d4-4c1c-4e08-b6b3-8968f7d0a3be?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 3 of 500
+Retrying in 120 seconds
+=== DONE Mon 11/23/2026  8:54:21.83 
+Run 032: east-west weather for winters 2021-22 and 2022-23, tropical box, started Tue 11/24/2026 13:37:02.27 
+Free space before: 127 GB
+Bulk data in <local path> (3)\drone-boat-main\simulator\workspace_ew\cache\bulk
+  era5: 8 of 16 months already stored, 8 to fetch
+  smoc: 16 of 16 months already stored, 0 to fetch
+  wav: 16 of 16 months already stored, 0 to fetch
+[CDS] requesting era5 202211 ...
+    stored era5 202211: 720 times x 141 x 301 (0.43 GB)
+[CDS] era5 202211 done in 0.5 min
+[CDS] requesting era5 202212 ...
+    stored era5 202212: 744 times x 141 x 301 (0.44 GB)
+[CDS] era5 202212 done in 11.9 min
+[CDS] requesting era5 202301 ...
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/bd9b2751-2088-417f-a8be-dc35e8a6c21f?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/bd9b2751-2088-417f-a8be-dc35e8a6c21f?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/bd9b2751-2088-417f-a8be-dc35e8a6c21f?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/bd9b2751-2088-417f-a8be-dc35e8a6c21f?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/bd9b2751-2088-417f-a8be-dc35e8a6c21f?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+    stored era5 202301: 744 times x 141 x 301 (0.44 GB)
+[CDS] era5 202301 done in 273.1 min
+[CDS] requesting era5 202302 ...
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/afb18ca9-3397-4e69-91d0-637cacfde82e?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/afb18ca9-3397-4e69-91d0-637cacfde82e?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/afb18ca9-3397-4e69-91d0-637cacfde82e?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/afb18ca9-3397-4e69-91d0-637cacfde82e?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/afb18ca9-3397-4e69-91d0-637cacfde82e?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/afb18ca9-3397-4e69-91d0-637cacfde82e?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/afb18ca9-3397-4e69-91d0-637cacfde82e?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+    stored era5 202302: 672 times x 141 x 301 (0.40 GB)
+[CDS] era5 202302 done in 351.5 min
+[CDS] requesting era5 202303 ...
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/3f5dba84-1071-4e73-abb9-5a5ea3baa2e4?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/3f5dba84-1071-4e73-abb9-5a5ea3baa2e4?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/3f5dba84-1071-4e73-abb9-5a5ea3baa2e4?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/3f5dba84-1071-4e73-abb9-5a5ea3baa2e4?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/3f5dba84-1071-4e73-abb9-5a5ea3baa2e4?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/3f5dba84-1071-4e73-abb9-5a5ea3baa2e4?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/3f5dba84-1071-4e73-abb9-5a5ea3baa2e4?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/3f5dba84-1071-4e73-abb9-5a5ea3baa2e4?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/3f5dba84-1071-4e73-abb9-5a5ea3baa2e4?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/3f5dba84-1071-4e73-abb9-5a5ea3baa2e4?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/3f5dba84-1071-4e73-abb9-5a5ea3baa2e4?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/3f5dba84-1071-4e73-abb9-5a5ea3baa2e4?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/3f5dba84-1071-4e73-abb9-5a5ea3baa2e4?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/3f5dba84-1071-4e73-abb9-5a5ea3baa2e4?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/3f5dba84-1071-4e73-abb9-5a5ea3baa2e4?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/3f5dba84-1071-4e73-abb9-5a5ea3baa2e4?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/3f5dba84-1071-4e73-abb9-5a5ea3baa2e4?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+    stored era5 202303: 744 times x 141 x 301 (0.44 GB)
+[CDS] era5 202303 done in 566.6 min
+[CDS] requesting era5 202304 ...
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/d789e7e6-4192-4c39-af51-5bc7cfec73b5?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/d789e7e6-4192-4c39-af51-5bc7cfec73b5?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/d789e7e6-4192-4c39-af51-5bc7cfec73b5?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/d789e7e6-4192-4c39-af51-5bc7cfec73b5?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+    stored era5 202304: 720 times x 141 x 301 (0.43 GB)
+[CDS] era5 202304 done in 413.9 min
+[CDS] requesting era5 202305 ...
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/e3b4e5c5-906d-4d2b-8489-e37fafbd2d78?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/e3b4e5c5-906d-4d2b-8489-e37fafbd2d78?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/e3b4e5c5-906d-4d2b-8489-e37fafbd2d78?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/e3b4e5c5-906d-4d2b-8489-e37fafbd2d78?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/e3b4e5c5-906d-4d2b-8489-e37fafbd2d78?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/e3b4e5c5-906d-4d2b-8489-e37fafbd2d78?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/e3b4e5c5-906d-4d2b-8489-e37fafbd2d78?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+    stored era5 202305: 744 times x 141 x 301 (0.44 GB)
+[CDS] era5 202305 done in 349.0 min
+[CDS] requesting era5 202306 ...
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/89b92745-2418-457d-a787-a79ad4f0725a?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/89b92745-2418-457d-a787-a79ad4f0725a?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/89b92745-2418-457d-a787-a79ad4f0725a?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/89b92745-2418-457d-a787-a79ad4f0725a?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/89b92745-2418-457d-a787-a79ad4f0725a?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/89b92745-2418-457d-a787-a79ad4f0725a?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/89b92745-2418-457d-a787-a79ad4f0725a?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+Recovering from connection error [HTTPSConnectionPool(host='cds.climate.copernicus.eu', port=443): Max retries exceeded with url: /api/retrieve/v1/jobs/89b92745-2418-457d-a787-a79ad4f0725a?log=True&request=True (Caused by NameResolutionError("HTTPSConnection(host='cds.climate.copernicus.eu', port=443): Failed to resolve 'cds.climate.copernicus.eu' ([Errno 11001] getaddrinfo failed)"))], attempt 1 of 500
+Retrying in 120 seconds
+    stored era5 202306: 720 times x 141 x 301 (0.43 GB)
+[CDS] era5 202306 done in 449.5 min
+Bulk download finished: 0 source-months still missing.
+Free space after: 128 GB
+=== DONE Thu 11/26/2026  5:53:09.79 

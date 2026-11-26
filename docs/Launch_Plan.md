@@ -176,7 +176,23 @@ What it shows (no decision changed):
 - **The Lizard offing is the right holding point.** In the model a boat holding there for two weeks grounds 3% of the time. At the Mount's Bay mouth it grounds 38% of the time, because the bay's shores lie downwind of the prevailing south-westerlies.
 - **Holding is a waiting area, not a parking spot.** Even at the Lizard, the model's boat spends half its time more than 10 km from the point, and 1 in 10 passes within 1 km of the Lizard itself. The recovery boat should go out within the first few days. The earliest groundings come after about 5 days.
 - **A boat that dies at the hold needs collecting within a day.** One in ten dead boats from the Lizard offing is ashore within 1.4 days, and from the Mount's Bay mouth within half a day. Most of the rest come ashore along the south coast as far as Dorset within a month.
-- **Next for the model:** add the firmware's slow-box station-keeping (and a tidal-stream check against Admiralty data) before reading the distances as more than an upper bound.
+- **Next for the model:** a tidal-stream check against Admiralty data before reading the distances as more than an upper bound.
+
+**A tighter deadband barely helps (run 035, 26 Nov).** Run 035 repeated the 14-day station runs with the same seeds but made the boat sail back whenever it was more than 1 km from the point, instead of 5 km.
+
+| 14 days holding, 5 km → 1 km deadband | Lizard offing | Mount's Bay mouth |
+|---|---|---|
+| Aground | 3.4% → 3.0% | 38.2% → 34.0% |
+| Furthest from the point (median) | 30 → 29 km | 24 → 23 km |
+| Share of the time beyond 5 km / 10 km (median) | 82 / 48% → 62 / 42% | 79 / 36% → 48 / 22% |
+| Passed within 1 km of the Lizard | 9.8% → 10.6% | 25% → 18% |
+
+The boat simply can't hold against the stream. Under 1 kn on average, it is carried 20–30 km away whatever its deadband, and it spends a little less time far out but strays just as far. So the holding point is a place to meet the boat, not to park it: **plan the recovery for the arrival itself** (the boat's ETA is known days ahead from its reports) rather than for a stay of a week or two. The Lizard offing stays far safer than Mount's Bay. A spot further offshore, where the streams are weaker, is worth a run if holding for longer matters.
+
+
+## Rev E3 on the final plan (run 034, 26 Nov 2026)
+
+Rev E3 (two stock 10 W panels, 20 W, in place of Rev E1's 40 W) ran the final plan with the same 1,000 launches and seeds as run 026. It arrived **81.6%** of the time (95% range 79.1–83.9), against Rev E1's **81.0%** (78.5–83.3). The median crossing was 121 days for both, and the storm exposure was the same. 987 of the 1,000 paired voyages ended the same way. Of the 13 that differed, 7 arrived with Rev E3 but not Rev E1, 1 the other way round, and 5 only changed between kinds of failure or of arrival. A net gain of 6 arrivals in 1,000 is noise. Rev E3 does as well as Rev E1 on this plan.
 
 ## Launch window on four years of weather (15 Nov 2026, runs 019a–c)
 

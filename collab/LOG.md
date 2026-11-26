@@ -2,6 +2,15 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-26, 14:10 UTC (09:10 local): 032 download done; runs 033-035 finished and analysed
+
+- Nothing new on #50 or by email.
+- 032 finished on 26 Nov at 05:53 local: all 16 ERA5 months for the 2021-22 and 2022-23 winters, with 0 source-months missing and 128 GB free. Then 035 (6:00), 034 (7:00) and 033 (8:16) ran and finished, and the queue is empty.
+- 035, holding with a 1 km deadband: it barely helps. At the Lizard offing, 3.0% aground (3.4% with 5 km) and a median furthest distance of 29 km (30). At Mount's Bay, 34.0% (38.2%). The boat can't hold against the stream, so the advice is to plan recovery for the arrival, not for a long hold. Added to docs/Launch_Plan.md.
+- 034, Rev E3 on the final plan: 81.6% (79.1-83.9) vs Rev E1 81.0%, paired; median 121 days for both. Notes in docs/Launch_Plan.md and docs/DFM_Review.md section 4.
+- 033, four winters for the BVI backup: Mindelo 87.8% (85.7-89.8), El Hierro 81.9%, Gran Canaria 78.4%; the ranking holds and all gaps are now outside the noise. New section 12 in docs/East_West_Study.md; docs/data/ew_033_analysis.py.
+- No decisions changed. Results are in results/2026-11-26_*.
+
 ## 2026-11-26, 08:05 UTC (03:05 local): 6-hourly check
 - Nothing new on #50 or by email. 032: 15 of 16 ERA5 months (May 2023 took 5.8 h), and Jun 2023, the last, is requested.
 

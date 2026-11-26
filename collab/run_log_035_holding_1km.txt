@@ -1,0 +1,428 @@
+Run 035: holding study 2: station-keeping within 1 km at the Lizard offing and Mount's Bay mouth, started Thu 11/26/2026  5:53:29.53 
+==== RUN: station1km_lizard ==== 
+[05:53:30] Monte Carlo: 500 voyages, Holding study 2: station-keeping at the Lizard offing within 1 km, 14 ; 8 processes
+[05:53:47] 10/500 voyages done, 0 arrived
+[05:53:51] 20/500 voyages done, 0 arrived
+[05:53:55] 30/500 voyages done, 0 arrived
+[05:53:59] 40/500 voyages done, 0 arrived
+[05:54:04] 50/500 voyages done, 0 arrived
+[05:54:08] 60/500 voyages done, 0 arrived
+[05:54:12] 70/500 voyages done, 0 arrived
+[05:54:16] 80/500 voyages done, 0 arrived
+[05:54:20] 90/500 voyages done, 0 arrived
+[05:54:25] 100/500 voyages done, 0 arrived
+[05:54:28] 110/500 voyages done, 0 arrived
+[05:54:33] 120/500 voyages done, 0 arrived
+[05:54:36] 130/500 voyages done, 0 arrived
+[05:54:41] 140/500 voyages done, 0 arrived
+[05:54:44] 150/500 voyages done, 0 arrived
+[05:54:48] 160/500 voyages done, 0 arrived
+[05:54:53] 170/500 voyages done, 0 arrived
+[05:54:56] 180/500 voyages done, 0 arrived
+[05:54:59] 190/500 voyages done, 0 arrived
+[05:55:02] 200/500 voyages done, 0 arrived
+[05:55:08] 210/500 voyages done, 0 arrived
+[05:55:11] 220/500 voyages done, 0 arrived
+[05:55:15] 230/500 voyages done, 0 arrived
+[05:55:19] 240/500 voyages done, 0 arrived
+[05:55:22] 250/500 voyages done, 0 arrived
+[05:55:27] 260/500 voyages done, 0 arrived
+[05:55:30] 270/500 voyages done, 0 arrived
+[05:55:35] 280/500 voyages done, 0 arrived
+[05:55:38] 290/500 voyages done, 0 arrived
+[05:55:43] 300/500 voyages done, 0 arrived
+[05:55:47] 310/500 voyages done, 0 arrived
+[05:55:51] 320/500 voyages done, 0 arrived
+[05:55:54] 330/500 voyages done, 0 arrived
+[05:55:58] 340/500 voyages done, 0 arrived
+[05:56:02] 350/500 voyages done, 0 arrived
+[05:56:05] 360/500 voyages done, 0 arrived
+[05:56:09] 370/500 voyages done, 0 arrived
+[05:56:13] 380/500 voyages done, 0 arrived
+[05:56:17] 390/500 voyages done, 0 arrived
+[05:56:21] 400/500 voyages done, 0 arrived
+[05:56:25] 410/500 voyages done, 0 arrived
+[05:56:29] 420/500 voyages done, 0 arrived
+[05:56:33] 430/500 voyages done, 0 arrived
+[05:56:37] 440/500 voyages done, 0 arrived
+[05:56:40] 450/500 voyages done, 0 arrived
+[05:56:45] 460/500 voyages done, 0 arrived
+[05:56:48] 470/500 voyages done, 0 arrived
+[05:56:52] 480/500 voyages done, 0 arrived
+[05:56:56] 490/500 voyages done, 0 arrived
+[05:56:59] 500/500 voyages done, 0 arrived
+{
+ "runs": 500,
+ "errors": 0,
+ "counts": {
+  "arrived_reporting": 0,
+  "arrived_tracked": 0,
+  "arrived_silent": 0,
+  "arrived_adrift": 0,
+  "at_sea_timeout": 423,
+  "aground": 15,
+  "lost": 62
+ },
+ "percent": {
+  "arrived_reporting": 0.0,
+  "arrived_tracked": 0.0,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 0.0,
+  "at_sea_timeout": 84.6,
+  "aground": 3.0,
+  "lost": 12.4
+ },
+ "success_percent": 0.0,
+ "success_ci95": [
+  0.0,
+  0.8
+ ],
+ "by_launch_month": {
+  "08": {
+   "runs": 136,
+   "arrived": 0,
+   "success_percent": 0.0,
+   "success_ci95": [
+    0.0,
+    2.7
+   ]
+  },
+  "09": {
+   "runs": 247,
+   "arrived": 0,
+   "success_percent": 0.0,
+   "success_ci95": [
+    0,
+    1.5
+   ]
+  },
+  "10": {
+   "runs": 117,
+   "arrived": 0,
+   "success_percent": 0.0,
+   "success_ci95": [
+    0.0,
+    3.2
+   ]
+  }
+ },
+ "success_definition": "arrived_reporting + arrived_tracked",
+ "reporting_percent": 0.0,
+ "any_arrival_percent": 0.0,
+ "position_known_at_end_percent": 87.6,
+ "arrival_days": {
+  "median": null,
+  "p10": null,
+  "p90": null,
+  "all": []
+ },
+ "failure_causes": {
+  "at sea timeout": 331,
+  "Picked up by a fishing boat or passer-by": 54,
+  "Fouled by weed or fishing line": 30,
+  "aground": 13,
+  "Electronics failure": 12,
+  "Collision damage": 11,
+  "Leak started": 9,
+  "Struck by a vessel": 8,
+  "Tail servo jammed": 7,
+  "Backup tracker failed": 7,
+  "Satellite modem or antenna failed": 6,
+  "One rudder servo jammed": 5,
+  "One rudder servo failed limp": 3,
+  "Companion computer hung": 3,
+  "Tail servo failed": 1
+ },
+ "mean_airtime_usd": 17.42,
+ "mean_knockdowns": 8.5
+}
+Saved ..\results\hold035_2021-2024_revE1_station1km_lizard.json
+{
+ "runs": 500,
+ "errors": 0,
+ "success_percent": 0.0,
+ "success_ci95": [
+  0.0,
+  0.8
+ ],
+ "reporting_percent": 0.0,
+ "any_arrival_percent": 0.0,
+ "position_known_at_end_percent": 87.6,
+ "percent": {
+  "arrived_reporting": 0.0,
+  "arrived_tracked": 0.0,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 0.0,
+  "at_sea_timeout": 84.6,
+  "aground": 3.0,
+  "lost": 12.4
+ },
+ "arrival_days": {
+  "median": null,
+  "p10": null,
+  "p90": null
+ },
+ "failure_causes": {
+  "at sea timeout": 331,
+  "Picked up by a fishing boat or passer-by": 54,
+  "Fouled by weed or fishing line": 30,
+  "aground": 13,
+  "Electronics failure": 12,
+  "Collision damage": 11,
+  "Leak started": 9,
+  "Struck by a vessel": 8,
+  "Tail servo jammed": 7,
+  "Backup tracker failed": 7,
+  "Satellite modem or antenna failed": 6,
+  "One rudder servo jammed": 5,
+  "One rudder servo failed limp": 3,
+  "Companion computer hung": 3,
+  "Tail servo failed": 1
+ },
+ "by_launch_month": {
+  "08": {
+   "runs": 136,
+   "arrived": 0,
+   "success_percent": 0.0,
+   "success_ci95": [
+    0.0,
+    2.7
+   ]
+  },
+  "09": {
+   "runs": 247,
+   "arrived": 0,
+   "success_percent": 0.0,
+   "success_ci95": [
+    0,
+    1.5
+   ]
+  },
+  "10": {
+   "runs": 117,
+   "arrived": 0,
+   "success_percent": 0.0,
+   "success_ci95": [
+    0.0,
+    3.2
+   ]
+  }
+ },
+ "mean_airtime_usd": 17.42,
+ "mean_knockdowns": 8.5
+}
+==== RUN: station1km_mounts ==== 
+[05:57:00] Monte Carlo: 500 voyages, Holding study 2: station-keeping at the mouth of Mount's Bay within 1 ; 8 processes
+[05:57:19] 10/500 voyages done, 0 arrived
+[05:57:22] 20/500 voyages done, 0 arrived
+[05:57:25] 30/500 voyages done, 0 arrived
+[05:57:30] 40/500 voyages done, 0 arrived
+[05:57:33] 50/500 voyages done, 0 arrived
+[05:57:37] 60/500 voyages done, 0 arrived
+[05:57:40] 70/500 voyages done, 0 arrived
+[05:57:43] 80/500 voyages done, 0 arrived
+[05:57:47] 90/500 voyages done, 0 arrived
+[05:57:51] 100/500 voyages done, 0 arrived
+[05:57:55] 110/500 voyages done, 0 arrived
+[05:57:58] 120/500 voyages done, 0 arrived
+[05:58:02] 130/500 voyages done, 0 arrived
+[05:58:06] 140/500 voyages done, 0 arrived
+[05:58:10] 150/500 voyages done, 0 arrived
+[05:58:13] 160/500 voyages done, 0 arrived
+[05:58:16] 170/500 voyages done, 0 arrived
+[05:58:20] 180/500 voyages done, 0 arrived
+[05:58:23] 190/500 voyages done, 0 arrived
+[05:58:27] 200/500 voyages done, 0 arrived
+[05:58:30] 210/500 voyages done, 0 arrived
+[05:58:34] 220/500 voyages done, 0 arrived
+[05:58:37] 230/500 voyages done, 0 arrived
+[05:58:41] 240/500 voyages done, 0 arrived
+[05:58:45] 250/500 voyages done, 0 arrived
+[05:58:48] 260/500 voyages done, 0 arrived
+[05:58:51] 270/500 voyages done, 0 arrived
+[05:58:55] 280/500 voyages done, 0 arrived
+[05:58:59] 290/500 voyages done, 0 arrived
+[05:59:02] 300/500 voyages done, 0 arrived
+[05:59:06] 310/500 voyages done, 0 arrived
+[05:59:09] 320/500 voyages done, 0 arrived
+[05:59:13] 330/500 voyages done, 0 arrived
+[05:59:16] 340/500 voyages done, 0 arrived
+[05:59:19] 350/500 voyages done, 0 arrived
+[05:59:22] 360/500 voyages done, 0 arrived
+[05:59:25] 370/500 voyages done, 0 arrived
+[05:59:29] 380/500 voyages done, 0 arrived
+[05:59:33] 390/500 voyages done, 0 arrived
+[05:59:36] 400/500 voyages done, 0 arrived
+[05:59:40] 410/500 voyages done, 0 arrived
+[05:59:43] 420/500 voyages done, 0 arrived
+[05:59:46] 430/500 voyages done, 0 arrived
+[05:59:50] 440/500 voyages done, 0 arrived
+[05:59:53] 450/500 voyages done, 0 arrived
+[05:59:56] 460/500 voyages done, 0 arrived
+[06:00:00] 470/500 voyages done, 0 arrived
+[06:00:03] 480/500 voyages done, 0 arrived
+[06:00:07] 490/500 voyages done, 0 arrived
+[06:00:11] 500/500 voyages done, 0 arrived
+{
+ "runs": 500,
+ "errors": 0,
+ "counts": {
+  "arrived_reporting": 0,
+  "arrived_tracked": 0,
+  "arrived_silent": 0,
+  "arrived_adrift": 0,
+  "at_sea_timeout": 277,
+  "aground": 170,
+  "lost": 53
+ },
+ "percent": {
+  "arrived_reporting": 0.0,
+  "arrived_tracked": 0.0,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 0.0,
+  "at_sea_timeout": 55.4,
+  "aground": 34.0,
+  "lost": 10.6
+ },
+ "success_percent": 0.0,
+ "success_ci95": [
+  0.0,
+  0.8
+ ],
+ "by_launch_month": {
+  "08": {
+   "runs": 136,
+   "arrived": 0,
+   "success_percent": 0.0,
+   "success_ci95": [
+    0.0,
+    2.7
+   ]
+  },
+  "09": {
+   "runs": 247,
+   "arrived": 0,
+   "success_percent": 0.0,
+   "success_ci95": [
+    0,
+    1.5
+   ]
+  },
+  "10": {
+   "runs": 117,
+   "arrived": 0,
+   "success_percent": 0.0,
+   "success_ci95": [
+    0.0,
+    3.2
+   ]
+  }
+ },
+ "success_definition": "arrived_reporting + arrived_tracked",
+ "reporting_percent": 0.0,
+ "any_arrival_percent": 0.0,
+ "position_known_at_end_percent": 89.4,
+ "arrival_days": {
+  "median": null,
+  "p10": null,
+  "p90": null,
+  "all": []
+ },
+ "failure_causes": {
+  "at sea timeout": 230,
+  "aground": 134,
+  "Picked up by a fishing boat or passer-by": 44,
+  "Fouled by weed or fishing line": 26,
+  "Collision damage": 9,
+  "Struck by a vessel": 9,
+  "One rudder servo jammed": 8,
+  "Backup tracker failed": 8,
+  "Leak started": 7,
+  "Electronics failure": 6,
+  "Tail servo jammed": 5,
+  "Satellite modem or antenna failed": 4,
+  "One rudder servo failed limp": 4,
+  "Companion computer hung": 4,
+  "Limp-home controller failed": 1,
+  "Tail servo failed": 1
+ },
+ "mean_airtime_usd": 16.34,
+ "mean_knockdowns": 5.5
+}
+Saved ..\results\hold035_2021-2024_revE1_station1km_mounts.json
+{
+ "runs": 500,
+ "errors": 0,
+ "success_percent": 0.0,
+ "success_ci95": [
+  0.0,
+  0.8
+ ],
+ "reporting_percent": 0.0,
+ "any_arrival_percent": 0.0,
+ "position_known_at_end_percent": 89.4,
+ "percent": {
+  "arrived_reporting": 0.0,
+  "arrived_tracked": 0.0,
+  "arrived_silent": 0.0,
+  "arrived_adrift": 0.0,
+  "at_sea_timeout": 55.4,
+  "aground": 34.0,
+  "lost": 10.6
+ },
+ "arrival_days": {
+  "median": null,
+  "p10": null,
+  "p90": null
+ },
+ "failure_causes": {
+  "at sea timeout": 230,
+  "aground": 134,
+  "Picked up by a fishing boat or passer-by": 44,
+  "Fouled by weed or fishing line": 26,
+  "Collision damage": 9,
+  "Struck by a vessel": 9,
+  "One rudder servo jammed": 8,
+  "Backup tracker failed": 8,
+  "Leak started": 7,
+  "Electronics failure": 6,
+  "Tail servo jammed": 5,
+  "Satellite modem or antenna failed": 4,
+  "One rudder servo failed limp": 4,
+  "Companion computer hung": 4,
+  "Limp-home controller failed": 1,
+  "Tail servo failed": 1
+ },
+ "by_launch_month": {
+  "08": {
+   "runs": 136,
+   "arrived": 0,
+   "success_percent": 0.0,
+   "success_ci95": [
+    0.0,
+    2.7
+   ]
+  },
+  "09": {
+   "runs": 247,
+   "arrived": 0,
+   "success_percent": 0.0,
+   "success_ci95": [
+    0,
+    1.5
+   ]
+  },
+  "10": {
+   "runs": 117,
+   "arrived": 0,
+   "success_percent": 0.0,
+   "success_ci95": [
+    0.0,
+    3.2
+   ]
+  }
+ },
+ "mean_airtime_usd": 16.34,
+ "mean_knockdowns": 5.5
+}
+=== DONE Thu 11/26/2026  6:00:12.14 

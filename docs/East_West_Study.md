@@ -4,7 +4,7 @@
 
 ## Bottom line
 
-- **Decided (18 Nov 2026):** east-west is the backup option. Launch from Mindelo, Cape Verde, between about 25 November and 5 January (mid-December is the target), via the southern approach to a holding point south of Norman and Peter Islands in the BVI, for a March arrival. The fallback is El Hierro or Gran Canaria routed via 20N 28W, launching mid-November to mid-December (section 10).
+- **Decided (18 Nov 2026):** east-west is the backup option. Launch from Mindelo, Cape Verde, between about 25 November and 5 January (mid-December is the target), via the southern approach to a holding point south of Norman and Peter Islands in the BVI, for a March arrival. The fallback is El Hierro or Gran Canaria routed via 20N 28W, launching mid-November to mid-December (section 10). Four winters of weather (section 12) confirm the ranking: Mindelo 87.8%, El Hierro 81.9%, Gran Canaria 78.4%.
 
 - **Westbound means the trade-wind route.** The boat would go from the Canary Islands (or Cape Verde) to the Lesser Antilles: about 4,500–4,900 km great circle, and about 5,200–5,600 km actually sailed. The wind and current push the boat west almost the whole way. This is also the route of the only small boat to have finished the Microtransat. Oshen's *C-Star PC13* (1.2 m) sailed from Gran Canaria to Barbados in 127 days in 2026 ([Crossing_History.md](Crossing_History.md)).
 - **The northern route (Europe to the US) is not a candidate.** It means beating into the westerlies and the Gulf Stream. Saildrone's 7 m SD 1021 did it in 68 days, but no small boat has. Run 020 confirmed it: 0 of 300 simulated voyages arrived (section 4b).
@@ -211,6 +211,24 @@ Paired on the same seeds: Mindelo − Gran Canaria +8.0 points (+3.6 to +12.4); 
 ## 11. Sea states and fatigue westbound (21 Nov 2026, run 031)
 
 Along the 500 Mindelo → BVI tracks the seas are gentler than eastbound: Hs is 3 m or more 9% of the time and never reaches 5 m (eastbound: 1.3% of the time at 5 m or more). Fatigue use per crossing is about the same for the fin root, stern post and counterweight arm (a fraction of a percent each), and the tail boom, the one critical part eastbound, has a wide margin. Rudder servo movements are about 2.3 million per crossing. Details: [Fatigue_Review.md](Fatigue_Review.md). Runs 032–033 (two more winters) are under way.
+
+## 12. Four winters (26 Nov 2026, runs 024 + 033)
+
+Run 033 added the 2021–22 and 2022–23 winters, with the same set-up and seeds as run 024 (section 10). The table pools all four winters: Rev E1, 1,000 voyages per pair (250 per winter), southern BVI approach. Analysis: [`ew_033_analysis.py`](data/ew_033_analysis.py).
+
+| Launch → BVI | Launches | Success (95% range) | 2021–22 / 22–23 / 23–24 / 24–25 | Median days (p10–p90) | Arrive in March | Reach the BVI hold | Storm within 200 km / hurricane |
+|---|---|---|---|---|---|---|---|
+| **Mindelo, Cape Verde** | 15 Nov–10 Jan | **87.8%** (85.7–89.8) | 87.6 / 91.6 / 84.8 / 87.2 | 85 (72–103) | **41%** (29% Feb, 14% Apr) | 70% | 0.3% / 0.1% |
+| El Hierro via 20N 28W | 1 Nov–20 Dec | 81.9% (79.5–84.2) | 84.4 / 81.2 / 78.0 / 84.0 | 123 (106–151) | 35% | 72% | 0.3% / 0.0% |
+| Gran Canaria via 20N 28W | 1 Nov–20 Dec | 78.4% (75.9–81.0) | 78.0 / 79.6 / 74.0 / 82.0 | 127 (108–159) | 34% | 69% | 0.2% / 0.0% |
+
+On the same seeds (the launch windows differ, so these compare the plans as written): Mindelo − Gran Canaria +9.4 points (+6.2 to +12.4); Mindelo − El Hierro +5.9 (+3.0 to +8.9); El Hierro − Gran Canaria +3.5 (+0.3 to +6.8).
+
+**What it shows (no decision changed):**
+- **The ranking holds on four winters.** Mindelo is best in every winter (85–92%), El Hierro second and Gran Canaria third. With four winters, all three gaps are now outside the noise.
+- **The two older winters were a little kinder,** so Mindelo's pooled figure rises from 86.0% to 87.8% and its median crossing falls from 93 to 85 days. The faster crossings mean fewer March arrivals (41% rather than 51%) and more in February.
+- **For a March arrival from Mindelo,** the boats that arrived in March launched between 27 November and 3 January (median 20 December). That matches the decided window of about 25 November to 5 January; mid-December stays the right target.
+- Storm exposure stays negligible: under 0.5% pass within 200 km of a tropical storm. Weed fouling is unchanged (about 0.5 events per voyage from Cape Verde and 0.8 from the Canaries).
 
 ## 8. Earlier questions (14 Nov)
 
