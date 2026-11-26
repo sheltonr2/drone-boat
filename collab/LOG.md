@@ -17,7 +17,7 @@ Newest first. Each check of boat-sim records what was new and what we did.
   - 39 of 1,000 voyages wreck on the Isles of Scilly. The 49.6N 7.2W -> 49.7N 6.4W leg passes about 20 km south of them, and boats set north hit the Western Rocks. Natural Earth had no Scilly.
   - 11 go aground on Lizard Point during the run in.
   - 5 hit a *non-dangerous* wreck 10 km from the launch point off Hatteras. Bug: the v1 hazard filter matched "dangerous" inside "non-dangerous" (12 such wrecks off Hatteras, 3 in the VI). Fixed in make_detail_coast.py for v2; the v1 files are left as used.
-- **042 prepared** (collab/runs_042): the same plan with the approach 40-45 km south of Scilly, (A) to the Lizard offing and (B) to a hold 30 km south of the Lizard, paired with 039. The files are on the PC, but adding it to the queue was refused, so it waits for Randolph's OK.
+- **042 prepared** (collab/runs_042): the same plan with the approach 40-45 km south of Scilly, (A) to the Lizard offing and (B) to a hold 30 km south of the Lizard, paired with 039. Randolph OK'd it at 15:40 local ("Queue it"): queued as 040b_approach_variants.run, after 040 and before 041.
 - Draft map: docs/figures/pickup_map.png (docs/data/pickup_map.py, from collab/runs_036/pickup_analysis.py). It is completed when 038 finishes.
 - No plan decisions changed.
 
