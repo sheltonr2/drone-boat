@@ -2,6 +2,9 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-26, 08:05 UTC (03:05 local): 6-hourly check
+- Nothing new on #50 or by email. 032: 15 of 16 ERA5 months (May 2023 took 5.8 h), and Jun 2023, the last, is requested.
+
 ## 2026-11-26, 02:05 UTC (21:05 local): 6-hourly check
 - Nothing new on #50 or by email. 032: 14 of 16 ERA5 months (Apr 2023 took 6.9 h), and May 2023 is requested.
 
