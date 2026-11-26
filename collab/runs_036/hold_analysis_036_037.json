@@ -1,0 +1,1571 @@
+{
+ "bvi": {
+  "station_norman": {
+   "runs": 500,
+   "outcomes": {
+    "aground": 423,
+    "at_sea_timeout": 52,
+    "lost": 25
+   },
+   "groundings": {
+    "Norman / Peter Islands": 232,
+    "St John": 156,
+    "St Thomas": 31,
+    "Culebra / Vieques": 4
+   },
+   "watch_within_1km": {
+    "anegada_reef": 0.0,
+    "virgin_gorda_south": 0.0,
+    "tortola_peter_norman": 14.6
+   },
+   "watch_within_2km": {
+    "anegada_reef": 0.0,
+    "virgin_gorda_south": 0.0,
+    "tortola_peter_norman": 58.8
+   },
+   "percent": {
+    "aground": 84.6,
+    "at_sea_timeout": 10.4,
+    "lost": 5.0
+   },
+   "max_distance_km": {
+    "median": 10.5,
+    "p90": 30.1
+   },
+   "end_distance_km": {
+    "median": 6.4,
+    "p90": 29.7
+   },
+   "time_beyond_5km_percent": 42.3,
+   "time_beyond_10km_percent": {
+    "median": 1.4,
+    "p90": 65.5
+   },
+   "runs_ever_beyond_5km_percent": 72.6,
+   "runs_ever_beyond_10km_percent": 51.4,
+   "days_to_aground": {
+    "p10": 0.5,
+    "median": 2.9,
+    "p90": 9.8
+   },
+   "failure_causes": {
+    "aground": 376,
+    "at sea timeout": 35,
+    "Fouled by weed or fishing line": 32,
+    "Picked up by a fishing boat or passer-by": 23,
+    "Tail servo jammed": 8,
+    "Leak started": 5,
+    "Collision damage": 5,
+    "Electronics failure": 4,
+    "One rudder servo jammed": 3,
+    "Backup tracker failed": 3,
+    "Struck by a vessel": 2,
+    "Companion computer hung": 2,
+    "Limp-home controller failed": 1,
+    "One rudder servo failed limp": 1
+   },
+   "r50_km": 3.64,
+   "r90_km": 25.44,
+   "time_beyond_1km_percent": 88.1,
+   "time_beyond_2km_percent": 59.2,
+   "name": "Norman Island, 4 km S",
+   "lat": 18.3,
+   "lon": -64.58,
+   "mode": "station"
+  },
+  "drift_norman": {
+   "runs": 500,
+   "outcomes": {
+    "aground": 443,
+    "at_sea_timeout": 57
+   },
+   "groundings": {
+    "St Thomas": 62,
+    "St John": 111,
+    "Norman / Peter Islands": 137,
+    "Culebra / Vieques": 125,
+    "St Croix": 6,
+    "Cooper / Salt / Ginger": 2
+   },
+   "watch_within_1km": {
+    "anegada_reef": 0.0,
+    "virgin_gorda_south": 0.0,
+    "tortola_peter_norman": 5.0
+   },
+   "watch_within_2km": {
+    "anegada_reef": 0.0,
+    "virgin_gorda_south": 0.0,
+    "tortola_peter_norman": 16.8
+   },
+   "percent": {
+    "aground": 88.6,
+    "at_sea_timeout": 11.4
+   },
+   "max_distance_km": {
+    "median": 27.8,
+    "p90": 862.7
+   },
+   "end_distance_km": {
+    "median": 27.8,
+    "p90": 856.9
+   },
+   "time_beyond_5km_percent": 96.8,
+   "time_beyond_10km_percent": {
+    "median": 61.3,
+    "p90": 98.1
+   },
+   "runs_ever_beyond_5km_percent": 73.2,
+   "runs_ever_beyond_10km_percent": 73.0,
+   "days_to_aground": {
+    "p10": 0.1,
+    "median": 0.5,
+    "p90": 4.4
+   },
+   "failure_causes": {
+    "aground": 443,
+    "at sea timeout": 57
+   },
+   "r50_km": 319.41,
+   "r90_km": 1054.32,
+   "time_beyond_1km_percent": 98.8,
+   "time_beyond_2km_percent": 98.3,
+   "name": "Norman Island, 4 km S",
+   "lat": 18.3,
+   "lon": -64.58,
+   "mode": "drift"
+  },
+  "station_norman_offing": {
+   "runs": 500,
+   "outcomes": {
+    "at_sea_timeout": 264,
+    "aground": 180,
+    "lost": 56
+   },
+   "groundings": {
+    "St John": 62,
+    "St Thomas": 84,
+    "Culebra / Vieques": 31,
+    "St Croix": 2,
+    "Norman / Peter Islands": 1
+   },
+   "watch_within_1km": {
+    "anegada_reef": 0.0,
+    "virgin_gorda_south": 0.0,
+    "tortola_peter_norman": 0.0
+   },
+   "watch_within_2km": {
+    "anegada_reef": 0.0,
+    "virgin_gorda_south": 0.0,
+    "tortola_peter_norman": 0.0
+   },
+   "percent": {
+    "at_sea_timeout": 52.8,
+    "aground": 36.0,
+    "lost": 11.2
+   },
+   "max_distance_km": {
+    "median": 30.6,
+    "p90": 77.7
+   },
+   "end_distance_km": {
+    "median": 29.5,
+    "p90": 77.4
+   },
+   "time_beyond_5km_percent": 58.1,
+   "time_beyond_10km_percent": {
+    "median": 52.7,
+    "p90": 91.1
+   },
+   "runs_ever_beyond_5km_percent": 90.2,
+   "runs_ever_beyond_10km_percent": 80.6,
+   "days_to_aground": {
+    "p10": 3.2,
+    "median": 7.7,
+    "p90": 12.7
+   },
+   "failure_causes": {
+    "at sea timeout": 181,
+    "aground": 146,
+    "Fouled by weed or fishing line": 60,
+    "Picked up by a fishing boat or passer-by": 48,
+    "Leak started": 11,
+    "Collision damage": 8,
+    "Struck by a vessel": 8,
+    "One rudder servo jammed": 7,
+    "One rudder servo failed limp": 6,
+    "Tail servo jammed": 6,
+    "Companion computer hung": 5,
+    "Electronics failure": 5,
+    "Backup tracker failed": 4,
+    "Satellite modem or antenna failed": 3,
+    "Tail servo failed": 1,
+    "Rudder servo jammed": 1
+   },
+   "r50_km": 8.11,
+   "r90_km": 54.38,
+   "time_beyond_1km_percent": 92.8,
+   "time_beyond_2km_percent": 70.4,
+   "name": "Norman offing, 18 km S",
+   "lat": 18.17,
+   "lon": -64.58,
+   "mode": "station"
+  },
+  "drift_norman_offing": {
+   "runs": 500,
+   "outcomes": {
+    "at_sea_timeout": 133,
+    "aground": 367
+   },
+   "groundings": {
+    "Culebra / Vieques": 251,
+    "St Thomas": 77,
+    "St John": 26,
+    "St Croix": 11,
+    "Norman / Peter Islands": 2
+   },
+   "watch_within_1km": {
+    "anegada_reef": 0.0,
+    "virgin_gorda_south": 0.0,
+    "tortola_peter_norman": 0.2
+   },
+   "watch_within_2km": {
+    "anegada_reef": 0.0,
+    "virgin_gorda_south": 0.0,
+    "tortola_peter_norman": 0.2
+   },
+   "percent": {
+    "at_sea_timeout": 26.6,
+    "aground": 73.4
+   },
+   "max_distance_km": {
+    "median": 131.4,
+    "p90": 1361.3
+   },
+   "end_distance_km": {
+    "median": 130.1,
+    "p90": 1361.3
+   },
+   "time_beyond_5km_percent": 98.4,
+   "time_beyond_10km_percent": {
+    "median": 93.4,
+    "p90": 98.8
+   },
+   "runs_ever_beyond_5km_percent": 100.0,
+   "runs_ever_beyond_10km_percent": 100.0,
+   "days_to_aground": {
+    "p10": 0.9,
+    "median": 3.0,
+    "p90": 17.3
+   },
+   "failure_causes": {
+    "aground": 367,
+    "at sea timeout": 133
+   },
+   "r50_km": 344.15,
+   "r90_km": 1045.76,
+   "time_beyond_1km_percent": 99.3,
+   "time_beyond_2km_percent": 99.1,
+   "name": "Norman offing, 18 km S",
+   "lat": 18.17,
+   "lon": -64.58,
+   "mode": "drift"
+  },
+  "station_ginger_se": {
+   "runs": 500,
+   "outcomes": {
+    "aground": 270,
+    "at_sea_timeout": 192,
+    "lost": 38
+   },
+   "groundings": {
+    "Norman / Peter Islands": 165,
+    "Cooper / Salt / Ginger": 62,
+    "St John": 27,
+    "St Thomas": 16
+   },
+   "watch_within_1km": {
+    "anegada_reef": 0.0,
+    "virgin_gorda_south": 0.6,
+    "tortola_peter_norman": 49.6
+   },
+   "watch_within_2km": {
+    "anegada_reef": 0.0,
+    "virgin_gorda_south": 1.8,
+    "tortola_peter_norman": 59.8
+   },
+   "percent": {
+    "aground": 54.0,
+    "at_sea_timeout": 38.4,
+    "lost": 7.6
+   },
+   "max_distance_km": {
+    "median": 14.2,
+    "p90": 27.4
+   },
+   "end_distance_km": {
+    "median": 11.1,
+    "p90": 27.2
+   },
+   "time_beyond_5km_percent": 29.1,
+   "time_beyond_10km_percent": {
+    "median": 10.7,
+    "p90": 59.1
+   },
+   "runs_ever_beyond_5km_percent": 84.8,
+   "runs_ever_beyond_10km_percent": 68.0,
+   "days_to_aground": {
+    "p10": 1.5,
+    "median": 4.4,
+    "p90": 9.8
+   },
+   "failure_causes": {
+    "aground": 232,
+    "at sea timeout": 126,
+    "Fouled by weed or fishing line": 58,
+    "Picked up by a fishing boat or passer-by": 33,
+    "Leak started": 8,
+    "One rudder servo failed limp": 7,
+    "Collision damage": 6,
+    "Tail servo jammed": 5,
+    "Struck by a vessel": 5,
+    "Electronics failure": 5,
+    "One rudder servo jammed": 5,
+    "Satellite modem or antenna failed": 3,
+    "Backup tracker failed": 3,
+    "Companion computer hung": 2,
+    "Tail servo failed": 1,
+    "Rudder servo jammed": 1
+   },
+   "r50_km": 1.61,
+   "r90_km": 12.86,
+   "time_beyond_1km_percent": 86.7,
+   "time_beyond_2km_percent": 46.1,
+   "name": "Ginger Island SE",
+   "lat": 18.33,
+   "lon": -64.43,
+   "mode": "station"
+  },
+  "drift_ginger_se": {
+   "runs": 500,
+   "outcomes": {
+    "aground": 433,
+    "at_sea_timeout": 67
+   },
+   "groundings": {
+    "Culebra / Vieques": 109,
+    "St John": 37,
+    "St Thomas": 27,
+    "Norman / Peter Islands": 171,
+    "Cooper / Salt / Ginger": 44,
+    "Tortola": 37,
+    "St Croix": 8
+   },
+   "watch_within_1km": {
+    "anegada_reef": 0.0,
+    "virgin_gorda_south": 0.6,
+    "tortola_peter_norman": 46.4
+   },
+   "watch_within_2km": {
+    "anegada_reef": 0.0,
+    "virgin_gorda_south": 1.2,
+    "tortola_peter_norman": 53.6
+   },
+   "percent": {
+    "aground": 86.6,
+    "at_sea_timeout": 13.4
+   },
+   "max_distance_km": {
+    "median": 25.9,
+    "p90": 1089.1
+   },
+   "end_distance_km": {
+    "median": 25.9,
+    "p90": 1055.0
+   },
+   "time_beyond_5km_percent": 96.8,
+   "time_beyond_10km_percent": {
+    "median": 58.3,
+    "p90": 98.7
+   },
+   "runs_ever_beyond_5km_percent": 100.0,
+   "runs_ever_beyond_10km_percent": 95.4,
+   "days_to_aground": {
+    "p10": 0.3,
+    "median": 0.7,
+    "p90": 5.6
+   },
+   "failure_causes": {
+    "aground": 433,
+    "at sea timeout": 67
+   },
+   "r50_km": 336.99,
+   "r90_km": 1069.87,
+   "time_beyond_1km_percent": 98.9,
+   "time_beyond_2km_percent": 98.4,
+   "name": "Ginger Island SE",
+   "lat": 18.33,
+   "lon": -64.43,
+   "mode": "drift"
+  },
+  "station_jvd_north": {
+   "runs": 500,
+   "outcomes": {
+    "aground": 332,
+    "at_sea_timeout": 128,
+    "lost": 40
+   },
+   "groundings": {
+    "Jost Van Dyke": 313,
+    "St Thomas": 16,
+    "Tortola": 3
+   },
+   "watch_within_1km": {
+    "anegada_reef": 0.0,
+    "virgin_gorda_south": 0.0,
+    "tortola_peter_norman": 0.0
+   },
+   "watch_within_2km": {
+    "anegada_reef": 0.0,
+    "virgin_gorda_south": 0.0,
+    "tortola_peter_norman": 0.4
+   },
+   "percent": {
+    "aground": 66.4,
+    "at_sea_timeout": 25.6,
+    "lost": 8.0
+   },
+   "max_distance_km": {
+    "median": 10.0,
+    "p90": 18.5
+   },
+   "end_distance_km": {
+    "median": 9.0,
+    "p90": 12.2
+   },
+   "time_beyond_5km_percent": 41.9,
+   "time_beyond_10km_percent": {
+    "median": 0.5,
+    "p90": 32.1
+   },
+   "runs_ever_beyond_5km_percent": 93.6,
+   "runs_ever_beyond_10km_percent": 50.2,
+   "days_to_aground": {
+    "p10": 1.4,
+    "median": 5.4,
+    "p90": 11.7
+   },
+   "failure_causes": {
+    "aground": 282,
+    "at sea timeout": 86,
+    "Fouled by weed or fishing line": 50,
+    "Picked up by a fishing boat or passer-by": 35,
+    "Leak started": 11,
+    "Electronics failure": 8,
+    "Collision damage": 6,
+    "One rudder servo jammed": 5,
+    "Struck by a vessel": 5,
+    "Tail servo jammed": 4,
+    "Backup tracker failed": 3,
+    "Tail servo failed": 2,
+    "Satellite modem or antenna failed": 1,
+    "Rudder servo jammed": 1,
+    "One rudder servo failed limp": 1
+   },
+   "r50_km": 3.86,
+   "r90_km": 10.54,
+   "time_beyond_1km_percent": 91.4,
+   "time_beyond_2km_percent": 64.8,
+   "name": "Jost Van Dyke, 4 km N",
+   "lat": 18.49,
+   "lon": -64.75,
+   "mode": "station"
+  },
+  "drift_jvd_north": {
+   "runs": 500,
+   "outcomes": {
+    "aground": 398,
+    "at_sea_timeout": 102
+   },
+   "groundings": {
+    "Culebra / Vieques": 252,
+    "Jost Van Dyke": 61,
+    "St Thomas": 66,
+    "Tortola": 13,
+    "St John": 4,
+    "Anegada / Horseshoe Reef": 2
+   },
+   "watch_within_1km": {
+    "anegada_reef": 0.0,
+    "virgin_gorda_south": 0.0,
+    "tortola_peter_norman": 0.2
+   },
+   "watch_within_2km": {
+    "anegada_reef": 0.2,
+    "virgin_gorda_south": 0.0,
+    "tortola_peter_norman": 1.2
+   },
+   "percent": {
+    "aground": 79.6,
+    "at_sea_timeout": 20.4
+   },
+   "max_distance_km": {
+    "median": 151.8,
+    "p90": 874.7
+   },
+   "end_distance_km": {
+    "median": 137.8,
+    "p90": 874.7
+   },
+   "time_beyond_5km_percent": 98.0,
+   "time_beyond_10km_percent": {
+    "median": 95.2,
+    "p90": 98.8
+   },
+   "runs_ever_beyond_5km_percent": 96.4,
+   "runs_ever_beyond_10km_percent": 88.6,
+   "days_to_aground": {
+    "p10": 0.4,
+    "median": 3.4,
+    "p90": 21.4
+   },
+   "failure_causes": {
+    "aground": 398,
+    "at sea timeout": 102
+   },
+   "r50_km": 247.6,
+   "r90_km": 696.65,
+   "time_beyond_1km_percent": 99.2,
+   "time_beyond_2km_percent": 99.0,
+   "name": "Jost Van Dyke, 4 km N",
+   "lat": 18.49,
+   "lon": -64.75,
+   "mode": "drift"
+  },
+  "station_anegada_west": {
+   "runs": 500,
+   "outcomes": {
+    "at_sea_timeout": 403,
+    "lost": 61,
+    "aground": 36
+   },
+   "groundings": {
+    "Jost Van Dyke": 13,
+    "Virgin Gorda": 5,
+    "Tortola": 4,
+    "Anegada / Horseshoe Reef": 5,
+    "St John": 2,
+    "St Thomas": 7
+   },
+   "watch_within_1km": {
+    "anegada_reef": 1.4,
+    "virgin_gorda_south": 0.0,
+    "tortola_peter_norman": 0.0
+   },
+   "watch_within_2km": {
+    "anegada_reef": 2.2,
+    "virgin_gorda_south": 0.0,
+    "tortola_peter_norman": 0.2
+   },
+   "percent": {
+    "at_sea_timeout": 80.6,
+    "lost": 12.2,
+    "aground": 7.2
+   },
+   "max_distance_km": {
+    "median": 30.9,
+    "p90": 61.1
+   },
+   "end_distance_km": {
+    "median": 20.5,
+    "p90": 57.9
+   },
+   "time_beyond_5km_percent": 64.1,
+   "time_beyond_10km_percent": {
+    "median": 50.0,
+    "p90": 90.5
+   },
+   "runs_ever_beyond_5km_percent": 92.6,
+   "runs_ever_beyond_10km_percent": 83.6,
+   "days_to_aground": {
+    "p10": 1.4,
+    "median": 9.7,
+    "p90": 13.2
+   },
+   "failure_causes": {
+    "at sea timeout": 276,
+    "Fouled by weed or fishing line": 83,
+    "Picked up by a fishing boat or passer-by": 51,
+    "aground": 28,
+    "Struck by a vessel": 10,
+    "Leak started": 8,
+    "Tail servo jammed": 8,
+    "Electronics failure": 8,
+    "Collision damage": 6,
+    "One rudder servo jammed": 6,
+    "Backup tracker failed": 5,
+    "Satellite modem or antenna failed": 4,
+    "One rudder servo failed limp": 3,
+    "Companion computer hung": 2,
+    "Rudder servo jammed": 1,
+    "Bilge pump failed": 1
+   },
+   "r50_km": 9.49,
+   "r90_km": 41.89,
+   "time_beyond_1km_percent": 94.6,
+   "time_beyond_2km_percent": 77.5,
+   "name": "Anegada, 8 km W",
+   "lat": 18.72,
+   "lon": -64.49,
+   "mode": "station"
+  },
+  "drift_anegada_west": {
+   "runs": 500,
+   "outcomes": {
+    "aground": 336,
+    "at_sea_timeout": 164
+   },
+   "groundings": {
+    "Culebra / Vieques": 278,
+    "Virgin Gorda": 12,
+    "Anegada / Horseshoe Reef": 11,
+    "Jost Van Dyke": 11,
+    "St Thomas": 17,
+    "Tortola": 6,
+    "Cooper / Salt / Ginger": 1
+   },
+   "watch_within_1km": {
+    "anegada_reef": 1.6,
+    "virgin_gorda_south": 0.0,
+    "tortola_peter_norman": 0.2
+   },
+   "watch_within_2km": {
+    "anegada_reef": 2.4,
+    "virgin_gorda_south": 0.0,
+    "tortola_peter_norman": 0.4
+   },
+   "percent": {
+    "aground": 67.2,
+    "at_sea_timeout": 32.8
+   },
+   "max_distance_km": {
+    "median": 440.6,
+    "p90": 952.9
+   },
+   "end_distance_km": {
+    "median": 439.7,
+    "p90": 952.9
+   },
+   "time_beyond_5km_percent": 98.5,
+   "time_beyond_10km_percent": {
+    "median": 97.6,
+    "p90": 98.8
+   },
+   "runs_ever_beyond_5km_percent": 100.0,
+   "runs_ever_beyond_10km_percent": 99.6,
+   "days_to_aground": {
+    "p10": 2.4,
+    "median": 10.8,
+    "p90": 24.6
+   },
+   "failure_causes": {
+    "aground": 336,
+    "at sea timeout": 164
+   },
+   "r50_km": 266.0,
+   "r90_km": 691.42,
+   "time_beyond_1km_percent": 99.3,
+   "time_beyond_2km_percent": 99.1,
+   "name": "Anegada, 8 km W",
+   "lat": 18.72,
+   "lon": -64.49,
+   "mode": "drift"
+  },
+  "station_anegada_north": {
+   "runs": 500,
+   "outcomes": {
+    "at_sea_timeout": 331,
+    "aground": 118,
+    "lost": 51
+   },
+   "groundings": {
+    "Virgin Gorda": 25,
+    "Anegada / Horseshoe Reef": 77,
+    "Jost Van Dyke": 6,
+    "Tortola": 5,
+    "St John": 1,
+    "St Thomas": 4
+   },
+   "watch_within_1km": {
+    "anegada_reef": 22.0,
+    "virgin_gorda_south": 0.0,
+    "tortola_peter_norman": 0.0
+   },
+   "watch_within_2km": {
+    "anegada_reef": 36.6,
+    "virgin_gorda_south": 0.0,
+    "tortola_peter_norman": 0.4
+   },
+   "percent": {
+    "at_sea_timeout": 66.2,
+    "aground": 23.6,
+    "lost": 10.2
+   },
+   "max_distance_km": {
+    "median": 33.1,
+    "p90": 86.3
+   },
+   "end_distance_km": {
+    "median": 23.2,
+    "p90": 80.2
+   },
+   "time_beyond_5km_percent": 62.8,
+   "time_beyond_10km_percent": {
+    "median": 48.3,
+    "p90": 94.6
+   },
+   "runs_ever_beyond_5km_percent": 96.6,
+   "runs_ever_beyond_10km_percent": 84.2,
+   "days_to_aground": {
+    "p10": 1.3,
+    "median": 6.9,
+    "p90": 11.9
+   },
+   "failure_causes": {
+    "at sea timeout": 225,
+    "aground": 97,
+    "Fouled by weed or fishing line": 74,
+    "Picked up by a fishing boat or passer-by": 45,
+    "Companion computer hung": 9,
+    "Leak started": 9,
+    "One rudder servo jammed": 8,
+    "Electronics failure": 7,
+    "Struck by a vessel": 6,
+    "Tail servo jammed": 6,
+    "One rudder servo failed limp": 4,
+    "Satellite modem or antenna failed": 4,
+    "Collision damage": 4,
+    "Backup tracker failed": 2
+   },
+   "r50_km": 11.03,
+   "r90_km": 59.11,
+   "time_beyond_1km_percent": 89.3,
+   "time_beyond_2km_percent": 75.1,
+   "name": "Anegada, 9 km N",
+   "lat": 18.82,
+   "lon": -64.33,
+   "mode": "station"
+  },
+  "drift_anegada_north": {
+   "runs": 500,
+   "outcomes": {
+    "aground": 335,
+    "at_sea_timeout": 165
+   },
+   "groundings": {
+    "Culebra / Vieques": 224,
+    "Anegada / Horseshoe Reef": 82,
+    "St Thomas": 4,
+    "Cooper / Salt / Ginger": 5,
+    "Tortola": 3,
+    "Jost Van Dyke": 4,
+    "Norman / Peter Islands": 3,
+    "Virgin Gorda": 8,
+    "St John": 2
+   },
+   "watch_within_1km": {
+    "anegada_reef": 11.4,
+    "virgin_gorda_south": 1.2,
+    "tortola_peter_norman": 0.8
+   },
+   "watch_within_2km": {
+    "anegada_reef": 16.8,
+    "virgin_gorda_south": 1.2,
+    "tortola_peter_norman": 1.0
+   },
+   "percent": {
+    "aground": 67.0,
+    "at_sea_timeout": 33.0
+   },
+   "max_distance_km": {
+    "median": 454.3,
+    "p90": 985.6
+   },
+   "end_distance_km": {
+    "median": 452.7,
+    "p90": 985.6
+   },
+   "time_beyond_5km_percent": 98.4,
+   "time_beyond_10km_percent": {
+    "median": 97.6,
+    "p90": 98.8
+   },
+   "runs_ever_beyond_5km_percent": 100.0,
+   "runs_ever_beyond_10km_percent": 91.6,
+   "days_to_aground": {
+    "p10": 0.6,
+    "median": 8.0,
+    "p90": 24.7
+   },
+   "failure_causes": {
+    "aground": 335,
+    "at sea timeout": 165
+   },
+   "r50_km": 281.77,
+   "r90_km": 700.52,
+   "time_beyond_1km_percent": 99.3,
+   "time_beyond_2km_percent": 99.1,
+   "name": "Anegada, 9 km N",
+   "lat": 18.82,
+   "lon": -64.33,
+   "mode": "drift"
+  },
+  "station_stcroix_north": {
+   "runs": 500,
+   "outcomes": {
+    "at_sea_timeout": 327,
+    "aground": 121,
+    "lost": 52
+   },
+   "groundings": {
+    "St Croix": 119,
+    "Culebra / Vieques": 2
+   },
+   "watch_within_1km": {
+    "anegada_reef": 0.0,
+    "virgin_gorda_south": 0.0,
+    "tortola_peter_norman": 0.0
+   },
+   "watch_within_2km": {
+    "anegada_reef": 0.0,
+    "virgin_gorda_south": 0.0,
+    "tortola_peter_norman": 0.0
+   },
+   "percent": {
+    "at_sea_timeout": 65.4,
+    "aground": 24.2,
+    "lost": 10.4
+   },
+   "max_distance_km": {
+    "median": 23.5,
+    "p90": 42.5
+   },
+   "end_distance_km": {
+    "median": 17.7,
+    "p90": 29.5
+   },
+   "time_beyond_5km_percent": 80.4,
+   "time_beyond_10km_percent": {
+    "median": 70.1,
+    "p90": 95.8
+   },
+   "runs_ever_beyond_5km_percent": 99.4,
+   "runs_ever_beyond_10km_percent": 98.8,
+   "days_to_aground": {
+    "p10": 1.4,
+    "median": 6.9,
+    "p90": 12.6
+   },
+   "failure_causes": {
+    "at sea timeout": 226,
+    "aground": 95,
+    "Fouled by weed or fishing line": 74,
+    "Picked up by a fishing boat or passer-by": 45,
+    "Collision damage": 11,
+    "Leak started": 9,
+    "Tail servo jammed": 7,
+    "Struck by a vessel": 7,
+    "Backup tracker failed": 6,
+    "One rudder servo failed limp": 6,
+    "Electronics failure": 5,
+    "One rudder servo jammed": 3,
+    "Satellite modem or antenna failed": 2,
+    "Tail servo failed": 2,
+    "Companion computer hung": 1,
+    "Rudder servo jammed": 1
+   },
+   "r50_km": 14.99,
+   "r90_km": 24.76,
+   "time_beyond_1km_percent": 96.8,
+   "time_beyond_2km_percent": 86.4,
+   "name": "St Croix, 9 km N",
+   "lat": 17.85,
+   "lon": -64.75,
+   "mode": "station"
+  },
+  "drift_stcroix_north": {
+   "runs": 500,
+   "outcomes": {
+    "at_sea_timeout": 166,
+    "aground": 334
+   },
+   "groundings": {
+    "Culebra / Vieques": 277,
+    "St Croix": 55,
+    "St John": 1,
+    "St Thomas": 1
+   },
+   "watch_within_1km": {
+    "anegada_reef": 0.0,
+    "virgin_gorda_south": 0.0,
+    "tortola_peter_norman": 0.0
+   },
+   "watch_within_2km": {
+    "anegada_reef": 0.0,
+    "virgin_gorda_south": 0.0,
+    "tortola_peter_norman": 0.0
+   },
+   "percent": {
+    "at_sea_timeout": 33.2,
+    "aground": 66.8
+   },
+   "max_distance_km": {
+    "median": 392.3,
+    "p90": 1319.2
+   },
+   "end_distance_km": {
+    "median": 392.1,
+    "p90": 1319.2
+   },
+   "time_beyond_5km_percent": 98.4,
+   "time_beyond_10km_percent": {
+    "median": 97.0,
+    "p90": 98.8
+   },
+   "runs_ever_beyond_5km_percent": 100.0,
+   "runs_ever_beyond_10km_percent": 95.8,
+   "days_to_aground": {
+    "p10": 0.6,
+    "median": 4.7,
+    "p90": 19.2
+   },
+   "failure_causes": {
+    "aground": 334,
+    "at sea timeout": 166
+   },
+   "r50_km": 366.34,
+   "r90_km": 1044.3,
+   "time_beyond_1km_percent": 99.3,
+   "time_beyond_2km_percent": 99.1,
+   "name": "St Croix, 9 km N",
+   "lat": 17.85,
+   "lon": -64.75,
+   "mode": "drift"
+  }
+ },
+ "cornwall": {
+  "station_lizard": {
+   "runs": 500,
+   "outcomes": {
+    "at_sea_timeout": 376,
+    "aground": 64,
+    "lost": 60
+   },
+   "groundings": {
+    "Lizard peninsula": 47,
+    "Land's End to Penzance (west of Mount's Bay)": 14,
+    "inside Mount's Bay": 1,
+    "Falmouth to Plymouth": 2
+   },
+   "watch_within_1km": {
+    "seven_stones": 0.0,
+    "scilly": 0.0,
+    "wolf_rock": 0.2,
+    "runnelstone": 0.2,
+    "manacles": 1.6,
+    "lizard_point": 11.8,
+    "low_lee_mountamopus": 0.0
+   },
+   "watch_within_2km": {
+    "seven_stones": 0.0,
+    "scilly": 0.0,
+    "wolf_rock": 0.4,
+    "runnelstone": 2.8,
+    "manacles": 6.2,
+    "lizard_point": 16.2,
+    "low_lee_mountamopus": 0.0
+   },
+   "percent": {
+    "at_sea_timeout": 75.2,
+    "aground": 12.8,
+    "lost": 12.0
+   },
+   "max_distance_km": {
+    "median": 31.3,
+    "p90": 65.7
+   },
+   "end_distance_km": {
+    "median": 12.6,
+    "p90": 41.8
+   },
+   "time_beyond_5km_percent": 62.4,
+   "time_beyond_10km_percent": {
+    "median": 42.4,
+    "p90": 78.6
+   },
+   "runs_ever_beyond_5km_percent": 99.6,
+   "runs_ever_beyond_10km_percent": 98.2,
+   "days_to_aground": {
+    "p10": 3.5,
+    "median": 8.2,
+    "p90": 13.2
+   },
+   "failure_causes": {
+    "at sea timeout": 296,
+    "Picked up by a fishing boat or passer-by": 54,
+    "aground": 50,
+    "Fouled by weed or fishing line": 30,
+    "Electronics failure": 13,
+    "Collision damage": 11,
+    "Leak started": 9,
+    "Tail servo jammed": 7,
+    "Struck by a vessel": 6,
+    "Backup tracker failed": 6,
+    "One rudder servo jammed": 5,
+    "Satellite modem or antenna failed": 5,
+    "One rudder servo failed limp": 3,
+    "Companion computer hung": 3,
+    "Limp-home controller failed": 1,
+    "Tail servo failed": 1
+   },
+   "r50_km": 8.19,
+   "r90_km": 40.16,
+   "time_beyond_1km_percent": 92.6,
+   "time_beyond_2km_percent": 79.3,
+   "name": "Lizard offing",
+   "lat": 49.85,
+   "lon": -5.2,
+   "mode": "station"
+  },
+  "drift_lizard": {
+   "runs": 500,
+   "outcomes": {
+    "aground": 425,
+    "at_sea_timeout": 75
+   },
+   "groundings": {
+    "further east / France": 37,
+    "Devon / Dorset": 166,
+    "Lizard peninsula": 48,
+    "Manacles to Falmouth": 27,
+    "inside Mount's Bay": 41,
+    "Falmouth to Plymouth": 53,
+    "Land's End to Penzance (west of Mount's Bay)": 35,
+    "Isles of Scilly / west of Land's End": 18
+   },
+   "watch_within_1km": {
+    "seven_stones": 3.4,
+    "scilly": 5.2,
+    "wolf_rock": 2.2,
+    "runnelstone": 2.0,
+    "manacles": 2.2,
+    "lizard_point": 4.0,
+    "low_lee_mountamopus": 0.8
+   },
+   "watch_within_2km": {
+    "seven_stones": 4.0,
+    "scilly": 5.6,
+    "wolf_rock": 4.8,
+    "runnelstone": 3.4,
+    "manacles": 4.0,
+    "lizard_point": 8.4,
+    "low_lee_mountamopus": 1.2
+   },
+   "percent": {
+    "aground": 85.0,
+    "at_sea_timeout": 15.0
+   },
+   "max_distance_km": {
+    "median": 146.4,
+    "p90": 344.5
+   },
+   "end_distance_km": {
+    "median": 101.7,
+    "p90": 324.1
+   },
+   "time_beyond_5km_percent": 97.7,
+   "time_beyond_10km_percent": {
+    "median": 95.0,
+    "p90": 98.8
+   },
+   "runs_ever_beyond_5km_percent": 100.0,
+   "runs_ever_beyond_10km_percent": 100.0,
+   "days_to_aground": {
+    "p10": 1.2,
+    "median": 6.5,
+    "p90": 20.4
+   },
+   "failure_causes": {
+    "aground": 425,
+    "at sea timeout": 75
+   },
+   "r50_km": 100.68,
+   "r90_km": 309.66,
+   "time_beyond_1km_percent": 99.2,
+   "time_beyond_2km_percent": 98.9,
+   "name": "Lizard offing",
+   "lat": 49.85,
+   "lon": -5.2,
+   "mode": "drift"
+  },
+  "station_mounts": {
+   "runs": 500,
+   "outcomes": {
+    "at_sea_timeout": 182,
+    "aground": 275,
+    "lost": 43
+   },
+   "groundings": {
+    "inside Mount's Bay": 96,
+    "Land's End to Penzance (west of Mount's Bay)": 89,
+    "Lizard peninsula": 40,
+    "Manacles to Falmouth": 39,
+    "Falmouth to Plymouth": 11
+   },
+   "watch_within_1km": {
+    "seven_stones": 0.0,
+    "scilly": 0.0,
+    "wolf_rock": 3.0,
+    "runnelstone": 19.2,
+    "manacles": 10.0,
+    "lizard_point": 11.2,
+    "low_lee_mountamopus": 2.2
+   },
+   "watch_within_2km": {
+    "seven_stones": 2.8,
+    "scilly": 0.0,
+    "wolf_rock": 3.6,
+    "runnelstone": 20.8,
+    "manacles": 11.6,
+    "lizard_point": 15.2,
+    "low_lee_mountamopus": 6.6
+   },
+   "percent": {
+    "at_sea_timeout": 36.4,
+    "aground": 55.0,
+    "lost": 8.6
+   },
+   "max_distance_km": {
+    "median": 17.0,
+    "p90": 46.5
+   },
+   "end_distance_km": {
+    "median": 14.7,
+    "p90": 29.4
+   },
+   "time_beyond_5km_percent": 42.9,
+   "time_beyond_10km_percent": {
+    "median": 17.1,
+    "p90": 59.0
+   },
+   "runs_ever_beyond_5km_percent": 98.6,
+   "runs_ever_beyond_10km_percent": 89.6,
+   "days_to_aground": {
+    "p10": 1.9,
+    "median": 6.5,
+    "p90": 12.1
+   },
+   "failure_causes": {
+    "aground": 242,
+    "at sea timeout": 151,
+    "Picked up by a fishing boat or passer-by": 36,
+    "Fouled by weed or fishing line": 16,
+    "Collision damage": 8,
+    "Backup tracker failed": 8,
+    "Struck by a vessel": 7,
+    "Electronics failure": 7,
+    "One rudder servo jammed": 5,
+    "Leak started": 5,
+    "Tail servo jammed": 4,
+    "Companion computer hung": 4,
+    "Satellite modem or antenna failed": 3,
+    "One rudder servo failed limp": 2,
+    "Limp-home controller failed": 1,
+    "Tail servo failed": 1
+   },
+   "r50_km": 4.02,
+   "r90_km": 18.58,
+   "time_beyond_1km_percent": 88.7,
+   "time_beyond_2km_percent": 67.2,
+   "name": "Mount's Bay mouth",
+   "lat": 49.97,
+   "lon": -5.45,
+   "mode": "station"
+  },
+  "drift_mounts": {
+   "runs": 500,
+   "outcomes": {
+    "aground": 455,
+    "at_sea_timeout": 45
+   },
+   "groundings": {
+    "inside Mount's Bay": 193,
+    "Devon / Dorset": 67,
+    "Land's End to Penzance (west of Mount's Bay)": 46,
+    "Manacles to Falmouth": 20,
+    "Falmouth to Plymouth": 40,
+    "Isles of Scilly / west of Land's End": 30,
+    "Lizard peninsula": 50,
+    "further east / France": 9
+   },
+   "watch_within_1km": {
+    "seven_stones": 3.0,
+    "scilly": 6.6,
+    "wolf_rock": 2.4,
+    "runnelstone": 2.2,
+    "manacles": 0.8,
+    "lizard_point": 4.0,
+    "low_lee_mountamopus": 4.2
+   },
+   "watch_within_2km": {
+    "seven_stones": 3.6,
+    "scilly": 7.2,
+    "wolf_rock": 5.0,
+    "runnelstone": 5.6,
+    "manacles": 1.8,
+    "lizard_point": 7.2,
+    "low_lee_mountamopus": 7.2
+   },
+   "percent": {
+    "aground": 91.0,
+    "at_sea_timeout": 9.0
+   },
+   "max_distance_km": {
+    "median": 37.1,
+    "p90": 272.9
+   },
+   "end_distance_km": {
+    "median": 21.6,
+    "p90": 238.7
+   },
+   "time_beyond_5km_percent": 96.7,
+   "time_beyond_10km_percent": {
+    "median": 79.8,
+    "p90": 98.7
+   },
+   "runs_ever_beyond_5km_percent": 100.0,
+   "runs_ever_beyond_10km_percent": 100.0,
+   "days_to_aground": {
+    "p10": 0.4,
+    "median": 1.9,
+    "p90": 18.4
+   },
+   "failure_causes": {
+    "aground": 455,
+    "at sea timeout": 45
+   },
+   "r50_km": 99.76,
+   "r90_km": 310.96,
+   "time_beyond_1km_percent": 99.0,
+   "time_beyond_2km_percent": 98.5,
+   "name": "Mount's Bay mouth",
+   "lat": 49.97,
+   "lon": -5.45,
+   "mode": "drift"
+  },
+  "station_lizard_deep": {
+   "runs": 500,
+   "outcomes": {
+    "at_sea_timeout": 430,
+    "lost": 68,
+    "aground": 2
+   },
+   "groundings": {
+    "Lizard peninsula": 2
+   },
+   "watch_within_1km": {
+    "seven_stones": 0.0,
+    "scilly": 0.0,
+    "wolf_rock": 0.0,
+    "runnelstone": 0.0,
+    "manacles": 0.6,
+    "lizard_point": 0.0,
+    "low_lee_mountamopus": 0.0
+   },
+   "watch_within_2km": {
+    "seven_stones": 0.0,
+    "scilly": 0.0,
+    "wolf_rock": 0.0,
+    "runnelstone": 0.0,
+    "manacles": 1.0,
+    "lizard_point": 0.4,
+    "low_lee_mountamopus": 0.0
+   },
+   "percent": {
+    "at_sea_timeout": 86.0,
+    "lost": 13.6,
+    "aground": 0.4
+   },
+   "max_distance_km": {
+    "median": 27.2,
+    "p90": 60.3
+   },
+   "end_distance_km": {
+    "median": 7.0,
+    "p90": 36.2
+   },
+   "time_beyond_5km_percent": 53.7,
+   "time_beyond_10km_percent": {
+    "median": 32.7,
+    "p90": 69.0
+   },
+   "runs_ever_beyond_5km_percent": 99.2,
+   "runs_ever_beyond_10km_percent": 94.2,
+   "days_to_aground": {
+    "p10": 13.2,
+    "median": 13.3,
+    "p90": 13.3
+   },
+   "failure_causes": {
+    "at sea timeout": 341,
+    "Picked up by a fishing boat or passer-by": 64,
+    "Fouled by weed or fishing line": 26,
+    "Electronics failure": 11,
+    "Collision damage": 10,
+    "Leak started": 9,
+    "Tail servo jammed": 9,
+    "One rudder servo jammed": 8,
+    "Backup tracker failed": 7,
+    "Struck by a vessel": 4,
+    "Satellite modem or antenna failed": 3,
+    "One rudder servo failed limp": 3,
+    "Companion computer hung": 3,
+    "Tail servo failed": 1,
+    "aground": 1
+   },
+   "r50_km": 5.72,
+   "r90_km": 28.63,
+   "time_beyond_1km_percent": 90.8,
+   "time_beyond_2km_percent": 74.7,
+   "name": "Lizard, 30 km S",
+   "lat": 49.7,
+   "lon": -5.2,
+   "mode": "station"
+  },
+  "drift_lizard_deep": {
+   "runs": 500,
+   "outcomes": {
+    "aground": 401,
+    "at_sea_timeout": 99
+   },
+   "groundings": {
+    "further east / France": 58,
+    "Devon / Dorset": 175,
+    "Lizard peninsula": 20,
+    "Isles of Scilly / west of Land's End": 21,
+    "Falmouth to Plymouth": 48,
+    "Land's End to Penzance (west of Mount's Bay)": 30,
+    "inside Mount's Bay": 35,
+    "Manacles to Falmouth": 14
+   },
+   "watch_within_1km": {
+    "seven_stones": 1.0,
+    "scilly": 5.6,
+    "wolf_rock": 1.4,
+    "runnelstone": 1.8,
+    "manacles": 0.6,
+    "lizard_point": 2.2,
+    "low_lee_mountamopus": 0.6
+   },
+   "watch_within_2km": {
+    "seven_stones": 1.2,
+    "scilly": 5.8,
+    "wolf_rock": 2.2,
+    "runnelstone": 2.2,
+    "manacles": 1.0,
+    "lizard_point": 4.0,
+    "low_lee_mountamopus": 1.2
+   },
+   "percent": {
+    "aground": 80.2,
+    "at_sea_timeout": 19.8
+   },
+   "max_distance_km": {
+    "median": 168.6,
+    "p90": 374.0
+   },
+   "end_distance_km": {
+    "median": 136.6,
+    "p90": 362.0
+   },
+   "time_beyond_5km_percent": 97.9,
+   "time_beyond_10km_percent": {
+    "median": 95.6,
+    "p90": 98.8
+   },
+   "runs_ever_beyond_5km_percent": 100.0,
+   "runs_ever_beyond_10km_percent": 100.0,
+   "days_to_aground": {
+    "p10": 2.3,
+    "median": 8.9,
+    "p90": 19.8
+   },
+   "failure_causes": {
+    "aground": 401,
+    "at sea timeout": 99
+   },
+   "r50_km": 112.21,
+   "r90_km": 332.4,
+   "time_beyond_1km_percent": 99.3,
+   "time_beyond_2km_percent": 99.0,
+   "name": "Lizard, 30 km S",
+   "lat": 49.7,
+   "lon": -5.2,
+   "mode": "drift"
+  },
+  "station_scilly_lizard": {
+   "runs": 500,
+   "outcomes": {
+    "at_sea_timeout": 332,
+    "lost": 68,
+    "aground": 100
+   },
+   "groundings": {
+    "Lizard peninsula": 61,
+    "inside Mount's Bay": 2,
+    "Land's End to Penzance (west of Mount's Bay)": 29,
+    "Manacles to Falmouth": 8
+   },
+   "watch_within_1km": {
+    "seven_stones": 0.0,
+    "scilly": 0.2,
+    "wolf_rock": 18.8,
+    "runnelstone": 2.2,
+    "manacles": 1.4,
+    "lizard_point": 3.8,
+    "low_lee_mountamopus": 0.0
+   },
+   "watch_within_2km": {
+    "seven_stones": 0.0,
+    "scilly": 0.2,
+    "wolf_rock": 29.4,
+    "runnelstone": 7.8,
+    "manacles": 2.8,
+    "lizard_point": 6.2,
+    "low_lee_mountamopus": 0.0
+   },
+   "percent": {
+    "at_sea_timeout": 66.4,
+    "lost": 13.6,
+    "aground": 20.0
+   },
+   "max_distance_km": {
+    "median": 27.8,
+    "p90": 46.3
+   },
+   "end_distance_km": {
+    "median": 9.0,
+    "p90": 39.0
+   },
+   "time_beyond_5km_percent": 49.6,
+   "time_beyond_10km_percent": {
+    "median": 28.0,
+    "p90": 61.9
+   },
+   "runs_ever_beyond_5km_percent": 99.0,
+   "runs_ever_beyond_10km_percent": 94.4,
+   "days_to_aground": {
+    "p10": 3.5,
+    "median": 9.2,
+    "p90": 12.8
+   },
+   "failure_causes": {
+    "at sea timeout": 269,
+    "aground": 83,
+    "Picked up by a fishing boat or passer-by": 62,
+    "Fouled by weed or fishing line": 23,
+    "One rudder servo jammed": 9,
+    "Electronics failure": 9,
+    "Tail servo jammed": 8,
+    "Leak started": 8,
+    "Collision damage": 7,
+    "Backup tracker failed": 7,
+    "Struck by a vessel": 6,
+    "Satellite modem or antenna failed": 2,
+    "Tail servo failed": 2,
+    "Companion computer hung": 2,
+    "Limp-home controller failed": 1,
+    "One rudder servo failed limp": 1,
+    "Rudder servo jammed": 1
+   },
+   "r50_km": 4.94,
+   "r90_km": 22.95,
+   "time_beyond_1km_percent": 90.9,
+   "time_beyond_2km_percent": 73.0,
+   "name": "Scilly-Lizard gap",
+   "lat": 49.85,
+   "lon": -5.75,
+   "mode": "station"
+  },
+  "drift_scilly_lizard": {
+   "runs": 500,
+   "outcomes": {
+    "aground": 419,
+    "at_sea_timeout": 81
+   },
+   "groundings": {
+    "Land's End to Penzance (west of Mount's Bay)": 71,
+    "inside Mount's Bay": 92,
+    "Devon / Dorset": 109,
+    "Falmouth to Plymouth": 46,
+    "Lizard peninsula": 35,
+    "Isles of Scilly / west of Land's End": 35,
+    "Manacles to Falmouth": 8,
+    "further east / France": 23
+   },
+   "watch_within_1km": {
+    "seven_stones": 3.2,
+    "scilly": 9.6,
+    "wolf_rock": 3.8,
+    "runnelstone": 4.0,
+    "manacles": 0.6,
+    "lizard_point": 3.2,
+    "low_lee_mountamopus": 3.4
+   },
+   "watch_within_2km": {
+    "seven_stones": 3.8,
+    "scilly": 11.2,
+    "wolf_rock": 8.8,
+    "runnelstone": 7.2,
+    "manacles": 1.2,
+    "lizard_point": 5.0,
+    "low_lee_mountamopus": 4.2
+   },
+   "percent": {
+    "aground": 83.8,
+    "at_sea_timeout": 16.2
+   },
+   "max_distance_km": {
+    "median": 143.8,
+    "p90": 351.0
+   },
+   "end_distance_km": {
+    "median": 96.9,
+    "p90": 323.4
+   },
+   "time_beyond_5km_percent": 97.7,
+   "time_beyond_10km_percent": {
+    "median": 94.2,
+    "p90": 98.8
+   },
+   "runs_ever_beyond_5km_percent": 100.0,
+   "runs_ever_beyond_10km_percent": 100.0,
+   "days_to_aground": {
+    "p10": 0.9,
+    "median": 5.5,
+    "p90": 20.2
+   },
+   "failure_causes": {
+    "aground": 419,
+    "at sea timeout": 81
+   },
+   "r50_km": 108.28,
+   "r90_km": 319.38,
+   "time_beyond_1km_percent": 99.2,
+   "time_beyond_2km_percent": 98.9,
+   "name": "Scilly-Lizard gap",
+   "lat": 49.85,
+   "lon": -5.75,
+   "mode": "drift"
+  }
+ }
+}

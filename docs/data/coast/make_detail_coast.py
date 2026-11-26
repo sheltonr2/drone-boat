@@ -151,7 +151,8 @@ def enc_hazards(path, box):
     - depth areas wholly shallower than 1.8 m (DRVAL2 <= 1.8: drying and 0-1.8 m reef flats and shoals);
     - rocks that dry, cover and uncover or are awash, charted shallower than 2 m, or of unknown depth;
     - obstructions and wrecks that dry, cover and uncover or are awash, or are charted shallower than 2 m, and
-      dangerous wrecks of unknown depth.
+      dangerous wrecks of unknown depth (CATWRK exactly "dangerous wreck": until 26 Nov 2026 a substring test also
+      caught "non-dangerous wreck", adding 12 harmless wrecks off Hatteras and 3 in the Virgin Islands to the v1 files).
     Points become 40 m-radius polygons. Areas such as 0-18 m depth bands, fish havens and subsurface foul ground
     are left out."""
     d = json.load(open(os.path.join(HERE, path)))
@@ -180,7 +181,7 @@ def enc_hazards(path, box):
                     if wl in HAZ_WATLEV or shallow:
                         for q in points_of(g): add("obstruction", circle(q[0], q[1], ROCK_R_M))
                 elif lname == "Wreck_point":
-                    if wl in HAZ_WATLEV or shallow or (v is None and "dangerous" in str(p.get("CATWRK", ""))):
+                    if wl in HAZ_WATLEV or shallow or (v is None and str(p.get("CATWRK", "")).strip().lower() == "dangerous wreck"):
                         for q in points_of(g): add("wreck", circle(q[0], q[1], ROCK_R_M))
                 elif lname in ("Obstruction_area", "Wreck_area"):
                     if wl in HAZ_WATLEV or shallow:
