@@ -2,6 +2,9 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-26, 02:05 UTC (21:05 local): 6-hourly check
+- Nothing new on #50 or by email. 032: 14 of 16 ERA5 months (Apr 2023 took 6.9 h), and May 2023 is requested.
+
 ## 2026-11-25, 20:05 UTC (15:05 local): 6-hourly check
 - Nothing new on #50 or by email. 032: Mar 2023 arrived after 9.4 h (CDS showed "degraded", with about 12,000 queued requests at 14:25 UTC; Randolph chose to keep the order), so 13 of 16 ERA5 months are in and Apr 2023 is requested. Three to go.
 
