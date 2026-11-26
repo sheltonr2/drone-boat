@@ -75,7 +75,8 @@ class Voyage:
         self.prep = prepared or prepare_design(design, cache_dir, log)
         self.boat = self.prep["boat"]; self.polar = self.prep["polar"]; self.stab = self.prep["stab"]
         self.env = provider or make_provider(sc["provider"], cache_dir, log, sc["grid_deg"], sc["seed"], sc.get("fine_grid"))
-        self.land = land or LandMask(cache_dir, allow_download=(sc["provider"] != "synthetic"), log=log)
+        self.land = land or LandMask(cache_dir, allow_download=(sc["provider"] != "synthetic"), log=log,
+                                     detail=sc.get("detail_coast"))
         self.rng = np.random.default_rng(sc["seed"])
         self.events = []
         self.ap = Autopilot(design, sc, self.polar, self.land, self.event)
@@ -225,6 +226,9 @@ class Voyage:
                         dd = math.hypot(px - x0 - tt*(x1 - x0), py - y0 - tt*(y1 - y0))
                         if dd < self.watch_min[wk]: self.watch_min[wk] = dd
             # land / arrival
+            if self.land.detail:                  # detailed coastline: stop at the first land on the step
+                hit = self.land.first_land_on_segment(st["lat"], st["lon"], nlat, nlon)
+                if hit: nlat, nlon = hit
             if self.land.is_land(nlat, nlon):
                 isle = self.land.atlantic_island(nlat, nlon)
                 if self.land.far_side(nlat, nlon, sc.get("atlantic_islands_count", False), sc.get("africa_landfall_counts", False),

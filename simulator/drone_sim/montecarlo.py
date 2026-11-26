@@ -71,7 +71,7 @@ def run_montecarlo(design, scenario, n_runs=50, window=None, processes=None, cac
     sc0 = {**copy.deepcopy(DEFAULT_SCENARIO), **scenario}
     rng = np.random.default_rng(sc0.get("seed", 1))
     prepare_design(design, cache_dir, log)                       # build polar once (disk cache)
-    LandMask(cache_dir, allow_download=sc0["provider"] != "synthetic", log=log)
+    LandMask(cache_dir, allow_download=sc0["provider"] != "synthetic", log=log, detail=sc0.get("detail_coast"))
     # Scenario key "start_times": an explicit list of launch times (one per voyage) instead of random times in the
     # window, e.g. one launch a day as boat-sim scores it (21 Nov 2026). Off by default.
     starts = list(sc0["start_times"])[:n_runs] if sc0.get("start_times") else start_times(window, n_runs, rng)

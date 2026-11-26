@@ -354,8 +354,23 @@ class LandMask:
     ATLANTIC_ISLANDS = {"Azores": (36.5, 40.2, -31.6, -24.5), "Madeira": (32.3, 33.3, -17.6, -16.0),
                         "Canary Islands": (27.4, 29.6, -18.4, -13.0)}
 
-    def __init__(self, cache_dir="cache", allow_download=True, log=print):
+    def __init__(self, cache_dir="cache", allow_download=True, log=print, detail=None):
         self.polys = []
+        # Detailed coastline (scenario key "detail_coast", 26 Nov 2026; off by default): a JSON file of boxes and
+        # land polygons built from OpenStreetMap (docs/data/coast/make_detail_coast.py). Inside its boxes the land
+        # test uses only those polygons (every islet and cay), outside them Natural Earth as before.
+        self.detail = None
+        if detail:
+            boxes, dpolys, names = [], [], []
+            for one in ([detail] if isinstance(detail, str) else list(detail)):     # one file or a list of files
+                dp = one if os.path.isabs(one) else os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", one)
+                dj = json.load(open(dp, encoding="utf-8"))
+                for ring in dj["polygons"]:
+                    r = np.array(ring, float)
+                    if len(r) >= 3:
+                        dpolys.append((r[:, 0].min(), r[:, 0].max(), r[:, 1].min(), r[:, 1].max(), r))
+                boxes += [tuple(b) for b in dj["boxes"]]; names.append(dj.get("name", one))
+            self.detail = dict(boxes=boxes, polys=dpolys, name="; ".join(names))
         p = os.path.join(cache_dir, "ne_50m_land.geojson")
         if not os.path.exists(p) and allow_download:
             try:
@@ -529,7 +544,15 @@ class LandMask:
         if lat < 36.0 and lon < 11: return False                  # Morocco, Algeria
         return True
 
+    def in_detail(self, lat, lon):
+        if self.detail:
+            for a, b, c, d in self.detail["boxes"]:
+                if a <= lat <= b and c <= lon <= d: return True
+        return False
+
     def is_land(self, lat, lon):
+        if self.detail and self.in_detail(lat, lon):
+            return self._inside_fast(self.detail["polys"], lat, lon)
         if not _REFERENCE:
             return self._inside_fast(self.polys, lat, lon)
         for x0, x1, y0, y1, r in self.polys:
@@ -542,6 +565,18 @@ class LandMask:
             if np.count_nonzero(xi > lon) % 2 == 1:
                 return True
         return False
+
+    def first_land_on_segment(self, lat0, lon0, lat1, lon1, step_m=60.0):
+        """With a detailed coastline only: the first point on the straight step from (lat0, lon0) to (lat1, lon1)
+        that is land, tested every ~60 m, so a 5-minute step cannot jump over a small cay. None if clear."""
+        if not self.detail or not (self.in_detail(lat0, lon0) or self.in_detail(lat1, lon1)):
+            return None
+        d = haversine_km(lat0, lon0, lat1, lon1)*1000
+        n = max(1, int(d/step_m))
+        for k in range(1, n + 1):
+            la, lo = lat0 + (lat1 - lat0)*k/n, lon0 + (lon1 - lon0)*k/n
+            if self.is_land(la, lo): return la, lo
+        return None
 
     def land_ahead(self, lat, lon, bearing_deg, dist_km, steps=6):
         for k in range(1, steps + 1):
