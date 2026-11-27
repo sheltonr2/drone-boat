@@ -2,6 +2,14 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-27, 02:25 UTC (21:25 local): run 043a queued and running
+
+- Randolph: "Are there any sims running? Can we put sims in to run for the next 10+ hours?" Only 041 (the download, network-bound) was running.
+- **043a** (collab/runs_043a): the decided plans on the v2 coasts with the four years already on the PC, 17 runs, about 11 hours, one queue job (run_043a_v2_4yr.bat calls both parts so the queue hands over only once). It started at 21:18 local, alongside 041.
+  - Part 1, eastbound (1,000 voyages each): B, A and the old plan; B in April; B from 21 May to 15 June; B from the 70 km drop. Then Cornwall holds at both points (station-keeping and drift, 500 each).
+  - Part 2, east-west: Mindelo to the Norman offing and to Anegada W; El Hierro via 20N 28W to the Norman offing (1,000 each, with a storm check). Then BVI holds at both points.
+  - Every run pairs with its v1 twin (036-042), so it measures the depth data's effect.
+
 ## 2026-11-27, 02:20 UTC (21:15 local): Cornwall arrival decided: option B
 
 - Randolph: "B". The approach moves 40-45 km south of Scilly (49.35N 7.20W, 49.50N 6.40W) and the hold moves to 30 km south of the Lizard (49.70N 5.20W); scenario collab/runs_042/plan_south_deep.json. Option A (the same approach to the Lizard offing) is the fallback if the recovery boat can't go 50 km out. Launch_Plan updated (decision table and the accurate-coastline section) and copied to the PC.
