@@ -2,6 +2,19 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-27, 00:45 UTC (19:45 local): run 038 in, run 042A in, depth data in
+
+- Nothing new on #50 or by email.
+- **038, Mindelo -> each BVI point** (1000 voyages, 4 winters): every point arrives 79-88% of the time, with no groundings on the way.
+  - P(pickup 3 days after arrival) = arrival x afloat at day 3: Norman offing 84%, St Croix N 80%, Anegada W 79%, Ginger SE 72%, Anegada N 72%, Jost Van Dyke N 66%, Norman (current plan) 48%.
+  - At 7 days: Anegada W 75%, St Croix N 70%, Norman offing 68%, Norman 26%.
+- **042A, approach 40-45 km south of Scilly to the Lizard offing:** 79.4% (76.9-81.8), against 75.8% for 039. Groundings fall from 6.4% to 2.7%: Scilly 44 -> 16, Lizard 11 -> 1. 042B (hold 30 km south of the Lizard) is still running.
+- **040, depth data:**
+  - EMODnet DTM grids for Cornwall and the Caribbean (none for Hatteras). The v2 builder turns the patches shallower than 2 m into outlines; they hug the OSM coast with a 100-300 m margin and fill the shallow inner waters of Scilly.
+  - The UKHO open portal has wrecks and obstructions in the UK EEZ only (2,179 points and 11 areas off Cornwall; nothing for the BVI) and no open survey footprints.
+  - Bug: the area layer overwrote the points file (same truncated name). Fixed; 040c re-fetches the points.
+- **Queue race:** at 18:27 the queue window and the scheduled task both started 042. The duplicate exited and deleted running.lock, so the task went on to 040 and then 041, which now runs in parallel with 042 (harmless). The window does not refresh window.lock during a run. Fix after 041 ends (the .bat files cannot be edited while running), and queue the five-year re-runs only after 041 is done.
+
 ## 2026-11-26, 20:05 UTC (15:05 local): check; runs 036, 037 and 039 analysed
 
 - Nothing new on #50 or by email. boat-sim commits through da48acb.
