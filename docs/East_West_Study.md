@@ -270,6 +270,32 @@ No crossing went aground on the way in to any point. A dead boat at any point dr
 - The El Hierro fallback reaches the Norman offing 6.6 points less often than Mindelo does, and takes 123 days against 85 (median). Two boats were lost on the West African coast. Mindelo stays the launch.
 - The plan stands: the Norman offing for a prompt pickup, with Anegada W run alongside it.
 
+**Holding upwind, and when to leave Mindelo (run 043b, 27 Nov 2026).** v2 coasts, Rev E3. The boat holds a point 15-40 km up-wind of the pickup point; every distance and every pickup figure is measured from the pickup point itself. Analysis: [`collab/runs_043b/analysis.py`](../collab/runs_043b/analysis.py).
+
+| 14 days station-keeping, 500 holds | Aground | Afloat and with us after 1 / 3 / 7 / 14 days | Ends from the pickup point, median (p90) | Pickup 3 / 7 days after arrival |
+|---|---|---|---|---|
+| Norman offing, on the point (043a) | 35.0% | 99 / 95 / 77 / 53% | 29 (77) km | 84 / 68% |
+| Norman offing, 20 km E | 31.0% | 99 / 97 / 81 / 57% | 19 (66) km | 86 / 72% |
+| Norman offing, 40 km E | 22.6% | 99 / 97 / 86 / 65% | 29 (52) km | 86 / 76% |
+| **Norman offing, 20 km ESE (18.10N 64.41W)** | **24.4%** | 99 / **98 / 87** / 65% | 21 (69) km | **87 / 77%** |
+| Anegada W, on the point (043a) | 8.6% | 98 / 95 / 91 / 78% | 20 (59) km | 79 / 75% |
+| Anegada W, 15 km N | 9.0% | 99 / 95 / 88 / 76% | 26 (96) km | 78 / 72% |
+| Anegada W, 30 km N | **3.8%** | 99 / 98 / 94 / **85%** | 44 (152) km | 81 / **77%** |
+
+- Holding up-wind helps at the Norman offing: 20 km ESE cuts the groundings by a third (35% to 24% in two weeks, mostly fewer on St Thomas and St John). It lifts the chance of a pickup three days after arrival from 84% to 87%, and seven days after from 68% to 77%.
+- At Anegada W, 30 km north cuts the groundings to 3.8% (mostly Horseshoe Reef), but the boat ends up a long way off (p90 152 km), so a later pickup means a longer run out. 15 km north does nothing.
+- With the best hold at each, the two points are level at seven days (77% each). The Norman offing stays ahead at three days (87% against 81%), and Anegada W is safer if the pickup slips past a week.
+
+| Mindelo launch window, 1,000 voyages, 2021-2024 | Norman offing: arrive (95% range), median days | Anegada W: arrive, median days | Storm within 200 km |
+|---|---|---|---|
+| 15 Nov-10 Jan (043a, the plan) | 88.3% (86.2-90.2), 85 | 82.3% (80.0-84.5), 87 | 0.4-0.5% |
+| **15 Nov-10 Dec** | **88.1%** (86.0-90.1), **83** | **84.1%** (81.8-86.4), **84** | 0.4-0.5% |
+| 11 Dec-10 Jan | 87.5% (85.5-89.5), 87 | 79.5% (77.0-82.0), 89 | 0.3-0.6% |
+
+- An earlier departure is no worse for the Norman offing and better for Anegada W (84.1% against 79.5%). It is also 4-5 days quicker. No boat went aground on the way in either window.
+- The 11 Jan-5 Feb window didn't run, because its voyages reach July 2022 and July 2023, which the east-west weather download doesn't cover yet. It will run with the five-year re-runs.
+- **Recommendation, for Randolph to decide:** hold 20 km ESE of the Norman offing (18.10N 64.41W) and leave Mindelo between 15 Nov and 10 Dec. Keep Anegada W, held 30 km north, as the alternative.
+
 ## 8. Earlier questions (14 Nov)
 
 1. **Is westbound a second option or a candidate for the first attempt?** The answer decides how much of the build plan's test schedule should cover downwind sailing and weed.

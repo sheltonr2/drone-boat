@@ -238,6 +238,18 @@ On Natural Earth the plan scored 81.6% (run 034). The plan's approach passes abo
 - **Launch window:** 1-20 May stays. A later launch arrives slightly more often (82.8%), but the chance of meeting a tropical storm triples (12.7% against 4.4%). April is a little lower (79.6%), with the fewest storms (1.8%).
 - The 70 km drop is no worse than 45 km (+0.8, within the noise). It stays the fallback if the Gulf Stream edge is rough on launch day.
 
+**Further south, and holding upwind (run 043b, 27 Nov 2026).** Same 1,000 launches and seeds as 043a B, v2 coasts. Analysis: [`collab/runs_043b/analysis.py`](../collab/runs_043b/analysis.py).
+
+| Run 043b | Arrive (95% range) | Paired vs B | Aground (Scilly) | Aground, paired vs B | Median days |
+|---|---|---|---|---|---|
+| B (the plan): about 40-45 km south of Scilly | 81.1% (78.7-83.5) | | 2.4% (15) | | 120.5 |
+| B60: about 60 km south (49.15N 7.20W, 49.35N 6.30W) | **82.1%** (79.7-84.4) | +1.0 (-1.5 to +3.4) | **1.1%** (10) | **-1.3** (-2.4 to -0.2) | 120.8 |
+| B90: about 90 km south (48.90N 7.20W, 49.10N 6.20W) | 81.8% (79.4-84.1) | +0.7 (-1.8 to +3.1) | **0.9%** (3) | **-1.5** (-2.5 to -0.5) | 120.8 |
+
+- Going wider halves the groundings, and that difference is real (its range stays below zero). It costs no time. The gain in arrivals (+0.7 to +1.0) is within the noise, because some of the boats saved from the rocks fail in other ways.
+- **Holding upwind of the Lizard hold doesn't help.** 20 km SW or W of 49.70N 5.20W, 0.2% and 1.2% go aground in 14 days, against 0.4% holding on the point. The Cornwall hold stays where it is.
+- **Recommendation, for Randolph to decide:** move B's approach out to the B90 waypoints (48.90N 7.20W, 49.10N 6.20W). It keeps the hold and the pickup the same, and it clears Scilly by the widest margin (3 Scilly groundings in 1,000 against 15). B60 does as well on arrivals, so either is reasonable.
+
 ## Launch window on four years of weather (15 Nov 2026, runs 019a–c)
 
 Rev E1, 45 km off Hatteras → Cornwall, 500 voyages per window on 2021–2024 weather. The same seeds were used in each window, so the differences are paired. Analysis: [`window_analysis.py`](data/window_analysis.py).

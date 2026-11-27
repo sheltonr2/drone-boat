@@ -2,6 +2,18 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-27, 23:30 UTC (18:30 local): run 043b analysed
+
+- Nothing new on #50 (last boat-sim commit da48acb, 26 Nov) or by email.
+- Queue: 043b ran 08:43-14:57; 14 of 15 runs completed. The Mindelo January window stopped: its voyages need Jul 2022 and Jul 2023, which the east-west workspace doesn't hold. 041: 5 of 15 ERA5 months done (Sep 2025 at 17:43; about 5 h each, CDS name-resolution errors retried), so about two more days.
+- **043b results** (collab/runs_043b/analysis.py and .json):
+  - Approaches: B60 82.1% (+1.0, -1.5 to +3.4), B90 81.8% (+0.7); aground 2.4% -> 1.1% / 0.9%, paired -1.3 (-2.4 to -0.2) / -1.5 (-2.5 to -0.5). Scilly groundings 15 -> 10 / 3. Same days.
+  - Cornwall hold upwind (SW20, W20): no better than on the point (0.2 / 1.2% vs 0.4%).
+  - Norman offing upwind: ESE20 24.4% aground (on point 35.0%), pickup 3/7 days 87/77% (84/68%). E40 22.6%, 86/76%. Anegada W N30 3.8% aground, 81/77%, but ends far off (p90 152 km).
+  - Mindelo windows: 15 Nov-10 Dec Norman 88.1% / Anegada 84.1%; 11 Dec-10 Jan 87.5% / 79.5%. Storms under 1%.
+- Recommendations sent to Randolph (no decision changed): B90 approach; hold 20 km ESE of the Norman offing; leave Mindelo 15 Nov-10 Dec.
+- Next: the queue fix and the five-year re-runs (043, Rev F) when 041 finishes, plus the January window.
+
 ## 2026-11-27, 19:45 UTC (14:45 local): Rev F adopted
 
 - Randolph: "Adopt rev F". Rev F is the build design. Docs updated (Design_RevF, Revisions, Build_Plan, Launch_Plan, Executive_Summary, README); the procurement Sheet now lists the 9704 ($479), a camera row ($58) and the IMT plan, total $5,041 (BOM line ids moved: A06-09 camera, A10-18 sensors, G01-13, S02 spare camera, S03 spare servo).
