@@ -1,0 +1,127 @@
+{
+ "provider": "bulk",
+ "failure_rate_set": "planning",
+ "start": {
+  "lat": 18.72,
+  "lon": -64.49
+ },
+ "target": {
+  "lat": 18.72,
+  "lon": -64.49
+ },
+ "waypoints": [],
+ "arrival_radius_km": 0.0,
+ "europe_landfall_counts": false,
+ "atlantic_islands_count": false,
+ "far_side": "americas",
+ "watch_lines": {
+  "anegada_reef": [
+   [
+    18.76,
+    -64.42
+   ],
+   [
+    18.7,
+    -64.3
+   ],
+   [
+    18.65,
+    -64.25
+   ],
+   [
+    18.62,
+    -64.3
+   ]
+  ],
+  "virgin_gorda_south": [
+   [
+    18.42,
+    -64.46
+   ],
+   [
+    18.385,
+    -64.44
+   ],
+   [
+    18.395,
+    -64.42
+   ]
+  ],
+  "tortola_peter_norman": [
+   [
+    18.36,
+    -64.64
+   ],
+   [
+    18.33,
+    -64.62
+   ],
+   [
+    18.32,
+    -64.58
+   ],
+   [
+    18.34,
+    -64.54
+   ],
+   [
+    18.38,
+    -64.52
+   ],
+   [
+    18.42,
+    -64.56
+   ],
+   [
+    18.44,
+    -64.65
+   ]
+  ]
+ },
+ "weed_zones": [
+  {
+   "lat": [
+    20.0,
+    35.0
+   ],
+   "lon": [
+    -70.0,
+    -40.0
+   ],
+   "factor": 2.0
+  },
+  {
+   "lat": [
+    3.0,
+    22.0
+   ],
+   "lon": [
+    -65.0,
+    -15.0
+   ],
+   "factor_by_month": {
+    "12": 2,
+    "1": 2,
+    "2": 2,
+    "3": 3,
+    "4": 3,
+    "5": 4,
+    "6": 5,
+    "7": 5,
+    "8": 4,
+    "9": 3,
+    "10": 3,
+    "11": 2
+   }
+  }
+ ],
+ "detail_coast": "docs/data/coast/detail_carib_v2.json",
+ "name": "BVI holding: station-keeping within 1 km, 8 km west of Anegada's West End, clear of Horseshoe Reef, 14 days (Rev E3) - v2 coasts",
+ "initial_mode": "station",
+ "station": [
+  18.72,
+  -64.49
+ ],
+ "station_radius_km": 1.0,
+ "max_days": 14
+}
