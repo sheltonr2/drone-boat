@@ -1,0 +1,21 @@
+{
+ "started": "2026-11-26 20:41:28",
+ "emodnet": {},
+ "ukho": {
+  "services": 28,
+  "wreck_layers": {
+   "Hosted/Wrecks_and_Obstructions_within_UK_EEZ / UK EEZ WrecksObstructions - Points": {
+    "cornwall": 2179,
+    "carib": 0,
+    "hatteras": 0
+   },
+   "Hosted/Wrecks_and_Obstructions_within_UK_EEZ / UK EEZ WrecksObstructions - Area": {
+    "cornwall": 11,
+    "carib": 0,
+    "hatteras": 0
+   }
+  },
+  "wrecks_ok": true
+ },
+ "finished": "2026-11-26 20:41:52"
+}

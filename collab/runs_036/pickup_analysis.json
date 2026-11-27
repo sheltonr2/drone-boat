@@ -1962,6 +1962,22 @@
      "aground": 2.7,
      "lost": 9.7
     }
+   },
+   "042B south of Scilly, 30 km S of Lizard": {
+    "arrive": 80.8,
+    "ci95": [
+     78.4,
+     83.2
+    ],
+    "percent": {
+     "arrived_reporting": 54.5,
+     "arrived_tracked": 26.3,
+     "arrived_silent": 2.6,
+     "arrived_adrift": 0.4,
+     "at_sea_timeout": 5.4,
+     "aground": 2.6,
+     "lost": 8.2
+    }
    }
   }
  }

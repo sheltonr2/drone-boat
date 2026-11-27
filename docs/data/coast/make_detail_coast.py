@@ -247,7 +247,7 @@ def build(region, version="v1"):
         uk = [f for f in sorted(os.listdir(os.path.join(HERE, "raw_040"))) if f.startswith("ukho_wrecks_") and f.endswith(f"_{region}.geojson")] \
             if os.path.isdir(os.path.join(HERE, "raw_040")) else []
         if uk:
-            n0 = len(polys); hp, counts = ukho_hazards([os.path.join("raw_040", f) for f in uk], box); polys += hp
+            n0 = len(polys); hp, counts = ukho_hazards([os.path.join("raw_040", f) for f in uk], box, X.get("emodnet")); polys += hp
             layers["ukho"] = [n0, len(polys)]; notes.append("UKHO wrecks and obstructions: " + ", ".join(f"{k} {v}" for k, v in sorted(counts.items())))
             src_extra.append("UK Hydrographic Office, Wrecks and Obstructions (Open Government Licence v3.0; not for navigation)")
     out = dict(name=R["name"] + (" + EMODnet/UKHO depth data (v2)" if version == "v2" else ""), boxes=[list(box)], polygons=polys, layers=layers, notes=notes,
@@ -257,8 +257,37 @@ def build(region, version="v1"):
     return out
 
 
-def ukho_hazards(paths, box):
-    raise NotImplementedError("UKHO wreck fields are read once run 040c has fetched the point layer")
+UKHO_NEAR_M = 5.0      # UKHO wrecks/obstructions count only where the EMODnet seabed is shallower than this
+
+
+def ukho_hazards(paths, box, emodnet_tif=None):
+    """UKHO Wrecks and Obstructions (Open Government Licence; run 040/040c). The open layer carries no attributes
+    (no depth, category or water level), and most of its 2,179 points off west Cornwall are wrecks in 20-100 m of
+    water that a boat on the surface never meets. So a point or area counts only where the EMODnet seabed under it is
+    shallower than UKHO_NEAR_M (5 m): there a wreck or obstruction may reach within 2 m of the surface. Points become
+    40 m-radius polygons, as the ENC hazards do. Without a depth grid nothing is added."""
+    if not emodnet_tif: return [], {}
+    import numpy as np, tifffile
+    with tifffile.TiffFile(os.path.join(HERE, emodnet_tif)) as t:
+        z = t.asarray().astype(float); M = t.pages[0].tags["ModelTransformationTag"].value
+    dx, x0, dy, y0 = M[0], M[3], -M[5], M[7]
+    def depth(lon, lat):
+        i, j = int((y0 - lat) / dy), int((lon - x0) / dx)
+        return z[i, j] if 0 <= i < z.shape[0] and 0 <= j < z.shape[1] else -1e9
+    polys, counts = [], {}
+    for pth in paths:
+        for f in json.load(open(os.path.join(HERE, pth)))["features"]:
+            g = f.get("geometry") or {}
+            if g.get("type") == "Point":
+                lon, lat = g["coordinates"][:2]
+                if inside_box([lon, lat], box) and depth(lon, lat) > -UKHO_NEAR_M:
+                    polys.append(circle(lon, lat, ROCK_R_M)); counts["wreck/obstruction point"] = counts.get("wreck/obstruction point", 0) + 1
+            elif g.get("type") in ("Polygon", "MultiPolygon"):
+                rings = [g["coordinates"][0]] if g["type"] == "Polygon" else [pp[0] for pp in g["coordinates"]]
+                for r in rings:
+                    if any(inside_box(q, box) for q in r) and max(depth(q[0], q[1]) for q in r) > -UKHO_NEAR_M:
+                        polys.append([[round(q[0], 6), round(q[1], 6)] for q in r]); counts["wreck/obstruction area"] = counts.get("wreck/obstruction area", 0) + 1
+    return polys, counts
 
 
 if __name__ == "__main__":

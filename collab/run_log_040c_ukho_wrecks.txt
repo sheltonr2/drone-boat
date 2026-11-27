@@ -1,0 +1,18 @@
+Run 040c: UKHO wrecks re-fetch, started Thu 11/26/2026 20:41:28.23 
+20:41:28 Run 040: depth and hazard data -> docs\data\coast\raw_040
+20:41:28 == UKHO ArcGIS server: service list
+20:41:47   saved ukho_services.json (0.01 MB)
+20:41:47 == UKHO Wrecks and Obstructions
+20:41:47   layer: Hosted/Wrecks_and_Obstructions_within_UK_EEZ / UK EEZ WrecksObstructions - Points (https://datahub.admiralty.co.uk/server/rest/services/Hosted/Wrecks_and_Obstructions_within_UK_EEZ/FeatureServer/0)
+20:41:49     cornwall: 2179 features
+20:41:49   saved ukho_wrecks_Hosted_Wrecks_and_Obstructions_within_UK_EEZ_0_cornwall.geojson (0.49 MB)
+20:41:50     carib: 0 features
+20:41:50     hatteras: 0 features
+20:41:50   layer: Hosted/Wrecks_and_Obstructions_within_UK_EEZ / UK EEZ WrecksObstructions - Area (https://datahub.admiralty.co.uk/server/rest/services/Hosted/Wrecks_and_Obstructions_within_UK_EEZ/FeatureServer/1)
+20:41:51     cornwall: 11 features
+20:41:51   saved ukho_wrecks_Hosted_Wrecks_and_Obstructions_within_UK_EEZ_1_cornwall.geojson (0.01 MB)
+20:41:51     carib: 0 features
+20:41:52     hatteras: 0 features
+20:41:52   saved summary_040c.json (0.00 MB)
+20:41:52 Summary: {"started": "2026-11-26 20:41:28", "emodnet": {}, "ukho": {"services": 28, "wreck_layers": {"Hosted/Wrecks_and_Obstructions_within_UK_EEZ / UK EEZ WrecksObstructions - Points": {"cornwall": 2179, "carib": 0, "hatteras": 0}, "Hosted/Wrecks_and_Obstructions_within_UK_EEZ / UK EEZ WrecksObstructions - Area": {"cornwall": 11, "carib": 0, "hatteras": 0}}, "wrecks_ok": true}, "finished": "2026-11-26 20:41:52"}
+=== DONE Thu 11/26/2026 20:41:52.38 
