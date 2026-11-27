@@ -1,6 +1,6 @@
 # Rev F: a daily photo from the boat
 
-Drawn 27 Nov 2026. Rev F is Rev E3 plus a small camera on the stern post and an Iridium IMT modem in place of the SBD modem. It is a new letter because it adds a system (the camera) and changes the comms (docs/Revisions.md). Nothing else on the boat changes. **It is a proposal: the plan and the build still run on Rev E3 until Randolph adopts it.**
+Drawn 27 Nov 2026; adopted the same day. Rev F is Rev E3 plus a small camera on the stern post and an Iridium IMT modem in place of the SBD modem. It is a new letter because it adds a system (the camera) and changes the comms (docs/Revisions.md). Nothing else on the boat changes. **Adopted 27 Nov 2026: Rev F is the boat we build and the design the plan's runs use from now on.** Runs made before that date used Rev E3; the 60-day check below shows Rev F sails the same.
 
 ## What changes
 

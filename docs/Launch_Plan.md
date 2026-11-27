@@ -21,7 +21,7 @@ Launch year 2028 (Randolph, 23 Nov 2026). This follows the Build Plan's five pha
 |---|---|
 | **Dec 2026 – Mar 2027** | Phase 1, bench: wire the electronics, Bench Tests N and I, servo life Test P (5 weeks). Build the lake prototype and proof-load the spar (Gate 1) |
 | **Apr – Jun 2027** | Phase 2, lake season on the prototype: steering, one-rudder and wave-filter runs (Test I), tail detent (Q), wing slap (M), the autonomous gate course (Gate 2) |
-| **Jun – Sep 2027** | Phase 3: build the ocean boat (Rev E3, or E4 with the lake lessons). Field tests A–E; self-righting is Gate 3. Fit and bench-test the backup tracker ([Backup_Tracker.md](Backup_Tracker.md)). Order the labels |
+| **Jun – Sep 2027** | Phase 3: build the ocean boat (Rev F, adopted 27 Nov 2026: Rev E3 plus a daily-photo camera and an IMT modem; or F1 with the lake lessons). Field tests A–E; self-righting is Gate 3. Fit and bench-test the backup tracker ([Backup_Tracker.md](Backup_Tracker.md)). Order the labels |
 | **Oct 2027** | Phase 4: first 3-week coastal trial (Field Test F): 14 days in a row with no unexplained reboot, leak or reporting gap |
 | **Nov 2027** | Westbound backup slot, only if chosen ([East_West_Study.md](East_West_Study.md): launch about November for a March arrival). Not part of this plan |
 | **Winter 2027–28** | Fix what the trial found |

@@ -41,7 +41,7 @@ Everything below is needed for one boat. Prices are approximate US prices from N
 
 | Item | Qty | Approx. size | Approx. USD |
 | --- | --- | --- | --- |
-| [RockBLOCK Plus](https://www.groundcontrol.com/wp-content/uploads/2026/08/RockBLOCK-Plus-Data-Sheet.pdf) Iridium modem, encapsulated, own antenna (Rev D; replaces the 9603, tails cable and external antenna) | 1 | 137 × 40 mm, 450 g | \~450 (price not confirmed) |
+| [RockBLOCK Plus](https://www.groundcontrol.com/wp-content/uploads/2026/08/RockBLOCK-Plus-Data-Sheet.pdf) Iridium modem, encapsulated, own antenna (Rev D; replaces the 9603, tails cable and external antenna). Rev F: the RockBLOCK Plus 9704 (Iridium IMT), $479, plus a stern-post camera ([Design_RevF.md](Design_RevF.md)) | 1 | 137 × 40 mm, 450 g | \~450 (price not confirmed) |
 | MAX3232-class RS-232 level shifter | 1 | — | 5 |
 | Limp-home controller parts (Rev D: ESP32-S3, GPS, BNO085, regulator, servo mux, ideal diodes, fuse; docs/Limp_Home_Spec.md) | 1 set | — | 190 |
 | Conformal coating and potting compounds (Rev D, docs/Potting_Spec.md) | 1 set | — | 40 |
@@ -143,7 +143,7 @@ Itemised in full, Rev E comes to about $3,280, plus about $630 for the YB3 backu
 
 | Item | Cost |
 | --- | --- |
-| [RockBLOCK line rental](https://groundcontrol.com/?p=1671) | $17/month |
+| [RockBLOCK line rental](https://groundcontrol.com/?p=1671) | $17/month (Rev F: IMT plan, about $42/month with a photo a day) |
 | Message credits, at 4-hourly reports | about $22/month |
 | Message credits, at hourly reports near coasts or in storms | about $86/month |
 | Typical crossing (about 100–125 days) | about $130–$260 in total |

@@ -2,6 +2,11 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-27, 19:45 UTC (14:45 local): Rev F adopted
+
+- Randolph: "Adopt rev F". Rev F is the build design. Docs updated (Design_RevF, Revisions, Build_Plan, Launch_Plan, Executive_Summary, README); the procurement Sheet now lists the 9704 ($479), a camera row ($58) and the IMT plan, total $5,041 (BOM line ids moved: A06-09 camera, A10-18 sensors, G01-13, S02 spare camera, S03 spare servo).
+- New runs use designs/revF_design.json from now on (the five-year re-runs after 041 included). Runs already made or running (043b) stay on Rev E3; the 60-day check shows Rev F sails the same.
+
 ## 2026-11-27, 19:15 UTC (14:15 local): Rev F drawn (proposed)
 
 - Randolph asked what a daily photo would take, then "Draw up the revision". Rev F = Rev E3 + RockBLOCK Plus 9704 (Iridium IMT) in the same bowl + a camera pod on the stern post (P28, P29). docs/Design_RevF.md, docs/Revisions.md.
