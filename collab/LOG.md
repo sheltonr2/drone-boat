@@ -2,6 +2,17 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-27, 02:30 UTC (21:30 local): 042B, v2 coasts, docs, Liz email, #50 draft
+
+- Nothing new on #50 or by email.
+- **042B** (approach south of Scilly, hold 30 km south of the Lizard): 80.8% (78.4-83.2). Paired with 039: A +3.6 (+0.9 to +6.3), B +5.0 (+2.4 to +7.6), B-A +1.4 (-0.7 to +3.5). Arrival x afloat after 3 days: 039 73%, A 76%, B 78%.
+- **040c:** the UKHO points re-fetched (2,179 off Cornwall). The layer has no attributes, so only points where EMODnet's seabed is shallower than 5 m count (300 points, 7 areas).
+- **v2 coasts built** (detail_*_v2.json): EMODnet patches under 2 m, UKHO hazards, wreck filter fixed. They load in 0.2 s; 20,000 land checks take 0.4 s. v1 is kept as run.
+- **Docs:** Launch_Plan.md has a new section on the accurate coastline (037/039/042), with the arrival row marked "under review". East_West_Study.md has section 13 on BVI pickup points (036/038), with the holding point marked "under review". No decisions were changed. Both decisions are with Randolph. Copied to the PC.
+- Sent the executive summary email to a friend of Randolph's, at his request.
+- #50 results post drafted (collab/post_2026-11-27_results.md); it waits for Randolph's approval.
+- Queue: 042 ended 20:40, 040c ran 20:41-20:41, and 041 (2025 weather) continues. The queue race fix and the five-year re-runs wait until 041 ends.
+
 ## 2026-11-27, 01:10 UTC (20:10 local): 3D viewer published; whole-boat STL
 
 - Randolph asked whether the 3D models could be shared, then chose GitHub Pages with the viewer only ("Lets do the viewer"). An orphan `gh-pages` branch now holds only build-files/viewer/index.html and model.json, plus .nojekyll and a README. GitHub enabled Pages from that branch automatically: https://sheltonr2.github.io/drone-boat/ loads with all parts and no errors (checked in the browser).
