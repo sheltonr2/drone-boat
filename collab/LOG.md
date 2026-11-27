@@ -2,6 +2,12 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-27, 02:20 UTC (21:20 local): #50 results posted; BVI pickup point decided
+
+- Randolph: "Make the #50 post." Posted ([comment 7207925031](https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-7207925031); text in collab/post_2026-11-27_results.md, with one line added for his BVI decision). The API shows exactly one new comment.
+- Randolph on the BVI: "Let's plan on norman but always run anegada too, not sure which yet." Read as the Norman offing, 18 km south of Norman (the point recommended over the old one 4 km south). East_West_Study updated: the plan is now Norman offing (18.17N 64.58W), with Anegada W (18.72N 64.49W) run alongside it in every study.
+- Cornwall (approach and hold): recommendation sent, decision still open.
+
 ## 2026-11-27, 02:30 UTC (21:30 local): 042B, v2 coasts, docs, Liz email, #50 draft
 
 - Nothing new on #50 or by email.

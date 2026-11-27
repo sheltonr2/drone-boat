@@ -4,7 +4,7 @@
 
 ## Bottom line
 
-- **Decided (18 Nov 2026):** east-west is the backup option. Launch from Mindelo, Cape Verde, between about 25 November and 5 January (mid-December is the target), via the southern approach to a holding point south of Norman and Peter Islands in the BVI, for a March arrival (**holding point under review 26 Nov 2026:** on the accurate coastline it is the worst of seven tested; section 13). The fallback is El Hierro or Gran Canaria routed via 20N 28W, launching mid-November to mid-December (section 10). Four winters of weather (section 12) confirm the ranking: Mindelo 87.8%, El Hierro 81.9%, Gran Canaria 78.4%.
+- **Decided (18 Nov 2026):** east-west is the backup option. Launch from Mindelo, Cape Verde, between about 25 November and 5 January (mid-December is the target), via the southern approach to a pickup point **18 km south of Norman Island (18.17N 64.58W)** in the BVI, for a March arrival. **Changed by Randolph on 26 Nov 2026** from the point 4 km south of Norman and Peter Islands, which on the accurate coastline is the worst of seven tested (section 13); 8 km west of Anegada (18.72N 64.49W) is run alongside it in every study until he chooses between them. The fallback is El Hierro or Gran Canaria routed via 20N 28W, launching mid-November to mid-December (section 10). Four winters of weather (section 12) confirm the ranking: Mindelo 87.8%, El Hierro 81.9%, Gran Canaria 78.4%.
 
 - **Westbound means the trade-wind route.** The boat would go from the Canary Islands (or Cape Verde) to the Lesser Antilles: about 4,500–4,900 km great circle, and about 5,200–5,600 km actually sailed. The wind and current push the boat west almost the whole way. This is also the route of the only small boat to have finished the Microtransat. Oshen's *C-Star PC13* (1.2 m) sailed from Gran Canaria to Barbados in 127 days in 2026 ([Crossing_History.md](Crossing_History.md)).
 - **The northern route (Europe to the US) is not a candidate.** It means beating into the westerlies and the Gulf Stream. Saildrone's 7 m SD 1021 did it in 68 days, but no small boat has. Run 020 confirmed it: 0 of 300 simulated voyages arrived (section 4b).
@@ -256,7 +256,7 @@ No crossing went aground on the way in to any point. A dead boat at any point dr
 - **Plan the recovery for the arrival,** as in Cornwall: the boat's ETA is known days ahead.
 - The gap east of 64.42W (Anegada) has no NOAA chart cover. v2 coastlines add EMODnet depth there (run 043 will re-check).
 
-**Decision for Randolph:** the BVI pickup point.
+**Decided (Randolph, 26 Nov 2026):** "Let's plan on norman but always run anegada too, not sure which yet." The plan's pickup point is now the Norman offing, 18 km south of Norman (18.17N 64.58W); Anegada W (18.72N 64.49W) is run alongside it in every study until he decides between them.
 
 ## 8. Earlier questions (14 Nov)
 
