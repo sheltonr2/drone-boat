@@ -39,6 +39,10 @@ This is a 1.5 m self-righting sailboat with a rigid wing sail, solar power and t
 
 From John's [boat-sim](https://github.com/jcolter11374/boat-sim) (MIT): the tow-test idea behind [Field tests](docs/Field_Tests.md), the panel-loss model for solar, arrival odds by launch month, and (from their notes in [boat-sim #50](https://github.com/jcolter11374/boat-sim/issues/50)) three fixes: no double-counted Stokes drift with Open-Meteo currents, Europe judged by Natural Earth country borders, and a 0.25° grid check (`python -m drone_sim.cli gridcheck`).
 
+## 3D viewer
+
+**[sheltonr2.github.io/drone-boat](https://sheltonr2.github.io/drone-boat/)**: the Rev E3 boat and every part in the browser (cut-away, X-ray, exploded view, sailing animation). It is published from the `gh-pages` branch, which holds only a copy of `build-files/viewer/` (index.html and model.json); copy both files there again when the viewer changes. GitHub also shows any `.stl` in 3D, for example the [whole boat](build-files/export/drone_boat_revE3_exterior.stl) and each [printed part](build-files/stl/).
+
 ## Live documents
 
 The docs in `docs/` are snapshots of living Claude Docs:

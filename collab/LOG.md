@@ -2,6 +2,12 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-27, 01:10 UTC (20:10 local): 3D viewer published; whole-boat STL
+
+- Randolph asked whether the 3D models could be shared, then chose GitHub Pages with the viewer only ("Lets do the viewer"). An orphan `gh-pages` branch now holds only build-files/viewer/index.html and model.json, plus .nojekyll and a README. GitHub enabled Pages from that branch automatically: https://sheltonr2.github.io/drone-boat/ loads with all parts and no errors (checked in the browser).
+- Added build-files/export/drone_boat_revE3_exterior.stl (9 MB, snapped to 1 mm, by build-files/source/export_stl.py) so GitHub's STL view shows the whole boat; checked that it renders.
+- An executive summary email to a friend of Randolph's goes out with the 21:05 update, at his request, with the public links (viewer, STLs, Bluewater, maps, repo).
+
 ## 2026-11-27, 00:45 UTC (19:45 local): run 038 in, run 042A in, depth data in
 
 - Nothing new on #50 or by email.
