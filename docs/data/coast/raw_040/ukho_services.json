@@ -1,0 +1,338 @@
+[
+ {
+  "name": "Hosted/Anguilla_Maritime_Limits",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/Anguilla_Maritime_Limits/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "Anguilla"
+   }
+  ]
+ },
+ {
+  "name": "Hosted/Aquaculture",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/Aquaculture/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "Aquaculture_Sites_Points"
+   },
+   {
+    "id": 1,
+    "name": "Aquaculture_Sites_Areas"
+   }
+  ]
+ },
+ {
+  "name": "Hosted/Birkenhead",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/Birkenhead/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "UKHO_satellite_derived_coastline_v2.1_birkenhead"
+   }
+  ]
+ },
+ {
+  "name": "Hosted/Dublin",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/Dublin/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "UKHO_satellite_derived_coastline_v2.1_dublin"
+   }
+  ]
+ },
+ {
+  "name": "Hosted/Dundrum_Bay",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/Dundrum_Bay/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "UKHO_satellite_derived_coastline_v2.1_dundrum_bay"
+   }
+  ]
+ },
+ {
+  "name": "Hosted/Floating_Oil_and_Gas_Surface_Installation",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/Floating_Oil_and_Gas_Surface_Installation/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "Floating Oil and Gas Surface Structures"
+   }
+  ]
+ },
+ {
+  "name": "Hosted/Isle_of_Mull",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/Isle_of_Mull/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "UKHO_satellite_derived_coastline_v2.1_isle_of_mull"
+   }
+  ]
+ },
+ {
+  "name": "Hosted/Maidstone",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/Maidstone/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "UKHO_satellite_derived_coastline_v2.1_maidstone"
+   }
+  ]
+ },
+ {
+  "name": "Hosted/Oil_and_Gas_Subsurface_Installations",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/Oil_and_Gas_Subsurface_Installations/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "UK OGSUBSUR"
+   }
+  ]
+ },
+ {
+  "name": "Hosted/Oil_and_Gas_Surface_Installations",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/Oil_and_Gas_Surface_Installations/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "OGSURF"
+   }
+  ]
+ },
+ {
+  "name": "Hosted/Pipelines1",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/Pipelines1/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "Pipelines"
+   }
+  ]
+ },
+ {
+  "name": "Hosted/Pipelines",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/Pipelines/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "Pipelines"
+   }
+  ]
+ },
+ {
+  "name": "Hosted/S_101_Electronic_Navigation_Chart",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/S_101_Electronic_Navigation_Chart/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "S-101 Electronic Navigation Chart"
+   }
+  ]
+ },
+ {
+  "name": "Hosted/S_128_Layer",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/S_128_Layer/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "S-128 Layer"
+   }
+  ]
+ },
+ {
+  "name": "Hosted/Ships_Routeing_Measures_(points_lines_areas)",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/Ships_Routeing_Measures_(points_lines_areas)/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "IMO_Routeing_Measures__Points_"
+   },
+   {
+    "id": 1,
+    "name": "IMO_Routeing_Measures__Lines_"
+   },
+   {
+    "id": 2,
+    "name": "IMO_Routeing_Measures__Areas_"
+   }
+  ]
+ },
+ {
+  "name": "Hosted/Ships_Routeing_Measures",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/Ships_Routeing_Measures/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "IMO Routeing Measures (Points)"
+   },
+   {
+    "id": 1,
+    "name": "IMO Routeing Measures (Lines)"
+   },
+   {
+    "id": 2,
+    "name": "IMO Routeing Measures (Areas)"
+   }
+  ]
+ },
+ {
+  "name": "Hosted/St_Michaels_Mount",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/St_Michaels_Mount/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "UKHO_satellite_derived_coastline_v2.1_st_michaels_mount"
+   }
+  ]
+ },
+ {
+  "name": "Hosted/UK_Automatic_Safety_Zones",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/UK_Automatic_Safety_Zones/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "UK Automatic Safety Zones"
+   }
+  ]
+ },
+ {
+  "name": "Hosted/UK_Continental_Shelf_Limit1",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/UK_Continental_Shelf_Limit1/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "UK_Continental_Shelf_Limit"
+   }
+  ]
+ },
+ {
+  "name": "Hosted/UK_Pipelines",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/UK_Pipelines/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "UK_Pipelines"
+   }
+  ]
+ },
+ {
+  "name": "Hosted/United_Kingdom_Territorial_Sea_Limit",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/United_Kingdom_Territorial_Sea_Limit/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "UK Territorial Limit"
+   }
+  ]
+ },
+ {
+  "name": "Hosted/vorf_blocks1",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/vorf_blocks1/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "vorf_blocks"
+   }
+  ]
+ },
+ {
+  "name": "Hosted/vorf_blocks",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/vorf_blocks/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "vorf_blocks"
+   }
+  ]
+ },
+ {
+  "name": "Hosted/Wind_Farm_Cables",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/Wind_Farm_Cables/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "Wind_Farm_Cables_Lines"
+   },
+   {
+    "id": 1,
+    "name": "Wind_Farm_Cable_Areas"
+   }
+  ]
+ },
+ {
+  "name": "Hosted/Wind_Farm_Structures",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/Wind_Farm_Structures/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "Wind_Farm_Surface_Structures"
+   }
+  ]
+ },
+ {
+  "name": "Hosted/Wind_Farm_Surface_Structure",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/Wind_Farm_Surface_Structure/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "Wind_Farm_Surface_Structures"
+   }
+  ]
+ },
+ {
+  "name": "Hosted/Wind_Farm_Surface_Structures_View",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/Wind_Farm_Surface_Structures_View/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "Wind_Farm_Surface_Structures"
+   }
+  ]
+ },
+ {
+  "name": "Hosted/Wrecks_and_Obstructions_within_UK_EEZ",
+  "type": "FeatureServer",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/Wrecks_and_Obstructions_within_UK_EEZ/FeatureServer",
+  "layers": [
+   {
+    "id": 0,
+    "name": "UK EEZ WrecksObstructions - Points"
+   },
+   {
+    "id": 1,
+    "name": "UK EEZ WrecksObstructions - Area"
+   }
+  ]
+ }
+]

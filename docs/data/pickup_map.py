@@ -19,7 +19,7 @@ INK, INK2, LAND, SEA, RING, PLAN = "#191919", "#666666", "#d9d6cf", "#ffffff", "
 CURRENT = {"bvi": "norman", "cornwall": "lizard"}
 # label offsets (dx, dy in degrees) chosen by hand so labels clear each other and the land
 OFF = {"norman": (-0.62, -0.36), "norman_offing": (0.12, -0.42), "ginger_se": (0.30, -0.12), "jvd_north": (-0.95, 0.20),
-       "anegada_west": (-1.02, 0.40), "anegada_north": (0.22, 0.30), "stcroix_north": (0.25, -0.22),
+       "anegada_west": (-1.02, 0.40), "anegada_north": (0.22, 0.30), "stcroix_north": (-0.78, -0.20),
        "lizard": (0.35, -0.05), "mounts": (-0.95, 0.20), "lizard_deep": (0.30, -0.30), "scilly_lizard": (-0.95, -0.38)}
 
 

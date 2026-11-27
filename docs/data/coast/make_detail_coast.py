@@ -14,7 +14,7 @@ Output: detail_<region>.json = {"name", "boxes": [[lat0, lat1, lon0, lon1]], "po
 
 Run from the repo root:  python docs/data/coast/make_detail_coast.py
 """
-import json, math, os
+import json, math, os, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -29,6 +29,11 @@ REGIONS = {
                      box=(34.83, 35.92, -76.25, -75.03), osm="osm_coast_hatteras.json", reef=None,
                      enc="noaa_enc_hatteras.json"),
 }
+# v2 (26 Nov 2026, Randolph: "Add the UK and EMODnet depth data"): also EMODnet DTM cells shallower than 2 m and
+# UK Hydrographic Office wrecks and obstructions (raw_040/, fetched by run 040 on the PC); the wreck filter fixed.
+V2 = dict(carib=dict(emodnet="raw_040/emodnet_dtm_carib.tif"), cornwall=dict(emodnet="raw_040/emodnet_dtm_cornwall.tif"),
+          hatteras=dict())
+SHALLOW_M = 2.0        # EMODnet cells whose mean depth is shallower than this (or above water) count as hazard
 ROCK_M = 2.0           # rocks/obstructions/wrecks with a charted depth (VALSOU) below this, or awash/drying/unknown
 ROCK_R_M = 40.0        # point hazards become 40 m-radius polygons
 
@@ -189,7 +194,29 @@ def enc_hazards(path, box):
     return polys, counts
 
 
-def build(region):
+def emodnet_shallows(tif, box, shallow_m=SHALLOW_M):
+    """EMODnet Bathymetry DTM (1/16 arc-minute, ~115 m; CC-BY 4.0) -> outlines of every patch of cells whose mean depth
+    is shallower than shallow_m or above water. Holes inside a patch (deep pockets) are filled, which errs safe.
+    Outlines follow the cell edges, simplified to within a quarter cell."""
+    import numpy as np, tifffile
+    from skimage.measure import find_contours, approximate_polygon
+    with tifffile.TiffFile(os.path.join(HERE, tif)) as t:
+        z = t.asarray().astype(float); M = t.pages[0].tags["ModelTransformationTag"].value
+    dx, x0, dy, y0 = M[0], M[3], -M[5], M[7]
+    m = np.pad((z > -shallow_m) & (z < 1e30), 1).astype(float)       # padded: patches touching the edge close there
+    rings = []
+    for c in find_contours(m, 0.5):
+        c = approximate_polygon(c, tolerance=0.25)
+        r, k = c[:, 0] - 1, c[:, 1] - 1
+        area = 0.5 * np.sum(k * np.roll(r, -1) - np.roll(k, -1) * r)
+        if area <= 0 or len(c) < 4: continue                          # a hole: skip (filled by its outer ring)
+        ring = [[round(x0 + (kk + 0.5) * dx, 6), round(y0 - (rr + 0.5) * dy, 6)] for rr, kk in zip(r, k)]
+        if ring[0] != ring[-1]: ring.append(ring[0])
+        if any(inside_box(q, box) for q in ring): rings.append(ring)
+    return rings
+
+
+def build(region, version="v1"):
     R = REGIONS[region]; box = R["box"]
     ways = json.load(open(os.path.join(HERE, R["osm"])))["ways"]
     closed, opens = join_ways(ways)
@@ -210,13 +237,34 @@ def build(region):
     if R.get("enc") and os.path.exists(os.path.join(HERE, R["enc"])):
         n0 = len(polys); hp, counts = enc_hazards(R["enc"], box); polys += hp
         layers["noaa_enc"] = [n0, len(polys)]; notes.append("NOAA ENC hazards: " + ", ".join(f"{k} {v}" for k, v in sorted(counts.items())))
-    out = dict(name=R["name"], boxes=[list(box)], polygons=polys, layers=layers, notes=notes,
-               sources=["OpenStreetMap contributors (ODbL 1.0)"] + (["NOAA Office of Coast Survey ENC Direct to GIS (not for navigation)"] if "noaa_enc" in layers else []))
-    json.dump(out, open(os.path.join(HERE, f"detail_{region}.json"), "w"), separators=(",", ":"))
+    src_extra = []
+    if version == "v2":
+        X = V2[region]
+        if X.get("emodnet") and os.path.exists(os.path.join(HERE, X["emodnet"])):
+            n0 = len(polys); polys += emodnet_shallows(X["emodnet"], box)
+            layers["emodnet"] = [n0, len(polys)]; notes.append(f"{len(polys) - n0} EMODnet DTM patches shallower than {SHALLOW_M:g} m")
+            src_extra.append("EMODnet Bathymetry Consortium, EMODnet Digital Bathymetry (DTM) (CC-BY 4.0)")
+        uk = [f for f in sorted(os.listdir(os.path.join(HERE, "raw_040"))) if f.startswith("ukho_wrecks_") and f.endswith(f"_{region}.geojson")] \
+            if os.path.isdir(os.path.join(HERE, "raw_040")) else []
+        if uk:
+            n0 = len(polys); hp, counts = ukho_hazards([os.path.join("raw_040", f) for f in uk], box); polys += hp
+            layers["ukho"] = [n0, len(polys)]; notes.append("UKHO wrecks and obstructions: " + ", ".join(f"{k} {v}" for k, v in sorted(counts.items())))
+            src_extra.append("UK Hydrographic Office, Wrecks and Obstructions (Open Government Licence v3.0; not for navigation)")
+    out = dict(name=R["name"] + (" + EMODnet/UKHO depth data (v2)" if version == "v2" else ""), boxes=[list(box)], polygons=polys, layers=layers, notes=notes,
+               sources=["OpenStreetMap contributors (ODbL 1.0)"] + (["NOAA Office of Coast Survey ENC Direct to GIS (not for navigation)"] if "noaa_enc" in layers else []) + src_extra)
+    json.dump(out, open(os.path.join(HERE, f"detail_{region}{'_v2' if version == 'v2' else ''}.json"), "w"), separators=(",", ":"))
     print(region, "; ".join(notes), f"; {sum(len(p) for p in polys)} vertices")
     return out
 
 
+def ukho_hazards(paths, box):
+    raise NotImplementedError("UKHO wreck fields are read once run 040c has fetched the point layer")
+
+
 if __name__ == "__main__":
+    # python make_detail_coast.py        -> detail_<region>.json (v1, as used by runs 036-042; note: rebuilding v1 now
+    #                                       would apply the fixed wreck filter, so the committed v1 files are kept as run)
+    # python make_detail_coast.py v2     -> detail_<region>_v2.json
+    ver = sys.argv[1] if len(sys.argv) > 1 else "v1"
     for r in REGIONS:
-        build(r)
+        build(r, ver)

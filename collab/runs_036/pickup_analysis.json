@@ -507,6 +507,39 @@
     "3": 82.2,
     "7": 54.6,
     "14": 38.4
+   },
+   "crossing": {
+    "runs": 1000,
+    "arrive": 88.0,
+    "ci95": [
+     85.9,
+     90.0
+    ],
+    "percent": {
+     "arrived_reporting": 66.6,
+     "arrived_tracked": 21.4,
+     "arrived_silent": 1.2,
+     "arrived_adrift": 0.2,
+     "at_sea_timeout": 3.1,
+     "aground": 0.0,
+     "lost": 7.5
+    },
+    "days_median": 85.0,
+    "groundings": {},
+    "arrival_months": {
+     "Mar": 443,
+     "Feb": 281,
+     "Apr": 125,
+     "Jan": 25,
+     "May": 5,
+     "Aug": 1
+    },
+    "storm_p_any": 0.0039
+   },
+   "p_pickup": {
+    "1": 85.9,
+    "3": 72.3,
+    "7": 48.0
    }
   },
   "jvd_north": {
@@ -652,6 +685,41 @@
     "3": 78.0,
     "7": 54.0,
     "14": 25.6
+   },
+   "crossing": {
+    "runs": 1000,
+    "arrive": 84.5,
+    "ci95": [
+     82.2,
+     86.7
+    ],
+    "percent": {
+     "arrived_reporting": 63.5,
+     "arrived_tracked": 21.0,
+     "arrived_silent": 2.3,
+     "arrived_adrift": 0.3,
+     "at_sea_timeout": 4.3,
+     "aground": 0.0,
+     "lost": 8.6
+    },
+    "days_median": 87.8,
+    "groundings": {},
+    "arrival_months": {
+     "Mar": 402,
+     "Feb": 264,
+     "Apr": 156,
+     "May": 13,
+     "Jan": 5,
+     "Jun": 2,
+     "Aug": 2,
+     "Jul": 1
+    },
+    "storm_p_any": 0.0041
+   },
+   "p_pickup": {
+    "1": 79.3,
+    "3": 65.9,
+    "7": 45.6
    }
   },
   "anegada_west": {
@@ -802,6 +870,41 @@
     "3": 95.6,
     "7": 91.0,
     "14": 80.6
+   },
+   "crossing": {
+    "runs": 1000,
+    "arrive": 82.4,
+    "ci95": [
+     80.1,
+     84.7
+    ],
+    "percent": {
+     "arrived_reporting": 63.1,
+     "arrived_tracked": 19.3,
+     "arrived_silent": 2.2,
+     "arrived_adrift": 0.3,
+     "at_sea_timeout": 4.9,
+     "aground": 0.0,
+     "lost": 10.2
+    },
+    "days_median": 87.1,
+    "groundings": {},
+    "arrival_months": {
+     "Mar": 384,
+     "Feb": 265,
+     "Apr": 139,
+     "May": 16,
+     "Jan": 9,
+     "Jun": 6,
+     "Jul": 4,
+     "Aug": 1
+    },
+    "storm_p_any": 0.0058
+   },
+   "p_pickup": {
+    "1": 81.2,
+    "3": 78.8,
+    "7": 75.0
    }
   },
   "anegada_north": {
@@ -952,6 +1055,41 @@
     "3": 91.8,
     "7": 81.8,
     "14": 66.2
+   },
+   "crossing": {
+    "runs": 1000,
+    "arrive": 78.7,
+    "ci95": [
+     76.1,
+     81.2
+    ],
+    "percent": {
+     "arrived_reporting": 60.1,
+     "arrived_tracked": 18.6,
+     "arrived_silent": 2.0,
+     "arrived_adrift": 0.6,
+     "at_sea_timeout": 5.3,
+     "aground": 0.0,
+     "lost": 13.4
+    },
+    "days_median": 87.2,
+    "groundings": {},
+    "arrival_months": {
+     "Mar": 352,
+     "Feb": 259,
+     "Apr": 139,
+     "May": 13,
+     "Jan": 11,
+     "Jul": 6,
+     "Jun": 6,
+     "Aug": 1
+    },
+    "storm_p_any": 0.0056
+   },
+   "p_pickup": {
+    "1": 76.3,
+    "3": 72.2,
+    "7": 64.4
    }
   },
   "stcroix_north": {
@@ -1095,6 +1233,41 @@
     "3": 93.4,
     "7": 81.4,
     "14": 65.4
+   },
+   "crossing": {
+    "runs": 1000,
+    "arrive": 85.9,
+    "ci95": [
+     83.8,
+     88.0
+    ],
+    "percent": {
+     "arrived_reporting": 66.2,
+     "arrived_tracked": 19.7,
+     "arrived_silent": 2.1,
+     "arrived_adrift": 0.3,
+     "at_sea_timeout": 2.8,
+     "aground": 0.0,
+     "lost": 8.9
+    },
+    "days_median": 84.8,
+    "groundings": {},
+    "arrival_months": {
+     "Mar": 401,
+     "Feb": 288,
+     "Apr": 117,
+     "Jan": 34,
+     "Jun": 8,
+     "May": 8,
+     "Jul": 2,
+     "Aug": 1
+    },
+    "storm_p_any": 0.0029
+   },
+   "p_pickup": {
+    "1": 83.3,
+    "3": 80.2,
+    "7": 69.9
    }
   }
  },
@@ -1772,6 +1945,22 @@
      "at_sea_timeout": 5.2,
      "aground": 6.4,
      "lost": 9.1
+    }
+   },
+   "042A south of Scilly, Lizard offing": {
+    "arrive": 79.4,
+    "ci95": [
+     76.9,
+     81.8
+    ],
+    "percent": {
+     "arrived_reporting": 54.4,
+     "arrived_tracked": 25.0,
+     "arrived_silent": 2.9,
+     "arrived_adrift": 0.4,
+     "at_sea_timeout": 4.9,
+     "aground": 2.7,
+     "lost": 9.7
     }
    }
   }

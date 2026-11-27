@@ -1,0 +1,37 @@
+{
+ "started": "2026-11-26 18:33:11",
+ "emodnet": {
+  "cornwall": {
+   "ok": true,
+   "via": "WCS 2.0.1",
+   "file": "emodnet_dtm_cornwall.tif"
+  },
+  "carib": {
+   "ok": true,
+   "via": "WCS 2.0.1",
+   "file": "emodnet_dtm_carib.tif"
+  },
+  "hatteras": {
+   "ok": false
+  }
+ },
+ "ukho": {
+  "catalogue_items": 102,
+  "services": 28,
+  "wreck_layers": {
+   "Hosted/Wrecks_and_Obstructions_within_UK_EEZ / UK EEZ WrecksObstructions - Points": {
+    "cornwall": 2179,
+    "carib": 0,
+    "hatteras": 0
+   },
+   "Hosted/Wrecks_and_Obstructions_within_UK_EEZ / UK EEZ WrecksObstructions - Area": {
+    "cornwall": 11,
+    "carib": 0,
+    "hatteras": 0
+   }
+  },
+  "wrecks_ok": true,
+  "survey_footprint_files": 0
+ },
+ "finished": "2026-11-26 18:34:26"
+}

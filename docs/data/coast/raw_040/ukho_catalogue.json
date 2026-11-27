@@ -1,0 +1,2571 @@
+[
+ {
+  "id": "049dcc7a4785493bafb9145ca0d0f688",
+  "title": "INSPIRE Wrecks UK EEZ_Points",
+  "type": "Shapefile",
+  "url": "",
+  "size": -1,
+  "snippet": "Live and charted wrecks within the UK EEZ",
+  "licenseInfo": "<font size='4' style='font-family: &quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, sans-serif;'>Please note that these files will only be updated annually.\u00a0The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0<a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' style='color: rgb(0, 121, 193); text-decoration-line: none;' target='_blank'>here</a>\u00a0</font><div style='font-family: &quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, sans-serif; font-size: 17px;'><font size='4'><br /></font></div><div style='font-family: &quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, sans-serif; font-size: 17px;'><font size='4'>Additionally:</font></div><ol><li><font size='4'>The data sets are not suitable for use in marine navigation or in the creation of navigational products.<br /></font></li><li><font size='4'>If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</font></li></ol>",
+  "extent": [
+   [
+    -14.375111100396914,
+    47.8333332995922
+   ],
+   [
+    3.296527800117934,
+    62.56666670030805
+   ]
+  ],
+  "modified": 1718816002434,
+  "typeKeywords": [
+   "ArcGIS Desktop",
+   "export:792e91cbdcbe49de947cf6d72a8a1811",
+   "Shapefile",
+   "Data",
+   "modified:1594321012622",
+   "Layer",
+   "Template"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "bc0b489b793f4b04b9d9116520f3dfd1",
+  "title": "INSPIRE Wrecks Areas UK EEZ",
+  "type": "Shapefile",
+  "url": "",
+  "size": -1,
+  "snippet": "INSPIRE Wrecks Areas",
+  "licenseInfo": "<span style='font-family: &quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px;'>Please note that these files will only be updated annually. The data sets are available under the Open Government Licence. The terms of the Licence can be accessed here</span><div style='font-family: &quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px;'><br /></div><div style='font-family: &quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px;'><div>Additionally:</div><div>The data sets are not suitable for use in marine navigation or in the creation of navigational products.</div><div>If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</div></div>",
+  "extent": [
+   [
+    -5.81950000025643,
+    49.45694999966037
+   ],
+   [
+    1.7833520004925658,
+    59.00466669979332
+   ]
+  ],
+  "modified": 1754913064802,
+  "typeKeywords": [
+   "modified:1605185459713",
+   "ArcGIS Desktop",
+   "export:ba074b5f2cd54be388da7e1525ea2e68",
+   "Shapefile",
+   "Data",
+   "Layer",
+   "Template"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "9772df125f4c463f879537379782e760",
+  "title": "INSPIRE Wrecks Points UK EEZ",
+  "type": "Shapefile",
+  "url": "",
+  "size": -1,
+  "snippet": "INSPIRE Wrecks Points",
+  "licenseInfo": "<span style='font-family: &quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px;'>Please note that these files will only be updated annually. The data sets are available under the Open Government Licence. The terms of the Licence can be accessed here</span><div style='font-family: &quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px;'><br /></div><div style='font-family: &quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px;'><div>Additionally:</div><div>The data sets are not suitable for use in marine navigation or in the creation of navigational products.</div><div>If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</div></div>",
+  "extent": [
+   [
+    -14.375111100460533,
+    47.83333329968435
+   ],
+   [
+    3.381533300390779,
+    62.56666670042305
+   ]
+  ],
+  "modified": 1754901518415,
+  "typeKeywords": [
+   "modified:1605185486050",
+   "ArcGIS Desktop",
+   "Shapefile",
+   "Data",
+   "export:a46e1c0d912d459fbaf723c347ee9b78",
+   "Layer",
+   "Template"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "3e721cf5eec1416b8fd41dacdbca498b",
+  "title": "Inspire Wrecks Points UK EEZ",
+  "type": "Shapefile",
+  "url": "",
+  "size": -1,
+  "snippet": "Inspire Wrecks Points UK EEZ",
+  "licenseInfo": "Please note that these files will only be updated annually. The data sets are available under the Open Government Licence. The terms of the Licence can be accessed here<div><br /></div><div><div>Additionally:</div><div>The data sets are not suitable for use in marine navigation or in the creation of navigational products.</div><div>If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</div></div>",
+  "extent": [
+   [
+    -14.375111100460533,
+    47.83333329968435
+   ],
+   [
+    3.381533300390779,
+    62.56666670042305
+   ]
+  ],
+  "modified": 1754901549058,
+  "typeKeywords": [
+   "export:7060684568eb4665a02b701c56f7cb7e",
+   "ArcGIS Desktop",
+   "Shapefile",
+   "Data",
+   "Layer",
+   "modified:1604672232564",
+   "Template"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "1aa31582b285461f81518007eeed9963",
+  "title": "Wrecks Layer External Export File Format",
+  "type": "Microsoft Excel",
+  "url": null,
+  "size": -1,
+  "snippet": "Wrecks Layer External Export File Format",
+  "licenseInfo": "This data set is made available free of charge under an Open Government Licence, which can be accessed here: https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/. Data sets are not suitable for use in marine navigation or in the creation of navigational products",
+  "extent": [],
+  "modified": 1749468795039,
+  "typeKeywords": [
+   "Data",
+   "Document",
+   "Microsoft Excel",
+   "xlsx"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "ce658be8787b46c0aa6a33e9454d5eea",
+  "title": "INSPIRE Wrecks Points",
+  "type": "Shapefile",
+  "url": "",
+  "size": -1,
+  "snippet": "",
+  "licenseInfo": "<div>Please note that these files will only be updated annually. The data sets are available under the Open Government Licence. The terms of the Licence can be accessed here\u00a0</div><div><br /></div><div>Additionally:</div><div>The data sets are not suitable for use in marine navigation or in the creation of navigational products.</div><div>If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</div><div><br /></div>",
+  "extent": [
+   [
+    -14.375111100460533,
+    47.83333329968435
+   ],
+   [
+    3.2965278001628775,
+    62.56666670042305
+   ]
+  ],
+  "modified": 1754901395896,
+  "typeKeywords": [
+   "ArcGIS Desktop",
+   "export:9b243ad1e4314650a7a33ef396a26693",
+   "Shapefile",
+   "Data",
+   "Layer",
+   "modified:1594383206490",
+   "Template"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "cd085a39d7a64a1fb9dc1846e092f42b",
+  "title": "INSPIRE Wrecks UK EEZ Areas",
+  "type": "Shapefile",
+  "url": "",
+  "size": -1,
+  "snippet": "",
+  "licenseInfo": "<div>Please note that these files will only be updated annually. The data sets are available under the Open Government Licence. The terms of the Licence can be accessed here\u00a0</div><div><br /></div><div>Additionally:</div><div>The data sets are not suitable for use in marine navigation or in the creation of navigational products.</div><div>If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</div><div><br /></div>",
+  "extent": [
+   [
+    -5.690570100400387,
+    50.35099999973635
+   ],
+   [
+    0.571474900277282,
+    57.26618049943905
+   ]
+  ],
+  "modified": 1754902693173,
+  "typeKeywords": [
+   "ArcGIS Desktop",
+   "modified:1594383248758",
+   "export:baf0966e218e43d98e39465a9db9dd68",
+   "Shapefile",
+   "Data",
+   "Layer",
+   "Template"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "535d9447814840418c001e3bbcf3db15",
+  "title": "INSPIRE Wrecks UK EE_Areas",
+  "type": "Shapefile",
+  "url": "",
+  "size": -1,
+  "snippet": "Live and charted wrecks within the UK EEZ",
+  "licenseInfo": "<font size='4' style='font-family: &quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, sans-serif;'>Please note that these files will only be updated annually.\u00a0The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0<a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' style='color: rgb(0, 121, 193); text-decoration-line: none;' target='_blank'>here</a>\u00a0</font><div style='font-family: &quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, sans-serif; font-size: 17px;'><font size='4'><br /></font></div><div style='font-family: &quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, sans-serif; font-size: 17px;'><font size='4'>Additionally:</font></div><ol><li><font size='4'>The data sets are not suitable for use in marine navigation or in the creation of navigational products.<br /></font></li><li><font size='4'>If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</font></li></ol>",
+  "extent": [
+   [
+    -14.375111100396914,
+    47.8333332995922
+   ],
+   [
+    3.296527800117934,
+    62.56666670030805
+   ]
+  ],
+  "modified": 1754901610917,
+  "typeKeywords": [
+   "ArcGIS Desktop",
+   "Shapefile",
+   "Data",
+   "Layer",
+   "Template"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "9fb6d22515294ef1b4fd4859c9be5cd6",
+  "title": "INSPIRE Wrecks UK EEZ Areas",
+  "type": "CSV Collection",
+  "url": "",
+  "size": -1,
+  "snippet": "",
+  "licenseInfo": "<div>Please note that these files will only be updated annually. The data sets are available under the Open Government Licence. The terms of the Licence can be accessed here\u00a0</div><div><br /></div><div>Additionally:</div><div>The data sets are not suitable for use in marine navigation or in the creation of navigational products.</div><div>If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</div><div><br /></div>",
+  "extent": [
+   [
+    -5.690570100400387,
+    50.35099999973635
+   ],
+   [
+    0.571474900277282,
+    57.26618049943905
+   ]
+  ],
+  "modified": 1754902733937,
+  "typeKeywords": [
+   "modified:1594383248758",
+   "export:baf0966e218e43d98e39465a9db9dd68",
+   "CSV Collection"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "4dbf2ace22bf4f9785fb445d0593bc2c",
+  "title": "Wrecks and Obstructions Shapefiles",
+  "type": "Shapefile",
+  "url": "",
+  "size": -1,
+  "snippet": "",
+  "licenseInfo": "",
+  "extent": [],
+  "modified": 1791816905323,
+  "typeKeywords": [
+   "ArcGIS Desktop",
+   "Data",
+   "Layer",
+   "Shapefile",
+   "Template"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "60c0908526b844a68494c038a457e1a7",
+  "title": "Wrecks and Obstructions Text File",
+  "type": "Code Sample",
+  "url": "",
+  "size": -1,
+  "snippet": "",
+  "licenseInfo": "",
+  "extent": [],
+  "modified": 1791817101441,
+  "typeKeywords": [
+   "C",
+   "Code",
+   "Sample"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "0c4cf4035bd64bb18b9b2b35054c2bfa",
+  "title": "Wreck Has Video",
+  "type": "Image",
+  "url": "",
+  "size": -1,
+  "snippet": "",
+  "licenseInfo": "",
+  "extent": [],
+  "modified": 1754651464172,
+  "typeKeywords": [
+   "png",
+   "Data",
+   "Image"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "2b5c363a7b664679931ffa6b572c5369",
+  "title": "no video",
+  "type": "Image",
+  "url": "",
+  "size": -1,
+  "snippet": "",
+  "licenseInfo": "",
+  "extent": [],
+  "modified": 1754909423858,
+  "typeKeywords": [
+   "png",
+   "Data",
+   "Image"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "58409a1b64f14f39b0eb7fa1468a382f",
+  "title": "Wrecks and Obstructions within UK EEZ",
+  "type": "Feature Service",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/Wrecks_and_Obstructions_within_UK_EEZ/FeatureServer",
+  "size": -1,
+  "snippet": "",
+  "licenseInfo": "",
+  "extent": [
+   [
+    -14.375111100396914,
+    47.8333332995922
+   ],
+   [
+    3.381533300021896,
+    62.56666670030805
+   ]
+  ],
+  "modified": 1755057291223,
+  "typeKeywords": [
+   "providerSDS",
+   "Feature Access",
+   "Feature Service",
+   "ArcGIS Server",
+   "Metadata",
+   "Service",
+   "Hosted Service",
+   "Data"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "44176cc106a948e0a4c14610bf3f9699",
+  "title": "Wrecks Layers Definitions",
+  "type": "Microsoft Excel",
+  "url": null,
+  "size": -1,
+  "snippet": null,
+  "licenseInfo": null,
+  "extent": [],
+  "modified": 1729508157311,
+  "typeKeywords": [
+   "Data",
+   "Document",
+   "Microsoft Excel",
+   "xlsx"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "ed71f7b4ae59462fbb32119ee2b69532",
+  "title": "Wrecks Video banner",
+  "type": "Image",
+  "url": "",
+  "size": -1,
+  "snippet": "",
+  "licenseInfo": "",
+  "extent": [],
+  "modified": 1754641574908,
+  "typeKeywords": [
+   "jpg",
+   "Data",
+   "Image"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "41bc426d3d1b45188383350e98cd2cda",
+  "title": "WrecksIcon",
+  "type": "Image",
+  "url": "",
+  "size": -1,
+  "snippet": "",
+  "licenseInfo": "",
+  "extent": [],
+  "modified": 1779876971383,
+  "typeKeywords": [
+   "png",
+   "Data",
+   "Image"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "34f06847efbe4c24953d2783d360e8fc",
+  "title": "UKHO_A_Guide_to_Bathymetry",
+  "type": "PDF",
+  "url": "",
+  "size": -1,
+  "snippet": "A guide to bathymetry Version 01 September 2020",
+  "licenseInfo": "",
+  "extent": [],
+  "modified": 1788269907395,
+  "typeKeywords": [
+   "PDF",
+   "Data",
+   "Document"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "614908addbcf444192453385993bb730",
+  "title": "UKHO Survey Specification Bathymetry",
+  "type": "PDF",
+  "url": "",
+  "size": -1,
+  "snippet": "UKHO Survey Specification Bathymetry (June 2022)",
+  "licenseInfo": "",
+  "extent": [],
+  "modified": 1779891568621,
+  "typeKeywords": [
+   "PDF",
+   "Data",
+   "Document"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "f429c8520ede449386423b9035b7804c",
+  "title": "Terrain with Labels",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "This work is licensed under the Esri Master License Agreement.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>View Terms of Use</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600176703000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "e85f325600bb47e2b39944c5b34303b1",
+  "title": "Sattellite Derived Bathymetry Specification",
+  "type": "PDF",
+  "url": "",
+  "size": -1,
+  "snippet": "Sattellite Derived Bathymetry Specification (Updated June 22)",
+  "licenseInfo": "",
+  "extent": [],
+  "modified": 1779893351908,
+  "typeKeywords": [
+   "PDF",
+   "Data",
+   "Document"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "31e06774e1b44a168032134c1ace3064",
+  "title": "Terrein met labels",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "Dit werk is gelicenseerd onder de Esri-hoofdlicentie-overeenkomst<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>Gebruiksvoorwaarden bekijken</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600176904000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "84b459e7762f43f59aa210dad631b94d",
+  "title": "Terreng med p\u00e5skrift",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "Dette arbeidet er lisensiert i henhold til Esris hovedlisensavtale.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>Vis bruksvilk\u00e5rene</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600176921000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "dc3aa6bfb50a4609bdd396daef45998c",
+  "title": "Terrain with Labels",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This item is in mature support.",
+  "licenseInfo": "This work is licensed under the Esri Master License Agreement.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>View Terms of Use</b></a>View Terms of UseView Terms of UseView Terms of Use",
+  "extent": [
+   [
+    -180,
+    -90
+   ],
+   [
+    180,
+    90
+   ]
+  ],
+  "modified": 1331249580000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels76404094",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "85d67aae8ece454fbc9c82bacdce93de",
+  "title": "\u041b\u0430\u043d\u0434\u0448\u0430\u0444\u0442 \u0437 \u043d\u0430\u043f\u0438\u0441\u0430\u043c\u0438",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "\u0426\u044e \u0440\u043e\u0431\u043e\u0442\u0443 \u043b\u0456\u0446\u0435\u043d\u0437\u043e\u0432\u0430\u043d\u043e \u043d\u0430 \u043f\u0456\u0434\u0441\u0442\u0430\u0432\u0456 \u0413\u0435\u043d\u0435\u0440\u0430\u043b\u044c\u043d\u043e\u0457 \u043b\u0456\u0446\u0435\u043d\u0437\u0456\u0439\u043d\u043e\u0457 \u0443\u0433\u043e\u0434\u0438 Esri.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>\u041f\u0435\u0440\u0435\u0433\u043b\u044f\u043d\u0443\u0442\u0438 \u0423\u043c\u043e\u0432\u0438 \u0432\u0438\u043a\u043e\u0440\u0438\u0441\u0442\u0430\u043d\u043d\u044f</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1667905666000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "522dcdabe1cd40db8355e09e534f6417",
+  "title": "Suolo con etichette",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "Questo prodotto \u00e8 concesso in licenza in base alle condizioni del Contratto di licenza principale Esri.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>Visualizza condizioni d'uso</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600090822000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "36fd4c184f7c49379a347b5fa110e9fa",
+  "title": "Terr\u00e6n med tekster",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "Dette arbejde er licenseret i henhold til Esri Master-licensaftalen.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>Vis vilk\u00e5r for anvendelse</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600176945000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "5f2825812b4646b7b452c1d48ba02ecf",
+  "title": "Domborzati t\u00e9rk\u00e9p felirattal",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "Ezt az anyagot az Esri Master licencmeg\u00e1llapod\u00e1s keret\u00e9ben biztos\u00edtjuk.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>Hazsn\u00e1lati felt\u00e9telek megtekint\u00e9se</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600177199000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "306dd67df0d247b790dbf400d33a9451",
+  "title": "Ter\u00e9n s popiskami",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "Toto dielo je licencovan\u00e9 pod Esri Master License Agreement.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b> Zobrazi\u0165 podmienky pou\u017eitia</a></b>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1605184540000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "22cc909de1854a7ca26a7984a13f9a41",
+  "title": "Etiketli Arazi",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "Bu \u00e7al\u0131\u015fma Esri Ana Lisans S\u00f6zle\u015fmesi ile korunmaktad\u0131r.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>Kullan\u0131m Ko\u015fullar\u0131n\u0131 G\u00f6r\u00fcnt\u00fcle</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600177042000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "73aaee5711444f33b827baf46f61d3a5",
+  "title": "Ter\u00e9n s popisky",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "Toto d\u00edlo je licencov\u00e1no podle hlavn\u00edch licen\u010dn\u00edch podm\u00ednek spole\u010dnosti Esri.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>Zobrazit podm\u00ednky pou\u017eit\u00ed</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600177055000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "8ea5c707f13f464880fac75f0a2a299c",
+  "title": "Relief z napisi",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "To delo je licencirano s krovno licen\u010dno pogodbo Esri.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>Ogled pogojev uporabe</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600177205000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "72fe49b2a4e9454191e5c773ff3a541b",
+  "title": "Terreno com R\u00f3tulos",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "Este trabalho encontra-se licenciado sob os termos do Esri Master License Agreement<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>View Terms of Use</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600176979000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "17953d94c74e4e17b3fb50614ce1e378",
+  "title": "K\u00f5rgusmudel kaardikirjadega",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "See t\u00f6\u00f6 on litsentseeritud Esri p\u00f5hilitsentsilepinguga.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>Kuva kasutustingimused</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600176993000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "ceac752303b8436a8bd2ae811ba424e8",
+  "title": "Teren sa oznakama",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "Rad je licenciran u skladu sa Glavnim ugovorom o licenciranju kompanije Esri.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>Pregled uslova upotrebe</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600177130000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "30ffdbe6965647ac9de4e5270387a423",
+  "title": "Terrain avec \u00e9tiquettes",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "Ce travail fait l\u2019objet d\u2019une licence dans le cadre du contrat de licence principal d\u2019Esri.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>Afficher les conditions d\u2019utilisation</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600176791000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "b9d955526a514c35bdbf6b92c3853749",
+  "title": "Terrain mit Beschriftungen",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "Diese Arbeit ist unter Esri Master License Agreement lizenziert.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>Nutzungsbedingungen anzeigen</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600176758000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "eca0cd18012b442f995327b1f9ab69aa",
+  "title": "\u0391\u03bd\u03ac\u03b3\u03bb\u03c5\u03c6\u03bf \u03bc\u03b5 \u03b5\u03c4\u03b9\u03ba\u03ad\u03c4\u03b5\u03c2",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "\u03a4\u03bf \u03ad\u03c1\u03b3\u03bf \u03b1\u03c5\u03c4\u03cc \u03b1\u03b4\u03b5\u03b9\u03bf\u03b4\u03bf\u03c4\u03b5\u03af\u03c4\u03b1\u03b9 \u03b1\u03c0\u03cc \u03c4\u03b7\u03bd \u039a\u03cd\u03c1\u03b9\u03b1 \u03a3\u03c5\u03bc\u03c6\u03c9\u03bd\u03af\u03b1 \u0386\u03b4\u03b5\u03b9\u03b1\u03c2 \u03a7\u03c1\u03ae\u03c3\u03b7\u03c2 \u03c4\u03b7\u03c2 Esri.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>\u03a0\u03c1\u03bf\u03b2\u03bf\u03bb\u03ae \u03cc\u03c1\u03c9\u03bd \u03c7\u03c1\u03ae\u03c3\u03b7\u03c2</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600177085000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "f279146484dd40078b3ff4d32f197ea9",
+  "title": "\u0110\u1ecba h\u00ecnh c\u00f3 D\u00e1n nh\u00e3n",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "S\u1ea3n ph\u1ea9m n\u00e0y \u0111\u01b0\u1ee3c c\u1ea5p ph\u00e9p theo Th\u1ecfa thu\u1eadn C\u1ea5p ph\u00e9p Ch\u00ednh th\u1ee9c c\u1ee7a Esri.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>Xem \u0110i\u1ec1u kho\u1ea3n S\u1eed d\u1ee5ng</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600177092000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "6e761c0fc48c4651988c820bfd0100e0",
+  "title": "Reljefas su \u017eym\u0117mis",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "\u0160is k\u016brinys licencijuotas pagal Esri pagrindin\u0119 licencin\u0119 sutart\u012f.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>Per\u017ei\u016br\u0117ti naudojimo s\u0105lygas</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600176938000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "667a04174f4b4f36ad85483527ac5ab6",
+  "title": "Maastokartta paikannimill\u00e4",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "T\u00e4m\u00e4 on Esri Master License -sopimuksen alaista sis\u00e4lt\u00f6\u00e4.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>N\u00e4yt\u00e4 k\u00e4ytt\u00f6ehdot</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600177020000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "5a6c874fd87246c18198db7a7729c4a4",
+  "title": "Terreno com R\u00f3tulos",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "Este trabalho est\u00e1 licenciado sob o Contrato de Licen\u00e7a Master da Esri.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>Visualizar Termos de Uso</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600176831000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "22559746821e4954be03b67f6edc60b0",
+  "title": "Terreng med p\u00e5skrift",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "Dette elementet er i Mature Support-fase.",
+  "licenseInfo": "Dette arbeidet er lisensiert i henhold til Esris hovedlisensavtale.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>Vis bruksvilk\u00e5rene</b></a>Vis bruksvilk\u00e5reneVis bruksvilk\u00e5reneVis bruksvilk\u00e5rene",
+  "extent": [
+   [
+    -180,
+    -90
+   ],
+   [
+    180,
+    90
+   ]
+  ],
+  "modified": 1337691764000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels76404094",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "d33d808723d14acbb9fb56da2fa50fac",
+  "title": "\ud130\ub808\uc778(\ub808\uc774\ube14 \ud3ec\ud568)",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "\uc774 \uc791\uc5c5\uc740 Esri \ub9c8\uc2a4\ud130 \ub77c\uc774\uc120\uc2a4 \ub3d9\uc758\uc11c\uc5d0 \ub530\ub978 \ub77c\uc774\uc120\uc2a4\uac00 \ubd80\uc5ec\ub418\uc5c8\uc2b5\ub2c8\ub2e4.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>\uc0ac\uc6a9 \uc57d\uad00 \ubcf4\uae30</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600176898000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "da9edeacbf5f462b8cb20a7fc58cab7e",
+  "title": "\u05e7\u05e8\u05e7\u05e2 \u05e2\u05dd \u05ea\u05d5\u05d5\u05d9\u05d5\u05ea",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "\u05e2\u05d1\u05d5\u05d3\u05ea \u05d6\u05d5 \u05d6\u05de\u05d9\u05e0\u05d4 \u05d1\u05de\u05e1\u05d2\u05e8\u05ea \u05d4\u05e1\u05db\u05dd \u05d4\u05e8\u05d9\u05e9\u05d9\u05d5\u05df \u05d4\u05e8\u05d0\u05e9\u05d9 \u05e9\u05dc Esri.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>\u05d4\u05e6\u05d2 \u05d0\u05ea \u05ea\u05e0\u05d0\u05d9 \u05d4\u05e9\u05d9\u05de\u05d5\u05e9</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600176970000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "a322f14d705e419487e6d0654090b219",
+  "title": "Teren s oznakama",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "Ovaj je rad licenciran prema Esrijevom ugovoru o glavnoj licenci.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>Prika\u017ei uvjete kori\u0161tenja</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600177154000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "a05bdf1e5dcc4194ae33272088383d26",
+  "title": "Terr\u00e4ng med etiketter",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "Detta arbete har licensierats under Esris huvudlicensavtal.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>Visa anv\u00e4ndarvillkor</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600176852000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "eef0fb98159e4f668dec5710706368e3",
+  "title": "Terrein met labels",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "Dit item valt onder Mature Support.",
+  "licenseInfo": "Dit werk is gelicenseerd onder de Esri-hoofdlicentie-overeenkomst<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>Gebruiksvoorwaarden bekijken</b></a>Gebruiksvoorwaarden weergevenGebruiksvoorwaarden weergevenGebruiksvoorwaarden weergeven",
+  "extent": [
+   [
+    -180,
+    -90
+   ],
+   [
+    180,
+    90
+   ]
+  ],
+  "modified": 1331250452000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels76404094",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "686e81fe54624569939ca662c0a2e529",
+  "title": "Reljefs ar kartes tekstiem",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "\u0160is darbs tiek licenc\u0113ts saska\u0146\u0101 ar Esri Licences pamatl\u012bgumu.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>Skat\u012bt lieto\u0161anas noteikumus</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600177017000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "c08c38d72bf24352814bca5ebcbff6c0",
+  "title": "Terreny amb etiquetes",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "Aquesta obra t\u00e9 llic\u00e8ncia sota l\u2019Acord marc de llic\u00e8ncies d\u2019Esri.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>Consulteu les Condicions d\u2019\u00fas</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600177224000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "4097312613b14cc59951f042a3101760",
+  "title": "Lahan dengan Label",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "Pekerjaan ini berlisensi berdasarkan Persetujuan Lisensi Utama Esri.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>Lihat Ketentuan Penggunaan</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600177178000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "e2358e58ae6949a7b3a11622639d2b1d",
+  "title": "Terreno con etiquetas",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "Esta obra tiene una licencia en el marco del Contrato principal de licencia de Esri<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>Ver t\u00e9rminos de uso</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600176781000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "08282f9cdec5488f8c57519de71200d6",
+  "title": "\u0422\u0435\u0440\u0435\u043d \u0438 \u0435\u0442\u0438\u043a\u0435\u0442\u0438",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "\u0422\u0430\u0437\u0438 \u0440\u0430\u0431\u043e\u0442\u0430 \u0435 \u043b\u0438\u0446\u0435\u043d\u0437\u0438\u0440\u0430\u043d\u0430 \u0441\u044a\u0433\u043b\u0430\u0441\u043d\u043e \u0420\u0430\u043c\u043a\u043e\u0432\u043e\u0442\u043e \u043b\u0438\u0446\u0435\u043d\u0437\u0438\u043e\u043d\u043d\u043e \u0441\u043f\u043e\u0440\u0430\u0437\u0443\u043c\u0435\u043d\u0438\u0435 \u043d\u0430 Esri.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>\u041f\u0440\u0435\u0433\u043b\u0435\u0434 \u043d\u0430 \u043e\u0431\u0449\u0438\u0442\u0435 \u0443\u0441\u043b\u043e\u0432\u0438\u044f</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1635172630000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "7b2604a13692455da87ef09c01437eab",
+  "title": "Teren s oznakama",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "Ovaj je rad licenciran prema Esrijevom ugovoru o glavnoj licenci.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>Prika\u017ei uvjete kori\u0161tenja</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600177171000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "0ac67a9a588e4b36b81a0fe15e11d701",
+  "title": "Teren cu etichete",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "Aceast\u0103 oper\u0103 este licen\u0163iat\u0103 sub Esri Master License Agreement.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>Vizualiza\u021bi Condi\u021biile de Utilizare</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600176875000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "230e1881efdd420bb152b6dc27915d87",
+  "title": "Teren z etykietami",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "Niniejsza praca jest chroniona Ramow\u0105 umow\u0105 licencyjn\u0105 firmy Esri.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>Wy\u015bwietl warunki u\u017cytkowania</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600176867000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "de595f1f24fc43448045f243443fb675",
+  "title": "Terrain \u0441 \u043d\u0430\u0434\u043f\u0438\u0441\u044f\u043c\u0438",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "\u042d\u0442\u0430 \u0440\u0430\u0431\u043e\u0442\u0430 \u043b\u0438\u0446\u0435\u043d\u0437\u0438\u0440\u0443\u0435\u0442\u0441\u044f Esri Master License Agreement.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>\u041f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0443\u0441\u043b\u043e\u0432\u0438\u044f \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600176805000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "08e14fc66fea4d41ba22592bcae2f8c9",
+  "title": "\u0e2a\u0e31\u0e0d\u0e25\u0e31\u0e01\u0e29\u0e13\u0e4c\u0e02\u0e2d\u0e07\u0e20\u0e39\u0e21\u0e34\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "\u0e07\u0e32\u0e19\u0e19\u0e35\u0e49\u0e44\u0e14\u0e49\u0e23\u0e31\u0e1a\u0e43\u0e1a\u0e2d\u0e19\u0e38\u0e0d\u0e32\u0e15\u0e20\u0e32\u0e22\u0e43\u0e15\u0e49\u0e02\u0e49\u0e2d\u0e15\u0e01\u0e25\u0e07\u0e01\u0e32\u0e23\u0e43\u0e2b\u0e49\u0e2d\u0e19\u0e38\u0e0d\u0e32\u0e15\u0e08\u0e32\u0e01 Esri \u0e41\u0e25\u0e49\u0e27<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>\u0e14\u0e39\u0e40\u0e07\u0e37\u0e48\u0e2d\u0e19\u0e44\u0e02\u0e01\u0e32\u0e23\u0e43\u0e0a\u0e49\u0e07\u0e32\u0e19</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600177063000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "d6b91db4a7c049cb94ab57dd487c7da1",
+  "title": "\u062a\u0636\u0627\u0631\u064a\u0633 \u0630\u0627\u062a \u0644\u0627\u0641\u062a\u0627\u062a \u062a\u0633\u0645\u064a\u0629",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "\u0647\u0630\u0627 \u0627\u0644\u0639\u0645\u0644 \u0645\u0631\u062e\u0635 \u062a\u062d\u062a \u0627\u062a\u0641\u0627\u0642\u064a\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635 \u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629 \u0644\u0640 Esri.<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>\u0639\u0631\u0636 \u0634\u0631\u0648\u0637 \u0627\u0644\u0627\u0633\u062a\u062e\u062f\u0627\u0645</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600176729000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "fa85b6fa96fd44f0be5f9d4843f704ce",
+  "title": "\u5e26\u6807\u6ce8\u7684 Terrain \u56fe",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "\u6b64\u670d\u52a1\u5df2\u83b7\u5f97 Esri \u4e3b\u8bb8\u53ef\u534f\u8bae<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>\u67e5\u770b\u4f7f\u7528\u6761\u6b3e</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600176713000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "edf56376ca2441e79a6434d2111cfcde",
+  "title": "\u5e36\u6a19\u7c64\u7684\u5730\u5f62\u5716",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "\u6b64\u670d\u52d9\u5df2\u7372\u5f97 Esri \u4e3b\u6388\u6b0a\u5354\u8b70\u3002<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>\u6aa2\u8996\u4f7f\u7528\u689d\u6b3e</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600177106000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "14a03ced6f3a4f0aaa88f2a9bfb187f2",
+  "title": "\u5e36\u6a19\u7c64\u7684\u5730\u5f62\u5716",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "\u6b64\u670d\u52d9\u5df2\u7372\u5f97 Esri \u4e3b\u6388\u6b0a\u5354\u8b70\u3002<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>\u6aa2\u8996\u4f7f\u7528\u689d\u6b3e</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600177133000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "030b15b02b164effa514c7147d8d9f7e",
+  "title": "\u30e9\u30d9\u30eb\u4ed8\u304d\u8d77\u4f0f\u56f3",
+  "type": "Web Map",
+  "url": null,
+  "size": -1,
+  "snippet": "This map features shaded relief imagery, bathymetry and coastal water features that provide neutral background with political boundaries and placenames for reference purposes.",
+  "licenseInfo": "\u3053\u306e\u4f5c\u696d\u306f\u3001Esri Master License Agreement \u306b\u57fa\u3065\u3044\u3066\u30e9\u30a4\u30bb\u30f3\u30b9\u304c\u4ed8\u4e0e\u3055\u308c\u3066\u3044\u307e\u3059\u3002<br /><a href='https://links.esri.com/agol_mla' target='_blank' rel='nofollow ugc noopener noreferrer'><b>\u5229\u7528\u898f\u7d04\u3092\u898b\u308b</b></a>",
+  "extent": [
+   [
+    -180,
+    -89.9962
+   ],
+   [
+    180,
+    89.9962
+   ]
+  ],
+  "modified": 1600176751000,
+  "typeKeywords": [
+   "ArcGIS Online",
+   "Explorer Web Map",
+   "Map",
+   "Online Map",
+   "sourceId#Terrain_with_Labels_Vector",
+   "Web Map"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "b619c20963af4b4aae2c33753871698d",
+  "title": "US Virgin Islands",
+  "type": "Mobile Map Package",
+  "url": null,
+  "size": -1,
+  "snippet": " ",
+  "licenseInfo": "To download and use this map in <a href='http://goto.arcgisonline.com/apps/navigator' rel='nofollow ugc' target='_blank'>ArcGIS Navigator</a>, you must be <b>signed in with an account that is licensed to use <a href='http://goto.arcgisonline.com/apps/navigator' rel='nofollow ugc' target='_blank'>ArcGIS Navigator</a></b>. Once you have <a href='http://goto.arcgisonline.com/apps/navigator/purchase' rel='nofollow ugc' target='_blank'>purchased Navigator</a> and <a href='http://goto.arcgisonline.com/apps/navigator/provision'  rel='nofollow ugc' target='_blank'>provisioned licenses</a> to users in your organization, those users can download any of the <a href='http://goto.arcgisonline.com/apps/navigator/maps' rel='nofollow ugc' target='_blank'>available maps</a> directly onto their Navigator device.<br/>To download and use this map in ArcGIS Pro, you must be <b>signed in with an account that is licensed to use <a href='https://www.esri.com/data/streetmap' rel='nofollow ugc' target='_blank'>ArcGIS StreetMap Premium</a></b> as an extension to ArcGIS Pro. Once you have purchased <a href='https://www.esri.com/data/streetmap' rel='nofollow ugc' target='_blank'>ArcGIS StreetMap Premium</a> and <a href='https://goto.arcgisonline.com/apps/pro_smp/provision' rel='nofollow ugc' target='_blank'>provisioned licenses</a> to users in your organization, those users can download any of the available StreetMap Premium maps directly from ArcGIS Pro.",
+  "extent": [
+   [
+    -65.1534374565998,
+    17.4334584839688
+   ],
+   [
+    -64.4248945166125,
+    18.7265157618364
+   ]
+  ],
+  "modified": 1444301050000,
+  "typeKeywords": [
+   "2D",
+   "ArcGIS Pro",
+   "Locator",
+   "Map",
+   "mmpk",
+   "Mobile",
+   "Transportation Network"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "12d62d1af02443d19ffcc45404a30d24",
+  "title": "United States",
+  "type": "Mobile Map Package",
+  "url": null,
+  "size": -1,
+  "snippet": " ",
+  "licenseInfo": "To download and use this map in <a href='http://goto.arcgisonline.com/apps/navigator' rel='nofollow ugc' target='_blank'>ArcGIS Navigator</a>, you must be <b>signed in with an account that is licensed to use <a href='http://goto.arcgisonline.com/apps/navigator' rel='nofollow ugc' target='_blank'>ArcGIS Navigator</a></b>. Once you have <a href='http://goto.arcgisonline.com/apps/navigator/purchase' rel='nofollow ugc' target='_blank'>purchased Navigator</a> and <a href='http://goto.arcgisonline.com/apps/navigator/provision'  rel='nofollow ugc' target='_blank'>provisioned licenses</a> to users in your organization, those users can download any of the <a href='http://goto.arcgisonline.com/apps/navigator/maps' rel='nofollow ugc' target='_blank'>available maps</a> directly onto their Navigator device.<br/>To download and use this map in ArcGIS Pro, you must be <b>signed in with an account that is licensed to use <a href='https://www.esri.com/data/streetmap' rel='nofollow ugc' target='_blank'>ArcGIS StreetMap Premium</a></b> as an extension to ArcGIS Pro. Once you have purchased <a href='https://www.esri.com/data/streetmap' rel='nofollow ugc' target='_blank'>ArcGIS StreetMap Premium</a> and <a href='https://goto.arcgisonline.com/apps/pro_smp/provision' rel='nofollow ugc' target='_blank'>provisioned licenses</a> to users in your organization, those users can download any of the available StreetMap Premium maps directly from ArcGIS Pro. ",
+  "extent": [
+   [
+    -179.677574823292,
+    -14.6771025406816
+   ],
+   [
+    179.999995508415,
+    71.7151590107901
+   ]
+  ],
+  "modified": 1568379521000,
+  "typeKeywords": [
+   "2D",
+   "ArcGIS Pro",
+   "Locator",
+   "Map",
+   "mmpk",
+   "Mobile",
+   "Transportation Network"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "1a7144417c9647a6b120d1fdc17e1422",
+  "title": "North America",
+  "type": "Mobile Map Package",
+  "url": null,
+  "size": -1,
+  "snippet": " ",
+  "licenseInfo": "To download and use this map in <a href='http://goto.arcgisonline.com/apps/navigator' rel='nofollow ugc' target='_blank'>ArcGIS Navigator</a>, you must be <b>signed in with an account that is licensed to use <a href='http://goto.arcgisonline.com/apps/navigator' rel='nofollow ugc' target='_blank'>ArcGIS Navigator</a></b>. Once you have <a href='http://goto.arcgisonline.com/apps/navigator/purchase' rel='nofollow ugc' target='_blank'>purchased Navigator</a> and <a href='http://goto.arcgisonline.com/apps/navigator/provision'  rel='nofollow ugc' target='_blank'>provisioned licenses</a> to users in your organization, those users can download any of the <a href='http://goto.arcgisonline.com/apps/navigator/maps' rel='nofollow ugc' target='_blank'>available maps</a> directly onto their Navigator device.<br/>To download and use this map in ArcGIS Pro, you must be <b>signed in with an account that is licensed to use <a href='https://www.esri.com/data/streetmap' rel='nofollow ugc' target='_blank'>ArcGIS StreetMap Premium</a></b> as an extension to ArcGIS Pro. Once you have purchased <a href='https://www.esri.com/data/streetmap' rel='nofollow ugc' target='_blank'>ArcGIS StreetMap Premium</a> and <a href='https://goto.arcgisonline.com/apps/pro_smp/provision' rel='nofollow ugc' target='_blank'>provisioned licenses</a> to users in your organization, those users can download any of the available StreetMap Premium maps directly from ArcGIS Pro.",
+  "extent": [
+   [
+    -179.677574823292,
+    -14.6771025406816
+   ],
+   [
+    179.999995508415,
+    83.4966513094224
+   ]
+  ],
+  "modified": 1568381080000,
+  "typeKeywords": [
+   "2D",
+   "ArcGIS Pro",
+   "Locator",
+   "Map",
+   "mmpk",
+   "Mobile",
+   "Transportation Network"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "706e6bf6ab7d489d817fe3e13dc91bd8",
+  "title": "Caribbean",
+  "type": "Mobile Map Package",
+  "url": null,
+  "size": -1,
+  "snippet": " ",
+  "licenseInfo": "To download and use this map in <a href='http://goto.arcgisonline.com/apps/navigator' rel='nofollow ugc' target='_blank'>ArcGIS Navigator</a>, you must be <b>signed in with an account that is licensed to use <a href='http://goto.arcgisonline.com/apps/navigator' rel='nofollow ugc' target='_blank'>ArcGIS Navigator</a></b>. Once you have <a href='http://goto.arcgisonline.com/apps/navigator/purchase' rel='nofollow ugc' target='_blank'>purchased Navigator</a> and <a href='http://goto.arcgisonline.com/apps/navigator/provision'  rel='nofollow ugc' target='_blank'>provisioned licenses</a> to users in your organization, those users can download any of the <a href='http://goto.arcgisonline.com/apps/navigator/maps' rel='nofollow ugc' target='_blank'>available maps</a> directly onto their Navigator device.<br/>To download and use this map in ArcGIS Pro, you must be <b>signed in with an account that is licensed to use <a href='https://www.esri.com/data/streetmap' rel='nofollow ugc' target='_blank'>ArcGIS StreetMap Premium</a></b> as an extension to ArcGIS Pro. Once you have purchased <a href='https://www.esri.com/data/streetmap' rel='nofollow ugc' target='_blank'>ArcGIS StreetMap Premium</a> and <a href='https://goto.arcgisonline.com/apps/pro_smp/provision' rel='nofollow ugc' target='_blank'>provisioned licenses</a> to users in your organization, those users can download any of the available StreetMap Premium maps directly from ArcGIS Pro.",
+  "extent": [
+   [
+    -85.3544504669038,
+    9.91947321149757
+   ],
+   [
+    -59.1633268300658,
+    27.310956198615
+   ]
+  ],
+  "modified": 1497259221948,
+  "typeKeywords": [
+   "2D",
+   "ArcGIS Pro",
+   "Locator",
+   "Map",
+   "mmpk",
+   "Mobile",
+   "Transportation Network"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "8beb2489a43a4a3ba6e7a748b73a2c9b",
+  "title": "British Virgin Islands Maritime Limits",
+  "type": "PDF",
+  "url": "",
+  "size": -1,
+  "snippet": "Current illustration of British Virgin Islands Maritime Limits.",
+  "licenseInfo": "<p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0<a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' target='_blank'>here</a></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>Additionally:</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>1. The data sets are not suitable for use in marine navigation or in the creation of navigational products.</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>2. If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</p>",
+  "extent": [],
+  "modified": 1779956403572,
+  "typeKeywords": [
+   "PDF",
+   "Data",
+   "Document"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "e32409114fa241f78c5e0b3a8a11a644",
+  "title": "United Kingdom Territorial Sea Limit",
+  "type": "Feature Service",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/United_Kingdom_Territorial_Sea_Limit/FeatureServer",
+  "size": -1,
+  "snippet": "Current UK Territorial Sea Limit",
+  "licenseInfo": "<div>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0<a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' style='color: rgb(0, 94, 149); font-family: Arial; font-size: 14.6667px;'>here</a></div><div><br /></div><div><div>Additionally:</div><div><br /></div><div>The data sets are not suitable for use in marine navigation or in the creation of navigational products.</div><div>If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</div></div>",
+  "extent": [
+   [
+    -14.059362999802499,
+    49.30415170004095
+   ],
+   [
+    2.134836800178214,
+    61.06024830031887
+   ]
+  ],
+  "modified": 1755057279497,
+  "typeKeywords": [
+   "providerSDS",
+   "Feature Access",
+   "Feature Service",
+   "ArcGIS Server",
+   "Metadata",
+   "Service",
+   "Hosted Service",
+   "Data"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "a4ae723016944e54bbe86d0c660f8a27",
+  "title": "UK Territorial Sea Limit",
+  "type": "PDF",
+  "url": "",
+  "size": -1,
+  "snippet": "Current illustration of UK Territorial Sea Limit.",
+  "licenseInfo": "<p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0<a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' target='_blank'>here</a></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>Additionally:</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>1. The data sets are not suitable for use in marine navigation or in the creation of navigational products.</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>2. If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</p>",
+  "extent": [],
+  "modified": 1780412464197,
+  "typeKeywords": [
+   "Data",
+   "Document",
+   "PDF"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "4124682d89e244ab8468a3803889d831",
+  "title": "British Indian Ocean Territory Maritime Limits",
+  "type": "PDF",
+  "url": "",
+  "size": -1,
+  "snippet": "Current illustration of British Indian Ocean Territory Maritime Limits.",
+  "licenseInfo": "<p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0<a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' target='_blank'>here</a></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>Additionally:</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>1. The data sets are not suitable for use in marine navigation or in the creation of navigational products.</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>2. If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</p>",
+  "extent": [],
+  "modified": 1779958055985,
+  "typeKeywords": [
+   "PDF",
+   "Data",
+   "Document"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "9589123813cb4047909b31a1186f1bf3",
+  "title": "British Antarctic Territory Maritime Limits",
+  "type": "PDF",
+  "url": "",
+  "size": -1,
+  "snippet": "Current illustration of British Antarctic Territory Maritime Limits.",
+  "licenseInfo": "<p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0<a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' target='_blank'>here</a></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>Additionally:</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>1. The data sets are not suitable for use in marine navigation or in the creation of navigational products.</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>2. If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</p>",
+  "extent": [],
+  "modified": 1779958186665,
+  "typeKeywords": [
+   "PDF",
+   "Data",
+   "Document"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "4a2ea8ea3bf14677bb118b6496618ade",
+  "title": "UK Territorial Sea Limit",
+  "type": "CSV Collection",
+  "url": "",
+  "size": -1,
+  "snippet": "Current UK Territorial Sea Limit",
+  "licenseInfo": "<div>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0<a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' style='color: rgb(0, 94, 149); font-family: Arial; font-size: 14.6667px;'>here</a></div><div><br /></div><div><div>Additionally:</div><div><br /></div><div>The data sets are not suitable for use in marine navigation or in the creation of navigational products.</div><div>If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</div></div>",
+  "extent": [
+   [
+    -14.059362999802499,
+    49.30415170004095
+   ],
+   [
+    2.134836800178214,
+    61.06024830031887
+   ]
+  ],
+  "modified": 1754642339647,
+  "typeKeywords": [
+   "export:e32409114fa241f78c5e0b3a8a11a644",
+   "CSV Collection",
+   "modified:1596536819435"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "607b7a323556430fb771eae892173d51",
+  "title": "British Indian Ocean Territory Maritime Limits",
+  "type": "Shapefile",
+  "url": "",
+  "size": -1,
+  "snippet": "",
+  "licenseInfo": "<div>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed here</div><div><br /></div><div>\u00a0</div><div><br /></div><div>Additionally:</div><div><br /></div><div>The data sets are not suitable for use in marine navigation or in the creation of navigational products.</div><div>If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</div>",
+  "extent": [
+   [
+    71.18652390007905,
+    -7.4958965001922575
+   ],
+   [
+    72.54662509997736,
+    -5.185009600337716
+   ]
+  ],
+  "modified": 1754904354126,
+  "typeKeywords": [
+   "ArcGIS Desktop",
+   "export:137ceca05c734867be5a0d72154bbd04",
+   "modified:1607442097593",
+   "Shapefile",
+   "Data",
+   "Layer",
+   "Template"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "bf77b2ac1b654efc95dc3665c0501e23",
+  "title": "UK Hydrographic Office Maritime Limits and Boundaries",
+  "type": "Shapefile",
+  "url": "",
+  "size": -1,
+  "snippet": "",
+  "licenseInfo": "<div><p style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;\nline-height:normal;background:white'><span style='font-size:12.0pt;font-family:\n&quot;Helvetica&quot;,sans-serif;mso-fareast-font-family:&quot;Times New Roman&quot;;color:#4C4C4C;\nmso-fareast-language:EN-GB'>Copyright Notice</span></p>\n\n<p style='background:white'><span style='font-size:10.0pt;\nline-height:107%;font-family:&quot;Helvetica&quot;,sans-serif;color:#4C4C4C'>\u00a9 UK\nHydrographic Office</span></p>\n\n<p style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;\nline-height:normal;background:white'><span style='font-size:10.0pt;font-family:\n&quot;Helvetica&quot;,sans-serif;mso-fareast-font-family:&quot;Times New Roman&quot;;color:#4C4C4C;\nmso-fareast-language:EN-GB'>This United Kingdom, Overseas Territories and Crown\nDependencies Limits and Boundaries Dataset is licensed under the Open\nGovernment Licence v3.0 except where otherwise stated</span></p>\n\n<p style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;\nline-height:normal;background:white'><span style='font-size:12.0pt;font-family:\n&quot;Helvetica&quot;,sans-serif;mso-fareast-font-family:&quot;Times New Roman&quot;;color:#4C4C4C;\nmso-fareast-language:EN-GB'>Attribution</span></p>\n\n<p style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;\nline-height:normal;background:white'><span style='font-size:10.0pt;font-family:\n&quot;Helvetica&quot;,sans-serif;mso-fareast-font-family:&quot;Times New Roman&quot;;color:#4C4C4C;\nmso-fareast-language:EN-GB'>When you use this information under the OGL, you\nshould include the following attribution: United Kingdom, Overseas Territories\nand Crown Dependencies Limits and Boundaries Dataset, UK Hydrographic\nOffice,\u00a0Jan 19, 2023, licensed under the Open Government\nLicence\u00a0https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/</span></p>\n\n<p style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;\nline-height:normal;background:white'><span style='font-size:10.0pt;font-family:\n&quot;Helvetica&quot;,sans-serif;mso-fareast-font-family:&quot;Times New Roman&quot;;color:#4C4C4C;\nmso-fareast-language:EN-GB'>For illustrative purposes only. Correct at time of\ndata issue, not maintained. Not prejudicial to delimitation.</span></p><font face='Helvetica, sans-serif'><span style='font-size: 16px;'></span></font></div>",
+  "extent": [],
+  "modified": 1779955549593,
+  "typeKeywords": [
+   "ArcGIS Desktop",
+   "Shapefile",
+   "Data",
+   "Layer",
+   "Template"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "6c97250f46824e22a704cb9f813a1fbc",
+  "title": "Anguilla Maritime Limits",
+  "type": "Feature Service",
+  "url": "https://datahub.admiralty.co.uk/server/rest/services/Hosted/Anguilla_Maritime_Limits/FeatureServer",
+  "size": -1,
+  "snippet": "Current Anguilla Maritime Limits",
+  "licenseInfo": "<p style='margin: 0cm 0cm 0pt; font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; line-height: normal;'><span style='background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: Arial, sans-serif;'><font size='3'>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0</font><a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' target='_blank'><span style='color: rgb(0, 121, 193); text-decoration-line: none;'><font size='3'>here</font></span></a></span></p><font color='#000000' size='3' style='font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;'></font><p style='margin: 0cm 0cm 0pt; font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; line-height: normal;'><span style='font-family: Arial, sans-serif;'><font size='3'>\u00a0</font></span></p><font color='#000000' size='3' style='font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;'></font><p style='margin: 0cm 0cm 0pt; font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; line-height: normal;'><span style='font-family: Arial, sans-serif;'><font size='3'>Additionally:</font></span></p><font color='#000000' size='3' style='font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;'></font><ol><font color='#000000' size='3'></font><li><span style='font-family: Arial, sans-serif;'>The data sets are not suitable for use in marine navigation or in the creation of navigational products.</span></li><font color='#000000' size='3'></font><li><span style='font-family: Arial, sans-serif;'>If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</span></li></ol>",
+  "extent": [
+   [
+    -63.89805550053596,
+    17.943611100055765
+   ],
+   [
+    -60.74626680028438,
+    21.90537269976089
+   ]
+  ],
+  "modified": 1755057274570,
+  "typeKeywords": [
+   "providerSDS",
+   "Feature Access",
+   "Feature Service",
+   "ArcGIS Server",
+   "Metadata",
+   "Service",
+   "Hosted Service",
+   "Data"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "05bd4394d25d4b0fb4a1ab0b552ec620",
+  "title": "UK Exclusive Economic Zone",
+  "type": "PDF",
+  "url": "",
+  "size": -1,
+  "snippet": "Current illustration of UK Exclusive Economic Zone.",
+  "licenseInfo": "<p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0<a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' target='_blank'>here</a></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>Additionally:</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>1. The data sets are not suitable for use in marine navigation or in the creation of navigational products.</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>2. If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</p>",
+  "extent": [],
+  "modified": 1780412480449,
+  "typeKeywords": [
+   "Data",
+   "Document",
+   "PDF"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "9751e781ab20474aa8cd32ddae0e9fc0",
+  "title": "Gibraltar Maritime Limits",
+  "type": "PDF",
+  "url": "",
+  "size": -1,
+  "snippet": "Current illustration of Gibraltar Maritime Limits.",
+  "licenseInfo": "<p style='font-variant-numeric: normal; font-variant-east-asian: normal; background-color: transparent; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px;'>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0<a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' target='_blank'>here</a></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; background-color: transparent; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px;'></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; background-color: transparent; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px;'>Additionally:</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; background-color: transparent; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px;'>1. The data sets are not suitable for use in marine navigation or in the creation of navigational products.</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; background-color: transparent; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px;'>2. If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</p>",
+  "extent": [],
+  "modified": 1780009221073,
+  "typeKeywords": [
+   "PDF",
+   "Data",
+   "Document"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "161f0370ea524a95901cd63ea1cdf09d",
+  "title": "Falklands Islands Maritime Limits",
+  "type": "PDF",
+  "url": "",
+  "size": -1,
+  "snippet": "Current illustration of Falklands Islands Maritime Limits.",
+  "licenseInfo": "<p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0<a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' target='_blank'>here</a></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>Additionally:</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>1. The data sets are not suitable for use in marine navigation or in the creation of navigational products.</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>2. If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</p>",
+  "extent": [],
+  "modified": 1779956475950,
+  "typeKeywords": [
+   "PDF",
+   "Data",
+   "Document"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "3fe89bae985947729e36f31aab8d5596",
+  "title": "Cyprus Sovereign Base Areas Maritime Limits",
+  "type": "PDF",
+  "url": "",
+  "size": -1,
+  "snippet": "Current illustration of Cyprus Sovereign Base Areas Maritime Limits.",
+  "licenseInfo": "<p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0<a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' target='_blank'>here</a></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>Additionally:</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>1. The data sets are not suitable for use in marine navigation or in the creation of navigational products.</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>2. If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</p>",
+  "extent": [],
+  "modified": 1779956331449,
+  "typeKeywords": [
+   "PDF",
+   "Data",
+   "Document"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "0468c38f1c8d4c398b9ba06ece3e29b1",
+  "title": "Channel Islands Maritime Limits",
+  "type": "PDF",
+  "url": "",
+  "size": -1,
+  "snippet": "Current illustration of Channel Islands Maritime Limits.",
+  "licenseInfo": "<p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0<a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' target='_blank'>here</a></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>Additionally:</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>1. The data sets are not suitable for use in marine navigation or in the creation of navigational products.</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>2. If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</p>",
+  "extent": [],
+  "modified": 1779955828903,
+  "typeKeywords": [
+   "PDF",
+   "Data",
+   "Document"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "500eebaf16d64374a0a2a045011a55c0",
+  "title": "Renewable Energy Zone Designation of Area Scottish Ministers Order 2005",
+  "type": "PDF",
+  "url": "",
+  "size": -1,
+  "snippet": "Current illustration of Renewable Energy Zone Designation of Area Scottish Ministers Order 2005.",
+  "licenseInfo": "<p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0<a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' target='_blank'>here</a></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>Additionally:</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>1. The data sets are not suitable for use in marine navigation or in the creation of navigational products.</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>2. If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</p>",
+  "extent": [],
+  "modified": 1779957865104,
+  "typeKeywords": [
+   "PDF",
+   "Data",
+   "Document"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "4c2146a6dbe74975a7cd4f3bace2a32b",
+  "title": "St Helena Maritime Limits",
+  "type": "PDF",
+  "url": "",
+  "size": -1,
+  "snippet": "Current illustration of St Helena Maritime Limits.",
+  "licenseInfo": "<p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0<a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' target='_blank'>here</a></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>Additionally:</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>1. The data sets are not suitable for use in marine navigation or in the creation of navigational products.</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>2. If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</p>",
+  "extent": [],
+  "modified": 1779958532721,
+  "typeKeywords": [
+   "PDF",
+   "Data",
+   "Document"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "012e595b6b3446028e863fb4b0be2c5c",
+  "title": "Pitcairn Group Maritime Limits",
+  "type": "PDF",
+  "url": "",
+  "size": -1,
+  "snippet": "Current illustration of Pitcairn Group Maritime Limits.",
+  "licenseInfo": "<p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0<a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' target='_blank'>here</a></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>Additionally:</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>1. The data sets are not suitable for use in marine navigation or in the creation of navigational products.</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>2. If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</p>",
+  "extent": [],
+  "modified": 1779958258996,
+  "typeKeywords": [
+   "PDF",
+   "Data",
+   "Document"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "dd8155d6fac74b6a876eae76c97650ce",
+  "title": "South Georgia and the South Sandwich Islands Maritime Limits",
+  "type": "PDF",
+  "url": "",
+  "size": -1,
+  "snippet": "Maritime Limits for South Georgia and the South Sandwich Islands.",
+  "licenseInfo": "<p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>Terms of Use</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0<a href='https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' target='_blank'>here</a></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>Additionally:</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>1. The data sets are not suitable for use in marine navigation or in the creation of navigational products.</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>2. If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</p>",
+  "extent": [],
+  "modified": 1779958125951,
+  "typeKeywords": [
+   "PDF",
+   "Data",
+   "Document"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "f9c1d71256b043329f57ae99ba112cbb",
+  "title": "Ascension Island Maritime Limits",
+  "type": "PDF",
+  "url": "",
+  "size": -1,
+  "snippet": "Current illustration of Ascension Island Maritime Limits.",
+  "licenseInfo": "<p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0<a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' target='_blank'>here</a></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>Additionally:</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>1. The data sets are not suitable for use in marine navigation or in the creation of navigational products.</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>2. If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</p>",
+  "extent": [],
+  "modified": 1779958594379,
+  "typeKeywords": [
+   "PDF",
+   "Data",
+   "Document"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "7b3ba3e7093248fabb7c8d39ca1abd4b",
+  "title": "Tristan Da Cunha and Gough Island Maritime Limits",
+  "type": "PDF",
+  "url": "",
+  "size": -1,
+  "snippet": "Maritime Limits for Tristan Da Cunha and Gough Island.\n\n",
+  "licenseInfo": "<p style='margin-top: 0px; margin-bottom: 1.55rem; font-variant-numeric: normal; font-variant-east-asian: normal; background-color: transparent; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px;'>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0<a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' style='color: rgb(0, 121, 193); text-decoration-line: none;' target='_blank'>here</a></p><p style='margin-top: 0px; margin-bottom: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; background-color: transparent; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px;'></p><p style='margin-top: 0px; margin-bottom: 1.55rem; font-variant-numeric: normal; font-variant-east-asian: normal; background-color: transparent; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px;'>Additionally:</p><p style='margin-top: 0px; margin-bottom: 1.55rem; font-variant-numeric: normal; font-variant-east-asian: normal; background-color: transparent; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px;'>1. The data sets are not suitable for use in marine navigation or in the creation of navigational products.</p><p style='margin-top: 0px; margin-bottom: 1.55rem; font-variant-numeric: normal; font-variant-east-asian: normal; background-color: transparent; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px;'>2. If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</p>",
+  "extent": [],
+  "modified": 1779958391163,
+  "typeKeywords": [
+   "PDF",
+   "Data",
+   "Document"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "71f0dbaebdc74abfb9d991b385bc50dc",
+  "title": "Turks and Caicos Islands Maritime Limits",
+  "type": "PDF",
+  "url": "",
+  "size": -1,
+  "snippet": "Current illustration of Turks and Caicos Islands Maritime Limits.",
+  "licenseInfo": "<p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0<a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' target='_blank'>here</a></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>Additionally:</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>1. The data sets are not suitable for use in marine navigation or in the creation of navigational products.</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>2. If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</p>",
+  "extent": [],
+  "modified": 1779956244748,
+  "typeKeywords": [
+   "PDF",
+   "Data",
+   "Document"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "8f73586561894d61a5ea645e6f3adee6",
+  "title": "Anguilla Maritime Limits",
+  "type": "PDF",
+  "url": "",
+  "size": -1,
+  "snippet": "Current illustration of Anguilla Maritime Limits.",
+  "licenseInfo": "<p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0<a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' target='_blank'>here</a></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>Additionally:</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>1. The data sets are not suitable for use in marine navigation or in the creation of navigational products.</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>2. If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</p>",
+  "extent": [],
+  "modified": 1779958756224,
+  "typeKeywords": [
+   "PDF",
+   "Data",
+   "Document"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "bf25a5a4baad443990ceb429102b2b63",
+  "title": "Cayman Islands Maritime Limits",
+  "type": "PDF",
+  "url": "",
+  "size": -1,
+  "snippet": "Current illustration of Cayman Islands Maritime Limits.",
+  "licenseInfo": "<p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0<a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' target='_blank'>here</a></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>Additionally:</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>1. The data sets are not suitable for use in marine navigation or in the creation of navigational products.</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>2. If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</p>",
+  "extent": [],
+  "modified": 1779958814815,
+  "typeKeywords": [
+   "PDF",
+   "Data",
+   "Document"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "217ed5f8a4104b6681bf812392c343c3",
+  "title": "UK Hydrographic Office Maritime Limits and Boundaries",
+  "type": "Shapefile",
+  "url": "",
+  "size": -1,
+  "snippet": "",
+  "licenseInfo": "<p style='background-image:initial; background-position:initial; background-size:initial; background-repeat:initial; background-attachment:initial; background-origin:initial; background-clip:initial;'><span style='font-size:12pt; font-family:Helvetica, sans-serif;'>Copyright Notice</span></p><p style='background-image:initial; background-position:initial; background-size:initial; background-repeat:initial; background-attachment:initial; background-origin:initial; background-clip:initial;'><span style='font-size:10pt; font-family:Helvetica, sans-serif;'>\u00a9 UK Hydrographic Office</span></p><p style='background-image:initial; background-position:initial; background-size:initial; background-repeat:initial; background-attachment:initial; background-origin:initial; background-clip:initial;'><span style='font-size:10pt; font-family:Helvetica, sans-serif;'>This United Kingdom, Overseas Territories and Crown Dependencies Limits and Boundaries Dataset is licensed under the Open Government Licence v3.0 except where otherwise stated</span></p><p style='background-image:initial; background-position:initial; background-size:initial; background-repeat:initial; background-attachment:initial; background-origin:initial; background-clip:initial;'><span style='font-size:12pt; font-family:Helvetica, sans-serif;'>Attribution</span></p><p style='background-image:initial; background-position:initial; background-size:initial; background-repeat:initial; background-attachment:initial; background-origin:initial; background-clip:initial;'><span style='font-size:10pt; font-family:Helvetica, sans-serif;'>When you use this information under the OGL, you should include the following attribution: United Kingdom, Overseas Territories and Crown Dependencies Limits and Boundaries Dataset, UK Hydrographic Office, Jan 19, 2023, licensed under the Open Government Licence https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/</span></p><p style='background-image:initial; background-position:initial; background-size:initial; background-repeat:initial; background-attachment:initial; background-origin:initial; background-clip:initial;'><span style='font-size:10pt; font-family:Helvetica, sans-serif;'>For illustrative purposes only. Correct at time of data issue, not maintained. Not prejudicial to delimitation.</span></p>",
+  "extent": [],
+  "modified": 1795188055340,
+  "typeKeywords": [
+   "ArcGIS Desktop",
+   "Data",
+   "Layer",
+   "Shapefile",
+   "Template",
+   "zip"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "5cc7640ab11e43ceb46bed149c696569",
+  "title": "UK Continental Shelf",
+  "type": "PDF",
+  "url": "",
+  "size": -1,
+  "snippet": "Current illustration of UK Continental Shelf.",
+  "licenseInfo": "<p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0<a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' target='_blank'>here</a></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>Additionally:</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>1. The data sets are not suitable for use in marine navigation or in the creation of navigational products.</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>2. If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</p>",
+  "extent": [],
+  "modified": 1779958330135,
+  "typeKeywords": [
+   "PDF",
+   "Data",
+   "Document"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "946db5fc574d466485c4ea242d88359c",
+  "title": "Bermuda Fixed Baseline",
+  "type": "Shapefile",
+  "url": "",
+  "size": -1,
+  "snippet": "Current Bermuda Fixed Baseline",
+  "licenseInfo": "<p style='margin: 0cm 0cm 0pt; font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; line-height: normal;'><span style='background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: Arial, sans-serif;'><font size='3'>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0</font><a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' target='_blank'><span style='color: rgb(0, 121, 193); text-decoration-line: none;'><font size='3'>here</font></span></a></span></p><font color='#000000' size='3' style='font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;'></font><p style='margin: 0cm 0cm 0pt; font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; line-height: normal;'><span style='font-family: Arial, sans-serif;'><font size='3'>\u00a0</font></span></p><font color='#000000' size='3' style='font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;'></font><p style='margin: 0cm 0cm 0pt; font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; line-height: normal;'><span style='font-family: Arial, sans-serif;'><font size='3'>Additionally:</font></span></p><font color='#000000' size='3' style='font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;'></font><ol><font color='#000000' size='3'></font><li><span style='font-family: Arial, sans-serif;'>The data sets are not suitable for use in marine navigation or in the creation of navigational products.</span></li><font color='#000000' size='3'></font><li><span style='font-family: Arial, sans-serif;'>If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</span></li></ol>",
+  "extent": [
+   [
+    -64.98385229980866,
+    32.24921250035486
+   ],
+   [
+    -64.65925130008699,
+    32.46935879985456
+   ]
+  ],
+  "modified": 1754669938234,
+  "typeKeywords": [
+   "ArcGIS Desktop",
+   "export:d6063319542240ba9b3ff391c381bbfb",
+   "modified:undefined",
+   "Shapefile",
+   "Data",
+   "Layer",
+   "Template"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "001a998ebc6942c0b7d96d2566bc486f",
+  "title": "UK Ireland EEZ Boundary",
+  "type": "File Geodatabase",
+  "url": "",
+  "size": -1,
+  "snippet": "Current UK Ireland EEZ Boundary",
+  "licenseInfo": "<p style='margin: 0cm 0cm 0pt; font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; line-height: normal;'><span style='background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: Arial, sans-serif;'><font size='3'>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0</font><a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' target='_blank'><span style='color: rgb(0, 121, 193); text-decoration-line: none;'><font size='3'>here</font></span></a></span></p><font color='#000000' size='3' style='font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;'></font><p style='margin: 0cm 0cm 0pt; font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; line-height: normal;'><span style='font-family: Arial, sans-serif;'><font size='3'>\u00a0</font></span></p><font color='#000000' size='3' style='font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;'></font><p style='margin: 0cm 0cm 0pt; font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; line-height: normal;'><span style='font-family: Arial, sans-serif;'><font size='3'>Additionally:</font></span></p><font color='#000000' size='3' style='font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;'></font><ol><font color='#000000' size='3'></font><li><span style='font-family: Arial, sans-serif;'>The data sets are not suitable for use in marine navigation or in the creation of navigational products.</span></li><font color='#000000' size='3'></font><li><span style='font-family: Arial, sans-serif;'>If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</span></li></ol>",
+  "extent": [
+   [
+    -14.331027999962735,
+    48.00000000069086
+   ],
+   [
+    -5.272333299565007,
+    56.699999999989224
+   ]
+  ],
+  "modified": 1754659058578,
+  "typeKeywords": [
+   "modified:1634784188184",
+   "export:4f50b810bd034dd6adf75a94cafe1adb",
+   "File Geodatabase"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "5091ae04f4e344a7b7dd8b1c61a0e84c",
+  "title": "Montserrat Maritime Limits",
+  "type": "PDF",
+  "url": "",
+  "size": -1,
+  "snippet": "Current illustration of Montserrat Maritime Limits.",
+  "licenseInfo": "<p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0<a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' target='_blank'>here</a></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>Additionally:</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>1. The data sets are not suitable for use in marine navigation or in the creation of navigational products.</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>2. If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</p>",
+  "extent": [],
+  "modified": 1779958693855,
+  "typeKeywords": [
+   "PDF",
+   "Data",
+   "Document"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "bf4e3aba8bc44478b9b49f9752aa31bf",
+  "title": "Falkland Islands Maritime Limits",
+  "type": "Shapefile",
+  "url": "",
+  "size": -1,
+  "snippet": "Current Falkland Islands Maritime Limits",
+  "licenseInfo": "<p style='margin: 0cm 0cm 0pt; font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; line-height: normal;'><span style='background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: Arial, sans-serif;'><font size='3'>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0</font><a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' target='_blank'><span style='color: rgb(0, 121, 193); text-decoration-line: none;'><font size='3'>here</font></span></a></span></p><font color='#000000' size='3' style='font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;'></font><p style='margin: 0cm 0cm 0pt; font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; line-height: normal;'><span style='font-family: Arial, sans-serif;'><font size='3'>\u00a0</font></span></p><font color='#000000' size='3' style='font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;'></font><p style='margin: 0cm 0cm 0pt; font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; line-height: normal;'><span style='font-family: Arial, sans-serif;'><font size='3'>Additionally:</font></span></p><font color='#000000' size='3' style='font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;'></font><ol><font color='#000000' size='3'></font><li><span style='font-family: Arial, sans-serif;'>The data sets are not suitable for use in marine navigation or in the creation of navigational products.</span></li><font color='#000000' size='3'></font><li><span style='font-family: Arial, sans-serif;'>If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</span></li></ol>",
+  "extent": [
+   [
+    -65.02280139999857,
+    -56.22491000054073
+   ],
+   [
+    -52.32796119969294,
+    -47.6869464994153
+   ]
+  ],
+  "modified": 1754907201682,
+  "typeKeywords": [
+   "export:13f10d7eac444cbcbe9bdcd370b8eefb",
+   "ArcGIS Desktop",
+   "modified:undefined",
+   "Shapefile",
+   "Data",
+   "Layer",
+   "Template"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "1517d9b948aa4e8ebd93a8137f7ca580",
+  "title": "Bermuda Maritime Limits",
+  "type": "PDF",
+  "url": "",
+  "size": -1,
+  "snippet": "Current illustration of Bermuda Maritime Limits.",
+  "licenseInfo": "<p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0<b><a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' target='_blank'>here</a></b></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'></p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>Additionally:</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>1. The data sets are not suitable for use in marine navigation or in the creation of navigational products.</p><p style='font-variant-numeric: normal; font-variant-east-asian: normal; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 16px; background-color: transparent;'>2. If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</p>",
+  "extent": [],
+  "modified": 1779958447310,
+  "typeKeywords": [
+   "PDF",
+   "Data",
+   "Document"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "723beefe5cd34c0baaf9f9902ce97080",
+  "title": "Bermuda Fixed Baseline",
+  "type": "CSV Collection",
+  "url": "",
+  "size": -1,
+  "snippet": "Current Bermuda Fixed Baseline",
+  "licenseInfo": "<p style='margin: 0cm 0cm 0pt; font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; line-height: normal;'><span style='background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: Arial, sans-serif;'><font size='3'>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0</font><a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' target='_blank'><span style='color: rgb(0, 121, 193); text-decoration-line: none;'><font size='3'>here</font></span></a></span></p><font color='#000000' size='3' style='font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;'></font><p style='margin: 0cm 0cm 0pt; font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; line-height: normal;'><span style='font-family: Arial, sans-serif;'><font size='3'>\u00a0</font></span></p><font color='#000000' size='3' style='font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;'></font><p style='margin: 0cm 0cm 0pt; font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; line-height: normal;'><span style='font-family: Arial, sans-serif;'><font size='3'>Additionally:</font></span></p><font color='#000000' size='3' style='font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;'></font><ol><font color='#000000' size='3'></font><li><span style='font-family: Arial, sans-serif;'>The data sets are not suitable for use in marine navigation or in the creation of navigational products.</span></li><font color='#000000' size='3'></font><li><span style='font-family: Arial, sans-serif;'>If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</span></li></ol>",
+  "extent": [
+   [
+    -64.98385229980866,
+    32.24921250035486
+   ],
+   [
+    -64.65925130008699,
+    32.46935879985456
+   ]
+  ],
+  "modified": 1754669934619,
+  "typeKeywords": [
+   "export:d6063319542240ba9b3ff391c381bbfb",
+   "modified:undefined",
+   "CSV Collection"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "db36432e9af64ebd9e1c9f362d1a0e3b",
+  "title": "Bermuda Fixed Baseline",
+  "type": "Shapefile",
+  "url": "",
+  "size": -1,
+  "snippet": "Current Bermuda Fixed Baseline",
+  "licenseInfo": "<p style='margin: 0cm 0cm 0pt; font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; line-height: normal;'><span style='background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: Arial, sans-serif;'><font size='3'>The data sets are available under the Open Government Licence. The terms of the Licence can be accessed\u00a0</font><a href='http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' target='_blank'><span style='color: rgb(0, 121, 193); text-decoration-line: none;'><font size='3'>here</font></span></a></span></p><font color='#000000' size='3' style='font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;'></font><p style='margin: 0cm 0cm 0pt; font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; line-height: normal;'><span style='font-family: Arial, sans-serif;'><font size='3'>\u00a0</font></span></p><font color='#000000' size='3' style='font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;'></font><p style='margin: 0cm 0cm 0pt; font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; line-height: normal;'><span style='font-family: Arial, sans-serif;'><font size='3'>Additionally:</font></span></p><font color='#000000' size='3' style='font-family: &quot;Avenir LT W01 35 Light&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;'></font><ol><font color='#000000' size='3'></font><li><span style='font-family: Arial, sans-serif;'>The data sets are not suitable for use in marine navigation or in the creation of navigational products.</span></li><font color='#000000' size='3'></font><li><span style='font-family: Arial, sans-serif;'>If you reuse any of the data, you must acknowledge the source by including the following attribution statement: \u201cContains public sector information, licensed under the Open Government Licence v3.0, from [the Owner/Originator of the data as indicated in the metadata]\u201d.</span></li></ol>",
+  "extent": [
+   [
+    -64.98385229980866,
+    32.24921250035486
+   ],
+   [
+    -64.65925130008699,
+    32.46935879985456
+   ]
+  ],
+  "modified": 1754669932988,
+  "typeKeywords": [
+   "ArcGIS Desktop",
+   "export:d6063319542240ba9b3ff391c381bbfb",
+   "modified:1591644345038",
+   "Shapefile",
+   "Data",
+   "Layer",
+   "Template"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "15e7b73acc694e40b88953887fde6e8e",
+  "title": "UK Hydrographic Office Maritime Limits and Boundaries",
+  "type": "Shapefile",
+  "url": "",
+  "size": -1,
+  "snippet": "",
+  "licenseInfo": "",
+  "extent": [
+   [
+    -133.42456829999998,
+    -78.28820799999995
+   ],
+   [
+    75.85080510000006,
+    63.887066700000084
+   ]
+  ],
+  "modified": 1754659036112,
+  "typeKeywords": [
+   "ArcGIS Desktop",
+   "Shapefile",
+   "Data",
+   "export:b9bcb1a1ef644bd7a94be282d8ff38c5",
+   "Layer",
+   "modified:1646275801773",
+   "Template"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "d5a6aa6b211041d4a9c0ed3ce9629075",
+  "title": "UK Hydrographic Office Maritime Limits and Boundaries",
+  "type": "Shapefile",
+  "url": "",
+  "size": -1,
+  "snippet": "",
+  "licenseInfo": "",
+  "extent": [
+   [
+    -133.42456830028434,
+    -78.28820799996684
+   ],
+   [
+    75.85080560043494,
+    63.887066700096234
+   ]
+  ],
+  "modified": 1754659043451,
+  "typeKeywords": [
+   "ArcGIS Desktop",
+   "Shapefile",
+   "Data",
+   "export:b9bcb1a1ef644bd7a94be282d8ff38c5",
+   "Layer",
+   "modified:1656902758945",
+   "Template"
+  ],
+  "access": "public"
+ },
+ {
+  "id": "34073036d72c4922bc6ee0f16feb1d33",
+  "title": "UK Hydrographic Office Maritime Limits and Boundaries",
+  "type": "Shapefile",
+  "url": "",
+  "size": -1,
+  "snippet": "",
+  "licenseInfo": "",
+  "extent": [
+   [
+    -133.42456829999998,
+    -78.28820799999995
+   ],
+   [
+    75.85080510000006,
+    63.887066700000084
+   ]
+  ],
+  "modified": 1754659027331,
+  "typeKeywords": [
+   "ArcGIS Desktop",
+   "Shapefile",
+   "Data",
+   "export:b9bcb1a1ef644bd7a94be282d8ff38c5",
+   "Layer",
+   "modified:1646880622087",
+   "Template"
+  ],
+  "access": "public"
+ }
+]

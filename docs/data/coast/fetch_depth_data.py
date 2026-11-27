@@ -196,8 +196,9 @@ def ukho_wrecks(out, summary, items, services):
             for name, box in BOXES.items():
                 fc = query_layer(url, box, name)
                 res[name] = len(fc["features"])
-                if fc["features"]:
-                    safe = re.sub(r"[^A-Za-z0-9]+", "_", title).strip("_")[:50]
+                if fc["features"]:   # name from the layer URL (service + layer id), so two layers never share a file
+                    m = re.search(r"/services/(.+?)/(?:Feature|Map)Server/(\d+)", url)
+                    safe = re.sub(r"[^A-Za-z0-9]+", "_", f"{m.group(1)}_{m.group(2)}" if m else title).strip("_")[-60:]
                     save(out, f"ukho_wrecks_{safe}_{name}.geojson", json.dumps(fc))
                     done = True
         except Exception as e:  # noqa: BLE001
@@ -240,7 +241,8 @@ def ukho_surveys(out, summary, items, services):
             for name, box in BOXES.items():
                 fc = query_layer(url, box, name)
                 if fc["features"]:
-                    safe = re.sub(r"[^A-Za-z0-9]+", "_", title).strip("_")[:50]
+                    m = re.search(r"/services/(.+?)/(?:Feature|Map)Server/(\d+)", url)
+                    safe = re.sub(r"[^A-Za-z0-9]+", "_", f"{m.group(1)}_{m.group(2)}" if m else title).strip("_")[-60:]
                     save(out, f"ukho_surveys_{safe}_{name}.geojson", json.dumps(fc)); n += 1
         except Exception as e:  # noqa: BLE001
             log(f"    query failed: {type(e).__name__}: {str(e)[:200]}")
@@ -272,11 +274,17 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default="docs/data/coast/raw_040")
     ap.add_argument("--log", default=None)
+    ap.add_argument("--only", choices=["wrecks"], default=None, help="wrecks: only re-fetch the UKHO Wrecks and Obstructions (run 040c)")
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
     LOGF = a.log
     log(f"Run 040: depth and hazard data -> {a.out}")
     summary = dict(started=time.strftime("%Y-%m-%d %H:%M:%S"), emodnet={}, ukho={})
+    if a.only == "wrecks":   # run 040c: the 040 points file was overwritten by the area layer (same truncated name)
+        services = ukho_services(a.out, summary)
+        ukho_wrecks(a.out, summary, [], services)
+        summary["finished"] = time.strftime("%Y-%m-%d %H:%M:%S")
+        save(a.out, "summary_040c.json", summary); log("Summary: " + json.dumps(summary)); return
     steps = [("EMODnet", lambda: emodnet(a.out, summary))]
     for label, fn in steps:
         try: fn()
