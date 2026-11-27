@@ -2,6 +2,14 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-27, 13:50 UTC (08:50 local): run 043b running
+
+- Randolph: "Go". Run 043b (collab/runs_043b) started at 08:43, alongside 041; about 9 h, 15 runs, v2 coasts, Rev E3, 4 years:
+  - Approaches about 60 and 90 km south of Scilly, with the hold 30 km S of the Lizard (paired with 043a B).
+  - Holding upwind of the pickup points, 14-day station-keeping: Norman offing E20, E40 and ESE20; Anegada W N15 and N30; Cornwall hold SW20 and W20.
+  - Mindelo launch windows (15 Nov-10 Dec, 11 Dec-10 Jan, 11 Jan-5 Feb) to the Norman offing and Anegada W.
+- Bug avoided: `--years` names the year a window starts, so the January window uses 2022-2025.
+
 ## 2026-11-27, 13:35 UTC (08:35 local): run 043a analysed
 
 - Nothing new on #50 or by email.
