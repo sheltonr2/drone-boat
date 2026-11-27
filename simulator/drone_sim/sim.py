@@ -279,7 +279,13 @@ class Voyage:
         days = (t - self.t0)/86400
         months = max(days/30.44, 0.5)
         cost = st["credits"]*d["comms"]["credit_usd"] + months*d["comms"]["line_rental_usd_month"]
-        return dict(
+        imt = d["comms"].get("imt")
+        extra = {}
+        if imt:                                  # Rev F: monthly plan + overage per KB replaces line rental + credits
+            kb = st.get("imt_bytes", 0) / 1000
+            cost = months*imt["plan_usd_month"] + max(0.0, kb - months*imt["plan_kb"])*imt["overage_usd_per_kb"]
+            extra = dict(photos_sent=st.get("photos", 0), imt_kb=round(kb, 1))
+        return dict(**extra,
             outcome=outcome, days=round(days, 2), end=dict(lat=st["lat"], lon=st["lon"]),
             distance_km=round(st["distance_km"], 1), credits=st["credits"], airtime_usd=round(cost, 2),
             sessions_ok=st["sessions_ok"], sessions_failed=st["sessions_fail"],
@@ -415,6 +421,15 @@ class Voyage:
         if not ok:
             st["sessions_fail"] += 1; return
         st["sessions_ok"] += 1; st["last_report_ok"] = t
+        imt = C.get("imt")                       # Rev F option: Iridium IMT billing by the byte and a daily photo (off when absent)
+        if imt:
+            nb = max(C["report_bytes"], imt.get("min_bytes", 25))
+            ph = C.get("photo_per_day", 0)
+            if ph and t - st.get("last_photo", -1e18) >= 86400.0 / ph:
+                st["last_photo"] = t; st["photos"] = st.get("photos", 0) + 1
+                nb += C.get("photo_bytes", 10000)
+                st["soc"] -= P.get("photo_session_j", 90.0)/3600/P["battery_wh"]
+            st["imt_bytes"] = st.get("imt_bytes", 0) + nb
         credits = math.ceil(C["report_bytes"]/50)
         if self.ap.diag_requested:
             credits += 4; self.ap.diag_requested = False

@@ -2,6 +2,13 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-27, 19:15 UTC (14:15 local): Rev F drawn (proposed)
+
+- Randolph asked what a daily photo would take, then "Draw up the revision". Rev F = Rev E3 + RockBLOCK Plus 9704 (Iridium IMT) in the same bowl + a camera pod on the stern post (P28, P29). docs/Design_RevF.md, docs/Revisions.md.
+- Drawings (D00, D01, D07, D23, D24, D30), BOM (+$127, $5,041), print guide, 3D viewer (Pages now shows Rev F), exports. Mass 28.7 kg.
+- Simulator: optional IMT billing and daily-photo energy (`comms.imt`, `comms.photo_per_day`, `photo_bytes`, `power.photo_session_j`), off by default; regression bit-identical. designs/revF_design.json. 60-day check: same track and battery, airtime $83 vs $77.
+- Not adopted: the plan and the build stay on Rev E3 until Randolph decides.
+
 ## 2026-11-27, 13:50 UTC (08:50 local): run 043b running
 
 - Randolph: "Go". Run 043b (collab/runs_043b) started at 08:43, alongside 041; about 9 h, 15 runs, v2 coasts, Rev E3, 4 years:

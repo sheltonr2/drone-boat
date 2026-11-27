@@ -33,3 +33,5 @@ stl/P24_bilge_pump_spacer.stl,P24,Bilge pump spacer (mast tube),1,PETG,5,40%,Sta
 stl/P25_tail_detent.stl,P25,Tail detent magnet carrier,1,PETG,4,100%,Flat,None,20 x 18 x 5,220 x 220,2,0.4,
 stl/P26_rudder_servo_arm.stl,P26,Rudder servo arm for the 6 mm D-shaft,2,PETG,4,100%,Flat,None,54 x 20 x 12,220 x 220,7,0.9,Print 2
 stl/P27_vane_bearing_spacer.stl,P27,Vane bearing spacer,1,PETG,4,100%,Flat,None,22 x 22 x 10,220 x 220,2,0.5,E2: new part
+stl/P28_camera_pod_clamp.stl,P28,Camera pod clamp,1,ASA,5,40%,"Collar down, as modelled",None (teardrop cable hole),64 x 48 x 50,220 x 220,69,6.1,Rev F: new part
+stl/P29_camera_housing.stl,P29,Camera housing with window seat and hood,1,ASA,5,40%,Floor down,None,46 x 46 x 62,220 x 220,33,3.0,Rev F: new part; 100% infill on the floor

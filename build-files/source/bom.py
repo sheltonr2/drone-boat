@@ -1,4 +1,4 @@
-"""Bill of materials for the Rev E1/E2 boat, written for a hobbyist builder.
+"""Bill of materials for the Rev F boat (Rev E1/E2/E3 plus the camera and IMT modem), written for a hobbyist builder.
 
 Writes ../BOM.csv (everything to buy) and ../Print_Guide.csv (every printed part).
 Prices: "web" = seen on the linked page in November 2026; "est" = estimate, check before ordering.
@@ -27,10 +27,15 @@ add(S, "GPS + compass", "Holybro Micro M10 GPS with case, IST8310 compass (SKU 1
     "https://holybro.com/products/micro-m10-gps/", "P05 (main), P21 (limp-home)", "Pot in soft silicone after the shakedown")
 add(S, "Companion + limp-home MCU", "Adafruit Feather ESP32-S3, 4 MB flash / 2 MB PSRAM (#5477)", 2, "ea", 17.50, "est", "Adafruit",
     "https://www.adafruit.com/product/5477", "Main box, P21", "Buy a third as a programmed spare (row S)")
-add(S, "Satellite modem", "Ground Control RockBLOCK Plus, 3 m cable (FP-GC-RB-PLUS-3M)", 1, "ea", 419.00, "web", "Ground Control",
-    "https://store.groundcontrol.com/products/rockblock-plus", "P23 in the hatch lid", "Airtime is extra (line rental + credits)")
+add(S, "Satellite modem", "Ground Control RockBLOCK Plus 9704 (Iridium IMT, messages to 100 KB, GNSS, 7-30 V, IP67), 3 m cable", 1, "ea", 479.00, "web", "Ground Control",
+    "https://store.groundcontrol.com/products/rockblock-plus-9704", "P23 in the hatch lid", "Rev F (was the RockBLOCK Plus, SBD, $419): same 137 x 40 puck; check its bolt pattern against P23's slots. IMT airtime is extra (post-paid plans, 3-month minimum)")
+add(S, "Camera", "Seeed Studio XIAO ESP32S3 Sense (OV3660 2048 x 1536, microSD slot), SKU 113991115", 1, "ea", 13.99, "web", "Seeed Studio",
+    "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html", "P29 on the stern post (D07, D30)", "Rev F. Takes switched 5 V and a UART from the companion; keeps every full-size photo on its card")
+add(S, "Camera memory card", "32 GB microSD, industrial / high-endurance (FAT32)", 1, "ea", 12, "est", "Any", "", "Camera", "Rev F. The XIAO takes cards up to 32 GB")
+add(S, "Camera window", "40 mm x 3 mm borosilicate optical window (sapphire about $60 if you want it scratch-proof)", 1, "ea", 12, "est", "Optics supplier", "", "P29", "Rev F. Bed in marine silicone; wipe on a hydrophobic coating before launch")
+add(S, "Camera cable", "4-core shielded cable, about 5 mm OD (5 V, GND, TX, RX)", 3, "m", 2, "est", "Any", "", "P29 down the stern post to the box", "Rev F")
 add(S, "RS-232 level shifter", "SparkFun MAX3232 transceiver breakout (BOB-11189)", 1, "ea", 7.26, "web", "SparkFun",
-    "https://www.sparkfun.com/products/11189", "Main box", "RockBLOCK Plus talks RS-232 at 19200 baud")
+    "https://www.sparkfun.com/products/11189", "Main box", "Rev F: the RockBLOCK Plus 9704 talks RS-232; use the second channel for its GNSS port if you wire it")
 add(S, "Wind-vane angle sensor", "AS5600 magnetic angle board, must fit a 26 x 26 mm recess", 1, "ea", 6, "est", "Adafruit (#6357) or generic",
     "https://learn.adafruit.com/adafruit-as5600-magnetic-angle-sensor", "P03 recess", "Measure the board before printing P03")
 add(S, "Vane magnet", "Diametric NdFeB disc 6 x 2.5 mm, N35SH (Radial Magnets 9049)", 2, "ea", 0.75, "web", "DigiKey",
@@ -61,7 +66,7 @@ add(S, "Ideal diodes", "Pololu power ORing ideal diode pair, 4-60 V 6 A (#5398)"
     "https://www.pololu.com/product/5398", "P22", "One per muxed servo (starboard rudder, tail)")
 add(S, "Logic supplies", "Pololu D36V6F5, 5 V 600 mA step-down (#3792)", 2, "ea", 5.95, "web", "Pololu",
     "https://www.pololu.com/product/3792", "Main box (companion ESP32) + P21 (limp-home ESP32)", "E2: neither ESP32 had a stated 5 V supply (D30)")
-add(S, "Load switches", "Logic-level MOSFET switch boards, 12 V 3 A (pump, nav light, solar cut-off, Pixhawk power-cycle)", 4, "ea", 5, "est", "SparkFun / Pololu", "", "Main box (D30)", "")
+add(S, "Load switches", "Logic-level MOSFET switch boards, 12 V 3 A (pump, nav light, solar cut-off, Pixhawk power-cycle, camera 5 V)", 5, "ea", 5, "est", "SparkFun / Pololu", "", "Main box (D30)", "")
 add(S, "Fuses and holders", "Waterproof inline ATC blade fuse holders, 16 AWG, + ATC fuse assortment", 1, "set", 20, "est", "Marine store", "", "D30 fuse table", "")
 add(S, "Battery connector", "Anderson Powerpole 15/45 housings + contacts, 10 sets", 1, "set", 12, "est", "Powerwerx", "", "Battery box", "The BLF-1215A has a Powerpole lead")
 
@@ -155,6 +160,8 @@ add(S, "Socket cap M5 x 16", "A4, 50-pack covers all M5 x 16", 1, "pk", 7, "est"
     "https://www.zoro.com/zoro-select-m5-080-socket-head-cap-screw-socket-plain-316-stainless-steel-16-mm-length-50-pk-m550500500016/i/G5321845/",
     "Hatch (12), battery-box lid (8), RockBLOCK (4)", "")
 add(S, "Socket cap M5 x 30 + nyloc + washers", "A4", 8, "ea", 0.6, "est", "Fastener supplier", "", "P08 ears (2), P06 transom (4), P19 (2)", "")
+add(S, "M3 heat-set inserts + screws", "Brass M3 heat-set inserts (4 mm hole) and A4 M3 x 10 socket screws", 2, "set", 1, "est", "Fastener supplier", "", "P28 / P29", "Rev F")
+add(S, "Silica gel", "2 g silica-gel sachets", 4, "ea", 0.5, "est", "Any", "", "P29 (one), spares", "Rev F")
 add(S, "M5 bonded inserts", "316 flanged threaded inserts for bonding in composite (e.g. Bigheads) or nuts glassed to a doubler", 20, "ea", 1.5, "est", "Composite supplier", "", "Hatch (12), battery-box lid (8)", "")
 add(S, "M10 nyloc + large washers", "A4", 4, "ea", 1, "est", "Fastener supplier", "", "Fin rods (D04)", "")
 add(S, "Pins 4 mm", "316 rod 4 mm, 200 long (cut 4 pins)", 1, "ea", 4, "est", "Metals supplier", "", "P13 (4)", "")
@@ -194,6 +201,7 @@ S = "I 3D-printing filament"
 # ------------------------------------------------------------------ S. spares recommended
 S2 = "S Recommended spares"
 add(S2, "Spare MCU", "Adafruit Feather ESP32-S3 (#5477), programmed", 1, "ea", 17.50, "est", "Adafruit", "https://www.adafruit.com/product/5477", "Potted P21 cannot be repaired", "")
+add(S2, "Spare camera", "XIAO ESP32S3 Sense, programmed", 1, "ea", 13.99, "web", "Seeed Studio", "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html", "", "Rev F")
 add(S2, "Spare servo", "DFRobot SER0066", 1, "ea", 21.90, "web", "DFRobot", "https://www.dfrobot.com/product-2789.html", "", "")
 
 # ------------------------------------------------------------------ print guide
@@ -233,6 +241,8 @@ GUIDE = {  # stem: (material, walls, infill, orientation, supports, notes)
  "P25_tail_detent": ("PETG", 4, "100%", "Flat", "None", ""),
  "P26_rudder_servo_arm": ("PETG", 4, "100%", "Flat", "None", "Print 2"),
  "P27_vane_bearing_spacer": ("PETG", 4, "100%", "Flat", "None", "E2: new part"),
+ "P28_camera_pod_clamp": ("ASA", 5, "40%", "Collar down, as modelled", "None (teardrop cable hole)", "Rev F: new part"),
+ "P29_camera_housing": ("ASA", 5, "40%", "Floor down", "None", "Rev F: new part; 100% infill on the floor"),
 }
 
 def fill_factor(walls, infill):

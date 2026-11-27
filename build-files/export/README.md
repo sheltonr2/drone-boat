@@ -1,12 +1,14 @@
-# 3D model export, Rev E3
+# 3D model export, Rev F
 
 The same model as the 3D viewer (build-files/viewer), exported for game engines and CAD/3D tools. Made for Bluewater in [jcolter11374/boat-sim](https://github.com/jcolter11374/boat-sim) (issue #50). MIT licence, like the rest of this repo.
 
 | File | What it is | Size |
 |---|---|---|
-| `drone_boat_revE3_exterior.glb` | glTF 2.0 binary, only the parts visible from outside: 45 nodes, 18 materials. **Start here for a game.** | 8 MB |
-| `drone_boat_revE3.glb` | glTF 2.0 binary, every part including the interior structure and electronics: 99 nodes, 33 materials | 13 MB |
-| `drone_boat_revE3.obj` + `.mtl` | Wavefront OBJ of all 99 parts, one `o` per part, with normals and colour-only materials | 35 MB |
+| `drone_boat_revF_exterior.glb` | glTF 2.0 binary, only the parts visible from outside: 48 nodes. **Start here for a game.** Rev F adds the camera pod on the stern post | 9 MB |
+| `drone_boat_revF.glb` | glTF 2.0 binary, every part including the interior structure and electronics: 103 nodes | 14 MB |
+| `drone_boat_revF.obj` + `.mtl` | Wavefront OBJ of all 103 parts, one `o` per part, with normals and colour-only materials | 38 MB |
+| `drone_boat_revF_exterior.stl` | The outside of the boat as one STL (mm, Z up, X forward, snapped to 1 mm), so GitHub shows it in 3D | 9 MB |
+| `drone_boat_revE3*` | The same files for Rev E3 (no camera), kept because links to them have been shared | |
 | `parts.csv` | Each node's id, name, group, whether it is interior, materials, triangle count and drawing reference | |
 
 ## Frame and units

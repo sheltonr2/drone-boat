@@ -1,0 +1,232 @@
+# Drone boat Rev F materials (sRGB colours)
+
+newmtl alu
+Kd 0.7059 0.7294 0.7608
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl antifoul
+Kd 0.3333 0.0863 0.0588
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl asa
+Kd 0.9373 0.9373 0.9176
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl battery
+Kd 0.1647 0.2275 0.3216
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl black
+Kd 0.0784 0.0824 0.0863
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl brass
+Kd 0.7882 0.6431 0.3608
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl carbon
+Kd 0.1059 0.1137 0.1294
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl clearlid
+Kd 0.8471 0.9255 1.0000
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 0.28
+illum 2
+
+newmtl darkgrey
+Kd 0.2000 0.2157 0.2392
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl deck
+Kd 0.8510 0.8667 0.8510
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl deckpaint
+Kd 0.8902 0.9020 0.8863
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl frp
+Kd 0.9059 0.8824 0.7843
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl g10
+Kd 0.7255 0.7765 0.4157
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl glass
+Kd 0.7255 0.7882 0.6902
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl glassbox
+Kd 0.8667 0.8353 0.7412
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl h80
+Kd 0.8627 0.7961 0.4863
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl hammond
+Kd 0.5451 0.5765 0.6000
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl hull_boot
+Kd 0.9569 0.9569 0.9412
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl hull_orange
+Kd 1.0000 0.3569 0.0706
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl lamp
+Kd 1.0000 1.0000 1.0000
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 0.92
+illum 2
+
+newmtl lead
+Kd 0.3725 0.3922 0.4196
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl pcb
+Kd 0.1216 0.4196 0.2275
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl pcbblue
+Kd 0.1020 0.2980 0.5608
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl pcbred
+Kd 0.6235 0.1098 0.1098
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl petg
+Kd 0.2392 0.4157 0.5255
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl ply
+Kd 0.7804 0.6235 0.4118
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl pvc
+Kd 0.8392 0.8431 0.8235
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl solar
+Kd 0.1059 0.1647 0.2902
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl steel
+Kd 0.7882 0.8039 0.8235
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl white
+Kd 0.9451 0.9451 0.9333
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl wing
+Kd 0.9686 0.9686 0.9569
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2
+
+newmtl xps
+Kd 0.5255 0.7216 0.9098
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 0.38
+illum 2
+
+newmtl yellow
+Kd 1.0000 0.7843 0.1020
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+d 1.0
+illum 2

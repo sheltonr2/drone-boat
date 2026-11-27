@@ -512,6 +512,51 @@ FIT_BORES = [3.3, 4.3, 6.2, 8.05, 8.1, 10.5, 12.1, 12.2, 16.2]          # row 1,
 FIT_BORES2 = [20.3, 22.1, 30.2, 30.6, 42.6]                             # row 2, left to right
 FIT_SOCKETS = [12.2, 16.2, 20.4]                                        # horizontal teardrops, left to right
 
+# ---------------------------------------------------------------- Rev F camera
+@part("P28", "Camera pod clamp", 1, "ASA, 5 walls, 40% infill",
+      ["Rev F: clamps the stern post at z 472-522, just above the radar reflector and below the GPS platform P05.",
+       "The flat front face carries housing P29: two M3 heat-set inserts (D4.0 holes), M3 x 10 316 screws from inside P29.",
+       "Camera cable (4-core: 5 V switched, GND, UART TX/RX) runs from P29 through the D5.5 hole into the post through a",
+       "6 mm hole drilled in the tube at z 487, then down the post with the nav-light and GPS cables. Pot the hole round the cable.",
+       "Squeeze the slot closed with an M4 bolt through the ears. Print collar-down."],
+      {"Collar": "OD32, ID20.3 x 50", "Front face": "48 wide x 50 high, 34 forward of the post axis", "Inserts": "2 x D4.0, 14 off centre at z 25",
+       "Cable hole": "D5.5 at z 15"})
+def p28():
+    C = D.CAMERA
+    collar = cyl(16, 0, C['collar_h'])
+    plate = box(-C['plate_x'], -12, -24, 24, 0, C['collar_h'])
+    ears = box(14, 30, -7, 7, 0, C['collar_h'])
+    solid = union(collar, plate, ears)
+    bore = cyl(10.15, -1, C['collar_h'] + 1)
+    slit = box(9, 31, -1, 1, -1, C['collar_h'] + 1)
+    bolt = hole_y(2.15, -8, 8, 23, C['collar_h'] / 2)
+    ins = [hole_x(2.0, -C['plate_x'] - 1, -C['plate_x'] + 10, sy * 14, C['axis_dz'], tear=False) for sy in (-1, 1)]
+    cable = hole_x(2.75, -C['plate_x'] - 1, -5, 0, C['axis_dz'] - 10)
+    return diff(solid, bore, slit, bolt, cable, *ins), ((-C['plate_x'] - 1, 31), (-25, 25), (0, C['collar_h']))
+
+@part("P29", "Camera housing with window seat and hood", 1, "ASA, 5 walls, 100% infill on the floor",
+      ["Rev F: a cup printed floor-down; on the boat its axis points forward and its floor bolts to P28 (2 x M3, D3.4 holes).",
+       "The camera board (XIAO ESP32S3 Sense, 21 x 17.5 mm, with its OV3660 camera and microSD card) bonds with silicone to",
+       "the 10 deg wedge on the floor, so the camera looks 10 deg below the horizon. Cable through the D5.5 hole, potted.",
+       "Window: 40 x 3 mm borosilicate disc (sapphire if the budget allows: it shrugs off salt-crystal scratches), bedded in",
+       "marine silicone on the 1.2 mm ledge with a bead round its edge. Add a 2 g silica-gel sachet and close it in dry air.",
+       "The 12 mm hood keeps sun glare and green water off the glass; the slot is the drain and points down.",
+       "Wipe a hydrophobic coating on the window before launch."],
+      {"OD": 46, "Length": "62 (floor 5, cavity D38 x 42, window seat D40.4, hood 12)", "Wedge": "24 x 24, 10 deg",
+       "Floor holes": "2 x D3.4, 14 off centre; cable D5.5, 10 below centre"})
+def p29():
+    C = D.CAMERA; R = C['housing_od'] / 2
+    zw = C['housing_len'] - C['hood'] - C['window_t']
+    outer = cyl(R, 0, C['housing_len'])
+    cav = cyl(C['bore'] / 2, 5, zw + 0.1)
+    seat = cyl(C['window_d'] / 2 + 0.2, zw, C['housing_len'] + 1)
+    drain = box(-R - 1, -C['window_d'] / 2 + 5, -3, 3, C['housing_len'] - C['hood'], C['housing_len'] + 1)
+    t = np.tan(np.radians(C['tilt_deg']))
+    wedge = prism(np.array([[5, -6], [7, -6], [7 + 24 * t, 18], [5, 18]]), -12, 12, axis='y')   # (z, x): rises towards +x (up on the boat)
+    holes = [cyl(1.7, -1, 6, c1=0, c2=sy * 14) for sy in (-1, 1)]
+    cable = cyl(2.75, -1, 6, c1=-10, c2=0)
+    return diff(union(diff(outer, cav, seat, drain), wedge), *holes, cable), ((-R - 1, R + 1), (-R - 1, R + 1), (0, C['housing_len']))
+
 @part("P00", "Fit-test coupons (print these first)", 1, "Same filament and settings as the real parts",
       ["E2 (DFM): print before anything else and try the real tubes, rods, bearings and bolts in the holes.",
        "P00a has the vertical bores, P00b the horizontal (teardrop) sockets; hole sizes and order are on sheet D33.",
@@ -548,4 +593,5 @@ BUILD = [("P00a_fit_test_bores", "P00", {"kind": "bores"}), ("P00b_fit_test_sock
          ("P19_yb3_platform", "P19", {}), ("P20_nav_light_clamp", "P20", {}),
          ("P21_limp_home_case", "P21", {}), ("P22_switchover_pod", "P22", {}), ("P23_rockblock_plus_bowl", "P23", {}),
          ("P24_bilge_pump_spacer", "P24", {}), ("P25_tail_detent", "P25", {}), ("P26_rudder_servo_arm", "P26", {}),
-         ("P27_vane_bearing_spacer", "P27", {})]
+         ("P27_vane_bearing_spacer", "P27", {}),
+         ("P28_camera_pod_clamp", "P28", {}), ("P29_camera_housing", "P29", {})]

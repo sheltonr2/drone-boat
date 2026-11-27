@@ -468,6 +468,20 @@ def main():
     gv, gf = cylinder(12.5, -9, 0, 32)
     add_geom("gps", xf(gv, T(np.eye(3), (S['x'] - 50, 0, 548))), gf, 40)
     put("gps", "Main GPS (Micro M10)", G, "black", "gps", explode=EXS, info="Holybro Micro M10 GPS + IST8310 compass, potted in soft silicone.", ref="D07, D30")
+    C = D.CAMERA; RCAM = np.array([[0., 0., -1.], [0., 1., 0.], [1., 0., 0.]])   # P29 local z (cup axis) -> forward, local x -> up
+    put("P28", "P28 Camera pod clamp", G, "asa", stl_geom("P28_camera_pod_clamp"), T(np.eye(3), (S['x'], 0, C['z0'])), explode=EXS, part="P28",
+        info="Rev F: clamps the post above the radar reflector; carries the camera housing P29 on its front face.", ref="D07")
+    zc_ax = C['z0'] + C['axis_dz']
+    put("P29", "P29 Camera housing", G, "asa", stl_geom("P29_camera_housing"), T(RCAM, (S['x'] - C['plate_x'], 0, zc_ax)), explode=EXS, part="P29",
+        info="Rev F: holds the XIAO ESP32S3 Sense camera board behind a 40 mm glass window, looking forward and 10 deg down.", ref="D07")
+    xw = S['x'] - C['plate_x'] - (C['housing_len'] - C['hood'] - C['window_t'])
+    wv, wf = cylinder(C['window_d'] / 2, 0, C['window_t'], 48)
+    add_geom("camwindow", xf(wv, T(RCAM, (xw, 0, zc_ax))), wf, 30)
+    put("camwindow", "Camera window", G, "glass", "camwindow", explode=EXS, info="40 x 3 mm borosilicate disc with a hydrophobic coating.", ref="D07")
+    cbv, cbf = merge(box_mesh(-11, 11, -9, 9, 8, 16) if 'box_mesh' in globals() else cylinder(10, 8, 16, 24), cylinder(4, 16, 22, 24))
+    add_geom("camboard", xf(cbv, T(RCAM, (S['x'] - C['plate_x'], 0, zc_ax))), cbf, 30)
+    put("camboard", "Camera (XIAO ESP32S3 Sense)", G, "black", "camboard", explode=EXS, interior=True,
+        info="ESP32-S3 with an OV3660 camera (2048 x 1536) and a microSD card; switched 5 V and a UART from the companion ESP32-S3.", ref="D07, D30")
     put("P20", "P20 Nav light clamp", G, "asa", stl_geom("P20_nav_light_clamp"), T(np.eye(3), (S['x'], 0, 585)), explode=EXS, part="P20",
         info="All-round white light on a 45 mm arm.", ref="D07")
     lv, lf = merge(cylinder(15, 0, 6, 32), cylinder(14, 6, 16, 32, r1=8))
@@ -497,10 +511,10 @@ def main():
     G = "Deck fittings"; EXD = (0, 0, 160)
     zlid = float(D.deck_z(D.RBPLUS['x'])) + 8
     put("P23", "P23 RockBLOCK bowl", G, "asa", stl_geom("P23_rockblock_plus_bowl"), T(np.eye(3), (D.RBPLUS['x'], 0, zlid - 40)), explode=EXD, part="P23",
-        info="Bonded into a D146 hole in the hatch lid; holds the RockBLOCK Plus with 4 x M5.", ref="D08")
+        info="Bonded into a D146 hole in the hatch lid; holds the RockBLOCK Plus 9704 (Rev F; same 137 x 40 puck) with 4 x M5.", ref="D08")
     rbv, rbf = merge(cylinder(D.RBPLUS['dia'] / 2, 0, 34, 64), cylinder(D.RBPLUS['dia'] / 2 - 4, 34, 37, 64, r1=D.RBPLUS['dia'] / 2 - 12))
     add_geom("rockblock", rbv + [D.RBPLUS["x"], 0, zlid - 32], rbf, 40)
-    put("rockblock", "RockBLOCK Plus", G, "darkgrey", "rockblock", explode=EXD, info="Iridium SBD modem, IP67 puck; RS-232 to the main box.", ref="D08, D30")
+    put("rockblock", "RockBLOCK Plus 9704", G, "darkgrey", "rockblock", explode=EXD, info="Rev F: Iridium IMT modem (messages to 100 KB, for telemetry, commands and the daily photo) with its own GNSS; IP67 puck; RS-232 to the main box.", ref="D08, D30")
     Y = D.YB3
     put("P19", "P19 YB3 platform", G, "asa", stl_geom("P19_yb3_platform"), T(np.eye(3), (Y['x'], 0, zwell)), explode=EXD, part="P19",
         info="In the foredeck well; straps hold the YB3.", ref="D07")
@@ -677,7 +691,7 @@ def main():
                          lo=lo.round(4).tolist(), sc=sc.tolist(), hi=hi.round(3).tolist())
     # The artifact host serves text formats only, so the binary buffer travels base64-encoded inside the JSON.
     import base64
-    out = dict(bin=base64.b64encode(bytes(blob)).decode("ascii"), version="E3", date="2026-11-23", dwl=D.DWL, L=D.L, mass=D.MASS_KG, geoms=meta, assembly=ASM, parts=catalogue,
+    out = dict(bin=base64.b64encode(bytes(blob)).decode("ascii"), version="F", date="2026-11-27", dwl=D.DWL, L=D.L, mass=D.MASS_KG, geoms=meta, assembly=ASM, parts=catalogue,
                deck=dict(z=D.DECK_Z), mast=dict(x=D.MAST_X), rudder=dict(x=D.RUDDER['stock_x'], y=D.RUDDER_Y))
     json.dump(out, open(os.path.join(OUT, "model.json"), "w"), separators=(",", ":"))
     tris = sum(m["nf"] for m in meta.values())

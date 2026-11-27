@@ -1,8 +1,8 @@
-SOLAR-SAIL OCEAN DRONE 1.5 m  -  BUILD FILES (Rev E3, 2026-11-23)
+SOLAR-SAIL OCEAN DRONE 1.5 m  -  BUILD FILES (Rev F, 2026-11-27)
 
-Drawings.pdf                 28 tabloid sheets (11 x 17 in): general arrangement, hull lines + offsets,
+Drawings.pdf                 29 tabloid sheets (11 x 17 in): general arrangement, hull lines + offsets,
                              interior, keel + bulb, twin rudders, wing + tail, mast/stub, hatch,
-                             subdivision + foam fill + labels (D09), one sheet per pair of printed parts (D10-D23),
+                             subdivision + foam fill + labels (D09), one sheet per pair of printed parts (D10-D24),
                              wiring (D30), laminates + build sequence (D31), hardware + linkage (D32), print guide (D33).
 BOM.csv                      Full bill of materials: every part, material, fastener and consumable, with quantities,
                              prices (web = seen on the linked page in Nov 2026, est = estimate) and purchase links.
@@ -15,7 +15,7 @@ Templates_1to1_Letter.pdf    Full-size cutting templates tiled on US Letter. Pri
                              T21 weed fairing (Rev E).
 dxf/                         The same templates as DXF (R12, millimetres) for CNC, laser or a vinyl cutter,
                              plus body_plan_all_stations.dxf.
-stl/                         34 STL files: parts P01-P27, the P02A/B split option and fit coupons P00a/b,
+stl/                         36 STL files: parts P01-P29, the P02A/B split option and fit coupons P00a/b,
                              already in print orientation.
                              Files ending _x4 are needed four times; print P11, P12, P13a/b and P26 twice (two rudders).
 viewer/                      Interactive 3D model for a web browser (three.js): the whole boat with sea, cut-away,
@@ -148,3 +148,11 @@ Rev E3 (2026-11-23)  docs/DFM_Review.md sections 4 and 6  -  DFM open items 1 an
   BOM: solar and spar lines replaced (two spar lines now). Simulator design: designs/revE3_design.json (20 W).
   Still open (DFM_Review section 4): metric 12 mm rod and bar in the US, the SER-2000 size, the GV-5 sealing.
 
+
+Rev F (2026-11-27)  docs/Design_RevF.md  -  daily photo by satellite
+  The RockBLOCK Plus (Iridium SBD, 340-byte messages) becomes a RockBLOCK Plus 9704 (Iridium IMT, messages up to 100 KB) in the
+  same bowl P23: the same 137 x 40 puck; check its bolt pattern against P23's slots. A camera pod goes on the stern post at z 472-522:
+  clamp P28 and housing P29 (new STLs), a 40 x 3 mm glass window, a XIAO ESP32S3 Sense camera (OV3660, microSD) on a 10 deg wedge.
+  The nav-light cable W3 becomes a 6-core carrying the light and the camera; the camera gets its own 5 V load switch.
+  Sheets changed: D00, D01, D07, D30; new parts sheet D24 (P29; P28 shares D23 with P27). BOM about +$127. Mass about +0.18 kg.
+  Hull, rig, foils and templates unchanged (the template PDF still carries the Rev E3 title block).

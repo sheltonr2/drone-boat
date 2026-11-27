@@ -30,7 +30,7 @@ def wire(bg, pts, color=INK, lw=0.7, label=None, at=0, dx=1.0, dy=1.0, fs=4.6, l
 
 # ------------------------------------------------------------------ D30 wiring
 def sheet_wiring(pdf):
-    fig, bg = new_sheet("D30", "Electrical wiring diagram (E2)", "Not to scale")
+    fig, bg = new_sheet("D30", "Electrical wiring diagram (F)", "Not to scale")
     bg.text(12, 268, "POWER AND SIGNAL BLOCK DIAGRAM", fontsize=8, weight="bold", va="top")
     bg.text(12, 263.5, "Red = 12.8 V battery   Orange = 6 V servo   Green = 5 V / 3.3 V logic   Blue = signal / data   Purple = isolated (optocoupler)",
             fontsize=5.4, va="top")
@@ -41,18 +41,18 @@ def sheet_wiring(pdf):
     # main box
     bg.add_patch(Rectangle((80, 150), 186, 106, fc="#fbfbf3", ec=INK, lw=0.9, ls="--"))
     bg.text(82, 254, "MAIN BOX  Hammond 1554V2GYCL on the shelf, x 980-1220 (D03); cables in through its lid glands", fontsize=6, weight="bold", va="top")
-    blk(bg, 84, 156, 34, 90, "FUSE BLOCK", ["12.8 V bus from F1", "", "F3  7.5 A  6 V servo reg", "F4  3 A  Pixhawk switch", "F5  1 A  5 V logic reg", "F6  1 A  RockBLOCK Plus", "F7  2 A  bilge pump sw.", "F8  1 A  nav light sw.", "", "All ATC blades,", "waterproof holders,", "potted after the", "shakedown"], fc="#fff4f2")
+    blk(bg, 84, 156, 34, 90, "FUSE BLOCK", ["12.8 V bus from F1", "", "F3  7.5 A  6 V servo reg", "F4  3 A  Pixhawk switch", "F5  1 A  5 V logic reg", "F6  1 A  RockBLOCK 9704", "F7  2 A  bilge pump sw.", "F8  1 A  nav light sw.", "", "All ATC blades,", "waterproof holders,", "potted after the", "shakedown"], fc="#fff4f2")
     blk(bg, 124, 228, 30, 16, "6 V REG #1", ["Pololu D36V50F6", "5.5 A servo rail"], fc="#fff6ea")
     blk(bg, 158, 228, 34, 16, "INA260 x 2", ["one per rudder feed", "I2C to companion"], fc="#fff6ea")
     blk(bg, 124, 208, 68, 15, "LOAD SWITCH  ->  PM02 V3", ["companion can power-cycle the Pixhawk", "PM02: 5.2 V to POWER1, V/I sense"], fc="#eef6ee")
     blk(bg, 124, 160, 44, 44, "PIXHAWK 6C MINI", ["GPS1   <- Micro M10 (P05)", "TELEM1 <-> companion", "ADC 3.3 <- AS5600 OUT", "OUT1 -> P22 M1 (stbd rud.)", "OUT2 -> port rudder", "OUT3 -> P22 M2 (tail)", "POWER1 <- PM02", "Conformal coat only"], fc="#eef3fb")
-    blk(bg, 172, 160, 44, 44, "COMPANION ESP32-S3", ["5 V from D36V6F5 (F5)", "UART1 <-> MAX3232", "UART2 <-> Pixhawk TELEM1", "I2C: BME280, INA260 x2", "GPIO: leak in, pump, light,", "  solar cut-off, PX4 power", "Heartbeat out -> opto", "Takeover flag in <- opto"], fc="#eef3fb")
+    blk(bg, 172, 160, 44, 44, "COMPANION ESP32-S3", ["5 V from D36V6F5 (F5)", "UART1 <-> MAX3232", "UART2 <-> Pixhawk TELEM1", "UART0 <-> camera (F)", "I2C: BME280, INA260 x2", "GPIO: leak, pump, light, cam,", "  solar cut-off, PX4 power", "Heartbeat out -> opto", "Takeover flag in <- opto"], fc="#eef3fb")
     blk(bg, 220, 226, 42, 18, "MAX3232 + GV-5", ["RS-232 <-> 3.3 V UART", "GV-5 sits beside it"], fc="#eef3fb")
-    blk(bg, 220, 196, 42, 26, "LOAD SWITCHES x3", ["MOSFET boards, 12 V", "pump (F7), light (F8),", "solar cut-off below 2 C", "(between GV-5 and PV)"], fc="#fff4f2")
+    blk(bg, 220, 196, 42, 26, "LOAD SWITCHES x4", ["MOSFET boards: pump (F7),", "light (F8), solar cut-off", "below 2 C (GV-5 to PV);", "F: camera 5 V (from F5)"], fc="#fff4f2")
     blk(bg, 220, 160, 42, 32, "LEAK HOST + PROBES", ["Blue Robotics SOS", "probes: sump (x 600-770)", "and box floor", "signal -> companion GPIO", "BME280 on bulkhead x 300", "(I2C, 0.7 m cable)"], fc="#eef3fb")
     # right side: outside the box
-    blk(bg, 290, 232, 58, 22, "ROCKBLOCK PLUS (P23, hatch lid)", ["9-30 V from F6 (18 AWG)", "RS-232 19200 to MAX3232", "M20 gland in the bowl, drip loop"], fc="#eef3fb")
-    blk(bg, 290, 196, 58, 30, "STERN STUB (D07) via W2", ["Micro M10 GPS + compass (P05)", "AS5600 vane sensor (P03):", "  use analog OUT, not I2C (1.5 m)", "Nav light (P20) via W3, F8 switch", "One 6-core cable up the 20 mm tube"], fc="#eef3fb")
+    blk(bg, 290, 232, 58, 22, "ROCKBLOCK PLUS 9704 (P23) - F", ["7-30 V from F6; <2 W tx, 6.7 W inrush 30 s", "RS-232 (Iridium port) to MAX3232", "GNSS RS-232 port: spare", "M20 gland in the bowl, drip loop"], fc="#eef3fb")
+    blk(bg, 290, 196, 58, 30, "STERN STUB (D07) via W2, W3", ["W2 6-core: M10 GPS + compass (P05),", "  AS5600 vane (P03) analog OUT", "W3 6-core (F): nav light (P20, F8)", "  + camera P29: switched 5 V, GND,", "  UART TX/RX (XIAO ESP32S3 Sense)"], fc="#eef3fb")
     blk(bg, 290, 150, 58, 40, "SWITCHOVER POD P22 (x 1260)", ["Pololu 4-ch servo mux #2806", "  M1/M2 <- Pixhawk OUT1/OUT3", "  S1/S2 <- P21; SEL <- P21", "  FAILMODE = master", "2 x ideal-diode pair #5398:", "  6 V main + 6 V limp-home", "  -> stbd rudder and tail"], fc="#fff6ea")
     blk(bg, 356, 222, 60, 32, "RUDDER SERVOS (aft space)", ["SER-2000 + DFRobot SER0066 x 2", "Port: Pixhawk OUT2, main 6 V", "Stbd: from P22", "Cables through W5, W6", "(bulkhead x 1260), 18 AWG"], fc="#fff6ea")
     blk(bg, 356, 186, 60, 30, "TAIL SERVO (P09, on the boom)", ["DFRobot SER0066, potted", "From P22 through the slip ring", "(spar foot, inside the mast tube)", "Mast-tube wall to dry bay: W4"], fc="#fff6ea")
@@ -96,20 +96,20 @@ def sheet_wiring(pdf):
           ["F3", "7.5 A", "main box", "6 V servo regulator #1", "16 AWG"],
           ["F4", "3 A", "main box", "Pixhawk load switch, PM02", "18 AWG"],
           ["F5", "1 A", "main box", "5 V logic reg (companion)", "22 AWG"],
-          ["F6", "1 A", "main box", "RockBLOCK Plus (225 mA max)", "18 AWG"],
+          ["F6", "1 A", "main box", "RockBLOCK Plus 9704, slow-blow", "18 AWG"],
           ["F7", "2 A", "main box", "bilge pump switch", "18 AWG"],
           ["F8", "1 A", "main box", "nav light switch", "22 AWG"]]
     bg.text(12, 104, "FUSES", fontsize=7, weight="bold")
     table(bg, 12, 102, ["Ref", "Rating", "Where", "Feeds", "Wire"], fz, [9, 11, 20, 44, 13], fs=5.0, rh=3.8)
     pz = [["W1", "deck, solar bay 1", "solar pair, 2-core", "deck (P17 pad)"],
           ["W2", "transom, stub foot", "6-core: GPS, vane", "transom (P17)"],
-          ["W3", "transom, stub foot", "nav light, 2-core", "transom (P17)"],
+          ["W3", "transom, stub foot", "light + camera, 6-core", "transom (P17)"],
           ["W4", "mast tube wall", "slip ring, 3-core", "PVC tube (P17)"],
           ["W5", "bulkhead x 1260", "stbd rudder servo", "flat foam/glass"],
           ["W6", "bulkhead x 1260", "port rudder servo", "flat foam/glass"],
           ["W7", "battery-box wall", "main + charge", "box wall"],
           ["W8", "battery-box wall", "limp-home feed", "box wall"],
-          ["gland", "P23 bowl centre", "RockBLOCK cable", "M20 IP68 gland"]]
+          ["gland", "P23 bowl centre", "RockBLOCK 9704 cable", "M20 IP68 gland"]]
     bg.text(116, 104, "PENETRATIONS (WetLink M10 unless noted)", fontsize=7, weight="bold")
     table(bg, 116, 102, ["Ref", "Through", "Cable", "Seat"], pz, [9, 31, 30, 27], fs=5.0, rh=3.8)
     nz = ["1. Wire: tinned marine wire only. Crimp + adhesive heat-shrink, then pot joint clusters (Potting_Spec).",
@@ -119,7 +119,9 @@ def sheet_wiring(pdf):
           "5. Bench-test the whole harness on the bench (Tests N, I) before anything is potted.",
           "6. E2 (DFM) additions: two 5 V logic regulators (neither ESP32 had one), a Pixhawk power",
           "   switch so the companion can power-cycle it, and W7/W8 for the battery-box exits.",
-          "7. Ground: one star point at the main-box bus; the P21 side shares only the battery negative."]
+          "7. Ground: one star point at the main-box bus; the P21 side shares only the battery negative.",
+          "8. Rev F: the camera has its own 5 V load switch; with it off, a fault in the camera or its cable",
+          "   cannot reach the companion. The camera talks only to the companion, never to the modem."]
     notes(bg, 218, 104, "Wiring notes", nz, fs=5.2, lh=3.3)
     pdf.savefig(fig); plt.close(fig)
 

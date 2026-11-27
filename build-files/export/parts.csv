@@ -28,6 +28,10 @@ radar,Radar reflector,Stern post,False,white,96,D07,"Davis Emergency Radar Refle
 P06,P06 Transom bracket,Stern post,False,asa,5916,D07,Bolted through the transom with 4 x M5; two M4 set screws grip the post.
 P05,P05 Antenna platform,Stern post,False,asa,7324,D07,Main GPS + compass (Holybro Micro M10) bonded under the plate.
 gps,Main GPS (Micro M10),Stern post,False,black,128,"D07, D30","Holybro Micro M10 GPS + IST8310 compass, potted in soft silicone."
+P28,P28 Camera pod clamp,Stern post,False,asa,14218,D07,Rev F: clamps the post above the radar reflector; carries the camera housing P29 on its front face.
+P29,P29 Camera housing,Stern post,False,asa,13236,D07,"Rev F: holds the XIAO ESP32S3 Sense camera board behind a 40 mm glass window, looking forward and 10 deg down."
+camwindow,Camera window,Stern post,False,glass,192,D07,40 x 3 mm borosilicate disc with a hydrophobic coating.
+camboard,Camera (XIAO ESP32S3 Sense),Stern post,True,black,192,"D07, D30",ESP32-S3 with an OV3660 camera (2048 x 1536) and a microSD card; switched 5 V and a UART from the companion ESP32-S3.
 P20,P20 Nav light clamp,Stern post,False,asa,6390,D07,All-round white light on a 45 mm arm.
 navlight,Navigation light,Stern post,False,lamp,256,"D07, D30",12 V all-round white LED puck.
 P03,P03 Sensor cap,Stern post,False,asa,13486,D07,Caps the post; carries the AS5600 board under the vane magnet.
@@ -38,8 +42,8 @@ s608_1,S608-2RS bearing,Stern post,True,steel,256,D07,Stainless 8 x 22 x 7.
 P04,P04 Magnet holder,Stern post,True,petg,2584,D07,"Diametric magnet on the end of the vane shaft, over the AS5600."
 vaneshaft,Vane shaft,Stern post,True,steel,80,D07,8 mm 316 stainless.
 P02,P02 Wind-vane arm,Stern post,False,asa,7154,D07,Vane arm with fin and lead counterweight; hub set-screwed to the shaft.
-P23,P23 RockBLOCK bowl,Deck fittings,False,asa,12586,D08,Bonded into a D146 hole in the hatch lid; holds the RockBLOCK Plus with 4 x M5.
-rockblock,RockBLOCK Plus,Deck fittings,False,darkgrey,512,"D08, D30","Iridium SBD modem, IP67 puck; RS-232 to the main box."
+P23,P23 RockBLOCK bowl,Deck fittings,False,asa,12586,D08,Bonded into a D146 hole in the hatch lid; holds the RockBLOCK Plus 9704 (Rev F; same 137 x 40 puck) with 4 x M5.
+rockblock,RockBLOCK Plus 9704,Deck fittings,False,darkgrey,512,"D08, D30","Rev F: Iridium IMT modem (messages to 100 KB, for telemetry, commands and the daily photo) with its own GNSS; IP67 puck; RS-232 to the main box."
 P19,P19 YB3 platform,Deck fittings,False,asa,4882,D07,In the foredeck well; straps hold the YB3.
 yb3,YB3 tracker,Deck fittings,False,yellow,160,D07,Independent backup tracker with its own battery and Iridium link.
 vent0,Membrane vent,Deck fittings,False,steel,96,D08,Amphenol M12 IP68 vent: pressure equalisation without water.

@@ -474,5 +474,33 @@
   "volume_cm3": 1.7,
   "res": 0.25,
   "sec": 10.7
+ },
+ "P28_camera_pod_clamp": {
+  "pid": "P28",
+  "tris": 26642,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   64.0,
+   48.0,
+   50.0
+  ],
+  "volume_cm3": 81.1,
+  "res": 0.25,
+  "sec": 103.1
+ },
+ "P29_camera_housing": {
+  "pid": "P29",
+  "tris": 24188,
+  "watertight": true,
+  "bad_edges": 0,
+  "extent": [
+   46.0,
+   46.0,
+   62.0
+  ],
+  "volume_cm3": 38.0,
+  "res": 0.25,
+  "sec": 100.7
  }
 }

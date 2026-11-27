@@ -8,7 +8,7 @@ X_BMAX = 0.55         # fraction of L where beam is max
 B_TRANSOM = 150.0     # transom half-beam
 DECK_Z = 230.0
 DWL = 106.0           # Rev E design waterline at about 28.5 kg all-up (Rev D: 104 at 27.8; C3-C5: 102 at 26.9; C2: 101 at 26.4; C/C1: 98 at 25.3; Rev B: 90 at about 21 kg)
-MASS_KG = 28.5        # Rev E/E1 all-up mass, from the simulator mass model (E1 adds about 36 g: boom 12, lead 24; Rev D: 27.8; C3-C5: 26.9)
+MASS_KG = 28.7        # Rev F (27 Nov 2026): about +0.18 kg for the camera pod, window, camera and cable (DWL about +0.5 mm, not redrawn). Rev E/E1 all-up mass, from the simulator mass model (E1 adds about 36 g: boom 12, lead 24; Rev D: 27.8; C3-C5: 26.9)
 SECTION_N = 2.2       # superellipse exponent of the sections (round bilge)
 
 def half_beam(x):
@@ -108,6 +108,11 @@ SUMP = dict(x0=560, x1=770, top_z=45)                # Rev C1: the only open spa
 LHC = dict(x0=302, x1=332, w=96, z0=150, z1=216)      # P21 on the aft face of bulkhead x 300, beside the hatch opening (x 330-530)
 MUXPOD = dict(x0=1236, x1=1258, y=-60, w=50, z0=150, z1=190)   # P22 on the forward face of bulkhead x 1260, starboard
 RBPLUS = dict(x=430.0, dia=137, h=40, bowl_od=146, flange_od=166, depth=38)   # P23 in the hatch lid; puck top 2 proud of the flange
+# Rev F (27 Nov 2026): RockBLOCK Plus 9704 (Iridium IMT, messages to 100 KB) replaces the RockBLOCK Plus (SBD) in the
+# same bowl P23: the same 137 x 40 puck. Camera pod on the stern post: clamp P28 at z 472-522, housing P29 forward of the
+# post, its axis horizontal at z 497, looking forward; the camera board sits on a 10 deg wedge so it looks 10 deg down.
+CAMERA = dict(z0=472.0, collar_h=50, plate_x=34, axis_dz=25, housing_od=46, housing_len=62, bore=38, window_d=40, window_t=3,
+              hood=12, tilt_deg=10, board="Seeed XIAO ESP32S3 Sense (OV3660, microSD)", modem="RockBLOCK Plus 9704")
 LIMP_RUDDER_Y = -100.0                               # the starboard rudder (y to port) is the one the limp-home controller can drive
 # Rev E (13 Nov 2026): leaks, servos and weed (docs/Design_RevE.md, docs/Reliability_Review.md)
 PUMP = dict(x=600, y=52, d=28, z0=30, z1=100, kg=0.1)    # diaphragm pump upright on spacer P24 against the port side of the mast tube, above the sump; self-priming

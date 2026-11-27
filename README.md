@@ -41,7 +41,7 @@ From John's [boat-sim](https://github.com/jcolter11374/boat-sim) (MIT): the tow-
 
 ## 3D viewer
 
-**[sheltonr2.github.io/drone-boat](https://sheltonr2.github.io/drone-boat/)**: the Rev E3 boat and every part in the browser (cut-away, X-ray, exploded view, sailing animation). It is published from the `gh-pages` branch, which holds only a copy of `build-files/viewer/` (index.html and model.json); copy both files there again when the viewer changes. GitHub also shows any `.stl` in 3D, for example the [whole boat](build-files/export/drone_boat_revE3_exterior.stl) and each [printed part](build-files/stl/).
+**[sheltonr2.github.io/drone-boat](https://sheltonr2.github.io/drone-boat/)**: the boat and every part in the browser, now showing the proposed Rev F (Rev E3 plus a stern-post camera, docs/Design_RevF.md) (cut-away, X-ray, exploded view, sailing animation). It is published from the `gh-pages` branch, which holds only a copy of `build-files/viewer/` (index.html and model.json); copy both files there again when the viewer changes. GitHub also shows any `.stl` in 3D, for example the [whole boat](build-files/export/drone_boat_revE3_exterior.stl) ([Rev F](build-files/export/drone_boat_revF_exterior.stl)) and each [printed part](build-files/stl/).
 
 ## Live documents
 

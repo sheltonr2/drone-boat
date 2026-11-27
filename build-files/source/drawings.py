@@ -96,13 +96,16 @@ def sheet_cover(pdf, index):
         "   membrane vents, Schrader test valve, humidity sensor; sealed rudder servos (SER-2000) in cradles P12 with arms P26 and spring pushrod links; tail servo potted,",
         "   detent P25; weed fairing fin-to-bulb (D03, D04, D05, D06, D08, T21; docs/Design_RevE.md). 28.5 kg, DWL z 106.",
         "Rev E1 (2026-11-14; part fixes, docs/Design_RevE.md): tail boom 16 x 14 carbon (was 12 x 10) with sockets in P08 and P09 to suit, about 25 g more lead",
-        f"   in P18; steering wave filter; leak SAFE limit 1.0 kg (the sump holds 1.2 L). Launch 45 km off Hatteras. {D.MASS_KG:.1f} kg, DWL z {D.DWL:.0f}.",
+        "   in P18; steering wave filter; leak SAFE limit 1.0 kg (the sump holds 1.2 L). Launch 45 km off Hatteras. 28.5 kg, DWL z 106.",
         "Rev E2 (2026-11-19; design for manufacture, docs/DFM_Review.md; no change to shape, mass or performance): P01 bore opened so the",
         "   lower bearing can be fitted, new spacer P27; P03 and P07 print without supports; P10a disc pocket; P12 base fits its pocket;",
         "   P02A/B split for 220 beds; fit coupons P00a/b. New sheets D30 wiring, D31 laminates and build sequence, D32 hardware and",
         "   linkage, D33 print guide. Full bill of materials: BOM.csv; print settings: Print_Guide.csv.",
         "Rev E3 (2026-11-23; DFM open items 1 and 2 settled, runs 026-027): solar 2 x stock PV Logic 10 W ETFE 380 x 250 in the bays (20 W,",
-        "   was ~40 W custom); wing spar 30 x 26 stock tube with a 26 x 22 sleeve bonded full length inside (same 30 x 22 section). D01, D08, D30."]
+        "   was ~40 W custom); wing spar 30 x 26 stock tube with a 26 x 22 sleeve bonded full length inside (same 30 x 22 section). D01, D08, D30.",
+        "Rev F (2026-11-27; a new letter: it adds a system and changes the comms, docs/Design_RevF.md): RockBLOCK Plus 9704 (Iridium IMT, messages to",
+        "   100 KB) in bowl P23 in place of the RockBLOCK Plus (same 137 x 40 puck); camera pod on the stern post: clamp P28 and housing P29 with a",
+        f"   40 mm window, XIAO ESP32S3 Sense camera, one photo a day by satellite; W3 becomes a 6-core (light + camera). D01, D07, D30. {D.MASS_KG:.1f} kg."]
     k = next(i for i, ln in enumerate(NOTES) if ln.startswith("Rev C4"))
     notes(bg, 20, y - 5, "General notes", NOTES[:k], fs=5.2, lh=2.95)
     notes(bg, 170, yp - 5, "Revision history (continued)", NOTES[k:], fs=5.2, lh=2.95)
@@ -158,6 +161,9 @@ def sheet_ga(pdf):
     leader(ax, (750, D.BULB['axis_z']), (300, -400), f"Lead bulb {D.bulb_mass()[1]:.1f} kg  (D04)")
     leader(ax, (1440, -80), (1050, -330), "Twin spade rudders, 100 mm\neither side of centre  (D05)")
     leader(ax, (Y['x'], zy - 10), (60, 420), "C3: YB3 backup tracker in a\nforedeck well on P19  (D07)", ha="left")
+    CM = D.CAMERA
+    ax.add_patch(Rectangle((S['x'] - CM['plate_x'] - CM['housing_len'], CM['z0'] + CM['axis_dz'] - CM['housing_od'] / 2), CM['housing_len'], CM['housing_od'], fc="#e8a070", ec=INK, lw=THIN))
+    leader(ax, (S['x'] - CM['plate_x'] - 30, CM['z0'] + CM['axis_dz']), (1425, 690), "Rev F: camera pod\nP28 + P29  (D07)", ha="right")
     leader(ax, (D.STUB['x'] + NL['reach'], NL['z'] + 20), (1640, 820), "All-round white\nlight P20", ha="left")
     leader(ax, (D.BULKHEADS[1], 150), (1050, 60), "Watertight bulkheads x 300, 1260;\nhull foam-filled  (D09)")
     leader(ax, (te, 900), (1000, 1000), "Rigid wing sail\nNACA 0015  (D06)")
@@ -714,7 +720,7 @@ def sheet_mast(pdf):
     leader(ax, (D.MAST_X + 26, 200), (640, 200), "Bearing housing P07")
     ax.text(D.MAST_X, 405, "wing root z 300 above", fontsize=5, ha="center")
     S = D.STUB
-    ax2 = view(fig, 160, 45, (1480, 1700), (100, 760), 5, "STERN STUB (1:5)")
+    ax2 = view(fig, 150, 45, (1420, 1700), (100, 760), 5, "STERN STUB (1:5)")
     ax2.add_patch(Rectangle((S['x'] - 10, S['bot_z']), 20, S['top_z'] - S['bot_z'], fill=False, lw=MED))
     ax2.plot([D.L, D.L], [60, 230], color=INK, lw=MED); ax2.text(D.L - 4, 120, "transom", rotation=90, fontsize=5, ha="right")
     ax2.add_patch(Rectangle((D.L, 160), 6, 100, fc="#ddd", ec=INK, lw=THIN))
@@ -739,6 +745,15 @@ def sheet_mast(pdf):
     ax2.add_patch(Rectangle((S['x'] - 16, NL['z']), 32 + NL['reach'], 9, fill=False, lw=THIN))
     ax2.add_patch(Rectangle((S['x'] + NL['reach'] - 15, NL['z'] + 9), 30, 10, fc="white", ec=INK, lw=THIN))
     leader(ax2, (S['x'] + NL['reach'], NL['z'] + 15), (1610, 630), "All-round white light on P20")
+    CM = D.CAMERA; zc = CM['z0'] + CM['axis_dz']; xf0 = S['x'] - CM['plate_x']
+    ax2.add_patch(Rectangle((S['x'] - 16, CM['z0']), 46, CM['collar_h'], fill=False, lw=THIN))
+    ax2.add_patch(Rectangle((xf0, CM['z0']), 22, CM['collar_h'], fill=False, lw=THIN))
+    ax2.add_patch(Rectangle((xf0 - CM['housing_len'], zc - CM['housing_od'] / 2), CM['housing_len'], CM['housing_od'], fc="#f3d9c6", ec=INK, lw=MED))
+    xwin = xf0 - (CM['housing_len'] - CM['hood'] - CM['window_t'])
+    ax2.add_patch(Rectangle((xwin - CM['window_t'], zc - CM['window_d'] / 2), CM['window_t'], CM['window_d'], fc="#7fb8e0", ec=INK, lw=THIN))
+    import math as _m
+    ax2.plot([xwin - 4, xwin - 70], [zc, zc - 66 * _m.tan(_m.radians(CM['tilt_deg']))], color=BLUE, lw=0.5, ls="--")
+    leader(ax2, (xf0 - 30, zc - CM['housing_od'] / 2), (1553, 288), "Rev F: camera P29 on\nclamp P28, z 472-522;\nwindow 40 x 3, looks\n10 deg down; cable in\nat z 487 (6 mm), W3", fs=5.2, ha="left")
     notes(bg, 260, 250, "Notes", [
         f"Spar: 30 x 22 carbon tube, {D.WING_TOP_Z - D.SPAR_BOT_Z:.0f} long (z {D.SPAR_BOT_Z:.0f} to {D.WING_TOP_Z}). Rev C3:",
         "1.6 x the strength of 30 x 26. Bearings 130 apart in the",
@@ -766,8 +781,8 @@ def sheet_mast(pdf):
         "Vane shaft: 8 mm 316, 75 long, 2 x S608-2RS bearings.",
         "",
         "On the post, bottom to top: radar reflector (z 330-470),",
-        "main GPS on P05 (z 560; Rev D, was the Iridium patch), light P20",
-        "(z 600), vane (z 650).",
+        "Rev F camera pod P28/P29 (z 472-522), main GPS on P05 (z 560;",
+        "Rev D, was the Iridium patch), light P20 (z 600), vane (z 650).",
         "",
         "YB3 (C3): in a glassed well in the foredeck, 176 x 106 x 38",
         f"deep, centred at x {D.YB3['x']:.0f}, cut into the solid bow foam, with a",
@@ -1016,7 +1031,7 @@ def main():
              ["D09", "Watertight subdivision, foam fill, battery box, labels"]]
     for k, pr in enumerate(pairs):
         index.append([f"D{10 + k:02d}", "Printed parts " + ", ".join(p for _, p in pr)])
-    index += [["D30", "Electrical wiring diagram, fuses, penetrations (E2)"], ["D31", "Laminate schedule, strongback, build sequence (E2)"],
+    index += [["D30", "Electrical wiring diagram, fuses, penetrations (F)"], ["D31", "Laminate schedule, strongback, build sequence (E2)"],
               ["D32", "Hardware schedule, steering linkage, spring link (E2)"], ["D33", "3D-printing guide and fit coupons (E2)"]]
     with PdfPages(f"{OUT}/Drawings.pdf") as pdf:
         sheet_cover(pdf, index)

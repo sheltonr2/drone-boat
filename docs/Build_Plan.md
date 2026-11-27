@@ -15,7 +15,7 @@ The plan is a 1.5 m sealed, self-righting sailboat. It sails west to east across
 | Solar | 40–60 W of flexible panels on deck |
 | Battery | \~200 Wh LiFePO4 (12.8 V, 15–20 Ah) |
 | Average power draw | Under 1.5 W while sailing |
-| Comms | Iridium SBD, two-way, a report every 1–6 h |
+| Comms | Iridium SBD, two-way, a report every 1–6 h (proposed Rev F: Iridium IMT with a photo a day, docs/Design_RevF.md) |
 | Endurance goal | 6+ months, no maintenance |
 | Route | Off Hatteras, North Carolina, to Europe, aiming for Cornwall and the Isles of Scilly; launch in May (changed 13 Nov 2026; docs/Launch_Plan.md) |
 
@@ -72,6 +72,8 @@ Time, latitude/longitude, speed and heading, apparent wind angle and speed, batt
 - The boat range-checks every value. A waypoint on land, or a report interval under 30 minutes, is rejected and flagged in the next report.
 - The boat never depends on you. With no commands it keeps flying its last route. It goes to safe mode (heave-to, reports every 12 h) when the battery falls below 25% or a leak is detected.
 
+**Rev F (proposed 27 Nov 2026): a photo a day.** A RockBLOCK Plus 9704 (Iridium IMT) replaces the RockBLOCK Plus in the same bowl, and a camera on the stern post sends one ~10 KB still a day with a report. Commands work the same way; the shore server takes Ground Control's IMT webhook instead of the SBD one, and a `PHOTO` command asks for more. Details in docs/Design_RevF.md.
+
 **Airtime cost**
 
 RockBLOCK line rental is [$17/month](https://groundcontrol.com/?p=1671). Credits cost $0.12–$0.20 each, and [one credit covers 50 bytes](https://core-electronics.com.au/rockblock-9603-with-usb-cable-iridium-satellite-modem-bundle.html). Checking for commands when none are waiting [also uses a credit](https://adafruit.com/product/4521). Piggyback every check on a report so you never pay for an empty mailbox check.
@@ -84,6 +86,8 @@ RockBLOCK line rental is [$17/month](https://groundcontrol.com/?p=1671). Credits
 | Every 12 h (safe mode) | \~60 | \~$25 |
 
 The totals assume 1,000-credit bundles and include line rental. Use 4-hour reports while crossing open ocean, then switch to hourly near coasts or in bad weather.
+
+Rev F is billed by the kilobyte instead: IMT plans are $25 (50 KB), $34 (250 KB), $42 (500 KB) or $50 (1 MB) a month with a 3-month minimum and $0.30–$0.50 per KB over. Reports every 4 hours plus a photo a day come to about 310 KB a month, so about $42 a month on the 500 KB plan (SBD at 4-hour reports: about $39).
 
 ## Software plan
 
@@ -113,7 +117,7 @@ Every part below runs on 12.8 V or 5 V and works with stock ArduPilot. The picks
 
 | Subsystem | Recommended part | Why this one | Price (USD) |
 | --- | --- | --- | --- |
-| Satellite modem | [RockBLOCK Plus](https://www.groundcontrol.com/wp-content/uploads/2026/08/RockBLOCK-Plus-Data-Sheet.pdf) (Rev D; was the RockBLOCK 9603) | Same Iridium SBD service and code, in a factory-encapsulated case with its own antenna, 9–30 V supply, RS-232 link. Mounted in bowl P23 in the hatch lid | \~450 (price not confirmed) |
+| Satellite modem | [RockBLOCK Plus](https://www.groundcontrol.com/wp-content/uploads/2026/08/RockBLOCK-Plus-Data-Sheet.pdf) (Rev D; was the RockBLOCK 9603) | Same Iridium SBD service and code, in a factory-encapsulated case with its own antenna, 9–30 V supply, RS-232 link. Mounted in bowl P23 in the hatch lid. Proposed Rev F: [RockBLOCK Plus 9704](https://store.groundcontrol.com/products/rockblock-plus-9704) (Iridium IMT), same puck and bowl | \~450 (price not confirmed); Rev F 479 |
 | RS-232 level shifter | MAX3232-class breakout | Links the RockBLOCK Plus to the companion ESP32 | \~5 |
 | Limp-home controller (Rev D) | ESP32-S3 Feather, Micro M10 GPS, BNO085, 6 V regulator, 4-channel servo mux, ideal diodes, fuse, cases P21/P22 | docs/Limp_Home_Spec.md | \~190 |
 | ~~Satellite antenna~~ (deleted in Rev D: the RockBLOCK Plus has its own) | [Ground Control External Iridium Patch Antenna](https://store.groundcontrol.com/products/external-iridium-patch-antenna) (2J7426MPz) | Passive, outdoor-rated, comes with a 1.8 m SMA cable; mount on the mast stub above the deck | 30 |
@@ -192,7 +196,7 @@ These come from the simulator on invented weather, without hurricanes. Virginia 
 
 ## Budget
 
-**Full bill of materials (Rev E3, 23 Nov 2026):** `build-files/BOM.csv` lists every part, material, fastener and consumable with quantities, prices and purchase links: about $4,910 including the YB3 (docs/DFM_Review.md). The figures below are the earlier itemised estimates, which left out most consumables, fasteners, paint and spares.
+**Full bill of materials (Rev E3, 23 Nov 2026):** `build-files/BOM.csv` lists every part, material, fastener and consumable with quantities, prices and purchase links: about $4,910 including the YB3 (docs/DFM_Review.md). The proposed Rev F (camera and IMT modem) adds about $127, to about $5,040 (docs/Design_RevF.md). The figures below are the earlier itemised estimates, which left out most consumables, fasteners, paint and spares.
 
 Rev C (10 Nov 2026) parts total about $2,270, plus about $630 for the YB3 backup tracker. Rev B sail-only was about $2,010; Rev C adds about $260 (second servo, rudder bushings and seals, bigger spar and bearings, two more WetLinks, hull foam, battery box, light, lead) and drops the $35 backup D-cell. The thruster was already outside the sail-only figure, so removing it saves nothing here. Airtime is a separate running cost of $40–$60 a month, plus the tracker's airtime.
 
