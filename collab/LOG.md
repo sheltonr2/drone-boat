@@ -2,6 +2,10 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-27, 02:20 UTC (21:15 local): Cornwall arrival decided: option B
+
+- Randolph: "B". The approach moves 40-45 km south of Scilly (49.35N 7.20W, 49.50N 6.40W) and the hold moves to 30 km south of the Lizard (49.70N 5.20W); scenario collab/runs_042/plan_south_deep.json. Option A (the same approach to the Lizard offing) is the fallback if the recovery boat can't go 50 km out. Launch_Plan updated (decision table and the accurate-coastline section) and copied to the PC.
+
 ## 2026-11-27, 02:20 UTC (21:20 local): #50 results posted; BVI pickup point decided
 
 - Randolph: "Make the #50 post." Posted ([comment 7207925031](https://github.com/jcolter11374/boat-sim/issues/50#issuecomment-7207925031); text in collab/post_2026-11-27_results.md, with one line added for his BVI decision). The API shows exactly one new comment.
