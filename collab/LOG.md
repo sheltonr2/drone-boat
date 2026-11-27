@@ -2,6 +2,18 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-27, 13:35 UTC (08:35 local): run 043a analysed
+
+- Nothing new on #50 or by email.
+- Queue: 043a ran 21:18-06:42, all 17 runs completed. 041: 3 of 15 ERA5 months done in about 15 h (May 2025 13 min, Jun 4.6 h, Jul 5.7 h; CDS connection errors, retried). Marine May-Nov 2025 is complete. About 2.5 days to go at this rate.
+- **043a results** (collab/runs_043a/analysis.py and .json), v2 against the v1 twins:
+  - Eastbound: B 81.1% (+0.3), A 79.5% (+0.1), the old plan 74.3% (-1.5). B vs the old plan +6.8 (+3.8 to +9.7); B vs A +1.6 (-0.4 to +3.6).
+  - B launch window: April 79.6% (storm 1.8%); 21 May-15 June 82.8% (storm 12.7%, vs 4.4% for 1-20 May); 70 km drop 81.9% (+0.8).
+  - Cornwall holds unchanged: 30 km S of the Lizard 0.4% aground; Lizard offing 14.2% (12.8%).
+  - Mindelo -> Norman offing 88.3% (+0.3); pickup 3 days after arrival 84%. Mindelo -> Anegada W 82.3%; pickup 7 days after arrival 75%. El Hierro -> Norman offing 81.7% (123 days median).
+  - BVI holds unchanged.
+- **Conclusion:** the depth data confirms every decision. Docs updated (Launch_Plan and East_West_Study) and copied to the PC.
+
 ## 2026-11-27, 02:25 UTC (21:25 local): run 043a queued and running
 
 - Randolph: "Are there any sims running? Can we put sims in to run for the next 10+ hours?" Only 041 (the download, network-bound) was running.

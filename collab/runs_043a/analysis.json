@@ -1,0 +1,476 @@
+{
+ "east": {
+  "B": {
+   "arrive": [
+    81.1,
+    78.7,
+    83.5
+   ],
+   "aground": 2.4,
+   "groundings": {
+    "Isles of Scilly / west of Land's End": 15,
+    "Lizard peninsula": 2,
+    "Land's End to Penzance (west of Mount's Bay)": 2,
+    "east Atlantic (37.83N 25.18W)": 1,
+    "Manacles to Falmouth": 1,
+    "east Atlantic (38.65N 27.19W)": 1,
+    "east Atlantic (39.40N 31.28W)": 1,
+    "Devon / Dorset": 1
+   },
+   "days_median": 120.5,
+   "storm_p_any": 0.0436,
+   "vs_twin": [
+    0.3,
+    -0.9,
+    1.5
+   ],
+   "p_pickup": {
+    "1": 80.1,
+    "3": 78.2,
+    "7": 75.6
+   }
+  },
+  "A": {
+   "arrive": [
+    79.5,
+    76.9,
+    82.0
+   ],
+   "aground": 3.3,
+   "groundings": {
+    "Isles of Scilly / west of Land's End": 16,
+    "Land's End to Penzance (west of Mount's Bay)": 6,
+    "Lizard peninsula": 3,
+    "Devon / Dorset": 2,
+    "east Atlantic (38.71N 28.19W)": 1,
+    "east Atlantic (37.84N 25.21W)": 1,
+    "east Atlantic (37.84N 25.61W)": 1,
+    "east Atlantic (38.64N 27.16W)": 1,
+    "east Atlantic (39.42N 31.28W)": 1,
+    "inside Mount's Bay": 1
+   },
+   "days_median": 120.64,
+   "storm_p_any": 0.0443,
+   "vs_twin": [
+    0.1,
+    -1.3,
+    1.5
+   ],
+   "p_pickup": {
+    "1": 78.2,
+    "3": 76.0,
+    "7": 69.6
+   }
+  },
+  "old": {
+   "arrive": [
+    74.3,
+    71.5,
+    76.9
+   ],
+   "aground": 7.4,
+   "groundings": {
+    "Isles of Scilly / west of Land's End": 49,
+    "Lizard peninsula": 14,
+    "Land's End to Penzance (west of Mount's Bay)": 4,
+    "inside Mount's Bay": 2,
+    "Manacles to Falmouth": 1,
+    "east Atlantic (38.44N 28.50W)": 1,
+    "east Atlantic (37.84N 25.51W)": 1,
+    "east Atlantic (37.84N 25.55W)": 1,
+    "east Atlantic (38.79N 27.16W)": 1
+   },
+   "days_median": 120.25,
+   "storm_p_any": 0.0441,
+   "vs_twin": [
+    -1.5,
+    -3.2,
+    0.1
+   ]
+  },
+  "B_drop70": {
+   "arrive": [
+    81.9,
+    79.5,
+    84.3
+   ],
+   "aground": 1.2,
+   "groundings": {
+    "Isles of Scilly / west of Land's End": 9,
+    "Lizard peninsula": 2,
+    "Hatteras": 1
+   },
+   "days_median": 120.88,
+   "storm_p_any": 0.0515,
+   "vs_twin": [
+    0.8,
+    -2.2,
+    3.9
+   ]
+  },
+  "B_april": {
+   "arrive": [
+    79.6,
+    77.1,
+    82.1
+   ],
+   "aground": 1.7,
+   "groundings": {
+    "Isles of Scilly / west of Land's End": 10,
+    "Lizard peninsula": 2,
+    "Devon / Dorset": 1,
+    "inside Mount's Bay": 1,
+    "east Atlantic (39.45N 31.27W)": 1,
+    "Land's End to Penzance (west of Mount's Bay)": 1,
+    "east Atlantic (37.73N 25.32W)": 1
+   },
+   "days_median": 117.96,
+   "storm_p_any": 0.0177,
+   "twin_arrive": [
+    81.1,
+    78.7,
+    83.5
+   ]
+  },
+  "B_latemay": {
+   "arrive": [
+    82.8,
+    80.5,
+    85.1
+   ],
+   "aground": 2.3,
+   "groundings": {
+    "Lizard peninsula": 14,
+    "Isles of Scilly / west of Land's End": 5,
+    "east Atlantic (38.80N 27.27W)": 1,
+    "east Atlantic (39.48N 31.14W)": 1,
+    "Manacles to Falmouth": 1,
+    "east Atlantic (38.70N 28.25W)": 1
+   },
+   "days_median": 115.73,
+   "storm_p_any": 0.1273,
+   "twin_arrive": [
+    81.1,
+    78.7,
+    83.5
+   ]
+  },
+  "B_minus_A_v2": [
+   1.6,
+   -0.4,
+   3.6
+  ],
+  "B_minus_old_v2": [
+   6.8,
+   3.8,
+   9.7
+  ]
+ },
+ "holds_cornwall": {
+  "station_lizard_deep": {
+   "percent": {
+    "at_sea_timeout": 86.0,
+    "lost": 13.6,
+    "aground": 0.4
+   },
+   "r50": 5.72,
+   "r90": 28.66,
+   "afloat": {
+    "1": 98.8,
+    "3": 96.4,
+    "7": 93.2,
+    "14": 86.0
+   },
+   "days_to_aground": {
+    "p10": 13.2,
+    "median": 13.3,
+    "p90": 13.3
+   },
+   "twin_percent": {
+    "at_sea_timeout": 86.0,
+    "lost": 13.6,
+    "aground": 0.4
+   },
+   "twin_afloat": {
+    "1": 98.8,
+    "3": 96.4,
+    "7": 93.2,
+    "14": 86.0
+   }
+  },
+  "drift_lizard_deep": {
+   "percent": {
+    "aground": 80.6,
+    "at_sea_timeout": 19.4
+   },
+   "r50": 112.48,
+   "r90": 333.26,
+   "afloat": {
+    "1": 98.0,
+    "3": 87.0,
+    "7": 63.6,
+    "14": 42.2
+   },
+   "days_to_aground": {
+    "p10": 2.1,
+    "median": 8.7,
+    "p90": 19.5
+   },
+   "twin_percent": {
+    "aground": 80.2,
+    "at_sea_timeout": 19.8
+   },
+   "twin_afloat": {
+    "1": 98.2,
+    "3": 87.6,
+    "7": 64.2,
+    "14": 43.4
+   }
+  },
+  "station_lizard": {
+   "percent": {
+    "at_sea_timeout": 74.2,
+    "aground": 14.2,
+    "lost": 11.6
+   },
+   "r50": 8.26,
+   "r90": 41.76,
+   "afloat": {
+    "1": 98.4,
+    "3": 95.6,
+    "7": 87.6,
+    "14": 74.2
+   },
+   "days_to_aground": {
+    "p10": 3.5,
+    "median": 8.2,
+    "p90": 13.0
+   },
+   "twin_percent": {
+    "at_sea_timeout": 75.2,
+    "aground": 12.8,
+    "lost": 12.0
+   },
+   "twin_afloat": {
+    "1": 98.4,
+    "3": 95.8,
+    "7": 88.2,
+    "14": 75.2
+   }
+  },
+  "drift_lizard": {
+   "percent": {
+    "aground": 85.0,
+    "at_sea_timeout": 15.0
+   },
+   "r50": 100.71,
+   "r90": 310.36,
+   "afloat": {
+    "1": 92.0,
+    "3": 76.6,
+    "7": 55.4,
+    "14": 36.8
+   },
+   "days_to_aground": {
+    "p10": 1.2,
+    "median": 6.3,
+    "p90": 20.4
+   },
+   "twin_percent": {
+    "aground": 85.0,
+    "at_sea_timeout": 15.0
+   },
+   "twin_afloat": {
+    "1": 92.2,
+    "3": 76.8,
+    "7": 56.4,
+    "14": 37.2
+   }
+  }
+ },
+ "ew": {
+  "mindelo__norman_offing": {
+   "arrive": [
+    88.3,
+    86.2,
+    90.2
+   ],
+   "aground": 0.0,
+   "groundings": {},
+   "days_median": 85.27,
+   "storm_p_any": 0.0041,
+   "vs_twin": [
+    0.3,
+    -0.8,
+    1.5
+   ],
+   "p_pickup": {
+    "1": 87.6,
+    "3": 83.7,
+    "7": 68.3
+   }
+  },
+  "mindelo__anegada_west": {
+   "arrive": [
+    82.3,
+    80.0,
+    84.5
+   ],
+   "aground": 0.0,
+   "groundings": {},
+   "days_median": 87.14,
+   "storm_p_any": 0.0051,
+   "vs_twin": [
+    -0.1,
+    -1.4,
+    1.3
+   ],
+   "p_pickup": {
+    "1": 80.8,
+    "3": 78.5,
+    "7": 74.7
+   }
+  },
+  "el_hierro_south__norman_offing": {
+   "arrive": [
+    81.7,
+    79.3,
+    84.1
+   ],
+   "aground": 0.2,
+   "groundings": {
+    "east Atlantic (16.32N 16.53W)": 1,
+    "east Atlantic (9.50N 13.52W)": 1
+   },
+   "days_median": 122.57,
+   "storm_p_any": 0.0034,
+   "twin_arrive": [
+    88.3,
+    86.2,
+    90.2
+   ]
+  }
+ },
+ "holds_bvi": {
+  "station_norman_offing": {
+   "percent": {
+    "at_sea_timeout": 53.4,
+    "aground": 35.0,
+    "lost": 11.6
+   },
+   "r50": 8.24,
+   "r90": 55.7,
+   "afloat": {
+    "1": 99.2,
+    "3": 94.8,
+    "7": 77.4,
+    "14": 53.4
+   },
+   "days_to_aground": {
+    "p10": 3.3,
+    "median": 7.4,
+    "p90": 12.5
+   },
+   "twin_percent": {
+    "at_sea_timeout": 52.8,
+    "aground": 36.0,
+    "lost": 11.2
+   },
+   "twin_afloat": {
+    "1": 99.2,
+    "3": 95.2,
+    "7": 77.0,
+    "14": 52.8
+   }
+  },
+  "drift_norman_offing": {
+   "percent": {
+    "at_sea_timeout": 26.2,
+    "aground": 73.8
+   },
+   "r50": 346.72,
+   "r90": 1049.44,
+   "afloat": {
+    "1": 89.4,
+    "3": 62.0,
+    "7": 42.0,
+    "14": 36.0
+   },
+   "days_to_aground": {
+    "p10": 0.9,
+    "median": 2.9,
+    "p90": 17.2
+   },
+   "twin_percent": {
+    "at_sea_timeout": 26.6,
+    "aground": 73.4
+   },
+   "twin_afloat": {
+    "1": 90.2,
+    "3": 63.4,
+    "7": 43.2,
+    "14": 37.0
+   }
+  },
+  "station_anegada_west": {
+   "percent": {
+    "at_sea_timeout": 77.6,
+    "lost": 13.8,
+    "aground": 8.6
+   },
+   "r50": 9.45,
+   "r90": 42.37,
+   "afloat": {
+    "1": 98.2,
+    "3": 95.4,
+    "7": 90.8,
+    "14": 77.6
+   },
+   "days_to_aground": {
+    "p10": 2.5,
+    "median": 9.2,
+    "p90": 12.9
+   },
+   "twin_percent": {
+    "at_sea_timeout": 80.6,
+    "lost": 12.2,
+    "aground": 7.2
+   },
+   "twin_afloat": {
+    "1": 98.6,
+    "3": 95.6,
+    "7": 91.0,
+    "14": 80.6
+   }
+  },
+  "drift_anegada_west": {
+   "percent": {
+    "aground": 67.2,
+    "at_sea_timeout": 32.8
+   },
+   "r50": 266.12,
+   "r90": 691.69,
+   "afloat": {
+    "1": 98.0,
+    "3": 91.0,
+    "7": 73.8,
+    "14": 58.0
+   },
+   "days_to_aground": {
+    "p10": 2.4,
+    "median": 10.8,
+    "p90": 24.6
+   },
+   "twin_percent": {
+    "aground": 67.2,
+    "at_sea_timeout": 32.8
+   },
+   "twin_afloat": {
+    "1": 98.2,
+    "3": 91.2,
+    "7": 73.8,
+    "14": 58.0
+   }
+  }
+ }
+}

@@ -258,6 +258,18 @@ No crossing went aground on the way in to any point. A dead boat at any point dr
 
 **Decided (Randolph, 26 Nov 2026):** "Let's plan on norman but always run anegada too, not sure which yet." The plan's pickup point is now the Norman offing, 18 km south of Norman (18.17N 64.58W); Anegada W (18.72N 64.49W) is run alongside it in every study until he decides between them.
 
+**Check with depth data (run 043a, 27 Nov 2026).** The same runs on the v2 coastlines, paired with their v1 twins:
+
+| Run 043a, v2 coasts | Arrive (95% range) | vs v1 twin | Aground in 14 days holding | Afloat and with us after 3 / 7 days | Pickup 3 / 7 days after arrival |
+|---|---|---|---|---|---|
+| Mindelo -> **Norman offing (the plan)** | **88.3%** (86.2-90.2) | +0.3 | 35.0% (v1 36.0%) | 95 / 77% | **84 / 68%** |
+| Mindelo -> Anegada W | 82.3% (80.0-84.5) | -0.1 | 8.6% (v1 7.2%) | 95 / 91% | 79 / **75%** |
+| El Hierro via 20N 28W -> Norman offing (the fallback launch) | 81.7% (79.3-84.1) | | | | |
+
+- The depth data changes nothing that matters: every figure moves by less than 1.5 points.
+- The El Hierro fallback reaches the Norman offing 6.6 points less often than Mindelo does, and takes 123 days against 85 (median). Two boats were lost on the West African coast. Mindelo stays the launch.
+- The plan stands: the Norman offing for a prompt pickup, with Anegada W run alongside it.
+
 ## 8. Earlier questions (14 Nov)
 
 1. **Is westbound a second option or a candidate for the first attempt?** The answer decides how much of the build plan's test schedule should cover downwind sailing and weed.

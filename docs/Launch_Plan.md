@@ -222,6 +222,22 @@ On Natural Earth the plan scored 81.6% (run 034). The plan's approach passes abo
 
 **Decided (Randolph, 26 Nov 2026): option B.** The approach moves 40-45 km south of Scilly (49.35N 7.20W, 49.50N 6.40W) and the holding area moves 30 km south of the Lizard (49.70N 5.20W). Option A (the same approach to the Lizard offing) is the fallback if the recovery boat can't go about 50 km out from Falmouth. B's edge over A (+1.4, -0.7 to +3.5) is within the noise; the bigger difference is the hold (0.4% against 12.8% aground in two weeks). Run 043 (five years, v2 coastlines with EMODnet depth and UKHO hazards) re-checks B against A and the old plan.
 
+**Check with depth data (run 043a, 27 Nov 2026).** The same runs on the v2 coastlines (EMODnet shallows under 2 m, UKHO wrecks and obstructions where the seabed is under 5 m, the wreck filter fixed), paired voyage for voyage with their v1 twins:
+
+| Run 043a, v2 coasts, 2021-2024 | Arrive (95% range) | vs v1 twin | Aground (Scilly) | Arrive and afloat 3 days later |
+|---|---|---|---|---|
+| **B (the plan):** south of Scilly, hold 30 km S of the Lizard | **81.1%** (78.7-83.5) | +0.3 (-0.9 to +1.5) | 2.4% (18) | **78%** |
+| A (fallback): south of Scilly, Lizard offing | 79.5% (76.9-82.0) | +0.1 | 3.3% (21) | 76% |
+| The 18 Nov plan | 74.3% (71.5-76.9) | -1.5 | 7.4% (53) | |
+| B launched in April | 79.6% | | 1.7% | storms 1.8% |
+| B launched 21 May-15 June | 82.8% | | 2.3% (14 on the Lizard) | **storms 12.7%** |
+| B from the 70 km drop (35.00N 75.05W) | 81.9% | +0.8 (-2.2 to +3.9) | 1.2% | |
+
+- **The depth data changes nothing that matters.** Every arrival figure moves by less than 1.5 points. The holds are almost identical too: 0.4% aground 30 km south of the Lizard, and 14.2% (was 12.8%) at the Lizard offing.
+- B beats the 18 Nov plan by +6.8 (+3.8 to +9.7) and A by +1.6 (-0.4 to +3.6). **The decision for B stands.**
+- **Launch window:** 1-20 May stays. A later launch arrives slightly more often (82.8%), but the chance of meeting a tropical storm triples (12.7% against 4.4%). April is a little lower (79.6%), with the fewest storms (1.8%).
+- The 70 km drop is no worse than 45 km (+0.8, within the noise). It stays the fallback if the Gulf Stream edge is rough on launch day.
+
 ## Launch window on four years of weather (15 Nov 2026, runs 019a–c)
 
 Rev E1, 45 km off Hatteras → Cornwall, 500 voyages per window on 2021–2024 weather. The same seeds were used in each window, so the differences are paired. Analysis: [`window_analysis.py`](data/window_analysis.py).
