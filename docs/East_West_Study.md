@@ -4,7 +4,7 @@
 
 ## Bottom line
 
-- **Decided (18 Nov 2026):** east-west is the backup option. Launch from Mindelo, Cape Verde, between about 25 November and 5 January (mid-December is the target), via the southern approach to a holding point south of Norman and Peter Islands in the BVI, for a March arrival. The fallback is El Hierro or Gran Canaria routed via 20N 28W, launching mid-November to mid-December (section 10). Four winters of weather (section 12) confirm the ranking: Mindelo 87.8%, El Hierro 81.9%, Gran Canaria 78.4%.
+- **Decided (18 Nov 2026):** east-west is the backup option. Launch from Mindelo, Cape Verde, between about 25 November and 5 January (mid-December is the target), via the southern approach to a holding point south of Norman and Peter Islands in the BVI, for a March arrival (**holding point under review 26 Nov 2026:** on the accurate coastline it is the worst of seven tested; section 13). The fallback is El Hierro or Gran Canaria routed via 20N 28W, launching mid-November to mid-December (section 10). Four winters of weather (section 12) confirm the ranking: Mindelo 87.8%, El Hierro 81.9%, Gran Canaria 78.4%.
 
 - **Westbound means the trade-wind route.** The boat would go from the Canary Islands (or Cape Verde) to the Lesser Antilles: about 4,500–4,900 km great circle, and about 5,200–5,600 km actually sailed. The wind and current push the boat west almost the whole way. This is also the route of the only small boat to have finished the Microtransat. Oshen's *C-Star PC13* (1.2 m) sailed from Gran Canaria to Barbados in 127 days in 2026 ([Crossing_History.md](Crossing_History.md)).
 - **The northern route (Europe to the US) is not a candidate.** It means beating into the westerlies and the Gulf Stream. Saildrone's 7 m SD 1021 did it in 68 days, but no small boat has. Run 020 confirmed it: 0 of 300 simulated voyages arrived (section 4b).
@@ -229,6 +229,34 @@ On the same seeds (the launch windows differ, so these compare the plans as writ
 - **The two older winters were a little kinder,** so Mindelo's pooled figure rises from 86.0% to 87.8% and its median crossing falls from 93 to 85 days. The faster crossings mean fewer March arrivals (41% rather than 51%) and more in February.
 - **For a March arrival from Mindelo,** the boats that arrived in March launched between 27 November and 3 January (median 20 December). That matches the decided window of about 25 November to 5 January; mid-December stays the right target.
 - Storm exposure stays negligible: under 0.5% pass within 200 km of a tropical storm. Weed fouling is unchanged (about 0.5 events per voyage from Cape Verde and 0.8 from the Canaries).
+
+## 13. Where to pick the boat up in the BVI (26 Nov 2026, runs 036 and 038)
+
+The holding point south of Norman and Peter Islands was chosen on Natural Earth's coastline, which has no Norman, Peter or Jost Van Dyke. Runs 036 and 038 tested seven pickup points on the accurate coastline ([docs/data/coast](data/coast/README.md), v1: OpenStreetMap, OSM reefs and NOAA chart hazards), Rev E3. Map: [docs/figures/pickup_map.png](figures/pickup_map.png). Analysis: [`collab/runs_036/pickup_analysis.py`](../collab/runs_036/pickup_analysis.py).
+
+- **Run 038, the crossing:** Mindelo to each point, 1,000 voyages, launches 15 Nov-10 Jan over four winters (2021-22 to 2024-25), southern approach.
+- **Run 036, the hold:** 500 holds per point, starting February-April 2022-2025, station-keeping within 1 km for 14 days with failures on; and a dead boat drifting for 30 days.
+
+| Pickup point | Arrive from Mindelo | Aground in 14 days holding | Afloat and with us after 3 / 7 days | Pickup 3 / 7 days after arrival | Radius (half / 90% of the time) | Where holds go aground |
+|---|---|---|---|---|---|---|
+| Norman Island, 4 km S (18.30N 64.58W, **plan**) | 88.2% | **84.6%** (median 2.9 days) | 54 / 29% | **48 / 26%** | 4 / 25 km | Norman/Peter 232, St John 156 |
+| Norman offing, 18 km S (18.17N 64.58W) | 88.0% | 36.0% (7.7 days) | 95 / 77% | **84 / 68%** | 8 / 54 km | St Thomas 84, St John 62 |
+| St Croix, 9 km N (17.85N 64.75W) | 85.9% | 24.2% | 93 / 81% | 80 / 70% | 15 / 25 km | St Croix 119 |
+| Anegada, 8 km W (18.72N 64.49W) | 82.4% | **7.2%** (9.7 days) | 96 / 91% | 79 / **75%** | 9 / 42 km | Jost Van Dyke 13, St Thomas 7 |
+| Ginger Island SE (18.33N 64.43W) | 88.0% | 54.0% | 82 / 55% | 72 / 48% | 2 / 13 km | Norman/Peter 165 |
+| Anegada, 9 km N (18.82N 64.33W) | 78.7% | 23.6% | 92 / 82% | 72 / 64% | 11 / 59 km | Horseshoe Reef 77 |
+| Jost Van Dyke, 4 km N (18.49N 64.75W) | 84.5% | 66.4% | 78 / 54% | 66 / 46% | 4 / 11 km | Jost Van Dyke 313 |
+
+No crossing went aground on the way in to any point. A dead boat at any point drifts west with the trades and the current: 67-89% are ashore within 30 days, mostly on Culebra and Vieques, and from the inshore points within a day (median 0.5 days from Norman).
+
+**What it shows (no decision changed):**
+- **The current holding point is the worst of the seven.** The trades and the westward current carry the boat onto Norman, Peter and St John; most holds there go aground within three days.
+- **18 km south of Norman is best for a prompt pickup** (84% at three days), keeping Road Town about 30 km away.
+- **8 km west of Anegada is best if the pickup could slip by a week** (75% at seven days): it has the most open water downwind. It costs 6 points of arrivals and a longer run out (about 30 km from Spanish Town, Virgin Gorda).
+- **Plan the recovery for the arrival,** as in Cornwall: the boat's ETA is known days ahead.
+- The gap east of 64.42W (Anegada) has no NOAA chart cover. v2 coastlines add EMODnet depth there (run 043 will re-check).
+
+**Decision for Randolph:** the BVI pickup point.
 
 ## 8. Earlier questions (14 Nov)
 

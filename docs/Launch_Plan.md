@@ -10,7 +10,7 @@
 | Drop point | **About 45 km out, 34.95°N 75.35°W, on the Gulf Stream's inshore edge, by offshore charter** (decided by Randolph 14 Nov; the fallback is 70 km out, 35.00°N 75.05°W). Not the 10 km point off the inlet | **Diamond Shoals** run 13–22 km south-east from Cape Hatteras with as little as 1 m over them, and the simulator's coastline doesn't hold them. Rev E, 500 voyages each, 2023 and 2024 ([Naval_Review.md](Naval_Review.md)): from the inlet, 22% of voyages passed within 2 km of the shoals and 49% within 5 km; from 45 km and 70 km, none within 10 km. A dog-leg from the inlet didn't clear them (7% within 2 km). Success: 45 km 87.6%, 70 km 86.8%, inlet 83.4% (before any shoal losses), so 45 km is +4.2 (+0.0 to +8.4) over the inlet and tied with 70 km. A dead boat dropped at 45 km grounded in 2–8 of 32 drifts within 30 days, against 0–3 at 70 km and 14–17 at the inlet; the early ones were driven back onto Hatteras Island, which needs an onshore wind; the weather rule below targets them. 70 km is the safer choice for a boat that dies on day one, at the cost of a 40 nm run out instead of 25 |
 | Destination | **Cornwall and the Isles of Scilly** (aim point 49.95°N 6.3°W); any European landfall counts | Tied with SW Ireland in the destination study and stage B, +3.8 (−0.2 to +7.8) in stage C |
 | Launch window | **1–20 May 2028 target; 1 April–15 June usable** (window decided by Randolph on 18 Nov 2026; year moved from 2027 to 2028 by Randolph on 23 Nov 2026), on the earliest suitable weather day | Checked on four years of weather on 15 Nov 2026 (below): April, 1–20 May and 21 May–15 June all score 86–89%. Storm exposure rises through June ([Hurricane_Risk.md](Hurricane_Risk.md)) |
-| Arrival and holding | **Holding pattern 12 km south of the Lizard (49.85°N 5.20°W)**, the mouth of Mount's Bay (49.97°N 5.45°W) as the alternative (decided by Randolph 18 Nov 2026). The approach passes south of Scilly via 49.60°N 7.20°W and 49.70°N 6.40°W, then 49.83°N 5.80°W (south of Wolf Rock) | Runs 021b, 023b and 025 (below): 76% of boats reach the Lizard offing, against 65% for Falmouth Bay. Close passes (within 1 km) are 3% for Scilly and 1% for Wolf Rock, the Lizard and the Manacles. Pickup by boat from Falmouth, 30 km |
+| Arrival and holding | **Holding pattern 12 km south of the Lizard (49.85°N 5.20°W)**, the mouth of Mount's Bay (49.97°N 5.45°W) as the alternative (decided by Randolph 18 Nov 2026). The approach passes south of Scilly via 49.60°N 7.20°W and 49.70°N 6.40°W, then 49.83°N 5.80°W (south of Wolf Rock) | Runs 021b, 023b and 025 (below): 76% of boats reach the Lizard offing, against 65% for Falmouth Bay. Close passes (within 1 km) are 3% for Scilly and 1% for Wolf Rock, the Lizard and the Manacles. Pickup by boat from Falmouth, 30 km. **Under review 26 Nov 2026:** on the accurate coastline this approach loses 4% of boats on Scilly and the hold grounds 13% of boats in two weeks; see the section on the accurate coastline below |
 | Before launch | **3-week coastal trial passed** (Field Test F) and **second tracker fitted** | These two items are worth the most odds per dollar ([Failure_Rates.md](Failure_Rates.md) §5) |
 
 ## Timeline
@@ -193,6 +193,34 @@ The boat simply can't hold against the stream. Under 1 kn on average, it is carr
 ## Rev E3 on the final plan (run 034, 26 Nov 2026)
 
 Rev E3 (two stock 10 W panels, 20 W, in place of Rev E1's 40 W) ran the final plan with the same 1,000 launches and seeds as run 026. It arrived **81.6%** of the time (95% range 79.1–83.9), against Rev E1's **81.0%** (78.5–83.3). The median crossing was 121 days for both, and the storm exposure was the same. 987 of the 1,000 paired voyages ended the same way. Of the 13 that differed, 7 arrived with Rev E3 but not Rev E1, 1 the other way round, and 5 only changed between kinds of failure or of arrival. A net gain of 6 arrivals in 1,000 is noise. Rev E3 does as well as Rev E1 on this plan.
+
+## The accurate coastline: Cornwall holding and the approach past Scilly (runs 037, 039, 042; 26 Nov 2026)
+
+Natural Earth 1:50m, the simulator's default coastline, has no Isles of Scilly and a smoothed Lizard. Runs 037-042 use OpenStreetMap's shoreline instead ([docs/data/coast](data/coast/README.md), v1; Rev E3). The results change the Cornwall end of the plan.
+
+**Holding (run 037).** The same 14-day station runs as run 035 (1 km deadband, failures on), 500 per point, mid-August to mid-October 2021-2024:
+
+| 14 days holding | Lizard offing (49.85N 5.20W, plan) | 30 km south of the Lizard (49.70N 5.20W) | Scilly-Lizard gap (49.85N 5.75W) | Mount's Bay mouth |
+|---|---|---|---|---|
+| Aground | **12.8%** (Lizard 47, Land's End-Penzance 14) | **0.4%** | 20.0% | 55.0% |
+| Afloat and with us after 3 / 7 / 14 days | 96 / 88 / 75% | 96 / 93 / **86%** | 95 / 87 / 66% | 86 / 66 / 36% |
+| Radius it stays inside half / 90% of the time | 8 / 40 km | 6 / 29 km | 5 / 23 km | 4 / 19 km |
+
+On Natural Earth the Lizard offing grounded 3.0% of holds (run 035). With the real tip of the Lizard it is 12.8%. The point 30 km south loses almost none in two weeks.
+
+**The crossing (runs 039 and 042).** The final plan on the accurate coastline, same 1,000 launches and seeds as runs 026 and 034:
+
+| Crossing, 1,000 voyages, 2021-2024 | Arrive (95% range) | Aground | Scilly / Lizard groundings | Paired with 039 |
+|---|---|---|---|---|
+| 039: plan as written (via 49.60N 7.20W, 49.70N 6.40W, 49.83N 5.80W) to the Lizard offing | **75.8%** (73.0-78.4) | 6.4% | 44 / 11 | |
+| 042A: approach 40-45 km south of Scilly (49.35N 7.20W, 49.50N 6.40W, 49.70N 5.70W), Lizard offing | **79.4%** (76.9-81.8) | 2.7% | 16 / 1 | +3.6 (+0.9 to +6.3) |
+| 042B: same approach, hold 30 km south of the Lizard | **80.8%** (78.4-83.2) | 2.6% | 18 / 2 | +5.0 (+2.4 to +7.6) |
+
+On Natural Earth the plan scored 81.6% (run 034). The plan's approach passes about 20 km south of Scilly, and boats set north on that leg hit the Western Rocks: 44 of 1,000. Another 11 go ashore on the Lizard during the run in. Moving the approach south removes most of both. 5 of the remaining groundings in every variant are on one charted *non-dangerous* wreck off Hatteras that the v1 hazard filter counted by mistake (fixed in v2), so all three figures are about half a point low.
+
+**Arrival and pickup together:** the chance the boat arrives and is still afloat and with us three days later is about 73% for the plan as written, 76% for 042A and 78% for 042B.
+
+**Decision for Randolph (nothing changed yet):** the approach (keep it, or move it 40-45 km south of Scilly) and the holding point (the Lizard offing, or 30 km south of the Lizard, a longer run out from Falmouth: about 50 km against 35). Both southern options are better; 042B is best, though its edge over 042A (+1.4, -0.7 to +3.5) is within the noise. Run 043 (five years, v2 coastlines with EMODnet depth and UKHO hazards) will re-check whichever he picks.
 
 ## Launch window on four years of weather (15 Nov 2026, runs 019a–c)
 
