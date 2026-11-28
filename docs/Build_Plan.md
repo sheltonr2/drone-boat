@@ -103,6 +103,8 @@ Use ArduPilot Rover's built-in sailboat mode for steering and sail trim. Your cu
 | Shore server | Small cloud service | Custom | Webhook receiver, decoder, command signer, database |
 | Dashboard | Web page | Custom | Map track, charts, command form, alerts by email or text |
 
+**Rev F, started 28 Nov 2026:** the comms, camera and shore parts are in [`software/`](../software/README.md): the message format (it replaces the SBD layout above), the shore server and dashboard, and the companion's comms and camera firmware, tested on a PC. The mission manager, power manager and limp-home code are still to write.
+
 **Build order with Claude Code**
 
 1. Define the report and command packet formats in one shared file, used by both the boat code and the shore server.

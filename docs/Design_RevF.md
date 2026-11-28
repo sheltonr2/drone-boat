@@ -29,6 +29,9 @@ The RockBLOCK Plus 9704 is the IMT version of the puck we already use: the same 
 
 ## Software
 
+Started 28 Nov 2026 in [`software/`](../software/README.md): the message format, the shore server and the companion and camera firmware. Everything that runs on a PC is tested; the firmware hasn't run on hardware yet.
+
+
 1. Once a day at local noon, the companion switches the camera on through its load switch.
 2. The camera takes a full-resolution photo and saves it to its microSD card. Then it makes a 640 × 480 JPEG, lowering the quality until it fits in 10 KB, and sends it to the companion over UART0. The camera is then switched off.
 3. The companion attaches the photo to the next report and sends both as one IMT message. Commands come back in the same session, as now.

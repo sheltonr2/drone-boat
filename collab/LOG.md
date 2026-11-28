@@ -2,6 +2,12 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-28, 11:00 UTC (06:00 local): Rev F software started
+
+- software/ (see software/README.md): protocol v1 (PROTOCOL.md, dronemsg.py, shared vectors); shore server (Cloudloop webhook, SQLite, photos, dashboard, HMAC-signed commands, dry run by default); boat C++ codec (byte-identical to Python), camera link framing, session logic (daily photo, parts, immediate reply to PHOTO/DIAG, replay and bad-signature rejection); companion and camera firmware (syntax-checked only).
+- Found: the RockBLOCK 9704 Arduino library holds 5,000-byte messages by default; the build sets 12,000 for the 10 KB photo.
+- Tests: python software/run_tests.py, all passing.
+
 ## 2026-11-28, 10:10 UTC (05:10 local): run 043c queued
 
 - Randolph asked what could run while 041 downloads, then "Do both" (this batch and the Rev F software).

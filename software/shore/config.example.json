@@ -1,0 +1,13 @@
+{
+ "_note": "Copy to config.json (kept out of git) and fill in. Or leave the secrets out and set them as environment variables: DRONE_BOAT_KEY_HEX, CLOUDLOOP_TOKEN, CLOUDLOOP_THING, DRONE_DASHBOARD_PASSWORD, DRONE_WEBHOOK_SECRET.",
+ "boat_id": 1,
+ "data_dir": "data",
+ "send": false,
+ "cloudloop_send_url": "https://api.cloudloop.com/Data/DoSendImtMessage",
+ "cloudloop_thing": "",
+ "cloudloop_token": "",
+ "boat_key_hex": "",
+ "dashboard_password": "",
+ "webhook_secret": "",
+ "first_seq": 0
+}
