@@ -2,6 +2,12 @@
 
 Newest first. Each check of boat-sim records what was new and what we did.
 
+## 2026-11-28, 10:10 UTC (05:10 local): run 043c queued
+
+- Randolph asked what could run while 041 downloads, then "Do both" (this batch and the Rev F software).
+- Run 043c (collab/runs_043c), Rev F, v2 coasts, 4 years, about 6 h, 15 runs: Rev F on B and B90 (pairs with 043a B / 043b B90); B90 in April, late May and from the 70 km drop; BVI holds Norman E30, ESE30, ESE40, SE20, SE40 and Anegada N45, NE30, plus Norman ESE20 on Rev F (pairs with 043b); Mindelo 15 Nov-10 Dec to Norman ESE20 and Anegada N30.
+- No decision changes. 041 still downloading (queue lock absent since the race, so 043c runs alongside it as 043a/b did).
+
 ## 2026-11-27, 23:30 UTC (18:30 local): run 043b analysed
 
 - Nothing new on #50 (last boat-sim commit da48acb, 26 Nov) or by email.
